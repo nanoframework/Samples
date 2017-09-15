@@ -4,10 +4,15 @@
 
 ### Welcome to the **nanoFramework** team code samples repository!
 
+
 This repo contains code samples used by the team when testing, working on proof of concepts for new and improved features and other explorational endeavours.
 Feel free to browse, take what you like and contribute back if you want.
 
-* [ToStringTesting](ToStringTesting)
+> Note: sometimes it's convenient to reference the source code instead of the NuGet packages in projects that require debugging by following the execution flow into other projects or even class libraries. For that we recommend using a very handy Visual Studio extension that allows NuGet assembly references to project references switching. That's [NuGet Reference Switcher](https://github.com/rsuter/NuGetReferenceSwitcher).
+
+### Sample list
+
+* [ToStringTest](ToStringTest)
 
 
 ## Feedback and documentation
