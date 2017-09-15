@@ -12,7 +12,7 @@ Feel free to browse, take what you like and contribute back if you want.
 
 ### Sample list
 
-* [ToStringTest](ToStringTest)
+* [ToStringTest](ToStringTest) is a sample solution for testing `ToString()` with integers, floats and doubles.
 
 
 ## Feedback and documentation
