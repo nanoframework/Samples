@@ -12,6 +12,7 @@ Feel free to browse, take what you like and contribute back if you want.
 
 ### Sample list
 
+* [DebugGC.Test](DebugGC.Test) is a sample solution for testing GC messages output.
 * [ToStringTest](ToStringTest) is a sample solution for testing `ToString()` with integers, floats and doubles.
 
 
