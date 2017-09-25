@@ -10,8 +10,13 @@ namespace ToStringTest
             double d = 123.45;
             float f = 456.78F;
             string strINTEGER = i.ToString();
+            Console.WriteLine(strINTEGER);
+
             string strDOUBLE = d.ToString();
+            Console.WriteLine(strDOUBLE);
+
             string strFLOAT = f.ToString();
+            Console.WriteLine(strFLOAT);
         }
     }
 }
