@@ -13,6 +13,7 @@ Feel free to browse, take what you like and contribute back if you want.
 ### Sample list
 
 * [Blinky](Blinky) is a basic "Hello world" app that blinks an LED.
+* [Gpio+Events.Test](Gpio+Events.Test) is a sample project that constantly blinks an LED and turns another LED on/off reacting to the state of a button.
 * [DebugGC.Test](DebugGC.Test) is a sample solution for testing GC messages output.
 * [ToStringTest](ToStringTest) is a sample solution for testing `ToString()` with integers, floats and doubles.
 

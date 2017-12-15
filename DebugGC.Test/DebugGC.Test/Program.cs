@@ -14,16 +14,22 @@ namespace DebugGC.Test
             // mind to set a pin that exists on the board being tested
             // PJ5 is LD2 in STM32F769I_DISCO
             GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('J', 5));
+            // PD15 is LED6 in DISCOVERY4
+            //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('D', 15));
 
             led.SetDriveMode(GpioPinDriveMode.Output);
 
+            int i = 0;
+
             for(; ; )
             {
+                i++;
                 led.Write(GpioPinValue.High);
-                Thread.Sleep(1000);
+                Thread.Sleep(100);
                 led.Write(GpioPinValue.Low);
-                Thread.Sleep(1000);
-                Debug.GC(true);
+                Thread.Sleep(900);
+
+                Console.WriteLine(">>" + i.ToString());
             }
         }
 
