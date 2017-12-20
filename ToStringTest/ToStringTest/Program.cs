@@ -1,22 +1,25 @@
-﻿using System;
+﻿//
+// Copyright (c) 2017 The nanoFramework project contributors
+// See LICENSE file in the project root for full license information.
+//
+
+using System.Threading;
 
 namespace ToStringTest
 {
-	public class Program
+    public class Program
     {
         public static void Main()
         {
-            int i = 12345;
-            double d = 123.45;
-            float f = 456.78F;
-            string strINTEGER = i.ToString();
-            Console.WriteLine(strINTEGER);
+            // workaround to allow debug engine to load before a breakpoint is hit
+            Thread.Sleep(5000);
 
-            string strDOUBLE = d.ToString();
-            Console.WriteLine(strDOUBLE);
+            TestCode.Output();
 
-            string strFLOAT = f.ToString();
-            Console.WriteLine(strFLOAT);
+            for (; ; )
+            {
+                Thread.Sleep(10000);
+            }
         }
     }
 }
