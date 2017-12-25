@@ -8,7 +8,7 @@ namespace RTC.Test
         public static void Main()
         {
             // nasty hack to be able to set a breakpoint
-            Thread.Sleep(5000);
+            Thread.Sleep(1500);
 
             Console.WriteLine("system time is: " + DateTime.UtcNow);
 
