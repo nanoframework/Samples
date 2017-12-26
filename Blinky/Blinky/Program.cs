@@ -1,6 +1,7 @@
 ﻿using Windows.Devices.Gpio;
 using System;
 using System.Threading;
+
 namespace Blinky
 {
 	public class Program
@@ -16,9 +17,13 @@ namespace Blinky
             for (; ; )
             {
                 led.Write(GpioPinValue.High);
-                Thread.Sleep(500);
+                Thread.Sleep(125);
                 led.Write(GpioPinValue.Low);
-                Thread.Sleep(1500);
+                Thread.Sleep(125);
+                led.Write(GpioPinValue.High);
+                Thread.Sleep(125);
+                led.Write(GpioPinValue.Low);
+                Thread.Sleep(125 + 750);
             }
         }
 
