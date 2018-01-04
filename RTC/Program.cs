@@ -1,7 +1,8 @@
-﻿using System;
+﻿using nanoFramework.Runtime.Native;
+using System;
 using System.Threading;
 
-namespace RTC.Test
+namespace RTCSample
 {
     public class Program
     {
@@ -13,7 +14,7 @@ namespace RTC.Test
             Console.WriteLine("system time is: " + DateTime.UtcNow);
 
             // set RTC
-            nanoFramework.DateTime.RTC.SetSystemTime(new DateTime(2018, 2, 28, 10, 20, 30));
+            RTC.SetSystemTime(new DateTime(2018, 2, 28, 10, 20, 30));
 
             Console.WriteLine("system time is: " + DateTime.UtcNow);
 

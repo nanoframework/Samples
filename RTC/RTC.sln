@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "RTC.Test", "RTC.Test.nfproj", "{40229C01-E252-46A7-8B71-6C9FA6687F9A}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "RTC", "RTC.nfproj", "{40229C01-E252-46A7-8B71-6C9FA6687F9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
