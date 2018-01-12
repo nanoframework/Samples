@@ -31,8 +31,16 @@ namespace SerialCommunication
             _serialDevice.Handshake = SerialHandshake.None;
             _serialDevice.DataBits = 8;
 
+            // because we are reading from the UART it's recommended to set a read timeout
+            // otherwise the reading operation doesn't return until the requested number of bytes has been read
+            _serialDevice.ReadTimeout = new TimeSpan(0, 0, 4);
+
             // setup data writer for Serial Device output stream
             DataWriter outputDataWriter = new DataWriter(_serialDevice.OutputStream);
+
+            // setup data read for Serial Device input stream
+            DataReader inputDataReader = new DataReader(_serialDevice.InputStream);
+            inputDataReader.InputStreamOptions = InputStreamOptions.Partial;
 
             for ( ; ; )
             {
@@ -42,10 +50,23 @@ namespace SerialCommunication
                 // (this doesn't send any data, just writes to the stream)
                 var bytesWritten = outputDataWriter.WriteString(DateTime.UtcNow + " hello from nanoFramework!\r\n");
 
+                Console.WriteLine("Wrote " + outputDataWriter.UnstoredBufferLength + " bytes to output stream.");
+
                 // calling the 'Store' methods on the data writer actually sends the data
                 var bw1 = outputDataWriter.Store();
 
                 Console.WriteLine("Sent " + bw1 + " bytes over " + _serialDevice.PortName + ".");
+
+                // attempt to read 5 bytes from the Serial Device
+                var bytesRead = inputDataReader.Load(5);
+
+                Console.WriteLine("Read completed: " + bytesRead + " bytes were read from " + _serialDevice.PortName + ".");
+
+                if (bytesRead >= 5)
+                {
+                    String temp = inputDataReader.ReadString(bytesRead);
+                    Console.WriteLine("String: >>" + temp + "<< ");
+                }
             }
         }
     }
