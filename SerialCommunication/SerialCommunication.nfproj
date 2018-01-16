@@ -27,13 +27,13 @@
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="Windows.Devices.SerialCommunication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Windows.Devices.SerialCommunication.1.0.0-preview180\lib\Windows.Devices.SerialCommunication.dll</HintPath>
+    <Reference Include="Windows.Devices.SerialCommunication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>packages\nanoFramework.Windows.Devices.SerialCommunication.1.0.0-preview181\lib\Windows.Devices.SerialCommunication.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="Windows.Storage.Streams, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Windows.Storage.Streams.1.0.0-preview180\lib\Windows.Storage.Streams.dll</HintPath>
+    <Reference Include="Windows.Storage.Streams, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>packages\nanoFramework.Windows.Storage.Streams.1.0.0-preview181\lib\Windows.Storage.Streams.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
