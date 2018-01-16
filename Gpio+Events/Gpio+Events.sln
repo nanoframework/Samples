@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Gpio+Events.Test", "Gpio+Events.Test.nfproj", "{DC6154FA-5E71-4B7D-ACB8-F5B657287FC0}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Gpio+Events", "Gpio+Events.nfproj", "{DC6154FA-5E71-4B7D-ACB8-F5B657287FC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
