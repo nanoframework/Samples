@@ -1,6 +1,6 @@
 # Serial Communication sample
 
-Shows how to use the [Windows.Devices.SerialCommunication]() API to send/receive data using an UART (COM port).
+Shows how to use the [Windows.Devices.SerialCommunication](http://docs.nanoframework.net/api/Windows.Devices.SerialCommunication.html) API to send/receive data using an UART (COM port).
 
 > **Note:** This sample is part of a large collection of nanoFramework feature samples. 
 > If you are unfamiliar with Git and GitHub, you can download the entire collection as a 
@@ -14,7 +14,7 @@ This sample shows how to send data over an UART (COM port) and read data from it
 
 ## Hardware requirements
 
-Any hardware device running a nanoFramework image.
+Any hardware device running a nanoFramework image built with serial communication enabled.
 
 
 ## Related topics
@@ -25,7 +25,7 @@ Any hardware device running a nanoFramework image.
 
 ### Reference
 
-[Windows.Devices.SerialCommunication]()
+[Windows.Devices.SerialCommunication](http://docs.nanoframework.net/api/Windows.Devices.SerialCommunication.html)
 
 <!-- [nanoFramework app samples]() -->
 

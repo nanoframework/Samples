@@ -1,6 +1,6 @@
 # RTC sample
 
-Shows how to use the [nanoFramework.Runtime.Native.RTC]() API to set the *R*eal *T*ime *C*lock in a target device.
+Shows how to use the [nanoFramework.Runtime.Native.RTC](http://docs.nanoframework.net/api/nanoFramework.Runtime.Native.RTC.html) API to set the *R*eal *T*ime *C*lock in a target device.
 
 > **Note:** This sample is part of a large collection of nanoFramework feature samples. 
 > If you are unfamiliar with Git and GitHub, you can download the entire collection as a 
@@ -25,7 +25,7 @@ Any hardware device running a nanoFramework image.
 
 ### Reference
 
-[nanoFramework.Runtime.Native.RTC]()
+[nanoFramework.Runtime.Native.RTC](http://docs.nanoframework.net/api/nanoFramework.Runtime.Native.RTC.html)
 
 <!-- [nanoFramework app samples]() -->
 
