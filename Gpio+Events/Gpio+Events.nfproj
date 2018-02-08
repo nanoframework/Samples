@@ -33,7 +33,7 @@
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="Windows.Devices.Gpio, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6df87852110734f7">
-      <HintPath>packages\nanoFramework.Windows.Devices.Gpio.1.0.0-preview172\lib\Windows.Devices.Gpio.dll</HintPath>
+      <HintPath>packages\nanoFramework.Windows.Devices.Gpio.1.0.0-preview173\lib\Windows.Devices.Gpio.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>

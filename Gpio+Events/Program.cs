@@ -12,6 +12,8 @@ namespace Gpio_Events.Test
 
         public static void Main()
         {
+            Thread.Sleep(1000);
+
             var gpioController = GpioController.GetDefault();
 
             // setup green LED
@@ -28,7 +30,7 @@ namespace Gpio_Events.Test
             _redLED.SetDriveMode(GpioPinDriveMode.Output);
 
             // setup user button
-            // F769I-DISCO -> USER_BUTTON is @ PA0 
+            // F769I-DISCO -> USER_BUTTON is @ PA0
             _userButton = gpioController.OpenPin(PinNumber('A', 0));
             _userButton.SetDriveMode(GpioPinDriveMode.Input);
             _userButton.ValueChanged += UserButton_ValueChanged;
