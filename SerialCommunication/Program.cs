@@ -61,7 +61,12 @@ namespace SerialCommunication
                 // calling the 'Store' method on the data writer actually sends the data
                 var bw1 = outputDataWriter.Store();
 
+                // another dummy string, just to output something when the above is still Txing
+                bytesWritten = outputDataWriter.WriteString(DateTime.UtcNow + "...\r\n");
+                bw1 = outputDataWriter.Store();
+
                 Console.WriteLine("Sent " + bw1 + " bytes over " + _serialDevice.PortName + ".");
+
 
                 // attempt to read 5 bytes from the Serial Device input stream
                 var bytesRead = inputDataReader.Load(5);
