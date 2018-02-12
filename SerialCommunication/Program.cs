@@ -52,19 +52,23 @@ namespace SerialCommunication
             {
                 Thread.Sleep(2000);
 
+
                 // write string to Serial Device output stream using data writer
                 // (this doesn't send any data, just writes to the stream)
                 var bytesWritten = outputDataWriter.WriteString(DateTime.UtcNow + " hello from nanoFramework!\r\n");
-
                 Console.WriteLine("Wrote " + outputDataWriter.UnstoredBufferLength + " bytes to output stream.");
 
                 // calling the 'Store' method on the data writer actually sends the data
                 var bw1 = outputDataWriter.Store();
+                Console.WriteLine("Sent " + bw1 + " bytes over " + _serialDevice.PortName + ".");
+
 
                 // another dummy string, just to output something when the above is still Txing
                 bytesWritten = outputDataWriter.WriteString(DateTime.UtcNow + "...\r\n");
-                bw1 = outputDataWriter.Store();
+                Console.WriteLine("Wrote " + outputDataWriter.UnstoredBufferLength + " bytes to output stream.");
 
+                // calling the 'Store' method on the data writer actually sends the data
+                bw1 = outputDataWriter.Store();
                 Console.WriteLine("Sent " + bw1 + " bytes over " + _serialDevice.PortName + ".");
 
 
