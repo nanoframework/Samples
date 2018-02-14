@@ -24,12 +24,19 @@ namespace DebugGC.Test
             for(; ; )
             {
                 i++;
+
+                int j = 2*i;
+
                 led.Write(GpioPinValue.High);
                 Thread.Sleep(100);
                 led.Write(GpioPinValue.Low);
                 Thread.Sleep(900);
 
                 Console.WriteLine(">>" + i.ToString());
+
+                //Debug.GC(true);
+
+                Thread.Sleep(500);
             }
         }
 
