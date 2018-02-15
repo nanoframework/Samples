@@ -25,7 +25,7 @@ namespace DebugGC.Test
             {
                 i++;
 
-                int j = 2*i;
+                int[] array = new int[8192];
 
                 led.Write(GpioPinValue.High);
                 Thread.Sleep(100);
@@ -34,9 +34,9 @@ namespace DebugGC.Test
 
                 Console.WriteLine(">>" + i.ToString());
 
-                //Debug.GC(true);
+                Debug.GC(false);
 
-                Thread.Sleep(500);
+                Thread.Sleep(1000);
             }
         }
 
