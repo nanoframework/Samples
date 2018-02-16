@@ -11,9 +11,6 @@ namespace ToStringTest
     {
         public static void Main()
         {
-            // workaround to allow debug engine to load before a breakpoint is hit
-            Thread.Sleep(5000);
-
             TestCode.Output();
 
             for (; ; )

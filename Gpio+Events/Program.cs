@@ -12,8 +12,6 @@ namespace Gpio_Events.Test
 
         public static void Main()
         {
-            Thread.Sleep(1000);
-
             var gpioController = GpioController.GetDefault();
 
             // setup green LED

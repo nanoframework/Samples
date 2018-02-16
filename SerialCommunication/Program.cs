@@ -11,9 +11,6 @@ namespace SerialCommunication
 
         public static void Main()
         {
-            // nasty hack to allow setting breakpoints
-            Thread.Sleep(5000);
-
             // get available ports
             var serialPorts = SerialDevice.GetDeviceSelector();
 

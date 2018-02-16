@@ -8,9 +8,6 @@ namespace RTCSample
     {
         public static void Main()
         {
-            // nasty hack to be able to set a breakpoint
-            Thread.Sleep(1500);
-
             Console.WriteLine("system time is: " + DateTime.UtcNow);
 
             // set RTC
