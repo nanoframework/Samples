@@ -44,7 +44,11 @@ namespace Gpio_Events.Test
 
         private static void UserButton_ValueChanged(object sender, GpioPinValueChangedEventArgs e)
         {
-            Console.WriteLine("USER BUTTON: " + e.Edge.ToString());
+            // read Gpio pin value from event
+            Console.WriteLine("USER BUTTON (event) : " + e.Edge.ToString());
+
+            // direct read Gpio pin value
+            Console.WriteLine("USER BUTTON (direct): " + _userButton.Read());
 
             if (e.Edge == GpioPinEdge.RisingEdge)
             {
