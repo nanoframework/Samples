@@ -17,6 +17,7 @@ Feel free to browse, take what you like and contribute back if you want.
 * [Gpio+Events.Test](Gpio+Events.Test) is a sample project that constantly blinks an LED and turns another LED on/off reacting to the state of a button.
 * [RTC Sample](RTC) it's a sample solution for testing RTC related stuff.
 * [SerialCommunication sample](/SerialCommunication) it's a sample solution for testing sending/receiving data using an UART (COM port).
+* [System.Random](System.Random) it's a basic sample that shows how to use the various APIs to generate random numbers.
 * [Timer sample](/Timer) it's a sample solution for testing timers and their callbacks.
 * [ToString Test](ToStringTest) is a sample solution for testing `ToString()` with integers, floats and doubles.
 
