@@ -20,7 +20,7 @@ namespace Gpio_Events.Test
             // F429I-Discovery -> LD3 is @ PG13
             // F769I-DISCO -> LED2_GREEN is @ PJ5
             // F746ZG-NUCLEO -> Off board LED is @ PC10
-            _greenLED = gpioController.OpenPin(PinNumber('J', 15));
+            _greenLED = gpioController.OpenPin(PinNumber('J', 5));
             _greenLED.SetDriveMode(GpioPinDriveMode.Output);
 
             // setup red LED
