@@ -28,7 +28,7 @@
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="Windows.Devices.Adc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\nanoFramework.Windows.Devices.Adc.1.0.0-preview161\lib\Windows.Devices.Adc.dll</HintPath>
+      <HintPath>packages\nanoFramework.Windows.Devices.Adc.1.0.0-preview162\lib\Windows.Devices.Adc.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>

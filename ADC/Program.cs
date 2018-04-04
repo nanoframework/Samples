@@ -14,20 +14,16 @@ namespace TestAdc
 
             AdcController adc1 = AdcController.GetDefault();
 
-            // uncomment this if ADC2 available or to test exception on not available
-            //AdcController adc2 = AdcController.FromID("ADC2");
-
             int max1 = adc1.MaxValue;
             int min1 = adc1.MinValue;
-            //int max2 = adc2.MaxValue;
-            //int min2 = adc2.MinValue;
 
             Console.WriteLine("min1=" + min1.ToString() + " max1=" + max1.ToString());
-            //Console.WriteLine("min2=" + min2.ToString() + " max2=" + max2.ToString());
 
             AdcChannel ac0 = adc1.OpenChannel(0);
-            AdcChannel vref = adc1.OpenChannel(3);
-            AdcChannel vbat = adc1.OpenChannel(4);
+
+            // the following indexes are valid for STM32F769I-DISCO board
+            AdcChannel vref = adc1.OpenChannel(7);
+            AdcChannel vbat = adc1.OpenChannel(8);
 
             // VP 
             //AdcChannel ac3 = adc1.OpenChannel(3);
@@ -41,12 +37,8 @@ namespace TestAdc
                 double percent = ac0.ReadRatio();
 
                 Console.WriteLine("value0=" + value.ToString() + " ratio=" + percent.ToString());
-
-                //int value3 = ac3.ReadValue();
-
-                //double percent3 = ac3.ReadRatio();
-
-                //Console.WriteLine("value3=" + value3.ToString() + " ratio=" + percent3.ToString());
+                Console.WriteLine("verf" + valueVref.ToString() + " ratio=" + percent.ToString());
+                Console.WriteLine("vbat" + valueVbat.ToString() + " ratio=" + percent.ToString());
 
                 Thread.Sleep(1000);
             }
