@@ -16,6 +16,7 @@ Feel free to browse, take what you like and contribute back if you want.
 * [Blinky](Blinky) is a basic "Hello world" app that blinks an LED.
 * [DebugGC.Test](DebugGC.Test) is a sample solution for testing GC messages output.
 * [Gpio+Events.Test](Gpio+Events.Test) is a sample project that constantly blinks an LED and turns another LED on/off reacting to the state of a button.
+* [PWM](PWM) it's a sample solution to test outputting a PWM signal to drive an LED increasing and decreasing its light intensity periodically.
 * [RTC Sample](RTC) it's a sample solution for testing RTC related stuff.
 * [SerialCommunication sample](/SerialCommunication) it's a sample solution for testing sending/receiving data using an UART (COM port).
 * [System.Random](System.Random) it's a basic sample that shows how to use the various APIs to generate random numbers.
