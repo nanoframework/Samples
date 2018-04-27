@@ -1,4 +1,9 @@
-﻿using System;
+﻿//
+// Copyright (c) 2018 The nanoFramework project contributors
+// See LICENSE file in the project root for full license information.
+//
+
+using System;
 using System.Threading;
 using Windows.Devices.Adc;
 
@@ -22,7 +27,7 @@ namespace TestAdc
             AdcChannel ac0 = adc1.OpenChannel(0);
 
             // the following indexes are valid for STM32F769I-DISCO board
-            AdcChannel vref = adc1.OpenChannel(7);
+            AdcChannel vref = adc1.OpenChannel(0);
             AdcChannel vbat = adc1.OpenChannel(8);
 
             // VP 

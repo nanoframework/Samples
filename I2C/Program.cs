@@ -1,4 +1,9 @@
-﻿using Driver;
+﻿//
+// Copyright (c) 2018 The nanoFramework project contributors
+// See LICENSE file in the project root for full license information.
+//
+
+using Driver;
 using System;
 using System.Threading;
 using Windows.Devices.Gpio;
