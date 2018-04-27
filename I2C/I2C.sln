@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "I2C", "I2C\I2C.nfproj", "{DC9F03EB-614E-4B7B-9578-DA78922487E7}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "I2C", "I2C.nfproj", "{DC9F03EB-614E-4B7B-9578-DA78922487E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
