@@ -30,9 +30,9 @@ namespace I2C.DemoApp
             var gpioController = GpioController.GetDefault();
             _touchInterrupt = gpioController.OpenPin(PinNumber('A', 15));
             _touchInterrupt.SetDriveMode(GpioPinDriveMode.Input);
-            _touchInterrupt.ValueChanged += TouchScreenInterrupRequest;
+            _touchInterrupt.ValueChanged += TouchScreenInterruptRequest;
 
-            // initialise STMPE811
+            // initialize STMPE811
             if (_touchController.Initialize())
             {
                 // start the touch screen controller
@@ -67,7 +67,7 @@ namespace I2C.DemoApp
             }
         }
 
-        public static void TouchScreenInterrupRequest(object sender, GpioPinValueChangedEventArgs e)
+        public static void TouchScreenInterruptRequest(object sender, GpioPinValueChangedEventArgs e)
         {
             // get interrupt status from touch controller
             InterruptSource interruptStatus = _touchController.ReadGlobalInterruptStatus();
