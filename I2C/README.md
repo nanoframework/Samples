@@ -1,6 +1,6 @@
 # I2C sample
 
-Shows how to use the [Windows.Devices.I2C](http://docs.nanoframework.net/api/Windows.Devices.I2c.html) API to read and write from/to an I2C device.
+Shows how to use the [Windows.Devices.I2c](http://docs.nanoframework.net/api/Windows.Devices.I2c.html) API to read and write from/to an I2C device.
 In this sample we'll be using a [STMPE811](www.st.com/en/mems-and-sensors/stmpe811.html) resistive touchscreen controller mounted in a [STM32F429I DISCOVERY](http://www.st.com/en/evaluation-tools/32f429idiscovery.html) board.
 
 The sample project includes a minimal driver for the STMPE811.
@@ -32,7 +32,7 @@ The code sample is demonstrative of the use of the I2C API.
 
 ### Reference
 
-[Windows.Devices.I2C](http://docs.nanoframework.net/api/Windows.Devices.I2c.html)
+[Windows.Devices.I2c](http://docs.nanoframework.net/api/Windows.Devices.I2c.html)
 [Windows.Devices.Gpio](http://docs.nanoframework.net/api/Windows.Devices.Gpio.html)
 
 <!-- [nanoFramework app samples]() -->
