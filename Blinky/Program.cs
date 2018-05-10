@@ -15,9 +15,11 @@ namespace Blinky
         {
             // mind to set a pin that exists on the board being tested
             // PJ5 is LD2 in STM32F769I_DISCO
-            GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('J', 5));
+            //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('J', 5));
             // PD15 is LED6 in DISCOVERY4
             //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('D', 15));
+            // PG14 is LEDLD4 in F429I_DISCO
+            GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('G', 14));
             // PE15 is LED1 in QUAIL
             //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('E', 15));
             // PB75 is LED2 in STM32F746_NUCLEO
