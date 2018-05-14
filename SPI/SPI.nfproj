@@ -18,9 +18,9 @@
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
+    <Compile Include="L3GD20.Driver\L3GD20.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="STMPE811.Driver\STMPE811.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -38,8 +38,8 @@
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="Windows.Devices.I2c, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6df87852110734f7">
-      <HintPath>..\packages\nanoFramework.Windows.Devices.I2c.1.0.0-preview173\lib\Windows.Devices.I2c.dll</HintPath>
+    <Reference Include="Windows.Devices.Spi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6df87852110734f7">
+      <HintPath>packages\nanoFramework.Windows.Devices.Spi.1.0.0-preview171\lib\Windows.Devices.Spi.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
