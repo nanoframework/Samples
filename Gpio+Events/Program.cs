@@ -23,16 +23,20 @@ namespace Gpio_Events.Test
             // setup green LED
             // F4-Discovery -> LD4 LED is @ PD12
             // F429I-Discovery -> LD3 is @ PG13
+            _greenLED = gpioController.OpenPin(PinNumber('G', 13));
             // F769I-DISCO -> LED2_GREEN is @ PJ5
+            //_greenLED = gpioController.OpenPin(PinNumber('J', 5));
             // F746ZG-NUCLEO -> Off board LED is @ PC10
-            _greenLED = gpioController.OpenPin(PinNumber('J', 5));
+
             _greenLED.SetDriveMode(GpioPinDriveMode.Output);
 
             // setup red LED
             // F4-Discovery -> LD5 is @ PD14
             // F429I-Discovery -> LD4 is @ PG14
+            _redLED = gpioController.OpenPin(PinNumber('G', 14));
             // F769I-DISCO -> LED2_RED is @ PJ13
-            _redLED = gpioController.OpenPin(PinNumber('J', 13));
+            //_redLED = gpioController.OpenPin(PinNumber('J', 13));
+
             _redLED.SetDriveMode(GpioPinDriveMode.Output);
 
             // setup user button
