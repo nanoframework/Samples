@@ -11,6 +11,8 @@ namespace Blinky
 {
 	public class Program
     {
+        static GpioPinValue _pin = GpioPinValue.High;
+
         public static void Main()
         {
             // mind to set a pin that exists on the board being tested
@@ -24,19 +26,23 @@ namespace Blinky
             //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('E', 15));
             // PB75 is LED2 in STM32F746_NUCLEO
             //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('B', 7));
+            // 4 is a valid GPIO pin in ESP32 DevKit
+            //GpioPin led = GpioController.GetDefault().OpenPin(4);
 
             led.SetDriveMode(GpioPinDriveMode.Output);
 
-            for (; ; )
+            led.Write(GpioPinValue.Low);
+
+            while (true)
             {
-                led.Write(GpioPinValue.High);
+                led.Toggle();
                 Thread.Sleep(125);
-                led.Write(GpioPinValue.Low);
+                led.Toggle();
                 Thread.Sleep(125);
-                led.Write(GpioPinValue.High);
-                Thread.Sleep(125);
-                led.Write(GpioPinValue.Low);
-                Thread.Sleep(125 + 750);
+                led.Toggle();
+                Thread.Sleep(5);
+
+                Console.WriteLine("Hello from nanoFramework!");
             }
         }
 
