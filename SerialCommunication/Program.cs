@@ -21,7 +21,7 @@ namespace SerialCommunication
 
             Console.WriteLine("available serial ports: " + serialPorts);
 
-            // COM6 in STM32F769IDiscovery board (Tx, Rx pins exposed in Arduino header CN13)
+            // COM6 in STM32F769IDiscovery board (Tx, Rx pins exposed in Arduino header CN13: TX->D1, RX->D0)
 
             // open COM
             _serialDevice = SerialDevice.FromId("COM6");
