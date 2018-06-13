@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "DebugGC.Test", "DebugGC.Test\DebugGC.Test.nfproj", "{AAC17F43-C085-4A4F-B546-14F777549E1B}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "DebugGC.Test", "DebugGC.Test.nfproj", "{AAC17F43-C085-4A4F-B546-14F777549E1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
