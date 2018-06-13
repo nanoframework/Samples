@@ -169,12 +169,12 @@ namespace nanoFramework.Drivers
             _chipSelectLine = chipSelectLine;
             _chipSelectLine.SetDriveMode(GpioPinDriveMode.Output);
 
-            // create SPI device for gyroscope
-            _gyroscope = SpiDevice.FromId(spiBus, new SpiConnectionSettings(chipSelectLine.PinNumber));
-            _gyroscope.ConnectionSettings.DataBitLength = 8;
+            var connectionSettings = new SpiConnectionSettings(chipSelectLine.PinNumber);
+            connectionSettings.DataBitLength = 8;
+            connectionSettings.ClockFrequency = 10000000;
 
-            // set CS line high
-            _chipSelectLine.Write(GpioPinValue.High);
+            // create SPI device for gyroscope
+            _gyroscope = SpiDevice.FromId(spiBus, connectionSettings);
         }
 
         public void Initialize(DataRate ouputDataRate = DataRate._95Hz, 
@@ -246,9 +246,10 @@ namespace nanoFramework.Drivers
                     // sanity check
                     if (_chipId != I_AM_L3GD20)
                     {
-                        throw new InvalidOperationException();
+                        throw new ApplicationException();
                     }
 
+                    return buffer[0];
                 }
 
                 return _chipId;
