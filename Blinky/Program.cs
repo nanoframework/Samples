@@ -31,16 +31,16 @@ namespace Blinky
 
             led.SetDriveMode(GpioPinDriveMode.Output);
 
-            led.Write(GpioPinValue.Low);
-
             while (true)
             {
-                led.Toggle();
+                led.Write(GpioPinValue.High);
                 Thread.Sleep(125);
                 led.Toggle();
                 Thread.Sleep(125);
                 led.Toggle();
-                Thread.Sleep(5);
+                Thread.Sleep(125);
+                led.Toggle();
+                Thread.Sleep(525);
 
                 Console.WriteLine("Hello from nanoFramework!");
             }
