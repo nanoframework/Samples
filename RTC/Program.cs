@@ -17,14 +17,11 @@ namespace RTCSample
             Console.WriteLine("system time is: " + DateTime.UtcNow);
 
             // set RTC
-            RTC.SetSystemTime(new DateTime(2018, 2, 28, 10, 20, 30));
+            Rtc.SetSystemTime(new DateTime(2018, 2, 28, 10, 20, 30));
 
             Console.WriteLine("system time is: " + DateTime.UtcNow);
 
-            while (true)
-            {
-                Thread.Sleep(5000);
-            }
+            Thread.Sleep(Timeout.Infinite);
         }
     }
 }
