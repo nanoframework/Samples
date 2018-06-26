@@ -18,7 +18,10 @@
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Scenario4_DataReceivedEvent.cs" />
+    <Compile Include="Scenario3_StreamRead.cs" />
+    <Compile Include="Scenario2_StreamWrite.cs" />
+    <Compile Include="Scenario1_ConfigureDevice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -27,8 +30,13 @@
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
+    <Reference Include="nanoFramework.Runtime.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=72027bbd7f714be2">
+      <HintPath>packages\nanoFramework.Runtime.Events.1.0.0-preview178\lib\nanoFramework.Runtime.Events.dll</HintPath>
+      <Private>True</Private>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
     <Reference Include="Windows.Devices.SerialCommunication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\nanoFramework.Windows.Devices.SerialCommunication.1.0.0-preview193\lib\Windows.Devices.SerialCommunication.dll</HintPath>
+      <HintPath>packages\nanoFramework.Windows.Devices.SerialCommunication.1.0.0-preview195\lib\Windows.Devices.SerialCommunication.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
