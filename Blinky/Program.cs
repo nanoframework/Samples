@@ -28,6 +28,10 @@ namespace Blinky
             //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('B', 7));
             // 4 is a valid GPIO pin in ESP32 DevKit
             //GpioPin led = GpioController.GetDefault().OpenPin(4);
+            // PA5 is LED_GREEN in STM32F091RC
+            //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('A', 5));
+            // PA5 is LD2 in STM32L072Z_LRWAN1
+            //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('A', 5));
 
             led.SetDriveMode(GpioPinDriveMode.Output);
 
