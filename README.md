@@ -24,7 +24,7 @@ Feel free to browse, take what you like and contribute back if you want.
 * [SerialCommunication sample](/SerialCommunication) it's a sample solution for testing sending/receiving data using an UART (COM port)
 * [SPI](SPI) it's a sample project demoing the SPI API by connecting to a MEMS gyroscope and reading the acceleration output.
 * [System.Random](System.Random) it's a basic sample that shows how to use the various APIs to generate random numbers.
-* [SSL.TestPack](SSL.TestPack) it's a test pack with various programs ilustrating how to use SSL related APIs.
+* [SSL](SSL) it's a sample solution with various applications illustrating how to use SSL related APIs.
 * [Timer sample](/Timer) it's a sample solution for testing timers and their callbacks.
 * [ToString Test](ToStringTest) it's a sample solution for testing `ToString()` with integers, floats and doubles.
 * [Hardware Esp32 Test](HardwareEsp32) it's a sample to show the features of the Hardware.Esp32 assembly.

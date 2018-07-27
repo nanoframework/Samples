@@ -33,7 +33,7 @@ An hardware device with networking capabilities running a nanoFramework image.
 
 ### Samples
 
-[SSL.TestPack sample](/SSL.TestPack)
+[SSL sample](/SSL)
 
 ### Reference
 
