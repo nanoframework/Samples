@@ -1,1 +1,1 @@
-CoreLibrary	../../../nf-class-libraries/CoreLibrary/CoreLibrary.nfproj	../packages/nanoFramework.CoreLibrary.1.0.0-preview028/lib/mscorlib.dll
+CoreLibrary	../../../nflib-CoreLibrary/source/CoreLibrary.nfproj	../packages/nanoFramework.CoreLibrary.1.0.0-preview054/lib/mscorlib.dll
