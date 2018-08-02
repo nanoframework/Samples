@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Security;
 using System.Net.Sockets;
+using System.Text;
 using System.Threading;
 
 namespace SecureClient
@@ -23,7 +24,7 @@ namespace SecureClient
                 try
                 {
                     // get host entry for test site
-                    IPHostEntry hostEntry = Dns.GetHostEntry("https://www.howsmyssl.com");
+                    IPHostEntry hostEntry = Dns.GetHostEntry("www.howsmyssl.com");
 
                     // need an IPEndPoint from that one above
                     IPEndPoint ep = new IPEndPoint(hostEntry.AddressList[0], 443);
@@ -37,20 +38,35 @@ namespace SecureClient
                     ss.AuthenticateAsClient("www.howsmyssl.com", SslProtocols.TLSv1); //| SslProtocols.TLSv11| SslProtocols.TLSv12);
 
                     Console.WriteLine("SSL handshake OK!");
-                    //Console.WriteLine("SSL isServer:" + ss.IsServer.ToString());
 
-                    //while (true)
-                    //{
-                    //    byte[] buffer = new byte[1024];
+                    // write an HTTP GET request to receive data
+                    byte[] buffer = Encoding.UTF8.GetBytes("GET / HTTP/1.0\r\n\r\n");
+                    ss.Write(buffer, 0, buffer.Length);
 
-                    //    int bytes = ss.Read(buffer, 0, buffer.Length);
+                    Console.WriteLine($"Wrote {buffer.Length} bytes");
 
-                    //    Console.WriteLine("Read bytes" + bytes.ToString());
+                    while (true)
+                    {
+                        buffer = new byte[1024];
 
-                    //}
+                        int bytes = ss.Read(buffer, 0, buffer.Length);
+
+                        Console.WriteLine($"Read {bytes} bytes");
+
+                        if(bytes > 0)
+                        {
+                            Console.WriteLine(new String(Encoding.UTF8.GetChars(buffer)));
+                        }
+
+                    }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    Console.WriteLine($"** Exception occurred: {ex.Message}!**");
+                }
+                finally
+                {
+                    Console.WriteLine("Closing socket");
                     mySocket.Close();
                 }
             }
