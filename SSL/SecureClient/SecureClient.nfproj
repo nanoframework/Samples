@@ -32,6 +32,11 @@
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
+    <Reference Include="nanoFramework.Runtime.Native, Version=1.0.0.0, Culture=neutral, PublicKeyToken=72027bbd7f714be2">
+      <HintPath>..\packages\nanoFramework.Runtime.Native.1.0.0-preview185\lib\nanoFramework.Runtime.Native.dll</HintPath>
+      <Private>True</Private>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
     <Reference Include="System.Net, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6df87852110734f7">
       <HintPath>..\packages\nanoFramework.System.Net.1.0.0-preview029\lib\System.Net.dll</HintPath>
       <Private>True</Private>
