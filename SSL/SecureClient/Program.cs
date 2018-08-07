@@ -24,11 +24,10 @@ namespace SecureClient
         {
             X509Certificate letsEncryptCACert = new X509Certificate(GetCertificate());
 
-            // set system date time (needs to be accurate to the day in order to be able to validate a certificate)
-            Rtc.SetSystemTime(new DateTime(2018, 08, 02));
-
             Console.WriteLine("Setting up network and connecting...");
             SetupAndConnectNetwork();
+
+            SetDateTime();
 
             Console.WriteLine("Opening socket...");
             using (Socket mySocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.IPv4))
@@ -89,6 +88,22 @@ namespace SecureClient
             }
 
             Thread.Sleep(Timeout.Infinite);
+        }
+
+        private static void SetDateTime()
+        {
+            Console.WriteLine("Setting up system clock...");
+
+            // set system date time (needs to be accurate to the day in order to be able to validate a certificate)
+            //Rtc.SetSystemTime(new DateTime(2018, 08, 02));
+
+            // if SNTP is available and enabled on target device this can be skipped because we should have a valid date & time
+            while (DateTime.UtcNow.Year < 2018)
+            {
+                Console.WriteLine("Waiting for valid date time...");
+                // wait for valid date & time
+                Thread.Sleep(1000);
+            }
         }
 
         public static void SetupAndConnectNetwork()
