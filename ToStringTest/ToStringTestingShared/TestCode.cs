@@ -85,6 +85,23 @@ namespace ToStringTest
             Console.WriteLine("long '85': " + i64.ToString("N0"));
             Console.WriteLine("long '1234567': " + i64a.ToString("N0"));
             Console.WriteLine("ulong '200': " + i64b.ToString("N0"));
+            Console.WriteLine("double '123.45': " + d.ToString("N0"));
+            Console.WriteLine("float '456.78F': " + f.ToString("N0"));
+
+            ////////////////////////////////////////////
+            Console.WriteLine("");
+            Console.WriteLine("**********************");
+            Console.WriteLine(@"* ToString(""N3"") test *");
+            Console.WriteLine("**********************");
+
+            Console.WriteLine("integer '0': " + zero.ToString("N3"));
+            Console.WriteLine("integer '12345': " + i.ToString("N3"));
+            Console.WriteLine("integer '-12345': " + iNeg.ToString("N3"));
+            Console.WriteLine("long '85': " + i64.ToString("N3"));
+            Console.WriteLine("long '1234567': " + i64a.ToString("N3"));
+            Console.WriteLine("ulong '200': " + i64b.ToString("N3"));
+            Console.WriteLine("double '123.45': " + d.ToString("N3"));
+            Console.WriteLine("float '456.78F': " + f.ToString("N3"));
         }
     }
 }
