@@ -14,8 +14,7 @@ namespace ParseCertificate
     {
         public static void Main()
         {
-            byte[] certBytes = GetCertificate();
-            X509Certificate cert = new X509Certificate(certBytes);
+            X509Certificate cert = new X509Certificate(x509RsaPem2048bytesCertificate);
 
             Console.WriteLine("Certificate Details:");
 
@@ -25,7 +24,7 @@ namespace ParseCertificate
             Console.WriteLine($"Expiry Date:: {cert.GetExpirationDate()}");
 
             // check raw data against buffer
-            if (cert.GetRawCertData().Equals(certBytes))
+            if (cert.GetRawCertData().Equals(Encoding.UTF8.GetBytes(x509RsaPem2048bytesCertificate)))
             {
                 Console.WriteLine("Raw data checks");
             }
@@ -39,16 +38,8 @@ namespace ParseCertificate
             Thread.Sleep(Timeout.Infinite);
         }
 
-        static byte[] GetCertificate()
-        {
-            // test certificates from http://fm4dd.com/openssl/certexamples.htm
-
-            /////////////////////////////////////////////////////
-            // uncomment the certificate that you want to test //
-            /////////////////////////////////////////////////////
-
-            // X509 RSA key PEM format 512 bytes
-//            string certificate = 
+        // X509 RSA key PEM format 512 bytes
+        // static string x509RsaPem512bytesCertificate = 
 //@"-----BEGIN CERTIFICATE-----
 //MIICEjCCAXsCAg36MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwG
 //A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxETAPBgNVBAoTCEZyYW5rNERE
@@ -65,26 +56,25 @@ namespace ParseCertificate
 //-----END CERTIFICATE-----";
 
 
-            // X509 RSA key PEM format 1024 bytes
-//            string certificate =
-//@"-----BEGIN CERTIFICATE-----
-//MIICVjCCAb8CAg37MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwG
-//A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxETAPBgNVBAoTCEZyYW5rNERE
-//MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdl
-//YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRkZC5jb20wHhcNMTIw
-//ODIyMDUyNzIzWhcNMTcwODIxMDUyNzIzWjBKMQswCQYDVQQGEwJKUDEOMAwGA1UE
-//CAwFVG9reW8xETAPBgNVBAoMCEZyYW5rNEREMRgwFgYDVQQDDA93d3cuZXhhbXBs
-//ZS5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMYBBrx5PlP0WNI/ZdzD
-//+6Pktmurn+F2kQYbtc7XQh8/LTBvCo+P6iZoLEmUA9e7EXLRxgU1CVqeAi7QcAn9
-//MwBlc8ksFJHB0rtf9pmf8Oza9E0Bynlq/4/Kb1x+d+AyhL7oK9tQwB24uHOueHi1
-//C/iVv8CSWKiYe6hzN1txYe8rAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAASPdjigJ
-//kXCqKWpnZ/Oc75EUcMi6HztaW8abUMlYXPIgkV2F7YanHOB7K4f7OOLjiz8DTPFf
-//jC9UeuErhaA/zzWi8ewMTFZW/WshOrm3fNvcMrMLKtH534JKvcdMg6qIdjTFINIr
-//evnAhf0cwULaebn+lMs8Pdl7y37+sfluVok=
-//-----END CERTIFICATE-----";
+        // X509 RSA key PEM format 1024 bytes
+        // static string x509RsaPem1024bytesCertificate =
+        //@"-----BEGIN CERTIFICATE-----
+        //MIICVjCCAb8CAg37MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwG
+        //A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxETAPBgNVBAoTCEZyYW5rNERE
+        //MRgwFgYDVQQLEw9XZWJDZXJ0IFN1cHBvcnQxGDAWBgNVBAMTD0ZyYW5rNEREIFdl
+        //YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmcmFuazRkZC5jb20wHhcNMTIw
+        //ODIyMDUyNzIzWhcNMTcwODIxMDUyNzIzWjBKMQswCQYDVQQGEwJKUDEOMAwGA1UE
+        //CAwFVG9reW8xETAPBgNVBAoMCEZyYW5rNEREMRgwFgYDVQQDDA93d3cuZXhhbXBs
+        //ZS5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMYBBrx5PlP0WNI/ZdzD
+        //+6Pktmurn+F2kQYbtc7XQh8/LTBvCo+P6iZoLEmUA9e7EXLRxgU1CVqeAi7QcAn9
+        //MwBlc8ksFJHB0rtf9pmf8Oza9E0Bynlq/4/Kb1x+d+AyhL7oK9tQwB24uHOueHi1
+        //C/iVv8CSWKiYe6hzN1txYe8rAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAASPdjigJ
+        //kXCqKWpnZ/Oc75EUcMi6HztaW8abUMlYXPIgkV2F7YanHOB7K4f7OOLjiz8DTPFf
+        //jC9UeuErhaA/zzWi8ewMTFZW/WshOrm3fNvcMrMLKtH534JKvcdMg6qIdjTFINIr
+        //evnAhf0cwULaebn+lMs8Pdl7y37+sfluVok=
+        //-----END CERTIFICATE-----";
 
-            // X509 RSA key PEM format 2048 bytes
-            string certificate =
+        static string x509RsaPem2048bytesCertificate =
 @"-----BEGIN CERTIFICATE-----
 MIIC2jCCAkMCAg38MA0GCSqGSIb3DQEBBQUAMIGbMQswCQYDVQQGEwJKUDEOMAwG
 A1UECBMFVG9reW8xEDAOBgNVBAcTB0NodW8ta3UxETAPBgNVBAoTCEZyYW5rNERE
@@ -103,8 +93,5 @@ NRQykpwexmnjPPv0mvj7i8XgG379TyW6P+WWV5okeUkXJ9eJS2ouDYdR2SM9BoVW
 rGhLV1pRG9frwDFshqD2Vaj4ENBCBh6UpeBop5+285zQ4SI7q4U9oSebUDJiuOx6
 +tZ9KynmrbJpTSi0+BM=
 -----END CERTIFICATE-----";
-
-            return Encoding.UTF8.GetBytes(certificate);
-        }
     }
 }

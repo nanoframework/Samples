@@ -38,7 +38,7 @@
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="System.Net, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6df87852110734f7">
-      <HintPath>..\packages\nanoFramework.System.Net.1.0.0-preview031\lib\System.Net.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.System.Net.1.0.0-preview037\lib\System.Net.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>

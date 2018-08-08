@@ -3,7 +3,6 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using nanoFramework.Runtime.Native;
 using System;
 using System.Net;
 using System.Net.NetworkInformation;
@@ -22,7 +21,7 @@ namespace SecureClient
 
         public static void Main()
         {
-            X509Certificate letsEncryptCACert = new X509Certificate(GetCertificate());
+            X509Certificate letsEncryptCACert = new X509Certificate(letsEncryptCACertificate);
 
             Console.WriteLine("Setting up network and connecting...");
             SetupAndConnectNetwork();
@@ -168,13 +167,11 @@ namespace SecureClient
             }
         }
 
-        static byte[] GetCertificate()
-        {
-            // Let’s Encrypt Authority X3 (IdenTrust cross-signed)
-            // from https://letsencrypt.org/certificates/
+        // Let’s Encrypt Authority X3 (IdenTrust cross-signed)
+        // from https://letsencrypt.org/certificates/
 
-            // X509 RSA key PEM format 2048 bytes
-            string certificate =
+        // X509 RSA key PEM format 2048 bytes
+        private const string letsEncryptCACertificate =
 @"-----BEGIN CERTIFICATE-----
 MIIFjTCCA3WgAwIBAgIRANOxciY0IzLc9AUoUSrsnGowDQYJKoZIhvcNAQELBQAw
 TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
@@ -207,9 +204,6 @@ ayLThlHLN81gSkJjVrPI0Y8xCVPB4twb1PFUd2fPM3sA1tJ83sZ5v8vgFv2yofKR
 PB0t6JzUA81mSqM3kxl5e+IZwhYAyO0OTg3/fs8HqGTNKd9BqoUwSRBzp06JMg5b
 rUCGwbCUDI0mxadJ3Bz4WxR6fyNpBK2yAinWEsikxqEt
 -----END CERTIFICATE-----";
-
-            return Encoding.UTF8.GetBytes(certificate);
-        }
 
     }
 }
