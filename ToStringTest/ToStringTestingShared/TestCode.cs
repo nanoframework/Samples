@@ -15,6 +15,7 @@ namespace ToStringTest
             int i = 12345;
             int iNeg = -12345;
             double d = 123.45;
+            double d1 = -1898300.1987;
             float f = 456.78F;
             var i64 = Convert.ToInt64("01010101", 2);// this is 85 (decimal)
             long i64a = 1234567;
@@ -86,7 +87,25 @@ namespace ToStringTest
             Console.WriteLine("long '1234567': " + i64a.ToString("N0"));
             Console.WriteLine("ulong '200': " + i64b.ToString("N0"));
             Console.WriteLine("double '123.45': " + d.ToString("N0"));
+            Console.WriteLine("double '-1898300.1987': " + d1.ToString("N0"));
             Console.WriteLine("float '456.78F': " + f.ToString("N0"));
+            
+            ////////////////////////////////////////////
+            Console.WriteLine("");
+            Console.WriteLine("**********************");
+            Console.WriteLine(@"* ToString(""N"") test *");
+            Console.WriteLine("**********************");
+
+            Console.WriteLine("integer '0': " + zero.ToString("N"));
+            Console.WriteLine("integer '12345': " + i.ToString("N"));
+            Console.WriteLine("integer '-12345': " + iNeg.ToString("N"));
+            Console.WriteLine("long '85': " + i64.ToString("N"));
+            Console.WriteLine("long '1234567': " + i64a.ToString("N"));
+            Console.WriteLine("ulong '200': " + i64b.ToString("N"));
+            Console.WriteLine("double '123.45': " + d.ToString("N"));
+            Console.WriteLine("double '-1898300.1987': " + d1.ToString("N"));
+            Console.WriteLine("float '456.78F': " + f.ToString("N"));
+
 
             ////////////////////////////////////////////
             Console.WriteLine("");
@@ -101,6 +120,7 @@ namespace ToStringTest
             Console.WriteLine("long '1234567': " + i64a.ToString("N3"));
             Console.WriteLine("ulong '200': " + i64b.ToString("N3"));
             Console.WriteLine("double '123.45': " + d.ToString("N3"));
+            Console.WriteLine("double '-1898300.1987': " + d1.ToString("N3"));
             Console.WriteLine("float '456.78F': " + f.ToString("N3"));
         }
     }
