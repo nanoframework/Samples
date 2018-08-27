@@ -19,12 +19,19 @@ namespace SecureClient
         private const string c_SSID = "myssid";
         private const string c_AP_PASSWORD = "mypassword";
 
+        private static ManualResetEvent s_addressAvailable = new ManualResetEvent(false);
+
         public static void Main()
         {
             X509Certificate letsEncryptCACert = new X509Certificate(letsEncryptCACertificate);
 
             Console.WriteLine("Setting up network and connecting...");
             SetupAndConnectNetwork();
+
+            Console.WriteLine("Wait for IP");
+
+            // wait for a valid IP address
+            s_addressAvailable.WaitOne();
 
             SetDateTime();
 
@@ -34,7 +41,7 @@ namespace SecureClient
                 try
                 {
                     // get host entry for test site
-                    IPHostEntry hostEntry = Dns.GetHostEntry("www.howsmyssl.com");
+                    IPHostEntry hostEntry = Dns.GetHostEntry("https://www.howsmyssl.com");
 
                     // need an IPEndPoint from that one above
                     IPEndPoint ep = new IPEndPoint(hostEntry.AddressList[0], 443);
@@ -60,19 +67,19 @@ namespace SecureClient
 
                     Console.WriteLine($"Wrote {buffer.Length} bytes");
 
-                    while (true)
+                    // setup buffer to read data from socket
+                    buffer = new byte[1024];
+
+                    // trying to read from socket
+                    int bytes = ss.Read(buffer, 0, buffer.Length);
+
+                    Console.WriteLine($"Read {bytes} bytes");
+
+                    if (bytes > 0)
                     {
-                        buffer = new byte[1024];
-
-                        int bytes = ss.Read(buffer, 0, buffer.Length);
-
-                        Console.WriteLine($"Read {bytes} bytes");
-
-                        if(bytes > 0)
-                        {
-                            Console.WriteLine(new String(Encoding.UTF8.GetChars(buffer)));
-                        }
-
+                        // we have data!
+                        // output as string
+                        Console.WriteLine(new String(Encoding.UTF8.GetChars(buffer)));
                     }
                 }
                 catch (SocketException ex)
@@ -111,6 +118,8 @@ namespace SecureClient
 
         public static void SetupAndConnectNetwork()
         {
+            NetworkChange.NetworkAddressChanged += NetworkChange_NetworkAddressChanged;
+
             NetworkInterface[] nis = NetworkInterface.GetAllNetworkInterfaces();
             if (nis.Length > 0)
             {
@@ -141,9 +150,6 @@ namespace SecureClient
 
                     ni.EnableDhcp();
                 }
-
-                // wait for DHCP to complete
-                WaitIP();
             }
             else
             {
@@ -151,23 +157,17 @@ namespace SecureClient
             }
         }
 
-        static void WaitIP()
+        private static void NetworkChange_NetworkAddressChanged(object sender, nanoFramework.Runtime.Events.EventArgs e)
         {
-            Console.WriteLine("Wait for IP");
-
-            while (true)
+            NetworkInterface ni = NetworkInterface.GetAllNetworkInterfaces()[0];
+            if (ni.IPv4Address != null && ni.IPv4Address.Length > 0)
             {
-                NetworkInterface ni = NetworkInterface.GetAllNetworkInterfaces()[0];
-                if (ni.IPv4Address != null && ni.IPv4Address.Length > 0)
+                if (ni.IPv4Address[0] != '0')
                 {
-                    if (ni.IPv4Address[0] != '0')
-                    {
-                        Console.WriteLine($"We have and IP: {ni.IPv4Address}");
-                        break;
-                    }
-                }
+                    Console.WriteLine($"We have and IP: {ni.IPv4Address}");
 
-                Thread.Sleep(1000);
+                    s_addressAvailable.Set();
+                }
             }
         }
 
