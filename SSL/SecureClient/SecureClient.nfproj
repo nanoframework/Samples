@@ -28,7 +28,7 @@
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="nanoFramework.Runtime.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=72027bbd7f714be2">
-      <HintPath>..\packages\nanoFramework.Runtime.Events.1.0.0-preview180\lib\nanoFramework.Runtime.Events.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.Runtime.Events.1.0.0-preview183\lib\nanoFramework.Runtime.Events.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
@@ -37,10 +37,8 @@
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="System.Net, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6df87852110734f7">
-      <HintPath>..\packages\nanoFramework.System.Net.1.0.0-preview037\lib\System.Net.dll</HintPath>
-      <Private>True</Private>
-      <SpecificVersion>True</SpecificVersion>
+    <Reference Include="System.Net">
+      <HintPath>..\packages\nanoFramework.System.Net.1.0.0-preview040\lib\System.Net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

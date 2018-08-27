@@ -75,6 +75,10 @@ namespace SecureClient
 
                     }
                 }
+                catch (SocketException ex)
+                {
+                    Console.WriteLine($"** Socket exception occurred: {ex.Message} error code {ex.ErrorCode}!**");
+                }
                 catch (Exception ex)
                 {
                     Console.WriteLine($"** Exception occurred: {ex.Message}!**");
