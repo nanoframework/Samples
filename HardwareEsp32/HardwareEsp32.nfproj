@@ -23,22 +23,22 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.CoreLibrary.1.0.0-preview054\lib\mscorlib.dll</HintPath>
+      <HintPath>packages\nanoFramework.CoreLibrary.1.0.0-preview062\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="nanoFramework.Hardware.Esp32, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6df87852110734f7">
-      <HintPath>packages\nanoFramework.Hardware.Esp32.1.0.0-preview007\lib\nanoFramework.Hardware.Esp32.dll</HintPath>
+      <HintPath>packages\nanoFramework.Hardware.Esp32.1.0.0-preview012\lib\nanoFramework.Hardware.Esp32.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="nanoFramework.Runtime.Events, Version=1.0.0.0, Culture=neutral, PublicKeyToken=72027bbd7f714be2">
-      <HintPath>packages\nanoFramework.Runtime.Events.1.0.0-preview177\lib\nanoFramework.Runtime.Events.dll</HintPath>
+      <HintPath>packages\nanoFramework.Runtime.Events.1.0.0-preview183\lib\nanoFramework.Runtime.Events.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="Windows.Devices.Gpio, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6df87852110734f7">
-      <HintPath>packages\nanoFramework.Windows.Devices.Gpio.1.0.0-preview187\lib\Windows.Devices.Gpio.dll</HintPath>
+      <HintPath>packages\nanoFramework.Windows.Devices.Gpio.1.0.0-preview193\lib\Windows.Devices.Gpio.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
