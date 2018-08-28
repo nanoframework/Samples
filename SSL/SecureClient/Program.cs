@@ -19,19 +19,12 @@ namespace SecureClient
         private const string c_SSID = "myssid";
         private const string c_AP_PASSWORD = "mypassword";
 
-        private static ManualResetEvent s_addressAvailable = new ManualResetEvent(false);
-
         public static void Main()
         {
             X509Certificate letsEncryptCACert = new X509Certificate(letsEncryptCACertificate);
 
             Console.WriteLine("Setting up network and connecting...");
             SetupAndConnectNetwork();
-
-            Console.WriteLine("Wait for IP");
-
-            // wait for a valid IP address
-            s_addressAvailable.WaitOne();
 
             SetDateTime();
 
@@ -41,7 +34,7 @@ namespace SecureClient
                 try
                 {
                     // get host entry for test site
-                    IPHostEntry hostEntry = Dns.GetHostEntry("https://www.howsmyssl.com");
+                    IPHostEntry hostEntry = Dns.GetHostEntry("www.howsmyssl.com");
 
                     // need an IPEndPoint from that one above
                     IPEndPoint ep = new IPEndPoint(hostEntry.AddressList[0], 443);
@@ -118,8 +111,6 @@ namespace SecureClient
 
         public static void SetupAndConnectNetwork()
         {
-            NetworkChange.NetworkAddressChanged += NetworkChange_NetworkAddressChanged;
-
             NetworkInterface[] nis = NetworkInterface.GetAllNetworkInterfaces();
             if (nis.Length > 0)
             {
@@ -148,8 +139,12 @@ namespace SecureClient
                     // network interface is Ethernet
                     Console.WriteLine("Network connection is: Ethernet");
 
+                    ni.EnableAutomaticDns();
                     ni.EnableDhcp();
                 }
+
+                // wait for DHCP to complete
+                WaitIP();
             }
             else
             {
@@ -157,17 +152,23 @@ namespace SecureClient
             }
         }
 
-        private static void NetworkChange_NetworkAddressChanged(object sender, nanoFramework.Runtime.Events.EventArgs e)
+        static void WaitIP()
         {
-            NetworkInterface ni = NetworkInterface.GetAllNetworkInterfaces()[0];
-            if (ni.IPv4Address != null && ni.IPv4Address.Length > 0)
-            {
-                if (ni.IPv4Address[0] != '0')
-                {
-                    Console.WriteLine($"We have and IP: {ni.IPv4Address}");
+            Console.WriteLine("Wait for IP");
 
-                    s_addressAvailable.Set();
+            while (true)
+            {
+                NetworkInterface ni = NetworkInterface.GetAllNetworkInterfaces()[0];
+                if (ni.IPv4Address != null && ni.IPv4Address.Length > 0)
+                {
+                    if (ni.IPv4Address[0] != '0')
+                    {
+                        Console.WriteLine($"We have and IP: {ni.IPv4Address}");
+                        break;
+                    }
                 }
+
+                Thread.Sleep(1000);
             }
         }
 
