@@ -8,7 +8,7 @@ using System;
 using System.Threading;
 using Windows.Devices.Gpio;
 
-namespace I2C.DemoApp
+namespace Spi.DemoApp
 {
     public class Program
     {
