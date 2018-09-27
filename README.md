@@ -23,6 +23,7 @@ Feel free to browse, take what you like and contribute back if you want.
 * [I2C](I2C) it's a sample project demoing the I2C API by connecting to a touchscreen controller and reacting to touch events.
 * [Interop demonstration](Interop) it's a demonstration on how to create an Interop library and how to use it in another C# project.
 * [PWM](PWM) it's a sample solution to test outputting a PWM signal to drive an LED increasing and decreasing its light intensity periodically.
+* [Reflection](Reflection) it's a sample solution with various projects illustration Reflection related features.
 * [Resource Manager](ManagedResources) it's a demonstration on how to access the application managed resources.
 * [RTC Sample](RTC) it's a sample solution for testing RTC related stuff.
 * [SerialCommunication sample](/SerialCommunication) it's a sample solution for testing sending/receiving data using an UART (COM port)
