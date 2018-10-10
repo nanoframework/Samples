@@ -31,7 +31,15 @@ namespace Reflection.CustomAttributes
                 {
                     Console.WriteLine($"\nThe attributes for the method '{myMethods[i].Name}' of class '{myType.Name}' are:");
                     for (int j = 0; j < myAttributes.Length; j++)
+                    {
                         Console.WriteLine($"  {myAttributes[j]}");
+
+                        // check if the method has Attribute1
+                        if (typeof(Attribute1Attribute).Equals(myAttributes[j]))
+                        {
+                            Console.WriteLine($"  >>>>>>> {myMethods[i].Name} as 'Attribute1' attribute");
+                        }
+                    }
                 }
             }
 
