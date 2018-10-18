@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="nano_Framework_logo_32_border_trans" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\nano-Framework-logo-32-border-trans.png;System.Byte[], mscorlib, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731</value>
+  </data>
   <data name="String1" xml:space="preserve">
     <value>This is string 1</value>
   </data>

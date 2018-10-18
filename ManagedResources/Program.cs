@@ -24,6 +24,8 @@ namespace ManagedResources
 
             Console.WriteLine(Resources.GetString(Resources.StringResources.String2));
 
+            Console.WriteLine($"PNG image has {Resources.GetBytes(Resources.BinaryResources.nano_Framework_logo_32_border_trans).Length} bytes");
+
             Thread.Sleep(Timeout.Infinite);
         }
     }

@@ -33,19 +33,20 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="mscorlib, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.CoreLibrary.1.0.1-preview127\lib\mscorlib.dll</HintPath>
+    <None Include="packages.config" />
+    <None Include="Resources\nano-Framework-logo-32-border-trans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib, Version=1.0.4.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.CoreLibrary.1.0.4\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="nanoFramework.Runtime.Native, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Runtime.Native.1.0.0-preview216\lib\nanoFramework.Runtime.Native.dll</HintPath>
+      <HintPath>packages\nanoFramework.Runtime.Native.1.0.0\lib\nanoFramework.Runtime.Native.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <ProjectExtensions>
