@@ -9,7 +9,7 @@ using System.Threading;
 using Windows.Devices.Gpio;
 using static Driver.STMPE811;
 
-namespace I2C.DemoApp
+namespace I2CDemoApp
 {
     public class Program
     {
