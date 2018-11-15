@@ -15,6 +15,7 @@ Feel free to browse, take what you like and contribute back if you want.
 
 ### Sample list
 
+* [1-Wire](1-Wire) it's a sample solution to test reading 1-Wire devices serial number.
 * [ADC](ADC) it's a sample solution to test reading voltages from the board ADC hardware.
 * [Blinky](Blinky) it's a basic "Hello world" app that blinks an LED.
 * [Converter.Base64](Converter.Base64) it's a test application that shows how to encoding/decoding to/from Base64.

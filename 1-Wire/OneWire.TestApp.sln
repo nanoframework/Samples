@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "OneWire.TestApp", "OneWire.TestApp.nfproj", "{A33BFCEF-F0CA-463C-B090-611A3F7714AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A33BFCEF-F0CA-463C-B090-611A3F7714AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A33BFCEF-F0CA-463C-B090-611A3F7714AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A33BFCEF-F0CA-463C-B090-611A3F7714AB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A33BFCEF-F0CA-463C-B090-611A3F7714AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A33BFCEF-F0CA-463C-B090-611A3F7714AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A33BFCEF-F0CA-463C-B090-611A3F7714AB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8891A34-BDF6-48D8-846B-C664E40C8CD3}
+	EndGlobalSection
+EndGlobal
