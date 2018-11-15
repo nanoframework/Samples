@@ -1,6 +1,6 @@
 # 1-Wire sample
 
-Shows how to use the [Windows.Devices.OneWire](http://docs.nanoframework.net/api/Windows.Devices.OneWire.html) API to read and write from/to a 1-Wire device.
+Shows how to use the [nanoFramework.Devices.OneWire](http://docs.nanoframework.net/api/nanoFramework.Devices.OneWire.html) API to read and write from/to a 1-Wire device.
 
 
 > **Note:** This sample is part of a large collection of nanoFramework feature samples. 
@@ -28,8 +28,7 @@ The code sample is demonstrative of the use of the 1-Wire API.
 
 ### Reference
 
-[Windows.Devices.OneWire](http://docs.nanoframework.net/api/Windows.Devices.OneWire.html)
-[Windows.Devices.Gpio](http://docs.nanoframework.net/api/Windows.Devices.Gpio.html)
+[nanoFramework.Devices.OneWire](http://docs.nanoframework.net/api/nanoFramework.Devices.OneWire.html)
 
 <!-- [nanoFramework app samples]() -->
 
