@@ -22,6 +22,7 @@ Feel free to browse, take what you like and contribute back if you want.
 * [DebugGC.Test](DebugGC.Test) it's a sample solution for testing GC messages output.
 * [GCStressTest](GCStressTest) it's a test application that highly stresses the GC with random object creation.
 * [Gpio+Events.Test](Gpio+Events.Test) it's a sample project that constantly blinks an LED and turns another LED on/off reacting to the state of a button.
+* [Hardware STM32](Hardware.Stm32) it's a sample solution with various applications demonstrating the various features available in Hardware.Stm32 API.
 * [I2C](I2C) it's a sample project demoing the I2C API by connecting to a touchscreen controller and reacting to touch events.
 * [Interop demonstration](Interop) it's a demonstration on how to create an Interop library and how to use it in another C# project.
 * [PWM](PWM) it's a sample solution to test outputting a PWM signal to drive an LED increasing and decreasing its light intensity periodically.
