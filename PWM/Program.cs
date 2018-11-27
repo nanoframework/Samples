@@ -19,14 +19,16 @@ namespace PwmTest
 
             // there is no PWM output pin connected to an LED in STM32F769I_DISCO
             // the closest one is LD3 connected to PA12 and exposed in Arduino connector, pad D13
-            // need to set this as input 
+            // to see the PWM output in this LED need to short these two pins
+
+            // set this GPIO pin as input so it doesn't mess up with PWM output
             GpioPin dummyPad = GpioController.GetDefault().OpenPin(PinNumber('A', 12));
             dummyPad.SetDriveMode(GpioPinDriveMode.Input);
 
             PwmController pwmController;
             PwmPin pwmPin;
 
-            // we'll be using PA11, exposed in Arduino connector, pad D10,
+            // we'll be using PA11, exposed in Arduino connector, pad D10
             // as the PWM output pin, this one is TIM11_CH4
             pwmController = PwmController.FromId("TIM1");
             pwmController.SetDesiredFrequency(5000);
