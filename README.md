@@ -20,6 +20,7 @@ Feel free to browse, take what you like and contribute back if you want.
 * [Blinky](Blinky) it's a basic "Hello world" app that blinks an LED.
 * [Converter.Base64](Converter.Base64) it's a test application that shows how to encoding/decoding to/from Base64.
 * [DebugGC.Test](DebugGC.Test) it's a sample solution for testing GC messages output.
+* [Execution Constraint demo](ExecutionConstraint) simple demonstration of Execution Constraint to guard execution of code segments.
 * [GCStressTest](GCStressTest) it's a test application that highly stresses the GC with random object creation.
 * [Gpio+Events.Test](Gpio+Events.Test) it's a sample project that constantly blinks an LED and turns another LED on/off reacting to the state of a button.
 * [Hardware STM32](Hardware.Stm32) it's a sample solution with various applications demonstrating the various features available in Hardware.Stm32 API.
