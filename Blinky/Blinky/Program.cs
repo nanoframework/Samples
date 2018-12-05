@@ -45,8 +45,6 @@ namespace Blinky
                 Thread.Sleep(125);
                 led.Toggle();
                 Thread.Sleep(525);
-
-                Console.WriteLine("Hello from nanoFramework!");
             }
         }
 
