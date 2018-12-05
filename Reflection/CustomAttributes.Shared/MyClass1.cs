@@ -10,11 +10,23 @@ namespace Reflection.CustomAttributes
     [Attribute4]
     public class MyClass1
     {
+
         [Attribute1]
         [Attribute3]
         public void MyMethod1(int i)
         {
             return;
         }
+
+        [Ignore("I'm ignoring you!")]
+        public void MyMethodToIgnore()
+        {
+
+        }
+
+        private int _myField;
+
+        [Ignore("I'm ignoring you!")]
+        public int MyField => _myField;
     }
 }

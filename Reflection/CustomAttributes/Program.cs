@@ -39,6 +39,15 @@ namespace Reflection.CustomAttributes
                         {
                             Console.WriteLine($"  >>>>>>> {myMethods[i].Name} as 'Attribute1' attribute");
                         }
+
+                        // check if the method has IgnoreAttribute
+                        if (typeof(IgnoreAttribute).Equals(myAttributes[j]))
+                        {
+                            Console.WriteLine($"  >>>>>>> {myMethods[i].Name} as 'IgnoreAttribute' attribute");
+
+                            //var attributeData = myMethods[i].GetCustomAttributesData();
+
+                        }
                     }
                 }
             }

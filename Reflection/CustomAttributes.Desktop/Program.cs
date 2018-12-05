@@ -35,8 +35,29 @@ namespace Reflection.CustomAttributes
                     Console.WriteLine($"\nThe attributes for the method '{myMethods[i].Name}' of class '{myType.Name}' are:");
                     for (int j = 0; j < myAttributes.Length; j++)
                         Console.WriteLine($"  {myAttributes[j]}");
+
+                    var attributeData = myMethods[i].GetCustomAttributesData();
                 }
             }
+
+
+            // Get the methods associated with MyClass1.
+            FieldInfo[] myFields = myType.GetFields();
+
+            // Display the attributes for each of MyClass1 fields.
+            for (int i = 0; i < myFields.Length; i++)
+            {
+                myAttributes = myFields[i].GetCustomAttributes(true);
+                if (myAttributes.Length > 0)
+                {
+                    Console.WriteLine($"\nThe attributes for field '{myFields[i].Name}' of class '{myType.Name}' are:");
+                    for (int j = 0; j < myFields.Length; j++)
+                        Console.WriteLine($"  {myFields[j]}");
+
+                    var attributeData = myFields[i].GetCustomAttributesData();
+                }
+            }
+
         }
     }
 }
