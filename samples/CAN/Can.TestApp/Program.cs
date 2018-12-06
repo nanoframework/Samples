@@ -1,15 +1,26 @@
 ﻿using nanoFramework.Devices.Can;
 using System;
 using System.Threading;
+using Windows.Devices.Gpio;
 
 namespace Can.TestApp
 {
     public class Program
     {
+        static GpioPin _led;
+
         static CanController CanController1;
         static CanController CanController2;
         public static void Main()
         {
+            // PJ5 is LD2 in STM32F769I_DISCO
+            //_led = GpioController.GetDefault().OpenPin(PinNumber('J', 5));
+            // PG14 is LEDLD4 in F429I_DISCO
+            //_led = GpioController.GetDefault().OpenPin(PinNumber('G', 14));
+            // PD13 is LED3 in DISCOVERY4
+            _led = GpioController.GetDefault().OpenPin(PinNumber('D', 13));
+            _led.SetDriveMode(GpioPinDriveMode.Output);
+
             // set settings for CAN controller
             CanSettings canSettings = new CanSettings(6, 8, 1, 0);
 
@@ -52,9 +63,27 @@ namespace Can.TestApp
                     {
                         Console.Write(msg.Message[i].ToString("X2"));
                     }
+
+                    new Thread(BlinkLED).Start();
                 }
                 Console.WriteLine("");
             }
+        }
+
+        static void BlinkLED()
+        {
+            // blink led for each message received
+            _led.Write(GpioPinValue.High);
+            Thread.Sleep(500);
+            _led.Toggle();
+        }
+
+        static int PinNumber(char port, byte pin)
+        {
+            if (port < 'A' || port > 'J')
+                throw new ArgumentException();
+
+            return ((port - 'A') * 16) + pin;
         }
     }
 }
