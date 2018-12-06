@@ -19,7 +19,7 @@ Feel free to browse, take what you like and contribute back if you want.
 <table>
  <tr>
   <td><a href="samples/SerialCommunication">SerialCommunication sample pack</a></td>
-  <td><!--<a href="Utility/util2">Utility Two</a>--></td>
+  <td><a href="samples/CAN">CAN sample</a></td>
   <td><!--<a href="Utility/util3">Utility Three</a>--></td>
  </tr>
 </table>
