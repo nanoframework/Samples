@@ -3,6 +3,7 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using nanoFramework.Runtime.Events;
 using System;
 using System.Net;
 using System.Net.NetworkInformation;
@@ -19,12 +20,19 @@ namespace SecureClient
         private const string c_SSID = "myssid";
         private const string c_AP_PASSWORD = "mypassword";
 
+        static private ManualResetEvent _ipAddressAvailable = new ManualResetEvent(false);
+
         public static void Main()
         {
-            X509Certificate letsEncryptCACert = new X509Certificate(letsEncryptCACertificate);
+            NetworkChange.NetworkAddressChanged += new NetworkAddressChangedEventHandler(AddressChangedCallback);
 
-            Console.WriteLine("Setting up network and connecting...");
             SetupAndConnectNetwork();
+
+            Console.WriteLine("Waiting for network up and IP address...");
+
+            _ipAddressAvailable.WaitOne();
+
+            X509Certificate letsEncryptCACert = new X509Certificate(letsEncryptCACertificate);
 
             SetDateTime();
 
@@ -143,8 +151,8 @@ namespace SecureClient
                     ni.EnableDhcp();
                 }
 
-                // wait for DHCP to complete
-                WaitIP();
+                // check if we have an IP
+                CheckIP();
             }
             else
             {
@@ -152,24 +160,24 @@ namespace SecureClient
             }
         }
 
-        static void WaitIP()
+        static void CheckIP()
         {
-            Console.WriteLine("Wait for IP");
+            Console.WriteLine("Checking for IP");
 
-            while (true)
+            NetworkInterface ni = NetworkInterface.GetAllNetworkInterfaces()[0];
+            if (ni.IPv4Address != null && ni.IPv4Address.Length > 0)
             {
-                NetworkInterface ni = NetworkInterface.GetAllNetworkInterfaces()[0];
-                if (ni.IPv4Address != null && ni.IPv4Address.Length > 0)
+                if (ni.IPv4Address[0] != '0')
                 {
-                    if (ni.IPv4Address[0] != '0')
-                    {
-                        Console.WriteLine($"We have and IP: {ni.IPv4Address}");
-                        break;
-                    }
+                    Console.WriteLine($"We have and IP: {ni.IPv4Address}");
+                    _ipAddressAvailable.Set();
                 }
-
-                Thread.Sleep(1000);
             }
+        }
+
+        static void AddressChangedCallback(object sender, EventArgs e)
+        {
+            CheckIP();
         }
 
         // Let’s Encrypt Authority X3 (IdenTrust cross-signed)

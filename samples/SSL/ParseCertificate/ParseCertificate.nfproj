@@ -27,15 +27,11 @@
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="nanoFramework.Runtime.Events, Version=1.0.2.4, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+    <Reference Include="nanoFramework.Runtime.Events">
       <HintPath>..\packages\nanoFramework.Runtime.Events.1.0.2-preview-004\lib\nanoFramework.Runtime.Events.dll</HintPath>
-      <Private>True</Private>
-      <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="System.Net, Version=1.0.2.4, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+    <Reference Include="System.Net">
       <HintPath>..\packages\nanoFramework.System.Net.1.0.2-preview-004\lib\System.Net.dll</HintPath>
-      <Private>True</Private>
-      <SpecificVersion>True</SpecificVersion>
     </Reference>
   </ItemGroup>
   <ItemGroup>
