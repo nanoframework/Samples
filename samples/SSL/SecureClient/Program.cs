@@ -51,11 +51,30 @@ namespace SecureClient
                     // setup SSL stream
                     SslStream ss = new SslStream(mySocket);
 
-                    // setup authentication (add CA root certificate)
+                    ///////////////////////////////////////////////////////////////////////////////////
+                    // Authenticating the server can be handled in one of three ways:
+                    //
+                    // 1. By providing the root CA certificate of the server being connected to.
+                    // 
+                    // 2. Having the target device preloaded with the root CA certificate.
+                    // 
+                    // !! NOT SECURED !! NOT RECOMENDED !!
+                    // 3. Forcing the authentication workflow to NOT validate the server certificate.
+                    //
+                    /////////////////////////////////////////////////////////////////////////////////// 
+
+                    // option 1 
+                    // setup authentication (add CA root certificate to the call)
                     ss.AuthenticateAsClient("www.howsmyssl.com", null, letsEncryptCACert, SslProtocols.TLSv11);
 
-                    // setup authentication (without root CA certificate)
+                    // option 2
+                    // setup authentication (without providing root CA certificate)
                     // this requires that the trusted root CA certificates are available in the device certificate store
+                    //ss.AuthenticateAsClient("www.howsmyssl.com", SslProtocols.TLSv11);
+
+                    // option 3
+                    // disable certificate validation
+                    //ss.SslVerification = SslVerification.NoVerification;
                     //ss.AuthenticateAsClient("www.howsmyssl.com", SslProtocols.TLSv11);
 
                     Console.WriteLine("SSL handshake OK!");
