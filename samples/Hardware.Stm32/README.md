@@ -1,9 +1,10 @@
 # Hardware STM32 sample pack
 
 Shows how to use various APIs specific to STM32 targets.
+- [Alarm test](Stm32.TestAlarms)
 - [Backup memory](/Stm32.BackupMemory)
 - [Read device IDs](/Stm32.ReadDeviceIDs)
-- [Alarm test](Stm32.TestAlarms)
+- [Power down/off test](/Stm32.PowerMode)
 
 > **Note:** This sample is part of a large collection of nanoFramework feature samples. 
 > If you are unfamiliar with Git and GitHub, you can download the entire collection as a 
@@ -18,7 +19,6 @@ Shows how to use various APIs specific to STM32 targets.
 
 An STM32 hardware device running a nanoFramework image.
 
-
 ## Related topics
 
 ### Samples
@@ -28,6 +28,7 @@ An STM32 hardware device running a nanoFramework image.
 ### Reference
 
 [nanoFramework.Hardware.Stm32.BackupMemory](http://docs.nanoframework.net/api/nanoFramework.Hardware.Stm32.BackupMemory.html)
+[nanoFramework.Hardware.Stm32.Power](http://docs.nanoframework.net/api/nanoFramework.Hardware.Stm32.Power.html)
 [nanoFramework.Hardware.Stm32.RTC](http://docs.nanoframework.net/api/nanoFramework.Hardware.Stm32.RTC.html)
 [nanoFramework.Hardware.Stm32.Utilities](http://docs.nanoframework.net/api/nanoFramework.Hardware.Stm32.Utilities.html)
 
