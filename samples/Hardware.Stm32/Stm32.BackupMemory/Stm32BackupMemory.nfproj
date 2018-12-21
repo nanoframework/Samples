@@ -27,8 +27,8 @@
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="nanoFramework.Hardware.Stm32, Version=1.0.2.2, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Hardware.Stm32.1.0.2\lib\nanoFramework.Hardware.Stm32.dll</HintPath>
+    <Reference Include="nanoFramework.Hardware.Stm32, Version=1.0.3.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Hardware.Stm32.1.0.3-preview-003\lib\nanoFramework.Hardware.Stm32.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
