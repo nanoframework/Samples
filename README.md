@@ -29,12 +29,12 @@ Feel free to browse, take what you like and contribute back if you want.
  <tr>
   <td><a href="samples/ADC">ADC</a></td>
   <td><a href="samples/1-Wire">1-Wire</a></td>
-  <td><a href="samples/Gpio+Events.Test">Gpio+Events Test</a></td>
+  <td><a href="samples/Gpio%2BEvents">Gpio+Events Test</a></td>
  </tr>
 <tr>
   <td><a href="samples/I2C">I2C</a></td>
   <td><a href="samples/PWM">PWM</a></td>
-  <td><a href="samples/RTXC">RTC Sample</a></td>
+  <td><a href="samples/RTC">RTC Sample</a></td>
  </tr>
   <td><a href="samples/SPI">SPI</a></td>
   <td><!--<a href="PWM">PWM</a>--></td>
@@ -55,7 +55,7 @@ Feel free to browse, take what you like and contribute back if you want.
 <table>
  <tr>
   <td><a href="samples/HardwareEsp32">Hardware Esp32 Test</a></td>
-  <td><a href="samples/WiFi">WiFi</a></td>
+  <td><a href="samples/Wifi">WiFi</a></td>
   <td><!--<a href="Utility/util3">Utility Three</a>--></td>
  </tr>
 </table>
