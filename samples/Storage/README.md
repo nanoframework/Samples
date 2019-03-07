@@ -1,0 +1,75 @@
+# Storage sample pack
+
+Shows how to use the [Windows.Storage](http://docs.nanoframework.net/api/Windows.Storage.html) API to access storage, create and list folders and files, read and write from/to files using text or binary data.
+
+> **Note:** This sample is part of a large collection of nanoFramework feature samples.
+> If you are unfamiliar with Git and GitHub, you can download the entire collection as a
+> [ZIP file](https://github.com/nanoframework/Samples/archive/master.zip), but be
+> sure to unzip everything to access any shared dependencies.
+<!-- For more info on working with the ZIP file, 
+> the samples collection, and GitHub, see [Get the UWP samples from GitHub](https://aka.ms/ovu2uq). 
+> For more samples, see the [Samples portal](https://aka.ms/winsamples) on the Windows Dev Center.  -->
+
+This sample allows the user to create a folder and files in removable storage.
+
+## Scenarios
+
+### Access Removable Devices
+
+Lists the removable storage devices present in the target.
+
+### Create a folder
+
+This scenario demonstrates how to create a folder in a storage device, not replacing it if it already exists.
+
+### Create a file
+
+This scenario demonstrates how to create a file in a folder inside a storage device.
+
+### Write and read text to/from a file
+
+This scenario demonstrates how to write a string to a text file and then read it back.
+
+### Write and read binary data to/from a file
+
+This scenario demonstrates how to write a string converted to binary formate to a binary file and then read it back.
+
+## Hardware requirements
+
+Any hardware device running a nanoFramework image built with support for Windows.Storage device (SD card or USB mass storage device).
+This sample is coded to use the STM32F769IDiscovery target board, but can be easily changed to any other target that features a serial port.
+
+## Related topics
+
+### Samples
+
+[Storage sample](/Storage)
+
+### Reference
+
+[Windows.Storage](http://docs.nanoframework.net/api/Windows.Storage.html)
+
+<!-- [nanoFramework app samples]() -->
+
+## System requirements
+
+**Client:** Windows 10
+
+## Build the sample
+
+1. If you download the samples ZIP, be sure to unzip the entire archive, not just the folder with the sample you want to build. 
+2. Start Microsoft Visual Studio 2017 and select **File** \> **Open** \> **Project/Solution**.
+3. Starting in the folder where you unzipped the samples, go to the subfolder for this specific sample. Double-click the Visual Studio Solution (.sln) file.
+4. Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
+
+## Run the sample
+
+The next steps depend on whether you just want to deploy the sample or you want to both deploy and run it.
+
+### Deploying the sample
+
+- Select Build > Deploy Solution.
+
+### Deploying and running the sample
+
+- To debug the sample and then run it, press F5 or select Debug >  Start Debugging. To run the sample without debugging, press Ctrl+F5 or selectDebug > Start Without Debugging.

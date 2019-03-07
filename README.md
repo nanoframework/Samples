@@ -93,7 +93,7 @@ Feel free to browse, take what you like and contribute back if you want.
 <tr>
   <td><a href="samples/Reflection">Reflection</a></td>
   <td><a href="samples/Timer">Timer sample</a></td>
-  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
+  <td><a href="samples/Storage">Storage sample pack</a></td>
  </tr>
 </table>
 
