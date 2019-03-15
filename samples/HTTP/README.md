@@ -1,6 +1,6 @@
 # HTTP sample pack
 
-Shows how to use the [System.Net.Http](http://docs.nanoframework.net/api/System.Net.Http.html) API to work with HTTP.
+Shows how to use the HTTP related API in [System.Net](http://docs.nanoframework.net/api/System.Net.html).
 
 > **Note:** This sample is part of a large collection of nanoFramework feature samples.
 > If you are unfamiliar with Git and GitHub, you can download the entire collection as a
@@ -31,7 +31,7 @@ This sample is coded to use the STM32F769IDiscovery target board, but can be eas
 
 ### Reference
 
-[System.Net.Http](http://docs.nanoframework.net/api/System.Net.Http.html)
+[System.Net.HttpListener](http://docs.nanoframework.net/api/System.Net.HttpListener.html)
 
 <!-- [nanoFramework app samples]() -->
 
