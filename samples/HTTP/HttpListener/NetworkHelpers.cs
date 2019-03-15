@@ -26,13 +26,11 @@ namespace nanoFramework.Networking
             NetworkChange.NetworkAvailabilityChanged += NetworkChange_NetworkAvailabilityChanged;
 
             _requiresDateTime = requiresDateTime;
-
             new Thread(WorkingThread).Start();
         }
 
         private static void NetworkChange_NetworkAvailabilityChanged(object sender, NetworkAvailabilityEventArgs e)
         {
-            //throw new NotImplementedException();
             Console.WriteLine("Network availability changed");
         }
 
@@ -81,7 +79,7 @@ namespace nanoFramework.Networking
                 {
                     IpAddressAvailable.WaitOne();
 
-                    //SetDateTime();
+                    SetDateTime();
                 }
             }
             else
@@ -104,6 +102,8 @@ namespace nanoFramework.Networking
                 Thread.Sleep(1000);
             }
 
+            Console.WriteLine($"We have valid date & time: {DateTime.UtcNow.ToString()}");
+
             DateTimeAvailable.Set();
         }
 
@@ -123,6 +123,8 @@ namespace nanoFramework.Networking
                     return true;
                 }
             }
+
+            Console.WriteLine("NO IP");
 
             return false;
         }

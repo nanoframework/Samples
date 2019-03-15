@@ -1,8 +1,11 @@
-﻿using nanoFramework.Networking;
-using nanoFramework.Runtime.Native;
+﻿//
+// Copyright (c) 2018 The nanoFramework project contributors
+// See LICENSE file in the project root for full license information.
+//
+
+using nanoFramework.Networking;
 using System;
 using System.Net;
-using System.Threading;
 
 namespace HttpSamples.HttpListenerSample
 {
@@ -14,41 +17,35 @@ namespace HttpSamples.HttpListenerSample
             networkHerlpers.SetupAndConnectNetwork(true);
 
             Console.WriteLine("Waiting for network up and IP address...");
-
             NetworkHelpers.IpAddressAvailable.WaitOne();
 
-            //Console.WriteLine("Waiting for valid Date & Time...");
+            Console.WriteLine("Waiting for valid Date & Time...");
+            NetworkHelpers.DateTimeAvailable.WaitOne();
 
-            //NetworkHelpers.DateTimeAvailable.WaitOne();
+            // setup HTTP response
+            string responseString = "<HTML><BODY>Hello world!</BODY></HTML>";
+            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
 
             // Create a listener.
             HttpListener listener = new HttpListener("http");
 
-            listener.Start();
             Console.WriteLine("Listening...");
+            listener.Start();
 
-            // Note: The GetContext method blocks while waiting for a request. 
-            HttpListenerContext context = listener.GetContext();
-            HttpListenerRequest request = context.Request;
-            
-            // Obtain a response object.
-            HttpListenerResponse response = context.Response;
-            
-            // Construct a response.
-            string responseString = "<HTML><BODY> Hello world!</BODY></HTML>";
-            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(responseString);
-            
-            // Get a response stream and write the response to it.
-            response.ContentLength64 = buffer.Length;
-            System.IO.Stream output = response.OutputStream;
-            output.Write(buffer, 0, buffer.Length);
-            
-            // You must close the output stream.
-            output.Close();
-            listener.Stop();
+            while (true)
+            {
+                // Note: The GetContext method blocks while waiting for a request
+                HttpListenerContext context = listener.GetContext();
 
+                // Get the response stream and write the response content to it
+                context.Response.ContentLength64 = buffer.Length;
+                context.Response.OutputStream.Write(buffer, 0, buffer.Length);
 
-            Thread.Sleep(Timeout.Infinite);
+                // output stream must be closed
+                context.Response.Close();
+                // context must be closed
+                context.Close();
+            }
         }
     }
 }

@@ -45,8 +45,8 @@ Feel free to browse, take what you like and contribute back if you want.
 ### Networking
 <table>
  <tr>
+  <td><a href="samples/HTTP">HTTP sample pack</a></td>
   <td><a href="samples/SSL">SSL sample pack</a></td>
-  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
   <td><!--<a href="Utility/util3">Utility Three</a>--></td>
  </tr>
 </table>
