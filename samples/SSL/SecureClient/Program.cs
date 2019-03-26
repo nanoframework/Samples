@@ -30,17 +30,17 @@ namespace SecureClient
 
             X509Certificate letsEncryptCACert = new X509Certificate(letsEncryptCACertificate);
 
+            // get host entry for test site
+            IPHostEntry hostEntry = Dns.GetHostEntry("www.howsmyssl.com");
+
+            // need an IPEndPoint from that one above
+            IPEndPoint ep = new IPEndPoint(hostEntry.AddressList[0], 443);
+
             Console.WriteLine("Opening socket...");
-            using (Socket mySocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.IPv4))
+            using (Socket mySocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
             {
                 try
                 {
-                    // get host entry for test site
-                    IPHostEntry hostEntry = Dns.GetHostEntry("www.howsmyssl.com");
-
-                    // need an IPEndPoint from that one above
-                    IPEndPoint ep = new IPEndPoint(hostEntry.AddressList[0], 443);
-
                     Console.WriteLine("Connecting...");
 
                     // connect socket
