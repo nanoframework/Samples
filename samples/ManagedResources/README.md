@@ -12,7 +12,7 @@ Shows how to use the [System.Resources.ResourceManager](http://docs.nanoframewor
 
 This sample illustrates how to access from the code the application managed resources.
 
-**To access the application managed resources the project has to have a reference to _nanoFramework.Runtime.Native_.**
+:warning: **To access the application managed resources the project has to have a reference to _nanoFramework.Runtime.Native_.** :warning:
 
 
 ## Hardware requirements
