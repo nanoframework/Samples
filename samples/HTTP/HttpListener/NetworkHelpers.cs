@@ -49,7 +49,12 @@ namespace nanoFramework.Networking
                     Console.WriteLine("Network connection is: Wi-Fi");
 
                     Wireless80211Configuration wc = Wireless80211Configuration.GetAllWireless80211Configurations()[ni.SpecificConfigId];
-                    if (wc.Ssid != c_SSID && wc.Password != c_AP_PASSWORD)
+
+                    // note on checking the 802.11 configuration
+                    // on secure devices (like the TI CC3220SF) the password can't be read
+                    // so we can't use the code block bellow to automatically set the profile
+                    if ((wc.Ssid != c_SSID && wc.Password != c_AP_PASSWORD) &&
+                         (wc.Ssid != "" && wc.Password == ""))
                     {
                         // have to update Wi-Fi configuration
                         wc.Ssid = c_SSID;
@@ -57,7 +62,9 @@ namespace nanoFramework.Networking
                         wc.SaveConfiguration();
                     }
                     else
-                    {   // Wi-Fi configuration matches
+                    {
+                        // Wi-Fi configuration matches
+                        // (or can't be validated)
                     }
                 }
                 else
@@ -66,14 +73,11 @@ namespace nanoFramework.Networking
                     Console.WriteLine("Network connection is: Ethernet");
                 }
 
+                ni.EnableAutomaticDns();
+                ni.EnableDhcp();
+
                 // check if we have an IP
-                if(!CheckIP())
-                {
-                    if (ni.IsDhcpEnabled)
-                    {
-                        ni.RenewDhcpLease();
-                    }
-                }
+                CheckIP();
 
                 if (_requiresDateTime)
                 {
@@ -90,14 +94,24 @@ namespace nanoFramework.Networking
 
         private static void SetDateTime()
         {
-            Console.WriteLine("Setting up system clock...");
+            int retryCount = 30;
+
+            Console.WriteLine("Waiting for a valid date & time...");
 
             // if SNTP is available and enabled on target device this can be skipped because we should have a valid date & time
             while (DateTime.UtcNow.Year < 2018)
             {
-                Sntp.UpdateNow();
+                // force update if we haven't a valid time after 30 seconds
+                if(retryCount-- == 0)
+                {
+                    Console.WriteLine("Forcing SNTP update...");
 
-                Console.WriteLine("Waiting for valid date time...");
+                    Sntp.UpdateNow();
+
+                    // reset counter
+                    retryCount = 30;
+                }
+
                 // wait for valid date & time
                 Thread.Sleep(1000);
             }

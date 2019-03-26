@@ -6,6 +6,7 @@
 using nanoFramework.Networking;
 using System;
 using System.Net;
+using System.Net.NetworkInformation;
 
 namespace HttpSamples.HttpListenerSample
 {
@@ -29,7 +30,7 @@ namespace HttpSamples.HttpListenerSample
             // Create a listener.
             HttpListener listener = new HttpListener("http");
 
-            Console.WriteLine("Listening...");
+            Console.WriteLine($"Listening for HTTP requests @ {NetworkInterface.GetAllNetworkInterfaces()[0].IPv4Address}:80 ...");
             listener.Start();
 
             while (true)
