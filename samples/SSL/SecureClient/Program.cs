@@ -8,6 +8,7 @@ using System;
 using System.Net;
 using System.Net.Security;
 using System.Net.Sockets;
+using System.Resources;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
@@ -28,10 +29,21 @@ namespace SecureClient
 
             NetworkHelpers.DateTimeAvailable.WaitOne();
 
+            /////////////////////////////////////////////////////////////////////////////////////
+            // add certificate in PEM format (as a string in the app)
             X509Certificate letsEncryptCACert = new X509Certificate(letsEncryptCACertificate);
+            /////////////////////////////////////////////////////////////////////////////////////
 
-            // get host entry for test site
-            IPHostEntry hostEntry = Dns.GetHostEntry("www.howsmyssl.com");
+            /////////////////////////////////////////////////////////////////////////////////////
+            // add certificate in CER format (as a managed resource)
+            X509Certificate digiCertGlobalRootCACert = new X509Certificate(Resources.GetBytes(Resources.BinaryResources.DigiCertGlobalRootCA));
+            /////////////////////////////////////////////////////////////////////////////////////
+
+
+            // get host entry for How's my SSL test site
+            //IPHostEntry hostEntry = Dns.GetHostEntry("www.howsmyssl.com");
+            // get host entry for Global Root test site
+            IPHostEntry hostEntry = Dns.GetHostEntry("https://global-root-ca.chain-demos.digicert.com");
 
             // need an IPEndPoint from that one above
             IPEndPoint ep = new IPEndPoint(hostEntry.AddressList[0], 443);
@@ -65,7 +77,10 @@ namespace SecureClient
 
                     // option 1 
                     // setup authentication (add CA root certificate to the call)
-                    ss.AuthenticateAsClient("www.howsmyssl.com", null, letsEncryptCACert, SslProtocols.TLSv11);
+                    // Let's encrypt test certificate
+                    //ss.AuthenticateAsClient("www.howsmyssl.com", null, letsEncryptCACert, SslProtocols.TLSv11);
+                    // GlobalRoot CA cert from resources
+                    ss.AuthenticateAsClient("global-root-ca.chain-demos.digicert.com", null, digiCertGlobalRootCACert, SslProtocols.TLSv11);
 
                     // option 2
                     // setup authentication (without providing root CA certificate)

@@ -14,6 +14,8 @@ namespace ParseCertificate
     {
         public static void Main()
         {
+            //////////////////////////////////////////////////////////////////////////////////
+            // certificate in PEM format (as a string in the app)
             X509Certificate cert = new X509Certificate(x509RsaPem2048bytesCertificate);
 
             Console.WriteLine("Certificate Details:");
@@ -24,7 +26,30 @@ namespace ParseCertificate
             Console.WriteLine($"Expiry Date:: {cert.GetExpirationDate()}");
 
             // check raw data against buffer
-            if (cert.GetRawCertData().Equals(Encoding.UTF8.GetBytes(x509RsaPem2048bytesCertificate)))
+            if (cert.GetRawCertData().GetHashCode() != Encoding.UTF8.GetBytes(x509RsaPem2048bytesCertificate).GetHashCode())
+            {
+                Console.WriteLine("Raw data checks");
+            }
+            else
+            {
+                Console.WriteLine("******************************");
+                Console.WriteLine("ERROR: Raw data is different!!");
+                Console.WriteLine("******************************");
+            }
+
+            /////////////////////////////////////////////////////////////////////////////////////
+            // add certificate in CER format (as a managed resource)
+            cert = new X509Certificate(Resources.GetBytes(Resources.BinaryResources.DigiCertGlobalRootCA));
+
+            Console.WriteLine("DigiCert Certificate Details:");
+
+            Console.WriteLine($"Issuer: {cert.Issuer}");
+            Console.WriteLine($"Subject: {cert.Subject}");
+            Console.WriteLine($"Effective Date: {cert.GetEffectiveDate()}");
+            Console.WriteLine($"Expiry Date:: {cert.GetExpirationDate()}");
+
+            // check raw data against buffer
+            if (cert.GetRawCertData().GetHashCode() !=  Resources.GetBytes(Resources.BinaryResources.DigiCertGlobalRootCA).GetHashCode())
             {
                 Console.WriteLine("Raw data checks");
             }
