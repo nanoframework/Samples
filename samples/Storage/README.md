@@ -34,6 +34,10 @@ This scenario demonstrates how to write a string to a text file and then read it
 
 This scenario demonstrates how to write a string converted to binary formate to a binary file and then read it back.
 
+### Subscribe to Removable Devices event handlers
+
+This scenario demonstrates how to subscribe event handlers for Removable Devices events to be notified when a storage device is inserted and removed.
+
 ## Hardware requirements
 
 Any hardware device running a nanoFramework image built with support for Windows.Storage device (SD card or USB mass storage device).
