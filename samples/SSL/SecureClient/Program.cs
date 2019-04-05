@@ -41,9 +41,9 @@ namespace SecureClient
 
 
             // get host entry for How's my SSL test site
-            //IPHostEntry hostEntry = Dns.GetHostEntry("www.howsmyssl.com");
+            IPHostEntry hostEntry = Dns.GetHostEntry("www.howsmyssl.com");
             // get host entry for Global Root test site
-            IPHostEntry hostEntry = Dns.GetHostEntry("https://global-root-ca.chain-demos.digicert.com");
+            //IPHostEntry hostEntry = Dns.GetHostEntry("global-root-ca.chain-demos.digicert.com");
 
             // need an IPEndPoint from that one above
             IPEndPoint ep = new IPEndPoint(hostEntry.AddressList[0], 443);
@@ -78,14 +78,15 @@ namespace SecureClient
                     // option 1 
                     // setup authentication (add CA root certificate to the call)
                     // Let's encrypt test certificate
-                    //ss.AuthenticateAsClient("www.howsmyssl.com", null, letsEncryptCACert, SslProtocols.TLSv11);
+                    ss.AuthenticateAsClient("www.howsmyssl.com", null, letsEncryptCACert, SslProtocols.TLSv11);
                     // GlobalRoot CA cert from resources
-                    ss.AuthenticateAsClient("global-root-ca.chain-demos.digicert.com", null, digiCertGlobalRootCACert, SslProtocols.TLSv11);
+                    //ss.AuthenticateAsClient("global-root-ca.chain-demos.digicert.com", null, digiCertGlobalRootCACert, SslProtocols.TLSv11);
 
                     // option 2
                     // setup authentication (without providing root CA certificate)
                     // this requires that the trusted root CA certificates are available in the device certificate store
                     //ss.AuthenticateAsClient("www.howsmyssl.com", SslProtocols.TLSv11);
+                    //ss.AuthenticateAsClient("global-root-ca.chain-demos.digicert.com", SslProtocols.TLSv12);
 
                     // option 3
                     // disable certificate validation
