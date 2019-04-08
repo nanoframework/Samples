@@ -14,10 +14,6 @@ This sample allows the user to create a folder and files in removable storage.
 
 ## Scenarios
 
-### HTTP listener
-
-Example on how to implement a HTTP listener to reply to incoming HTTP requests.
-
 ### HTTP Web Request
 
 Example on how to perform a HTTP Web requests. Optionally to secured (TLS) servers.
@@ -35,7 +31,6 @@ This sample is coded to use the STM32F769IDiscovery target board, but can be eas
 
 ### Reference
 
-[System.Net.HttpListener](http://docs.nanoframework.net/api/System.Net.HttpListener.html)
 [System.Net.HttpWebRequest](http://docs.nanoframework.net/api/System.Net.HttpWebRequest.html)
 
 <!-- [nanoFramework app samples]() -->
