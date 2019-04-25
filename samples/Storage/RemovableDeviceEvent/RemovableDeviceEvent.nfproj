@@ -27,13 +27,13 @@
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="nanoFramework.Runtime.Events, Version=1.0.5.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Runtime.Events.1.0.5-preview-019\lib\nanoFramework.Runtime.Events.dll</HintPath>
+    <Reference Include="nanoFramework.Runtime.Events, Version=1.0.6.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Runtime.Events.1.0.6-preview-001\lib\nanoFramework.Runtime.Events.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="Windows.Storage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Windows.Storage.1.0.0-preview-048\lib\Windows.Storage.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.Windows.Storage.1.0.0-preview-049\lib\Windows.Storage.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
