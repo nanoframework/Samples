@@ -15,6 +15,7 @@ namespace AccessRemovableDevices
             // need to wait to allow time for the drives to be enumerated
             Thread.Sleep(3000);
 
+
             // Get the logical root folder for all removable storage devices
             // in nanoFramework the drive letters are fixed, being:
             // D: SD Card

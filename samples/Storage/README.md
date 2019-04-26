@@ -10,13 +10,23 @@ Shows how to use the [Windows.Storage](http://docs.nanoframework.net/api/Windows
 > the samples collection, and GitHub, see [Get the UWP samples from GitHub](https://aka.ms/ovu2uq). 
 > For more samples, see the [Samples portal](https://aka.ms/winsamples) on the Windows Dev Center.  -->
 
-This sample allows the user to create a folder and files in removable storage.
+This sample shows how a user can create a folder and files in removable storage and files in internal flash storage.
+Internal flash storage doesn't support folders.
 
 ## Scenarios
 
 ### Access Removable Devices
 
-Lists the removable storage devices present in the target.
+Lists the removable storage devices present in the target and runs the following folder and file base scenarios on the 1st drive.
+
+### Access Internal Devices
+
+Lists the internal storage devices present in the target and runs the following file base scenarios on the 1st drive.
+
+
+###  Mount a device (ESP32 Only)
+
+Shows how to mount a SDCard device and list the folders and files.
 
 ### Create a folder
 
@@ -34,6 +44,32 @@ This scenario demonstrates how to write a string to a text file and then read it
 
 This scenario demonstrates how to write a string converted to binary formate to a binary file and then read it back.
 
+### Create multi level folders
+
+Shows how to create folders in multi levels.
+
+### Create files in a folder
+
+This scenario goes further than the Create a file scenario to create multiple files in a low level folder.
+
+### Rename a folder
+
+This scenario demonstrates how to rename a folder.
+
+### Delete FIles and Folders
+
+This scenario demonstrates how delete files and folder with a recusive method to delete a whole folder tree.
+
+### Rename files
+
+This scenario demonstrates how to rename a file.
+
+### Unmount SDCard
+
+This scenario demonstrates how to unmount a mounted drive (ESP32)
+
+
+
 ### Subscribe to Removable Devices event handlers
 
 This scenario demonstrates how to subscribe event handlers for Removable Devices events to be notified when a storage device is inserted and removed.
@@ -41,7 +77,6 @@ This scenario demonstrates how to subscribe event handlers for Removable Devices
 ## Hardware requirements
 
 Any hardware device running a nanoFramework image built with support for Windows.Storage device (SD card or USB mass storage device).
-This sample is coded to use the STM32F769IDiscovery target board, but can be easily changed to any other target that features a serial port.
 
 ## Related topics
 
