@@ -44,7 +44,7 @@ namespace DebugGC.Test
                 led.Toggle();
                 Thread.Sleep(400);
 
-                Console.WriteLine(">> " + i.ToString() + " free memory: " + Debug.GC(true) + " bytes");
+                Console.WriteLine(">> " + i.ToString() + " free memory: " + Debug.GC(false) + " bytes");
 
                 Thread.Sleep(1000);
             }
