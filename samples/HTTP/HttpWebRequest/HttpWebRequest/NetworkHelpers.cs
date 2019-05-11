@@ -53,8 +53,8 @@ namespace nanoFramework.Networking
                     // note on checking the 802.11 configuration
                     // on secure devices (like the TI CC3220SF) the password can't be read
                     // so we can't use the code block bellow to automatically set the profile
-                    if ((wc.Ssid != c_SSID && wc.Password != c_AP_PASSWORD) &&
-                         (wc.Ssid != "" && wc.Password == ""))
+                    if ( (wc.Ssid != c_SSID && wc.Password != c_AP_PASSWORD) &&
+                         (wc.Ssid != "" && wc.Password != ""))
                     {
                         // have to update Wi-Fi configuration
                         wc.Ssid = c_SSID;
@@ -99,7 +99,7 @@ namespace nanoFramework.Networking
             Console.WriteLine("Waiting for a valid date & time...");
 
             // if SNTP is available and enabled on target device this can be skipped because we should have a valid date & time
-            while (DateTime.UtcNow.Year < 2018)
+            while ((DateTime.UtcNow.Year < 2018) || (DateTime.UtcNow.Year > 2020))
             {
                 // force update if we haven't a valid time after 30 seconds
                 if (retryCount-- == 0)
