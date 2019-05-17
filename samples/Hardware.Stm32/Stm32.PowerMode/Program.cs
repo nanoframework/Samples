@@ -29,6 +29,25 @@ namespace Stm32.PowerMode
             led.SetDriveMode(GpioPinDriveMode.Output);
             led.Write(GpioPinValue.High);
 
+            // query target about wake-up reason
+            switch (STM32.Power.WakeupReason)
+            {
+                case STM32.Power.WakeupReasonType.FromPin:
+                    Console.WriteLine("[INFO] Device woke-up on GPIO event.");
+                    break;
+
+                case STM32.Power.WakeupReasonType.FromStandby:
+                    Console.WriteLine("[INFO] Device woke-up from standby (possibly from alarm).");
+                    break;
+
+                case STM32.Power.WakeupReasonType.Undetermined:
+                    Console.WriteLine("[INFO] Couldn't determine woke-up reason.");
+                    break;
+            }
+
+            // enable wake-up from GPIO pin
+            STM32.Power.EnableWakeupPin(STM32.Power.WakeupPin.Pin1);
+
             // start a thread blinking the LED to check that something is happening 
             new Thread( () => {
                 while (true)
@@ -43,14 +62,33 @@ namespace Stm32.PowerMode
 
             STM32.RTC.SetAlarm(alarmTime);
 
-            Console.WriteLine($"Alarm was set to {alarmTime.ToString("u")}");
+            Console.WriteLine($"Setting alarm to {alarmTime.ToString("u")}");
 
-            // sleep here for 10 seconds to allow the LED to blink after wakeup
-            Thread.Sleep(10000);
+            // read back alarm setting, just to be sure
+            var alarmTimeCheck = STM32.RTC.GetAlarm();
 
-            // this call never returns
-            // after this the target will enter SMT32 CPU standby mode and will be waked by the RTC alarm in 30 - 10 seconds
-            STM32.Power.EnterStandbyMode();
+            if( (alarmTimeCheck.Year != alarmTime.Year) ||
+                (alarmTimeCheck.Month != alarmTime.Month) ||
+                (alarmTimeCheck.Day != alarmTime.Day) ||
+                (alarmTimeCheck.Hour != alarmTime.Hour) ||
+                (alarmTimeCheck.Minute != alarmTime.Minute) ||
+                (alarmTimeCheck.Second != alarmTime.Second)) 
+            {
+                Console.WriteLine($"!!!! ERROR: alarm time read from target is different from the set one: {alarmTimeCheck.ToString("u")}");
+            }
+            else
+            {
+                Console.WriteLine($"Alarm was set to {alarmTime.ToString("u")}");
+
+                // sleep here for 10 seconds to allow the LED to blink after wakeup
+                Thread.Sleep(10000);
+
+                Console.WriteLine($"Going to standby mode now...");
+
+                // this call never returns
+                // after this the target will enter SMT32 CPU standby mode and will be waked by the RTC alarm in 30 - 10 seconds
+                STM32.Power.EnterStandbyMode();
+            }
 
             Thread.Sleep(Timeout.Infinite);
         }
