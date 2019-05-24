@@ -1,7 +1,7 @@
 # I2C sample
 
 Shows how to use the [Windows.Devices.I2c](http://docs.nanoframework.net/api/Windows.Devices.I2c.html) API to read and write from/to an I2C device.
-In this sample we'll be using a [STMPE811](www.st.com/en/mems-and-sensors/stmpe811.html) resistive touchscreen controller mounted in a [STM32F429I DISCOVERY](http://www.st.com/en/evaluation-tools/32f429idiscovery.html) board.
+In this sample we'll be using a [STMPE811](https://www.digikey.com/en/product-highlight/s/stmicroelectronics/stmpe811) resistive touchscreen controller mounted in a [STM32F429I DISCOVERY](http://www.st.com/en/evaluation-tools/32f429idiscovery.html) board.
 
 The sample project includes a minimal driver for the STMPE811.
 It configures the touchscreen controller and the GPIO pin where the INT signal of the controller is connected allowing the code to react to a touch event rather then wasting CPU by constantly pooling the touch detection.
