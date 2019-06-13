@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>e98bce69-4c45-4d98-b38e-c3ed8c04efff</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>NumberParserTestShared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)TestInt16.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestInt64.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestInt32.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestUInt64.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestUInt32.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestUInt16.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestSByte.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestByte.cs" />
+  </ItemGroup>
+</Project>
