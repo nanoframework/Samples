@@ -1,4 +1,4 @@
-﻿using nanoFramework.Json;
+using nanoFramework.Json;
 using System;
 using System.Text;
 using Windows.Storage;
