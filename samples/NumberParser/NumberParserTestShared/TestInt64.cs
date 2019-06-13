@@ -1,23 +1,23 @@
 ﻿using System;
 
-namespace ConverterTestShared
+namespace NumberParserTestShared
 {
-    public class TestInt16
+    public class TestInt64
     {
         class Test
         {
             public string InputString { get; set; }
             public bool ThrowsException { get; set; }
-            public Int16 Result { get; set; }
+            public Int64 Result { get; set; }
 
-            public Test(string inputString, bool throwsException, Int16 result)
+            public Test(string inputString, bool throwsException, Int64 result)
             {
                 InputString = inputString;
                 ThrowsException = throwsException;
                 Result = result;
             }
 
-            public Test(string inputString, Int16 result)
+            public Test(string inputString, Int64 result)
             {
                 InputString = inputString;
                 ThrowsException = false;
@@ -41,18 +41,20 @@ namespace ConverterTestShared
             new Test("-128", SByte.MinValue),
             new Test("127", SByte.MaxValue),
 
-            new Test("65535"),
+            new Test("65535", UInt16.MaxValue),
             new Test("-32768", Int16.MinValue),
-            new Test("32767", 32767),
+            new Test("32767", Int16.MaxValue),
 
-            new Test("4294967295"),
-            new Test("-2147483648"),
-            new Test("2147483647"),
+            new Test("4294967295", UInt32.MaxValue),
+            new Test("-2147483648", Int32.MinValue),
+            new Test("2147483647", Int32.MaxValue),
 
             new Test("18446744073709551615"),
-            new Test("-9223372036854775808"),
-            new Test("9223372036854775807"),
-            
+            new Test("-9223372036854775808", Int64.MinValue),
+            new Test("9223372036854775807", Int64.MaxValue),
+
+            new Test("9223372036854775808"),
+
             new Test("NaN"),
             new Test("null"),
             new Test("123.1"),
@@ -85,7 +87,7 @@ namespace ConverterTestShared
 
                 try
                 {
-                    var val = Int16.Parse(test.InputString);
+                    var val = Int64.Parse(test.InputString);
                     correctValue = (val == test.Result);
                 }
                 catch
@@ -107,8 +109,7 @@ namespace ConverterTestShared
                 }
 
             }
-
-            Console.WriteLine("TestInt16 Tests: " + _testCount + " Fails: " + _fails);
+            Console.WriteLine("TestInt64 Tests: " + _testCount + " Fails: " + _fails);
         }
 
     }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConverterTestShared
+namespace NumberParserTestShared
 {
     public class TestUInt64
     {

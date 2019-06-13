@@ -1,23 +1,23 @@
 ﻿using System;
 
-namespace ConverterTestShared
+namespace NumberParserTestShared
 {
-    public class TestInt64
+    public class TestSByte
     {
         class Test
         {
             public string InputString { get; set; }
             public bool ThrowsException { get; set; }
-            public Int64 Result { get; set; }
+            public SByte Result { get; set; }
 
-            public Test(string inputString, bool throwsException, Int64 result)
+            public Test(string inputString, bool throwsException, SByte result)
             {
                 InputString = inputString;
                 ThrowsException = throwsException;
                 Result = result;
             }
 
-            public Test(string inputString, Int64 result)
+            public Test(string inputString, SByte result)
             {
                 InputString = inputString;
                 ThrowsException = false;
@@ -37,24 +37,22 @@ namespace ConverterTestShared
             new Test("1", 1),
             new Test("-1", -1),
 
-            new Test("255", Byte.MaxValue),
+            new Test("255"),
             new Test("-128", SByte.MinValue),
             new Test("127", SByte.MaxValue),
 
-            new Test("65535", UInt16.MaxValue),
-            new Test("-32768", Int16.MinValue),
-            new Test("32767", Int16.MaxValue),
+            new Test("65535"),
+            new Test("-32768"),
+            new Test("32767"),
 
-            new Test("4294967295", UInt32.MaxValue),
-            new Test("-2147483648", Int32.MinValue),
-            new Test("2147483647", Int32.MaxValue),
+            new Test("4294967295"),
+            new Test("-2147483648"),
+            new Test("2147483647"),
 
             new Test("18446744073709551615"),
-            new Test("-9223372036854775808", Int64.MinValue),
-            new Test("9223372036854775807", Int64.MaxValue),
-
-            new Test("9223372036854775808"),
-
+            new Test("-9223372036854775808"),
+            new Test("9223372036854775807"),
+            
             new Test("NaN"),
             new Test("null"),
             new Test("123.1"),
@@ -87,7 +85,7 @@ namespace ConverterTestShared
 
                 try
                 {
-                    var val = Int64.Parse(test.InputString);
+                    var val = SByte.Parse(test.InputString);
                     correctValue = (val == test.Result);
                 }
                 catch
@@ -109,7 +107,8 @@ namespace ConverterTestShared
                 }
 
             }
-            Console.WriteLine("TestInt64 Tests: " + _testCount + " Fails: " + _fails);
+            Console.WriteLine("TestSByte Tests: " + _testCount + " Fails: " + _fails);
+
         }
 
     }

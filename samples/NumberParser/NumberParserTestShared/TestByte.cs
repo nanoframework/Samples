@@ -1,23 +1,23 @@
 ﻿using System;
 
-namespace ConverterTestShared
+namespace NumberParserTestShared
 {
-    public class TestSByte
+    public class TestByte
     {
         class Test
         {
             public string InputString { get; set; }
             public bool ThrowsException { get; set; }
-            public SByte Result { get; set; }
+            public Byte Result { get; set; }
 
-            public Test(string inputString, bool throwsException, SByte result)
+            public Test(string inputString, bool throwsException, Byte result)
             {
                 InputString = inputString;
                 ThrowsException = throwsException;
                 Result = result;
             }
 
-            public Test(string inputString, SByte result)
+            public Test(string inputString, Byte result)
             {
                 InputString = inputString;
                 ThrowsException = false;
@@ -35,11 +35,11 @@ namespace ConverterTestShared
         {
             new Test("0", 0),
             new Test("1", 1),
-            new Test("-1", -1),
+            new Test("-1"),
 
-            new Test("255"),
-            new Test("-128", SByte.MinValue),
-            new Test("127", SByte.MaxValue),
+            new Test("255", Byte.MaxValue),
+            new Test("-128"),
+            new Test("127", 127),
 
             new Test("65535"),
             new Test("-32768"),
@@ -52,7 +52,7 @@ namespace ConverterTestShared
             new Test("18446744073709551615"),
             new Test("-9223372036854775808"),
             new Test("9223372036854775807"),
-            
+
             new Test("NaN"),
             new Test("null"),
             new Test("123.1"),
@@ -85,7 +85,7 @@ namespace ConverterTestShared
 
                 try
                 {
-                    var val = SByte.Parse(test.InputString);
+                    var val = Byte.Parse(test.InputString);
                     correctValue = (val == test.Result);
                 }
                 catch
@@ -107,7 +107,8 @@ namespace ConverterTestShared
                 }
 
             }
-            Console.WriteLine("TestSByte Tests: " + _testCount + " Fails: " + _fails);
+
+            Console.WriteLine("TestByte Tests: " + _testCount + " Fails: " + _fails);
 
         }
 

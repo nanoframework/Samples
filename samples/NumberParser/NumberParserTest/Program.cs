@@ -1,8 +1,8 @@
-﻿using ConverterTestShared;
+﻿using NumberParserTestShared;
 using System;
 using System.Threading;
 
-namespace ConverterTest
+namespace NumberParserTest
 {
     public class Program
     {

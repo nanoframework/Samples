@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B7FEF664-44B1-4E33-8F16-8D5B6DA7A11D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DesktopConverterTest</RootNamespace>
-    <AssemblyName>DesktopConverterTest</AssemblyName>
+    <RootNamespace>DesktopNumberParserTest</RootNamespace>
+    <AssemblyName>DesktopNumberParserTest</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -51,6 +51,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <Import Project="..\ConverterTestShared\ConverterTestShared.projitems" Label="Shared" />
+  <Import Project="..\NumberParserTestShared\NumberParserTestShared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

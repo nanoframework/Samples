@@ -1,23 +1,23 @@
 ﻿using System;
 
-namespace ConverterTestShared
+namespace NumberParserTestShared
 {
-    public class TestUInt16
+    public class TestInt16
     {
         class Test
         {
             public string InputString { get; set; }
             public bool ThrowsException { get; set; }
-            public UInt16 Result { get; set; }
+            public Int16 Result { get; set; }
 
-            public Test(string inputString, bool throwsException, UInt16 result)
+            public Test(string inputString, bool throwsException, Int16 result)
             {
                 InputString = inputString;
                 ThrowsException = throwsException;
                 Result = result;
             }
 
-            public Test(string inputString, UInt16 result)
+            public Test(string inputString, Int16 result)
             {
                 InputString = inputString;
                 ThrowsException = false;
@@ -35,14 +35,14 @@ namespace ConverterTestShared
         {
             new Test("0", 0),
             new Test("1", 1),
-            new Test("-1"),
+            new Test("-1", -1),
 
             new Test("255", Byte.MaxValue),
-            new Test("-128"),
-            new Test("127", 127),
+            new Test("-128", SByte.MinValue),
+            new Test("127", SByte.MaxValue),
 
-            new Test("65535", UInt16.MaxValue),
-            new Test("-32768"),
+            new Test("65535"),
+            new Test("-32768", Int16.MinValue),
             new Test("32767", 32767),
 
             new Test("4294967295"),
@@ -85,7 +85,7 @@ namespace ConverterTestShared
 
                 try
                 {
-                    var val = UInt16.Parse(test.InputString);
+                    var val = Int16.Parse(test.InputString);
                     correctValue = (val == test.Result);
                 }
                 catch
@@ -107,7 +107,8 @@ namespace ConverterTestShared
                 }
 
             }
-            Console.WriteLine("TestUInt16 Tests: " + _testCount + " Fails: " + _fails);
+
+            Console.WriteLine("TestInt16 Tests: " + _testCount + " Fails: " + _fails);
         }
 
     }

@@ -1,9 +1,9 @@
 using System;
 using System.Globalization;
 using System.Threading;
-using ConverterTestShared;
+using NumberParserTestShared;
 
-namespace DesktopConverterTest
+namespace DesktopNumberParserTest
 {
     class Program
     {
