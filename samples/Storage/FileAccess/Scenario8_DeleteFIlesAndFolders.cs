@@ -39,12 +39,26 @@ namespace FileAccess
         /// </summary>
         /// <param name="startingFolder">Start folder to delete from.</param>
         /// <remarks>
-        /// This method recusively works down the tree,  deleting files and folders on the tree leafs first. 
+        /// This method recursively works down the tree,  deleting files and folders on the tree leafs first. 
         /// If a drive is passed as start then all folders and files will be deleted.
         /// </remarks>
         static void DeleteFolderTreeHelper(StorageFolder startingFolder)
         {
             Console.WriteLine($"Enter DeleteFolderTreeHelper {startingFolder.Path}");
+
+            StorageFile[] files = startingFolder.GetFiles();
+            foreach (StorageFile file in files)
+            {
+                Console.WriteLine($"Delete tree file {file.Path}");
+                try
+                {
+                    file.Delete();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Exception Deleting file {file.Path} : {ex.Message}");
+                }
+            }
 
             StorageFolder[] folders = startingFolder.GetFolders();
             foreach (StorageFolder folder in folders)
@@ -61,23 +75,7 @@ namespace FileAccess
                     Console.WriteLine($"Exception Deleting folder {folder.Path} : {ex.Message}");
                 }
             }
-
-            StorageFile[] files = startingFolder.GetFiles();
-            foreach (StorageFile file in files)
-            {
-                Console.WriteLine($"Delete tree file {file.Path}");
-                try
-                {
-                    file.Delete();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Exception Deleting file {file.Path} : {ex.Message}");
-                }
-            }
         }
-
-
     }
 }
 
