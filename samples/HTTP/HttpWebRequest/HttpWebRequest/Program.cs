@@ -54,7 +54,7 @@ namespace HttpSamples.HttpWebRequestSample
                 // need to set the SSL protocol that the connection is going to use //
                 // *** this MANDATORY otherwise the authentication will fail ***    //
                 //////////////////////////////////////////////////////////////////////
-                httpWebRequest.SslProtocols = System.Net.Security.SslProtocols.TLSv11;
+                httpWebRequest.SslProtocols = System.Net.Security.SslProtocols.Tls11;
 
                 // if the request is to a secured server we need to make sure that we either:
                 // 1. provide the root CA certificate 
