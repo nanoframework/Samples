@@ -17,9 +17,9 @@ namespace TimerSample
         {
             // mind to set a pin that exists on the board being tested
             // PJ5 is LD2 in STM32F769I_DISCO
-            //_led = GpioController.GetDefault().OpenPin(PinNumber('J', 5));
+            _led = GpioController.GetDefault().OpenPin(PinNumber('J', 5));
             // PG14 is LEDLD4 in F429I_DISCO
-            _led = GpioController.GetDefault().OpenPin(PinNumber('G', 14));
+            //_led = GpioController.GetDefault().OpenPin(PinNumber('G', 14));
 
             _led.SetDriveMode(GpioPinDriveMode.Output);
 
