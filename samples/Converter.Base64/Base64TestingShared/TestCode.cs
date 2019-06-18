@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text;
-#if (!NANOFRAMEWORK_V1_0)
+#if (!NANOFRAMEWORK_1_0)
 using System.Linq;
 #endif
 
@@ -56,7 +56,7 @@ namespace Base64TestingShared
             // decode a base64 test encode string
             var base64DecodeConvertionResult = Convert.FromBase64String(base64TestEncode);
             // compare arrays, they should match
-#if (NANOFRAMEWORK_V1_0)
+#if (NANOFRAMEWORK_1_0)
             if (base64DecodeConvertionResult.GetHashCode() != base64TestDecode.GetHashCode())
 #else
             var result = base64DecodeConvertionResult.Except(base64TestDecode);
