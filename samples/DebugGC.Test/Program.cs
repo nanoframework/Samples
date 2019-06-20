@@ -16,17 +16,19 @@ namespace DebugGC.Test
         {
             Debug.EnableGCMessages(true);
 
+            Console.WriteLine($"{ SystemInfo.TargetName } running on { SystemInfo.Platform }.");
+
             Debug.GC(false);
 
             // mind to set a pin that exists on the board being tested
             // PJ5 is LD2 in STM32F769I_DISCO
-            //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('J', 5));
+            GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('J', 5));
             // PD15 is LED6 in DISCOVERY4
             //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('D', 15));
             // PE15 is LED1 in QUAIL
             //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('E', 15));
             // PG13 is LD3 in F429I-DISCO
-            GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('G', 14));
+            //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('G', 14));
             //GpioPin led = GpioController.GetDefault().OpenPin(4);
 
             led.SetDriveMode(GpioPinDriveMode.Output);
