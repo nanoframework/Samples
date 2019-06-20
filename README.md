@@ -7,7 +7,6 @@
 
 ## Welcome to the **nanoFramework** team code samples repository!
 
-
 This repo contains code samples used by the team when testing, working on proof of concepts for new and improved features and other explorational endeavours.
 Feel free to browse, take what you like and contribute back if you want.
 
@@ -16,6 +15,7 @@ Feel free to browse, take what you like and contribute back if you want.
 ## Sample by category
 
 ### Communication
+
 <table>
  <tr>
   <td><a href="samples/SerialCommunication">SerialCommunication sample pack</a></td>
@@ -25,6 +25,7 @@ Feel free to browse, take what you like and contribute back if you want.
 </table>
 
 ### Devices
+
 <table>
  <tr>
   <td><a href="samples/ADC">ADC</a></td>
@@ -43,6 +44,7 @@ Feel free to browse, take what you like and contribute back if you want.
 </table>
 
 ### Networking
+
 <table>
  <tr>
   <td><a href="samples/Networking">Sockets sample pack</a></td>
@@ -61,6 +63,7 @@ Feel free to browse, take what you like and contribute back if you want.
 </table>
 
 ### STM32
+
 <table>
  <tr>
   <td><a href="samples/Hardware.Stm32">Hardware STM32</a></td>
@@ -70,6 +73,7 @@ Feel free to browse, take what you like and contribute back if you want.
 </table>
 
 ### System
+
 <table>
  <tr>
   <td><a href="samples/Converter.Base64">Converter.Base64</a></td>
@@ -89,6 +93,7 @@ Feel free to browse, take what you like and contribute back if you want.
 </table>
 
 ### Miscellaneous
+
 <table>
  <tr>
   <td><a href="samples/Blinky">Blinky</a></td>
@@ -119,8 +124,9 @@ The list of contributors to this project can be found at [CONTRIBUTORS](https://
 
 ## License
 
-The nanoFramework Interpreter is licensed under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0).
+The **nanoFramework** samples are licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 ## Code of Conduct
+
 This project has adopted the code of conduct defined by the [Contributor Covenant](http://contributor-covenant.org/)
 to clarify expected behavior in our community.
