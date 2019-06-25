@@ -45,7 +45,7 @@ namespace TimerSample
             testTimer.Dispose();
 
             // loop forever
-            while (true) { Thread.Sleep(1000); }
+            Thread.Sleep(Timeout.Infinite);
         }
 
         private static void CheckStatusTimerCallback(object state)
