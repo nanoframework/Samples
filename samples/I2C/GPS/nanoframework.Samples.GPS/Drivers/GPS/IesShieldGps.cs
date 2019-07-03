@@ -33,7 +33,10 @@ namespace nanoframework.Drivers.GPS
             });
         }
 
-
+        /// <summary>
+        /// Gets the current pitch of the device
+        /// </summary>
+        /// <returns>the pitch</returns>
         public int GetPitch()
         {
             int pitch = 0;
@@ -53,7 +56,10 @@ namespace nanoframework.Drivers.GPS
             return pitch;
         }
 
-
+        /// <summary>
+        /// Gets the current roll of the device
+        /// </summary>
+        /// <returns>the roll</returns>
         public int GetRoll()
         {
             int roll = 0;
@@ -72,7 +78,10 @@ namespace nanoframework.Drivers.GPS
             return roll;
         }
 
-
+        /// <summary>
+        /// Gets the current heading of the device
+        /// </summary>
+        /// <returns>the heading in degrees</returns>
         public float GetHeading()
         {
             var heading = (float)GetSingleRegister(44) * 100;
@@ -82,7 +91,10 @@ namespace nanoframework.Drivers.GPS
             return heading;
         }
 
-
+        /// <summary>
+        /// Gets the current speed from the device
+        /// </summary>
+        /// <returns>the speed in metres per second</returns>
         public float GetSpeed()
         {
             var speed = (float)GetSingleRegister(52) * 100;
@@ -92,7 +104,10 @@ namespace nanoframework.Drivers.GPS
             return speed;
         }
 
-
+        /// <summary>
+        /// Gets the current longitude from the device
+        /// </summary>
+        /// <returns>the longitude in degrees</returns>
         public float GetLongitude()
         {
             var longitude_degrees = GetSingleRegister(23) * 100;
@@ -107,7 +122,10 @@ namespace nanoframework.Drivers.GPS
             return ConvertDegreeAngleToFloat(longitude_degrees, longitude_minutes, longitude_seconds, longitude_direction);
         }
 
-
+        /// <summary>
+        /// Gets the current latitude from the device
+        /// </summary>
+        /// <returns>the latitude in degrees</returns>
         public float GetLatitude()
         {
 
@@ -122,7 +140,10 @@ namespace nanoframework.Drivers.GPS
             return ConvertDegreeAngleToFloat(latitude_degrees, latitude_minutes, latitude_seconds, latitude_direction);
         }
 
-
+        /// <summary>
+        /// Gets the current Date and Time from the device
+        /// </summary>
+        /// <returns>Current DateTime</returns>
         public DateTime GetDateTime()
         {
             var y1 = GetDoubleRegister(10);                     //Read Year 1 registers from GPM and print to PC
@@ -146,7 +167,14 @@ namespace nanoframework.Drivers.GPS
             }
         }
 
-
+        /// <summary>
+        /// Converts DMS to DD
+        /// </summary>
+        /// <param name="degrees"></param>
+        /// <param name="minutes"></param>
+        /// <param name="seconds"></param>
+        /// <param name="direction"></param>
+        /// <returns></returns>
         private float ConvertDegreeAngleToFloat(float degrees, float minutes, float seconds, char direction)
         {
             //Example: 17.21.18S
