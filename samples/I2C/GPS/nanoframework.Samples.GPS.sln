@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "nfGPSTest", "nanoframework.Samples.GPS\nanoframework.Samples.GPS.nfproj", "{0C999724-B003-4ED6-B5AA-AC857759380B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C999724-B003-4ED6-B5AA-AC857759380B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C999724-B003-4ED6-B5AA-AC857759380B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C999724-B003-4ED6-B5AA-AC857759380B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0C999724-B003-4ED6-B5AA-AC857759380B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C999724-B003-4ED6-B5AA-AC857759380B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C999724-B003-4ED6-B5AA-AC857759380B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56B4490A-E72E-459C-86A5-61E041B57DA7}
+	EndGlobalSection
+EndGlobal
