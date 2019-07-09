@@ -38,18 +38,17 @@ This scenario demonstrates the use the DAC to output a sine wave.
 
 ## Hardware requirements
 
-Any hardware device running a nanoFramework image built with serial communication enabled.
-This sample is coded to use the STM32F769IDiscovery target board, but can be easily changed to any other target that features a serial port.
+Any hardware device running a nanoFramework image built with DAC support enabled.
 
 ## Related topics
 
 ### Samples
 
-[SerialCommunication sample](/SerialCommunication)
+[DAC sample pack](/DacSample)
 
 ### Reference
 
-[Windows.Devices.SerialCommunication](http://docs.nanoframework.net/api/Windows.Devices.SerialCommunication.html)
+[System.Devices.Dac](http://docs.nanoframework.net/api/System.Devices.Dac.html)
 
 <!-- [nanoFramework app samples]() -->
 
