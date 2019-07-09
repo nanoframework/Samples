@@ -38,7 +38,7 @@ Feel free to browse, take what you like and contribute back if you want.
   <td><a href="samples/RTC">RTC Sample</a></td>
  </tr>
   <td><a href="samples/SPI">SPI</a></td>
-  <td><!--<a href="PWM">PWM</a>--></td>
+  <td><a href="DAC">DAC</a></td>
   <td><!--<a href="RTXC">RTC Sample</a>--></td>
  </tr>
 </table>

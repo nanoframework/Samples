@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "DacSample", "DacSample\DacSample.nfproj", "{ACD083DD-5FCF-4E14-A1D0-AEDE3E63EE4C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACD083DD-5FCF-4E14-A1D0-AEDE3E63EE4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACD083DD-5FCF-4E14-A1D0-AEDE3E63EE4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACD083DD-5FCF-4E14-A1D0-AEDE3E63EE4C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{ACD083DD-5FCF-4E14-A1D0-AEDE3E63EE4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACD083DD-5FCF-4E14-A1D0-AEDE3E63EE4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACD083DD-5FCF-4E14-A1D0-AEDE3E63EE4C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C473C2A3-0D26-4443-952F-48122E878D1B}
+	EndGlobalSection
+EndGlobal
