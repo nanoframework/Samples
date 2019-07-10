@@ -78,15 +78,15 @@ namespace SecureClient
                     // option 1 
                     // setup authentication (add CA root certificate to the call)
                     // Let's encrypt test certificate
-                    ss.AuthenticateAsClient("www.howsmyssl.com", null, letsEncryptCACert, SslProtocols.TLSv11);
+                    ss.AuthenticateAsClient("www.howsmyssl.com", null, letsEncryptCACert, SslProtocols.Tls11);
                     // GlobalRoot CA cert from resources
-                    //ss.AuthenticateAsClient("global-root-ca.chain-demos.digicert.com", null, digiCertGlobalRootCACert, SslProtocols.TLSv11);
+                    //ss.AuthenticateAsClient("global-root-ca.chain-demos.digicert.com", null, digiCertGlobalRootCACert, SslProtocols.Tls11);
 
                     // option 2
                     // setup authentication (without providing root CA certificate)
                     // this requires that the trusted root CA certificates are available in the device certificate store
-                    //ss.AuthenticateAsClient("www.howsmyssl.com", SslProtocols.TLSv11);
-                    //ss.AuthenticateAsClient("global-root-ca.chain-demos.digicert.com", SslProtocols.TLSv12);
+                    //ss.AuthenticateAsClient("www.howsmyssl.com", SslProtocols.Tls11);
+                    //ss.AuthenticateAsClient("global-root-ca.chain-demos.digicert.com", SslProtocols.Tls12);
 
                     // option 3
                     // disable certificate validation
