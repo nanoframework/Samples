@@ -12,20 +12,9 @@ This sample shows how to set the date and time of the RTC on a target device.
 
 Any hardware device running a nanoFramework image.
 
-
 ## Related topics
 
-### Samples
-
-[GCStressTest](/GCStressTest)
-
 ### Reference
-
-<!-- [nanoFramework app samples]() -->
-
-## System requirements
-
-**Client:** Windows 10
 
 ## Build the sample
 
@@ -40,8 +29,8 @@ The next steps depend on whether you just want to deploy the sample or you want 
 
 ### Deploying the sample
 
-- Select Build > Deploy Solution. 
+- Select Build > Deploy Solution.
 
 ### Deploying and running the sample
 
-- To debug the sample and then run it, press F5 or select Debug >  Start Debugging. To run the sample without debugging, press Ctrl+F5 or selectDebug > Start Without Debugging. 
+- To debug the sample and then run it, press F5 or select Debug >  Start Debugging.

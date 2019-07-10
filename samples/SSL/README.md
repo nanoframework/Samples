@@ -2,7 +2,6 @@
 
 Shows how to use various APIs related with SSL.
 
-
 ### Test certificates
 
 The test certificates used in the code are available in this folder.
@@ -14,36 +13,24 @@ The test certificates used in the code are available in this folder.
 - [X509 Certificate RSA PEM format 2048 bytes](512b-rsa-example-cert.pem)
 - [X509 Certificate RSA DER format 2048 bytes](512b-rsa-example-cert.der)
 
-
-> **Note:** This sample is part of a large collection of nanoFramework feature samples. 
-> If you are unfamiliar with Git and GitHub, you can download the entire collection as a 
-> [ZIP file](https://github.com/nanoframework/Samples/archive/master.zip), but be 
-> sure to unzip everything to access any shared dependencies. 
+> **Note:** This sample is part of a large collection of nanoFramework feature samples.
+> If you are unfamiliar with Git and GitHub, you can download the entire collection as a
+> [ZIP file](https://github.com/nanoframework/Samples/archive/master.zip), but be
+> sure to unzip everything to access any shared dependencies.
 <!-- For more info on working with the ZIP file, 
 > the samples collection, and GitHub, see [Get the UWP samples from GitHub](https://aka.ms/ovu2uq). 
 > For more samples, see the [Samples portal](https://aka.ms/winsamples) on the Windows Dev Center.  -->
-
 
 ## Hardware requirements
 
 An hardware device with networking capabilities running a nanoFramework image.
 
-
 ## Related topics
-
-### Samples
-
-[SSL sample](/SSL)
 
 ### Reference
 
-[System.Security.Cryptography.X509Certificates](http://docs.nanoframework.net/api/System.Security.Cryptography.X509Certificates.html)
-
-<!-- [nanoFramework app samples]() -->
-
-## System requirements
-
-**Client:** Windows 10
+- [System.Security.Cryptography.X509Certificates](http://docs.nanoframework.net/api/System.Security.Cryptography.X509Certificates.html)
+- [System.Net.Sockets](http://docs.nanoframework.net/api/System.Net.Sockets.html)
 
 ## Build the sample
 
@@ -58,8 +45,8 @@ The next steps depend on whether you just want to deploy the sample or you want 
 
 ### Deploying the sample
 
-- Select Build > Deploy Solution. 
+- Select Build > Deploy Solution.
 
 ### Deploying and running the sample
 
-- To debug the sample and then run it, press F5 or select Debug >  Start Debugging. To run the sample without debugging, press Ctrl+F5 or selectDebug > Start Without Debugging. 
+- To debug the sample and then run it, press F5 or select Debug >  Start Debugging.

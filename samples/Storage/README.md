@@ -23,8 +23,7 @@ Lists the removable storage devices present in the target and runs the following
 
 Lists the internal storage devices present in the target and runs the following file base scenarios on the 1st drive.
 
-
-###  Mount a device (ESP32 Only)
+### Mount a device (ESP32 Only)
 
 Shows how to mount a SDCard device and list the folders and files.
 
@@ -58,17 +57,15 @@ This scenario demonstrates how to rename a folder.
 
 ### Delete FIles and Folders
 
-This scenario demonstrates how delete files and folder with a recusive method to delete a whole folder tree.
+This scenario demonstrates how delete files and folder with a recursive method to delete a whole folder tree.
 
 ### Rename files
 
 This scenario demonstrates how to rename a file.
 
-### Unmount SDCard
+### Un-mount SDCard
 
-This scenario demonstrates how to unmount a mounted drive (ESP32)
-
-
+This scenario demonstrates how to un-mount a mounted drive (ESP32)
 
 ### Subscribe to Removable Devices event handlers
 
@@ -80,19 +77,9 @@ Any hardware device running a nanoFramework image built with support for Windows
 
 ## Related topics
 
-### Samples
-
-[Storage sample](/Storage)
-
 ### Reference
 
-[Windows.Storage](http://docs.nanoframework.net/api/Windows.Storage.html)
-
-<!-- [nanoFramework app samples]() -->
-
-## System requirements
-
-**Client:** Windows 10
+- [Windows.Storage](http://docs.nanoframework.net/api/Windows.Storage.html)
 
 ## Build the sample
 
@@ -111,4 +98,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 
 ### Deploying and running the sample
 
-- To debug the sample and then run it, press F5 or select Debug >  Start Debugging. To run the sample without debugging, press Ctrl+F5 or selectDebug > Start Without Debugging.
+- To debug the sample and then run it, press F5 or select Debug >  Start Debugging.

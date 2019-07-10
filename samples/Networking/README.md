@@ -16,19 +16,9 @@ An hardware device running a nanoFramework image with networking capabilities en
 
 ## Related topics
 
-### Samples
-
-[TCP client socket](/Networking/Socket.Client)
-
 ### Reference
 
-[System.Security.Cryptography.X509Certificates](http://docs.nanoframework.net/api/System.Security.Cryptography.X509Certificates.html)
-
-<!-- [nanoFramework app samples]() -->
-
-## System requirements
-
-**Client:** Windows 10
+- [System.Security.Cryptography.X509Certificates](http://docs.nanoframework.net/api/System.Security.Cryptography.X509Certificates.html)
 
 ## Build the sample
 
@@ -43,8 +33,8 @@ The next steps depend on whether you just want to deploy the sample or you want 
 
 ### Deploying the sample
 
-- Select Build > Deploy Solution. 
+- Select Build > Deploy Solution.
 
 ### Deploying and running the sample
 
-- To debug the sample and then run it, press F5 or select Debug >  Start Debugging. To run the sample without debugging, press Ctrl+F5 or selectDebug > Start Without Debugging.
+- To debug the sample and then run it, press F5 or select Debug >  Start Debugging.

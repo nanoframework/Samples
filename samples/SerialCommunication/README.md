@@ -42,19 +42,9 @@ This sample is coded to use the STM32F769IDiscovery target board, but can be eas
 
 ## Related topics
 
-### Samples
-
-[SerialCommunication sample](/SerialCommunication)
-
 ### Reference
 
-[Windows.Devices.SerialCommunication](http://docs.nanoframework.net/api/Windows.Devices.SerialCommunication.html)
-
-<!-- [nanoFramework app samples]() -->
-
-## System requirements
-
-**Client:** Windows 10
+- [Windows.Devices.SerialCommunication](http://docs.nanoframework.net/api/Windows.Devices.SerialCommunication.html)
 
 ## Build the sample
 
@@ -73,4 +63,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 
 ### Deploying and running the sample
 
-- To debug the sample and then run it, press F5 or select Debug >  Start Debugging. To run the sample without debugging, press Ctrl+F5 or selectDebug > Start Without Debugging.
+- To debug the sample and then run it, press F5 or select Debug >  Start Debugging.

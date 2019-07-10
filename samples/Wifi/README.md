@@ -4,36 +4,24 @@ Shows how to use various APIs related with WiFi.
 
 ### Scan WiFI Networks and connect to a specified network
 
-
-> **Note:** This sample is part of a large collection of nanoFramework feature samples. 
-> If you are unfamiliar with Git and GitHub, you can download the entire collection as a 
-> [ZIP file](https://github.com/nanoframework/Samples/archive/master.zip), but be 
-> sure to unzip everything to access any shared dependencies. 
+> **Note:** This sample is part of a large collection of nanoFramework feature samples.
+> If you are unfamiliar with Git and GitHub, you can download the entire collection as a
+> [ZIP file](https://github.com/nanoframework/Samples/archive/master.zip), but be
+> sure to unzip everything to access any shared dependencies.
 <!-- For more info on working with the ZIP file, 
 > the samples collection, and GitHub, see [Get the UWP samples from GitHub](https://aka.ms/ovu2uq). 
 > For more samples, see the [Samples portal](https://aka.ms/winsamples) on the Windows Dev Center.  -->
 
-
 ## Hardware requirements
 
 An hardware device with WiFi networking capabilities running a nanoFramework image.
-Currently only the Esp32
+Currently only the Esp32.
 
 ## Related topics
 
-### Samples
-
-[WiFi sample](/WiFi)
-
 ### Reference
 
-[Windows.Device.WiFi](http://docs.nanoframework.net/api/Windows.Device.WiFi.html)
-
-<!-- [nanoFramework app samples]() -->
-
-## System requirements
-
-**Client:** Windows 10
+- [Windows.Device.WiFi](http://docs.nanoframework.net/api/Windows.Device.WiFi.html)
 
 ## Build the sample
 
@@ -48,8 +36,8 @@ The next steps depend on whether you just want to deploy the sample or you want 
 
 ### Deploying the sample
 
-- Select Build > Deploy Solution. 
+- Select Build > Deploy Solution.
 
 ### Deploying and running the sample
 
-- To debug the sample and then run it, press F5 or select Debug >  Start Debugging. To run the sample without debugging, press Ctrl+F5 or selectDebug > Start Without Debugging. 
+- To debug the sample and then run it, press F5 or select Debug >  Start Debugging.

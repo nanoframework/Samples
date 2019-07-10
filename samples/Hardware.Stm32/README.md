@@ -1,19 +1,19 @@
 # Hardware STM32 sample pack
 
 Shows how to use various APIs specific to STM32 targets.
+
 - [Alarm test](Stm32.TestAlarms)
 - [Backup memory](/Stm32.BackupMemory)
 - [Read device IDs](/Stm32.ReadDeviceIDs)
 - [Power down/off test](/Stm32.PowerMode)
 
-> **Note:** This sample is part of a large collection of nanoFramework feature samples. 
-> If you are unfamiliar with Git and GitHub, you can download the entire collection as a 
-> [ZIP file](https://github.com/nanoframework/Samples/archive/master.zip), but be 
-> sure to unzip everything to access any shared dependencies. 
+> **Note:** This sample is part of a large collection of nanoFramework feature samples.
+> If you are unfamiliar with Git and GitHub, you can download the entire collection as a
+> [ZIP file](https://github.com/nanoframework/Samples/archive/master.zip), but be
+> sure to unzip everything to access any shared dependencies.
 <!-- For more info on working with the ZIP file, 
 > the samples collection, and GitHub, see [Get the UWP samples from GitHub](https://aka.ms/ovu2uq). 
 > For more samples, see the [Samples portal](https://aka.ms/winsamples) on the Windows Dev Center.  -->
-
 
 ## Hardware requirements
 
@@ -21,22 +21,12 @@ An STM32 hardware device running a nanoFramework image.
 
 ## Related topics
 
-### Samples
-
-[Hardware Stm32](/Hardware.Stm32)
-
 ### Reference
 
-[nanoFramework.Hardware.Stm32.BackupMemory](http://docs.nanoframework.net/api/nanoFramework.Hardware.Stm32.BackupMemory.html)
-[nanoFramework.Hardware.Stm32.Power](http://docs.nanoframework.net/api/nanoFramework.Hardware.Stm32.Power.html)
-[nanoFramework.Hardware.Stm32.RTC](http://docs.nanoframework.net/api/nanoFramework.Hardware.Stm32.RTC.html)
-[nanoFramework.Hardware.Stm32.Utilities](http://docs.nanoframework.net/api/nanoFramework.Hardware.Stm32.Utilities.html)
-
-<!-- [nanoFramework app samples]() -->
-
-## System requirements
-
-**Client:** Windows 10
+- [nanoFramework.Hardware.Stm32.BackupMemory](http://docs.nanoframework.net/api/nanoFramework.Hardware.Stm32.BackupMemory.html)
+- [nanoFramework.Hardware.Stm32.Power](http://docs.nanoframework.net/api/nanoFramework.Hardware.Stm32.Power.html)
+- [nanoFramework.Hardware.Stm32.RTC](http://docs.nanoframework.net/api/nanoFramework.Hardware.Stm32.RTC.html)
+- [nanoFramework.Hardware.Stm32.Utilities](http://docs.nanoframework.net/api/nanoFramework.Hardware.Stm32.Utilities.html)
 
 ## Build the sample
 
@@ -51,8 +41,8 @@ The next steps depend on whether you just want to deploy the sample or you want 
 
 ### Deploying the sample
 
-- Select Build > Deploy Solution. 
+- Select Build > Deploy Solution.
 
 ### Deploying and running the sample
 
-- To debug the sample and then run it, press F5 or select Debug >  Start Debugging. To run the sample without debugging, press Ctrl+F5 or selectDebug > Start Without Debugging. 
+- To debug the sample and then run it, press F5 or select Debug >  Start Debugging.

@@ -1,6 +1,6 @@
-# RTC sample
+# Blinky sample
 
-Shows how to use a [System.Threading.Timer](http://docs.nanoframework.net/api/System.Threading.Timer.html) to set the timer parameters, setup a callback and make things happen.
+Shows how to use the [Windows.Devices.Gpio](http://docs.nanoframework.net/api/Windows.Devices.Gpio.html) API to set GPIO pins.
 
 > **Note:** This sample is part of a large collection of nanoFramework feature samples.
 > If you are unfamiliar with Git and GitHub, you can download the entire collection as a
@@ -10,8 +10,6 @@ Shows how to use a [System.Threading.Timer](http://docs.nanoframework.net/api/Sy
 > the samples collection, and GitHub, see [Get the UWP samples from GitHub](https://aka.ms/ovu2uq). 
 > For more samples, see the [Samples portal](https://aka.ms/winsamples) on the Windows Dev Center.  -->
 
-This sample shows how to set the date and time of the RTC on a target device.
-
 ## Hardware requirements
 
 Any hardware device running a nanoFramework image.
@@ -20,7 +18,7 @@ Any hardware device running a nanoFramework image.
 
 ### Reference
 
-- [System.Threading.Timer](http://docs.nanoframework.net/api/System.Threading.Timer.html)
+- [Windows.Devices.Gpio](http://docs.nanoframework.net/api/Windows.Devices.Gpio.html)
 
 ## Build the sample
 

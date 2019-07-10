@@ -3,16 +3,16 @@
 This project illustrates the use of the 'Interop' feature which allow a C# manage API to call native code.
 
 There are two Solutions in this sample:
-1. In the [*source*](/source) folder you'll find the solution for the Interop managed library: `NF.AwesomeLib.sln`.
-2. In the [*test-application*](/test-application) folder you'll find the test application that is referencing the Interop library: `Test.Interop.sln`.
+
+- In the [*source*](/source) folder you'll find the solution for the Interop managed library: `NF.AwesomeLib.sln`.
+- In the [*test-application*](/test-application) folder you'll find the test application that is referencing the Interop library: `Test.Interop.sln`.
 
 :warning: This is an advanced topic. Please read this [blog post](https://jsimoesblog.wordpress.com/2018/06/19/interop-in-net-nanoframework/) with a detailed explanation on how to create, build and use an Interop library.
 
-
-> **Note:** This sample is part of a large collection of nanoFramework feature samples. 
-> If you are unfamiliar with Git and GitHub, you can download the entire collection as a 
-> [ZIP file](https://github.com/nanoframework/Samples/archive/master.zip), but be 
-> sure to unzip everything to access any shared dependencies. 
+> **Note:** This sample is part of a large collection of nanoFramework feature samples.
+> If you are unfamiliar with Git and GitHub, you can download the entire collection as a
+> [ZIP file](https://github.com/nanoframework/Samples/archive/master.zip), but be
+> sure to unzip everything to access any shared dependencies.
 <!-- For more info on working with the ZIP file, 
 > the samples collection, and GitHub, see [Get the UWP samples from GitHub](https://aka.ms/ovu2uq). 
 > For more samples, see the [Samples portal](https://aka.ms/winsamples) on the Windows Dev Center.  -->
@@ -23,20 +23,9 @@ This sample shows how to set the date and time of the RTC on a target device.
 
 Any hardware device running a nanoFramework image.
 
-
 ## Related topics
 
-### Samples
-
-[Interop sample](/Interop)
-
 ### Reference
-
-<!-- [nanoFramework app samples]() -->
-
-## System requirements
-
-**Client:** Windows 10
 
 ## Build the sample
 
@@ -51,8 +40,8 @@ The next steps depend on whether you just want to deploy the sample or you want 
 
 ### Deploying the sample
 
-- Select Build > Deploy Solution. 
+- Select Build > Deploy Solution.
 
 ### Deploying and running the sample
 
-- To debug the sample and then run it, press F5 or select Debug >  Start Debugging. To run the sample without debugging, press Ctrl+F5 or selectDebug > Start Without Debugging. 
+- To debug the sample and then run it, press F5 or select Debug >  Start Debugging.
