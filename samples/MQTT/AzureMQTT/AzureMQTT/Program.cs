@@ -164,13 +164,6 @@ namespace AzureMQTT
 
         private static void DoMqttStuff()
         {
-            //workaround for IP parse failure:
-
-            // get host entry for the iot broker address as work around for IP.Parse bug
-            //IPHostEntry hostEntry = Dns.GetHostEntry(iotBrokerAddress);
-            //MqttClient mqttc = new MqttClient(hostEntry.AddressList[0], 8883, true, null, null, MqttSslProtocols.TLSv1_2);
-
-
             //Create MQTT Client with default port 8883 using TLS protocol
             MqttClient mqttc = new MqttClient(iotBrokerAddress, 8883, true, null, null, MqttSslProtocols.TLSv1_2);
 
