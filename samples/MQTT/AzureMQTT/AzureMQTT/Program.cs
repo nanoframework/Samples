@@ -14,9 +14,7 @@ using nanoFramework.Networking;
 
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
-
-
-
+using System.Security.Cryptography.X509Certificates;
 
 namespace AzureMQTT
 {
@@ -164,9 +162,13 @@ namespace AzureMQTT
 
         private static void DoMqttStuff()
         {
-            //Create MQTT Client with default port 8883 using TLS protocol
-            MqttClient mqttc = new MqttClient(iotBrokerAddress, 8883, true, null, null, MqttSslProtocols.TLSv1_2);
+            /////////////////////////////////////////////////////////////////////////////////////
+            // add certificate in CER format (as a managed resource)
+            X509Certificate digiCertGlobalRootCACert = new X509Certificate(Resources.GetBytes(Resources.BinaryResources.DigiCertGlobalRootCA));
+            /////////////////////////////////////////////////////////////////////////////////////
 
+            //Create MQTT Client with default port 8883 using TLS protocol
+            MqttClient mqttc = new MqttClient(iotBrokerAddress, 8883, true, digiCertGlobalRootCACert, null, MqttSslProtocols.TLSv1_2);
 
             // event when connection has been dropped
             mqttc.ConnectionClosed += Client_ConnectionClosed;
@@ -183,11 +185,14 @@ namespace AzureMQTT
             // handler for unsubscriber
             mqttc.MqttMsgUnsubscribed += client_MqttMsgUnsubscribed;
 
+            string sas = GetSharedAccessSignature(null, SasKey, String.Format("{0}/devices/{1}", iotBrokerAddress, deviceID), new TimeSpan(24, 0, 0));
+
+            Console.WriteLine($"sas>>{sas}<<");
 
             byte code = mqttc.Connect(
                 deviceID,
                 String.Format("{0}/{1}/api-version=2018-06-30", iotBrokerAddress, deviceID),
-                GetSharedAccessSignature(null, SasKey, String.Format("{0}/devices/{1}", iotBrokerAddress, deviceID), new TimeSpan(24, 0, 0)),
+                sas,
                 false,
                 MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE,
                 false, "$iothub/twin/GET/?$rid=999",
