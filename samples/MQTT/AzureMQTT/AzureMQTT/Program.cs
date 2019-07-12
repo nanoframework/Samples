@@ -41,11 +41,8 @@ namespace AzureMQTT
 
             telemetryTopic = String.Format("devices/{0}/messages/events/", deviceID);
 
-            var networkHerlpers = new NetworkHelpers();
-
             // if we are using TLS it requires date & time
-            networkHerlpers.SetupAndConnectNetwork(true);
-
+            NetworkHelpers.SetupAndConnectNetwork(true);
 
             Console.WriteLine("Waiting for network up and IP address...");
             NetworkHelpers.IpAddressAvailable.WaitOne();
