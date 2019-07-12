@@ -3,6 +3,7 @@
 ![nanoFramework logo](https://github.com/nanoframework/Home/blob/master/resources/logo/nanoFramework-repo-logo.png)
 
 -----
+Document Language: [English](README.md) | [简体中文](README.zh-cn.md)
 
 ## Welcome to the **nanoFramework** team code samples repository!
 
