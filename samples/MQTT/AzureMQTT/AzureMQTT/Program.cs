@@ -131,9 +131,9 @@ namespace AzureMQTT
             // the canonical Uri scheme is http because the token is not amqp specific
             // signature is computed from joined encoded request Uri string and expiry string
 
-            var exp = (DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0)) + tokenTimeToLive;
+            var exp = DateTime.UtcNow.ToUnixTimeSeconds() + (long)tokenTimeToLive.TotalSeconds;
 
-            string expiry = exp.TotalSeconds.ToString();
+            string expiry = exp.ToString();
             string encodedUri = WebUtility.UrlEncode(resource);
 
             
