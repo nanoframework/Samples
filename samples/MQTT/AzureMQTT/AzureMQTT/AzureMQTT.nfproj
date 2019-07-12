@@ -18,7 +18,6 @@
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
-    <Compile Include="base64.cs" />
     <Compile Include="StringExtensions.cs" />
     <Compile Include="WebUtility.cs" />
     <Compile Include="NetworkHelpers.cs" />

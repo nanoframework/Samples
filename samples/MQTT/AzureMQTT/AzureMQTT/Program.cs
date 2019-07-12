@@ -141,7 +141,7 @@ namespace AzureMQTT
 
             
             byte[] hmac = SHA.computeHMAC_SHA256(Convert.FromBase64String(sharedAccessKey), Encoding.UTF8.GetBytes(encodedUri + "\n" + expiry));
-            string sig = base64.Encode(hmac);
+            string sig = Convert.ToBase64String(hmac);
 
             if (keyName != null)
             {
