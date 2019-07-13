@@ -99,6 +99,7 @@ namespace nanoFramework.Networking
                 Thread.Sleep(1000);
             }
 
+            Console.WriteLine($"We have valid date & time: {DateTime.UtcNow.ToString("u")}");
 
             Console.WriteLine($"System time is: {DateTime.UtcNow.ToString()}");
 

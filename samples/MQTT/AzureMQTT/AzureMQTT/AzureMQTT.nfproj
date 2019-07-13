@@ -64,7 +64,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Resources\DigiCertGlobalRootCA.cer" />
+    <None Include="Resources\AzureRoot.der" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>nFResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\paho.mqtt.m2mqtt-nanoframework\M2Mqtt\nanoFramework.M2Mqtt.nfproj" />

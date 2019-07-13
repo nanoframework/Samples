@@ -8,13 +8,16 @@ using System.Text;
 using System.Net;
 using System.Diagnostics;
 using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 
 using nanoFramework.Runtime.Events;
 using nanoFramework.Networking;
 
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
-using System.Security.Cryptography.X509Certificates;
+
+
+
 
 namespace AzureMQTT
 {
@@ -39,8 +42,11 @@ namespace AzureMQTT
 
             telemetryTopic = String.Format("devices/{0}/messages/events/", deviceID);
 
+            var networkHerlpers = new NetworkHelpers();
+
             // if we are using TLS it requires date & time
-            NetworkHelpers.SetupAndConnectNetwork(true);
+            networkHerlpers.SetupAndConnectNetwork(true);
+
 
             Console.WriteLine("Waiting for network up and IP address...");
             NetworkHelpers.IpAddressAvailable.WaitOne();
@@ -162,13 +168,12 @@ namespace AzureMQTT
 
         private static void DoMqttStuff()
         {
-            /////////////////////////////////////////////////////////////////////////////////////
-            // add certificate in CER format (as a managed resource)
-            X509Certificate digiCertGlobalRootCACert = new X509Certificate(Resources.GetBytes(Resources.BinaryResources.DigiCertGlobalRootCA));
-            /////////////////////////////////////////////////////////////////////////////////////
+            //Currently nanoFramework socket implementation MUST have a valid root CA to work
+            //Lets use a root CA for Azure: https://github.com/Azure/azure-iot-sdk-c/blob/master/certs/certs.c
 
             //Create MQTT Client with default port 8883 using TLS protocol
-            MqttClient mqttc = new MqttClient(iotBrokerAddress, 8883, true, digiCertGlobalRootCACert, null, MqttSslProtocols.TLSv1_2);
+             MqttClient mqttc = new MqttClient(iotBrokerAddress, 8883, true, new X509Certificate(Resources.GetBytes(Resources.BinaryResources.AzureCAcertificate)), null, MqttSslProtocols.TLSv1_2);
+
 
             // event when connection has been dropped
             mqttc.ConnectionClosed += Client_ConnectionClosed;
@@ -185,14 +190,10 @@ namespace AzureMQTT
             // handler for unsubscriber
             mqttc.MqttMsgUnsubscribed += client_MqttMsgUnsubscribed;
 
-            string sas = GetSharedAccessSignature(null, SasKey, String.Format("{0}/devices/{1}", iotBrokerAddress, deviceID), new TimeSpan(24, 0, 0));
-
-            Console.WriteLine($"sas>>{sas}<<");
-
             byte code = mqttc.Connect(
                 deviceID,
                 String.Format("{0}/{1}/api-version=2018-06-30", iotBrokerAddress, deviceID),
-                sas,
+                GetSharedAccessSignature(null, SasKey, String.Format("{0}/devices/{1}", iotBrokerAddress, deviceID), new TimeSpan(24, 0, 0)),
                 false,
                 MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE,
                 false, "$iothub/twin/GET/?$rid=999",
@@ -221,7 +222,7 @@ namespace AzureMQTT
 
 
                 Trace("Sending twin properties");
-                mqttc.Publish(String.Format("{0}?$rid={1}", twinReportedPropertiesTopic, Guid.NewGuid()), Encoding.UTF8.GetBytes("{ \"Firmware\": \"NetMF\"}"), MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE, false);
+                mqttc.Publish(String.Format("{0}?$rid={1}", twinReportedPropertiesTopic, Guid.NewGuid()), Encoding.UTF8.GetBytes("{ \"Firmware\": \"nanoFramework\"}"), MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE, false);
 
 
                 Trace("Getting twin properties");
@@ -244,22 +245,21 @@ namespace AzureMQTT
                 //Publish telemetry data using AT LEAST ONCE QOS Level
                 mqttc.Publish(telemetryTopic, Encoding.UTF8.GetBytes("{ Temperature: " + temp + "}"), MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE, false);
 
-                Trace(String.Format("{0} [MQTT Client] Sent telemetry { Temperature: {1} }", DateTime.UtcNow.ToString(), temp.ToString()));
+                Trace(String.Format("{0} [MQTT Client] Sent telemetry {{ Temperature: {1} }}", DateTime.UtcNow.ToString("u"), temp.ToString()));
 
                 Thread.Sleep(1000 * 60);
                 if (temp > 30) temp = 10;
 
             }
 
-            Trace(String.Format("{0} [MQTT Client]" + " is Disconnected", DateTime.UtcNow.ToString()));
+            Trace(String.Format("{0} [MQTT Client]" + " is Disconnected", DateTime.UtcNow.ToString("u")));
         }
 
 
-        [Conditional("DEBUG")]
+        //[Conditional("DEBUG")]
         static void Trace(string message)
         {
-            if (Debugger.IsAttached)
-                Console.WriteLine(message);
+            Console.WriteLine(message);
         }
 
     }

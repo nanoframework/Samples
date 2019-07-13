@@ -179,7 +179,11 @@ namespace uPLibrary.Networking.M2Mqtt
         public MqttNetworkChannel(string remoteHostName, int remotePort, bool secure, X509Certificate caCert, X509Certificate clientCert, MqttSslProtocols sslProtocol)
 #endif
         {
-            IPAddress remoteIpAddress = null;
+
+            IPAddress hostIpAddress = null;
+
+#if (MF_FRAMEWORK_VERSION_V4_2 || MF_FRAMEWORK_VERSION_V4_3)
+
             try
             {
                 // check if remoteHostName is a valid IP address and get it
@@ -199,16 +203,31 @@ namespace uPLibrary.Networking.M2Mqtt
                     // it seems that with .Net Micro Framework, the IPV6 addresses aren't supported and return "null"
                     int i = 0;
                     while (hostEntry.AddressList[i] == null) i++;
-                    remoteIpAddress = hostEntry.AddressList[i];
+                    hostIpAddress = hostEntry.AddressList[i];
                 }
                 else
                 {
                     throw new Exception("No address found for the remote host name");
                 }
             }
+#else
+            IPHostEntry hostEntry = Dns.GetHostEntry(remoteHostName);
+            if ((hostEntry != null) && (hostEntry.AddressList.Length > 0))
+            {
+                // check for the first address not null
+                // it seems that with .Net Micro Framework, the IPV6 addresses aren't supported and return "null"
+                int i = 0;
+                while (hostEntry.AddressList[i] == null) i++;
+                hostIpAddress = hostEntry.AddressList[i];
+            }
+            else
+            {
+                throw new Exception("No address found for the remote host name");
+            }
+#endif
 
             this.remoteHostName = remoteHostName;
-            this.remoteIpAddress = remoteIpAddress;
+            this.remoteIpAddress = hostIpAddress;
             this.remotePort = remotePort;
             this.secure = secure;
             this.caCert = caCert;
@@ -225,7 +244,9 @@ namespace uPLibrary.Networking.M2Mqtt
         /// </summary>
         public void Connect()
         {
-            this.socket = new Socket(this.remoteIpAddress.GetAddressFamily(), SocketType.Stream, ProtocolType.Tcp);
+            this.socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            
+
             // try connection to the broker
             this.socket.Connect(new IPEndPoint(this.remoteIpAddress, this.remotePort));
 
@@ -234,7 +255,7 @@ namespace uPLibrary.Networking.M2Mqtt
             if (secure)
             {
                 // create SSL stream
-#if (MF_FRAMEWORK_VERSION_V4_2 || MF_FRAMEWORK_VERSION_V4_3 || NANOFRAMEWORK_1_0 )
+#if (MF_FRAMEWORK_VERSION_V4_2 || MF_FRAMEWORK_VERSION_V4_3 || NANOFRAMEWORK_1_0)
                 this.sslStream = new SslStream(this.socket);
 #else
                 this.netStream = new NetworkStream(this.socket);
@@ -242,7 +263,7 @@ namespace uPLibrary.Networking.M2Mqtt
 #endif
 
                 // server authentication (SSL/TLS handshake)
-#if (MF_FRAMEWORK_VERSION_V4_2 || MF_FRAMEWORK_VERSION_V4_3 )
+#if (MF_FRAMEWORK_VERSION_V4_2 || MF_FRAMEWORK_VERSION_V4_3)
 
                 if (clientCert != null)
                 {
@@ -261,22 +282,12 @@ namespace uPLibrary.Networking.M2Mqtt
                         MqttSslUtility.ToSslPlatformEnum(this.sslProtocol));
 
                 }
-#elif ( NANOFRAMEWORK_1_0 )
-                if (clientCert != null)
-                {
-                    // we have client certificate, use it for SSL authentication
-                    this.sslStream.AuthenticateAsClient(this.remoteHostName,
-                        this.clientCert,
-                        this.caCert,
-                        MqttSslUtility.ToSslPlatformEnum(this.sslProtocol));
-                }
-                else
-                {
-                    this.sslStream.AuthenticateAsClient(this.remoteHostName,
-                        this.caCert,
-                        MqttSslUtility.ToSslPlatformEnum(this.sslProtocol));
+#elif (NANOFRAMEWORK_1_0)
+                this.sslStream.AuthenticateAsClient(this.remoteHostName,
+                    null,
+                    this.caCert,
+                    MqttSslUtility.ToSslPlatformEnum(this.sslProtocol));
 
-                }
 #else
                 X509CertificateCollection clientCertificates = null;
                 // check if there is a client certificate to add to the collection, otherwise it's null (as empty)
@@ -446,7 +457,7 @@ namespace uPLibrary.Networking.M2Mqtt
 #if (!MF_FRAMEWORK_VERSION_V4_2 && !MF_FRAMEWORK_VERSION_V4_3 && !NANOFRAMEWORK_1_0)
             return ipAddress.AddressFamily;
 #else
-            return (ipAddress.ToString().IndexOf(':') != -1) ? 
+            return (ipAddress.ToString().IndexOf(':') != -1) ?
                 AddressFamily.InterNetworkV6 : AddressFamily.InterNetwork;
 #endif
         }
@@ -457,15 +468,17 @@ namespace uPLibrary.Networking.M2Mqtt
     /// </summary>
     public static class MqttSslUtility
     {
-#if (!MF_FRAMEWORK_VERSION_V4_2 && !MF_FRAMEWORK_VERSION_V4_3 && !COMPACT_FRAMEWORK && !NANOFRAMEWORK_1_0)
+#if (!MF_FRAMEWORK_VERSION_V4_2 && !MF_FRAMEWORK_VERSION_V4_3 && !COMPACT_FRAMEWORK)
         public static SslProtocols ToSslPlatformEnum(MqttSslProtocols mqttSslProtocol)
         {
             switch (mqttSslProtocol)
             {
                 case MqttSslProtocols.None:
                     return SslProtocols.None;
+#if !(NANOFRAMEWORK_1_0)
                 case MqttSslProtocols.SSLv3:
                     return SslProtocols.Ssl3;
+#endif
                 case MqttSslProtocols.TLSv1_0:
                     return SslProtocols.Tls;
                 case MqttSslProtocols.TLSv1_1:
@@ -476,7 +489,7 @@ namespace uPLibrary.Networking.M2Mqtt
                     throw new ArgumentException("SSL/TLS protocol version not supported");
             }
         }
-#elif (MF_FRAMEWORK_VERSION_V4_2 || MF_FRAMEWORK_VERSION_V4_3 || NANOFRAMEWORK_1_0)
+#elif (MF_FRAMEWORK_VERSION_V4_2 || MF_FRAMEWORK_VERSION_V4_3)
         public static SslProtocols ToSslPlatformEnum(MqttSslProtocols mqttSslProtocol)
         {
             switch (mqttSslProtocol)
@@ -485,20 +498,11 @@ namespace uPLibrary.Networking.M2Mqtt
                     return SslProtocols.None;
                 case MqttSslProtocols.TLSv1_0:
                     return SslProtocols.Tls;
-#if (NANOFRAMEWORK_1_0)
-                case MqttSslProtocols.TLSv1_1:
-                    return SslProtocols.Tls11;
-                case MqttSslProtocols.TLSv1_2:
-                    return SslProtocols.Tls12;
-                case MqttSslProtocols.SSLv3:
-#else
-                case MqttSslProtocols.TLSv1_1:
-                case MqttSslProtocols.TLSv1_2:
-#endif
+
                 default:
                     throw new ArgumentException("SSL/TLS protocol version not supported");
             }
         }
 #endif
             }
-}
+        }
