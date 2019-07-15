@@ -1,4 +1,9 @@
-﻿//  
+﻿//
+// Copyright (c) 2019 The nanoFramework project contributors
+// See LICENSE file in the project root for full license information.
+//
+
+//  
 //  By Elze Kool see http://www.microframework.nl/2009/09/05/shahmac-digest-class/ 
 //   
 namespace System.Security.Cryptography

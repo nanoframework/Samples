@@ -32,7 +32,7 @@ namespace AzureMQTT
         [System.SerializableAttribute()]
         internal enum BinaryResources : short
         {
-            DigiCertGlobalRootCA = 1766,
+            AzureCAcertificate = 22094,
         }
     }
 }

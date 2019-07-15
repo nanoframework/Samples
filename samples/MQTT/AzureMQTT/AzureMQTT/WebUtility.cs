@@ -1,10 +1,13 @@
-﻿//  
+﻿//
+// Copyright (c) 2019 The nanoFramework project contributors
+// See LICENSE file in the project root for full license information.
+//
+
+//  
 //  (c) Microsoft Corporation. See LICENSE.TXT file for licensing details 
 //   
 
-using System;
 using System.Text;
-
 
 namespace System.Net
 {

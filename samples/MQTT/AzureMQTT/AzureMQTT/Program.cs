@@ -1,29 +1,27 @@
-﻿///
+﻿//
+// Copyright (c) 2019 The nanoFramework project contributors
+// See LICENSE file in the project root for full license information.
+//
+
+///
 /// NOTE: this demo uses the information outlined in https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support
 ///
 
+using nanoFramework.Networking;
+using nanoFramework.Runtime.Events;
 using System;
-using System.Threading;
-using System.Text;
 using System.Net;
-using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
-
-using nanoFramework.Runtime.Events;
-using nanoFramework.Networking;
-
+using System.Text;
+using System.Threading;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
-
-
-
 
 namespace AzureMQTT
 {
     public partial class Program
     {
-
         static readonly string deviceID = "[enter device id]";
         static readonly string iotBrokerAddress = "[enter iothub url]";
         static readonly string SasKey = "[enter sas key]";
@@ -31,8 +29,6 @@ namespace AzureMQTT
         static string telemetryTopic = "";
         const string twinReportedPropertiesTopic = "$iothub/twin/PATCH/properties/reported/";
         const string twinDesiredPropertiesTopic = "$iothub/twin/GET/";
-
-        //private static bool timeSynchronized;
 
         // This method is run when the mainboard is powered up or reset.   
         public static void Main()
@@ -42,11 +38,8 @@ namespace AzureMQTT
 
             telemetryTopic = String.Format("devices/{0}/messages/events/", deviceID);
 
-            var networkHerlpers = new NetworkHelpers();
-
-            // if we are using TLS it requires date & time
-            networkHerlpers.SetupAndConnectNetwork(true);
-
+            // if we are using TLS it requires valid date & time
+            NetworkHelpers.SetupAndConnectNetwork(true);
 
             Console.WriteLine("Waiting for network up and IP address...");
             NetworkHelpers.IpAddressAvailable.WaitOne();
@@ -168,12 +161,20 @@ namespace AzureMQTT
 
         private static void DoMqttStuff()
         {
-            //Currently nanoFramework socket implementation MUST have a valid root CA to work
-            //Lets use a root CA for Azure: https://github.com/Azure/azure-iot-sdk-c/blob/master/certs/certs.c
+            // nanoFramework socket implementation requires a valid root CA to authenticate with a
+            // this can be supplied to the caller (as it's doing on the code bellow) or the Root CA has to be stored in the certificate store
+            // Root CA for Azure from here: https://github.com/Azure/azure-iot-sdk-c/blob/master/certs/certs.c
+
+            X509Certificate azureRootCACert = new X509Certificate(Resources.GetBytes(Resources.BinaryResources.AzureCAcertificate));
 
             //Create MQTT Client with default port 8883 using TLS protocol
-             MqttClient mqttc = new MqttClient(iotBrokerAddress, 8883, true, new X509Certificate(Resources.GetBytes(Resources.BinaryResources.AzureCAcertificate)), null, MqttSslProtocols.TLSv1_2);
-
+            MqttClient mqttc = new MqttClient(
+                iotBrokerAddress, 
+                8883, 
+                true, 
+                azureRootCACert, 
+                null, 
+                MqttSslProtocols.TLSv1_2);
 
             // event when connection has been dropped
             mqttc.ConnectionClosed += Client_ConnectionClosed;

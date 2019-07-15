@@ -10,7 +10,7 @@ using System.Threading;
 
 namespace nanoFramework.Networking
 {
-    public class NetworkHelpers
+    internal class NetworkHelpers
     {
         private const string c_SSID = "REPLACE-WITH-YOUR-SSID";
         private const string c_AP_PASSWORD = "REPLACE-WITH-YOUR-WIFI-KEY";
@@ -68,8 +68,8 @@ namespace nanoFramework.Networking
                     Console.WriteLine("Network connection is: Ethernet");
                 }
 
-                //ni.EnableAutomaticDns();
-                //ni.EnableDhcp();
+                ni.EnableAutomaticDns();
+                ni.EnableDhcp();
 
                 // check if we have an IP
                 CheckIP();
@@ -98,10 +98,6 @@ namespace nanoFramework.Networking
                 // wait for valid date & time
                 Thread.Sleep(1000);
             }
-
-            Console.WriteLine($"We have valid date & time: {DateTime.UtcNow.ToString("u")}");
-
-            Console.WriteLine($"System time is: {DateTime.UtcNow.ToString()}");
 
             DateTimeAvailable.Set();
         }
