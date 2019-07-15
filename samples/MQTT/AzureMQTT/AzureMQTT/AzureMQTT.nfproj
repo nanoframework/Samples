@@ -36,6 +36,11 @@
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
+    <Reference Include="nanoFramework.M2Mqtt, Version=4.3.1.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\nanoFramework.M2Mqtt.4.3.1-preview.6\lib\nanoFramework.M2Mqtt.dll</HintPath>
+      <Private>True</Private>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
     <Reference Include="nanoFramework.Networking.Sntp, Version=1.0.6.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.Networking.Sntp.1.0.6-preview.23\lib\nanoFramework.Networking.Sntp.dll</HintPath>
       <Private>True</Private>
@@ -71,9 +76,6 @@
       <Generator>nFResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\paho.mqtt.m2mqtt-nanoframework\M2Mqtt\nanoFramework.M2Mqtt.nfproj" />
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <ProjectExtensions>
