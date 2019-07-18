@@ -7,8 +7,6 @@ Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "ParseCertificate", "ParseCe
 EndProject
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "SecureClient", "SecureClient\SecureClient.nfproj", "{AE046A9A-FACA-4A43-B0A5-B8B808C4F606}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "System.Net", "..\..\..\nflib-nanoFramework.System.Net\source\nanoFramework.System.Net\System.Net.nfproj", "{474A90F4-FA98-4011-AABB-7DAC8E218E6A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,11 +24,6 @@ Global
 		{AE046A9A-FACA-4A43-B0A5-B8B808C4F606}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE046A9A-FACA-4A43-B0A5-B8B808C4F606}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AE046A9A-FACA-4A43-B0A5-B8B808C4F606}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{474A90F4-FA98-4011-AABB-7DAC8E218E6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{474A90F4-FA98-4011-AABB-7DAC8E218E6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{474A90F4-FA98-4011-AABB-7DAC8E218E6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{474A90F4-FA98-4011-AABB-7DAC8E218E6A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{474A90F4-FA98-4011-AABB-7DAC8E218E6A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
