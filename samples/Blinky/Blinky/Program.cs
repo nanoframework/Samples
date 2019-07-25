@@ -32,6 +32,8 @@ namespace Blinky
             //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('A', 5));
             // PA5 is LD2 in STM32L072Z_LRWAN1
             //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('A', 5));
+            // A10 is LED onboard blue in NETDUINO 3 Wifi
+            // GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('A', 10));
 
             led.SetDriveMode(GpioPinDriveMode.Output);
 
