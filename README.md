@@ -35,7 +35,7 @@ Feel free to browse, take what you like and contribute back if you want.
  <tr>
   <td><a href="samples/ADC">ADC</a></td>
   <td><a href="samples/1-Wire">1-Wire</a></td>
-  <td><a href="samples/Gpio%2BEvents">Gpio+Events Test</a></td>
+  <td><a href="samples/Gpio">Gpio</a></td>
  </tr>
 <tr>
   <td><a href="samples/I2C">I2C</a></td>
