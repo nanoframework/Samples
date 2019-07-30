@@ -10,8 +10,6 @@ Shows how to use the HTTP related APIs in [System.Net](http://docs.nanoframework
 > the samples collection, and GitHub, see [Get the UWP samples from GitHub](https://aka.ms/ovu2uq). 
 > For more samples, see the [Samples portal](https://aka.ms/winsamples) on the Windows Dev Center.  -->
 
-This sample allows the user to create a folder and files in removable storage.
-
 ## Scenarios
 
 ### HTTP Web Request
