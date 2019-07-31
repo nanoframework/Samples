@@ -2,11 +2,8 @@
 
 Shows how to use the GPIO related APIs in [Windows.Devices.Gpio](http://docs.nanoframework.net/api/Windows.Devices.Gpio.html).
 
+## Samples
 
-### Samples
+[GPIO + Events](Gpio%2BEvents)
 
-[GPIO + Events](/Gpio%2BEvents)
-
-[GPIO Change Counter](/GPIOChangeCounter)
-
-
+[GPIO Change Counter](GPIOChangeCounter)
