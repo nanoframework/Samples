@@ -1,7 +1,6 @@
 # GPIOChangeCounter sample
 
-Shows how to use the [Windows.Devices.Gpio]((http://docs.nanoframework.net/api/Windows.Devices.Gpio.html) GpioChangeCounter API to count pulses from a device.
-
+Shows how to use the [Windows.Devices.Gpio](http://docs.nanoframework.net/api/Windows.Devices.Gpio.html) [GpioChangeCounter API](http://docs.nanoframework.net/api/Windows.Devices.Gpio.GpioChangeCounter.html) to count pulses from a device.
 
 > **Note:** This sample is part of a large collection of nanoFramework feature samples. 
 > If you are unfamiliar with Git and GitHub, you can download the entire collection as a 
@@ -11,29 +10,22 @@ Shows how to use the [Windows.Devices.Gpio]((http://docs.nanoframework.net/api/W
 > the samples collection, and GitHub, see [Get the UWP samples from GitHub](https://aka.ms/ovu2uq). 
 > For more samples, see the [Samples portal](https://aka.ms/winsamples) on the Windows Dev Center.  -->
 
-
-Shows how to use the [Windows.Devices.Gpio]() GpioChangeCounter API to:
+Shows how to use the [Windows.Devices.Gpio](http://docs.nanoframework.net/api/Windows.Devices.Gpio.html) [GpioChangeCounter API](http://docs.nanoframework.net/api/Windows.Devices.Gpio.GpioChangeCounter.html) to:
 * Count rising, failing and both edges of a pulse on a GPIO pins 
 * Read the count and the relative time of count
 * Reset the count
 * Start / Stop count
-
 
 ## Hardware requirements
 
 Any hardware device running a nanoFramework image built with GPIO support enabled.
 The sample uses a PWM signal to generate the pulses so requires the PWM pin to be connected to the Counter pin.
 
-
 ## Related topics
-
-### Samples
-
-[GpioChangeCounter](/Gpio/GpioChangeCounter)
 
 ### Reference
 
-[Windows.Devices.Gpio](http://docs.nanoframework.net/api/Windows.Devices.Gpio.html)
+[Windows.Devices.Gpio.GpioChangeCounter](http://docs.nanoframework.net/api/Windows.Devices.Gpio.GpioChangeCounter.html)
 
 <!-- [nanoFramework app samples]() -->
 
