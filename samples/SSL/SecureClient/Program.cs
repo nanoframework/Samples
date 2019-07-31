@@ -61,59 +61,61 @@ namespace SecureClient
                     Console.WriteLine("Authenticating with server...");
 
                     // setup SSL stream
-                    SslStream ss = new SslStream(mySocket);
-
-                    ///////////////////////////////////////////////////////////////////////////////////
-                    // Authenticating the server can be handled in one of three ways:
-                    //
-                    // 1. By providing the root CA certificate of the server being connected to.
-                    // 
-                    // 2. Having the target device preloaded with the root CA certificate.
-                    // 
-                    // !! NOT SECURED !! NOT RECOMENDED !!
-                    // 3. Forcing the authentication workflow to NOT validate the server certificate.
-                    //
-                    /////////////////////////////////////////////////////////////////////////////////// 
-
-                    // option 1 
-                    // setup authentication (add CA root certificate to the call)
-                    // Let's encrypt test certificate
-                    ss.AuthenticateAsClient("www.howsmyssl.com", null, letsEncryptCACert, SslProtocols.Tls11);
-                    // GlobalRoot CA cert from resources
-                    //ss.AuthenticateAsClient("global-root-ca.chain-demos.digicert.com", null, digiCertGlobalRootCACert, SslProtocols.Tls11);
-
-                    // option 2
-                    // setup authentication (without providing root CA certificate)
-                    // this requires that the trusted root CA certificates are available in the device certificate store
-                    //ss.AuthenticateAsClient("www.howsmyssl.com", SslProtocols.Tls11);
-                    //ss.AuthenticateAsClient("global-root-ca.chain-demos.digicert.com", SslProtocols.Tls12);
-
-                    // option 3
-                    // disable certificate validation
-                    //ss.SslVerification = SslVerification.NoVerification;
-                    //ss.AuthenticateAsClient("www.howsmyssl.com", SslProtocols.TLSv11);
-
-                    Console.WriteLine("SSL handshake OK!");
-
-                    // write an HTTP GET request to receive data
-                    byte[] buffer = Encoding.UTF8.GetBytes("GET / HTTP/1.0\r\n\r\n");
-                    ss.Write(buffer, 0, buffer.Length);
-
-                    Console.WriteLine($"Wrote {buffer.Length} bytes");
-
-                    // setup buffer to read data from socket
-                    buffer = new byte[1024];
-
-                    // trying to read from socket
-                    int bytes = ss.Read(buffer, 0, buffer.Length);
-
-                    Console.WriteLine($"Read {bytes} bytes");
-
-                    if (bytes > 0)
+                    using (SslStream stream = new SslStream(mySocket))
                     {
-                        // we have data!
-                        // output as string
-                        Console.WriteLine(new String(Encoding.UTF8.GetChars(buffer)));
+
+                        ///////////////////////////////////////////////////////////////////////////////////
+                        // Authenticating the server can be handled in one of three ways:
+                        //
+                        // 1. By providing the root CA certificate of the server being connected to.
+                        // 
+                        // 2. Having the target device preloaded with the root CA certificate.
+                        // 
+                        // !! NOT SECURED !! NOT RECOMENDED !!
+                        // 3. Forcing the authentication workflow to NOT validate the server certificate.
+                        //
+                        /////////////////////////////////////////////////////////////////////////////////// 
+
+                        // option 1 
+                        // setup authentication (add CA root certificate to the call)
+                        // Let's encrypt test certificate
+                        stream.AuthenticateAsClient("www.howsmyssl.com", null, letsEncryptCACert, SslProtocols.Tls11);
+                        // GlobalRoot CA cert from resources
+                        //stream.AuthenticateAsClient("global-root-ca.chain-demos.digicert.com", null, digiCertGlobalRootCACert, SslProtocols.Tls11);
+
+                        // option 2
+                        // setup authentication (without providing root CA certificate)
+                        // this requires that the trusted root CA certificates are available in the device certificate store
+                        //stream.AuthenticateAsClient("www.howsmyssl.com", SslProtocols.Tls11);
+                        //stream.AuthenticateAsClient("global-root-ca.chain-demos.digicert.com", SslProtocols.Tls12);
+
+                        // option 3
+                        // disable certificate validation
+                        //stream.SslVerification = SslVerification.NoVerification;
+                        //stream.AuthenticateAsClient("www.howsmyssl.com", SslProtocols.TLSv11);
+
+                        Console.WriteLine("SSL handshake OK!");
+
+                        // write an HTTP GET request to receive data
+                        byte[] buffer = Encoding.UTF8.GetBytes("GET / HTTP/1.0\r\n\r\n");
+                        stream.Write(buffer, 0, buffer.Length);
+
+                        Console.WriteLine($"Wrote {buffer.Length} bytes");
+
+                        // setup buffer to read data from socket
+                        buffer = new byte[1024];
+
+                        // trying to read from socket
+                        int bytes = stream.Read(buffer, 0, buffer.Length);
+
+                        Console.WriteLine($"Read {bytes} bytes");
+
+                        if (bytes > 0)
+                        {
+                            // we have data!
+                            // output as string
+                            Console.WriteLine(new String(Encoding.UTF8.GetChars(buffer)));
+                        }
                     }
                 }
                 catch (SocketException ex)
@@ -123,11 +125,6 @@ namespace SecureClient
                 catch (Exception ex)
                 {
                     Console.WriteLine($"** Exception occurred: {ex.Message}!**");
-                }
-                finally
-                {
-                    Console.WriteLine("Closing socket");
-                    mySocket.Close();
                 }
             }
 
