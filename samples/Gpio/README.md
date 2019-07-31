@@ -4,6 +4,6 @@ Shows how to use the GPIO related APIs in [Windows.Devices.Gpio](http://docs.nan
 
 ## Samples
 
-[GPIO + Events](/samples/Gpio/Gpio%2BEvents)
+[GPIO + Events](Gpio%2BEvents/)
 
-[GPIO Change Counter](/samples/Gpio/GPIOChangeCounter)
+[GPIO Change Counter](GpioChangeCounter/)
