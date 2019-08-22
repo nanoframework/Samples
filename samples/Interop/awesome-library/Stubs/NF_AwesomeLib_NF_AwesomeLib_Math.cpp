@@ -9,21 +9,14 @@
 //    re-run.
 //
 //-----------------------------------------------------------------------------
+#include "NF_AwesomeLib.h"
+#include "NF_AwesomeLib_NF_AwesomeLib_Math.h"
 
+using namespace NF::AwesomeLib;
 
-#ifndef _NF_AWESOMELIB_NF_AWESOMELIB_MATH_H_
-#define _NF_AWESOMELIB_NF_AWESOMELIB_MATH_H_
-
-namespace NF
+double Math::NativeSuperComplicatedCalculation( double param0, HRESULT &hr )
 {
-    namespace AwesomeLib
-    {
-        struct Math
-        {
-            // Helper Functions to access fields of managed object
-            // Declaration of stubs. These functions are implemented by Interop code developers
-            static double NativeSuperComplicatedCalculation( double param0, HRESULT &hr );
-        };
-    }
+    double retVal = 0; 
+    return retVal;
 }
-#endif  //_NF_AWESOMELIB_NF_AWESOMELIB_MATH_H_
+

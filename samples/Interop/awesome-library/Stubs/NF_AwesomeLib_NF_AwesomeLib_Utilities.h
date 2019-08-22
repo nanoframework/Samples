@@ -9,8 +9,6 @@
 //    re-run.
 //
 //-----------------------------------------------------------------------------
-
-
 #ifndef _NF_AWESOMELIB_NF_AWESOMELIB_UTILITIES_H_
 #define _NF_AWESOMELIB_NF_AWESOMELIB_UTILITIES_H_
 

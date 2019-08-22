@@ -4,10 +4,12 @@ This project illustrates the use of the 'Interop' feature which allow a C# manag
 
 There are two Solutions in this sample:
 
-- In the [*source*](/source) folder you'll find the solution for the Interop managed library: `NF.AwesomeLib.sln`.
-- In the [*test-application*](/test-application) folder you'll find the test application that is referencing the Interop library: `Test.Interop.sln`.
+- In the [*awesome-library*](awesome-library/) folder you'll find the solution with the Interop library: `NF.AwesomeLib.sln`.
+- In the [*test-application*](test-application/) folder you'll find the test application that is referencing the Interop library: `Test.Interop.sln`.
 
-:warning: This is an advanced topic. Please read this [blog post](https://jsimoesblog.wordpress.com/2018/06/19/interop-in-net-nanoframework/) with a detailed explanation on how to create, build and use an Interop library.
+:warning: This is an advanced topic. :warning:
+
+Please read this [blog post](https://jsimoesblog.wordpress.com/2018/06/19/interop-in-net-nanoframework/) with a detailed explanation on how to create, build and use an Interop library.
 
 > **Note:** This sample is part of a large collection of nanoFramework feature samples.
 > If you are unfamiliar with Git and GitHub, you can download the entire collection as a

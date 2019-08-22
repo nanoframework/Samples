@@ -25,5 +25,8 @@ const CLR_RT_NativeAssemblyData g_CLR_AssemblyNative_NF_AwesomeLib =
     "NF.AwesomeLib", 
     0xBB94F141,
     method_lookup,
+    ////////////////////////////////////////////////////////////////////////////////////
+    // check if the version bellow matches the one in AssemblyNativeVersion attribute //
+    ////////////////////////////////////////////////////////////////////////////////////
     { 1, 0, 0, 0 }
 };

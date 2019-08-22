@@ -11,6 +11,7 @@
 #define _NF_AWESOMELIB_H_
 
 #include <nanoCLR_Interop.h>
+#include <nanoCLR_Runtime.h>
 struct Library_NF_AwesomeLib_NF_AwesomeLib_Math
 {
     NANOCLR_NATIVE_DECLARE(NativeSuperComplicatedCalculation___STATIC__R8__R8);
