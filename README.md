@@ -112,7 +112,7 @@ Feel free to browse, take what you like and contribute back if you want.
  </tr>
  <tr>
   <td><a href="samples/Json nanoFramework">nanoFramework Json</a></td>
-  <td><!--<a href="Utility/util2">Utility Two</a>--></td>
+  <td><a href="samples/NativeEvents">Native Events</a></td>
   <td><!--<a href="Utility/util3">Utility Three</a>--></td>
  </tr>
 </table>
