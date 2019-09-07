@@ -63,6 +63,7 @@
  <tr>
   <td><a href="samples/HardwareEsp32">Esp32 硬件</a></td>
   <td><a href="samples/Wifi">WiFi</a></td>
+  <td><a href="samples/WifiAP">WiFi Soft AP</a></td>
   <td><!--<a href="Utility/util3">Utility Three</a>--></td>
  </tr>
 </table>
