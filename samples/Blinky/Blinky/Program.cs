@@ -40,9 +40,11 @@ namespace Blinky
 
             led.SetDriveMode(GpioPinDriveMode.Output);
 
+            led.Write(GpioPinValue.Low);
+
             while (true)
             {
-                led.Write(GpioPinValue.High);
+                led.Toggle();
                 Thread.Sleep(125);
                 led.Toggle();
                 Thread.Sleep(125);
