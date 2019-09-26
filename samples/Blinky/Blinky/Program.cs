@@ -34,6 +34,9 @@ namespace Blinky
             //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('A', 5));
             // A10 is LED onboard blue in NETDUINO 3 Wifi
             // GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('A', 10));
+            // pin 4 it's the green LED in TI CC13x2 Launchpad boards
+            // pin 5 it's the read LED in TI CC13x2 Launchpad boards
+            //GpioPin led = GpioController.GetDefault().OpenPin(4);
 
             led.SetDriveMode(GpioPinDriveMode.Output);
 
