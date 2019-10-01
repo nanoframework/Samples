@@ -28,7 +28,7 @@
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="nanoFramework.TI.EasyLink, Version=1.0.14.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.TI.EasyLink.1.0.14-preview.1\lib\nanoFramework.TI.EasyLink.dll</HintPath>
+      <HintPath>packages\nanoFramework.TI.EasyLink.1.0.14-preview.3\lib\nanoFramework.TI.EasyLink.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>

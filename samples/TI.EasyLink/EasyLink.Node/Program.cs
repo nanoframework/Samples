@@ -15,7 +15,9 @@ namespace EasyLink.Node
 
             controller.AddAddressToFilter(new byte[] { s_nodeAddress });
 
+            // need to initialize the EasyLink layer on the target before any operation is allowed
             var initResult = controller.Initialize();
+
             if (initResult == Status.Success)
             {
                 var destinationAddress = new byte[] { s_concentratorAddress };

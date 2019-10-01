@@ -14,6 +14,7 @@ namespace EasyLink.Concentrator
 
             controller.AddAddressToFilter(new byte[] { s_concentratorAddress });
 
+            // need to initialize the EasyLink layer on the target before any operation is allowed
             var initResult = controller.Initialize();
 
             if (initResult == Status.Success)
@@ -28,7 +29,7 @@ namespace EasyLink.Concentrator
 
                     if (rxResult == Status.Success)
                     {
-                        Console.WriteLine($"Rx packet: {packet.Payload[0]}, RSSI: { packet.Rssi }dB");
+                        Console.WriteLine($"Rx packet: {packet.Payload[0]}, RSSI: { packet.Rssi }dB @ {packet.AbsoluteTime}");
                     }
                     else
                     {
