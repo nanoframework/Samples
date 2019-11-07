@@ -2,114 +2,96 @@
 
 namespace NumberParserTestShared
 {
-    public class TestInt16
+    public class TestInt16 : PerformTestBase
     {
-        class Test
+        public TestInt16()
         {
-            public string InputString { get; set; }
-            public bool ThrowsException { get; set; }
-            public Int16 Result { get; set; }
+            TestName = "TestInt16";
 
-            public Test(string inputString, bool throwsException, Int16 result)
+            tests = new Test[]
+            {
+                new Test("0", 0),
+                new Test("1", 1),
+                new Test("-1"),
+
+                new Test("255"),
+                new Test("-128"),
+                new Test("127", 127),
+
+                new Test("65535", true),
+                new Test("-32768"),
+                new Test("32767"),
+
+                new Test("4294967295", true),
+                new Test("-2147483648", true),
+                new Test("2147483647", true),
+
+                new Test("18446744073709551615", true),
+                new Test("-9223372036854775808", true),
+                new Test("9223372036854775807", true),
+
+                new Test("NaN", true),
+                new Test("null", true),
+                new Test("123.1", true),
+                new Test("123,1", true),
+                new Test("1string", true),
+                new Test("string1", true),
+                new Test("", true),
+                new Test(" ", true),
+                new Test("+123", 123),
+                new Test(" 26", 26),
+                new Test("27 ", 27),
+                new Test(" 28 " , 28),
+                new Test("true", true),
+                new Test("false", true),
+                new Test("1,0e+1", true),
+                new Test("1.0e+1", true),
+                new Test("0123", 123),
+                new Test("0x123", true)
+            };
+
+        }
+
+        class Test : TestBase
+        {
+            public Test(string inputString, short result, bool throwsException = false)
+                : base(inputString, throwsException)
             {
                 InputString = inputString;
                 ThrowsException = throwsException;
                 Result = result;
             }
 
-            public Test(string inputString, Int16 result)
+            public Test(string inputString, bool throwsException = false)
+                : base(inputString, throwsException)
             {
                 InputString = inputString;
-                ThrowsException = false;
-                Result = result;
-            }
-
-            public Test(string inputString)
-            {
-                InputString = inputString;
-                ThrowsException = true;
+                ThrowsException = throwsException;
+                Result = (short)0;
             }
         }
 
-        static Test[] tests =
+        public override bool PerformParse(string testString, out object value)
         {
-            new Test("0", 0),
-            new Test("1", 1),
-            new Test("-1", -1),
+            value = (short)0;
 
-            new Test("255", Byte.MaxValue),
-            new Test("-128", SByte.MinValue),
-            new Test("127", SByte.MaxValue),
-
-            new Test("65535"),
-            new Test("-32768", Int16.MinValue),
-            new Test("32767", 32767),
-
-            new Test("4294967295"),
-            new Test("-2147483648"),
-            new Test("2147483647"),
-
-            new Test("18446744073709551615"),
-            new Test("-9223372036854775808"),
-            new Test("9223372036854775807"),
-            
-            new Test("NaN"),
-            new Test("null"),
-            new Test("123.1"),
-            new Test("123,1"),
-            new Test("1string"),
-            new Test("string1"),
-            new Test(""),
-            new Test(" "),
-            new Test("+123", 123),
-            new Test(" 26", 26),
-            new Test("27 ", 27),
-            new Test(" 28 " , 28),
-            new Test("true"),
-            new Test("false"),
-            new Test("1,0e+1"),
-            new Test("1.0e+1"),
-            new Test("0123", 123),
-            new Test("0x123")
-        };
-
-        public static void RunTest(Boolean showOnlyFails = false)
-        {
-            int _fails = 0;
-            int _testCount = 0;
-            foreach (var test in tests)
+            try
             {
-                _testCount++;
-                bool exception = false;
-                bool correctValue = true;
+                value = short.Parse(testString);
 
-                try
-                {
-                    var val = Int16.Parse(test.InputString);
-                    correctValue = (val == test.Result);
-                }
-                catch
-                {
-                    exception = true;
-                }
-
-                if (exception == test.ThrowsException && correctValue)
-                {
-                    if (!showOnlyFails)
-                    {
-                        Console.WriteLine("Parsing " + test.InputString + ": passed");
-                    }
-                }
-                else
-                {
-                    _fails++;
-                    Console.WriteLine("Parsing " + test.InputString + ": failed");
-                }
-
+                return true;
+            }
+            catch
+            {
+                // just want to catch the exception
             }
 
-            Console.WriteLine("TestInt16 Tests: " + _testCount + " Fails: " + _fails);
+            return false;
         }
 
+        public override bool PerformCompare(object value, object expectedValue)
+        {
+            return ((short)value).Equals((short)expectedValue);
+        }
     }
 }

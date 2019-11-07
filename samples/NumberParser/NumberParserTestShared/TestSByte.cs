@@ -2,114 +2,96 @@
 
 namespace NumberParserTestShared
 {
-    public class TestSByte
+    public class TestSByte : PerformTestBase
     {
-        class Test
+        public TestSByte()
         {
-            public string InputString { get; set; }
-            public bool ThrowsException { get; set; }
-            public SByte Result { get; set; }
+            TestName = "TestSByte";
 
-            public Test(string inputString, bool throwsException, SByte result)
+            tests = new Test[]
+            {
+                new Test("0", 0),
+                new Test("1", 1),
+                new Test("-1"),
+
+                new Test("255", SByte.MaxValue, true),
+                new Test("-128"),
+                new Test("127"),
+
+                new Test("65535", true),
+                new Test("-32768", true),
+                new Test("32767", true),
+
+                new Test("4294967295", true),
+                new Test("-2147483648", true),
+                new Test("2147483647", true),
+
+                new Test("18446744073709551615", true),
+                new Test("-9223372036854775808", true),
+                new Test("9223372036854775807", true),
+
+                new Test("NaN", true),
+                new Test("null", true),
+                new Test("123.1", true),
+                new Test("123,1", true),
+                new Test("1string", true),
+                new Test("string1", true),
+                new Test("", true),
+                new Test(" ", true),
+                new Test("+123", 123),
+                new Test(" 26", 26),
+                new Test("27 ", 27),
+                new Test(" 28 " , 28),
+                new Test("true", true),
+                new Test("false", true),
+                new Test("1,0e+1", true),
+                new Test("1.0e+1", true),
+                new Test("0123", 123),
+                new Test("0x123", true)
+            };
+
+        }
+
+        class Test : TestBase
+        {
+            public Test(string inputString, sbyte result, bool throwsException = false)
+                : base(inputString, throwsException)
             {
                 InputString = inputString;
                 ThrowsException = throwsException;
                 Result = result;
             }
 
-            public Test(string inputString, SByte result)
+            public Test(string inputString, bool throwsException = false)
+                : base(inputString, throwsException)
             {
                 InputString = inputString;
-                ThrowsException = false;
-                Result = result;
-            }
-
-            public Test(string inputString)
-            {
-                InputString = inputString;
-                ThrowsException = true;
+                ThrowsException = throwsException;
+                Result = (sbyte)0;
             }
         }
 
-        static Test[] tests =
+        public override bool PerformParse(string testString, out object value)
         {
-            new Test("0", 0),
-            new Test("1", 1),
-            new Test("-1", -1),
+            value = (sbyte)0;
 
-            new Test("255"),
-            new Test("-128", SByte.MinValue),
-            new Test("127", SByte.MaxValue),
-
-            new Test("65535"),
-            new Test("-32768"),
-            new Test("32767"),
-
-            new Test("4294967295"),
-            new Test("-2147483648"),
-            new Test("2147483647"),
-
-            new Test("18446744073709551615"),
-            new Test("-9223372036854775808"),
-            new Test("9223372036854775807"),
-            
-            new Test("NaN"),
-            new Test("null"),
-            new Test("123.1"),
-            new Test("123,1"),
-            new Test("1string"),
-            new Test("string1"),
-            new Test(""),
-            new Test(" "),
-            new Test("+123", 123),
-            new Test(" 26", 26),
-            new Test("27 ", 27),
-            new Test(" 28 " , 28),
-            new Test("true"),
-            new Test("false"),
-            new Test("1,0e+1"),
-            new Test("1.0e+1"),
-            new Test("0123", 123),
-            new Test("0x123")
-        };
-
-        public static void RunTest(Boolean showOnlyFails = false)
-        {
-            int _fails = 0;
-            int _testCount = 0;
-            foreach (var test in tests)
+            try
             {
-                _testCount++;
-                bool exception = false;
-                bool correctValue = true;
+                value = sbyte.Parse(testString);
 
-                try
-                {
-                    var val = SByte.Parse(test.InputString);
-                    correctValue = (val == test.Result);
-                }
-                catch
-                {
-                    exception = true;
-                }
-
-                if (exception == test.ThrowsException && correctValue)
-                {
-                    if (!showOnlyFails)
-                    {
-                        Console.WriteLine("Parsing " + test.InputString + ": passed");
-                    }
-                }
-                else
-                {
-                    _fails++;
-                    Console.WriteLine("Parsing " + test.InputString + ": failed");
-                }
-
+                return true;
             }
-            Console.WriteLine("TestSByte Tests: " + _testCount + " Fails: " + _fails);
+            catch
+            {
+                // just want to catch the exception
+            }
 
+            return false;
         }
 
+        public override bool PerformCompare(object value, object expectedValue)
+        {
+            return ((sbyte)value).Equals((sbyte)expectedValue);
+        }
     }
 }

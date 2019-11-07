@@ -1,39 +1,46 @@
 ﻿using System;
+using System.Text;
 
 namespace NumberParserTestShared
 {
-    public class TestInt64 : PerformTestBase
+    public class TestFloat : PerformTestBase
     {
-        public TestInt64()
+        public TestFloat()
         {
-            TestName = "TestInt64";
+            TestName = "TestFloat";
 
             tests = new Test[]
             {
                 new Test("0", 0),
                 new Test("1", 1),
-                new Test("-1"),
+                new Test("-1", -1),
 
-                new Test("255"),
-                new Test("-128"),
+                new Test("255", Byte.MaxValue),
+                new Test("-128", -128),
                 new Test("127", 127),
 
-                new Test("65535"),
-                new Test("-32768"),
+                new Test("65535", UInt16.MaxValue),
+                new Test("-32768", -32768),
                 new Test("32767"),
 
-                new Test("4294967295"),
-                new Test("-2147483648"),
-                new Test("2147483647"),
+                new Test("4294967295", UInt32.MaxValue),
+                new Test("-2147483648", -2147483648),
+                new Test("2147483647", Int32.MaxValue),
 
-                new Test("18446744073709551615", true),
-                new Test("-9223372036854775808"),
-                new Test("9223372036854775807"),
+                new Test("18446744073709551615", UInt64.MaxValue),
+                new Test("-9223372036854775808", -9223372036854775808),
+                new Test("9223372036854775807", Int64.MaxValue),
 
-                new Test("NaN", true),
+                new Test("18446744073709551616"),
+
+                new Test("NaN", float.NaN),
+                new Test("Infinity", float.PositiveInfinity),
+                new Test("-Infinity", float.NegativeInfinity),
+                new Test("1.401298E-45", float.Epsilon),
+
                 new Test("null", true),
-                new Test("123.1", true),
-                new Test("123,1", true),
+                new Test("123.1"),
+                new Test("123,1"),
                 new Test("1string", true),
                 new Test("string1", true),
                 new Test("", true),
@@ -41,11 +48,11 @@ namespace NumberParserTestShared
                 new Test("+123", 123),
                 new Test(" 26", 26),
                 new Test("27 ", 27),
-                new Test(" 28 " , 28),
+                new Test(" 28 ", 28),
                 new Test("true", true),
                 new Test("false", true),
-                new Test("1,0e+1", true),
-                new Test("1.0e+1", true),
+                new Test("1,0e+1"),
+                new Test("1.0e+1"),
                 new Test("0123", 123),
                 new Test("0x123", true)
             };
@@ -54,8 +61,8 @@ namespace NumberParserTestShared
 
         class Test : TestBase
         {
-            public Test(string inputString, long result, bool throwsException = false)
-                : base(inputString, throwsException)
+            public Test(string inputString, float result, bool throwsException = false)
+                :base(inputString, throwsException)
             {
                 InputString = inputString;
                 ThrowsException = throwsException;
@@ -67,22 +74,22 @@ namespace NumberParserTestShared
             {
                 InputString = inputString;
                 ThrowsException = throwsException;
-                Result = (long)0;
+                Result = 0.0f;
             }
         }
 
         public override bool PerformParse(string testString, out object value)
         {
-            value = (long)0;
+            value = 0.0f;
 
             try
             {
-                value = long.Parse(testString);
+                value = float.Parse(testString);
 
                 return true;
             }
             catch
-            {
+            { 
                 // just want to catch the exception
             }
 
@@ -91,7 +98,7 @@ namespace NumberParserTestShared
 
         public override bool PerformCompare(object value, object expectedValue)
         {
-            return ((long)value).Equals((long)expectedValue);
+            return ((float)value).CompareTo((float)expectedValue) == 0;
         }
     }
 }

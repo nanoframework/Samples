@@ -9,9 +9,13 @@
     <Import_RootNamespace>NumberParserTestShared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)PerformTestBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestDouble.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestInt16.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestInt64.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestInt32.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestFloat.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestUInt64.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestUInt32.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestUInt16.cs" />

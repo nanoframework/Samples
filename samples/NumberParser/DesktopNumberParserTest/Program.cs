@@ -12,17 +12,35 @@ namespace DesktopNumberParserTest
             // Change current culture to Invariant culture to match nanoFramework culture setting
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 
-            TestByte.RunTest(true);
-            TestSByte.RunTest(true);
+            var testByte = new TestByte();
+            testByte.RunTest();
 
-            TestUInt16.RunTest(true);
-            TestInt16.RunTest(true);
+            var testSByte = new TestSByte();
+            testSByte.RunTest();
 
-            TestUInt32.RunTest(true);
-            TestInt32.RunTest(true);
+            var testUInt16 = new TestUInt16();
+            testUInt16.RunTest();
 
-            TestUInt64.RunTest(true);
-            TestInt64.RunTest(true);
+            var testInt16 = new TestInt16();
+            testInt16.RunTest();
+
+            var testUInt32 = new TestUInt32();
+            testUInt32.RunTest();
+
+            var testInt32 = new TestInt32();
+            testInt32.RunTest();
+
+            var testUInt64 = new TestUInt64();
+            testUInt64.RunTest();
+
+            var testInt64 = new TestInt64();
+            testInt64.RunTest();
+
+            var testFloat = new TestFloat();
+            testFloat.RunTest();
+
+            var testDouble = new TestDouble();
+            testDouble.RunTest();
 
             Thread.Sleep(Timeout.Infinite);
         }
