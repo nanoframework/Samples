@@ -7,8 +7,6 @@ Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "HttpWebRequest", "HttpWebRe
 EndProject
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "HttpListener", "HttpListener\HttpListener.nfproj", "{4C9AC2C4-E98C-4C1A-AFC7-CFB5C4F2292B}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "System.Net.Http", "..\..\..\nflib-nanoFramework.System.Net.Http\source\nanoFramework.System.Net.Http\System.Net.Http.nfproj", "{C3ABA656-9831-4006-A3B3-EA842A3C508E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,12 +25,6 @@ Global
 		{4C9AC2C4-E98C-4C1A-AFC7-CFB5C4F2292B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C9AC2C4-E98C-4C1A-AFC7-CFB5C4F2292B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4C9AC2C4-E98C-4C1A-AFC7-CFB5C4F2292B}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{C3ABA656-9831-4006-A3B3-EA842A3C508E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C3ABA656-9831-4006-A3B3-EA842A3C508E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C3ABA656-9831-4006-A3B3-EA842A3C508E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{C3ABA656-9831-4006-A3B3-EA842A3C508E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3ABA656-9831-4006-A3B3-EA842A3C508E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C3ABA656-9831-4006-A3B3-EA842A3C508E}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
