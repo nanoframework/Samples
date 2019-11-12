@@ -12,6 +12,12 @@ Shows how to use the HTTP related APIs in [System.Net](http://docs.nanoframework
 
 ## Scenarios
 
+### HTTP listener
+
+Example on how to implement a HTTP listener to reply to incoming HTTP requests.
+
+> **Note:** this is **NOT** an HTTP server, just a sample to illustrate how to use the HTTP Listener class.  
+
 ### HTTP Web Request
 
 Example on how to perform a HTTP Web requests. Optionally to secured (TLS) servers.

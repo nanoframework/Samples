@@ -23,8 +23,8 @@
   <td><a href="samples/AMQP">AMQP 例程</a></td>
  </tr>
  <tr>
-  <td><a href="samples/MQTT">MQTT 例程</a></td>
-  <td><!--<a href="Utility/util2">Utility Two</a>--></td>
+  <td><a href="samples/MQTT/TestMqtt">MQTT sample pack</a></td>
+  <td><a href="samples/MQTT/AzureMQTT">MQTT with Azure IoT sample</a></td>
   <td><!--<a href="Utility/util3">Utility Three</a>--></td>
  </tr>
 </table>
@@ -54,7 +54,7 @@
  <tr>
   <td><a href="samples/Networking">Sockets 例程</a></td>
   <td><a href="samples/SSL">SSL 例程</a></td>
-  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
+  <td><a href="samples/HTTP">HTTP</a></td>
  </tr>
 </table>
 
