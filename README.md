@@ -128,6 +128,25 @@ Feel free to browse, take what you like and contribute back if you want.
  </tr>
 </table>
 
+### Graphics
+
+##### Overview
+These samples are provided to help explore the capabilities of the nanoFramework graphics.
+
+  >Important note : The WPF samples are still in the testing phase and require hardware buttons
+
+
+
+### Basic Graphics
+
+| Type          | Sample         | Description    | Status    |
+| :-------------| :------------- | :----------: | -----------: |
+|  Basic | [Primitives](samples/GraphicsWpf/Primitives) |These samples use the bitmap class which contains methods for calling the underlying code written in C.    | Tested
+|  Wpf | [SimpleWpf](samples/GraphicsWpf/SimpleWpf) | Original netMF wpf demo imported into nanoframework. Requires hardware buttons. A program to explore some of the controls available. | NOT Tested, in the process of modifying it to use a button provider class, not a GPIO provider to make it more flexible |
+|  Tetris | [Tetris](samples/GraphicsWpf/Tetris) | Written by Pavel Bánský for netMF, showing some techniques in using the nanoframework graphics. | NOT Tested, in the process of modifying it to use a button provider class, not a GPIO provider to make it more flexible  |
+
+
+
 ## Feedback and documentation
 
 For documentation, providing feedback, issues and finding out how to contribute please refer to the [Home repo](https://github.com/nanoframework/Home).
