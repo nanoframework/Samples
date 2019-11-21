@@ -7,7 +7,12 @@ Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Primitives", "Primitives\Pr
 EndProject
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "SimpleWpf", "SimpleWpf\SimpleWpf.nfproj", "{FFE43682-F092-423A-AA8C-5D0C143CB9CC}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "nanoFramework.Graphics.Wpf", "..\..\..\lib-nanoFramework.Graphics.Wpf\source\nanoFramework.Graphics.Wpf\nanoFramework.Graphics.Wpf.nfproj", "{E30AE2AA-BED0-4AA8-AC22-04C274898894}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Tetris", "Tetris\Tetris.nfproj", "{0AD3E53E-8408-4252-ADD2-70DAAFA1D1E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2403B83A-352D-422E-B893-B1D091D09970}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,12 +32,12 @@ Global
 		{FFE43682-F092-423A-AA8C-5D0C143CB9CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFE43682-F092-423A-AA8C-5D0C143CB9CC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FFE43682-F092-423A-AA8C-5D0C143CB9CC}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{E30AE2AA-BED0-4AA8-AC22-04C274898894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E30AE2AA-BED0-4AA8-AC22-04C274898894}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E30AE2AA-BED0-4AA8-AC22-04C274898894}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{E30AE2AA-BED0-4AA8-AC22-04C274898894}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E30AE2AA-BED0-4AA8-AC22-04C274898894}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E30AE2AA-BED0-4AA8-AC22-04C274898894}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0AD3E53E-8408-4252-ADD2-70DAAFA1D1E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AD3E53E-8408-4252-ADD2-70DAAFA1D1E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AD3E53E-8408-4252-ADD2-70DAAFA1D1E2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0AD3E53E-8408-4252-ADD2-70DAAFA1D1E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AD3E53E-8408-4252-ADD2-70DAAFA1D1E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AD3E53E-8408-4252-ADD2-70DAAFA1D1E2}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -18,8 +18,8 @@
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
-    <Compile Include="wpf\Console.cs" />
-    <Compile Include="wpf\ConsoleWindow.cs" />
+    <Compile Include="SimplePrimitives\InformationBar.cs" />
+    <Compile Include="SimplePrimitives\RandomClipping.cs" />
     <Compile Include="SimplePrimitives\MatrixRain.cs" />
     <Compile Include="PandaGif.cs" />
     <Compile Include="Program.cs" />
@@ -29,7 +29,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
-    <Compile Include="SimplePrimitives\DisplayMetrics.cs" />
     <Compile Include="SimplePrimitives\FontExamples.cs" />
     <Compile Include="SimplePrimitives\RandomEllipses.cs" />
     <Compile Include="SimplePrimitives\RandomDrawLine.cs" />
@@ -58,13 +57,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\lib-nanoFramework.Graphics.Wpf\source\nanoFramework.Graphics.Wpf\nanoFramework.Graphics.Wpf.nfproj" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="mscorlib, Version=1.5.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.CoreLibrary.1.5.1-preview.1\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
+    </Reference>
+    <Reference Include="nanoFramework.Graphics.Wpf">
+      <HintPath>..\..\..\..\..\lib-nanoFramework.Graphics.Wpf\source\nanoFramework.Graphics.Wpf\bin\Debug\nanoFramework.Graphics.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.ResourceManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.ResourceManager.1.0.0-preview.4\lib\nanoFramework.ResourceManager.dll</HintPath>

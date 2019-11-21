@@ -2,14 +2,14 @@ using nanoFramework.Presentation;
 using nanoFramework.Presentation.Controls;
 using nanoFramework.Presentation.Media;
 using nanoFramework.Runtime.Events;
-using Primitives;
+using SimpleWpf;
 
 namespace nanoFramework.UI.Console
 {
     public class ConsoleWindow : Window
     {
         private Font Small =  Resource.GetFont(Resource.FontResources.small);
-        private Font CourierRegular10 = Resource.GetFont(Resource.FontResources.CourierRegular10);
+        private Font CourierRegular10 = Resource.GetFont(Resource.FontResources.courierregular10);
         private Font NinaB = Resource.GetFont(Resource.FontResources.NinaB);
 
         private TextFlow log;

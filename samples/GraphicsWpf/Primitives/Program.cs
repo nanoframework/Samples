@@ -16,43 +16,45 @@ namespace Primitives
             int delayBetween = 3000;
 
             Bitmap fullScreenBitmap = new Bitmap(width, height);                            // Use this bitmap as our output to the screen.
+            fullScreenBitmap.Clear();
+            fullScreenBitmap.Flush();
             DisplayOrientation orientation = (DisplayOrientation)dc.Orientation;
             Font DisplayFont = Resource.GetFont(Resource.FontResources.SegoeUIRegular12);
 
             while (true)
             {
-                StretchImage si = new StretchImage(fullScreenBitmap, width, height, DisplayFont);
+                SetPixels sp = new SetPixels(fullScreenBitmap, DisplayFont);
                 Thread.Sleep(delayBetween);
 
-                RandomDrawLine rdlt = new RandomDrawLine(fullScreenBitmap, width, height, DisplayFont);
+                FontExamples fe = new FontExamples(fullScreenBitmap);
                 Thread.Sleep(delayBetween);
 
-                TileImage ti = new TileImage(fullScreenBitmap, width, height, DisplayFont);
+                StretchImage si = new StretchImage(fullScreenBitmap,  DisplayFont);
                 Thread.Sleep(delayBetween);
 
-                RandomEllipses re = new RandomEllipses(fullScreenBitmap, width, height, DisplayFont);
+                RandomDrawLine rdlt = new RandomDrawLine(fullScreenBitmap,  DisplayFont);
                 Thread.Sleep(delayBetween);
 
-                DisplayMetrics dm = new DisplayMetrics(fullScreenBitmap, width, height, bpp);
+                TileImage ti = new TileImage(fullScreenBitmap,  DisplayFont);
                 Thread.Sleep(delayBetween);
 
-                FontExamples fe = new FontExamples(fullScreenBitmap, width, height);
+                RandomEllipses re = new RandomEllipses(fullScreenBitmap,  DisplayFont);
                 Thread.Sleep(delayBetween);
 
-                RandomRectangles rr = new RandomRectangles(fullScreenBitmap, width, height, DisplayFont);
+                RandomRectangles rr = new RandomRectangles(fullScreenBitmap,  DisplayFont);
                 Thread.Sleep(delayBetween);
 
-                SliceScaling9 ss = new SliceScaling9(fullScreenBitmap, width, height, DisplayFont);
+                SliceScaling9 ss = new SliceScaling9(fullScreenBitmap,  DisplayFont);
+                Thread.Sleep(delayBetween);
+                
+                RotateImage ri = new RotateImage(fullScreenBitmap,  DisplayFont);
                 Thread.Sleep(delayBetween);
 
-                RotateImage ri = new RotateImage(fullScreenBitmap, width, height, DisplayFont);
+                RandomClipping rc = new RandomClipping(fullScreenBitmap,  DisplayFont);
                 Thread.Sleep(delayBetween);
 
-                //MatrixRain mr = new MatrixRain(fullScreenBitmap, width, height, DisplayFont);
-                //Thread.Sleep(delayBetween);
-
-                Thread.Sleep(delayBetween);
-
+                MatrixRain mr = new MatrixRain(fullScreenBitmap,  DisplayFont);
+                Thread.Sleep(Timeout.Infinite);
             }
         }
     }

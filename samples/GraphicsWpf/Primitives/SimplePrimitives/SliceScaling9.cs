@@ -5,7 +5,7 @@ namespace Primitives.SimplePrimitives
 {
     public class SliceScaling9
     {
-        public SliceScaling9(Bitmap fullScreenBitmap, int width, int height, Font DisplayFont)
+        public SliceScaling9(Bitmap fullScreenBitmap,  Font DisplayFont)
         {
             Font fontHeading = Resource.GetFont(Resource.FontResources.ComicSansMS16);
 
@@ -13,19 +13,19 @@ namespace Primitives.SimplePrimitives
             fullScreenBitmap.Flush();
 
             fullScreenBitmap.DrawText($"Scale image", fontHeading, Color.Beige, 0, 0);
-            fullScreenBitmap.DrawRectangle(Color.White, 0, 0, 0, width, height, 0, 0, Color.White, 0, 0, 0, 0, 0, 256);
+            fullScreenBitmap.DrawRectangle(Color.White, 0, 0, 0, fullScreenBitmap.Width, fullScreenBitmap.Height, 0, 0, Color.White, 0, 0, 0, 0, 0, 256);
 
             Bitmap bmpScaleWaterFall = new Bitmap(WaterFallJpg.WaterFall, Bitmap.BitmapImageType.Jpeg);
             bmpScaleWaterFall.MakeTransparent(ColorUtility.ColorFromRGB(255, 0, 255));
-            fullScreenBitmap.Scale9Image(30, 30, width / 3, height / 3, bmpScaleWaterFall, 6, 6, 6, 6, 256);
-            fullScreenBitmap.Scale9Image(width / 2, height / 2, width / 3, 30, bmpScaleWaterFall, 6, 6, 6, 6, 256);
-            fullScreenBitmap.Scale9Image(30, height / 2, 30, height / 3, bmpScaleWaterFall, 6, 6, 6, 6, 256);
-            fullScreenBitmap.Scale9Image(width / 2, 30, 30, 30, bmpScaleWaterFall, 6, 6, 6, 6, 256);
+            fullScreenBitmap.Scale9Image(30, 30, fullScreenBitmap.Width / 3, fullScreenBitmap.Height / 3, bmpScaleWaterFall, 6, 6, 6, 6, 256);
+            fullScreenBitmap.Scale9Image(fullScreenBitmap.Width / 2, fullScreenBitmap.Height / 2, fullScreenBitmap.Width / 3, 30, bmpScaleWaterFall, 6, 6, 6, 6, 256);
+            fullScreenBitmap.Scale9Image(30, fullScreenBitmap.Height / 2, 30, fullScreenBitmap.Height / 3, bmpScaleWaterFall, 6, 6, 6, 6, 256);
+            fullScreenBitmap.Scale9Image(fullScreenBitmap.Width / 2, 30, 30, 30, bmpScaleWaterFall, 6, 6, 6, 6, 256);
             bmpScaleWaterFall.Dispose();
 
+            InformationBar.DrawInformationBar(fullScreenBitmap, DisplayFont, InfoBarPosition.bottom, "9 Slice Scaling ( Scale 9 grid) ");
             fullScreenBitmap.Flush();
         }
-
         public void Scale9ImageManaged(Bitmap bmpDest, int xDst, int yDst, int widthDst, int heightDst, Bitmap bitmap, int leftBorder, int topBorder, int rightBorder, int bottomBorder, ushort opacity)
         {
             if (widthDst < leftBorder || heightDst < topBorder)
@@ -70,8 +70,6 @@ namespace Primitives.SimplePrimitives
             //center
             if (centerWidthDst > 0 && centerHeightDst > 0)
                 bmpDest.StretchImage(xDst + leftBorder, yDst + topBorder, centerWidthDst, centerHeightDst, bitmap, leftBorder, topBorder, centerWidthSrc, centerHeightSrc, opacity);
-
         }
-
     }
 }

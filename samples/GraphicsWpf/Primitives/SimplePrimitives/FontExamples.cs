@@ -5,13 +5,14 @@ namespace Primitives.SimplePrimitives
 {
     public class FontExamples
     {
-       public FontExamples(Bitmap fullScreenBitmap, int width, int height)
+       public FontExamples(Bitmap fullScreenBitmap)
         {
             Font fntCourierRegular10 = Resource.GetFont(Resource.FontResources.CourierRegular10);
             Font fntComicSansMS16 = Resource.GetFont(Resource.FontResources.ComicSansMS16);
             Font fntNinaB = Resource.GetFont(Resource.FontResources.NinaB);
             Font fntSegoeUIRegular12 = Resource.GetFont(Resource.FontResources.SegoeUIRegular12);
             Font fntSmall = Resource.GetFont(Resource.FontResources.small);
+
 
             string strSmallFont = Resource.GetString(Resource.StringResources.strnSmallFont);
             string strNinaFont = Resource.GetString(Resource.StringResources.strNinaFont);

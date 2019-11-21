@@ -6,17 +6,19 @@ namespace Primitives.SimplePrimitives
 {
     public class RandomEllipses
     {
-        public RandomEllipses(Bitmap fullScreenBitmap, int width, int height, Font fontNinaB)
+        public RandomEllipses(Bitmap fullScreenBitmap, Font DisplayFont)
         {
             Random random = new Random();
             fullScreenBitmap.Clear();
             fullScreenBitmap.Flush();
             for (int i = 0; i < 100; i++)
             {
-                int radius = random.Next(100);
+                int radiusX = random.Next(200);
+                int radiusY = random.Next(200);
+
                 fullScreenBitmap.DrawEllipse((nanoFramework.Presentation.Media.Color)random.Next(0xFFFFFF), 1,
-                                random.Next(fullScreenBitmap.Width), random.Next(fullScreenBitmap.Height - 20), radius, radius, 0, 0, 0, 0, 0, 0, 0);
-                fullScreenBitmap.DrawText($"Circle Number {i}", fontNinaB, Color.Black, 0, fullScreenBitmap.Height - 20);
+                                random.Next(fullScreenBitmap.Width), random.Next(fullScreenBitmap.Height - 20), radiusX, radiusY, 0, 0, 0, 0, 0, 0, 0);
+                InformationBar.DrawInformationBar(fullScreenBitmap, DisplayFont, InfoBarPosition.bottom, $"Ellipse Number {i}");
                 fullScreenBitmap.Flush();
             }
         }

@@ -6,26 +6,53 @@ namespace Primitives.SimplePrimitives
 {
     class RotateImage
     {
-
-        public RotateImage(Bitmap fullScreenBitmap, int width, int height, Font DisplayFont)
+        public RotateImage(Bitmap fullScreenBitmap,  Font DisplayFont)
         {
             Bitmap bmpSrc = null;
             Bitmap bmpDst = null;
             try
             {
-                bmpDst = new Bitmap(width, height);
                 bmpSrc = new Bitmap(WaterFallJpg.WaterFall, Bitmap.BitmapImageType.Jpeg);
-                bmpDst.StretchImage(0, 0, bmpSrc, bmpSrc.Width, bmpSrc.Height, 0x0100);
-                bmpDst.Flush();
+                fullScreenBitmap.StretchImage(0, 0, bmpSrc, bmpSrc.Width, bmpSrc.Height, 0x0100);
+                fullScreenBitmap.Flush();
 
-                System.Threading.Thread.Sleep(200);
+                int xDst = 0;
+                int yDst = 0;
 
-                for (int i = 1; i < 4; ++i)
+                int rotation = 0;
+                for (int i = 0; i < 66; ++i)
                 {
-                    bmpDst.Clear();
-                    bmpDst.RotateImage(90 * i, 0, 0, bmpSrc, 0, 0, bmpSrc.Width, bmpSrc.Height, 0xFFFF);
-                    bmpDst.Flush();
-                    System.Threading.Thread.Sleep(400);
+                    switch (rotation)
+                    {
+                        case 0:
+                            xDst = (fullScreenBitmap.Width - bmpSrc.Width) / 2;
+                            yDst = (fullScreenBitmap.Height - bmpSrc.Height) / 2;
+                            break;
+                        case 90:
+                            xDst = (fullScreenBitmap.Height - bmpSrc.Height) / 2;
+                            yDst = (fullScreenBitmap.Width - bmpSrc.Width) / 2;
+                            break;
+                        case 180:
+                            xDst = (fullScreenBitmap.Width - bmpSrc.Width) / 2;
+                            yDst = (fullScreenBitmap.Height - bmpSrc.Height) / 2;
+                            break;
+                        case 270:
+                            xDst = (fullScreenBitmap.Width - bmpSrc.Width) / 2;
+                            yDst = (fullScreenBitmap.Height - bmpSrc.Height) / 2;
+                            break;
+                    }
+
+                    fullScreenBitmap.Clear();
+                    fullScreenBitmap.RotateImage(rotation, xDst, yDst, bmpSrc, 0, 0, bmpSrc.Width, bmpSrc.Height, 0xFFFF);
+
+                    InformationBar.DrawInformationBar(fullScreenBitmap, DisplayFont, InfoBarPosition.bottom, $"Rotate Image degrees {i:D3}");
+                    fullScreenBitmap.Flush();
+
+                    rotation += 90;
+                    if (rotation == 360)
+                    {
+                        rotation = 0;
+                    }
                 }
             }
             catch (Exception e)
@@ -45,6 +72,5 @@ namespace Primitives.SimplePrimitives
                 System.Threading.Thread.Sleep(500);
             }
         }
-
     }
 }

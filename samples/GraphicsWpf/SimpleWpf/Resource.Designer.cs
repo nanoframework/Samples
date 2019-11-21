@@ -8,6 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
+using System;
+
 namespace SimpleWpf
 {
     
@@ -29,23 +32,16 @@ namespace SimpleWpf
         {
             return ((nanoFramework.UI.Font)(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id)));
         }
-        internal static nanoFramework.UI.Bitmap GetBitmap(Resource.BitmapResources id)
-        {
-            return (nanoFramework.UI.Bitmap)(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id));
-        }
         internal static string GetString(Resource.StringResources id)
         {
             return ((string)(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id)));
         }
-        internal static byte[] GetBytes(Resource.BinaryResources id)
-        {
-            return ((byte[])(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id)));
-        }
-
         [System.SerializableAttribute()]
-        internal enum BinaryResources : short
+        internal enum FontResources : short
         {
-
+            courierregular10 = -25095,
+            small = 13070,
+            NinaB = 18060,
         }
         [System.SerializableAttribute()]
         internal enum BitmapResources : short
@@ -73,11 +69,10 @@ namespace SimpleWpf
             ReturnToMenu = 29183,
             ScrollableText = 31192,
         }
-        [System.SerializableAttribute()]
-        internal enum FontResources : short
+
+        internal static nanoFramework.UI.Bitmap GetBitmap(BitmapResources id)
         {
-            small = 13070,
-            NinaB = 18060,
+            return ((nanoFramework.UI.Bitmap)(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id)));
         }
     }
 }

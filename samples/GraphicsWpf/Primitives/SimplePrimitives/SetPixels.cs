@@ -7,7 +7,7 @@ namespace Primitives.SimplePrimitives
 {
     class SetPixels
     {
-        public  SetPixels(Bitmap fullScreenBitmap, int width, int height, Font DisplayFont)
+        public  SetPixels(Bitmap fullScreenBitmap,  Font DisplayFont)
         {
             fullScreenBitmap.Clear();
             fullScreenBitmap.Flush();
@@ -19,9 +19,9 @@ namespace Primitives.SimplePrimitives
             {
                 fullScreenBitmap.SetPixel(fullScreenBitmap.Height - i, i, (Color)(i << 8));
             }
+            InformationBar.DrawInformationBar(fullScreenBitmap, DisplayFont, InfoBarPosition.bottom, "Set individual Pixels");
             fullScreenBitmap.Flush();
 
         }
-
     }
 }

@@ -6,11 +6,6 @@ using nanoFramework.UI;
 using nanoFramework.UI.Input;
 using nanoFramework.UI.Threading;
 using nanoFramework.Presentation;
-
-using System.Threading;
-using nanoFramework.Runtime;
-using nanoFramework.Runtime.Events;
-
 using Windows.Devices.Gpio;
 
 
@@ -106,8 +101,6 @@ namespace SimpleWPF
             {
                 this.sink = sink;
                 this.button = button;
-                /// Do not set an InterruptPort with GPIO_NONE.
-                // When this GPIO pin is true, call the Interrupt method.
                 pin.SetDriveMode(GpioPinDriveMode.Input);
                 pin.ValueChanged += Pin_ValueChanged;
             }
