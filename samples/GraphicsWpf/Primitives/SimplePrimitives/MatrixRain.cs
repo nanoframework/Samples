@@ -4,6 +4,31 @@ using System;
 using System.Collections;
 using System.Threading;
 
+//
+// This sample was adapted from work by Andreoli Carlo who published his original work on CodeProject at this URL
+// https://www.codeproject.com/Articles/5164199/Matrix-style-Rain-in-Csharp-with-WPF
+//
+
+//
+// The Matrix font was downloaded from www.norfok.com.
+// The font came with a license.txt file with the following contents
+//-----------------------------------------------------------
+// License Agreement
+// =
+// 
+// This font is freeware
+// You can use this font for all your private purposes.
+// 
+// If you want to use this font for commercial use,
+// you may purchase the font for U$ 25
+// 
+// Thank You.
+// 
+// =
+// website:
+// http://www.norfok.com
+//-----------------------------------------------------------
+
 namespace Primitives
 {
     public class MatrixRain
