@@ -48,6 +48,16 @@ Feel free to browse, take what you like and contribute back if you want.
  </tr>
 </table>
 
+### Graphics
+<table>
+ <tr>
+  <td><a href="samples/GraphicsWpf/Primitives">Primitives</a></td>
+  <td><a href="samples/GraphicsWpf/SimpleWpf">SimpleWpf</a></td>
+  <td><a href="samples/GraphicsWpf/Tetris">Tetris</a></td>
+  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
+ </tr>
+</table>
+
 ### Networking
 
 <table>
