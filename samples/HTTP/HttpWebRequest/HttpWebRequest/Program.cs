@@ -61,7 +61,6 @@ namespace HttpSamples.HttpWebRequestSample
                 // 2. the device has already stored a root CA bundle that will use when performing the authentication
                 httpWebRequest.HttpsAuthentCert = rootCACert;
 
-                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                 using (var stream = httpWebRequest.GetResponse().GetResponseStream())
                 {
                     // read response in chunks of 1k
