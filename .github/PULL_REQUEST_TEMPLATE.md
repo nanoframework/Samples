@@ -4,12 +4,12 @@
 <!--- Describe your changes in detail -->
 
 ## Motivation and Context
-<!--- Why is this change required? What problem does it solve? -->
+<!--- What does this sample do? What problem does it solve? -->
 <!--- If it fixes/closes/resolves an open issue, please link to the issue here using the template below (mind the link as all issues are open in the Home repository, not in this one) -->
 - Fixes/Closes/Resolves nanoFramework/Home#NNNN
 
 ## How Has This Been Tested?<!-- (if applicable) -->
-<!--- Please describe in detail how you tested your changes. -->
+<!--- Please describe in detail how you tested your sample/changes. -->
 <!--- Include details of your testing environment, and the tests you ran to -->
 <!--- see how your change affects other areas of the code, etc. -->
 
@@ -17,10 +17,9 @@
 
 ## Types of changes
 <!--- What types of changes does your code introduce? Put an `x` in all the boxes that apply: -->
-- [ ] Improvement (non-breaking change that improves a feature, code or algorithm)
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to change)
+- [ ] Improvement (non-breaking change that improves a sample)
+- [ ] Bug fix (fixes an issue with a current sample)
+- [ ] New Sample (adds a new sample)
 
 ## Checklist:
 <!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
