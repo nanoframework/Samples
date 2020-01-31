@@ -24,7 +24,7 @@ namespace Mosquito.TemperatureGauge
             string clientId;
             bool running = true;
 
-            X509Certificate caCert = new X509Certificate(GetCertificate());
+            X509Certificate caCert = new X509Certificate(GetCertificate);
 
             // Wait for network to connect (temp)
             SetupAndConnectNetwork();
@@ -150,13 +150,11 @@ namespace Mosquito.TemperatureGauge
             }
         }
 
-        static byte[] GetCertificate()
-        {
-            // Mosquito test server CA certificate
+             // Mosquito test server CA certificate
             // from http://test.mosquitto.org/
 
             // X509 
-            string certificate =
+           static string GetCertificate =
 @"-----BEGIN CERTIFICATE-----
 MIIC8DCCAlmgAwIBAgIJAOD63PlXjJi8MA0GCSqGSIb3DQEBBQUAMIGQMQswCQYD
 VQQGEwJHQjEXMBUGA1UECAwOVW5pdGVkIEtpbmdkb20xDjAMBgNVBAcMBURlcmJ5
@@ -176,7 +174,5 @@ REyPOFdGdhBY2P1FNRy0MDr6xr+D2ZOwxs63dG1nnAnWZg7qwoLgpZ4fESPD3PkA
 1ZgKJc2zbSQ9fCPxt2W3mdVav66c6fsb7els2W2Iz7gERJSX
 -----END CERTIFICATE-----";
 
-            return Encoding.UTF8.GetBytes(certificate);
-        }
     }
 }
