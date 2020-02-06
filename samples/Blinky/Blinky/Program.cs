@@ -11,8 +11,6 @@ namespace Blinky
 {
 	public class Program
     {
-        static GpioPinValue _pin = GpioPinValue.High;
-
         public static void Main()
         {
             // pick a board, uncomment one line for GpioPin; default is STM32F769I_DISCO
