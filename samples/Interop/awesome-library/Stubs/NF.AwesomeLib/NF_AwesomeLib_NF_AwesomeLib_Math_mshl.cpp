@@ -6,24 +6,23 @@
 //
 //-----------------------------------------------------------------------------
 
-
 #include "NF_AwesomeLib.h"
 #include "NF_AwesomeLib_NF_AwesomeLib_Math.h"
 
-using namespace NF::AwesomeLib;
+using namespace NF_AwesomeLib::NF_AwesomeLib;
 
 
 HRESULT Library_NF_AwesomeLib_NF_AwesomeLib_Math::NativeSuperComplicatedCalculation___STATIC__R8__R8( CLR_RT_StackFrame& stack )
 {
     NANOCLR_HEADER(); hr = S_OK;
     {
+
         double param0;
         NANOCLR_CHECK_HRESULT( Interop_Marshal_double( stack, 0, param0 ) );
 
-        double retVal = Math::NativeSuperComplicatedCalculation( param0, hr );
+        double retValue = Math::NativeSuperComplicatedCalculation( param0, hr );
         NANOCLR_CHECK_HRESULT( hr );
-        SetResult_double( stack, retVal );
-
+        SetResult_double( stack, retValue );
     }
     NANOCLR_NOCLEANUP();
 }

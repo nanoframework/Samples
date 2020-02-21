@@ -6,12 +6,12 @@
 //
 //-----------------------------------------------------------------------------
 
-
 #ifndef _NF_AWESOMELIB_H_
 #define _NF_AWESOMELIB_H_
 
 #include <nanoCLR_Interop.h>
 #include <nanoCLR_Runtime.h>
+
 struct Library_NF_AwesomeLib_NF_AwesomeLib_Math
 {
     NANOCLR_NATIVE_DECLARE(NativeSuperComplicatedCalculation___STATIC__R8__R8);
@@ -29,8 +29,6 @@ struct Library_NF_AwesomeLib_NF_AwesomeLib_Utilities
     //--//
 
 };
-
-
 
 extern const CLR_RT_NativeAssemblyData g_CLR_AssemblyNative_NF_AwesomeLib;
 

@@ -6,9 +6,7 @@
 //
 //-----------------------------------------------------------------------------
 
-
 #include "NF_AwesomeLib.h"
-
 
 static const CLR_RT_MethodHandler method_lookup[] =
 {
@@ -22,11 +20,8 @@ static const CLR_RT_MethodHandler method_lookup[] =
 
 const CLR_RT_NativeAssemblyData g_CLR_AssemblyNative_NF_AwesomeLib =
 {
-    "NF.AwesomeLib", 
+    "NF.AwesomeLib",
     0xBB94F141,
     method_lookup,
-    ////////////////////////////////////////////////////////////////////////////////////
-    // check if the version bellow matches the one in AssemblyNativeVersion attribute //
-    ////////////////////////////////////////////////////////////////////////////////////
     { 1, 0, 0, 0 }
 };

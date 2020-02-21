@@ -9,19 +9,23 @@
 //    re-run.
 //
 //-----------------------------------------------------------------------------
-#ifndef _NF_AWESOMELIB_NF_AWESOMELIB_UTILITIES_H_
-#define _NF_AWESOMELIB_NF_AWESOMELIB_UTILITIES_H_
 
-namespace NF
+#ifndef _NF_AWESOMELIB_NF_AWESOMELIB_NF_AWESOMELIB_UTILITIES_H_
+#define _NF_AWESOMELIB_NF_AWESOMELIB_NF_AWESOMELIB_UTILITIES_H_
+
+namespace NF_AwesomeLib
 {
-    namespace AwesomeLib
+    namespace NF_AwesomeLib
     {
         struct Utilities
         {
             // Helper Functions to access fields of managed object
             // Declaration of stubs. These functions are implemented by Interop code developers
+
             static void NativeGetHardwareSerial( CLR_RT_TypedArray_UINT8 param0, HRESULT &hr );
+
         };
     }
 }
-#endif  //_NF_AWESOMELIB_NF_AWESOMELIB_UTILITIES_H_
+
+#endif //_NF_AWESOMELIB_NF_AWESOMELIB_NF_AWESOMELIB_UTILITIES_H_

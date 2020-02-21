@@ -9,12 +9,26 @@
 //    re-run.
 //
 //-----------------------------------------------------------------------------
+
 #include "NF_AwesomeLib.h"
-#include "NF_AwesomeLib_NF_AwesomeLib_Utilities.h"
+#include "NF_AwesomeLib_NF_AwesomeLib_Math.h"
 
-using namespace NF::AwesomeLib;
+using namespace NF_AwesomeLib::NF_AwesomeLib;
 
-void Utilities::NativeGetHardwareSerial( CLR_RT_TypedArray_UINT8 param0, HRESULT &hr )
+
+double Math::NativeSuperComplicatedCalculation( double param0, HRESULT &hr )
 {
-}
 
+    (void)param0;
+    (void)hr;
+    double retValue = 0;
+
+    ////////////////////////////////
+    // implementation starts here //    
+
+
+    // implementation ends here   //    
+    ////////////////////////////////
+
+    return retValue;
+}
