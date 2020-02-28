@@ -289,3 +289,6 @@ __pycache__/
 
 # NuGet switcher files
 *.nugetreferenceswitcher
+
+# stub files in Interop sample
+samples/Interop/awesome-library/Stubs
