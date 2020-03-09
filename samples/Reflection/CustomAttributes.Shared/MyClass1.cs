@@ -1,7 +1,7 @@
-﻿
-using System;
-using System.Diagnostics;
-using System.Reflection;
+﻿//
+// Copyright (c) 2020 The nanoFramework project contributors
+// See LICENSE file in the project root for full license information.
+//
 
 namespace Reflection.CustomAttributes
 {
