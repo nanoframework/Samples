@@ -37,13 +37,13 @@
     <None Include="Resources\nano-Framework-logo-32-border-trans.png" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="mscorlib, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.CoreLibrary.1.6.0-preview.1\lib\mscorlib.dll</HintPath>
+    <Reference Include="mscorlib, Version=1.7.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.CoreLibrary.1.7.0-preview.12\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="nanoFramework.ResourceManager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.ResourceManager.1.0.0-preview.5\lib\nanoFramework.ResourceManager.dll</HintPath>
+      <HintPath>packages\nanoFramework.ResourceManager.1.0.0-preview.9\lib\nanoFramework.ResourceManager.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
