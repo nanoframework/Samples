@@ -42,20 +42,30 @@ namespace Reflection.CustomAttributes
                         // check if the method has Attribute1
                         if (typeof(Attribute1Attribute).Equals(myAttributes[j]))
                         {
-                            Console.WriteLine($"  >>>>>>> {myMethods[i].Name} as 'Attribute1' attribute");
+                            Console.WriteLine($"  >>>>>>> {myMethods[i].Name} has 'Attribute1' attribute");
                         }
 
                         // check if the method has IgnoreAttribute
                         if (typeof(IgnoreAttribute).Equals(myAttributes[j]))
                         {
-                            Console.WriteLine($"  >>>>>>> {myMethods[i].Name} as 'IgnoreAttribute' attribute");
-
-                            //var attributeData = myMethods[i].GetCustomAttributesData();
-
+                            Console.WriteLine($"  >>>>>>> {myMethods[i].Name} has 'IgnoreAttribute' attribute");
                         }
                     }
                 }
             }
+
+            // display the custom attributes with constructor
+            var myClass = new MyClass1();
+
+            var myFieldAttributes = myClass.GetType().GetField("MyPackedField").GetCustomAttributes(true);
+
+            Console.WriteLine($"\nThe custom attributes of field 'MyPackedField' are:");
+
+            MaxAttribute attMax = (MaxAttribute)myFieldAttributes[0];
+            Console.WriteLine($"MaxAttribute value is: 0x{attMax.Max.ToString("X8")}");
+
+            AuthorAttribute attAuthor = (AuthorAttribute)myFieldAttributes[1];
+            Console.WriteLine($"AuthorAttribute value is: '{attAuthor.Author}'");
 
             Thread.Sleep(Timeout.Infinite);
         }

@@ -59,6 +59,19 @@ namespace Reflection.CustomAttributes
                 }
             }
 
+            // display the custom attributes with constructor
+            var myClass = new MyClass1();
+
+            var myFieldAttributes = myClass.GetType().GetField("MyPackedField").GetCustomAttributes(true);
+
+            Console.WriteLine($"\nThe custom attributes of field 'MyPackedField' are:");
+
+            MaxAttribute attMax = (MaxAttribute)myFieldAttributes[0];
+            Console.WriteLine($"MaxAttribute value is: 0x{attMax.Max.ToString("X8")}");
+
+            AuthorAttribute attAuthor = (AuthorAttribute)myFieldAttributes[1];
+            Console.WriteLine($"AuthorAttribute value is: '{attAuthor.Author}'");
+
         }
     }
 }

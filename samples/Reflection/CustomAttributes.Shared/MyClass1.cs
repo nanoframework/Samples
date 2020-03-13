@@ -24,9 +24,13 @@ namespace Reflection.CustomAttributes
 
         }
 
-        private int _myField;
+        private readonly int _myField;
 
         [Ignore("I'm ignoring you!")]
         public int MyField => _myField;
+
+        [Max(0xDEADBEEF)]
+        [Author("William Shakespeare")]
+        public int MyPackedField;
     }
 }
