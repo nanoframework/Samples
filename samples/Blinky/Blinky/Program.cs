@@ -31,13 +31,13 @@ namespace Blinky
             //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('E', 15));
 
             // STM32F091RC: PA5 is LED_GREEN
-            //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('A', 5));
+            GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('A', 5));
 
             // STM32F746_NUCLEO: PB75 is LED2
             //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('B', 7));
 
             // STM32F769I_DISCO: PJ5 is LD2
-            GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('J', 5));
+            //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('J', 5));
 
             // STM32L072Z_LRWAN1: PA5 is LD2
             //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('A', 5));
