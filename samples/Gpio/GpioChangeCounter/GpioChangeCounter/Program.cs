@@ -115,10 +115,10 @@ namespace ChangeCounter
 
                 // Sleep is not accurate so calculate actual time in secounds based of relative time differences of the 2 counts
                 // Ticks are in 100 nano sec increments
-                double periodSecs = (double)(countEnd.RelativeTime.Ticks - countStart.RelativeTime.Ticks)/10000000.0;
+                double periodSecs = (double)(countEnd.RelativeTime.Ticks - countStart.RelativeTime.Ticks)/10000000000.0;
                 int frequecy = (int)((double)countEnd.Count / periodSecs);
 
-                Console.WriteLine($"Period {periodSecs:F6} Frequency {frequecy}");
+                Console.WriteLine($"Period {periodSecs:F6} Sec | Frequency {frequecy} Hz");
             }
         }
 
