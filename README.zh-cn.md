@@ -40,11 +40,21 @@
 <tr>
   <td><a href="samples/I2C">I2C</a></td>
   <td><a href="samples/PWM">PWM</a></td>
-  <td><a href="samples/RTC">RTC</a></td>
+  <td><a href="samples/RTC">RTC 例程</a></td>
  </tr>
   <td><a href="samples/SPI">SPI</a></td>
   <td><a href="DAC">DAC</a></td>
   <td><!--<a href="RTXC">RTC</a>--></td>
+ </tr>
+</table>
+
+### Graphics
+<table>
+ <tr>
+  <td><a href="samples/GraphicsWpf/Primitives">Primitives</a></td>
+  <td><a href="samples/GraphicsWpf/SimpleWpf">SimpleWpf</a></td>
+  <td><a href="samples/GraphicsWpf/Tetris">Tetris</a></td>
+  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
  </tr>
 </table>
 
@@ -78,6 +88,16 @@
  </tr>
 </table>
 
+### TI CC13xx
+
+<table>
+ <tr>
+  <td><a href="samples/TI.EasyLink">TI.EasyLink</a></td>
+  <td><!--<a href="Utility/util2">Utility Two</a>--></td>
+  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
+ </tr>
+</table>
+
 ### 系统
 
 <table>
@@ -93,7 +113,7 @@
  </tr>
  <tr>
   <td><a href="samples/NumberParser">数字分析测试</a></td>
-  <td><!--<a href="Utility/util2">Utility Two</a>--></td>
+  <td><a href="samples/Threading">Threading</a></td>
   <td><!--<a href="Utility/util3">Utility Three</a>--></td>
  </tr>
 </table>
@@ -113,7 +133,7 @@
  </tr>
  <tr>
   <td><a href="samples/Json nanoFramework">Json</a></td>
-  <td><!--<a href="Utility/util2">Utility Two</a>--></td>
+  <td><a href="samples/NativeEvents">Native Events</a></td>
   <td><!--<a href="Utility/util3">Utility Three</a>--></td>
  </tr>
 </table>
