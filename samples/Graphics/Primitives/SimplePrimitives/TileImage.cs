@@ -1,5 +1,6 @@
 ﻿using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
+using System;
 
 namespace Primitives.SimplePrimitives
 {
@@ -9,6 +10,8 @@ namespace Primitives.SimplePrimitives
         {
             //Bitmap btn = new Bitmap(WaterFallJpg.WaterFall, Bitmap.BitmapImageType.Jpeg);
             Bitmap btn = new Bitmap(PandaGif.Panda, Bitmap.BitmapImageType.Gif);
+
+            fullScreenBitmap.DrawImage(10, 10, btn, 0, 0, btn.Width, btn.Height);
 
             fullScreenBitmap.Clear();
             fullScreenBitmap.Flush();

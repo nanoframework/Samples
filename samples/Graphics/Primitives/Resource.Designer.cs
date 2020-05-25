@@ -8,6 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using nanoFramework.UI;
+using System;
+
 namespace Primitives
 {
     
@@ -24,6 +27,10 @@ namespace Primitives
                 }
                 return Resource.manager;
             }
+        }
+        internal static nanoFramework.UI.Bitmap GetBitmap(Resource.BitmapResources id)
+        {
+            return ((nanoFramework.UI.Bitmap)(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id)));
         }
         internal static nanoFramework.UI.Font GetFont(Resource.FontResources id)
         {
@@ -42,6 +49,7 @@ namespace Primitives
             strCourierRegular10 = 19139,
             strSegoeUIRegular12 = 25622,
         }
+
         [System.SerializableAttribute()]
         internal enum FontResources : short
         {
@@ -52,5 +60,9 @@ namespace Primitives
             CourierRegular10 = 27752,
             MatrixFont = 28174,
         }
+        internal enum BitmapResources : short
+        {
+        }
+
     }
 }
