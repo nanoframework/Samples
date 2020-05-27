@@ -1,7 +1,6 @@
 ﻿using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
 using System;
-using System.Collections;
 using System.Threading;
 
 //
@@ -46,12 +45,13 @@ namespace Primitives
                 this.Character = Character;
             }
         }
-      //  private PointAndChar BaselineOrigin;               // letter baseline origin
+        //  private PointAndChar BaselineOrigin;               // letter baseline origin
         private int[] Drops;                       // Array that keep track of rain 'drops' position
         private Color BackgroundColour;
         private Color TextColour;
-        private double LetterAdvanceWidth;          //single letter height calculate from glyph typeface
-        private double LetterAdvanceHeight;         // single letter height calculate from glyph typeface
+        private int LetterAdvanceWidth;          //single letter height calculate from glyph typeface
+        private int LetterAdvanceHeight;         // single letter height calculate from glyph typeface
+
         private int xOffset;
         private int yOffset;
 
@@ -63,9 +63,9 @@ namespace Primitives
         // The character used for the rain will be randomly choose from this string
         private String AvailableLetterChars = "abcdefghijklmnopqrstuvwxyz1234567890";
         private Font MatrixFont { get; set; }
-        public MatrixRain(Bitmap fullScreenBitmap,  Font DisplayFont)
+        public MatrixRain(Bitmap fullScreenBitmap)
         {
-            int timerInterval = 10;                     // The number of mSec between each frame.
+            int timerInterval = 50;                     // The number of mSec between each frame.
             FullScreenBitmap = fullScreenBitmap;
             FullScreenBitmap.Clear();
             Initialize();
@@ -93,7 +93,7 @@ namespace Primitives
         {
             if (Drops != null & Drops.Length > 0)
             {
-                //Black BG with opacity to fade characters
+                // Black background with opacity to fade characters
                 FullScreenBitmap.DrawRectangle(colorOutline: BackgroundColour, thicknessOutline: 0,
                                                 x: 0, y: 0,
                                                 width: FullScreenBitmap.Width, height: FullScreenBitmap.Height,
@@ -108,8 +108,6 @@ namespace Primitives
                 for (var i = 0; i < Drops.Length; i++)         // looping over drops
                 {
                     // new drop position
-                    //double x = BaselineOrigin.x + LetterAdvanceWidth * i;
-                    //double y = BaselineOrigin.y + LetterAdvanceHeight * Drops[i];
                     double x = xOffset + LetterAdvanceWidth * i;
                     double y = yOffset + LetterAdvanceHeight * Drops[i];
 
@@ -127,7 +125,7 @@ namespace Primitives
                     }
                     //sending the drop back to the top randomly after it has crossed the image
                     //adding a randomness to the reset to make the drops scattered on the Y axis
-                    if (Drops[i] * LetterAdvanceHeight > FullScreenBitmap.Height && random.NextDouble() > 0.775)
+                    if (Drops[i] * LetterAdvanceHeight > FullScreenBitmap.Height && random.Next(1000) > 850)
                     {
                         Drops[i] = 0;
                     }
