@@ -3,7 +3,7 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using nanoFramework.Runtime.Native;
+using System.Diagnostics;
 using System.Threading;
 
 namespace _ManualResetEvent
@@ -13,7 +13,6 @@ namespace _ManualResetEvent
         // ManualResetEvent is used to block and release threads manually. It is
         // created in the unsignaled state.
         private static ManualResetEvent mre = new ManualResetEvent(false);
-
 
         public static void Main()
         {
@@ -61,7 +60,6 @@ namespace _ManualResetEvent
             Debug.WriteLine("Call Set() and conclude the demo.");
 
             mre.Set();
-
 
 
             Thread.Sleep(Timeout.Infinite);

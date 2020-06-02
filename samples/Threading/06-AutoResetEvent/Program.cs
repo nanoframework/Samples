@@ -3,7 +3,7 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using nanoFramework.Runtime.Native;
+using System.Diagnostics;
 using System.Threading;
 
 namespace _AutoResetEvent
@@ -52,6 +52,7 @@ namespace _AutoResetEvent
                 event_2.Set();
                 Thread.Sleep(250);
             }
+
 
             Thread.Sleep(Timeout.Infinite);
         }

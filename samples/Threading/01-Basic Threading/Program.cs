@@ -3,7 +3,7 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using nanoFramework.Runtime.Native;
+using System.Diagnostics;
 using System.Threading;
 
 namespace Basic_Threading

@@ -3,7 +3,7 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using nanoFramework.Runtime.Native;
+using System.Diagnostics;
 using System;
 using System.Threading;
 
@@ -13,7 +13,7 @@ namespace Sharing_resources
     {
         public static void Main()
         {
-            var account = new Account(1000);
+            var bus = new SharedBus(1000);
 
             var threads = new Thread[100];
 
@@ -21,7 +21,7 @@ namespace Sharing_resources
             {
                 threads[i] = new Thread(() =>
                     {
-                        Update(account);
+                        ExecuteComm(bus);
                     });
 
                 threads[i].Start();
@@ -33,7 +33,7 @@ namespace Sharing_resources
                 thread.Join();
             }
 
-            Debug.WriteLine($"Account's balance is {account.GetBalance()}");
+            Debug.WriteLine($"Account's balance is {bus.GetOperationValue()}");
 
             // Output should be:
             // Account's balance is 2000
@@ -41,68 +41,69 @@ namespace Sharing_resources
             Thread.Sleep(Timeout.Infinite);
         }
 
-        static void Update(Account account)
+        static void ExecuteComm(SharedBus bus)
         {
-            float[] amounts = { 0, 2, -3, 6, -2, -1, 8, -5, 11, -6 };
+            float[] operations = { 0, 2, -3, 6, -2, -1, 8, -5, 11, -6 };
 
-            foreach (var amount in amounts)
+            foreach (var ops in operations)
             {
-                if (amount >= 0)
+                if (ops >= 0)
                 {
-                    account.Credit(amount);
+                    bus.Transmit(ops);
                 }
                 else
                 {
-                    account.Debit(Math.Abs(amount));
+                    bus.Receive(Math.Abs(ops));
                 }
             }
         }
     }
 
-    public class Account
+    public class SharedBus
     {
-        private readonly object balanceLock = new object();
-        private float balance;
+        private readonly object _accessLock = new object();
+        private float _operation;
 
-        public Account(float initialBalance) => balance = initialBalance;
+        public SharedBus(float initialValue) => _operation = initialValue;
 
-        public float Debit(float amount)
+        public float Receive(float operationValue)
         {
-            if (amount < 0)
+            if (operationValue < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(amount), "The debit amount cannot be negative.");
+                throw new ArgumentOutOfRangeException(nameof(operationValue), "The operation value cannot be negative.");
             }
 
             float appliedAmount = 0;
-            lock (balanceLock)
+
+            lock (_accessLock)
             {
-                if (balance >= amount)
+                if (_operation >= operationValue)
                 {
-                    balance -= amount;
-                    appliedAmount = amount;
+                    _operation -= operationValue;
+                    appliedAmount = operationValue;
                 }
             }
             return appliedAmount;
         }
 
-        public void Credit(float amount)
+        public void Transmit(float operationValue)
         {
-            if (amount < 0)
+            if (operationValue < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(amount), "The credit amount cannot be negative.");
+                throw new ArgumentOutOfRangeException(nameof(operationValue), "The operation value cannot be negative.");
             }
 
-            lock (balanceLock)
+            lock (_accessLock)
             {
-                balance += amount;
+                _operation += operationValue;
             }
         }
 
-        public float GetBalance()
+        public float GetOperationValue()
         {
-            lock (balanceLock)
+            lock (_accessLock)
             {
-                return balance;
+                return _operation;
             }
         }
     }
