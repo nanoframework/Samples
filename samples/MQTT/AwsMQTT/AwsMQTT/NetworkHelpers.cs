@@ -45,22 +45,22 @@ namespace nanoFramework.Networking
 
                     Wireless80211Configuration wc = Wireless80211Configuration.GetAllWireless80211Configurations()[ni.SpecificConfigId];
 
-                    // note on checking the 802.11 configuration
-                    // on secure devices (like the TI CC3220SF) the password can't be read
-                    // so we can't use the code block bellow to automatically set the profile
-                    if ((wc.Ssid != c_SSID && wc.Password != c_AP_PASSWORD) &&
-                         (wc.Ssid != "" && wc.Password == ""))
-                    {
-                        // have to update Wi-Fi configuration
-                        wc.Ssid = c_SSID;
-                        wc.Password = c_AP_PASSWORD;
-                        wc.SaveConfiguration();
-                    }
-                    else
-                    {
-                        // Wi-Fi configuration matches
-                        // (or can't be validated)
-                    }
+                    //// note on checking the 802.11 configuration
+                    //// on secure devices (like the TI CC3220SF) the password can't be read
+                    //// so we can't use the code block bellow to automatically set the profile
+                    //if ((wc.Ssid != c_SSID && wc.Password != c_AP_PASSWORD) &&
+                    //     (wc.Ssid != "" && wc.Password == ""))
+                    //{
+                    //    // have to update Wi-Fi configuration
+                    //    wc.Ssid = c_SSID;
+                    //    wc.Password = c_AP_PASSWORD;
+                    //    wc.SaveConfiguration();
+                    //}
+                    //else
+                    //{
+                    //    // Wi-Fi configuration matches
+                    //    // (or can't be validated)
+                    //}
                 }
                 else
                 {

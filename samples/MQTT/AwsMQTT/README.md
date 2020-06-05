@@ -1,4 +1,4 @@
-# Azure MQTT sample
+# AWS MQTT sample
 
 Shows how to use M2Mqtt library with AWS IoT Core.
 
@@ -12,7 +12,8 @@ Shows how to use M2Mqtt library with AWS IoT Core.
 
 ## Hardware requirements
 
-A hardware device with networking capabilities that is running a nanoFramework firmware image. This code has been tested with an SMT32F769IDISCOVERY board.
+A hardware device with networking capabilities that is running a nanoFramework firmware image. 
+This code has been tested with SMT32F769IDISCOVERY and ESP-WROVER-KIT boards.
 
 ## Related topics
 

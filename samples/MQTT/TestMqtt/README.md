@@ -17,7 +17,8 @@ The sample pack includes two applications:
 
 ## Hardware requirements
 
-An hardware device with networking capabilities running a nanoFramework image. This code has been tested with an ESP32 WROVER KIT and a SMT32F769IDISCOVERY board.
+An hardware device with networking capabilities running a nanoFramework image.
+This code has been tested with SMT32F769IDISCOVERY and ESP-WROVER-KIT boards.
 
 ## Related topics
 

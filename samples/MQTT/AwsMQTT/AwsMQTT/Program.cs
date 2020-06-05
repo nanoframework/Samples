@@ -1,5 +1,11 @@
-﻿using nanoFramework.Networking;
+﻿//
+// Copyright (c) 2020 The nanoFramework project contributors
+// See LICENSE file in the project root for full license information.
+//
+
+using nanoFramework.Networking;
 using System;
+using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
@@ -8,12 +14,25 @@ using uPLibrary.Networking.M2Mqtt.Messages;
 
 namespace AwsMQTT
 {
-
     public class Program
     {
-        private static readonly string awsHost = "<endpoint>.<region>.amazonaws.com"; //make sure to add your AWS endpoint and region.
-        private static readonly string clientId = Guid.NewGuid().ToString(); //This should really be persisted across reboots, but an auto generated GUID is fine for testing.
-        private static readonly string clientRsaSha256Crt = //Device Certificate copied from AWS (this is a non working example)
+        ////////////////////////////////////////////////////////////////////////////////
+        // make sure to add your AWS endpoint and region!!! 
+        private static readonly string awsHost = "<endpoint>.<region>.amazonaws.com";
+        ////////////////////////////////////////////////////////////////////////////////
+
+        //This should really be persisted across reboots, but an auto generated GUID is fine for testing.
+        private static readonly string clientId = Guid.NewGuid().ToString();
+
+        //////////////////////////////////////////////////////////////////////////////////
+        // make sure to respect the formating bellow to have a correct certificate & key
+        // - NO identation
+        // - start tag '-----BEGIN(...)' right after the string open double quote
+        // - end tag '-----END(...)' immediately before the string closing double quote
+        //////////////////////////////////////////////////////////////////////////////////
+
+        //Device Certificate copied from AWS (this is a non working example)
+        private static readonly string clientRsaSha256Crt =
 @"-----BEGIN CERTIFICATE-----
 MIIDWTCCAkGgAwIBAgIUc6HFS8S8bwgCRVvMKLuebp6I1f0wDQYJKoZIhvcNAQEL
 BQAwTTFLMEkGA1UECwxCQW1hem9uIFdlYiBTZXJ2aWNlcyBPPUFtYXpvbi5jb20g
@@ -35,38 +54,38 @@ SWARVMI0+jWe39zbsapLmjjdAwOdj042+UqdiDUv/26EUdOYImmt2NLFmDY9r3sd
 BmoSHrBhVE6z/qdjOCOeUsJ/pzXc34y8OIxFdwlTIfRQx8S3espqc4HpRQCx
 -----END CERTIFICATE-----";
 
-
-        private static readonly string clientRsaKey = //Device private key copied from AWS (this is a non working example)
+        //Device private key copied from AWS (this is a non working example)
+        private static readonly string clientRsaKey = 
 @"-----BEGIN RSA PRIVATE KEY-----
-MIIEowIBAAKCAQEAuIZoxC4TEjQSpjSkXPi58/5uerxBSgvjmKZ70VyTGeq7lNoi
-YLjtrgpSVrqJ3+Pr2ozT0zmAE9y6iYBGNsHy4Rmgz3X60EWKWKUnRwAOUTlxycux
-IZa5pPsIcGKEcqMGfUuIvA09neIoEIOBMfZY2R4ynG8i/r0rAWmstUn8P6xm2e/f
-CWefSjaV2X1bRezkqUTEoqwH4W2aIZPAIebFMegYdaOjP6venpEsWyMv/BIluwwa
-r+8sdmXRxfYkX+BYEwKgNUfB4A9qBKmdOHS/JLSUlKoZ7PAlR1DopAndkP6TPNev
-8/6detAi1Z6k8dhRyndPck+M9vrKAxT9Xv2fLQIDAQABAoIBADXCw0dQU9Ib5csS
-z0hfFx5lZJ7Rtlvyds8EwlJPHHSSlTBbFWUEvArW6wJlusHGT/MO0LBbslsXFin1
-e398ply68MVA5GBFwnbtNzJSa9lyWRqoA+V7Wn8cvGqx6VDU+pEKrr3LRcZ4G6Ak
-EEIUOfKX/7rgDlwVlTAGL9Fpytppytb86AHItiTbMrh8cj8bGqTBMBBex0Dnf0W7
-qtSDrTVN8X6xHTxgjCvwZGpHLYOsADif3Y364I/BEp2QVAsADTDXAmO8KkfTbXys
-8+E3odUNqrugYl4Zd/TSCgNlDJT4mySmHLxSOX7wFlg9zdemugrBWFmmvQB2mrBZ
-SLoTRMECgYEA8/qOfoqc2VAV35/BY7zGPMFq94iisKjUKCAVKXbBS47/bKOWEAr6
-KLZ9Y+00KbB6JQTiwyKDlRa8FrVQGoAdkqgLtmrMB8hFPjFMXuFSdip2sYgUpmmq
-a83Ixv1ndHUtN2FQ6H6ep+mVHcEVxD4gwTG0TJIuka6cynFD0+o5EUkCgYEAwZ3t
-2IkUTNxfTZJr8Sjr9ju6vSBF5LMh7gi/qQi/7ntQnv6cZCBDp9lgEOaNO/Cr7XNB
-9Ju07BmFSNpIU5HjwC1Ql4pO61oGpccM5jK54Z/bKHSAq37SxOTYIqaRCPNrPzPd
-NhA3hm57+YTHb3GqMDtLPe9YUYCu77xz6awqwsUCgYABEJDaoIQ6tozB4xKW+tXq
-ofVzixcaqkHywuEUwz3otIEM2lHnVATvdIxriTd3DxwZWUIcE+R7HBRKDRSCaRi3
-8R/L9f9Z8VfMA68PovAXL+xArhVY/JEP02AS7jwrV++QlE4kFZlfpjdOX+9WYecG
-sM7WnrSxUg/BGmlvXVBOcQKBgHhOO4X610RTAlzfCHdW6BeeUZBGx2ct731KrlzH
-9QqoURYaOu70JVXcehbGSyfdidcHcQoe3jJ+QRVdnOdglVXKUnN3G0aeL9c+ccNv
-7ZRGkhT3HyRwr2Jsl+gf+6rGJfOltGRtezLq39nRKWMUC53gmgYn/IbYINsSDCw8
-MG3JAoGBAJBEoBbSDqt/3jmSzo4TP7wkHjABtwDdDfinNGYelXzQvlsxTO3O9s4G
-cROQClDCjQM6He0G4lN8Q2RWxNMYICc+x2Ts6W1ufGxnoewO5qp/62ojCza33EW9
-p00NvgdEFrMJ7MvHQ053np3fDZ5x5c/Lc4AVpuHXvwID86I/Lux6
------END RSA PRIVATE KEY-----
-";
-        private static MqttClient client;
+MIIEpAIBAAKCAQEAzZwEiJh/cHTDsBKT9mqgB6eYMkoycBWn3CNrRQ2sNo24my9C
+3GfmyXsDhmXNxlLsnEitXJmbFThe5q3wvPreXNZgjgUA/VpXoprdCH+5NCoEgvYK
+zznHlE0BUViZymqytfW5OugK0QIUI9E+74nCmi/C/XnlPY46FdFHsjwjTYfB0oFS
+P7JfN15mTu7ortPmAoDUA+wPQZpGvZJvB6NktetAsQTmRMWuaX+Hgi6TItmcAe/1
+MSUdzLPY/B/nCczj/buZyV5sqfawYPt0o5usEwxeJ3P7id7S0aEFjZBvNkq3cuRP
+Zi3cO9yM/KexCiJNq/n2SvxHiRCgY1i80YIxgQIDAQABAoIBAAPj59IN0Jt4GhvC
+vjnzWoPKj/6jmMC2KC7qHKV51MBTfiKxijpRXPSC91YbpwERoJh0Z5NQ9LY6EtGa
+iOuKc5qeE8WcIqCojO/uri/y+rYZ9Wvk699v4G7V5ih73K0Px8HZnF+Y9FtwBqGG
+3AH8QUpZjP7ux3+aqU6wXwLoUGKvHjT3lBhVI6thKAGPiVyCHKW1ZjP4VtdVq09F
+OYcW3jVjWaWJBZfPkbcTgULRCojzlk9EcF/wNVi+k6t0LP++dioqXxUP7ksrE2Us
+IZjOeN0sr1wo4aQahV0RUBYdEux78E1tPxo+kSZSUFb1xu0x1/Dcupyuiw8kxgAb
+MMi9OIECgYEA6GNeEs3SQIbzgbLdNKI5+ySv0SuImFy33AwgSRx3X5UOA7Ub+4r3
+f2jEUdFE6+AMfR4q7M3g/Xw9wQhku2eC7CDmQcLuvLfAaIgQehXeGWZqQylyPSl5
+s7KR/pFLiGOiQzc72zHPHYs4BW5d9llfcvtuR7LUy1KfkWeWuNhetaUCgYEA4oAc
+bA6GG0deofv1Bct4pYkpZAH61Rp03UlIsWpDs1IXPnPtOdTRK/qy4c4qnPCbuY1R
+fmZy7pG3Pyvq+Ua8XHtHDCr5ut4cJsOLcHNM6xvMHHgtI79UTXOQcM6cORT1F3X4
+cqh20YAH5xYb66AWBrl9wHiI+91KAmoriPFK3a0CgYEA40V7FWzReWYB9BBXokgd
+6G4ivLCUsF3NOplpYddDL+l4gUu4iDOKhcKSbWn6u6ysyhic5mca6Q1+37Azw8wi
+EIjEaAAat9oFhLW9V4jXY4Pz3KdGIGbVrVawzYSPmF3IrW/xTBfUdRJYwYcEwg75
++FvJqLlOv2KYx/3FPBXv2jkCgYEA2qe4SGyA9Cai6ZdVQ8HYd12BUqVCo6UFunY7
+seIW9y7Bd63sDk8vmthLBgfERXtVqfwN9wsp2rta/qYEEZ9CybjMrqdyK/6tiJJv
+sx/r2nAcTEOLuB3FYXu1reEXGVfs/zgIn4+YHMkPV/uU+pOxj85T4pG6FALdppUd
+7/aYQoUCgYBga6jUIadvsAzsq+4kWYrtcBf6jE5Rq6s/yPy8UE8zwT6nLlveOvdz
+/JU9knOXn6S2d0L1NRG5PCVtY6ArmWTaOLBJGJ2fH/rNn9wpwta92JbxsrMaIF1j
+lIBzJXkrbY11FY6TNX4YFU2McIX2Ge0058Pozx6tumJ4KxvB9Ges8g==
+-----END RSA PRIVATE KEY-----";
 
+
+        private static MqttClient client;
 
         public static void Main()
         {
@@ -74,10 +93,10 @@ p00NvgdEFrMJ7MvHQ053np3fDZ5x5c/Lc4AVpuHXvwID86I/Lux6
             // if we are using TLS it requires valid date & time
             NetworkHelpers.SetupAndConnectNetwork(true);
 
-            Console.WriteLine("Waiting for network up and IP address...");
+            Debug.WriteLine("Waiting for network up and IP address...");
             NetworkHelpers.IpAddressAvailable.WaitOne();
 
-            Console.WriteLine("Waiting for valid Date & Time...");
+            Debug.WriteLine("Waiting for valid Date & Time...");
             NetworkHelpers.DateTimeAvailable.WaitOne();
 
             SetupMqtt();
@@ -87,21 +106,28 @@ p00NvgdEFrMJ7MvHQ053np3fDZ5x5c/Lc4AVpuHXvwID86I/Lux6
 
         static void SetupMqtt()
         {
+            // setup CA root certificate and...
             X509Certificate caCert = new X509Certificate(Resources.GetBytes(Resources.BinaryResources.AwsCAroot));
-            X509Certificate2 clientCert = new X509Certificate2(clientRsaSha256Crt, clientRsaKey, ""); //make sure to add a correct pfx certificate
 
+            // ... client certificate
+            // make sure to add a correct pfx certificate, including the RSA key
+            X509Certificate2 clientCert = new X509Certificate2(clientRsaSha256Crt, clientRsaKey, "");
+
+            // TLS 1.2 is mandatory for AWS
             client = new MqttClient(awsHost, 8883, true, caCert, clientCert, MqttSslProtocols.TLSv1_2);
 
-            // register to message received 
+            // subscribe handler for message received 
             client.MqttMsgPublishReceived += Client_MqttMsgPublishReceived;
 
+            // connect MQTT client
             client.Connect(clientId);
 
             // subscribe to the topic with QoS 2 
             client.Subscribe(new string[] { "devices/nanoframework/sys" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+
+            // launch telemetry thread
             Thread telemetryThread = new Thread(new ThreadStart(TelemetryLoop));
             telemetryThread.Start();
-
         }
 
         static void TelemetryLoop()
@@ -110,7 +136,9 @@ p00NvgdEFrMJ7MvHQ053np3fDZ5x5c/Lc4AVpuHXvwID86I/Lux6
             {
                 string SampleData = $"{{\"MQTT on Nanoframework\" : {DateTime.UtcNow.ToString("u")}}}";
                 client.Publish("devices/nanoframework/data", Encoding.UTF8.GetBytes(SampleData), MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, false);
-                System.Console.WriteLine("Message sent: " + SampleData);
+
+                Debug.WriteLine("Message sent: " + SampleData);
+
                 Thread.Sleep(3000);
             }
         }
@@ -118,7 +146,7 @@ p00NvgdEFrMJ7MvHQ053np3fDZ5x5c/Lc4AVpuHXvwID86I/Lux6
         static void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
             string Message = new string(Encoding.UTF8.GetChars(e.Message));
-            System.Console.WriteLine("Message received: " + Message);
+            Debug.WriteLine("Message received: " + Message);
         }
     }
 }

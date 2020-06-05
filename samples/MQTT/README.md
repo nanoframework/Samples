@@ -1,6 +1,10 @@
-# Azure MQTT sample
+# MQTT sample pack
 
-Shows how to use M2Mqtt library with Azure IoT.
+Shows how to use various MQTT services.
+
+- [AWS IoT Core](AwsMQTT/)
+- [Azure IoT Hub](AzureMQTT/)
+- [Local broquer and Mosquito test server](TestMqtt/)
 
 > **Note:** This sample is part of a large collection of nanoFramework feature samples.
 > If you are unfamiliar with Git and GitHub, you can download the entire collection as a
@@ -12,8 +16,8 @@ Shows how to use M2Mqtt library with Azure IoT.
 
 ## Hardware requirements
 
-An hardware device with networking capabilities running a nanoFramework image. 
-This code has been tested with SMT32F769IDISCOVERY and ESP-WROVER-KIT boards.
+An hardware device with networking capabilities running a nanoFramework image.
+These samples have been tested with SMT32F769IDISCOVERY and ESP-WROVER-KIT boards.
 
 ## Related topics
 
@@ -22,10 +26,9 @@ This code has been tested with SMT32F769IDISCOVERY and ESP-WROVER-KIT boards.
 ## Build the sample
 
 1. If you download the samples ZIP, be sure to unzip the entire archive, not just the folder with the sample you want to build. 
-2. Start Microsoft Visual Studio 2017/2019 and select **File** \> **Open** \> **Project/Solution**.
-3. Starting in the folder where you unzipped the samples, go to the sub folder for this specific sample. Double-click the Visual Studio Solution (.sln) file.
-4. Add the connection information to the program.
-5. Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
+2. Start Microsoft Visual Studio 2017 and select **File** \> **Open** \> **Project/Solution**.
+3. Starting in the folder where you unzipped the samples, go to the subfolder for this specific sample. Double-click the Visual Studio Solution (.sln) file.
+4. Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
 
 ## Run the sample
 
