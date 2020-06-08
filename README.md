@@ -103,7 +103,7 @@ Feel free to browse, take what you like and contribute back if you want.
 <table>
  <tr>
   <td><a href="samples/Converter.Base64">Converter.Base64</a></td>
-  <td><a href="samples/GC.Test">Runtime GC Test</a></td>
+  <td><a href="samples/DebugGC.Test">Runtime GC Test</a></td>
   <td><a href="samples/ExecutionConstraint">Execution Constraint demo</a></td>
  </tr>
 <tr>
