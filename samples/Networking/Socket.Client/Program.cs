@@ -5,8 +5,8 @@
 
 using nanoFramework.Networking;
 using System;
+using System.Diagnostics;
 using System.Net;
-using System.Net.Security;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
@@ -19,7 +19,7 @@ namespace SecureClient
         {
             NetworkHelpers.SetupAndConnectNetwork(false);
 
-            Console.WriteLine("Waiting for network up and IP address...");
+            Debug.WriteLine("Waiting for network up and IP address...");
 
             NetworkHelpers.IpAddressAvailable.WaitOne();
 
@@ -29,12 +29,12 @@ namespace SecureClient
             // need an IPEndPoint from that one above
             IPEndPoint ep = new IPEndPoint(hostEntry.AddressList[0], 80);
 
-            Console.WriteLine("Opening socket...");
+            Debug.WriteLine("Opening socket...");
             using (Socket mySocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
             {
                 try
                 {
-                    Console.WriteLine("Connecting...");
+                    Debug.WriteLine("Connecting...");
 
                     // connect socket
                     mySocket.Connect(ep);
@@ -43,7 +43,7 @@ namespace SecureClient
 
                     mySocket.Send(buffer);
 
-                    Console.WriteLine($"Wrote {buffer.Length} bytes");
+                    Debug.WriteLine($"Wrote {buffer.Length} bytes");
 
                     // setup buffer to read data from socket
                     buffer = new byte[1024];
@@ -51,26 +51,26 @@ namespace SecureClient
                     // trying to read from socket
                     int bytes = mySocket.Receive(buffer);
 
-                    Console.WriteLine($"Read {bytes} bytes");
+                    Debug.WriteLine($"Read {bytes} bytes");
 
                     if (bytes > 0)
                     {
                         // we have data!
                         // output as string
-                        Console.WriteLine(new String(Encoding.UTF8.GetChars(buffer)));
+                        Debug.WriteLine(new String(Encoding.UTF8.GetChars(buffer)));
                     }
                 }
                 catch (SocketException ex)
                 {
-                    Console.WriteLine($"** Socket exception occurred: {ex.Message} error code {ex.ErrorCode}!**");
+                    Debug.WriteLine($"** Socket exception occurred: {ex.Message} error code {ex.ErrorCode}!**");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"** Exception occurred: {ex.Message}!**");
+                    Debug.WriteLine($"** Exception occurred: {ex.Message}!**");
                 }
                 finally
                 {
-                    Console.WriteLine("Closing socket");
+                    Debug.WriteLine("Closing socket");
                     mySocket.Close();
                 }
             }
