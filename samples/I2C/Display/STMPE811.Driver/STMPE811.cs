@@ -643,7 +643,7 @@ namespace Driver
 
             byte[] buffer = new byte[1];
 
-            //Console.WriteLine("Current FIFO " + FifoSize());
+            //Debug.WriteLine("Current FIFO " + FifoSize());
 
             if(FifoSize() > 0)
             { 
@@ -661,12 +661,12 @@ namespace Driver
                 }
             }
 
-            //Console.WriteLine("Current FIFO " + FifoSize());
+            //Debug.WriteLine("Current FIFO " + FifoSize());
 
             // reset FIFO
             //ResetFIFO();
 
-            //Console.WriteLine("Current FIFO " + FifoSize());
+            //Debug.WriteLine("Current FIFO " + FifoSize());
 
             return reading;
         }

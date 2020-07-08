@@ -5,6 +5,7 @@
 
 using Driver;
 using System;
+using System.Diagnostics;
 using System.Threading;
 using Windows.Devices.Gpio;
 using static Driver.STMPE811;
@@ -19,6 +20,10 @@ namespace I2CDemoApp
 
         public static void Main()
         {
+            // F429I_DISCO: PG14 is LEDLD4 
+            GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('G', 14));
+            led.SetDriveMode(GpioPinDriveMode.Output);
+
             // create the event NOT signalled
             _touchEvent = new ManualResetEvent(false);
 
@@ -48,8 +53,8 @@ namespace I2CDemoApp
                 _touchController.EnableGlobalInterrupt();
 
                 // output the ID and revision of the device
-                Console.WriteLine("ChipID " + _touchController.ChipID.ToString("X4"));
-                Console.WriteLine("Rev " + _touchController.RevisionNumber.ToString());
+                Debug.WriteLine("ChipID " + _touchController.ChipID.ToString("X4"));
+                Debug.WriteLine("Rev " + _touchController.RevisionNumber.ToString());
 
                 // launch touch tracking thread
                 new Thread(new ThreadStart(TouchTracking)).Start();
@@ -57,12 +62,14 @@ namespace I2CDemoApp
             else
             {
                 // failed to init the device
-                Console.WriteLine("***** FATAL ERROR: failed to initialise the touch screen controller *****");
+                Debug.WriteLine("***** FATAL ERROR: failed to initialise the touch screen controller *****");
             }
 
             // infinite loop to keep main thread active
             for (; ; )
             {
+                led.Toggle();
+
                 Thread.Sleep(1000);
             }
         }
@@ -101,14 +108,14 @@ namespace I2CDemoApp
 
                     if (touchReading.IsValid)
                     {
-                        Console.WriteLine("Touchscreen pressed @ (" + touchReading.X + "," + touchReading.Y + ")");
+                        Debug.WriteLine("Touchscreen pressed @ (" + touchReading.X + "," + touchReading.Y + ")");
                     }
                 }
 
                 // enable back FIFO threshold interrupt
                 _touchController.EnableInterruptSource(InterruptSource.FifoAboveThreshold);
 
-                Console.WriteLine("Touchscreen released");
+                Debug.WriteLine("Touchscreen released");
 
                 // clear event
                 _touchEvent.Reset();
