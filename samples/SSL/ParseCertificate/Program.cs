@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
@@ -18,46 +19,46 @@ namespace ParseCertificate
             // certificate in PEM format (as a string in the app)
             X509Certificate cert = new X509Certificate(x509RsaPem2048bytesCertificate);
 
-            Console.WriteLine("Certificate Details:");
+            Debug.WriteLine("Certificate Details:");
 
-            Console.WriteLine($"Issuer: {cert.Issuer}");
-            Console.WriteLine($"Subject: {cert.Subject}");
-            Console.WriteLine($"Effective Date: {cert.GetEffectiveDate()}");
-            Console.WriteLine($"Expiry Date:: {cert.GetExpirationDate()}");
+            Debug.WriteLine($"Issuer: {cert.Issuer}");
+            Debug.WriteLine($"Subject: {cert.Subject}");
+            Debug.WriteLine($"Effective Date: {cert.GetEffectiveDate()}");
+            Debug.WriteLine($"Expiry Date:: {cert.GetExpirationDate()}");
 
             // check raw data against buffer
             if (cert.GetRawCertData().GetHashCode() != Encoding.UTF8.GetBytes(x509RsaPem2048bytesCertificate).GetHashCode())
             {
-                Console.WriteLine("Raw data checks");
+                Debug.WriteLine("Raw data checks");
             }
             else
             {
-                Console.WriteLine("******************************");
-                Console.WriteLine("ERROR: Raw data is different!!");
-                Console.WriteLine("******************************");
+                Debug.WriteLine("******************************");
+                Debug.WriteLine("ERROR: Raw data is different!!");
+                Debug.WriteLine("******************************");
             }
 
             /////////////////////////////////////////////////////////////////////////////////////
             // add certificate in CER format (as a managed resource)
             cert = new X509Certificate(Resources.GetBytes(Resources.BinaryResources.DigiCertGlobalRootCA));
 
-            Console.WriteLine("DigiCert Certificate Details:");
+            Debug.WriteLine("DigiCert Certificate Details:");
 
-            Console.WriteLine($"Issuer: {cert.Issuer}");
-            Console.WriteLine($"Subject: {cert.Subject}");
-            Console.WriteLine($"Effective Date: {cert.GetEffectiveDate()}");
-            Console.WriteLine($"Expiry Date:: {cert.GetExpirationDate()}");
+            Debug.WriteLine($"Issuer: {cert.Issuer}");
+            Debug.WriteLine($"Subject: {cert.Subject}");
+            Debug.WriteLine($"Effective Date: {cert.GetEffectiveDate()}");
+            Debug.WriteLine($"Expiry Date:: {cert.GetExpirationDate()}");
 
             // check raw data against buffer
             if (cert.GetRawCertData().GetHashCode() !=  Resources.GetBytes(Resources.BinaryResources.DigiCertGlobalRootCA).GetHashCode())
             {
-                Console.WriteLine("Raw data checks");
+                Debug.WriteLine("Raw data checks");
             }
             else
             {
-                Console.WriteLine("******************************");
-                Console.WriteLine("ERROR: Raw data is different!!");
-                Console.WriteLine("******************************");
+                Debug.WriteLine("******************************");
+                Debug.WriteLine("ERROR: Raw data is different!!");
+                Debug.WriteLine("******************************");
             }
 
 
@@ -65,23 +66,23 @@ namespace ParseCertificate
             // add certificate in CER format (as a string in the app)
             cert = new X509Certificate2(clientRsaSha256Crt, clientRsaKey, "");
 
-            Console.WriteLine("PolarSSL Client Certificate Details:");
+            Debug.WriteLine("PolarSSL Client Certificate Details:");
 
-            Console.WriteLine($"Issuer: {cert.Issuer}");
-            Console.WriteLine($"Subject: {cert.Subject}");
-            Console.WriteLine($"Effective Date: {cert.GetEffectiveDate()}");
-            Console.WriteLine($"Expiry Date:: {cert.GetExpirationDate()}");
+            Debug.WriteLine($"Issuer: {cert.Issuer}");
+            Debug.WriteLine($"Subject: {cert.Subject}");
+            Debug.WriteLine($"Effective Date: {cert.GetEffectiveDate()}");
+            Debug.WriteLine($"Expiry Date:: {cert.GetExpirationDate()}");
 
             // check raw data against buffer
             if (cert.GetRawCertData().GetHashCode() != Encoding.UTF8.GetBytes(x509RsaPem2048bytesCertificate).GetHashCode())
             {
-                Console.WriteLine("Raw data checks");
+                Debug.WriteLine("Raw data checks");
             }
             else
             {
-                Console.WriteLine("******************************");
-                Console.WriteLine("ERROR: Raw data is different!!");
-                Console.WriteLine("******************************");
+                Debug.WriteLine("******************************");
+                Debug.WriteLine("ERROR: Raw data is different!!");
+                Debug.WriteLine("******************************");
             }
 
             Thread.Sleep(Timeout.Infinite);
