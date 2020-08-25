@@ -46,22 +46,27 @@ namespace HttpSamples.HttpWebRequestSample
 
             Console.WriteLine($"Performing Http request to: {url}");
 
-            using (var httpWebRequest = (HttpWebRequest)WebRequest.Create(url))
+            // perform the request as a HttpWebRequest
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
+            httpWebRequest.Method = "GET";
+
+            //////////////////////////////////////////////////////////////////////
+            // need to set the SSL protocol that the connection is going to use //
+            // *** this MANDATORY otherwise the authentication will fail ***    //
+            //////////////////////////////////////////////////////////////////////
+            httpWebRequest.SslProtocols = System.Net.Security.SslProtocols.Tls11;
+
+            // if the request is to a secured server we need to make sure that we either:
+            // 1. provide the root CA certificate 
+            // 2. the device has already stored a root CA bundle that will use when performing the authentication
+            httpWebRequest.HttpsAuthentCert = rootCACert;
+
+            // get the response as a HttpWebResponse
+            // wrap the response object with a using statement to make sure that it's disposed
+            using (var httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse())
             {
-                httpWebRequest.Method = "GET";
-
-                //////////////////////////////////////////////////////////////////////
-                // need to set the SSL protocol that the connection is going to use //
-                // *** this MANDATORY otherwise the authentication will fail ***    //
-                //////////////////////////////////////////////////////////////////////
-                httpWebRequest.SslProtocols = System.Net.Security.SslProtocols.Tls11;
-
-                // if the request is to a secured server we need to make sure that we either:
-                // 1. provide the root CA certificate 
-                // 2. the device has already stored a root CA bundle that will use when performing the authentication
-                httpWebRequest.HttpsAuthentCert = rootCACert;
-
-                using (var stream = httpWebRequest.GetResponse().GetResponseStream())
+                // wrap the response stream on a using statement to make sure that it's disposed
+                using (var stream = httpWebResponse.GetResponseStream())
                 {
                     // read response in chunks of 1k
 
