@@ -4,7 +4,7 @@
 //
 
 using nanoFramework.Networking;
-using System;
+using System.Diagnostics;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -21,10 +21,10 @@ namespace HttpSamples.HttpWebRequestSample
             // if we are using TLS it requires date & time
             networkHerlpers.SetupAndConnectNetwork(true);
 
-            Console.WriteLine("Waiting for network up and IP address...");
+            Debug.WriteLine("Waiting for network up and IP address...");
             NetworkHelpers.IpAddressAvailable.WaitOne();
 
-            Console.WriteLine("Waiting for valid Date & Time...");
+            Debug.WriteLine("Waiting for valid Date & Time...");
             NetworkHelpers.DateTimeAvailable.WaitOne();
 
             // follow some test URLs and root CA certificates
@@ -44,7 +44,7 @@ namespace HttpSamples.HttpWebRequestSample
             ///////////////////////////////////////////////////////////////////////////////////
 
 
-            Console.WriteLine($"Performing Http request to: {url}");
+            Debug.WriteLine($"Performing Http request to: {url}");
 
             // perform the request as a HttpWebRequest
             var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
@@ -73,19 +73,19 @@ namespace HttpSamples.HttpWebRequestSample
                     byte[] buffer = new byte[1024];
                     int bytesRead = 0;
 
-                    Console.WriteLine("Http response follows");
-                    Console.WriteLine(">>>>>>>>>>>>>");
+                    Debug.WriteLine("Http response follows");
+                    Debug.WriteLine(">>>>>>>>>>>>>");
 
                     do
                     {
                         bytesRead = stream.Read(buffer, 0, buffer.Length);
-                        Console.Write(Encoding.UTF8.GetString(buffer, 0, bytesRead));
+                        Debug.Write(Encoding.UTF8.GetString(buffer, 0, bytesRead));
                     }
                     while (bytesRead >= buffer.Length);
                 }
 
-                Console.WriteLine(">>>>>>>>>>>>>");
-                Console.WriteLine("End of Http response");
+                Debug.WriteLine(">>>>>>>>>>>>>");
+                Debug.WriteLine("End of Http response");
             }
 
             Thread.Sleep(Timeout.Infinite);

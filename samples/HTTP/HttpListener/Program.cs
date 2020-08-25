@@ -5,6 +5,7 @@
 
 using nanoFramework.Networking;
 using System;
+using System.Diagnostics;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Security;
@@ -21,10 +22,10 @@ namespace HttpSamples.HttpListenerSample
             var networkHerlpers = new NetworkHelpers();
             networkHerlpers.SetupAndConnectNetwork(true);
 
-            Console.WriteLine("Waiting for network up and IP address...");
+            Debug.WriteLine("Waiting for network up and IP address...");
             NetworkHelpers.IpAddressAvailable.WaitOne();
 
-            Console.WriteLine("Waiting for valid Date & Time...");
+            Debug.WriteLine("Waiting for valid Date & Time...");
             NetworkHelpers.DateTimeAvailable.WaitOne();
 
             // setup HTTP response
@@ -35,7 +36,7 @@ namespace HttpSamples.HttpListenerSample
             string prefix = "https";
             int port = prefix == "http" ? 80 : 443;
 
-            Console.WriteLine("* Creating Http Listener: " + prefix + " on port " + port);
+            Debug.WriteLine("* Creating Http Listener: " + prefix + " on port " + port);
             HttpListener listener = new HttpListener(prefix, port);
 
             // assign server certificate
@@ -43,7 +44,7 @@ namespace HttpSamples.HttpListenerSample
 
             listener.SslProtocols = System.Net.Security.SslProtocols.Tls | System.Net.Security.SslProtocols.Tls11 | System.Net.Security.SslProtocols.Tls12;
 
-            Console.WriteLine($"Listening for HTTP requests @ {NetworkInterface.GetAllNetworkInterfaces()[0].IPv4Address}:{port} ...");
+            Debug.WriteLine($"Listening for HTTP requests @ {NetworkInterface.GetAllNetworkInterfaces()[0].IPv4Address}:{port} ...");
             listener.Start();
 
             while (true)
@@ -59,12 +60,13 @@ namespace HttpSamples.HttpListenerSample
 
                     // output stream must be closed
                     context.Response.Close();
+                    
                     // context must be closed
                     context.Close();
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("* Error getting context: " + ex.Message + "\r\nSack = " + ex.StackTrace);
+                    Debug.WriteLine("* Error getting context: " + ex.Message + "\r\nSack = " + ex.StackTrace);
                 }
             }
         }
