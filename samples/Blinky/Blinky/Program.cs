@@ -31,22 +31,22 @@ namespace Blinky
             //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('E', 15));
 
             // STM32F091RC: PA5 is LED_GREEN
-            GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('A', 5));
+            //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('A', 5));
 
             // STM32F746_NUCLEO: PB75 is LED2
             //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('B', 7));
 
             // STM32F769I_DISCO: PJ5 is LD2
-            //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('J', 5));
+            GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('J', 5));
 
             // STM32L072Z_LRWAN1: PA5 is LD2
             //GpioPin led = GpioController.GetDefault().OpenPin(PinNumber('A', 5));
 
-            // TI CC13x2 Launchpad: pin 4 it's the green LED
-            //GpioPin led = GpioController.GetDefault().OpenPin(4);
+            // TI CC13x2 Launchpad: DIO_07 it's the green LED
+            //GpioPin led = GpioController.GetDefault().OpenPin(7);
 
-            // TI CC13x2 Launchpad: pin 5 it's the red LED  
-            //GpioPin led = GpioController.GetDefault().OpenPin(4);
+            // TI CC13x2 Launchpad: DIO_06 it's the red LED  
+            //GpioPin led = GpioController.GetDefault().OpenPin(6);
 
             // ULX3S FPGA board: for the red D22 LED from the ESP32-WROOM32, GPIO5
             //GpioPin led = GpioController.GetDefault().OpenPin(5);
