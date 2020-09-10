@@ -93,7 +93,7 @@ Feel free to browse, take what you like and contribute back if you want.
 <table>
  <tr>
   <td><a href="samples/TI.EasyLink">TI.EasyLink</a></td>
-  <td><!--<a href="Utility/util2">Utility Two</a>--></td>
+  <td><a href="samples/Hardware.TI">Hardware TI SimpleLink</a></td>
   <td><!--<a href="Utility/util3">Utility Three</a>--></td>
  </tr>
 </table>
