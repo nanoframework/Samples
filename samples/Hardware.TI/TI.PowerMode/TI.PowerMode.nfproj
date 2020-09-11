@@ -12,10 +12,10 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <FileAlignment>512</FileAlignment>
-    <RootNamespace>Stm32.PowerMode</RootNamespace>
-    <AssemblyName>Stm32.PowerMode</AssemblyName>
+    <RootNamespace>TI.PowerMode</RootNamespace>
+    <AssemblyName>TI.PowerMode</AssemblyName>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
-    <Name>Stm32.PowerMode</Name>
+    <Name>TI.PowerMode</Name>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>

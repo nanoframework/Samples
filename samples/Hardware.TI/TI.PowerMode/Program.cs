@@ -4,7 +4,7 @@ using System.Threading;
 using Windows.Devices.Gpio;
 using TI = nanoFramework.Hardware.TI;
 
-namespace Stm32.PowerMode
+namespace TI.PowerMode
 {
     public class Program
     {
