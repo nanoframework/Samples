@@ -3,6 +3,7 @@
 Shows how to use various APIs specific to TI SimpleLink targets.
 
 - [Power down/off test](/TI.PowerMode)
+- [Read IEEE Address](/TI.Utilities)
 
 > **Note:** This sample is part of a large collection of nanoFramework feature samples.
 > If you are unfamiliar with Git and GitHub, you can download the entire collection as a
@@ -21,6 +22,7 @@ An TI SimpleLink hardware device running a nanoFramework image.
 ### Reference
 
 - [nanoFramework.Hardware.TI.Power](http://docs.nanoframework.net/api/nanoFramework.Hardware.TI.Power.html)
+- [nanoFramework.Hardware.TI.Utilities](http://docs.nanoframework.net/api/nanoFramework.Hardware.TI.Utilities.html)
 
 ## Build the sample
 

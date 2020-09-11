@@ -8,14 +8,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{11A8DD76-328B-46DF-9F39-F559912D0360};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>ddc74490-0b98-4209-b0dd-8093026a4ff7</ProjectGuid>
+    <ProjectGuid>760ceba5-a4a8-4909-a67c-8aed53e9b1ce</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <FileAlignment>512</FileAlignment>
-    <RootNamespace>TI.PowerMode</RootNamespace>
-    <AssemblyName>TI.PowerMode</AssemblyName>
+    <RootNamespace>TI.Utilities</RootNamespace>
+    <AssemblyName>TI.Utilities</AssemblyName>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
-    <Name>TI.PowerMode</Name>
+    <Name>TI.Utilities</Name>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
@@ -30,16 +30,6 @@
     </Reference>
     <Reference Include="nanoFramework.Hardware.TI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.Hardware.TI.1.0.0-preview.8\lib\nanoFramework.Hardware.TI.dll</HintPath>
-      <Private>True</Private>
-      <SpecificVersion>True</SpecificVersion>
-    </Reference>
-    <Reference Include="nanoFramework.Runtime.Events, Version=1.8.0.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Runtime.Events.1.8.0\lib\nanoFramework.Runtime.Events.dll</HintPath>
-      <Private>True</Private>
-      <SpecificVersion>True</SpecificVersion>
-    </Reference>
-    <Reference Include="Windows.Devices.Gpio, Version=1.5.0.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Windows.Devices.Gpio.1.5.0\lib\Windows.Devices.Gpio.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "TI.PowerMode", "TI.PowerMode\TI.PowerMode.nfproj", "{DDC74490-0B98-4209-B0DD-8093026A4FF7}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "nanoFramework.Hardware.TI", "..\..\..\nflib-nanoFramework.Hardware.TI\nanoFramework.Hardware.TI\nanoFramework.Hardware.TI.nfproj", "{918B26F0-442F-46AD-A03E-274F5B315ED5}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "TI.Utilities", "TI.Utilities\TI.Utilities.nfproj", "{760CEBA5-A4A8-4909-A67C-8AED53E9B1CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,12 +19,12 @@ Global
 		{DDC74490-0B98-4209-B0DD-8093026A4FF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDC74490-0B98-4209-B0DD-8093026A4FF7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DDC74490-0B98-4209-B0DD-8093026A4FF7}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{918B26F0-442F-46AD-A03E-274F5B315ED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{918B26F0-442F-46AD-A03E-274F5B315ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{918B26F0-442F-46AD-A03E-274F5B315ED5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{918B26F0-442F-46AD-A03E-274F5B315ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{918B26F0-442F-46AD-A03E-274F5B315ED5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{918B26F0-442F-46AD-A03E-274F5B315ED5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{760CEBA5-A4A8-4909-A67C-8AED53E9B1CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{760CEBA5-A4A8-4909-A67C-8AED53E9B1CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{760CEBA5-A4A8-4909-A67C-8AED53E9B1CE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{760CEBA5-A4A8-4909-A67C-8AED53E9B1CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{760CEBA5-A4A8-4909-A67C-8AED53E9B1CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{760CEBA5-A4A8-4909-A67C-8AED53E9B1CE}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

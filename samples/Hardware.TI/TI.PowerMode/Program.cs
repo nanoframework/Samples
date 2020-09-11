@@ -1,10 +1,14 @@
-﻿using System;
+﻿//
+// Copyright (c) 2020 The nanoFramework project contributors
+// See LICENSE file in the project root for full license information.
+//
+
 using System.Diagnostics;
 using System.Threading;
 using Windows.Devices.Gpio;
-using TI = nanoFramework.Hardware.TI;
+using TIPower = nanoFramework.Hardware.TI.Power;
 
-namespace TI.PowerMode
+namespace Hardware.TI.PowerMode
 {
     public class Program
     {
@@ -17,25 +21,25 @@ namespace TI.PowerMode
             led.Write(GpioPinValue.High);
 
             // query target about wake-up reason
-            switch (TI.Power.SourceOfReset)
+            switch (nanoFramework.Hardware.TI.Power.SourceOfReset)
             {
-                case TI.Power.ResetSource.ResetPin:
+                case TIPower.ResetSource.ResetPin:
                     Debug.WriteLine("[INFO] Boot following reset pin hit.");
                     break;
 
-                case TI.Power.ResetSource.WarmReset:
+                case TIPower.ResetSource.WarmReset:
                     Debug.WriteLine("[INFO] Boot following warm reset.");
                     break;
 
-                case TI.Power.ResetSource.SoftwareReset:
+                case TIPower.ResetSource.SoftwareReset:
                     Debug.WriteLine("[INFO] Boot following software reset.");
                     break;
 
-                case TI.Power.ResetSource.WakeupFromShutdown:
+                case TIPower.ResetSource.WakeupFromShutdown:
                     Debug.WriteLine("[INFO] Boot following wake-up from shutdown.");
                     break;
 
-                case TI.Power.ResetSource.PowerOn:
+                case TIPower.ResetSource.PowerOn:
                     Debug.WriteLine("[INFO] Boot following regular power on.");
                     break;
             }
@@ -43,12 +47,12 @@ namespace TI.PowerMode
             // enable wake-up from BTN1 GPIO pin (DIO15)
             // need to enable internal pull-up
             // sensitive to transition to negative
-            TI.Power.ConfigureWakeupFromGpioPin(
-                new TI.Power.PinWakeupConfig[] { 
-                    new TI.Power.PinWakeupConfig(
-                        15, 
-                        TI.Power.PinWakeupEdge.NegativeEdge, 
-                        TI.Power.PinPullUpDown.PullUp)
+            TIPower.ConfigureWakeupFromGpioPin(
+                new TIPower.PinWakeupConfig[] { 
+                    new TIPower.PinWakeupConfig(
+                        15,
+                        TIPower.PinWakeupEdge.NegativeEdge,
+                        TIPower.PinPullUpDown.PullUp)
                 });
 
             // start a thread blinking the LED to check that something is happening 
@@ -67,7 +71,7 @@ namespace TI.PowerMode
 
             // this call never returns
             // after this the target will enter "TI shutdown" mode and will be waked by a push on the BTN1 switch
-            TI.Power.EnterShutdownMode();
+            TIPower.EnterShutdownMode();
 
             Thread.Sleep(Timeout.Infinite);
         }
