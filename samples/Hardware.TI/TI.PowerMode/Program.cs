@@ -3,6 +3,7 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System;
 using System.Diagnostics;
 using System.Threading;
 using Windows.Devices.Gpio;
@@ -44,11 +45,15 @@ namespace Hardware.TI.PowerMode
                     break;
             }
 
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            // shutdown: lowest power mode, CPU completely stopped, wake-up on hard reset or GPIO event //
+            //////////////////////////////////////////////////////////////////////////////////////////////
+
             // enable wake-up from BTN1 GPIO pin (DIO15)
             // need to enable internal pull-up
             // sensitive to transition to negative
             TIPower.ConfigureWakeupFromGpioPin(
-                new TIPower.PinWakeupConfig[] { 
+                new TIPower.PinWakeupConfig[] {
                     new TIPower.PinWakeupConfig(
                         15,
                         TIPower.PinWakeupEdge.NegativeEdge,
@@ -69,9 +74,21 @@ namespace Hardware.TI.PowerMode
 
             Debug.WriteLine($"Going to shutdown mode now...");
 
+            TIPower.EnterStandbyMode(TimeSpan.FromSeconds(5));
+
             // this call never returns
             // after this the target will enter "TI shutdown" mode and will be waked by a push on the BTN1 switch
             TIPower.EnterShutdownMode();
+
+            /////////////////////////////////////////////////////////////////////////////////////////
+            // standby: second lowest power mode, CPU stopped depending on power mangement policy, //
+            // wake-up after specified time lapsed                                                 //
+            /////////////////////////////////////////////////////////////////////////////////////////
+
+            Debug.WriteLine($"Going to standby mode now...");
+
+            // going to standby mode and wake up in 10 seconds
+            TIPower.EnterStandbyMode(TimeSpan.FromSeconds(10));
 
             Thread.Sleep(Timeout.Infinite);
         }
