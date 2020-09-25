@@ -1,0 +1,7 @@
+{
+  "solution": "I2C.sln",
+  "mappings": {
+    "mscorlib": "../../../../nflib-CoreLibrary/source/nanoFramework.CoreLibrary/CoreLibrary.nfproj",
+    "Windows.Devices.I2c": "../../../../nflib-Windows.Devices.I2c/source/Windows.Devices.I2c/Windows.Devices.I2c.nfproj"
+  }
+}
