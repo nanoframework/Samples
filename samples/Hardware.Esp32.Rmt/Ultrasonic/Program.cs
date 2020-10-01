@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2020 The nanoFramework project contributors
+// Copyright (c) .NET Foundation and Contributors
 // See LICENSE file in the project root for full license information.
 //
 
@@ -19,8 +19,9 @@ namespace Ultrasonic
 	{
 		public static void Main()
 		{
-			const int GPIO_TRIGGER_PIN = 22;
-			const int GPIO_ECHO_PIN = 22;
+			// Change to suit you hardware set-up
+			const int GPIO_TRIGGER_PIN = 27;
+			const int GPIO_ECHO_PIN = 26;
 
 			try
 			{
@@ -30,7 +31,10 @@ namespace Ultrasonic
 				{
 					float distance = device.GetDistance();
 
-					Debug.WriteLine($"Distance {distance}");
+					if (distance == -1)
+						Debug.WriteLine($"Out of range");
+					else
+						Debug.WriteLine($"Distance {distance:F3} meters");
 
 					Thread.Sleep(1000);
 				}

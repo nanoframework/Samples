@@ -1,5 +1,5 @@
 ﻿//
-// Copyright (c) 2020 The nanoFramework project contributors
+// Copyright (c) .NET Foundation and Contributors
 // See LICENSE file in the project root for full license information.
 //
 
@@ -16,9 +16,10 @@ namespace nanoFramework.device.sensor
 	/// Range is 2cm to 450cm
 	/// 
 	/// When connecting to ESP32 be aware that the output is 5V and a level shifter should be used
-	/// Connect resister between SR04 output and ESP32 pin. (10K)
+	/// As a minimum connect a resistor between SR04 output(ECHO) and ESP32 pin. (10K) to limit current.
+	/// For testing it can be connected directly.
 	/// 
-	/// If a 3.3V SR04 device is used then no resister is required ( HC-SR04P )
+	/// If a 3.3V SR04 device is used then no resistor/level shifter is required ( HC-SR04P )
 	/// </summary>
 	public class Sr04
 	{
