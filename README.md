@@ -71,7 +71,8 @@ Feel free to browse, take what you like and contribute back if you want.
 ### ESP32
 <table>
  <tr>
-  <td><a href="samples/HardwareEsp32">Hardware Esp32 Test</a></td>
+  <td><a href="samples/Hardware.Esp32">Hardware Esp32 Test</a></td>
+  <td><a href="samples/Hardware.Esp32.Rmt">RMT interface</a></td>
   <td><a href="samples/Wifi">WiFi</a></td>
   <td><a href="samples/WiFiAP">WiFi Soft AP</a></td>
   <td><!--<a href="Utility/util3">Utility Three</a>--></td>
