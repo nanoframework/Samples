@@ -1,4 +1,4 @@
-# AWS MQTT sample
+# Ultrasonic HC-SR04 sensor with RMT
 
 Shows how to use ESP32 RMT with an Ultrasonic HC-SR04 sensor
 
