@@ -1,19 +1,23 @@
-﻿using nanoFramework.TI.EasyLink;
+﻿//
+// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+//
+
+using nanoFramework.TI.EasyLink;
 using System;
+using System.Diagnostics;
 using System.Threading;
 
 namespace EasyLink.Node
 {
     public class Program
     {
-        static byte s_concentratorAddress = 0xAA;
+        static byte s_concentratorAddress = 0x00;
         static byte s_nodeAddress = 0x33;
 
         public static void Main()
         {
-            EasyLinkController controller = new EasyLinkController();
-
-            controller.AddAddressToFilter(new byte[] { s_nodeAddress });
+            EasyLinkController controller = new EasyLinkController(PhyType._5kbpsSlLr);
 
             // need to initialize the EasyLink layer on the target before any operation is allowed
             var initResult = controller.Initialize();
@@ -31,23 +35,23 @@ namespace EasyLink.Node
                                 new byte[] { counter++ }
                             );
 
-                    var txResult = controller.Transmit(packet, 5*1000);
+                    var txResult = controller.Transmit(packet);
 
                     if (txResult == Status.Success)
                     {
-                        Console.WriteLine($"Tx packet: {packet.Payload[0]}");
+                        Debug.WriteLine($"Tx packet: {packet.Payload[0]}");
                     }
                     else
                     {
-                        Console.WriteLine($"Error when Tx'ing: {txResult}");
+                        Debug.WriteLine($"Error when Tx'ing: {txResult}");
                     }
 
-                    Thread.Sleep(5000);
+                    Thread.Sleep(3000);
                 }
             }
             else
             {
-                Console.WriteLine($"Failed to initialize SimpleLink. Error: {initResult}");
+                Debug.WriteLine($"Failed to initialize SimpleLink. Error: {initResult}");
             }
 
             Thread.Sleep(Timeout.Infinite);
