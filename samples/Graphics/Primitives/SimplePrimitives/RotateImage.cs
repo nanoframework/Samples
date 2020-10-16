@@ -2,6 +2,7 @@
 using nanoFramework.Presentation.Shapes;
 using nanoFramework.UI;
 using System;
+using System.Diagnostics;
 
 namespace Primitives.SimplePrimitives
 {
@@ -64,7 +65,7 @@ namespace Primitives.SimplePrimitives
             }
             catch (Exception e)
             {
-                Console.WriteLine("Caught exception: " + e.Message);
+                Debug.WriteLine("Caught exception: " + e.Message);
             }
             finally
             {
