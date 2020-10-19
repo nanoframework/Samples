@@ -5,6 +5,7 @@
 
 using System;
 using System.Device.Gpio;
+using System.Diagnostics;
 using System.Threading;
 
 namespace Gpio_Events.Test
@@ -87,7 +88,7 @@ namespace Gpio_Events.Test
         private static void UserButton_ValueChanged(object sender, PinValueChangedEventArgs e)
         {
             // read Gpio pin value from event
-            Console.WriteLine("USER BUTTON (event) : " + e.ChangeType.ToString());
+            Debug.WriteLine("USER BUTTON (event) : " + e.ChangeType.ToString());
 
             if (e.ChangeType == PinEventTypes.Rising)
             {

@@ -4,8 +4,9 @@
 //
 
 using System;
+using System.Device.Gpio;
+using System.Diagnostics;
 using System.Threading;
-using Windows.Devices.Gpio;
 
 namespace Gpio_Events.Test
 {
@@ -18,7 +19,7 @@ namespace Gpio_Events.Test
 
         public static void Main()
         {
-            var gpioController = GpioController.GetDefault();
+            var gpioController = new GpioController();
 
             /////////////////////
             // setup green LED //
@@ -31,9 +32,9 @@ namespace Gpio_Events.Test
             //_greenLED = gpioController.OpenPin(PinNumber('J', 5));
             // F746ZG-NUCLEO -> Off board LED is @ PC10
             // TI CC13x2 Launchpad: DIO_07 it's the green LED
-            _greenLED = GpioController.GetDefault().OpenPin(7);
+            _greenLED = gpioController.OpenPin(7);
 
-            _greenLED.SetDriveMode(GpioPinDriveMode.Output);
+            _greenLED.SetDriveMode(PinMode.Output);
 
             ///////////////////
             // setup red LED //
@@ -45,9 +46,9 @@ namespace Gpio_Events.Test
             // F769I-DISCO -> LED2_RED is @ PJ13
             //_redLED = gpioController.OpenPin(PinNumber('J', 13));
             // TI CC13x2 Launchpad: DIO_06 it's the red LED  
-            _redLED = GpioController.GetDefault().OpenPin(6);
+            _redLED = gpioController.OpenPin(6);
 
-            _redLED.SetDriveMode(GpioPinDriveMode.Output);
+            _redLED.SetDriveMode(PinMode.Output);
 
             ///////////////////////
             // setup user button //
@@ -56,11 +57,11 @@ namespace Gpio_Events.Test
             // F4-Discovery -> USER_BUTTON is @ PA0 (input only)
             // F769I-DISCO -> USER_BUTTON is @ PA0 (input only)
             //_userButton = gpioController.OpenPin(PinNumber('A', 0));
-            //_userButton.SetDriveMode(GpioPinDriveMode.Input);
+            //_userButton.SetDriveMode(PinMode.Input);
 
             // TI CC13x2 Launchpad: DIO_15 it's BTN-1 (input requiring pull-up)
-            _userButton = GpioController.GetDefault().OpenPin(15);
-            _userButton.SetDriveMode(GpioPinDriveMode.InputPullUp);
+            _userButton = gpioController.OpenPin(15);
+            _userButton.SetDriveMode(PinMode.InputPullUp);
 
             _userButton.ValueChanged += UserButton_ValueChanged;
 
@@ -70,11 +71,11 @@ namespace Gpio_Events.Test
 
             // F769I-DISCO -> using PA7 (input only)
             //_exposedPad = gpioController.OpenPin(PinNumber('A', 7));
-            //_exposedPad.SetDriveMode(GpioPinDriveMode.InputPullUp);
+            //_exposedPad.SetDriveMode(PinMode.InputPullUp);
 
             // TI CC13x2 Launchpad: DIO_14 it's BTN-2 (input requiring pull-up)
-            _exposedPad = GpioController.GetDefault().OpenPin(14);
-            _exposedPad.SetDriveMode(GpioPinDriveMode.InputPullUp);
+            _exposedPad = gpioController.OpenPin(14);
+            _exposedPad.SetDriveMode(PinMode.InputPullUp);
 
             // add a debounce timeout 
             _exposedPad.DebounceTimeout = new TimeSpan(0, 0, 0, 0, 100);
@@ -87,39 +88,39 @@ namespace Gpio_Events.Test
             }
         }
 
-        private static void UserButton_ValueChanged(object sender, GpioPinValueChangedEventArgs e)
+        private static void UserButton_ValueChanged(object sender, PinValueChangedEventArgs e)
         {
             // read Gpio pin value from event
-            Console.WriteLine("USER BUTTON (event) : " + e.Edge.ToString());
+            Debug.WriteLine("USER BUTTON (event) : " + e.ChangeType.ToString());
 
             // direct read Gpio pin value
-            Console.WriteLine("USER BUTTON (direct): " + _userButton.Read());
+            Debug.WriteLine("USER BUTTON (direct): " + _userButton.Read());
 
-            if (e.Edge == GpioPinEdge.RisingEdge)
+            if (e.ChangeType ==  PinEventTypes.Rising)
             {
-                _greenLED.Write(GpioPinValue.High);
+                _greenLED.Write(PinValue.High);
             }
             else
             {
-                _greenLED.Write(GpioPinValue.Low);
+                _greenLED.Write(PinValue.Low);
             }
         }
 
-        private static void ExposedPad_ValueChanged(object sender, GpioPinValueChangedEventArgs e)
+        private static void ExposedPad_ValueChanged(object sender, PinValueChangedEventArgs e)
         {
             // read Gpio pin value from event
-            Console.WriteLine("PAD (event) : " + e.Edge.ToString());
+            Debug.WriteLine("PAD (event) : " + e.ChangeType.ToString());
 
             // direct read Gpio pin value
-            Console.WriteLine("PAD (direct): " + _exposedPad.Read());
+            Debug.WriteLine("PAD (direct): " + _exposedPad.Read());
 
-            if (e.Edge == GpioPinEdge.RisingEdge)
+            if (e.ChangeType == PinEventTypes.Rising)
             {
-                _greenLED.Write(GpioPinValue.High);
+                _greenLED.Write(PinValue.High);
             }
             else
             {
-                _greenLED.Write(GpioPinValue.Low);
+                _greenLED.Write(PinValue.Low);
             }
         }
 
