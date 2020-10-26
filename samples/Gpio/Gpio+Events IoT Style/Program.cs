@@ -24,16 +24,16 @@ namespace Gpio_Events.Test
             // F4-Discovery -> LD4 LED is @ PD12
             // F4-Discovery -> LD5 is @ PD14
             // F4-Discovery -> USER_BUTTON is @ PA0 (input only)
-            //var s_GreenPinNumber = PinNumber('D', 12);
-            //var s_RedPinNumber = PinNumber('D', 14);
-            //var s_UserButtonPinNumber = PinNumber('A', 0);
+            var s_GreenPinNumber = PinNumber('D', 12);
+            var s_RedPinNumber = PinNumber('D', 14);
+            var s_UserButtonPinNumber = PinNumber('A', 0);
 
             // F429I-Discovery -> LD3 is @ PG13
             // F429I-Discovery -> LD4 is @ PG14
             // F429I-DISCO -> USER_BUTTON is @ PA0 (input only)
-            s_GreenPinNumber = PinNumber('G', 13);
-            s_RedPinNumber = PinNumber('G', 14);
-            s_UserButtonPinNumber = PinNumber('A', 0);
+            //s_GreenPinNumber = PinNumber('G', 13);
+            //s_RedPinNumber = PinNumber('G', 14);
+            //s_UserButtonPinNumber = PinNumber('A', 0);
 
             // F769I-DISCO -> LED2_GREEN is @ PJ5
             // F769I-DISCO -> LED2_RED is @ PJ13
