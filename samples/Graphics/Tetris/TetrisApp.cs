@@ -16,6 +16,7 @@ using Tetris;
 using Tetris.GameLogic;
 using Tetris.Presentation;
 using nanoFramework.Runtime.Events;
+using System.Threading;
 
 namespace Tetris
 {
@@ -69,11 +70,11 @@ namespace Tetris
         }
 
         /// <summary>
-        /// Persists high score to the FLASH memmory
+        /// Persists high score to the FLASH memory
         /// </summary>
         public void PersistHighScore()
         {
-            // Persist HighScore by settinig the Target property
+            // Persist HighScore by setting the Target property
             // of ExtendedWeakReference
             highScoreEWD.Target = HighScore;
         }

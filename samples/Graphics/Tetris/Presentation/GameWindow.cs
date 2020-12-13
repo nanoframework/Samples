@@ -75,8 +75,8 @@ namespace Tetris.Presentation
         /// </summary>
         private void InitializeComponents()
         {
-            this.Height = SystemMetrics.ScreenHeight;
-            this.Width = SystemMetrics.ScreenWidth;
+			this.Height = DisplayControl.ScreenHeight; // SystemMetrics.ScreenHeight;
+			this.Width = DisplayControl.ScreenWidth; // SystemMetrics.ScreenWidth;
             this.Background = new SolidColorBrush(Color.Black);
 
             // Tetris grid

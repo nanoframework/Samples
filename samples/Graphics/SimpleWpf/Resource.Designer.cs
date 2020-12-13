@@ -8,9 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-using System;
-
 namespace SimpleWpf
 {
     
@@ -27,6 +24,10 @@ namespace SimpleWpf
                 }
                 return Resource.manager;
             }
+        }
+        internal static nanoFramework.UI.Bitmap GetBitmap(Resource.BitmapResources id)
+        {
+            return ((nanoFramework.UI.Bitmap)(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id)));
         }
         internal static nanoFramework.UI.Font GetFont(Resource.FontResources id)
         {
@@ -68,11 +69,6 @@ namespace SimpleWpf
             ScrollableTextTitle = 14311,
             ReturnToMenu = 29183,
             ScrollableText = 31192,
-        }
-
-        internal static nanoFramework.UI.Bitmap GetBitmap(BitmapResources id)
-        {
-            return ((nanoFramework.UI.Bitmap)(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id)));
         }
     }
 }
