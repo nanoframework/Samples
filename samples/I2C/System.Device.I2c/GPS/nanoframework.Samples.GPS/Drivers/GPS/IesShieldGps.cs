@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Text;
-using Windows.Devices.I2c;
+using System.Device.I2c;
 
 namespace nanoframework.Drivers.GPS
 {
     public class IesShieldGps
     {
         private readonly int _address;
-        private I2cDevice _gpsController;
+        private readonly I2cDevice _gpsController;
         public const byte GPAM_DEFAULT_ADDDRESS = 0x68; // GPM I2C Register
 
         /// <summary>
@@ -20,17 +20,13 @@ namespace nanoframework.Drivers.GPS
         /// </summary>
         /// <param name="i2cBus">The I2C bus where the device is connected to.</param>
         /// <param name="address">The I2C address of the device.</param>
-        public IesShieldGps(string i2cBus, int address = GPAM_DEFAULT_ADDDRESS)
+        public IesShieldGps(int i2cBus, int address = GPAM_DEFAULT_ADDDRESS)
         {
             // store I2C address
             _address = address;
 
             // instantiate I2C controller
-            _gpsController = I2cDevice.FromId(i2cBus, new I2cConnectionSettings(address)
-            {
-                BusSpeed = I2cBusSpeed.FastMode,
-                SharingMode = I2cSharingMode.Shared
-            });
+            _gpsController = I2cDevice.Create(new I2cConnectionSettings(i2cBus, address, I2cBusSpeed.FastMode));
         }
 
         /// <summary>
