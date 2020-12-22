@@ -134,7 +134,7 @@
  <tr>
   <td><a href="samples/Json nanoFramework">Json</a></td>
   <td><a href="samples/NativeEvents">Native Events</a></td>
-  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
+  <td><a href="samples/System.IO.FileSystem">File System sample</a></td>
  </tr>
 </table>
 
