@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2042
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "ParseCertificate", "ParseCertificate\ParseCertificate.nfproj", "{638EFFB7-ED4A-402C-B70A-0406796B8BA9}"
 EndProject
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "SecureClient", "SecureClient\SecureClient.nfproj", "{AE046A9A-FACA-4A43-B0A5-B8B808C4F606}"
+EndProject
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "SecureServer", "SecureServer\SecureServer.nfproj", "{B795119D-A3F0-43FA-99AA-AE582DE61AC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +26,12 @@ Global
 		{AE046A9A-FACA-4A43-B0A5-B8B808C4F606}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE046A9A-FACA-4A43-B0A5-B8B808C4F606}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AE046A9A-FACA-4A43-B0A5-B8B808C4F606}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B795119D-A3F0-43FA-99AA-AE582DE61AC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B795119D-A3F0-43FA-99AA-AE582DE61AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B795119D-A3F0-43FA-99AA-AE582DE61AC2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B795119D-A3F0-43FA-99AA-AE582DE61AC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B795119D-A3F0-43FA-99AA-AE582DE61AC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B795119D-A3F0-43FA-99AA-AE582DE61AC2}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

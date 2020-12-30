@@ -18,7 +18,7 @@ namespace nanoframework.Samples.GPS
             //GND = CN11 PIN 6 (GND)
             IesShieldGps gps = new IesShieldGps("I2C1", 0x68);
 
-            Console.WriteLine("Application started...awaiting GPS and Acceleration data..");
+            Debug.WriteLine("Application started...awaiting GPS and Acceleration data..");
 
             Thread.Sleep(3000); // Wait 3 seconds for DS-GPAM to initialise
 
@@ -26,27 +26,27 @@ namespace nanoframework.Samples.GPS
             {
                 for (int x = 0; x <= 29; x++)
                 {
-                    Console.WriteLine(gps.GetDateTime().ToString("u"));
+                    Debug.WriteLine(gps.GetDateTime().ToString("u"));
                     Thread.Sleep(1000);
                 }
 
-                Console.Write("Latitude: ");
-                Console.WriteLine(gps.GetLatitude().ToString("N6"));
+                Debug.Write("Latitude: ");
+                Debug.WriteLine(gps.GetLatitude().ToString("N6"));
 
-                Console.Write("Longitude: ");
-                Console.WriteLine(gps.GetLongitude().ToString("N6"));
+                Debug.Write("Longitude: ");
+                Debug.WriteLine(gps.GetLongitude().ToString("N6"));
 
-                Console.Write("Heading: ");
-                Console.WriteLine(gps.GetHeading().ToString("N2"));
+                Debug.Write("Heading: ");
+                Debug.WriteLine(gps.GetHeading().ToString("N2"));
 
-                Console.Write("Speed: ");
-                Console.WriteLine(gps.GetSpeed().ToString("N2"));
+                Debug.Write("Speed: ");
+                Debug.WriteLine(gps.GetSpeed().ToString("N2"));
 
-                Console.Write("Pitch: ");
-                Console.WriteLine(gps.GetPitch().ToString());
+                Debug.Write("Pitch: ");
+                Debug.WriteLine(gps.GetPitch().ToString());
 
-                Console.Write("Roll:");
-                Console.WriteLine(gps.GetRoll().ToString());
+                Debug.Write("Roll:");
+                Debug.WriteLine(gps.GetRoll().ToString());
             }
 
             //Thread.Sleep(Timeout.Infinite);
