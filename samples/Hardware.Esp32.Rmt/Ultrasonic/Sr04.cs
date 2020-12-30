@@ -43,6 +43,7 @@ namespace nanoFramework.device.sensor
 
 			_txPulse = new RmtCommand(10, true, 10, false);
 			_txChannel.AddCommand(_txPulse);
+			_txChannel.AddCommand(new RmtCommand(20, true, 15, false));
 
 			_txChannel.ClockDivider = 80;
 			_txChannel.CarrierEnabled = false;

@@ -26,26 +26,26 @@ namespace Tetris.Presentation
     public class HighScoreWindow : Window
     {
         /// <summary>
-        /// Lenght of the name to be edited
+        /// Length of the name to be edited
         /// </summary>
         const int NAME_LENGTH = 3;
 
         /// <summary>
         /// Allowed chars in names
         /// </summary>
-        private char[] allowedChars = new char[26] { 'A', 'B', 'C', 'D', 
-                                                     'E', 'F', 'G', 'H',
-                                                     'I', 'J', 'K', 'L', 
-                                                     'M', 'N', 'O', 'P', 
-                                                     'Q', 'R', 'S', 'T', 
-                                                     'U', 'V', 'W', 'X', 
-                                                     'Y', 'Z'};
+        private readonly char[] allowedChars = new char[26] { 'A', 'B', 'C', 'D',
+                                                              'E', 'F', 'G', 'H',
+                                                              'I', 'J', 'K', 'L',
+                                                              'M', 'N', 'O', 'P',
+                                                              'Q', 'R', 'S', 'T',
+                                                              'U', 'V', 'W', 'X',
+                                                              'Y', 'Z'};
 
         private int selectedItem, selectedLetter;
-        private int[] letterIndexes;
+        private readonly int[] letterIndexes;
         private bool editMode;
 
-        TetrisApp parentApp;
+        readonly TetrisApp parentApp;
         ListBox scoreListBox;
         TextFlow hintTextFlow;
 
@@ -86,27 +86,33 @@ namespace Tetris.Presentation
         /// </summary>
         private void InitializeComponents()
         {
-            this.Width = SystemMetrics.ScreenWidth;
-            this.Height = SystemMetrics.ScreenHeight;
+            this.Width = DisplayControl.ScreenWidth;
+            this.Height = DisplayControl.ScreenHeight;
             this.Background = new SolidColorBrush(Color.Black);
 
             #region Caption
-            Text caption = new Text(nfResource.GetString(nfResource.StringResources.HighScore));
-            caption.Font = nfResource.GetFont(nfResource.FontResources.Consolas23);
-            caption.ForeColor = Color.Red;
-            caption.SetMargin(0, 10, 0, 15);            
-            caption.TextAlignment = TextAlignment.Center;            
+            Text caption = new Text(nfResource.GetString(nfResource.StringResources.HighScore))
+            {
+                Font = nfResource.GetFont(nfResource.FontResources.Consolas23),
+                ForeColor = Color.Red,
+                TextAlignment = TextAlignment.Center
+            };
+            caption.SetMargin(0, 10, 0, 15);
             #endregion
 
             #region Score ListBox
-            scoreListBox = new ListBox();
-            scoreListBox.Background = this.Background;
-            scoreListBox.HorizontalAlignment = HorizontalAlignment.Center;
+            scoreListBox = new ListBox()
+            {
+                Background = this.Background,
+                HorizontalAlignment = HorizontalAlignment.Center
+            };
 
             foreach (ScoreRecord scoreRecord in parentApp.HighScore.Table)
             {
-                ScoreItem scoreItem = new ScoreItem(scoreRecord.Name, scoreRecord.Score);                
-                scoreItem.Background = scoreListBox.Background;                
+                ScoreItem scoreItem = new ScoreItem(scoreRecord.Name, scoreRecord.Score)
+                {
+                    Background = scoreListBox.Background,
+                };
                 scoreListBox.Items.Add(scoreItem);
             }
             #endregion
@@ -114,12 +120,14 @@ namespace Tetris.Presentation
             #region HintLabel
             hintTextFlow = new TextFlow();
             hintTextFlow.SetMargin(0, 15, 0, 0);
-            hintTextFlow.TextAlignment = TextAlignment.Center;        
+            hintTextFlow.TextAlignment = TextAlignment.Center;
             UpdateHint();
             #endregion
 
-            StackPanel mainStack = new StackPanel(Orientation.Vertical);            
-            mainStack.HorizontalAlignment = HorizontalAlignment.Center;
+            StackPanel mainStack = new StackPanel(Orientation.Vertical)
+            {
+                HorizontalAlignment = HorizontalAlignment.Center
+            };
             mainStack.Children.Add(caption);
             mainStack.Children.Add(scoreListBox);
             mainStack.Children.Add(hintTextFlow);
@@ -127,7 +135,7 @@ namespace Tetris.Presentation
             this.Child = mainStack;
 
             this.Visibility = Visibility.Visible;
-            Buttons.Focus(this);            
+            Buttons.Focus(this);
         }
 
         /// <summary>
@@ -175,7 +183,7 @@ namespace Tetris.Presentation
             editMode = false;
             ScoreItem scoreItem = (ScoreItem)scoreListBox.Items[selectedItem];
             scoreItem.Highlite = false;
-            parentApp.HighScore.Table[selectedItem].Name = LettersToString();            
+            parentApp.HighScore.Table[selectedItem].Name = LettersToString();
             parentApp.PersistHighScore();
             UpdateHint();
         }
@@ -208,7 +216,7 @@ namespace Tetris.Presentation
         /// </summary>
         private void UpdateHint()
         {
-            Font hintFont  = nfResource.GetFont(nfResource.FontResources.NinaB);
+            Font hintFont = nfResource.GetFont(nfResource.FontResources.NinaB);
             Color hintColor = ColorUtility.ColorFromRGB(206, 206, 206);
 
             hintTextFlow.TextRuns.Clear();

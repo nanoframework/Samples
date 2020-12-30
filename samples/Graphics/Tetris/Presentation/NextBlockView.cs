@@ -49,7 +49,7 @@ namespace Tetris.Presentation
             // Draw outline rectangle
             dc.DrawRectangle(_fillBrush, _linePen, 0, 0, COLUMN_WIDTH * COLUMNS, ROW_HEIGHT * ROWS);            
 
-            // Performance tunning - save all property calls to variables
+            // Performance tuning - save all property calls to variables
             int blockCols = _universe.NextBlock.Columns;
             int blockRows = _universe.NextBlock.Rows;
 

@@ -1,14 +1,22 @@
-Tetris Demo Game for Micro Framework
-====================================
+Tetris Demo Game for nanoFramework
+==================================
 
-_(January 28th 2008)_
+This was converted from an .net Micro Framework created on _(January 28th 2008)_
 
-This was a demo application I wrote to demonstrate different capabilities of .NET Micro Framework.
+This is a demo application written to demonstrate different capabilities of .NET Micro Framework.
 Windows Presentation Foundation, Extended Weak Reference for persistent storage etc.
 
-This Tetris game become almost a benchmark demo for different hardware that supports .NET Micro Framework.
+It has been updated to work with nanoFramework (still Work in Progress).
+
+This Tetris game became almost a benchmark demo for different hardware that supports .NET Micro Framework.
 
 ![](http://bansky.net/blog_stuff/images/tetris_tahoe.jpg)
 
 ![](http://bansky.net/blog_stuff/images/tetris_screenshots.png) 
+
+
+
+Requires the GPIO pins numbers to be defined for the Left, Right, Up, Down & Select keys in the TetrisApp.cs
+
+The number of Rows of blocks displayed and the size of the blocks can be adjusted to fit your screen in the UniverseView.cs and GameUniverse.cs
 

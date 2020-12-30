@@ -26,10 +26,10 @@ namespace Tetris.Presentation
     /// </summary>
     public class GameWindow : Window
     {
-        GameUniverse gameUniverse = new GameUniverse();
+        readonly GameUniverse gameUniverse = new GameUniverse();
         UniverseView universeView;
         DispatcherTimer gameTimer;
-        TetrisApp parentApp;
+        readonly TetrisApp parentApp;
 
         /// <summary>
         /// Close window delegate
@@ -38,7 +38,7 @@ namespace Tetris.Presentation
         /// <param name="gameStatistics">Game statistics</param>
         public delegate void CloseDelegate(object sender, GameStatistics gameStatistics);
         /// <summary>
-        /// Event occures when window is closed
+        /// Event occurs when window is closed
         /// </summary>
         public event CloseDelegate OnClose;
 
@@ -55,7 +55,7 @@ namespace Tetris.Presentation
         /// <summary>
         /// Starts game on specified level
         /// </summary>
-        /// <param name="startLevel">Leve to start game</param>
+        /// <param name="startLevel">Level to start game</param>
         public void StartGame(int startLevel)
         {
             // Prepare universe
@@ -64,8 +64,10 @@ namespace Tetris.Presentation
             gameUniverse.StepUniverse();
 
             // Start tick timer
-            gameTimer = new DispatcherTimer(this.Dispatcher);
-            gameTimer.Interval = new TimeSpan(0, 0, 0, 0, gameUniverse.Statistics.Interval);
+            gameTimer = new DispatcherTimer(this.Dispatcher)
+            {
+                Interval = new TimeSpan(0, 0, 0, 0, gameUniverse.Statistics.Interval)
+            };
             gameTimer.Tick += new EventHandler(GameTimer_Tick);
             gameTimer.Start();
         }
@@ -75,17 +77,19 @@ namespace Tetris.Presentation
         /// </summary>
         private void InitializeComponents()
         {
-            this.Height = SystemMetrics.ScreenHeight;
-            this.Width = SystemMetrics.ScreenWidth;
+            this.Height = DisplayControl.ScreenHeight;
+            this.Width = DisplayControl.ScreenWidth;
             this.Background = new SolidColorBrush(Color.Black);
 
             // Tetris grid
             universeView = new UniverseView(gameUniverse);
-            
+
             // Stack panel with next block and score
-            GradientStackPanel statusStack = new GradientStackPanel(Orientation.Vertical, Color.Black, Color.White);
-            statusStack.Width = this.Width - universeView.Width;
-            statusStack.Height = this.Height;
+            GradientStackPanel statusStack = new GradientStackPanel(Orientation.Vertical, Color.Black, Color.White)
+            {
+                Width = this.Width - universeView.Width,
+                Height = this.Height
+            };
 
             // Next block control
             NextBlockView nextBlockView = new NextBlockView(gameUniverse);
@@ -100,7 +104,7 @@ namespace Tetris.Presentation
             statusStack.Children.Add(nextBlockView);
             statusStack.Children.Add(statsPanel);
 
-            // Main stack on the screeen
+            // Main stack on the screen
             StackPanel mainStack = new StackPanel(Orientation.Horizontal);
             mainStack.Children.Add(universeView);
             mainStack.Children.Add(statusStack);

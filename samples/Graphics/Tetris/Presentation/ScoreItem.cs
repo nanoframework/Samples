@@ -29,7 +29,7 @@ namespace Tetris.Presentation
         /// </summary>
         const int NAME_LENGTH = 3;
         /// <summary>
-        /// Maximum lentgh of score displayed
+        /// Maximum length of score displayed
         /// </summary>
         const int SCORE_LENGTH = 4;
 

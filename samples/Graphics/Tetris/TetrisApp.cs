@@ -16,6 +16,7 @@ using Tetris;
 using Tetris.GameLogic;
 using Tetris.Presentation;
 using nanoFramework.Runtime.Events;
+using System.Threading;
 
 namespace Tetris
 {
@@ -33,14 +34,30 @@ namespace Tetris
         private TetrisApp()
         {
             // Create the object that configures the GPIO pins to buttons.
-            GpioButtonInputProvider inputProvider = new GpioButtonInputProvider(null);
+            GPIOButtonInputProvider inputProvider = new GPIOButtonInputProvider(null);
+
+            // Assign GPIO / Key functions to GPIOButtonInputProvider
+            // Esp32
+            inputProvider.AddButton(12, Button.VK_LEFT, true);
+            inputProvider.AddButton(13, Button.VK_RIGHT, true);
+            inputProvider.AddButton(34, Button.VK_UP, true);
+            inputProvider.AddButton(35, Button.VK_SELECT, true);
+            inputProvider.AddButton(36, Button.VK_DOWN, true);
+
+            // STM32
+            //inputProvider.AddButton(PinNumber('A', 0), Button.VK_LEFT, true);
+            //inputProvider.AddButton(PinNumber('A', 1), Button.VK_RIGHT, true);
+            //inputProvider.AddButton(PinNumber('A', 2), Button.VK_UP, true);
+            //inputProvider.AddButton(PinNumber('A', 3), Button.VK_SELECT, true);
+            //inputProvider.AddButton(PinNumber('A', 4), Button.VK_DOWN, true);
+
 
             // Create ExtendedWeakReference for high score table
             highScoreEWD = ExtendedWeakReference.RecoverOrCreate(
                                                     typeof(TetrisApp), 
                                                     0, 
                                                     ExtendedWeakReference.c_SurvivePowerdown);
-            // Set persistance priority
+            // Set persistence priority
             highScoreEWD.Priority = (int)ExtendedWeakReference.PriorityLevel.Important;
 
             // Try to recover previously saved HighScore
@@ -69,11 +86,11 @@ namespace Tetris
         }
 
         /// <summary>
-        /// Persists high score to the FLASH memmory
+        /// Persists high score to the FLASH memory
         /// </summary>
         public void PersistHighScore()
         {
-            // Persist HighScore by settinig the Target property
+            // Persist HighScore by setting the Target property
             // of ExtendedWeakReference
             highScoreEWD.Target = HighScore;
         }
@@ -82,5 +99,14 @@ namespace Tetris
         {
             new TetrisApp().Run();
         }
+
+        static int PinNumber(char port, byte pin)
+        {
+            if (port < 'A' || port > 'J')
+                throw new ArgumentException();
+
+            return ((port - 'A') * 16) + pin;
+        }
+
     }
 }

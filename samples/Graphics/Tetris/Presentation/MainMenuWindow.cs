@@ -27,7 +27,7 @@ namespace Tetris.Presentation
     {
         GameWindow gameWindow;
         ListBox menuListBox;
-        TetrisApp parentApp;
+        readonly TetrisApp parentApp;
 
         /// <summary>
         /// Creates new MainMenuWindow
@@ -45,8 +45,8 @@ namespace Tetris.Presentation
         /// </summary>
         private void InitializeComponents()
         {
-            this.Width = SystemMetrics.ScreenWidth;
-            this.Height = SystemMetrics.ScreenHeight;
+            this.Width = DisplayControl.ScreenWidth;
+            this.Height = DisplayControl.ScreenHeight;
             this.Background = new SolidColorBrush(Color.Black);
 
             Image logoImage = new Image(nfResource.GetBitmap(nfResource.BitmapResources.Logo));
@@ -56,12 +56,14 @@ namespace Tetris.Presentation
             Color unselectedItemColor = ColorUtility.ColorFromRGB(206, 206, 206);
             Brush selectedBackground = new SolidColorBrush(ColorUtility.ColorFromRGB(0, 148, 255));
 
-            menuListBox = new ListBox();
-            menuListBox.Background = this.Background;
-            menuListBox.HorizontalAlignment = HorizontalAlignment.Center;
+            menuListBox = new ListBox()
+            {
+                Background = this.Background,
+                HorizontalAlignment = HorizontalAlignment.Center
+            };
 
             // Event handler for menu items
-            menuListBox.SelectionChanged += delegate(object sender, SelectionChangedEventArgs e)
+            menuListBox.SelectionChanged += delegate (object sender, SelectionChangedEventArgs e)
             {
                 int previousSelectedIndex = e.PreviousSelectedIndex;
                 if (previousSelectedIndex != -1)
@@ -84,21 +86,25 @@ namespace Tetris.Presentation
                                                  nfResource.GetString(nfResource.StringResources.ExtremeLevel),
                                                  nfResource.GetString(nfResource.StringResources.ViewHighScore)};
             // Add items into listbox
-            foreach(string item in menuItems)
+            foreach (string item in menuItems)
             {
-                Text itemText = new Text(nfResource.GetFont(nfResource.FontResources.NinaB), item);
-                itemText.Width = this.Width - 40;
-                itemText.ForeColor = unselectedItemColor;
-                itemText.TextAlignment = TextAlignment.Center;
+                Text itemText = new Text(nfResource.GetFont(nfResource.FontResources.NinaB), item)
+                {
+                    Width = this.Width - 40,
+                    ForeColor = unselectedItemColor,
+                    TextAlignment = TextAlignment.Center
+                };
                 itemText.SetMargin(5);
-                
-                ListBoxItem listBoxItem = new ListBoxItem();                
-                listBoxItem.Background = menuListBox.Background;                
-                listBoxItem.Child = itemText;
+
+                ListBoxItem listBoxItem = new ListBoxItem()
+                {
+                    Background = menuListBox.Background,
+                    Child = itemText
+                };
 
                 menuListBox.Items.Add(listBoxItem);
             }
-            
+
             menuListBox.SelectedIndex = 0;
             #endregion
 
@@ -110,7 +116,7 @@ namespace Tetris.Presentation
             this.Child = mainStackPanel;
 
             this.Visibility = Visibility.Visible;
-            Buttons.Focus(menuListBox);            
+            Buttons.Focus(menuListBox);
         }
 
         /// <summary>
@@ -157,7 +163,7 @@ namespace Tetris.Presentation
         private void StartGame(int startLevel)
         {
             gameWindow = new GameWindow(parentApp);
-            gameWindow.OnClose += new GameWindow.CloseDelegate(GameWindow_OnGameOver);            
+            gameWindow.OnClose += new GameWindow.CloseDelegate(GameWindow_OnGameOver);
             gameWindow.StartGame(startLevel);
         }
 
@@ -167,7 +173,7 @@ namespace Tetris.Presentation
         /// <param name="position"></param>
         private void ViewHighScore(int position)
         {
-            HighScoreWindow scoreWindow = new HighScoreWindow(parentApp);            
+            HighScoreWindow scoreWindow = new HighScoreWindow(parentApp);
         }
 
         /// <summary>
@@ -177,8 +183,10 @@ namespace Tetris.Presentation
         /// <param name="gameStatistics">Game statistics</param>
         private void GameWindow_OnGameOver(object sender, GameStatistics gameStatistics)
         {
-            ScoreRecord scoreRecord = new ScoreRecord();            
-            scoreRecord.Score = gameStatistics.Score;
+            ScoreRecord scoreRecord = new ScoreRecord()
+            {
+                Score = gameStatistics.Score
+            };
 
             // Add score into HighScore table
             int scoreIndex = parentApp.HighScore.AddRecord(scoreRecord);

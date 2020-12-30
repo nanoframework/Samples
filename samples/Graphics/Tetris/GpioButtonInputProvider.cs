@@ -1,94 +1,126 @@
-using nanoFramework.Presentation;
+using System;
+using System.Collections;
+using System.Device.Gpio;
+
 using nanoFramework.UI;
 using nanoFramework.UI.Input;
 using nanoFramework.UI.Threading;
-using System;
-using Windows.Devices.Gpio;
+using nanoFramework.Presentation;
+
 
 namespace Tetris
 {
-    // This class dispatches input events from emulated GPIO pins (0-4) to Input.Button 
-    // events. It is specific to the SDK's sample emulator; if you use this code,
-    // please update this class to reflect the design of your hardware.
-    public sealed class GpioButtonInputProvider
-    {
-        public readonly Dispatcher Dispatcher;
+	/// <summary>
+	/// Uses the hardware provider to get the pins for handling button input.
+	/// </summary>
+	public sealed class GPIOButtonInputProvider
+	{
+		public readonly Dispatcher Dispatcher;
 
-        private ButtonPad[] buttons;
-        private ReportInputCallback callback;
-        private InputProviderSite site;
-        private PresentationSource source;
-        private readonly GpioController Gpio = GpioController.GetDefault();
-        private ButtonDevice buttonDevice = null;
+		//private ButtonPad[] buttons;
+		private ArrayList buttons;
+		private DispatcherOperationCallback callback;
+		private InputProviderSite site;
+		private PresentationSource source;
+		private readonly GpioController Gpio = new GpioController();
+
+		/// <summary>
+		/// Maps GPIOs to Buttons that can be processed by 
+		/// nanoFramework.Presentation.
+		/// </summary>
+		/// <param name="source"></param>
+		public GPIOButtonInputProvider(PresentationSource source)
+		{
+			// Set the input source.
+			this.source = source;
+
+			// Register our object as an input source with the input manager and 
+			// get back an InputProviderSite object which forwards the input 
+			// report to the input manager, which then places the input in the 
+			// staging area.
+			site = InputManager.CurrentInputManager.RegisterInputProvider(this);
+
+			// Create a delegate that refers to the InputProviderSite object's 
+			// ReportInput method.
+			callback = new DispatcherOperationCallback(delegate (object report)
+			{
+				InputReportArgs args = (InputReportArgs)report;
+				return site.ReportInput(args.Device, args.Report);
+			});
+
+			Dispatcher = Dispatcher.CurrentDispatcher;
+
+			this.buttons = new ArrayList();
+		}
+
+		/// <summary>
+		/// Add a GPIO pin as a specific Button
+		/// </summary>
+		/// <param name="gpioPinNumber">GPIO pin number</param>
+		/// <param name="button">Button that this pin represents</param>
+		/// <param name="internalPullup">If true will enable the internal pull up on pin ( SetDriveMode = InputPullUp )
+
+		public void AddButton(int gpioPinNumber, Button button, bool internalPullup)
+		{
+			GpioPin pin = Gpio.OpenPin(gpioPinNumber);
 
 
-        private delegate bool ReportInputCallback(InputReport inputReport);
+			pin.SetPinMode(internalPullup ? PinMode.InputPullUp : PinMode.Input);
+			pin.DebounceTimeout = new TimeSpan(0, 0, 0, 0, 50);
 
-        // This class maps GPIOs to Buttons processable by nanoFramework.UI.Presentation
-        public GpioButtonInputProvider(PresentationSource source)
-        {
-            // Set the input source.
-            this.source = source;
-            // Register our object as an input source with the input manager and get back an
-            // InputProviderSite object which forwards the input report to the input manager,
-            // which then places the input in the staging area.
-            site = InputManager.CurrentInputManager.RegisterInputProvider(this);
-            // Create a delegate that refers to the InputProviderSite object's ReportInput method
-            callback = new ReportInputCallback(site.ReportInput);
-            Dispatcher = Dispatcher.CurrentDispatcher;
+			this.buttons.Add(new ButtonPad(this, button, pin));
+		}
 
+		/// <summary>
+		/// Represents a button pad on the emulated device, containing five 
+		/// buttons for user input. 
+		/// </summary>
+		internal class ButtonPad : IDisposable
+		{
+			private readonly Button button;
+			private readonly GPIOButtonInputProvider sink;
+			private readonly ButtonDevice buttonDevice = InputManager.CurrentInputManager.ButtonDevice;
 
-            GpioPin pinLeft = Gpio.OpenPin(1);
-            GpioPin pinRight = Gpio.OpenPin(2);
-            GpioPin pinUp = Gpio.OpenPin(3);
-            GpioPin pinSelect = Gpio.OpenPin(4);
-            GpioPin pinDown = Gpio.OpenPin(5);
+			/// <summary>
+			/// Constructs a ButtonPad object that handles the  
+			/// hardware's button interrupts.
+			/// </summary>
+			/// <param name="sink"></param>
+			/// <param name="button"></param>
+			/// <param name="pin"></param>
+			public ButtonPad(GPIOButtonInputProvider sink, Button button, GpioPin pin)
+			{
+				this.sink = sink;
+				this.button = button;
+				pin.ValueChanged += Pin_ValueChanged;
+			}
 
+			private void Pin_ValueChanged(object sender, PinValueChangedEventArgs e)
+			{
+				RawButtonActions action = (e.ChangeType == PinEventTypes.Falling) ? RawButtonActions.ButtonUp : RawButtonActions.ButtonDown;
 
-            // Allocate button pads and assign the (emulated) hardware pins as input 
-            // from specific buttons.
-            ButtonPad[] buttons = new ButtonPad[]
-            {
-                // Associate the buttons to the pins as discovered or set above
-                new ButtonPad(this, Button.VK_LEFT  , pinLeft),
-                new ButtonPad(this, Button.VK_RIGHT , pinRight),
-                new ButtonPad(this, Button.VK_UP    , pinUp),
-                new ButtonPad(this, Button.VK_SELECT, pinSelect),
-                new ButtonPad(this, Button.VK_DOWN  , pinDown),
-            };
+				// Create a time, should be from the pin_ValueChanged event.
+				DateTime time = DateTime.UtcNow;
 
-            this.buttons = buttons;
-        }
+				RawButtonInputReport report = new RawButtonInputReport(sink.source, time, button, action);
 
-        // The emulated device provides a button pad containing five buttons 
-        // for user input. This class represents the button pad.
-        internal class ButtonPad
-        {
-            private Button button;
-            private GpioButtonInputProvider sink;
+				// Queue the button press to the input provider site.
+				sink.Dispatcher.BeginInvoke(sink.callback, new InputReportArgs(buttonDevice, report));
+			}
 
-            // Construct the object. Set this class to handle the emulated 
-            // hardware's button interrupts.
-            public ButtonPad(GpioButtonInputProvider sink, Button button, GpioPin pin)
-            {
-                this.sink = sink;
-                this.button = button;
-                pin.SetDriveMode(GpioPinDriveMode.Input);
-                pin.ValueChanged += Pin_ValueChanged;
-            }
+			protected virtual void Dispose(bool disposing)
+			{
+				if (disposing)
+				{
+				}
+			}
 
-            private void Pin_ValueChanged(object sender, GpioPinValueChangedEventArgs e)
-            {
-                RawButtonActions action = (e.Edge == GpioPinEdge.FallingEdge) ? RawButtonActions.ButtonUp : RawButtonActions.ButtonDown;
+			public void Dispose()
+			{
+				Dispose(true);
+				GC.SuppressFinalize(this);
+			}
 
-                DateTime time = DateTime.UtcNow;
-                RawButtonInputReport report = new RawButtonInputReport(sink.source, time, button, action);
-
-                // Queue the button press to the input provider site.
-                sink.Dispatcher.BeginInvoke(sink.callback, new InputReportArgs(buttonDevice, report));
-            }
-        }
-    }
+		}
+	}
 }
-
-
