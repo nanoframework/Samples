@@ -34,8 +34,8 @@ namespace SimpleWPF
 
             // Make the window visible and the size of the LCD
             this.Visibility = Visibility.Visible;
-            this.Width = SystemMetrics.ScreenWidth;
-            this.Height = SystemMetrics.ScreenHeight;
+            this.Width = DisplayControl.ScreenWidth;
+            this.Height = DisplayControl.ScreenHeight;
             Buttons.Focus(this); // Set focus to this window
         }
 
@@ -77,7 +77,7 @@ namespace SimpleWPF
             Color unselectedItemColor = ColorUtility.ColorFromRGB(192, 192, 192);
             Color selectedItemColor = ColorUtility.ColorFromRGB(128, 128, 128);
 
-            // The Main window contains a veritcal StackPanel.
+            // The Main window contains a vertical StackPanel.
             StackPanel panel = new StackPanel(Orientation.Vertical);
             this.Child = panel;
 
@@ -612,6 +612,8 @@ namespace SimpleWPF
         private int _height;
         private int _animationStep;
 
+        private int _largeX;
+
         // This array holds the MenuItems.
         public ArrayList MenuItemList;
 
@@ -631,6 +633,10 @@ namespace SimpleWPF
 
             // Create the MenuItem array.
             MenuItemList = new ArrayList();
+
+
+            // Set the width of each MenuItem.
+            _largeX = Resource.GetBitmap(Resource.BitmapResources.Canvas_Panel_Icon).Width + xOffsetSeparation;
         }
 
         /// <summary>
@@ -702,11 +708,8 @@ namespace SimpleWPF
             // Calculate some initial values for positioning and drawing the 
             // MenuItems.
 
-            // Set the width of each MenuItem.
-            int largeX = Resource.GetBitmap(Resource.BitmapResources.Canvas_Panel_Icon).Width + xOffsetSeparation;
-
             // Set the starting x position.
-            int x = (_width / 2) - ((largeX * 2) + (largeX / 2));
+            int x = (_width / 2) - ((_largeX * 2) + (_largeX / 2));
 
             // Set the starting y position.
             int y = 6;
@@ -765,7 +768,7 @@ namespace SimpleWPF
                 menuItem.Render(dc, x, y, scale);
 
                 // Increment the x position by the size of the MenuItems
-                x += largeX;
+                x += _largeX;
             }
 
             // Draw the current menuItem's text.

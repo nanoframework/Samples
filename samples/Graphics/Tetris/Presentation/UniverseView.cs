@@ -43,7 +43,7 @@ namespace Tetris.Presentation
 
         public override void OnRender(DrawingContext dc)
         {
-            // Performance tunning
+            // Performance tuning
             // storing properties to variables for faster reuse
             int fieldCols = gameUniverse.Field.Columns;
             int fieldRows = gameUniverse.Field.Rows;

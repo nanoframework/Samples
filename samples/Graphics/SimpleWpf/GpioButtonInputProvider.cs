@@ -1,12 +1,11 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Copyright (c) Microsoft Corporation.  All rights reserved.
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 using System;
+using System.Collections;
+using System.Device.Gpio;
+
 using nanoFramework.UI;
 using nanoFramework.UI.Input;
 using nanoFramework.UI.Threading;
 using nanoFramework.Presentation;
-using Windows.Devices.Gpio;
 
 
 namespace SimpleWPF
@@ -18,15 +17,16 @@ namespace SimpleWPF
     {
         public readonly Dispatcher Dispatcher;
 
-        private ButtonPad[] buttons;
+        //private ButtonPad[] buttons;
+        private ArrayList buttons;
         private DispatcherOperationCallback callback;
         private InputProviderSite site;
         private PresentationSource source;
-        private readonly GpioController Gpio = GpioController.GetDefault();
+        private readonly GpioController Gpio = new GpioController();
 
         /// <summary>
         /// Maps GPIOs to Buttons that can be processed by 
-        /// Microsoft.SPOT.Presentation.
+        /// nanoFramework.Presentation.
         /// </summary>
         /// <param name="source"></param>
         public GPIOButtonInputProvider(PresentationSource source)
@@ -47,37 +47,28 @@ namespace SimpleWPF
                     InputReportArgs args = (InputReportArgs)report;
                     return site.ReportInput(args.Device, args.Report);
                 });
+
             Dispatcher = Dispatcher.CurrentDispatcher;
 
-            //--------------
-            // Create a hardware provider.
-            // HardwareProvider hwProvider = new HardwareProvider();
+            this.buttons = new ArrayList();
+        }
+
+        /// <summary>
+        /// Add a GPIO pin as a specific Button
+        /// </summary>
+        /// <param name="gpioPinNumber">GPIO pin number</param>
+        /// <param name="button">Button that this pin represents</param>
+        /// <param name="internalPullup">If true will enable the internal pull up on pin ( SetDriveMode = InputPullUp )
+
+        public void AddButton(int gpioPinNumber, Button button, bool internalPullup)
+        {
+            GpioPin pin = Gpio.OpenPin(gpioPinNumber);
 
 
-            //--------------
+            pin.SetPinMode(internalPullup ? PinMode.InputPullUp : PinMode.Input);
+            pin.DebounceTimeout = new TimeSpan(0, 0, 0, 0, 50);
 
-            // Create the pins that are needed for the buttons.  Default their 
-            // values for the emulator.
-            GpioPin pinLeft = Gpio.OpenPin(1);
-            GpioPin pinRight = Gpio.OpenPin(2);
-            GpioPin pinUp = Gpio.OpenPin(3);
-            GpioPin pinSelect = Gpio.OpenPin(4);
-            GpioPin pinDown = Gpio.OpenPin(5);
-
-
-            // Allocate button pads and assign the (emulated) hardware pins as 
-            // input from specific buttons.
-            ButtonPad[] buttons = new ButtonPad[]
-            {
-                // Associate the buttons to the pins as discovered or set above
-                new ButtonPad(this, Button.VK_LEFT  , pinLeft),
-                new ButtonPad(this, Button.VK_RIGHT , pinRight),
-                new ButtonPad(this, Button.VK_UP    , pinUp),
-                new ButtonPad(this, Button.VK_SELECT, pinSelect),
-                new ButtonPad(this, Button.VK_DOWN  , pinDown),
-            };
-
-            this.buttons = buttons;
+            this.buttons.Add(new ButtonPad(this, button, pin));
         }
 
         /// <summary>
@@ -86,12 +77,12 @@ namespace SimpleWPF
         /// </summary>
         internal class ButtonPad : IDisposable
         {
-            private Button button;
-            private GPIOButtonInputProvider sink;
-            private ButtonDevice buttonDevice = null;
+            private readonly Button button;
+            private readonly GPIOButtonInputProvider sink;
+            private readonly ButtonDevice buttonDevice = InputManager.CurrentInputManager.ButtonDevice;
 
             /// <summary>
-            /// Constructs a ButtonPad object that handles the emulated 
+            /// Constructs a ButtonPad object that handles the  
             /// hardware's button interrupts.
             /// </summary>
             /// <param name="sink"></param>
@@ -101,17 +92,18 @@ namespace SimpleWPF
             {
                 this.sink = sink;
                 this.button = button;
-                pin.SetDriveMode(GpioPinDriveMode.Input);
                 pin.ValueChanged += Pin_ValueChanged;
             }
-            private void Pin_ValueChanged(object sender, GpioPinValueChangedEventArgs e)
+
+            private void Pin_ValueChanged(object sender, PinValueChangedEventArgs e)
             {
-                RawButtonActions action = (e.Edge == GpioPinEdge.FallingEdge) ? RawButtonActions.ButtonUp : RawButtonActions.ButtonDown;
+                RawButtonActions action = (e.ChangeType == PinEventTypes.Falling) ? RawButtonActions.ButtonUp : RawButtonActions.ButtonDown;
 
                 // Create a time, should be from the pin_ValueChanged event.
                 DateTime time = DateTime.UtcNow;
 
                 RawButtonInputReport report = new RawButtonInputReport(sink.source, time, button, action);
+
                 // Queue the button press to the input provider site.
                 sink.Dispatcher.BeginInvoke(sink.callback, new InputReportArgs(buttonDevice, report));
             }
@@ -120,7 +112,6 @@ namespace SimpleWPF
             {
                 if (disposing)
                 {
-                    //port.Dispose();
                 }
             }
 

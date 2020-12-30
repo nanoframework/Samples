@@ -22,7 +22,7 @@ namespace Tetris.GameLogic
     {
         // Game field dimensions
         const int FIELD_COLS = 10;
-        const int FIELD_ROWS = 20;
+        const int FIELD_ROWS = 15;
 
         // Current block coords
         private int blockX, blockY;        

@@ -9,13 +9,12 @@ namespace Primitives
     {
         public static void Main()
         {
-            DisplayControl dc = new DisplayControl();
-            int height = dc.ShorterSide;
-            int width = dc.LongerSide;
             int delayBetween = 1100;
-            DisplayOrientation orientation = (DisplayOrientation)dc.Orientation;
 
-            Bitmap fullScreenBitmap = new Bitmap(width, height);    // Use this bitmap as our buffered output to the screen.
+
+            // Get full screen bitmap from displayControl to draw on.
+            Bitmap fullScreenBitmap = DisplayControl.FullScreen;  
+
             fullScreenBitmap.Clear();
 
             Font DisplayFont = Resource.GetFont(Resource.FontResources.SegoeUIRegular12);
