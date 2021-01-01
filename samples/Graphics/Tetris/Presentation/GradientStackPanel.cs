@@ -19,8 +19,10 @@ namespace Tetris.Presentation
     /// </summary>
     public class GradientStackPanel : StackPanel
     {
-        Brush gradientBrush, solidBrush;       
-        Color startColor, endColor;       
+        private Brush gradientBrush;
+        private readonly Brush solidBrush;
+        private readonly Color startColor;
+        private readonly Color endColor;
 
         /// <summary>
         /// Creates new gradient stack panel
