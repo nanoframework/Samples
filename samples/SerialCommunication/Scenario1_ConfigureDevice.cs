@@ -9,7 +9,12 @@ using Windows.Devices.SerialCommunication;
 
 /////////////////////////////////////////////////////////
 // when working with ESP32 this need to be uncommented
+#define BUIID_FOR_ESP32
+
+
+#if BUIID_FOR_ESP32
 using nanoFramework.Hardware.Esp32;
+#endif
 /////////////////////////////////////////////////////////
 
 
@@ -31,14 +36,18 @@ namespace SerialCommunication
             // open COM6
             //_serialDevice = SerialDevice.FromId("COM6");
 
+
             ////////////////////////////////////////////////////////////////////////////////////////////////////
             // COM2 in ESP32-WROVER-KIT mapped to free GPIO pins
             // mind to NOT USE pins shared with other devices, like serial flash and PSRAM
             // also it's MANDATORY to set pin funcion to the appropriate COM before instanciating it
 
             // set GPIO functions for COM2 (this is UART1 on ESP32)
-            Configuration.SetPinFunction(Gpio.IO04, DeviceFunction.COM2_TX);
-            Configuration.SetPinFunction(Gpio.IO05, DeviceFunction.COM2_RX);
+#if BUIID_FOR_ESP32
+            //Configuration.SetPinFunction(Gpio.IO04, DeviceFunction.COM2_TX);
+            //Configuration.SetPinFunction(Gpio.IO05, DeviceFunction.COM2_RX);
+#endif
+
             // open COM2
             _serialDevice = SerialDevice.FromId("COM2");
 
