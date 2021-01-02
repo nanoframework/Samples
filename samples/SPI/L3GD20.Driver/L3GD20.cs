@@ -162,14 +162,10 @@ namespace nanoFramework.Drivers
         private byte _chipId;
 
         private readonly SpiDevice _gyroscope;
-        private readonly GpioPin _chipSelectLine;
 
-        public L3GD20(string spiBus, GpioPin chipSelectLine)
+        public L3GD20(string spiBus, int chipSelectLine)
         {
-            _chipSelectLine = chipSelectLine;
-            _chipSelectLine.SetDriveMode(GpioPinDriveMode.Output);
-
-            var connectionSettings = new SpiConnectionSettings(chipSelectLine.PinNumber);
+            var connectionSettings = new SpiConnectionSettings(chipSelectLine);
             connectionSettings.DataBitLength = 8;
             connectionSettings.ClockFrequency = 10000000;
 

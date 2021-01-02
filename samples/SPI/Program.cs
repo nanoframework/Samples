@@ -19,7 +19,7 @@ namespace Spi.DemoApp
         {
             // L3GD20 MEMS gyroscope in STM32F429 DISCOVERY board is connected to SPI5...
             // ... and its chip select it's connected to PC1
-            _gyro = new L3GD20("SPI5", GpioController.GetDefault().OpenPin(PinNumber('C', 1)));
+            _gyro = new L3GD20("SPI5", PinNumber('C', 1));
 
             // initialize L3GD20
             _gyro.Initialize();
