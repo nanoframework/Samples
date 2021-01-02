@@ -25,11 +25,11 @@ namespace Tetris.Presentation
         const int COLUMNS = 7;
         const int ROWS = 6;
         const int COLUMN_WIDTH = 8;
-        const int ROW_HEIGHT = 8;        
-
-        GameUniverse _universe;
-        Pen _blockPen, _linePen;
-        Brush _fillBrush;
+        const int ROW_HEIGHT = 8;
+        readonly GameUniverse _universe;
+        private readonly Pen _blockPen;
+        private readonly Pen _linePen;
+        readonly Brush _fillBrush;
 
         /// <summary>
         /// Creates new NextBlockView element for given GameUniverse

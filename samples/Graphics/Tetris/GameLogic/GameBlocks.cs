@@ -20,8 +20,8 @@ namespace Tetris.GameLogic
     /// </summary>
     public class GameBlocks
     {
-        private static GameBlocks _instance = new GameBlocks();
-        private ByteMatrix[] _blocks;        
+        private static readonly GameBlocks _instance = new GameBlocks();
+        private readonly ByteMatrix[] _blocks;        
 
         public GameBlocks()
         {

@@ -18,10 +18,10 @@ namespace Tetris
 		public readonly Dispatcher Dispatcher;
 
 		//private ButtonPad[] buttons;
-		private ArrayList buttons;
-		private DispatcherOperationCallback callback;
-		private InputProviderSite site;
-		private PresentationSource source;
+		private readonly ArrayList buttons;
+		private readonly DispatcherOperationCallback callback;
+		private readonly InputProviderSite site;
+		private readonly PresentationSource source;
 		private readonly GpioController Gpio = new GpioController();
 
 		/// <summary>

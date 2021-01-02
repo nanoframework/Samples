@@ -35,15 +35,15 @@ namespace Tetris.Presentation
 
         // Property fields
         private string _name;
-        private int _score, _selectedLetter;
-        private bool _highlite;    
-        
-        Text[] nameLetters = new Text[NAME_LENGTH];
+        private readonly int _score;
+        private int _selectedLetter;
+        private bool _highlite;
+        readonly Text[] nameLetters = new Text[NAME_LENGTH];
         Text scoreLabel;
         StackPanel nameStack;
-        DispatcherTimer blinkTimer;        
-        Color normalColor = ColorUtility.ColorFromRGB(206, 206, 206);
-        Color selectedColor = Color.Black;    
+        DispatcherTimer blinkTimer;
+        readonly Color normalColor = ColorUtility.ColorFromRGB(206, 206, 206);
+        readonly Color selectedColor = Color.Black;    
 
         /// <summary>
         /// Creates new listbox score item
@@ -65,19 +65,25 @@ namespace Tetris.Presentation
         /// </summary>
         private void InitializeComponents()
         {
-            blinkTimer = new DispatcherTimer(this.Dispatcher);
-            blinkTimer.Interval = new TimeSpan(0, 0, 0, 0, 500);
+            blinkTimer = new DispatcherTimer(this.Dispatcher)
+            {
+                Interval = new TimeSpan(0, 0, 0, 0, 500)
+            };
             blinkTimer.Tick += new EventHandler(BlinkTimer_Tick);
 
             #region Name Characters
-            nameStack = new StackPanel(Orientation.Horizontal);
-            nameStack.HorizontalAlignment = HorizontalAlignment.Left;
+            nameStack = new StackPanel(Orientation.Horizontal)
+            {
+                HorizontalAlignment = HorizontalAlignment.Left
+            };
             nameStack.SetMargin(0, 0, 20, 5);
 
             for (int i = 0; i < NAME_LENGTH; i++)
             {
-                nameLetters[i] = new Text();                
-                nameLetters[i].Font = nfResource.GetFont(nfResource.FontResources.Consolas23);                
+                nameLetters[i] = new Text
+                {
+                    Font = nfResource.GetFont(nfResource.FontResources.Consolas23)
+                };
                 nameStack.Children.Add(nameLetters[i]);
             }
 
@@ -85,14 +91,18 @@ namespace Tetris.Presentation
             #endregion
 
             #region Score Label
-            scoreLabel = new Text(ScoreToString(this._score));
-            scoreLabel.ForeColor = normalColor;            
-            scoreLabel.Font = nfResource.GetFont(nfResource.FontResources.Consolas23);
-            scoreLabel.TextAlignment = TextAlignment.Right;
+            scoreLabel = new Text(ScoreToString(this._score))
+            {
+                ForeColor = normalColor,
+                Font = nfResource.GetFont(nfResource.FontResources.Consolas23),
+                TextAlignment = TextAlignment.Right
+            };
             #endregion
 
-            StackPanel mainStack = new StackPanel(Orientation.Horizontal);
-            mainStack.HorizontalAlignment = HorizontalAlignment.Center;
+            StackPanel mainStack = new StackPanel(Orientation.Horizontal)
+            {
+                HorizontalAlignment = HorizontalAlignment.Center
+            };
             mainStack.Children.Add(nameStack);
             mainStack.Children.Add(scoreLabel);
 

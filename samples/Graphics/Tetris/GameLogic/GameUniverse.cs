@@ -28,9 +28,9 @@ namespace Tetris.GameLogic
         private int blockX, blockY;        
         private ByteMatrix currentBlock, nextBlock;
         // Game field
-        private ByteMatrix field = new ByteMatrix(FIELD_ROWS, FIELD_COLS);
+        private readonly ByteMatrix field = new ByteMatrix(FIELD_ROWS, FIELD_COLS);
         // Game statistics
-        private GameStatistics gameStats = new GameStatistics();
+        private readonly GameStatistics gameStats = new GameStatistics();
 
         private Random random;
         /// <summary>

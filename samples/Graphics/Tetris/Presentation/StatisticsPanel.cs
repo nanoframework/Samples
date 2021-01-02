@@ -22,7 +22,7 @@ namespace Tetris.Presentation
     /// </summary>
     public class StatisticsPanel : Panel
     {
-        GameStatistics _stats;
+        readonly GameStatistics _stats;
         Text scoreCaption;
         Text scoreLabel;
         Text levelCaption;
@@ -46,35 +46,47 @@ namespace Tetris.Presentation
         /// </summary>
         private void InitializeComponents()
         {
-            levelCaption = new Text(nfResource.GetString(nfResource.StringResources.Level));
-            levelCaption.Font = nfResource.GetFont(nfResource.FontResources.NinaB);
-            levelCaption.HorizontalAlignment = HorizontalAlignment.Right;
-            levelCaption.ForeColor = Color.White;
+            levelCaption = new Text(nfResource.GetString(nfResource.StringResources.Level))
+            {
+                Font = nfResource.GetFont(nfResource.FontResources.NinaB),
+                HorizontalAlignment = HorizontalAlignment.Right,
+                ForeColor = Color.White
+            };
 
-            levelLabel = new Text("0");
-            levelLabel.Font = nfResource.GetFont(nfResource.FontResources.NinaB);
-            levelLabel.HorizontalAlignment = HorizontalAlignment.Right;
-            levelLabel.ForeColor = Color.White;
+            levelLabel = new Text("0")
+            {
+                Font = nfResource.GetFont(nfResource.FontResources.NinaB),
+                HorizontalAlignment = HorizontalAlignment.Right,
+                ForeColor = Color.White
+            };
 
-            linesCaption = new Text(nfResource.GetString(nfResource.StringResources.LinesCompleted));
-            linesCaption.Font = nfResource.GetFont(nfResource.FontResources.NinaB);
-            linesCaption.HorizontalAlignment = HorizontalAlignment.Right;
-            linesCaption.ForeColor = Color.White;
+            linesCaption = new Text(nfResource.GetString(nfResource.StringResources.LinesCompleted))
+            {
+                Font = nfResource.GetFont(nfResource.FontResources.NinaB),
+                HorizontalAlignment = HorizontalAlignment.Right,
+                ForeColor = Color.White
+            };
 
-            linesLabel = new Text("0");
-            linesLabel.Font = nfResource.GetFont(nfResource.FontResources.NinaB);
-            linesLabel.HorizontalAlignment = HorizontalAlignment.Right;
-            linesLabel.ForeColor = Color.White;
+            linesLabel = new Text("0")
+            {
+                Font = nfResource.GetFont(nfResource.FontResources.NinaB),
+                HorizontalAlignment = HorizontalAlignment.Right,
+                ForeColor = Color.White
+            };
 
-            scoreCaption = new Text(nfResource.GetString(nfResource.StringResources.Score));
-            scoreCaption.Font = nfResource.GetFont(nfResource.FontResources.NinaB);
-            scoreCaption.HorizontalAlignment = HorizontalAlignment.Right;
-            scoreCaption.ForeColor = Color.White;
+            scoreCaption = new Text(nfResource.GetString(nfResource.StringResources.Score))
+            {
+                Font = nfResource.GetFont(nfResource.FontResources.NinaB),
+                HorizontalAlignment = HorizontalAlignment.Right,
+                ForeColor = Color.White
+            };
 
-            scoreLabel = new Text("0");
-            scoreLabel.Font = nfResource.GetFont(nfResource.FontResources.NinaB);
-            scoreLabel.HorizontalAlignment = HorizontalAlignment.Right;
-            scoreLabel.ForeColor = Color.White;
+            scoreLabel = new Text("0")
+            {
+                Font = nfResource.GetFont(nfResource.FontResources.NinaB),
+                HorizontalAlignment = HorizontalAlignment.Right,
+                ForeColor = Color.White
+            };
 
             mainStack = new StackPanel(Orientation.Vertical);
             mainStack.Children.Add(levelCaption);

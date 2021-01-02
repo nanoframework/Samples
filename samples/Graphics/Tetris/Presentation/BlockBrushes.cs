@@ -20,8 +20,8 @@ namespace Tetris.Presentation
     /// </summary>
     public class BlockBrushes
     {
-        private static BlockBrushes _instance = new BlockBrushes();
-        private Brush[] _blockBrush;
+        private static readonly BlockBrushes _instance = new BlockBrushes();
+        private readonly Brush[] _blockBrush;
 
         public BlockBrushes()
         {

@@ -34,9 +34,11 @@ namespace Tetris.GameLogic
 
             for (int i = 0; i < Table.Length; i++)
             {
-                Table[i] = new ScoreRecord();
-                Table[i].Score = 0;
-                Table[i].Name = "AAA";
+                Table[i] = new ScoreRecord
+                {
+                    Score = 0,
+                    Name = "AAA"
+                };
             }
         }
 

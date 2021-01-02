@@ -25,9 +25,9 @@ namespace Tetris.Presentation
     {
         const int COLUMN_WIDTH = 16;
         const int ROW_HEIGHT = 16;
-
-        GameUniverse gameUniverse;
-        Pen blockPen, gridPen;
+        readonly GameUniverse gameUniverse;
+        private readonly Pen blockPen;
+        private readonly Pen gridPen;
 
         /// <summary>
         /// Creates new UniverseView for specified GameUniverse

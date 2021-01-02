@@ -64,8 +64,10 @@
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="nanoFramework.Graphics">
-      <HintPath>..\..\..\..\lib-nanoFramework.Graphics\nanoFramework.Graphics\bin\Debug\nanoFramework.Graphics.dll</HintPath>
+    <Reference Include="nanoFramework.Graphics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Graphics.1.0.0-preview.36\lib\nanoFramework.Graphics.dll</HintPath>
+      <Private>True</Private>
+      <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="nanoFramework.ResourceManager, Version=1.1.2.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.ResourceManager.1.1.2-preview.20\lib\nanoFramework.ResourceManager.dll</HintPath>

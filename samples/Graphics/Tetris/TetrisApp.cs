@@ -100,7 +100,7 @@ namespace Tetris
             new TetrisApp().Run();
         }
 
-        static int PinNumber(char port, byte pin)
+        private static int PinNumber(char port, byte pin)
         {
             if (port < 'A' || port > 'J')
                 throw new ArgumentException();
