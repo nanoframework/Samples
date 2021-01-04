@@ -1,4 +1,4 @@
-# Primtives sample
+# Primitives sample
 
 This demonstrates the low level graphic functions that are available.
 These can be used directly without using the WPF graphics model.
