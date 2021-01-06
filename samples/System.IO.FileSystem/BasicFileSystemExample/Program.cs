@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading;
@@ -22,16 +23,16 @@ namespace BasicFileSystemExample
             #region Init
 
             // Init
-            Thread.Sleep(3000);     // Wait untill Storage Devices are mounted (SD Card & USB). This usally takes some seconds after startup.
+            Thread.Sleep(3000);     // Wait until the Storage Devices are mounted (SD Card & USB). This usally takes some seconds after startup.
 
             // D: is SD Card
             // E:: is USB drive
 
             #endregion
 
-            Console.WriteLine("+++++ System.IO.FileSystem examples +++++");
+            Debug.WriteLine("+++++ System.IO.FileSystem examples +++++");
 
-            Console.WriteLine("+++++ Create sample file +++++");
+            Debug.WriteLine("+++++ Creating a sample file +++++");
             File.Create(sampeFilePath);
 
             byte[] sampleBuffer = Encoding.UTF8.GetBytes(sampleText);
@@ -41,13 +42,13 @@ namespace BasicFileSystemExample
 
             if(fs.CanSeek)
             {
-                Console.WriteLine("+++++ Modify sample file +++++");
-                // Seek to begin of the file and write somehting there
+                Debug.WriteLine("+++++ Modify sample file +++++");
+                // Seek to beginning of the file and write something there
                 fs.Seek(0, SeekOrigin.Begin);
                 string startText = "This is the start./r/n";
                 fs.Write(Encoding.UTF8.GetBytes(startText), 0, startText.Length);
 
-                // Go to end of file and write something there
+                // Go to the end of file and write something there
                 fs.Seek(0, SeekOrigin.End);
                 string endText = "/n/nThis is the End.";
                 fs.Write(Encoding.UTF8.GetBytes(endText), 0, endText.Length);
@@ -56,25 +57,25 @@ namespace BasicFileSystemExample
             fs.Dispose();
 
 
-            Console.WriteLine("+++++ Copy file to USB drive +++++");
+            Debug.WriteLine("+++++ Copy a file to USB drive +++++");
             File.Copy(sampeFilePath, sampleFileUsbPath);
 
 
-            Console.WriteLine("+++++ Mve File Back to SD card +++++");
+            Debug.WriteLine("+++++ Move File Back to SD card +++++");
             File.Move(sampleFileUsbPath, "D:\\sampleFile2.txt");
 
 
-            Console.WriteLine("+++++ Change file attributes +++++");
+            Debug.WriteLine("+++++ Change file attributes +++++");
             File.SetAttributes(sampleFileUsbPath, FileAttributes.ReadOnly);
 
 
 
-            Console.WriteLine("+++++ Read text from file +++++");
+            Debug.WriteLine("+++++ Read text from file +++++");
             FileStream fs2 = new FileStream(sampleFileUsbPath, FileMode.Open, FileAccess.Read);
             byte[] fileContent = new byte[fs2.Length];
             fs2.Read(fileContent, 0, (int)fs2.Length);
 
-            Console.WriteLine("+++++ System.IO.FileSystem examples end +++++");
+            Debug.WriteLine("+++++ System.IO.FileSystem examples end +++++");
         }
     }
 }
