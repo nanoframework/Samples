@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using Windows.Storage;
 
 
@@ -13,7 +14,7 @@ namespace FileAccess
     {
         public static void Execute(StorageFolder device)
         {
-            Console.WriteLine($"== Scenario8_DeleteFIlesAndFolders ==");
+            Debug.WriteLine($"== Scenario8_DeleteFIlesAndFolders ==");
 
             // This sample demonstrates how to delete all folders and files at a location( whole folder tree )
             // The deletes the folders & files from Scenario5 & Scenario6
@@ -30,7 +31,7 @@ namespace FileAccess
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"ERROR: deleting folders & files : {ex.Message}");
+                Debug.WriteLine($"ERROR: deleting folders & files : {ex.Message}");
             }
         }
 
@@ -44,19 +45,19 @@ namespace FileAccess
         /// </remarks>
         static void DeleteFolderTreeHelper(StorageFolder startingFolder)
         {
-            Console.WriteLine($"Enter DeleteFolderTreeHelper {startingFolder.Path}");
+            Debug.WriteLine($"Enter DeleteFolderTreeHelper {startingFolder.Path}");
 
             StorageFile[] files = startingFolder.GetFiles();
             foreach (StorageFile file in files)
             {
-                Console.WriteLine($"Delete tree file {file.Path}");
+                Debug.WriteLine($"Delete tree file {file.Path}");
                 try
                 {
                     file.Delete();
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Exception Deleting file {file.Path} : {ex.Message}");
+                    Debug.WriteLine($"Exception Deleting file {file.Path} : {ex.Message}");
                 }
             }
 
@@ -65,14 +66,14 @@ namespace FileAccess
             {
                 DeleteFolderTreeHelper(folder);
 
-                Console.WriteLine($"Delete folder {folder.Path}");
+                Debug.WriteLine($"Delete folder {folder.Path}");
                 try
                 {
                     folder.Delete();
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Exception Deleting folder {folder.Path} : {ex.Message}");
+                    Debug.WriteLine($"Exception Deleting folder {folder.Path} : {ex.Message}");
                 }
             }
         }

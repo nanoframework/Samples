@@ -6,6 +6,7 @@
 
 using nanoFramework.Runtime.Native;
 using System;
+using System.Diagnostics;
 using System.Threading;
 
 namespace RTCSample
@@ -14,12 +15,12 @@ namespace RTCSample
     {
         public static void Main()
         {
-            Console.WriteLine("system time is: " + DateTime.UtcNow);
+            Debug.WriteLine("system time is: " + DateTime.UtcNow);
 
             // set RTC
             Rtc.SetSystemTime(new DateTime(2018, 2, 28, 10, 20, 30));
 
-            Console.WriteLine("system time is: " + DateTime.UtcNow);
+            Debug.WriteLine("system time is: " + DateTime.UtcNow);
 
             Thread.Sleep(Timeout.Infinite);
         }

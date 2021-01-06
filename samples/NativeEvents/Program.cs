@@ -5,6 +5,7 @@
 
 using nanoFramework.Runtime.Events;
 using System;
+using System.Diagnostics;
 using System.Threading;
 
 namespace NativeEvents
@@ -29,7 +30,7 @@ namespace NativeEvents
 
         private static void CustomEventHandler(object sender, CustomEventArgs e)
         {
-            Console.WriteLine($"Custom event received. Data1: { e.Data1 } Data2: { e.Data2 }.");
+            Debug.WriteLine($"Custom event received. Data1: { e.Data1 } Data2: { e.Data2 }.");
         }
     }
 }

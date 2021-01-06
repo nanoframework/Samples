@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Devices.Dac;
 using System.Threading;
 
@@ -24,7 +25,7 @@ namespace DacSample
         public static void Main()
         {
             string devices = DacController.GetDeviceSelector();
-            Console.WriteLine("DAC controllers: " + devices);
+            Debug.WriteLine("DAC controllers: " + devices);
 
             // get default controller
             DacController dac = DacController.GetDefault();

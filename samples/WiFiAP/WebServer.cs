@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Collections;
 using System.Threading;
@@ -71,7 +72,7 @@ namespace WiFiAP
                     string ssid = (string)hashPars["ssid"];
                     string password = (string)hashPars["password"];
 
-                    Console.WriteLine($"Wireless parameters SSID:{ssid} PASSWORD:{password}");
+                    Debug.WriteLine($"Wireless parameters SSID:{ssid} PASSWORD:{password}");
 
                     // Enable the Wireless station interface
                     Wireless80211.Configure(ssid, password);

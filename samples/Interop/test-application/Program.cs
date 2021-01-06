@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
 using NF.AwesomeLib;
 
@@ -16,13 +17,13 @@ namespace Test.Interop
                 serialNumber += b.ToString("X2");
             }
 
-            Console.WriteLine("cpu serial number: " + serialNumber);
+            Debug.WriteLine("cpu serial number: " + serialNumber);
 
             // test complicated calculation
             NF.AwesomeLib.Math math = new NF.AwesomeLib.Math();
             double result = math.SuperComplicatedCalculation(11.12);
 
-            Console.WriteLine("calculation result: " + result);
+            Debug.WriteLine("calculation result: " + result);
 
             Thread.Sleep(Timeout.Infinite);
         }

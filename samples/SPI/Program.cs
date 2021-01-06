@@ -5,6 +5,7 @@
 
 using nanoFramework.Drivers;
 using System;
+using System.Diagnostics;
 using System.Threading;
 using Windows.Devices.Gpio;
 
@@ -25,7 +26,7 @@ namespace Spi.DemoApp
             _gyro.Initialize();
 
             // output the ID and revision of the device
-            Console.WriteLine("ChipID " + _gyro.ChipID.ToString("X2"));
+            Debug.WriteLine("ChipID " + _gyro.ChipID.ToString("X2"));
 
             // infinite loop to keep main thread active
             for (; ; )
@@ -34,9 +35,9 @@ namespace Spi.DemoApp
 
                 var readings = _gyro.GetXYZ();
 
-                Console.WriteLine("X: " + readings[0]);
-                Console.WriteLine("Y: " + readings[1]);
-                Console.WriteLine("Z: " + readings[2]);
+                Debug.WriteLine("X: " + readings[0]);
+                Debug.WriteLine("Y: " + readings[1]);
+                Debug.WriteLine("Z: " + readings[2]);
             }
         }
 

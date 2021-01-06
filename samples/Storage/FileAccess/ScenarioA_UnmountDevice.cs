@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using Windows.Storage;
 using Windows.Storage.Devices;
 
@@ -14,7 +15,7 @@ namespace FileAccess
     {
         public static void Execute()
         {
-            Console.WriteLine($"== ScenarioA_UnmountDevice ==");
+            Debug.WriteLine($"== ScenarioA_UnmountDevice ==");
 
             //
             //  Unmount device if its been previously mounted.

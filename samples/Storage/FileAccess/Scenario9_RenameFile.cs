@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using Windows.Storage;
 
 
@@ -13,7 +14,7 @@ namespace FileAccess
     {
         public static void Execute(StorageFolder device)
         {
-            Console.WriteLine($"== Scenario9_RenameFile ==");
+            Debug.WriteLine($"== Scenario9_RenameFile ==");
 
             try
             {
@@ -41,11 +42,11 @@ namespace FileAccess
                 // var file = StorageFile.GetFileFromPath(device.Path + "folder\file1.txt");
 
                 file.Rename("newname.txt");
-                Console.WriteLine($"OK: Successfully renamed file to : {file.Path}");
+                Debug.WriteLine($"OK: Successfully renamed file to : {file.Path}");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"ERROR: Can't rename file :{ex.Message}");
+                Debug.WriteLine($"ERROR: Can't rename file :{ex.Message}");
             }
 
         }

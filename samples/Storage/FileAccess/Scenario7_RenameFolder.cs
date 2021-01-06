@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using Windows.Storage;
 
 namespace FileAccess
@@ -12,7 +13,7 @@ namespace FileAccess
     {
         public static void Execute(StorageFolder device)
         {
-            Console.WriteLine("== Scenario7_RenameFolder ==");
+            Debug.WriteLine("== Scenario7_RenameFolder ==");
 
             // In Scenario5 we created a folder structure.
             // D:\\Folder11\Folder22\Folder31
@@ -29,17 +30,17 @@ namespace FileAccess
                 {
                     // Rename folder from "Folder22" -> "Folder23"
                     Folder22.Rename("Folder23");
-                    Console.WriteLine($"OK: Successfully renamed folder to: {Folder22.Path}");
+                    Debug.WriteLine($"OK: Successfully renamed folder to: {Folder22.Path}");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"ERROR: Renaming folder: {ex.Message}");
+                    Debug.WriteLine($"ERROR: Renaming folder: {ex.Message}");
                 }
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"ERROR: Getting folder : {ex.Message}");
+                Debug.WriteLine($"ERROR: Getting folder : {ex.Message}");
             }
 
         }

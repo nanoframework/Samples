@@ -1,5 +1,6 @@
 ﻿using nanoFramework.Runtime.Native;
 using System;
+using System.Diagnostics;
 using System.Threading;
 
 namespace ExecutionConstraintDemo
@@ -18,7 +19,7 @@ namespace ExecutionConstraintDemo
         {
             DateTime start = DateTime.UtcNow;
 
-            Console.WriteLine($"Thread 1 starting @ {start}.");
+            Debug.WriteLine($"Thread 1 starting @ {start}.");
 
             // install the execution constraint by specifying a timeout in milliseconds
             ExecutionConstraint.Install((int)new TimeSpan(0, 0, 5).TotalMilliseconds, 0);
@@ -33,14 +34,14 @@ namespace ExecutionConstraintDemo
 
             var end = DateTime.UtcNow - start;
 
-            Console.WriteLine($"Thread 1 end after {end.TotalMilliseconds.ToString("N0")} milliseconds.");
+            Debug.WriteLine($"Thread 1 end after {end.TotalMilliseconds.ToString("N0")} milliseconds.");
         }
 
         public static void Thread_Execute_TenSeconds()
         {
             DateTime start = DateTime.UtcNow;
 
-            Console.WriteLine($"Thread 2 starting @ {start}.");
+            Debug.WriteLine($"Thread 2 starting @ {start}.");
 
             try
             {
@@ -60,12 +61,12 @@ namespace ExecutionConstraintDemo
             }
             catch(Exception ex)
             {
-                Console.WriteLine(">>> As the prophecy foretold: a ConstraintException was thrown!");
+                Debug.WriteLine(">>> As the prophecy foretold: a ConstraintException was thrown!");
             }
 
             var end = DateTime.UtcNow - start;
 
-            Console.WriteLine($"Thread 2 end after {end.TotalMilliseconds.ToString("N0")} milliseconds.");
+            Debug.WriteLine($"Thread 2 end after {end.TotalMilliseconds.ToString("N0")} milliseconds.");
         }
     }
 }

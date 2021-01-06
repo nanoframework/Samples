@@ -7,6 +7,7 @@ using Amqp;
 using Amqp.Framing;
 using nanoFramework.Networking;
 using System;
+using System.Diagnostics;
 using System.Text;
 using System.Threading;
 using Windows.Devices.Gpio;
@@ -114,7 +115,7 @@ namespace AmqpSamples.AzureSB.Sender
 
         static void WriteTrace(TraceLevel level, string format, params object[] args)
         {
-            Console.WriteLine(Fx.Format(format, args));
+            Debug.WriteLine(Fx.Format(format, args));
         }
     }
 }

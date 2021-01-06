@@ -10,6 +10,7 @@
 using nanoFramework.Networking;
 using nanoFramework.Runtime.Events;
 using System;
+using System.Diagnostics;
 using System.Net;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
@@ -41,11 +42,11 @@ namespace AzureMQTT
             // if we are using TLS it requires valid date & time
             NetworkHelpers.SetupAndConnectNetwork(true);
 
-            Console.WriteLine("Waiting for network up and IP address...");
+            Debug.WriteLine("Waiting for network up and IP address...");
             NetworkHelpers.IpAddressAvailable.WaitOne();
 
 
-            Console.WriteLine("Waiting for valid Date & Time...");
+            Debug.WriteLine("Waiting for valid Date & Time...");
             NetworkHelpers.DateTimeAvailable.WaitOne();
 
             Thread.Sleep(3000); //used to reliably allow redeployment in VS2019
@@ -260,7 +261,7 @@ namespace AzureMQTT
         //[Conditional("DEBUG")]
         static void Trace(string message)
         {
-            Console.WriteLine(message);
+            Debug.WriteLine(message);
         }
 
     }

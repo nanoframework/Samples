@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using Windows.Storage;
 
 namespace FileAccess
@@ -12,18 +13,18 @@ namespace FileAccess
     {
         public static void Execute(StorageFolder device)
         {
-            Console.WriteLine($"== Scenario2_CreateAFileInStorage ==");
+            Debug.WriteLine($"== Scenario2_CreateAFileInStorage ==");
 
             try
             {
                 // create a file (replace if there is already one with this name)
                 var fileNew = device.CreateFile("file1.txt", CreationCollisionOption.ReplaceExisting);
 
-                Console.WriteLine($"OK: Successfully created file: {fileNew.Path}");
+                Debug.WriteLine($"OK: Successfully created file: {fileNew.Path}");
             }
             catch(Exception ex)
             {
-                Console.WriteLine($"Error: Unable to create file: {ex.Message}");
+                Debug.WriteLine($"Error: Unable to create file: {ex.Message}");
             }
         }
     }

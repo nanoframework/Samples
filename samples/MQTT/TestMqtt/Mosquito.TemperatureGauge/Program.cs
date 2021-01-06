@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Threading;
 using System.Text;
 using uPLibrary.Networking.M2Mqtt;
@@ -37,11 +38,11 @@ namespace Mosquito.TemperatureGauge
             // use a unique id as client id, each time we start the application
             clientId = Guid.NewGuid().ToString();
 
-            Console.WriteLine("Connecting to Mosquito test server...");
+            Debug.WriteLine("Connecting to Mosquito test server...");
 
             client.Connect(clientId);
 
-            Console.WriteLine("Connected to Mosquito test server");
+            Debug.WriteLine("Connected to Mosquito test server");
 
             while (running)
             {
@@ -67,7 +68,7 @@ namespace Mosquito.TemperatureGauge
             // convert to string formatted NN.NN
             var temperatureAsString = randomTemperature.ToString("N2");
 
-            Console.WriteLine($"Temperature: {temperatureAsString}");
+            Debug.WriteLine($"Temperature: {temperatureAsString}");
 
             return Encoding.UTF8.GetBytes(temperatureAsString);
         }
@@ -83,7 +84,7 @@ namespace Mosquito.TemperatureGauge
                 if (ni.NetworkInterfaceType == NetworkInterfaceType.Wireless80211)
                 {
                     // network interface is Wi-Fi
-                    Console.WriteLine("Network connection is: Wi-Fi");
+                    Debug.WriteLine("Network connection is: Wi-Fi");
 
                     Wireless80211Configuration wc = Wireless80211Configuration.GetAllWireless80211Configurations()[ni.SpecificConfigId];
                     if (wc.Ssid != c_SSID && wc.Password != c_AP_PASSWORD)
@@ -100,7 +101,7 @@ namespace Mosquito.TemperatureGauge
                 else
                 {
                     // network interface is Ethernet
-                    Console.WriteLine("Network connection is: Ethernet");
+                    Debug.WriteLine("Network connection is: Ethernet");
 
                     ni.EnableDhcp();
                 }
@@ -116,7 +117,7 @@ namespace Mosquito.TemperatureGauge
 
         static void WaitIP()
         {
-            Console.WriteLine("Waiting for IP...");
+            Debug.WriteLine("Waiting for IP...");
 
             while (true)
             {
@@ -125,7 +126,7 @@ namespace Mosquito.TemperatureGauge
                 {
                     if (ni.IPv4Address[0] != '0')
                     {
-                        Console.WriteLine($"We have an IP: {ni.IPv4Address}");
+                        Debug.WriteLine($"We have an IP: {ni.IPv4Address}");
                         break;
                     }
                 }
@@ -136,7 +137,7 @@ namespace Mosquito.TemperatureGauge
 
         private static void SetDateTime()
         {
-            Console.WriteLine("Setting up system clock...");
+            Debug.WriteLine("Setting up system clock...");
 
             // set system date time (needs to be accurate to the day in order to be able to validate a certificate)
             //Rtc.SetSystemTime(new DateTime(2018, 08, 02));
@@ -144,7 +145,7 @@ namespace Mosquito.TemperatureGauge
             // if SNTP is available and enabled on target device this can be skipped because we should have a valid date & time
             while (DateTime.UtcNow.Year < 2018)
             {
-                Console.WriteLine("Waiting for valid date time...");
+                Debug.WriteLine("Waiting for valid date time...");
                 // wait for valid date & time
                 Thread.Sleep(1000);
             }

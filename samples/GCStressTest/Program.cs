@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Threading;
 using Windows.Devices.Gpio;
 
@@ -57,28 +58,28 @@ namespace GCStressTest
 
             // quick timers
 
-            Console.WriteLine("Starting timer 0 with " + period0 + "ms period, due in " + start0 + "ms.");
+            Debug.WriteLine("Starting timer 0 with " + period0 + "ms period, due in " + start0 + "ms.");
             _timer0 = new Timer(new TimerCallback(TimerHandler0), null, start0, period0);
             Thread.Sleep(1);
 
-            Console.WriteLine("Starting timer 1 with " + period1 + "ms period, due in " + start1 + "ms.");
+            Debug.WriteLine("Starting timer 1 with " + period1 + "ms period, due in " + start1 + "ms.");
             _timer1 = new Timer(new TimerCallback(TimerHandler1), null, start1, period1);
             Thread.Sleep(1);
 
-            Console.WriteLine("Starting timer 2 with " + period2 + "ms period, due in " + start2 + "ms.");
+            Debug.WriteLine("Starting timer 2 with " + period2 + "ms period, due in " + start2 + "ms.");
             _timer2 = new Timer(new TimerCallback(TimerHandler2), null, start2, period2);
             Thread.Sleep(1);
 
             // long timers
-            Console.WriteLine("Starting timer 3 with " + period3 + "ms period, due in " + start3 + "ms.");
+            Debug.WriteLine("Starting timer 3 with " + period3 + "ms period, due in " + start3 + "ms.");
             _timer3 = new Timer(new TimerCallback(TimerHandler0), null, start3, period3);
             Thread.Sleep(1);
 
-            Console.WriteLine("Starting timer 4 with " + period4 + "ms period, due in " + start4 + "ms.");
+            Debug.WriteLine("Starting timer 4 with " + period4 + "ms period, due in " + start4 + "ms.");
             _timer4 = new Timer(new TimerCallback(TimerHandler1), null, start4, period4);
             Thread.Sleep(1);
 
-            Console.WriteLine("Starting timer 5 with " + period5 + "ms period, due in " + start5 + "ms.");
+            Debug.WriteLine("Starting timer 5 with " + period5 + "ms period, due in " + start5 + "ms.");
             _timer5 = new Timer(new TimerCallback(TimerHandler2), null, start5, period5);
             Thread.Sleep(1);
 
@@ -93,12 +94,12 @@ namespace GCStressTest
         {
             if(status == null)
             {
-                Console.WriteLine("Hello from timer 0 [" + _timer0Counter++ + "]");
+                Debug.WriteLine("Hello from timer 0 [" + _timer0Counter++ + "]");
 
             }
             else
             {
-                Console.WriteLine("Hello from dummy thread timer [" + _dummyThreadTimerCounter++ + "]");
+                Debug.WriteLine("Hello from dummy thread timer [" + _dummyThreadTimerCounter++ + "]");
             }
 
             // create 100 integers interleaved with bytes
@@ -114,7 +115,7 @@ namespace GCStressTest
 
         private static void TimerHandler1(object status)
         {
-            Console.WriteLine("Hello from timer 1 [" + _timer1Counter++ + "]");
+            Debug.WriteLine("Hello from timer 1 [" + _timer1Counter++ + "]");
 
             // create 10 huge arrays
             for (int i = 0; i < 10; i++)
@@ -122,7 +123,7 @@ namespace GCStressTest
                 // create array with random size up to 10.000 elements
                 byte[] array = new byte[_randomizer.Next(10000)];
 
-                Console.WriteLine("Created array with " + array.Length + " elements");
+                Debug.WriteLine("Created array with " + array.Length + " elements");
 
                 // do something with each array element
                 for (int j = 0; j < array.Length; j++)
@@ -136,7 +137,7 @@ namespace GCStressTest
 
         private static void TimerHandler2(object status)
         {
-            Console.WriteLine("Hello from timer 2 [" + _timer2Counter++ + "]");
+            Debug.WriteLine("Hello from timer 2 [" + _timer2Counter++ + "]");
 
             // spawn 10 Threads 
             for (int i = 0; i < 10; i++)
@@ -148,7 +149,7 @@ namespace GCStressTest
 
         private static void DummyThread()
         {
-            Console.WriteLine("Hello from dummy thread [" + _dummyThreadCounter++ + "]");
+            Debug.WriteLine("Hello from dummy thread [" + _dummyThreadCounter++ + "]");
 
             String dummyString = "";
 

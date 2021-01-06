@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Threading;
+using System.Diagnostics;
 
 namespace OneWire.TestApp
 {
@@ -25,7 +26,7 @@ namespace OneWire.TestApp
             // check for devices present with a bus reset
             if (oneWire.TouchReset())
             {
-                Console.WriteLine("Device present");
+                Debug.WriteLine("Device present");
 
                 // tx READ ROM
                 var res = oneWire.WriteByte(0x33);
@@ -38,14 +39,14 @@ namespace OneWire.TestApp
                     state[i] = oneWire.TouchByte(0xFF);
 
                     // output byte
-                    Console.Write(state[i].ToString("X2"));
+                    Debug.Write(state[i].ToString("X2"));
                 }
 
-                Console.WriteLine("");
+                Debug.WriteLine("");
             }
             else
             {
-                Console.WriteLine("!! No devices found !!");
+                Debug.WriteLine("!! No devices found !!");
             }
 
             ////////////////////////////////////////////////////////////////////
@@ -57,19 +58,19 @@ namespace OneWire.TestApp
 
             if (oneWire.FindFirstDevice(true, false))
             {
-                Console.WriteLine("device found:");
+                Debug.WriteLine("device found:");
 
                 // output serial number nicelly formated in hexa
                 for (int i = 0; i < 8; i++)
                 {
-                    Console.Write(oneWire.SerialNumber[i].ToString("X2"));
+                    Debug.Write(oneWire.SerialNumber[i].ToString("X2"));
                 }
 
-                Console.WriteLine("");
+                Debug.WriteLine("");
             }
             else
             {
-                Console.WriteLine("!! No devices found !!");
+                Debug.WriteLine("!! No devices found !!");
             }
 
 
@@ -84,22 +85,22 @@ namespace OneWire.TestApp
 
             if (snList.Count > 0)
             {
-                Console.WriteLine(String.Format("{0} devices found", snList.Count));
+                Debug.WriteLine(String.Format("{0} devices found", snList.Count));
 
                 foreach (byte[] sn in snList)
                 {
                     // output serial number nicelly formated in hexa
                     for (int i = 0; i < 8; i++)
                     {
-                        Console.Write(sn[i].ToString("X2"));
+                        Debug.Write(sn[i].ToString("X2"));
                     }
 
-                    Console.WriteLine("");
+                    Debug.WriteLine("");
                 }
             }
             else
             {
-                Console.WriteLine("!! No devices found !!");
+                Debug.WriteLine("!! No devices found !!");
             }
 
             Thread.Sleep(Timeout.Infinite);

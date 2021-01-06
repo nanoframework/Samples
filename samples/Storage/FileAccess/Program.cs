@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Threading;
 using Windows.Storage;
 using nanoFramework.Runtime.Native;
@@ -28,7 +29,7 @@ namespace FileAccess
             }
 
 
-            Console.WriteLine($"== GetRemovableDevices ==");
+            Debug.WriteLine($"== GetRemovableDevices ==");
 
             // Get the logical root folder for all removable storage devices
             // in nanoFramework the drive letters are fixed, being:
@@ -80,12 +81,12 @@ namespace FileAccess
             else
             {
                 // there is no removable device present
-                Console.WriteLine($"ERROR: Can't do anything. There is no removable device present.");
+                Debug.WriteLine($"ERROR: Can't do anything. There is no removable device present.");
             }
 
 
 
-            Console.WriteLine($"== GetInternalDevices ==");
+            Debug.WriteLine($"== GetInternalDevices ==");
 
             // Get the logical root folder for all internal storage devices
             // in nanoFramework the drive letters are fixed, being:
@@ -118,7 +119,7 @@ namespace FileAccess
             else
             {
                 // there is no removable device present
-                Console.WriteLine($"ERROR: Can't do anything. There is no internal devices present.");
+                Debug.WriteLine($"ERROR: Can't do anything. There is no internal devices present.");
             }
 
 

@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Threading;
 using STM32 = nanoFramework.Hardware.Stm32;
 
@@ -20,11 +21,11 @@ namespace Stm32.ReadDeviceIDs
                 uniqueDeviceId += b.ToString("X2");
             }
 
-            Console.WriteLine($"Unique device ID: {uniqueDeviceId}");
+            Debug.WriteLine($"Unique device ID: {uniqueDeviceId}");
 
-            Console.WriteLine($"Device identifier: { STM32.Utilities.DeviceId.ToString("X4")}");
+            Debug.WriteLine($"Device identifier: { STM32.Utilities.DeviceId.ToString("X4")}");
 
-            Console.WriteLine($"Device revision identifier: { STM32.Utilities.DeviceRevisionId.ToString("X4")}");
+            Debug.WriteLine($"Device revision identifier: { STM32.Utilities.DeviceRevisionId.ToString("X4")}");
 
             Thread.Sleep(Timeout.Infinite);
         }

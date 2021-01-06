@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Threading;
 using Windows.Storage;
 using Windows.Storage.Devices;
@@ -34,7 +35,7 @@ namespace MountDevices
             }
             catch ( Exception ex)
             {
-                Console.WriteLine($"Failed to mount SDCard :-{ex.Message}");
+                Debug.WriteLine($"Failed to mount SDCard :-{ex.Message}");
             }
 
             // SDCard is mounted ?
@@ -55,7 +56,7 @@ namespace MountDevices
                     // List all folders
                     foreach(StorageFolder folder in foldersInDevice)
                     {
-                        Console.WriteLine($"Folder ->{folder.Path}");
+                        Debug.WriteLine($"Folder ->{folder.Path}");
                     }
 
 
@@ -64,7 +65,7 @@ namespace MountDevices
                     // List all files
                     foreach (StorageFile file in filesInDevice)
                     {
-                        Console.WriteLine($"file ->{file.Path}");
+                        Debug.WriteLine($"file ->{file.Path}");
                     }
 
                 }

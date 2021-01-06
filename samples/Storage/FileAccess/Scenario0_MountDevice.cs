@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using Windows.Storage;
 using Windows.Storage.Devices;
 
@@ -13,7 +14,7 @@ namespace FileAccess
     {
         public static void Execute()
         {
-            Console.WriteLine($"== Scenario0_mountDevice ==");
+            Debug.WriteLine($"== Scenario0_mountDevice ==");
 
             //  With Esp32 we need to mount the SDCard, STM32 CHibios devices are mounted automatically
 
@@ -41,7 +42,7 @@ namespace FileAccess
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Failed to mount SDCard :-{ex.Message}");
+                Debug.WriteLine($"Failed to mount SDCard :-{ex.Message}");
                 // No point continuing
                 throw new Exception("Mount failed");
             }

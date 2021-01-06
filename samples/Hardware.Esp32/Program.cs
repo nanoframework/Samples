@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
 using nanoFramework.Hardware.Esp32;
 
@@ -21,27 +22,27 @@ namespace Test
             Configuration.SetPinFunction(32, DeviceFunction.COM2_TX);
             
             // Sleep Test
-            Console.WriteLine("ESP32 Sleep test started");
+            Debug.WriteLine("ESP32 Sleep test started");
 
-            Console.WriteLine("Check wakeup cause");
+            Debug.WriteLine("Check wakeup cause");
             Sleep.WakeupCause cause = Sleep.GetWakeupCause();
-            Console.WriteLine("Wakeup cause:" + cause.ToString());
+            Debug.WriteLine("Wakeup cause:" + cause.ToString());
             switch (cause)
             {
                 // System was woken up by timer
                 case Sleep.WakeupCause.Timer:
-                    Console.WriteLine("Wakup by timer");
+                    Debug.WriteLine("Wakup by timer");
                     break;
 
                 // System was woken up in normal running mode
                 case Sleep.WakeupCause.Undefined:
 
-                    Console.WriteLine("Set wakeup by timer for 10 seconds");
+                    Debug.WriteLine("Set wakeup by timer for 10 seconds");
                     Sleep.EnableWakeupByTimer(new TimeSpan(0, 0, 0, 10));
-                    Console.WriteLine("Go to Deep sleep in 5 secs");
-                    Console.WriteLine("When coming out of deep sleep the system will reboot");
+                    Debug.WriteLine("Go to Deep sleep in 5 secs");
+                    Debug.WriteLine("When coming out of deep sleep the system will reboot");
                     Thread.Sleep(5000);
-                    Console.WriteLine("Deep sleep now");
+                    Debug.WriteLine("Deep sleep now");
                     Sleep.StartDeepSleep();
                     break;
 
@@ -79,7 +80,7 @@ namespace Test
                 //    Sleep.WakeupMode.AnyHigh );
                 //}
                 //catch (Exception ex) { message = ex.Message; }
-                //Console.WriteLine(message);
+                //Debug.WriteLine(message);
 
                 
                 //try

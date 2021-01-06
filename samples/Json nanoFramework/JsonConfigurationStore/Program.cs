@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Threading;
 
 namespace JsonConfigurationStore
@@ -7,7 +8,7 @@ namespace JsonConfigurationStore
     {
         public static void Main()
         {
-            Console.WriteLine("Hello world!");
+            Debug.WriteLine("Hello world!");
 
             ConfigurationStore configurationStore = new ConfigurationStore();
             Configuration configuration = new Configuration()

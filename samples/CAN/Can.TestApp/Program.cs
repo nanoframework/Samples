@@ -1,5 +1,6 @@
 ﻿using nanoFramework.Devices.Can;
 using System;
+using System.Diagnostics;
 using System.Threading;
 using Windows.Devices.Gpio;
 
@@ -51,22 +52,22 @@ namespace Can.TestApp
  
                 if(msg == null)
                 {
-                    Console.WriteLine("*** No more message available!!!");
+                    Debug.WriteLine("*** No more message available!!!");
                     break;
                 }
 
                 // new message available, output message
                 if (msg.Message != null)
                 {
-                    Console.Write($"Message on {canCtl.ControllerId}: ");
+                    Debug.Write($"Message on {canCtl.ControllerId}: ");
                     for (int i = 0; i < msg.Message.Length; i++)
                     {
-                        Console.Write(msg.Message[i].ToString("X2"));
+                        Debug.Write(msg.Message[i].ToString("X2"));
                     }
 
                     new Thread(BlinkLED).Start();
                 }
-                Console.WriteLine("");
+                Debug.WriteLine("");
             }
         }
 

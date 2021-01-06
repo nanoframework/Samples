@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Threading;
 using Windows.Storage;
 
@@ -22,12 +23,12 @@ namespace RemovableDeviceEvent
 
         private static void StorageEventManager_RemovableDeviceRemoved(object sender, RemovableDeviceEventArgs e)
         {
-            Console.WriteLine($"Removable Device @ \"{e.Path}\" removed.");
+            Debug.WriteLine($"Removable Device @ \"{e.Path}\" removed.");
         }
 
         private static void StorageEventManager_RemovableDeviceInserted(object sender, RemovableDeviceEventArgs e)
         {
-            Console.WriteLine($"Removable Device @ \"{e.Path}\" inserted.");
+            Debug.WriteLine($"Removable Device @ \"{e.Path}\" inserted.");
         }
     }
 }

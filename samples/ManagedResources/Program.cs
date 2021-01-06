@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Threading;
 
 namespace ManagedResources
@@ -18,13 +19,13 @@ namespace ManagedResources
             // 3. Access the resource using the appropriate getter as shown bellow
 
 
-            Console.WriteLine(Resources.GetString(Resources.StringResources.String1));
+            Debug.WriteLine(Resources.GetString(Resources.StringResources.String1));
 
             Thread.Sleep(2000);
 
-            Console.WriteLine(Resources.GetString(Resources.StringResources.String2));
+            Debug.WriteLine(Resources.GetString(Resources.StringResources.String2));
 
-            Console.WriteLine($"PNG image has {Resources.GetBytes(Resources.BinaryResources.nano_Framework_logo_32_border_trans).Length} bytes");
+            Debug.WriteLine($"PNG image has {Resources.GetBytes(Resources.BinaryResources.nano_Framework_logo_32_border_trans).Length} bytes");
 
             Thread.Sleep(Timeout.Infinite);
         }

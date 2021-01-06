@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Threading;
 using Windows.Devices.Adc;
 
@@ -15,14 +16,14 @@ namespace TestAdc
         {
             string devs = AdcController.GetDeviceSelector();
 
-            Console.WriteLine("devs=" + devs);
+            Debug.WriteLine("devs=" + devs);
 
             AdcController adc1 = AdcController.GetDefault();
 
             int max1 = adc1.MaxValue;
             int min1 = adc1.MinValue;
 
-            Console.WriteLine("min1=" + min1.ToString() + " max1=" + max1.ToString());
+            Debug.WriteLine("min1=" + min1.ToString() + " max1=" + max1.ToString());
 
             AdcChannel ac0 = adc1.OpenChannel(0);
 
@@ -41,9 +42,9 @@ namespace TestAdc
 
                 double percent = ac0.ReadRatio();
 
-                Console.WriteLine("value0=" + value.ToString() + " ratio=" + percent.ToString());
-                Console.WriteLine("verf" + valueVref.ToString() + " ratio=" + percent.ToString());
-                Console.WriteLine("vbat" + valueVbat.ToString() + " ratio=" + percent.ToString());
+                Debug.WriteLine("value0=" + value.ToString() + " ratio=" + percent.ToString());
+                Debug.WriteLine("verf" + valueVref.ToString() + " ratio=" + percent.ToString());
+                Debug.WriteLine("vbat" + valueVbat.ToString() + " ratio=" + percent.ToString());
 
                 Thread.Sleep(1000);
             }

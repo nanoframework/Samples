@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
 using System.Net.NetworkInformation;
 using nanoFramework.Runtime.Native;
@@ -19,7 +20,7 @@ namespace WiFiAP
 
         public static void Main()
         {
-            Console.WriteLine("Welcome to WiFI Soft AP world!");
+            Debug.WriteLine("Welcome to WiFI Soft AP world!");
 
             GpioPin setupButton = GpioController.GetDefault().OpenPin(SETUP_PIN);
             setupButton.SetDriveMode(GpioPinDriveMode.InputPullUp);
@@ -33,21 +34,21 @@ namespace WiFiAP
                 if (WirelessAP.Setup() == false)
                 {
                     // Reboot device to Activate Access Point on restart
-                    Console.WriteLine($"Setup Soft AP, Rebooting device");
+                    Debug.WriteLine($"Setup Soft AP, Rebooting device");
                     Power.RebootDevice();
                 }
 
-                Console.WriteLine($"Running Soft AP, waiting for client to connect");
-                Console.WriteLine($"Soft AP IP address :{WirelessAP.GetIP()}");
+                Debug.WriteLine($"Running Soft AP, waiting for client to connect");
+                Debug.WriteLine($"Soft AP IP address :{WirelessAP.GetIP()}");
 
                 // Link up Network event to show Stations connecting/disconnecting to Access point.
                 NetworkChange.NetworkAPStationChanged += NetworkChange_NetworkAPStationChanged; ;
             }
             else
             {
-                Console.WriteLine($"Running in normal mode, connecting to Access point");
+                Debug.WriteLine($"Running in normal mode, connecting to Access point");
                 string IpAdr = Wireless80211.WaitIP();
-                Console.WriteLine($"Connected as {IpAdr}");
+                Debug.WriteLine($"Connected as {IpAdr}");
             }
 
 
@@ -62,7 +63,7 @@ namespace WiFiAP
         /// <param name="e">Event argument</param>
         private static void NetworkChange_NetworkAPStationChanged(int NetworkIndex, NetworkAPStationEventArgs e)
         {
-            Console.WriteLine($"NetworkAPStationChanged event Index:{NetworkIndex} Connected:{e.IsConnected} Station:{e.StationIndex} ");
+            Debug.WriteLine($"NetworkAPStationChanged event Index:{NetworkIndex} Connected:{e.IsConnected} Station:{e.StationIndex} ");
 
             // if connected then get information on the connecting station 
             if (e.IsConnected)
@@ -71,7 +72,7 @@ namespace WiFiAP
                 WirelessAPStation station = wapconf.GetConnectedStations(e.StationIndex);
 
                 string macString = BitConverter.ToString(station.MacAddres);
-                Console.WriteLine($"Station mac {macString} Rssi:{station.Rssi} PhyMode:{station.PhyModes} ");
+                Debug.WriteLine($"Station mac {macString} Rssi:{station.Rssi} PhyMode:{station.PhyModes} ");
 
                 connectedCount++;
 

@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading;
@@ -43,11 +44,11 @@ namespace TestMqtt
                     //clientId = Guid.NewGuid().ToString();
                     clientId = new Guid(1, 23, 44, 32, 45, 33, 22, 11, 1, 2, 3).ToString();
 
-                    Console.WriteLine("Connecting MQTT");
+                    Debug.WriteLine("Connecting MQTT");
 
                     client.Connect(clientId);
 
-                    Console.WriteLine("Connected MQTT");
+                    Debug.WriteLine("Connected MQTT");
                     // Subscribe topics
                     //     client.Subscribe(new string[] { "Test1", "Test2" }, new byte[] { 2, 2 });
 
@@ -59,10 +60,10 @@ namespace TestMqtt
                         "/Automation/Lights/#"
                     };
 
-                    Console.WriteLine("Subscribe /Automation/Lights/#");
+                    Debug.WriteLine("Subscribe /Automation/Lights/#");
                     client.Subscribe(SubTopics, new byte[] { 2 });
 
-                    Console.WriteLine("Enter wait loop");
+                    Debug.WriteLine("Enter wait loop");
                     while (running)
                     {
                         Thread.Sleep(10000);
@@ -74,7 +75,7 @@ namespace TestMqtt
                 catch (Exception ex)
                 {
                     // Do whatever please you with the exception caught
-                    Console.WriteLine("Main exception " + ex.Message);
+                    Debug.WriteLine("Main exception " + ex.Message);
                 }
                     
                 // Wait before retry
@@ -84,7 +85,7 @@ namespace TestMqtt
 
         private static void Client_MqttMsgSubscribed(object sender, MqttMsgSubscribedEventArgs e)
         {
-            Console.WriteLine("Client_MqttMsgSubscribed ");
+            Debug.WriteLine("Client_MqttMsgSubscribed ");
         }
 
         private static void Client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
@@ -93,7 +94,7 @@ namespace TestMqtt
 
             string message = Encoding.UTF8.GetString(e.Message,0,e.Message.Length);
 
-            Console.WriteLine("Publish Received Topic:" + topic + " Message:" + message);
+            Debug.WriteLine("Publish Received Topic:" + topic + " Message:" + message);
 
         }
         public static void SetupAndConnectNetwork()
@@ -107,7 +108,7 @@ namespace TestMqtt
                 if (ni.NetworkInterfaceType == NetworkInterfaceType.Wireless80211)
                 {
                     // network interface is Wi-Fi
-                    Console.WriteLine("Network connection is: Wi-Fi");
+                    Debug.WriteLine("Network connection is: Wi-Fi");
 
                     Wireless80211Configuration wc = Wireless80211Configuration.GetAllWireless80211Configurations()[ni.SpecificConfigId];
                     if (wc.Ssid != c_SSID && wc.Password != c_AP_PASSWORD)
@@ -124,7 +125,7 @@ namespace TestMqtt
                 else
                 {
                     // network interface is Ethernet
-                    Console.WriteLine("Network connection is: Ethernet");
+                    Debug.WriteLine("Network connection is: Ethernet");
 
                     ni.EnableDhcp();
                 }
@@ -140,7 +141,7 @@ namespace TestMqtt
 
         static void WaitIP()
         {
-            Console.WriteLine("Waiting for IP...");
+            Debug.WriteLine("Waiting for IP...");
 
             while (true)
             {
@@ -149,7 +150,7 @@ namespace TestMqtt
                 {
                     if (ni.IPv4Address[0] != '0')
                     {
-                        Console.WriteLine($"We have an IP: {ni.IPv4Address}");
+                        Debug.WriteLine($"We have an IP: {ni.IPv4Address}");
                         break;
                     }
                 }

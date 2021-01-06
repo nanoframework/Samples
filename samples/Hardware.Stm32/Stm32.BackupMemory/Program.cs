@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Threading;
 using nanoFramework.Hardware.Stm32;
 
@@ -13,7 +14,7 @@ namespace Stm32BackupMemory.TestApp
     {
         public static void Main()
         {
-            Console.WriteLine($"The backup memory has {BackupMemory.Size} bytes.");
+            Debug.WriteLine($"The backup memory has {BackupMemory.Size} bytes.");
 
             // write a byte array
             uint testBufferPosition = 5;
@@ -27,11 +28,11 @@ namespace Stm32BackupMemory.TestApp
 
             if(readBackBuffer.GetHashCode() != testBuffer.GetHashCode())
             {
-                Console.WriteLine("Array read from backup memory is different than what was written.");
+                Debug.WriteLine("Array read from backup memory is different than what was written.");
             }
             else
             {
-                Console.WriteLine("Buffer comparison check!");
+                Debug.WriteLine("Buffer comparison check!");
             }
 
             // write an Int64
@@ -42,11 +43,11 @@ namespace Stm32BackupMemory.TestApp
 
             if (BackupMemory.ReadInt64(testInt64Position) != testInt64)
             {
-                Console.WriteLine("Int64 read from backup memory is different than what was written.");
+                Debug.WriteLine("Int64 read from backup memory is different than what was written.");
             }
             else
             {
-                Console.WriteLine("Int64 comparison check!");
+                Debug.WriteLine("Int64 comparison check!");
             }
 
             Thread.Sleep(Timeout.Infinite);

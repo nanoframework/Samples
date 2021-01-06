@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Threading;
 using Windows.Devices.Gpio;
 
@@ -24,14 +25,14 @@ namespace TimerSample
             _led.SetDriveMode(GpioPinDriveMode.Output);
 
             // create timer
-            Console.WriteLine(DateTime.UtcNow.ToString() + ": creating timer, due in 1 second");
+            Debug.WriteLine(DateTime.UtcNow.ToString() + ": creating timer, due in 1 second");
 
             Timer testTimer = new Timer(CheckStatusTimerCallback, null, 1000, 1000);
 
             // let it run for 5 seconds (will blink 5 times)
             Thread.Sleep(5000);
 
-            Console.WriteLine(DateTime.UtcNow.ToString() + ": changing period to 2 seconds");
+            Debug.WriteLine(DateTime.UtcNow.ToString() + ": changing period to 2 seconds");
 
             // change timer period
             testTimer.Change(0, 2000);
@@ -39,7 +40,7 @@ namespace TimerSample
             // let it run for 10 seconds (will blink 5 times)
             Thread.Sleep(10000);
 
-            Console.WriteLine(DateTime.UtcNow.ToString() + ": destroying timer");
+            Debug.WriteLine(DateTime.UtcNow.ToString() + ": destroying timer");
 
             // dispose timer
             testTimer.Dispose();
@@ -50,7 +51,7 @@ namespace TimerSample
 
         private static void CheckStatusTimerCallback(object state)
         {
-            Console.WriteLine(DateTime.UtcNow.ToString() + ": blink");
+            Debug.WriteLine(DateTime.UtcNow.ToString() + ": blink");
 
             _led.Write(GpioPinValue.High);
             Thread.Sleep(125);

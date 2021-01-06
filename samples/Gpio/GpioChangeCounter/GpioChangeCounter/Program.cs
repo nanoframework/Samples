@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
 using Windows.Devices.Gpio;
 using Windows.Devices.Pwm;
@@ -33,7 +34,7 @@ namespace ChangeCounter
 
         public static void Main()
         {
-            Console.WriteLine("Change Counter test running");
+            Debug.WriteLine("Change Counter test running");
 
             // Initialise PWM output pin
             PwmController pwmc = PwmController.GetDefault();
@@ -42,8 +43,8 @@ namespace ChangeCounter
             PwmPin pwmTestPin =  pwmc.OpenPin(PWM_OUTPUT_PIN);
             pwmTestPin.SetActiveDutyCyclePercentage(0.5);
 
-            Console.WriteLine($"Open PWM pin {PWM_OUTPUT_PIN} frequency {pwmc.ActualFrequency}");
-            Console.WriteLine($"This pin must be connected to GpioChangeCounter pin {COUNTER_INPUT_PIN}");
+            Debug.WriteLine($"Open PWM pin {PWM_OUTPUT_PIN} frequency {pwmc.ActualFrequency}");
+            Debug.WriteLine($"This pin must be connected to GpioChangeCounter pin {COUNTER_INPUT_PIN}");
 
 
             // Initialise count pin by opening GPIO as input
@@ -55,7 +56,7 @@ namespace ChangeCounter
             // Counter both raising and falling edges
             gpcc.Polarity = GpioChangePolarity.Both;
 
-            Console.WriteLine($"Counter pin {COUNTER_INPUT_PIN} created");
+            Debug.WriteLine($"Counter pin {COUNTER_INPUT_PIN} created");
 
             // Start counter
             gpcc.Start();
@@ -118,7 +119,7 @@ namespace ChangeCounter
                 double periodSecs = (double)(countEnd.RelativeTime.Ticks - countStart.RelativeTime.Ticks)/10000000000.0;
                 int frequecy = (int)((double)countEnd.Count / periodSecs);
 
-                Console.WriteLine($"Period {periodSecs:F6} Sec | Frequency {frequecy} Hz");
+                Debug.WriteLine($"Period {periodSecs:F6} Sec | Frequency {frequecy} Hz");
             }
         }
 
@@ -126,7 +127,7 @@ namespace ChangeCounter
         static void DisplayResults(string text, GpioChangeCount start, GpioChangeCount end)
         {
             TimeSpan period = end.RelativeTime - start.RelativeTime;
-            Console.WriteLine($"Count {text} Time:{period} Count:{end.Count}");
+            Debug.WriteLine($"Count {text} Time:{period} Count:{end.Count}");
         }
     }
 }

@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using Windows.Storage;
 
 namespace FileAccess
@@ -12,7 +13,7 @@ namespace FileAccess
     {
         public static void Execute(StorageFolder device)
         {
-            Console.WriteLine($"== Scenario5_CreateMultiLevelFolders ==");
+            Debug.WriteLine($"== Scenario5_CreateMultiLevelFolders ==");
 
 
             // Create multi level folders on device
@@ -30,7 +31,7 @@ namespace FileAccess
             // Create folder within Folder22 
             StorageFolder Folder31 = CreateFolderHelper(Folder22, "Folder31", CreationCollisionOption.ReplaceExisting);
 
-            Console.WriteLine($"OK: Successfully created all multi level folders");
+            Debug.WriteLine($"OK: Successfully created all multi level folders");
 
         }
 
@@ -48,11 +49,11 @@ namespace FileAccess
                 // create a folder (failing if there is already one with this name)
                 folderNew = location.CreateFolder(folderName, option);
 
-                Console.WriteLine($"OK: Successfully created folder: {folderNew.Path}");
+                Debug.WriteLine($"OK: Successfully created folder: {folderNew.Path}");
             }
             catch (Exception )
             {
-                Console.WriteLine($"ERROR: Can't create the folder as it already exists.");
+                Debug.WriteLine($"ERROR: Can't create the folder as it already exists.");
             }
 
             return folderNew;

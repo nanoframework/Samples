@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Threading;
 using Windows.Devices.WiFi;
 
@@ -28,7 +29,7 @@ namespace ScanWiFi
                 // Loop forever scanning every 30 seconds
                 while (true)
                 {
-                    Console.WriteLine("starting WiFi scan");
+                    Debug.WriteLine("starting WiFi scan");
                     wifi.ScanAsync();
 
                     Thread.Sleep(30000);
@@ -36,8 +37,8 @@ namespace ScanWiFi
             }
             catch (Exception ex)
             {
-                Console.WriteLine("message:" + ex.Message);
-                Console.WriteLine("stack:" + ex.StackTrace);
+                Debug.WriteLine("message:" + ex.Message);
+                Debug.WriteLine("stack:" + ex.StackTrace);
             }
 
             Thread.Sleep(Timeout.Infinite);
@@ -50,7 +51,7 @@ namespace ScanWiFi
         /// <param name="e"></param>
         private static void Wifi_AvailableNetworksChanged(WiFiAdapter sender, object e)
         {
-            Console.WriteLine("Wifi_AvailableNetworksChanged - get report");
+            Debug.WriteLine("Wifi_AvailableNetworksChanged - get report");
 
             // Get Report of all scanned WiFi networks
             WiFiNetworkReport report = sender.NetworkReport;
@@ -59,7 +60,7 @@ namespace ScanWiFi
             foreach (WiFiAvailableNetwork net in report.AvailableNetworks)
             {
                 // Show all networks found
-                Console.WriteLine( $"Net SSID :{net.Ssid},  BSSID : {net.Bsid},  rssi : {net.NetworkRssiInDecibelMilliwatts.ToString()},  signal : {net.SignalBars.ToString()}");
+                Debug.WriteLine( $"Net SSID :{net.Ssid},  BSSID : {net.Bsid},  rssi : {net.NetworkRssiInDecibelMilliwatts.ToString()},  signal : {net.SignalBars.ToString()}");
 
                 // If its our Network then try to connect
                 if (net.Ssid == MYSSID)
@@ -73,11 +74,11 @@ namespace ScanWiFi
                     // Display status
                     if (result.ConnectionStatus == WiFiConnectionStatus.Success)
                     {
-                        Console.WriteLine("Connected to Wifi network");
+                        Debug.WriteLine("Connected to Wifi network");
                     }
                     else
                     {
-                        Console.WriteLine($"Error {result.ConnectionStatus.ToString()} connecting o Wifi network");
+                        Debug.WriteLine($"Error {result.ConnectionStatus.ToString()} connecting o Wifi network");
                     }
                 }
             }

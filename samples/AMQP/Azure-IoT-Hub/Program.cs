@@ -6,6 +6,7 @@
 using Amqp;
 using nanoFramework.Networking;
 using System;
+using System.Diagnostics;
 using System.Threading;
 using Windows.Devices.Gpio;
 using AmqpTrace = Amqp.Trace;
@@ -112,7 +113,7 @@ namespace AmqpSamples.AzureIoTHub
 
         private static void OnAction(int setTemperature)
         {
-            Console.WriteLine($"received new temperature setting: {setTemperature}");
+            Debug.WriteLine($"received new temperature setting: {setTemperature}");
         }
 
         private static void UserButton_ValueChanged(object sender, GpioPinValueChangedEventArgs e)
@@ -129,7 +130,7 @@ namespace AmqpSamples.AzureIoTHub
 
         static void WriteTrace(TraceLevel level, string format, params object[] args)
         {
-            Console.WriteLine(Fx.Format(format, args));
+            Debug.WriteLine(Fx.Format(format, args));
         }
     }
 }

@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using Windows.Storage;
 using Windows.Storage.Streams;
 
@@ -13,12 +14,12 @@ namespace FileAccess
     {
         public static void Execute(StorageFolder device)
         {
-            Console.WriteLine($"== Scenario4_WriteAndReadBytesInAFile ==");
+            Debug.WriteLine($"== Scenario4_WriteAndReadBytesInAFile ==");
 
             // create a file
             var myFile = device.CreateFile("file3.bin", CreationCollisionOption.ReplaceExisting);
 
-            Console.WriteLine($"OK: Successfully created file: {myFile.Path}");
+            Debug.WriteLine($"OK: Successfully created file: {myFile.Path}");
 
             string userContent = "this is a string to be saved as binary data";
 
@@ -27,14 +28,14 @@ namespace FileAccess
 
             FileIO.WriteBuffer(myFile, writeBuffer);
 
-            Console.WriteLine($"Of the {bytesInBuffer} in buffer, { writeBuffer.Length } remains to be written to '{myFile.Name}':\r\n{ userContent }");
+            Debug.WriteLine($"Of the {bytesInBuffer} in buffer, { writeBuffer.Length } remains to be written to '{myFile.Name}':\r\n{ userContent }");
 
             IBuffer readBuffer = FileIO.ReadBuffer(myFile);
             using (DataReader dataReader = DataReader.FromBuffer(readBuffer))
             {
                 string fileContent = dataReader.ReadString(readBuffer.Length);
 
-                Console.WriteLine($"The following {readBuffer.Length} bytes of text were read from '{myFile.Name}':\r\n{ fileContent }");
+                Debug.WriteLine($"The following {readBuffer.Length} bytes of text were read from '{myFile.Name}':\r\n{ fileContent }");
             }
         }
 
