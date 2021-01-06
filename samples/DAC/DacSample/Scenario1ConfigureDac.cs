@@ -5,7 +5,7 @@
 
 using System;
 using System.Diagnostics;
-using System.Devices.Dac;
+using System.Device.Dac;
 using System.Threading;
 
 namespace DacSample
