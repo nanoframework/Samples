@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Threading;
 using Windows.Devices.SerialCommunication;
 using Windows.Storage.Streams;
@@ -26,20 +27,20 @@ namespace SerialCommunication
             {
                 // write string to Serial Device output stream using data writer
                 // (this doesn't send any data, just writes to the stream)
-                var bytesWritten = outputDataWriter.WriteString(DateTime.UtcNow + " hello from nanoFramework!\r\n");
-                Console.WriteLine("Wrote " + outputDataWriter.UnstoredBufferLength + " bytes to output stream.");
+                outputDataWriter.WriteString(DateTime.UtcNow + " hello from nanoFramework!\r\n");
+                Debug.WriteLine("Wrote " + outputDataWriter.UnstoredBufferLength + " bytes to output stream.");
 
                 // calling the 'Store' method on the data writer actually sends the data
-                var bw1 = outputDataWriter.Store();
-                Console.WriteLine("Sent " + bw1 + " bytes over " + serialDevice.PortName + ".");
+                var bytesWritten = outputDataWriter.Store();
+                Debug.WriteLine("Sent " + bytesWritten + " bytes over " + serialDevice.PortName + ".");
 
                 // another dummy string, just to output something when the above is still Txing
-                bytesWritten = outputDataWriter.WriteString(DateTime.UtcNow + "...\r\n");
-                Console.WriteLine("Wrote " + outputDataWriter.UnstoredBufferLength + " bytes to output stream.");
+                outputDataWriter.WriteString(DateTime.UtcNow + "...\r\n");
+                Debug.WriteLine("Wrote " + outputDataWriter.UnstoredBufferLength + " bytes to output stream.");
 
                 // calling the 'Store' method on the data writer actually sends the data
-                bw1 = outputDataWriter.Store();
-                Console.WriteLine("Sent " + bw1 + " bytes over " + serialDevice.PortName + ".");
+                bytesWritten = outputDataWriter.Store();
+                Debug.WriteLine("Sent " + bytesWritten + " bytes over " + serialDevice.PortName + ".");
 
                 Thread.Sleep(2000);
             }

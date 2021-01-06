@@ -4,6 +4,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Threading;
 using Windows.Devices.SerialCommunication;
 using Windows.Storage.Streams;
@@ -35,11 +36,11 @@ namespace SerialCommunication
         {
             if(e.EventType == SerialData.Chars)
             {
-                Console.WriteLine("rx chars");
+                Debug.WriteLine("rx chars");
             }
             else if (e.EventType == SerialData.WatchChar)
             {
-                Console.WriteLine("rx watch char");
+                Debug.WriteLine("rx watch char");
 
 
                 SerialDevice serialDevice = (SerialDevice)sender;
@@ -51,12 +52,12 @@ namespace SerialCommunication
                     // read all available bytes from the Serial Device input stream
                     var bytesRead = inputDataReader.Load(serialDevice.BytesToRead);
 
-                    Console.WriteLine("Read completed: " + bytesRead + " bytes were read from " + serialDevice.PortName + ".");
+                    Debug.WriteLine("Read completed: " + bytesRead + " bytes were read from " + serialDevice.PortName + ".");
 
                     if (bytesRead > 0)
                     {
                         String temp = inputDataReader.ReadString(bytesRead);
-                        Console.WriteLine("String: >>" + temp + "<< ");
+                        Debug.WriteLine("String: >>" + temp + "<< ");
                     }
                 }
             }
