@@ -65,6 +65,7 @@ Feel free to browse, take what you like and contribute back if you want.
   <td><a href="samples/Networking">Sockets sample pack</a></td>
   <td><a href="samples/SSL">SSL sample pack</a></td>
   <td><a href="samples/HTTP">HTTP</a></td>
+  <td><a href="samples/Webserver">Webserver sample pack</a></td>
  </tr>
 </table>
 
