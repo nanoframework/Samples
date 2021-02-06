@@ -1,15 +1,18 @@
-# Hardware ESP32 RMT
+# NeoPixel Strip WS2812 with RMT
 
-Shows how to use the [nanoFramework.Hardware.Esp32.Rmt](http://docs.nanoframework.net/api/nanoFramework.Hardware.Esp32.Rmt.html) 
-API to access the ESP32 RMT functions.
+Shows how to use ESP32 RMT with an NeoPixel Strip WS2812
 
-The RMT(remote control) is primarily used to send and receive remote control commands but due to its flexibilty it can be used to generate and recieve many types of signals.
+This sample send signal to strip with pin D5.
 
-Samples
+**Connections**  
+GIN -  Any available GPIO pin (D5 in the sample)
+GND -  Ground signal  
++5V - External Power Supply 5V min 2A  
 
-- [HC-SR04 ultrasonic ranging](Ultrasonic/)
-- [NeoPixel Strip WS2812](NeoPixelStrip/)
-- [NeoPixel Strip WS2812 with low memory consumption](NeoPixelStripLowMemory/)
+**Notes**:  
+- Put resistor 400 Ohm between GIN and GPIO pin  
+- Join the ground of the external power supply and the GND of ESP32 
+- This example require a preview firmware dont use *-stable* parameter on *nanoff*
 
 > **Note:** This sample is part of a large collection of nanoFramework feature samples.
 > If you are unfamiliar with Git and GitHub, you can download the entire collection as a
@@ -21,7 +24,11 @@ Samples
 
 ## Hardware requirements
 
-Any ESP32 hardware device running a nanoFramework image.
+- Any ESP32 hardware device running a nanoFramework image
+- Led Strip NeoPixel WS2812
+- External power supply 5V
+- Resistor 400 Ohm
+- Capacitor 1000 µF across + and - terminals external power suply
 
 ## Related topics
 
@@ -30,9 +37,10 @@ Any ESP32 hardware device running a nanoFramework image.
 ## Build the sample
 
 1. If you download the samples ZIP, be sure to unzip the entire archive, not just the folder with the sample you want to build. 
-2. Start Microsoft Visual Studio 2017 and select **File** \> **Open** \> **Project/Solution**.
-3. Starting in the folder where you unzipped the samples, go to the subfolder for this specific sample. Double-click the Visual Studio Solution (.sln) file.
-4. Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
+2. Start Microsoft Visual Studio 2017/2019 and select **File** \> **Open** \> **Project/Solution**.
+3. Starting in the folder where you unzipped the samples, go to the sub folder for this specific sample. Double-click the Visual Studio Solution (.sln) file.
+4. Add the connection and certificate information to the program.
+5. Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
 
 ## Run the sample
 
@@ -45,5 +53,3 @@ The next steps depend on whether you just want to deploy the sample or you want 
 ### Deploying and running the sample
 
 - To debug the sample and then run it, press F5 or select Debug >  Start Debugging.
-
-> **Note:** As this puts the device to Sleep you can not debug past that point.
