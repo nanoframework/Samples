@@ -15,7 +15,7 @@ namespace WiFiAP
         // Connected Station count
         static int connectedCount = 0;
 
-        // Gpio pin used to put device into AP setup mode
+        // GPIO pin used to put device into AP set-up mode
         const int SETUP_PIN = 5;
 
         public static void Main()
@@ -52,7 +52,8 @@ namespace WiFiAP
             }
 
 
-            // Just wait
+            // Just wait for now
+            // Here you would have the reset of your program using the client WiFI link
             Thread.Sleep(Timeout.Infinite);
         }
 
@@ -80,7 +81,7 @@ namespace WiFiAP
                 // no connected network. Start web server when first station connects 
                 if (connectedCount == 1)
                 {
-                    // Wait for Staion to be fully connected before starting web server
+                    // Wait for Station to be fully connected before starting web server
                     // other you will get a Network error
                     Thread.Sleep(2000); 
                     server.Start();
@@ -88,7 +89,7 @@ namespace WiFiAP
                 }
             else
             {
-                // Station disconnected. When no more station connected then stop webserver
+                // Station disconnected. When no more station connected then stop web server
                 if (connectedCount > 0)
                 {
                     connectedCount--;

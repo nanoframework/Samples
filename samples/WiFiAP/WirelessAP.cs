@@ -16,20 +16,26 @@ namespace WiFiAP
         }
 
         /// <summary>
-        /// Setup the Wireless AP settings, enable and save
+        /// Set-up the Wireless AP settings, enable and save
         /// </summary>
-        /// <returns>True if already setup</returns>
+        /// <returns>True if already set-up</returns>
         public static bool Setup()
         {
+            string SoftApIP = "192.168.4.1";
+
+            NetworkInterface ni = GetInterface();
             WirelessAPConfiguration wapconf = GetConfiguration();
 
             // Check if already Enabled and return true
             if (wapconf.Options == (WirelessAPConfiguration.ConfigurationOptions.Enable |
-                                    WirelessAPConfiguration.ConfigurationOptions.AutoStart))
+                                    WirelessAPConfiguration.ConfigurationOptions.AutoStart) &&
+                ni.IPv4Address == SoftApIP )
             {
                 return true;
             }
 
+            // Set up IP address for Soft AP
+            ni.EnableStaticIPv4(SoftApIP, "255.255.255.0", SoftApIP);
 
             // Set Options for Network Interface
             //
@@ -43,10 +49,10 @@ namespace WiFiAP
             // Set the SSID for Access Point. If not set will use default  "nano_xxxxxx"
             //wapconf.Ssid = "MySsid";
 
-            // Maximum number of simultanious connections, reserves memory for connections
+            // Maximum number of simultaneous connections, reserves memory for connections
             wapconf.MaxConnections = 1;
 
-            // To setup Access point with no Authentication
+            // To set-up Access point with no Authentication
             wapconf.Authentication = AuthenticationType.Open;
             wapconf.Password = "";
 
