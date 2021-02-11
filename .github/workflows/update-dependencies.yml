@@ -22,7 +22,7 @@ defaults:
 jobs:
   update-dotnet-preview:
     name: Update .NET nanoFramework dependencies
-    timeout-minutes: 120 # Non default as Samples has lots of things to update!
+    timeout-minutes: 60 # Non default as Samples has lots of things to update!
     runs-on: windows-latest
     steps:
       - name: Checkout
