@@ -100,7 +100,7 @@ namespace nanoFramework.Networking
             Debug.WriteLine("Waiting for a valid date & time...");
 
             // if SNTP is available and enabled on target device this can be skipped because we should have a valid date & time
-            while ((DateTime.UtcNow.Year < 2018) || (DateTime.UtcNow.Year > 2020))
+            while ((DateTime.UtcNow.Year < 2018) || (DateTime.UtcNow.Year > 2022))
             {
                 // force update if we haven't a valid time after 30 seconds
                 if (retryCount-- == 0)

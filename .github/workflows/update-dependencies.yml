@@ -6,6 +6,8 @@
 name: Daily update dependencies
 
 on:
+  branches:
+    - develop-workflow
   schedule:
   # every 2 hours for the moment.
   - cron:  '0 */2 * * *'
