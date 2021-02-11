@@ -7,7 +7,7 @@ name: Daily update dependencies
 
 on:
   schedule:
-  # every 15 mins for the moment.
+  # every 30 mins for the moment.
   - cron:  '*/30 * * * *'
   repository_dispatch:
     types: update-dependencies
