@@ -22,13 +22,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="mscorlib, Version=1.2.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.CoreLibrary.1.2.1-preview-001\lib\mscorlib.dll</HintPath>
+    <Reference Include="mscorlib, Version=1.10.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.CoreLibrary.1.10.1-preview.9\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="Windows.Devices.Adc, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Windows.Devices.Adc.1.2.0-preview-007\lib\Windows.Devices.Adc.dll</HintPath>
+    <Reference Include="Windows.Devices.Adc, Version=1.5.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Windows.Devices.Adc.1.5.1-preview.24\lib\Windows.Devices.Adc.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
