@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.438
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "FileAccess", "FileAccess\FileAccess.nfproj", "{27187DF4-1F7E-49CC-AC16-BE194C1E1CCD}"
 EndProject
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "AccessRemovableDevices", "AccessRemovableDevices\AccessRemovableDevices.nfproj", "{59548C76-0B49-46C7-A5E8-3A956A5B5DAF}"
 EndProject
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "RemovableDeviceEvent", "RemovableDeviceEvent\RemovableDeviceEvent.nfproj", "{4464304E-8A03-4076-8605-CBB29040A88A}"
+EndProject
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "MountDevices", "MountDevices\MountDevices.nfproj", "{829EBAF9-1BBA-41C7-9175-7944CF001C9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,12 @@ Global
 		{4464304E-8A03-4076-8605-CBB29040A88A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4464304E-8A03-4076-8605-CBB29040A88A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4464304E-8A03-4076-8605-CBB29040A88A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{829EBAF9-1BBA-41C7-9175-7944CF001C9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{829EBAF9-1BBA-41C7-9175-7944CF001C9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{829EBAF9-1BBA-41C7-9175-7944CF001C9C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{829EBAF9-1BBA-41C7-9175-7944CF001C9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{829EBAF9-1BBA-41C7-9175-7944CF001C9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{829EBAF9-1BBA-41C7-9175-7944CF001C9C}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
