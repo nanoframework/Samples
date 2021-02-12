@@ -45,7 +45,7 @@ jobs:
           body: |
             ${{ env.PR_MESSAGE }}
             
-            [nuget update]
+            [automated nuget update]
             
             ### :warning: This is an automated update. :warning:
           committer: 'nfbot <dependencybot@nanoframework.net>'
