@@ -11,7 +11,7 @@ using System.Net.NetworkInformation;
 using System.Threading;
 using nanoFramework.Networking;
 
-namespace HttpSamples.HttpAzurePOST
+namespace HttpSamples.HttpAzureGET
 {
     public class NetworkHelpers
     {
