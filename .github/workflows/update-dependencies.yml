@@ -40,7 +40,7 @@ jobs:
         with:
           title: '${{ env.PR_TITLE }}'
           body: |
-            ${{ env.PR_MESSAGE }}
+            ${{ env.PR_MESSAGE.replace(",", "\n") }}
             
             [version update]
             
