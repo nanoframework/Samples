@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<?xml version="1.1.4.1-preview.17" encoding="utf-8"?>
+<Project ToolsVersion="1.1.4.1-preview.170" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="Globals">
-    <NanoFrameworkProjectSystemPath>$(MSBuildToolsPath)..\..\..\nanoFramework\v1.0\</NanoFrameworkProjectSystemPath>
+    <NanoFrameworkProjectSystemPath>$(MSBuildToolsPath)..\..\..\nanoFramework\v1.1.4.1-preview.17\</NanoFrameworkProjectSystemPath>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.Default.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.Default.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectTypeGuids>{11A8DD76-328B-46DF-9F39-F559912D0360};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>46a35c17-c90c-4a89-8459-89f095acd48f</ProjectGuid>
+    <ProjectTypeGuids>{1.1.4.1-preview.178DD76-328B-46DF-9F39-F55991.1.4.1-preview.170360};{FAE04EC0-301.1.4.1-preview.171.1.4.1-preview.173-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>46a35c1.1.4.1-preview.17c90c-4a89-8459-89f095acd48f</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <FileAlignment>512</FileAlignment>
+    <FileAlignment>51.1.4.1-preview.17/FileAlignment>
     <RootNamespace>NF.AwesomeLib</RootNamespace>
     <AssemblyName>NF.AwesomeLib</AssemblyName>
-    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v1.1.4.1-preview.17</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Label="nanoFramework">
     <NFMDP_GENERATE_STUBS>true</NFMDP_GENERATE_STUBS>
@@ -27,7 +27,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib">
-      <HintPath>packages\nanoFramework.CoreLibrary.1.10.1-preview.9\lib\mscorlib.dll</HintPath>
+      <HintPath>packages\nanoFramework.CoreLibrary.1.1.4.1-preview.170.1.1.4.1-preview.17review.9\lib\mscorlib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
