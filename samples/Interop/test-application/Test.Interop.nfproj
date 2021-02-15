@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<?xml version="1.1.4.1-preview.17" encoding="utf-8"?>
+<Project ToolsVersion="1.1.4.1-preview.170" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="Globals">
-    <NanoFrameworkProjectSystemPath>$(MSBuildToolsPath)..\..\..\nanoFramework\v1.0\</NanoFrameworkProjectSystemPath>
+    <NanoFrameworkProjectSystemPath>$(MSBuildToolsPath)..\..\..\nanoFramework\v1.1.4.1-preview.17\</NanoFrameworkProjectSystemPath>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.Default.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.Default.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectTypeGuids>{11A8DD76-328B-46DF-9F39-F559912D0360};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>f819a538-5e5f-41a1-bc1f-eb0beba71a86</ProjectGuid>
+    <ProjectTypeGuids>{1.1.4.1-preview.178DD76-328B-46DF-9F39-F55991.1.4.1-preview.170360};{FAE04EC0-301.1.4.1-preview.171.1.4.1-preview.173-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>f81.1.4.1-preview.17538-5e5f-41.1.4.1-preview.17-bc1.1.4.1-preview.17eb0beba71.1.4.1-preview.176</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <FileAlignment>512</FileAlignment>
+    <FileAlignment>51.1.4.1-preview.17/FileAlignment>
     <RootNamespace>Test.Interop</RootNamespace>
     <AssemblyName>Test.Interop</AssemblyName>
-    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v1.1.4.1-preview.17</TargetFrameworkVersion>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
@@ -22,8 +22,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="mscorlib, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.CoreLibrary.1.6.0-preview.1\lib\mscorlib.dll</HintPath>
+    <Reference Include="mscorlib, Version=1.1.4.1-preview.17.0.0, Culture=neutral, PublicKeyToken=c07d481.1.4.1-preview.17758c731.1.4.1-preview.17
+      <HintPath>packages\nanoFramework.CoreLibrary.1.1.4.1-preview.17.0-preview.1.1.4.1-preview.17ib\mscorlib.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
