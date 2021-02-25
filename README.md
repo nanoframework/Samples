@@ -120,6 +120,26 @@ Feel free to browse, take what you like and contribute back if you want.
  </tr>
 </table>
 
+### Tools and utilities
+
+<table>
+ <tr>
+  <td><a href="samples/UnitTest">Unit Test Framework</a></td>
+  <td><!--<a href="samples/DebugGC.Test">Runtime GC Test</a>--></td>
+  <td><!--<a href="samples/ExecutionConstraint">Execution Constraint demo</a>--></td>
+ </tr>
+<tr>
+  <td><!--<a href="samples/ManagedResources">Resource Manager</a>--></td>
+  <td><!--<a href="samples/System.Random">System Random sample</a>--></td>
+  <td><!--<a href="samples/ToStringTest">ToString Test</a>--></td>
+ </tr>
+ <tr>
+  <td><!--<a href="samples/NumberParser">Number Parser Test</a>--></td>
+  <td><!--<a href="samples/Threading">Threading</a>--></td>
+  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
+ </tr>
+</table>
+
 ### Miscellaneous
 
 <table>
