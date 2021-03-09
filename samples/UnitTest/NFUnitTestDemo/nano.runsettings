@@ -8,6 +8,7 @@
        <TargetFrameworkVersion>Framework40</TargetFrameworkVersion>
    </RunConfiguration>
    <nanoFrameworkAdapter>
-    <Logging>None</Logging>
+       <Logging>None</Logging>
+       <IsRealHardware>False</IsRealHardware>
    </nanoFrameworkAdapter>
 </RunSettings>
