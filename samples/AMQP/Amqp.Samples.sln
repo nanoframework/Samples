@@ -1,7 +1,6 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.136
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Azure-ServiceBus-Sender", "Azure-ServiceBus-Sender\Azure-ServiceBus-Sender.nfproj", "{366B583C-2BF4-4BEF-A598-9EF13D27EB69}"
 EndProject

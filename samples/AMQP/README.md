@@ -14,11 +14,21 @@ Shows how to use AMQP.Net Lite library.
 
 An hardware device with networking capabilities running a nanoFramework image. This code has been tested with a SMT32F769IDISCOVERY board.
 
-## Related topics
+## TLS connection to Azure IoT Hub
+
+To use a secured (TLS) connection to Azure IoT Hub the following is required:
+
+1. Upload the root CA certificate for Azure. That's the "Baltimore CyberTrust Root". You can download it from [here](https://docs.microsoft.com/en-us/azure/security/fundamentals/tls-certificate-changes#what-is-changing). It should be uploaded to the device using the Network Configuration dialog from Device Explorer.
+
+1. Set the `Connection.DisableServerCertValidation` to `false`.
+
+1. Generate an SAS Token for your device. [Azure IoT Explorer](https://github.com/Azure/azure-iot-explorer) it's a convenient tool to do this for you.
+After setting up the access to you IoT Hub, navigate to the device, enter the desired parameters and generate the SAS Token (see the print screen below).
+![](azure-iot-explorer-sas.png) 
 
 ### Reference
 
-- [Amqp API](http://azure.github.io/amqpnetlite/api/Amqp.html)
+- [AMQP API](http://azure.github.io/amqpnetlite/api/Amqp.html)
 
 ## Build the sample
 

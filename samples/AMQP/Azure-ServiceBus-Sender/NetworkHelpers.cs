@@ -68,9 +68,6 @@ namespace nanoFramework.Networking
                 {
                     // network interface is Ethernet
                     Debug.WriteLine("Network connection is: Ethernet");
-
-                    ni.EnableAutomaticDns();
-                    ni.EnableDhcp();
                 }
 
                 // check if we have an IP

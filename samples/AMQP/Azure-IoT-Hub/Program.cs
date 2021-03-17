@@ -17,12 +17,14 @@ namespace AmqpSamples.AzureIoTHub
     {
         /////////////////////////////////////////////////////////////////////
         // Azure IoT Hub settings
-        const string iotHubName = "<replace-with-iothub-name>";
-        const string device = "<replace-with-iothub-device-id>";
 
-        // use a SaS token generated from Azure Device Explorer like the one bellow
-        // SharedAccessSignature sr=contoso.azure-devices.net%2Fdevices%2FCOFEEMACHINE001&sig=IOLn3cZi6zl473%2B4jPZpDC7mc1X5LOEIkVeJgqeVZSw%3D&se=1545420774
-        const string sasToken = "<replace-with-sas-token-for-iothub-device>";
+        // To make your life easier use a SaS token generated from Azure Device Explorer like the one bellow
+        // HostName=contoso.azure-devices.net;DeviceId=COFEEMACHINE001;SharedAccessSignature=SharedAccessSignature sr=contoso.azure-devices.net%2Fdevices%2FCOFEEMACHINE001&sig=tGeAGJeRgFUqIKEs%2BtYNLmLAGWGHiHT%2F2TIIsu8oQ%2F0%3D&se=1234656789
+
+        const string _hubName = "contoso";
+        const string _deviceId = "COFEEMACHINE001";
+        const string _sasToken = "SharedAccessSignature sr=contoso.azure-devices.net%2Fdevices%2FCOFEEMACHINE001&sig=tGeAGJeRgFUqIKEs%2BtYNLmLAGWGHiHT%2F2TIIsu8oQ%2F0%3D&se=1234656789";
+
         /////////////////////////////////////////////////////////////////////
 
         private static AutoResetEvent sendMessage = new AutoResetEvent(false);
@@ -44,7 +46,7 @@ namespace AmqpSamples.AzureIoTHub
 
             // setup user button
             // F769I-DISCO -> USER_BUTTON is @ PA0 -> (0 * 16) + 0 = 0
-            _userButton = GpioController.GetDefault().OpenPin(0);
+            _userButton = GpioController.GetDefault().OpenPin(3*16+7);
             _userButton.SetDriveMode(GpioPinDriveMode.Input);
             _userButton.ValueChanged += UserButton_ValueChanged;
 
@@ -55,9 +57,13 @@ namespace AmqpSamples.AzureIoTHub
             // enable trace
             AmqpTrace.TraceListener = WriteTrace;
 
-            // disable server certificate validation
-            Connection.DisableServerCertValidation = true;
-
+            /////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////
+            // *** CHECK README for details on this configuration **** //
+            Connection.DisableServerCertValidation = false;
+            /////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////
+            
             // launch worker thread
             new Thread(WorkerThread).Start();
 
@@ -73,12 +79,12 @@ namespace AmqpSamples.AzureIoTHub
             NetworkHelpers.DateTimeAvailable.WaitOne();
 
             // parse Azure IoT Hub Map settings to AMQP protocol settings
-            string hostName = iotHubName + ".azure-devices.net";
-            string userName = device + "@sas." + iotHubName;
-            string senderAddress = "devices/" + device + "/messages/events";
-            string receiverAddress = "devices/" + device + "/messages/deviceBound";
+            string hostName = _hubName + ".azure-devices.net";
+            string userName = _deviceId + "@sas." + _hubName;
+            string senderAddress = "devices/" + _deviceId + "/messages/events";
+            string receiverAddress = "devices/" + _deviceId + "/messages/deviceBound";
 
-            Connection connection = new Connection(new Address(hostName, 5671, userName, sasToken));
+            Connection connection = new Connection(new Address(hostName, 5671, userName, _sasToken));
             Session session = new Session(connection);
             SenderLink sender = new SenderLink(session, "send-link", senderAddress);
             ReceiverLink receiver = new ReceiverLink(session, "receive-link", receiverAddress);
