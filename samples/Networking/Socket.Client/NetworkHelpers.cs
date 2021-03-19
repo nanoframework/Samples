@@ -6,6 +6,7 @@
 using nanoFramework.Runtime.Events;
 using System;
 using System.Diagnostics;
+using System.Net;
 using System.Net.NetworkInformation;
 using System.Threading;
 
@@ -32,6 +33,14 @@ namespace nanoFramework.Networking
 
         internal static void WorkingThread()
         {
+            do
+            {
+                Debug.WriteLine("Waiting for network available...");
+
+                Thread.Sleep(500);
+            }
+            while (!NetworkInterface.GetIsNetworkAvailable());
+
             NetworkInterface[] nis = NetworkInterface.GetAllNetworkInterfaces();
 
             if (nis.Length > 0)
@@ -69,9 +78,6 @@ namespace nanoFramework.Networking
                     Debug.WriteLine("Network connection is: Ethernet");
                 }
 
-                //ni.EnableAutomaticDns();
-                //ni.EnableDhcp();
-
                 // check if we have an IP
                 CheckIP();
 
@@ -108,16 +114,16 @@ namespace nanoFramework.Networking
 
         private static void CheckIP()
         {
-            Debug.WriteLine("Checking for IP");
+            var myAddress = IPGlobalProperties.GetIPAddress();
 
-            NetworkInterface ni = NetworkInterface.GetAllNetworkInterfaces()[0];
-            if (ni.IPv4Address != null && ni.IPv4Address.Length > 0)
+            if (myAddress != IPAddress.Any)
             {
-                if (ni.IPv4Address[0] != '0')
-                {
-                    Debug.WriteLine($"We have and IP: {ni.IPv4Address}");
-                    IpAddressAvailable.Set();
-                }
+                Debug.WriteLine($"We have and IP: {myAddress}");
+                IpAddressAvailable.Set();
+            }
+            else
+            {
+                Debug.WriteLine("No IP...");
             }
         }
 

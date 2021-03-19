@@ -3,9 +3,9 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using nanoFramework.Runtime.Events;
 using System;
 using System.Diagnostics;
+using System.Net;
 using System.Net.NetworkInformation;
 using System.Threading;
 
@@ -32,6 +32,14 @@ namespace nanoFramework.Networking
 
         internal static void WorkingThread()
         {
+            do
+            {
+                Debug.WriteLine("Waiting for network available...");
+
+                Thread.Sleep(500);
+            }
+            while (!NetworkInterface.GetIsNetworkAvailable());
+
             NetworkInterface[] nis = NetworkInterface.GetAllNetworkInterfaces();
 
             if (nis.Length > 0)
@@ -49,7 +57,7 @@ namespace nanoFramework.Networking
                     // note on checking the 802.11 configuration
                     // on secure devices (like the TI CC3220SF) the password can't be read
                     // so we can't use the code block bellow to automatically set the profile
-                    if ( (wc.Ssid != c_SSID && wc.Password != c_AP_PASSWORD) &&
+                    if ((wc.Ssid != c_SSID && wc.Password != c_AP_PASSWORD) &&
                          (wc.Ssid != "" && wc.Password == ""))
                     {
                         // have to update Wi-Fi configuration
@@ -58,7 +66,7 @@ namespace nanoFramework.Networking
                         wc.SaveConfiguration();
                     }
                     else
-                    {   
+                    {
                         // Wi-Fi configuration matches
                         // (or can't be validated)
                     }
@@ -68,9 +76,6 @@ namespace nanoFramework.Networking
                     // network interface is Ethernet
                     Debug.WriteLine("Network connection is: Ethernet");
                 }
-
-                ni.EnableAutomaticDns();
-                ni.EnableDhcp();
 
                 // check if we have an IP
                 CheckIP();
@@ -100,21 +105,24 @@ namespace nanoFramework.Networking
                 Thread.Sleep(1000);
             }
 
+
+            Debug.WriteLine($"System time is: {DateTime.UtcNow.ToString()}");
+
             DateTimeAvailable.Set();
         }
 
         private static void CheckIP()
         {
-            Debug.WriteLine("Checking for IP");
+            var myAddress = IPGlobalProperties.GetIPAddress();
 
-            NetworkInterface ni = NetworkInterface.GetAllNetworkInterfaces()[0];
-            if (ni.IPv4Address != null && ni.IPv4Address.Length > 0)
+            if (myAddress != IPAddress.Any)
             {
-                if (ni.IPv4Address[0] != '0')
-                {
-                    Debug.WriteLine($"We have and IP: {ni.IPv4Address}");
-                    IpAddressAvailable.Set();
-                }
+                Debug.WriteLine($"We have and IP: {myAddress}");
+                IpAddressAvailable.Set();
+            }
+            else
+            {
+                Debug.WriteLine("No IP...");
             }
         }
 
