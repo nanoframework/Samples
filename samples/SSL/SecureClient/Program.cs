@@ -64,6 +64,15 @@ namespace SecureClient
                     // setup SSL stream
                     using (SslStream stream = new SslStream(mySocket))
                     {
+                        ///////////////////////////////////////////////////////////////////////////////////
+                        // Authenticating using a client certificate stored in the device is possible by
+                        // setting the UseStoredDeviceCertificate property. 
+                        // 
+                        // In practice it's equivalent to providing a client certificate in
+                        // the 'clientCertificate' parameter when calling AuthenticateAsClient(...)
+                        //
+                        /////////////////////////////////////////////////////////////////////////////////// 
+                        stream.UseStoredDeviceCertificate = true;
 
                         ///////////////////////////////////////////////////////////////////////////////////
                         // Authenticating the server can be handled in one of three ways:

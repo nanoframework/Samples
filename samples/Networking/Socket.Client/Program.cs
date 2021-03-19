@@ -3,6 +3,7 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using nanoFramework.Runtime.Events;
 using nanoFramework.Networking;
 using System;
 using System.Diagnostics;

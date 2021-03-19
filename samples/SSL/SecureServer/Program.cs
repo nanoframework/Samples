@@ -55,6 +55,16 @@ namespace SecureServer
                     // Once connection established need to create secure stream and authenticate server.
                     netStream = new SslStream(listenerSocket);
 
+                    ///////////////////////////////////////////////////////////////////////////////////
+                    // Using a server certificate stored in the device is possible by
+                    // setting the UseStoredDeviceCertificate property. 
+                    // 
+                    // In practice it's equivalent to providing a server certificate in
+                    // the 'serverCertificate' parameter when calling AuthenticateAsServer(...)
+                    //
+                    /////////////////////////////////////////////////////////////////////////////////// 
+                    ((SslStream)netStream).UseStoredDeviceCertificate = true;
+
                     // Throws exception if this fails
                     // pass the server certificate
                     // do not require client certificate
