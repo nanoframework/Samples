@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Text;
 #if (!NANOFRAMEWORK_1_0)
 using System.Linq;
@@ -38,7 +39,7 @@ namespace Base64TestingShared
         public static void Output()
         {
 
-            Console.WriteLine("  Base64 encoding test: ");
+            Debug.WriteLine("  Base64 encoding test: ");
 
             // encode a base64 test decode array
             var base64ConvertionResult = Convert.ToBase64String(base64TestDecode, Base64FormattingOptions.InsertLineBreaks);
@@ -46,12 +47,12 @@ namespace Base64TestingShared
             if (!base64ConvertionResult.Equals(BuildExpectedString(Base64FormattingOptions.InsertLineBreaks)))
             {
                 // no match, something went wrong
-                Console.WriteLine("failed\n");
+                Debug.WriteLine("failed\n");
                 // exit
                 return;
             }
             // convert passed
-            Console.WriteLine("passed\n  Base64 decoding test: ");
+            Debug.WriteLine("passed\n  Base64 decoding test: ");
 
             // decode a base64 test encode string
             var base64DecodeConvertionResult = Convert.FromBase64String(base64TestEncode);
@@ -64,12 +65,12 @@ namespace Base64TestingShared
 #endif
             {
                 // no match, something went wrong
-                Console.WriteLine("failed\n");
+                Debug.WriteLine("failed\n");
                 // exit
                 return;
             }
             // convert passed
-            Console.WriteLine("passed\n\n");
+            Debug.WriteLine("passed\n\n");
         }
 
         private static object BuildExpectedString(Base64FormattingOptions insertLineBreaks)
