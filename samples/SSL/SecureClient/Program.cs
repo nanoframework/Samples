@@ -116,8 +116,16 @@ namespace SecureClient
 
                         do
                         {
+                            var bufferLenght = sslStream.Length;
+
+                            // if available length is 0, need to read at least 1 byte to get it started
+                            if(bufferLenght == 0)
+                            {
+                                bufferLenght = 1;
+                            }
+
                             // setup buffer to read data from socket
-                            buffer = new byte[sslStream.Length];
+                            buffer = new byte[bufferLenght];
 
                             // trying to read from socket
                             int bytes = sslStream.Read(buffer, 0, buffer.Length);
@@ -129,7 +137,7 @@ namespace SecureClient
                                 // data was read!
                                 // output as string
                                 // mind to use only the amount of data actually read because it could be less than the requested count
-                                Debug.WriteLine(new String(Encoding.UTF8.GetChars(buffer, 0, bytes)));
+                                Debug.Write(new String(Encoding.UTF8.GetChars(buffer, 0, bytes)));
                             }
                         }
                         while (sslStream.DataAvailable);
