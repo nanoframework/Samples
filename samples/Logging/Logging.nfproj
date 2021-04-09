@@ -34,17 +34,17 @@
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="nanoFramework.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\nanoFramework.Logging.1.0.0-preview.19\lib\nanoFramework.Logging.dll</HintPath>
+      <HintPath>packages\nanoFramework.Logging.1.0.0-preview.21\lib\nanoFramework.Logging.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="nanoFramework.Logging.Serial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\nanoFramework.Logging.Serial.1.0.0-preview.19\lib\nanoFramework.Logging.Serial.dll</HintPath>
+      <HintPath>packages\nanoFramework.Logging.Serial.1.0.0-preview.21\lib\nanoFramework.Logging.Serial.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="nanoFramework.Logging.Stream, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\nanoFramework.Logging.Stream.1.0.0-preview.19\lib\nanoFramework.Logging.Stream.dll</HintPath>
+      <HintPath>packages\nanoFramework.Logging.Stream.1.0.0-preview.21\lib\nanoFramework.Logging.Stream.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
@@ -59,7 +59,7 @@
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="System.IO.FileSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.IO.FileSystem.1.0.0-preview.33\lib\System.IO.FileSystem.dll</HintPath>
+      <HintPath>packages\nanoFramework.System.IO.FileSystem.1.0.0-preview.34\lib\System.IO.FileSystem.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
