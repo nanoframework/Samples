@@ -14,151 +14,54 @@ Feel free to browse, take what you like and contribute back if you want.
 
 ## Sample by category
 
-### Communication
+| Communication | | |
+| --- | --- | --- |
+| [SerialCommunication sample pack](samples/SerialCommunication) | [CAN sample](samples/CAN) | [AMQP sample pack](samples/AMQP) |
+| [MQTT sample pack](samples/MQTT/TestMqtt) | [MQTT sample with Azure IoT Hub](samples/MQTT/AzureMQTT) | [MQTT sample with Amazon Web Services (AWS) IoT](samples/MQTT/AwsMQTT) |
 
-<table>
- <tr>
-  <td><a href="samples/SerialCommunication">SerialCommunication sample pack</a></td>
-  <td><a href="samples/CAN">CAN sample</a></td>
-  <td><a href="samples/AMQP">AMQP sample pack</a></td>
- </tr>
- <tr>
-  <td><a href="samples/MQTT/TestMqtt">MQTT sample pack</a></td>
-  <td><a href="samples/MQTT/AzureMQTT">MQTT sample with Azure IoT Hub</a></td>
-  <td><a href="samples/MQTT/AwsMQTT">MQTT sample with Amazon Web Services (AWS) IoT</a></td>
- </tr>
-</table>
+| Devices | | |
+| --- | --- | --- |
+| [ADC](samples/ADC) | [1-Wire](samples/1-Wire) | [Gpio](samples/Gpio) |
+| [I2C](samples/I2C) | [PWM](samples/PWM) | [RTC Sample](samples/RTC) |
+| [SPI](samples/SPI) | [DAC](samples/DAC) | []() |
 
-### Devices
+| Graphics | | |
+| --- | --- | --- |
+| [Primitives](samples/GraphicsWpf/Primitives) | [SimpleWpf](samples/GraphicsWpf/SimpleWpf) | [Tetris](samples/GraphicsWpf/Tetris) |
 
-<table>
- <tr>
-  <td><a href="samples/ADC">ADC</a></td>
-  <td><a href="samples/1-Wire">1-Wire</a></td>
-  <td><a href="samples/Gpio">Gpio</a></td>
- </tr>
-<tr>
-  <td><a href="samples/I2C">I2C</a></td>
-  <td><a href="samples/PWM">PWM</a></td>
-  <td><a href="samples/RTC">RTC Sample</a></td>
- </tr>
-  <td><a href="samples/SPI">SPI</a></td>
-  <td><a href="DAC">DAC</a></td>
-  <td><!--<a href="RTXC">RTC Sample</a>--></td>
- </tr>
-</table>
+| Networking | | |
+| --- | --- | --- |
+| [Sockets sample pack](samples/Networking) | [SSL sample pack](samples/SSL) | [HTTP](samples/HTTP) |
+| [Webserver sample pack](samples/Webserver) | []() | []() |
 
-### Graphics
-<table>
- <tr>
-  <td><a href="samples/GraphicsWpf/Primitives">Primitives</a></td>
-  <td><a href="samples/GraphicsWpf/SimpleWpf">SimpleWpf</a></td>
-  <td><a href="samples/GraphicsWpf/Tetris">Tetris</a></td>
-  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
- </tr>
-</table>
+| ESP32 | | |
+| --- | --- | --- |
+| [Hardware Esp32 Test](samples/Hardware.Esp32) | [RMT interface](samples/Hardware.Esp32.Rmt) | [WiFi](samples/Wifi) |
+| [WiFi Soft AP](samples/WiFiAP) | []() | []() |
 
-### Networking
+| STM32 | | |
+| --- | --- | --- |
+| [Hardware STM32](samples/Hardware.Stm32) | []() | []() |
 
-<table>
- <tr>
-  <td><a href="samples/Networking">Sockets sample pack</a></td>
-  <td><a href="samples/SSL">SSL sample pack</a></td>
-  <td><a href="samples/HTTP">HTTP</a></td>
-  <td><a href="samples/Webserver">Webserver sample pack</a></td>
- </tr>
-</table>
+| TI CC13xx | | |
+| --- | --- | --- |
+| [TI.EasyLink](samples/TI.EasyLink) | [Hardware TI SimpleLink](samples/Hardware.TI) | []() |
 
-### ESP32
-<table>
- <tr>
-  <td><a href="samples/Hardware.Esp32">Hardware Esp32 Test</a></td>
-  <td><a href="samples/Hardware.Esp32.Rmt">RMT interface</a></td>
-  <td><a href="samples/Wifi">WiFi</a></td>
-  <td><a href="samples/WiFiAP">WiFi Soft AP</a></td>
-  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
- </tr>
-</table>
+| System | | |
+| --- | --- | --- |
+| [Converter.Base64](samples/Converter.Base64) | [Runtime GC Test](samples/DebugGC.Test) | [Execution Constraint demo](samples/ExecutionConstraint) |
+| [Resource Manager](samples/ManagedResources) | [System Random sample](samples/System.Random) | [ToString Test](samples/ToStringTest) |
+| [Number Parser Test](samples/NumberParser) | [Threading](samples/Threading) | []() |
 
-### STM32
+| Tools and utilities | | |
+| --- | --- | --- |
+| [Unit Test Framework](samples/UnitTest) | [Logging framework](samples/Logging) | []() |
 
-<table>
- <tr>
-  <td><a href="samples/Hardware.Stm32">Hardware STM32</a></td>
-  <td><!--<a href="Utility/util2">Utility Two</a>--></td>
-  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
- </tr>
-</table>
-
-### TI CC13xx
-
-<table>
- <tr>
-  <td><a href="samples/TI.EasyLink">TI.EasyLink</a></td>
-  <td><a href="samples/Hardware.TI">Hardware TI SimpleLink</a></td>
-  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
- </tr>
-</table>
-
-### System
-
-<table>
- <tr>
-  <td><a href="samples/Converter.Base64">Converter.Base64</a></td>
-  <td><a href="samples/DebugGC.Test">Runtime GC Test</a></td>
-  <td><a href="samples/ExecutionConstraint">Execution Constraint demo</a></td>
- </tr>
-<tr>
-  <td><a href="samples/ManagedResources">Resource Manager</a></td>
-  <td><a href="samples/System.Random">System Random sample</a></td>
-  <td><a href="samples/ToStringTest">ToString Test</a></td>
- </tr>
- <tr>
-  <td><a href="samples/NumberParser">Number Parser Test</a></td>
-  <td><a href="samples/Threading">Threading</a></td>
-  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
- </tr>
-</table>
-
-### Tools and utilities
-
-<table>
- <tr>
-  <td><a href="samples/UnitTest">Unit Test Framework</a></td>
-  <td><!--<a href="samples/DebugGC.Test">Runtime GC Test</a>--></td>
-  <td><!--<a href="samples/ExecutionConstraint">Execution Constraint demo</a>--></td>
- </tr>
-<tr>
-  <td><!--<a href="samples/ManagedResources">Resource Manager</a>--></td>
-  <td><!--<a href="samples/System.Random">System Random sample</a>--></td>
-  <td><!--<a href="samples/ToStringTest">ToString Test</a>--></td>
- </tr>
- <tr>
-  <td><!--<a href="samples/NumberParser">Number Parser Test</a>--></td>
-  <td><!--<a href="samples/Threading">Threading</a>--></td>
-  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
- </tr>
-</table>
-
-### Miscellaneous
-
-<table>
- <tr>
-  <td><a href="samples/Blinky">Blinky</a></td>
-  <td><a href="samples/GCStressTest">GCStress test</a></td>
-  <td><a href="samples/Interop">Interop demonstration</a></td>
- </tr>
- <tr>
-  <td><a href="samples/Reflection">Reflection</a></td>
-  <td><a href="samples/Timer">Timer sample</a></td>
-  <td><a href="samples/Storage">Storage sample pack</a></td>
- </tr>
- <tr>
-  <td><a href="samples/Json nanoFramework">nanoFramework Json</a></td>
-  <td><a href="samples/NativeEvents">Native Events</a></td>
-  <td><a href="samples/System.IO.FileSystem">File System sample</a></td>
- </tr>
-</table>
+| Miscellaneous | | |
+| --- | --- | --- |
+| [Traditional blinky application](samples/Blinky) | [GCStress test](samples/GCStressTest) | [Interop demonstration](samples/Interop) |
+| [Reflection](samples/Reflection) | [Timer sample](samples/Timer) | [Storage sample pack](samples/Storage) |
+| [nanoFramework Json](samples/Json%20nanoFramework) | [Native Events](samples/NativeEvents) | [File System sample](samples/System.IO.FileSystem) |
 
 ## Feedback and documentation
 
