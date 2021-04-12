@@ -5,6 +5,7 @@
 
 using System;
 using System.Device.Dac;
+using System.Diagnostics;
 using System.Threading;
 
 namespace DacSample
@@ -13,8 +14,7 @@ namespace DacSample
     {
         public static void Execute(ref DacChannel channel)
         {
-            UInt32 value = 0;
-            uint increment = 0;
+            uint value = 0;
             bool goingUp = false;
             int upperValue;
 
@@ -22,7 +22,7 @@ namespace DacSample
             upperValue = (int)Math.Pow(2, Scenario1ConfigureDac.dacResolution);
 
             // compute a reasonable increment value from the the DAC resolution
-            increment = (uint)Math.Pow(2, (Scenario1ConfigureDac.dacResolution / 2));
+            uint increment = (uint)Math.Pow(2, Scenario1ConfigureDac.dacResolution / 2);
 
 
             for (; ; )
@@ -59,6 +59,9 @@ namespace DacSample
                 {
                     value -= increment;
                 }
+
+                //Output the current value to console when in debug.
+                Debug.WriteLine($"DAC TriangleWave output current value: {value}");
 
                 Thread.Sleep(Scenario1ConfigureDac.s_timeResolution);
             }

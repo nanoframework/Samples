@@ -5,6 +5,7 @@
 
 using System;
 using System.Device.Dac;
+using System.Diagnostics;
 using System.Threading;
 
 namespace DacSample
@@ -15,8 +16,6 @@ namespace DacSample
 
         public static void Execute(ref DacChannel channel)
         {
-            UInt32 value = 0;
-            float increment = 0;
             int upperValue, midRange;
             float radian = 0;
 
@@ -24,14 +23,17 @@ namespace DacSample
             upperValue = (int)Math.Pow(2, Scenario1ConfigureDac.dacResolution);
 
             // compute a reasonable increment value from the resolution
-            increment =  maxRads / (Scenario1ConfigureDac.dacResolution * 10) ;
+            float increment = maxRads / (Scenario1ConfigureDac.dacResolution * 10);
             midRange = upperValue / 2;
 
             for (; ; )
             {
                 // because the DAC can't output negative values
                 // we have to offset the sine wave to half the DAC output range
-                value = (uint)((Math.Sin(radian) * (midRange - 1))  + midRange);
+                uint value = (uint)((Math.Sin(radian) * (midRange - 1)) + midRange);
+
+                //Output the current value to console when in debug.
+                Debug.WriteLine($"DAC SineWave output current value: {value}");
 
                 // output to DAC
                 channel.WriteValue((ushort)value);

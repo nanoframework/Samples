@@ -5,6 +5,7 @@
 
 using System;
 using System.Device.Dac;
+using System.Diagnostics;
 using System.Threading;
 
 namespace DacSample
@@ -39,6 +40,9 @@ namespace DacSample
                 }
 
                 channel.WriteValue((ushort)value);
+
+                //Output the current value to console when in debug.
+                Debug.WriteLine($"DAC SquareWave output current value: {value}");
 
                 Thread.Sleep(Scenario1ConfigureDac.s_timeResolution);
 

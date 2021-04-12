@@ -10,9 +10,19 @@ Shows how to use the [System.Device.Dac](http://docs.nanoframework.net/api/Syste
 > the samples collection, and GitHub, see [Get the UWP samples from GitHub](https://aka.ms/ovu2uq). 
 > For more samples, see the [Samples portal](https://aka.ms/winsamples) on the Windows Dev Center.  -->
 
-This sample allows the developer to output several output sequences to the **D**igital **A**nalog **C**onverter. You can choose one of three scenarios:
+## Board Pin Reference
+
+### STM32F769I_DISCO pin assignments
+
+DAC Channel 0 = GPIOA_PIN4 (CN14_A1)
+
+### ESP32 pin assignments
+
+ESP32 pin assignments are variable, and must be assigned before use.
 
 ## Scenarios
+
+This sample allows the developer to output several output sequences to the **D**igital **A**nalog **C**onverter. You can choose one of three scenarios:
 
 ### Instantiate and configure DAC peripheral
 
