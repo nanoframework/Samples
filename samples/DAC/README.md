@@ -44,7 +44,7 @@ Any hardware device running a nanoFramework image built with DAC support enabled
 
 ### Reference
 
-- [System.Devices.Dac](http://docs.nanoframework.net/api/System.Devices.Dac.html)
+- [System.Device.Dac](http://docs.nanoframework.net/api/System.Device.Dac.html)
 
 ## Build the sample
 
