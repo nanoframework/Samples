@@ -1,6 +1,6 @@
 # **D**igital **A**nalog **C**onverter sample pack
 
-Shows how to use the [System.Devices.Dac](http://docs.nanoframework.net/api/System.Devices.Dac.html) API to output values to a DAC.
+Shows how to use the [System.Device.Dac](http://docs.nanoframework.net/api/System.Device.Dac.html) API to output values to a DAC.
 
 > **Note:** This sample is part of a large collection of nanoFramework feature samples.
 > If you are unfamiliar with Git and GitHub, you can download the entire collection as a
