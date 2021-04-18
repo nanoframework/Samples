@@ -136,7 +136,7 @@ namespace FileAccess
         /// </remarks>
         static bool DeviceNeedsMounting()
         {
-            return (SystemInfo.OEMString.IndexOf("ESP32") >= 0);
+            return (SystemInfo.Platform.IndexOf("ESP32") >= 0);
         }
     }
 }
