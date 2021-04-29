@@ -16,7 +16,7 @@ namespace nanoFramework.TestFramework.Test
         public void TestRaisesException()
         {
             Debug.WriteLine("Test will raise exception");
-            Assert.Trows(typeof(Exception), ThrowMe);
+            Assert.Throws(typeof(Exception), ThrowMe);
         }
 
         private void ThrowMe()
