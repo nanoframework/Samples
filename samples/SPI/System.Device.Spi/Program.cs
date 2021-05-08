@@ -10,7 +10,7 @@ namespace SpiExamples
         public static void Main()
         {
             SpiDevice spiDevice;
-            SpiConnectionSettings connectinSettings;
+            SpiConnectionSettings connectionSettings;
             Debug.WriteLine("Hello from sample for System.Device.Spi!");
             // You can get the values of SpiBus
             SpiBusInfo spiBusInfo = SpiDevice.GetBusInfo(1);
@@ -24,15 +24,15 @@ namespace SpiExamples
             }
 
             // Note: the ChipSelect pin should be adjusted to your device, here 12
-            connectinSettings = new SpiConnectionSettings(1, 12);
+            connectionSettings = new SpiConnectionSettings(1, 12);
             // You can adjust other settings as well in the connection
-            connectinSettings.ClockFrequency = 1_000_000;
-            connectinSettings.DataBitLength = 8;
-            connectinSettings.DataFlow = DataFlow.LsbFirst;
-            connectinSettings.Mode = SpiMode.Mode2;
+            connectionSettings.ClockFrequency = 1_000_000;
+            connectionSettings.DataBitLength = 8;
+            connectionSettings.DataFlow = DataFlow.LsbFirst;
+            connectionSettings.Mode = SpiMode.Mode2;
 
             // Then you create your SPI device by passing your settings
-            spiDevice = SpiDevice.Create(connectinSettings);
+            spiDevice = SpiDevice.Create(connectionSettings);
 
             // You can write a SpanByte
             SpanByte writeBufferSpanByte = new byte[2] { 42, 84 };
