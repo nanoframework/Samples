@@ -41,7 +41,7 @@ namespace SerialCommunication
                 // calling the 'Store' method on the data writer actually sends the data
                 bytesWritten = outputDataWriter.Store();
                 Debug.WriteLine("Sent " + bytesWritten + " bytes over " + serialDevice.PortName + ".");
-
+                
                 Thread.Sleep(2000);
             }
         }

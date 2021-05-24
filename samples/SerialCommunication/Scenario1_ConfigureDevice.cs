@@ -6,8 +6,10 @@
 
 //////////////////////////////////////////////////////////////////////
 ///
-/// NOTE: when working with ESP32 this define needs to be uncommented
-//#define BUIID_FOR_ESP32
+/// NOTE: when working with ESP32 edit the nfproj file and add 
+/// BUIID_FOR_ESP32 to the DefineConstants, like this:
+/// 
+/// <DefineConstants>$(DefineConstants);BUIID_FOR_ESP32;</DefineConstants>
 ///
 //////////////////////////////////////////////////////////////////////
 
@@ -38,7 +40,7 @@ namespace SerialCommunication
             ////////////////////////////////////////////////////////////////////////////////////////////////////
             // COM2 in ESP32-WROVER-KIT mapped to free GPIO pins
             // mind to NOT USE pins shared with other devices, like serial flash and PSRAM
-            // also it's MANDATORY to set pin funcion to the appropriate COM before instanciating it
+            // also it's MANDATORY to set pin function to the appropriate COM before instantiating it
 
             // set GPIO functions for COM2 (this is UART1 on ESP32)
             Configuration.SetPinFunction(Gpio.IO04, DeviceFunction.COM2_TX);
