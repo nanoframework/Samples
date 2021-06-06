@@ -12,10 +12,18 @@ using System.Threading;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
 
+#if HAS_WIFI
+using Windows.Devices.WiFi;
+#endif
+
 namespace AwsMQTT
 {
     public class Program
     {
+#if HAS_WIFI
+        private static string MySsid = "ssid";
+        private static string MyPassword = "password";      
+#endif
         ////////////////////////////////////////////////////////////////////////////////
         // make sure to add your AWS endpoint and region!!! 
         private static readonly string awsHost = "<endpoint>.<region>.amazonaws.com";
@@ -55,7 +63,7 @@ BmoSHrBhVE6z/qdjOCOeUsJ/pzXc34y8OIxFdwlTIfRQx8S3espqc4HpRQCx
 -----END CERTIFICATE-----";
 
         //Device private key copied from AWS (this is a non working example)
-        private static readonly string clientRsaKey = 
+        private static readonly string clientRsaKey =
 @"-----BEGIN RSA PRIVATE KEY-----
 MIIEpAIBAAKCAQEAzZwEiJh/cHTDsBKT9mqgB6eYMkoycBWn3CNrRQ2sNo24my9C
 3GfmyXsDhmXNxlLsnEitXJmbFThe5q3wvPreXNZgjgUA/VpXoprdCH+5NCoEgvYK
@@ -90,17 +98,26 @@ lIBzJXkrbY11FY6TNX4YFU2McIX2Ge0058Pozx6tumJ4KxvB9Ges8g==
         public static void Main()
         {
 
-            // if we are using TLS it requires valid date & time
-            NetworkHelpers.SetupAndConnectNetwork(true);
-
             Debug.WriteLine("Waiting for network up and IP address...");
-            NetworkHelpers.IpAddressAvailable.WaitOne();
-
-            Debug.WriteLine("Waiting for valid Date & Time...");
-            NetworkHelpers.DateTimeAvailable.WaitOne();
+            bool success;
+            CancellationTokenSource cs = new(60000);
+#if HAS_WIFI
+            success = NetworkHelper.ConnectWifiDhcp(MySsid, MyPassword, setDateTime: true, token: cs.Token);
+#else
+            success = NetworkHelper.WaitForValidIPAndDate(true, System.Net.NetworkInformation.NetworkInterfaceType.Ethernet, cs.Token);
+#endif
+            if (!success)
+            {
+                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.ConnectionError.Error}.");
+                if (NetworkHelper.ConnectionError.Exception != null)
+                {
+                    Debug.WriteLine($"Exception: {NetworkHelper.ConnectionError.Exception}");
+                }
+                return;
+            }
 
             SetupMqtt();
-        
+
             Thread.Sleep(Timeout.Infinite);
         }
 

@@ -12,17 +12,37 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 
+#if HAS_WIFI
+using Windows.Devices.WiFi;
+#endif
+
 namespace SecureClient
 {
     public class Program
     {
+#if HAS_WIFI
+        private static string MySsid = "ssid";
+        private static string MyPassword = "password";      
+#endif
         public static void Main()
         {
-            NetworkHelpers.SetupAndConnectNetwork(false);
-
             Debug.WriteLine("Waiting for network up and IP address...");
-
-            NetworkHelpers.IpAddressAvailable.WaitOne();
+            bool success;
+            CancellationTokenSource cs = new(60000);
+#if HAS_WIFI
+            success = NetworkHelper.ConnectWifiDhcp(MySsid, MyPassword, setDateTime: true, token: cs.Token);
+#else
+            success = NetworkHelper.WaitForValidIPAndDate(true, System.Net.NetworkInformation.NetworkInterfaceType.Ethernet, cs.Token);
+#endif
+            if (!success)
+            {
+                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.ConnectionError.Error}.");
+                if (NetworkHelper.ConnectionError.Exception != null)
+                {
+                    Debug.WriteLine($"Exception: {NetworkHelper.ConnectionError.Exception}");
+                }
+                return;
+            }
 
             // get host entry for How's my SSL test site
             IPHostEntry hostEntry = Dns.GetHostEntry("httpbin.org");

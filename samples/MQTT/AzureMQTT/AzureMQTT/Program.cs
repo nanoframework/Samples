@@ -19,6 +19,10 @@ using System.Threading;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
 
+#if HAS_WIFI
+using Windows.Devices.WiFi;
+#endif
+
 namespace AzureMQTT
 {
     public partial class Program
@@ -27,6 +31,10 @@ namespace AzureMQTT
         static readonly string iotBrokerAddress = "[enter iothub url]";
         static readonly string SasKey = "[enter sas key]";
 
+#if HAS_WIFI
+        private static string MySsid = "ssid";
+        private static string MyPassword = "password";      
+#endif
         static string telemetryTopic = "";
         const string twinReportedPropertiesTopic = "$iothub/twin/PATCH/properties/reported/";
         const string twinDesiredPropertiesTopic = "$iothub/twin/GET/";
@@ -39,15 +47,23 @@ namespace AzureMQTT
 
             telemetryTopic = String.Format("devices/{0}/messages/events/", deviceID);
 
-            // if we are using TLS it requires valid date & time
-            NetworkHelpers.SetupAndConnectNetwork(true);
-
             Debug.WriteLine("Waiting for network up and IP address...");
-            NetworkHelpers.IpAddressAvailable.WaitOne();
-
-
-            Debug.WriteLine("Waiting for valid Date & Time...");
-            NetworkHelpers.DateTimeAvailable.WaitOne();
+            bool success;
+            CancellationTokenSource cs = new(60000);
+#if HAS_WIFI
+            success = NetworkHelper.ConnectWifiDhcp(MySsid, MyPassword, setDateTime: true, token: cs.Token);
+#else
+            success = NetworkHelper.WaitForValidIPAndDate(true, System.Net.NetworkInformation.NetworkInterfaceType.Ethernet, cs.Token);
+#endif
+            if (!success)
+            {
+                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.ConnectionError.Error}.");
+                if (NetworkHelper.ConnectionError.Exception != null)
+                {
+                    Debug.WriteLine($"Exception: {NetworkHelper.ConnectionError.Exception}");
+                }
+                return;
+            }
 
             Thread.Sleep(3000); //used to reliably allow redeployment in VS2019
 

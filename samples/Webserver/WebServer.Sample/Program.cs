@@ -50,49 +50,23 @@ namespace nanoFramework.WebServer.Sample
 
             try
             {
-                int connectRetry = 0;
-
-#if HAS_WIFI
-                // Get the first WiFI Adapter
-                WiFiAdapter wifi = WiFiAdapter.FindAllAdapters()[0];
-                Debug.WriteLine("Getting wifi adaptor");
-
-                wifi.AvailableNetworksChanged += WifiAvailableNetworksChanged;
-
-            rescan:
-                wifi.ScanAsync();
-                Debug.WriteLine("Scanning...");
-
-                var timeout = DateTime.UtcNow.AddSeconds(10);
-                while (!_isConnected)
-                {
-                    Thread.Sleep(100);
-                    if (DateTime.UtcNow > timeout)
-                    {
-                        goto rescan;
-                    }
-                }
-#endif
-
-                NetworkHelpers.SetupAndConnectNetwork(true);
-
                 Debug.WriteLine("Waiting for network up and IP address...");
-
-                NetworkHelpers.IpAddressAvailable.WaitOne();
-                NetworkHelpers.DateTimeAvailable.WaitOne();
-
+                bool success;
+                CancellationTokenSource cs = new(60000);
 #if HAS_WIFI
-                while (!NetworkHelpers.CheckIP())
-                {
-                    Thread.Sleep(500);
-                    connectRetry++;
-                    if (connectRetry == 5)
-                    {
-                        connectRetry = 0;
-                        goto rescan;
-                    }
-                }
+                success = NetworkHelper.ConnectWifiDhcp(MySsid, MyPassword, setDateTime: true, token: cs.Token);
+#else
+                success = NetworkHelper.WaitForValidIPAndDate(true, System.Net.NetworkInformation.NetworkInterfaceType.Ethernet, cs.Token);
 #endif
+                if(!success)
+                {
+                    Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.ConnectionError.Error}.");
+                    if(NetworkHelper.ConnectionError.Exception !=null)
+                    {
+                        Debug.WriteLine($"Exception: {NetworkHelper.ConnectionError.Exception}");
+                    }
+                    return;
+                }
 
 #if HAS_STORAGE
                 _storage = KnownFolders.RemovableDevices.GetFolders()[0];
@@ -136,40 +110,6 @@ namespace nanoFramework.WebServer.Sample
             }
         }
 
-#if HAS_WIFI
-        private static void WifiAvailableNetworksChanged(WiFiAdapter sender, object e)
-        {
-            var wifiNetworks = sender.NetworkReport.AvailableNetworks;
-            foreach (var net in wifiNetworks)
-            {
-                Debug.WriteLine($"SSID: {net.Ssid}, strength: {net.SignalBars}");
-                if (net.Ssid == MySsid)
-                {
-                    if (_isConnected)
-                    {
-                        sender.Disconnect();
-                        _isConnected = false;
-                        Thread.Sleep(3000);
-                    }
-                    // Connect to network
-                    WiFiConnectionResult result = sender.Connect(net, WiFiReconnectionKind.Automatic, MyPassword);
-
-                    // Display status
-                    if (result.ConnectionStatus == WiFiConnectionStatus.Success)
-                    {
-                        Debug.WriteLine($"Connected to Wifi network {net.Ssid}");
-                        _isConnected = true;
-                        break;
-                    }
-                    else
-                    {
-                        Debug.WriteLine($"Error {result.ConnectionStatus} connecting to Wifi network");
-                    }
-                }
-
-            }
-        }
-#endif
         private static void ServerCommandReceived(object source, WebServerEventArgs e)
         {
             try
