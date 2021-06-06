@@ -30,10 +30,10 @@ Any hardware device running a nanoFramework image that supports WiFi.
 ```csharp
  string sas = "<Enter SAS Token Here See Read Me for example>";
 ```
-7. Enter your Wifi Settings in the NetworkHelpers.cs file
+7. Enter your Wifi Settings in the program.cs file and create a #define HAS_WIFI
 ```csharp
-private const string c_SSID = "<replace-with-valid-ssid";
-private const string c_AP_PASSWORD = "<replace-with-valid-password>";
+private const string MySsid = "<replace-with-valid-ssid";
+private const string MyPassword = "<replace-with-valid-password>";
 ```
 8. Send a message to your device using a service such as Azure Iot Explorer under the Cloud-To-Device tab. Or you can create an Azure Function to send a message
 8. Connect a button from the GPIO pin in Program.cs (Pin 0) to ground. When you press the button it will create a connection from Pin 0 to ground and send a message to the cloud.

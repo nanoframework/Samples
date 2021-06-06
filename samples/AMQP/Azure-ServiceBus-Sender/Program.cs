@@ -13,6 +13,10 @@ using System.Threading;
 using Windows.Devices.Gpio;
 using AmqpTrace = Amqp.Trace;
 
+#if HAS_WIFI
+using Windows.Devices.WiFi;
+#endif
+
 namespace AmqpSamples.AzureSB.Sender
 {
     public class Program
@@ -21,6 +25,11 @@ namespace AmqpSamples.AzureSB.Sender
         private static string keyName = "<replace-with-servicehub-key-name>";
         private static string keyValue = "<replace-with-servicehub-key-value>";
         private static string entity = "<replace-with-servicehub-entity-name>";
+
+#if HAS_WIFI
+        private static string MySsid = "ssid";
+        private static string MyPassword = "password";
+#endif
 
         private static int temperature;
         private static AutoResetEvent sendMessage = new AutoResetEvent(false);
@@ -31,12 +40,23 @@ namespace AmqpSamples.AzureSB.Sender
 
         public static void Main()
         {
-            // setup and connect network
-            NetworkHelpers.SetupAndConnectNetwork(true);
-
-            // wait for network and valid system date time
-            NetworkHelpers.IpAddressAvailable.WaitOne();
-            NetworkHelpers.DateTimeAvailable.WaitOne();
+            Debug.WriteLine("Waiting for network up and IP address...");
+            bool success;
+            CancellationTokenSource cs = new(60000);
+#if HAS_WIFI
+            success = NetworkHelper.ConnectWifiDhcp(MySsid, MyPassword, setDateTime: true, token: cs.Token);
+#else
+            success = NetworkHelper.WaitForValidIPAndDate(true, System.Net.NetworkInformation.NetworkInterfaceType.Ethernet, cs.Token);
+#endif
+            if (!success)
+            {
+                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.ConnectionError.Error}.");
+                if (NetworkHelper.ConnectionError.Exception != null)
+                {
+                    Debug.WriteLine($"Exception: {NetworkHelper.ConnectionError.Exception}");
+                }
+                return;
+            }
 
             // setup user button
             // F769I-DISCO -> USER_BUTTON is @ PA0 -> (0 * 16) + 0 = 0
@@ -62,12 +82,6 @@ namespace AmqpSamples.AzureSB.Sender
 
         private static void WorkerThread()
         {
-            // need to wait for network connection...
-            NetworkHelpers.IpAddressAvailable.WaitOne();
-
-            // ... and valid date time
-            NetworkHelpers.DateTimeAvailable.WaitOne();
-
             // establish connection
             Connection connection = new Connection(new Address(hubNamespace, 5672, keyName, keyValue));
 
