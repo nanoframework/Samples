@@ -24,9 +24,9 @@ namespace Blinky
             //PinMode.Output);
 
             // ESP32 DevKit: 4 is a valid GPIO pin in, some boards like Xiuxin ESP32 may require GPIO Pin 2 instead.
-            //GpioPin led = s_GpioController.OpenPin(
-            //4,
-            //PinMode.Output);
+            GpioPin led = s_GpioController.OpenPin(
+            4,
+            PinMode.Output);
 
             // F429I_DISCO: PG14 is LEDLD4 
             //GpioPin led = s_GpioController.OpenPin(
@@ -59,9 +59,9 @@ namespace Blinky
             //    PinMode.Output);
 
             // ST_B_L475E_IOT01A: PB14 is LD2
-            GpioPin led = s_GpioController.OpenPin(
-                PinNumber('B', 14),
-                PinMode.Output);
+            //GpioPin led = s_GpioController.OpenPin(
+            //    PinNumber('B', 14),
+            //    PinMode.Output);
 
             // STM32L072Z_LRWAN1: PA5 is LD2
             //GpioPin led = s_GpioController.OpenPin(
