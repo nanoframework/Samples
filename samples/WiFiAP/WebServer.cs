@@ -4,6 +4,7 @@ using System.IO;
 using System.Collections;
 using System.Threading;
 using System.Net;
+using nanoFramework.Runtime.Native;
 
 namespace WiFiAP
 {
@@ -47,12 +48,15 @@ namespace WiFiAP
             var request = context.Request;
             var response = context.Response;
             string responseString;
+            string ssid = null;
+            string password = null;
+            bool isApSet = false;
 
             switch (request.HttpMethod)
             {
                 case "GET":
                     string[] url = request.RawUrl.Split('?');
-                    if ( url[0] == "/favicon.ico")
+                    if (url[0] == "/favicon.ico")
                     {
                         response.ContentType = "image/png";
                         byte[] responseBytes = Resources.GetBytes(Resources.BinaryResources.favicon);
@@ -69,32 +73,38 @@ namespace WiFiAP
                 case "POST":
                     // Pick up POST parameters from Input Stream
                     Hashtable hashPars = ParseParamsFromStream(request.InputStream);
-                    string ssid = (string)hashPars["ssid"];
-                    string password = (string)hashPars["password"];
+                    ssid = (string)hashPars["ssid"];
+                    password = (string)hashPars["password"];
 
                     Debug.WriteLine($"Wireless parameters SSID:{ssid} PASSWORD:{password}");
 
-                    // Enable the Wireless station interface
-                    Wireless80211.Configure(ssid, password);
+                    string message = "<p>New settings saved.</p><p>Rebooting device to put into normal mode</p>";
 
-                    // Disable the Soft AP
-                    WirelessAP.Disable();
-
-                    string message = "<p>New settings saved.</p><p>Reboot device to put into normal mode</p>";
-
-                    responseString = CreateMainPage( message);
+                    responseString = CreateMainPage(message);
 
                     OutPutResponse(response, responseString);
+                    isApSet = true;
                     break;
             }
 
             response.Close();
+
+            if (isApSet && (!string.IsNullOrEmpty(ssid)) && (!string.IsNullOrEmpty(password)))
+            {
+                // Enable the Wireless station interface
+                Wireless80211.Configure(ssid, password);
+
+                // Disable the Soft AP
+                WirelessAP.Disable();
+                Thread.Sleep(200);
+                Power.RebootDevice();
+            }
         }
 
         static string ReplaceMessage(string page, string message)
         {
             int index = page.IndexOf("{message}");
-            if ( index >= 0)
+            if (index >= 0)
             {
                 return page.Substring(0, index) + message + page.Substring(index + 9);
             }
@@ -102,10 +112,10 @@ namespace WiFiAP
             return page;
         }
 
-        static void OutPutResponse( HttpListenerResponse response, string responseString)
+        static void OutPutResponse(HttpListenerResponse response, string responseString)
         {
             var responseBytes = System.Text.Encoding.UTF8.GetBytes(responseString);
-            OutPutByteResponse( response, System.Text.Encoding.UTF8.GetBytes(responseString) );
+            OutPutByteResponse(response, System.Text.Encoding.UTF8.GetBytes(responseString));
         }
         static void OutPutByteResponse(HttpListenerResponse response, Byte[] responseBytes)
         {
@@ -114,15 +124,15 @@ namespace WiFiAP
 
         }
 
-        static Hashtable ParseParamsFromStream( Stream inputStream)
+        static Hashtable ParseParamsFromStream(Stream inputStream)
         {
             byte[] buffer = new byte[inputStream.Length];
             inputStream.Read(buffer, 0, (int)inputStream.Length);
 
-            return ParseParams( System.Text.Encoding.UTF8.GetString(buffer, 0, buffer.Length) );
+            return ParseParams(System.Text.Encoding.UTF8.GetString(buffer, 0, buffer.Length));
         }
 
-        static Hashtable ParseParams( string rawParams)
+        static Hashtable ParseParams(string rawParams)
         {
             Hashtable hash = new Hashtable();
 
