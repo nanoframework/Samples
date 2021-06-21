@@ -1,4 +1,6 @@
-﻿using System.Net.NetworkInformation;
+﻿using nanoFramework.Networking;
+using System.Diagnostics;
+using System.Net.NetworkInformation;
 using System.Threading;
 
 namespace WiFiAP
@@ -8,7 +10,7 @@ namespace WiFiAP
         public static bool IsEnabled()
         {
             Wireless80211Configuration wconf = GetConfiguration();
-            return ((wconf.Options & Wireless80211Configuration.ConfigurationOptions.Enable) == Wireless80211Configuration.ConfigurationOptions.Enable);
+            return !string.IsNullOrEmpty(wconf.Ssid);
         }
 
         /// <summary>
@@ -28,29 +30,14 @@ namespace WiFiAP
         /// <param name="password"></param>
         /// <returns></returns>
         public static bool Configure(string ssid, string password)
-        {
+        {            
+            // And we have to force connect once here even for a short time
+            var success = NetworkHelper.ConnectWifiDhcp(ssid, password, token: new CancellationTokenSource(10000).Token);
+            Debug.WriteLine($"Connection is {success}");
             Wireless80211Configuration wconf = GetConfiguration();
-
-
-            // Set Options for Network Interface
-            //
-            // Enable      - Enable the Wireless Station ( Disable to reduce power )
-            // AutoConnect - Automatically try to connect on boot.
-            //
-            wconf.Options = Wireless80211Configuration.ConfigurationOptions.AutoConnect |
-                            Wireless80211Configuration.ConfigurationOptions.Enable;
-
-            wconf.Ssid = ssid;
-            wconf.Password = password;
-            if (wconf.Password.Length==0)
-                wconf.Authentication = System.Net.NetworkInformation.AuthenticationType.Open;
-            else
-                wconf.Authentication = System.Net.NetworkInformation.AuthenticationType.WPA2;
-
-            // Save the configuration so on restart it will be running.
+            wconf.Options = Wireless80211Configuration.ConfigurationOptions.AutoConnect | Wireless80211Configuration.ConfigurationOptions.Enable;
             wconf.SaveConfiguration();
-
-            return false;
+            return true;
         }
 
         /// <summary>
@@ -59,7 +46,7 @@ namespace WiFiAP
         /// <returns>Wireless80211Configuration object</returns>
         public static Wireless80211Configuration GetConfiguration()
         {
-             NetworkInterface ni = GetInterface();
+            NetworkInterface ni = GetInterface();
             return Wireless80211Configuration.GetAllWireless80211Configurations()[ni.SpecificConfigId];
         }
 
