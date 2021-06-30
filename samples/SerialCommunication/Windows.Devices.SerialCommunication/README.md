@@ -1,6 +1,8 @@
 # Serial Communication samples
 
-Shows how to use the [System.IO.Ports](http://docs.nanoframework.net/api/System.IO.Ports.html) API to send/receive data using an UART (COM port).
+## :waning: This API has been deprecated and it's no longer maintained. It's been replaced with System.IO.Ports.
+
+Shows how to use the [Windows.Devices.SerialCommunication](http://docs.nanoframework.net/api/Windows.Devices.SerialCommunication.html) API to send/receive data using an UART (COM port).
 
 > **Note:** This sample is part of a large collection of nanoFramework feature samples.
 > If you are unfamiliar with Git and GitHub, you can download the entire collection as a
@@ -9,6 +11,9 @@ Shows how to use the [System.IO.Ports](http://docs.nanoframework.net/api/System.
 <!-- For more info on working with the ZIP file, 
 > the samples collection, and GitHub, see [Get the UWP samples from GitHub](https://aka.ms/ovu2uq). 
 > For more samples, see the [Samples portal](https://aka.ms/winsamples) on the Windows Dev Center.  -->
+
+
+# Deprecated Windows.Devices.SerialCommunication
 
 This sample allows the user to configure and communicate with a Serial device over an UART (COM port). You can choose one of four scenarios:
 
@@ -22,11 +27,6 @@ This sample allows the user to configure and communicate with a Serial device ov
 ### Configure the Serial device
 
 This scenario demonstrates the how to instantiate a Serial Device and use of various Get/Set property APIs in order to query for/alter Serial device properties such as Baud Rate, Stop Bits etc.
-
-> NOTE: when working with ESP32 edit the nfproj file and add `BUIID_FOR_ESP32` to the DefineConstants, like this:
-```text
-<DefineConstants>$(DefineConstants);BUIID_FOR_ESP32;</DefineConstants>
-```
 
 ### Send data over the output stream
 
