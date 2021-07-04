@@ -54,8 +54,8 @@
       <HintPath>..\packages\nanoFramework.Logging.Serial.1.0.0-preview.110\lib\nanoFramework.Logging.Serial.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.M2Mqtt, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\nanoFramework.M2Mqtt.4.6.1-preview.89\lib\nanoFramework.M2Mqtt.dll</HintPath>
+    <Reference Include="nanoFramework.M2Mqtt, Version=5.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.M2Mqtt.5.0.0-preview.2\lib\nanoFramework.M2Mqtt.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.NetworkHelper, Version=1.3.2.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">

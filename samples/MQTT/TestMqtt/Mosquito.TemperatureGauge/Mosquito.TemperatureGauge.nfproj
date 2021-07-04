@@ -26,8 +26,8 @@
       <HintPath>..\packages\nanoFramework.CoreLibrary.1.10.5-preview.18\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.M2Mqtt, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\nanoFramework.M2Mqtt.4.6.1-preview.89\lib\nanoFramework.M2Mqtt.dll</HintPath>
+    <Reference Include="nanoFramework.M2Mqtt, Version=5.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.M2Mqtt.5.0.0-preview.2\lib\nanoFramework.M2Mqtt.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Runtime.Events, Version=1.9.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
