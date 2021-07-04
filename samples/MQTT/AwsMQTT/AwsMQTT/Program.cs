@@ -9,8 +9,8 @@ using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
-using uPLibrary.Networking.M2Mqtt;
-using uPLibrary.Networking.M2Mqtt.Messages;
+using nanoFramework.M2Mqtt;
+using nanoFramework.M2Mqtt.Messages;
 
 #if HAS_WIFI
 using Windows.Devices.WiFi;
@@ -140,7 +140,7 @@ lIBzJXkrbY11FY6TNX4YFU2McIX2Ge0058Pozx6tumJ4KxvB9Ges8g==
             client.Connect(clientId);
 
             // subscribe to the topic with QoS 2 
-            client.Subscribe(new string[] { "devices/nanoframework/sys" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE });
+            client.Subscribe(new string[] { "devices/nanoframework/sys" }, new MqttQoSLevel[] { MqttQoSLevel.AtMostOnce });
 
             // launch telemetry thread
             Thread telemetryThread = new Thread(new ThreadStart(TelemetryLoop));
@@ -152,7 +152,7 @@ lIBzJXkrbY11FY6TNX4YFU2McIX2Ge0058Pozx6tumJ4KxvB9Ges8g==
             while (true)
             {
                 string SampleData = $"{{\"MQTT on Nanoframework\" : {DateTime.UtcNow.ToString("u")}}}";
-                client.Publish("devices/nanoframework/data", Encoding.UTF8.GetBytes(SampleData), MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, false);
+                client.Publish("devices/nanoframework/data", Encoding.UTF8.GetBytes(SampleData), MqttQoSLevel.AtMostOnce, false);
 
                 Debug.WriteLine("Message sent: " + SampleData);
 
