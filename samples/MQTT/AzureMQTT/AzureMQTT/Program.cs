@@ -16,8 +16,8 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
-using uPLibrary.Networking.M2Mqtt;
-using uPLibrary.Networking.M2Mqtt.Messages;
+using nanoFramework.M2Mqtt;
+using nanoFramework.M2Mqtt.Messages;
 
 #if HAS_WIFI
 using Windows.Devices.WiFi;
@@ -213,7 +213,7 @@ namespace AzureMQTT
                 String.Format("{0}/{1}/api-version=2018-06-30", iotBrokerAddress, deviceID),
                 GetSharedAccessSignature(null, SasKey, String.Format("{0}/devices/{1}", iotBrokerAddress, deviceID), new TimeSpan(24, 0, 0)),
                 false,
-                MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE,
+                MqttQoSLevel.AtLeastOnce,
                 false, "$iothub/twin/GET/?$rid=999",
                 "Disconnected",
                 false,
@@ -231,20 +231,20 @@ namespace AzureMQTT
                 "$iothub/twin/res/#"
                     },
                     new[] {
-                    MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE,
-                    MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE,
-                    MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE,
-                    MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE
+                    MqttQoSLevel.AtLeastOnce,
+                    MqttQoSLevel.AtLeastOnce,
+                    MqttQoSLevel.AtLeastOnce,
+                    MqttQoSLevel.AtLeastOnce
                     }
                     );
 
 
                 Trace("Sending twin properties");
-                mqttc.Publish(String.Format("{0}?$rid={1}", twinReportedPropertiesTopic, Guid.NewGuid()), Encoding.UTF8.GetBytes("{ \"Firmware\": \"nanoFramework\"}"), MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE, false);
+                mqttc.Publish(String.Format("{0}?$rid={1}", twinReportedPropertiesTopic, Guid.NewGuid()), Encoding.UTF8.GetBytes("{ \"Firmware\": \"nanoFramework\"}"), MqttQoSLevel.AtLeastOnce, false);
 
 
                 Trace("Getting twin properties");
-                mqttc.Publish(String.Format("{0}?$rid={1}", twinDesiredPropertiesTopic, Guid.NewGuid()), Encoding.UTF8.GetBytes(""), MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE, false);
+                mqttc.Publish(String.Format("{0}?$rid={1}", twinDesiredPropertiesTopic, Guid.NewGuid()), Encoding.UTF8.GetBytes(""), MqttQoSLevel.AtLeastOnce, false);
 
 
                 Trace("[MQTT Client] Start to send telemetry");
@@ -261,7 +261,7 @@ namespace AzureMQTT
 
 
                 //Publish telemetry data using AT LEAST ONCE QOS Level
-                mqttc.Publish(telemetryTopic, Encoding.UTF8.GetBytes("{ Temperature: " + temp + "}"), MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE, false);
+                mqttc.Publish(telemetryTopic, Encoding.UTF8.GetBytes("{ Temperature: " + temp + "}"), MqttQoSLevel.AtLeastOnce, false);
 
                 Trace(String.Format("{0} [MQTT Client] Sent telemetry {{ Temperature: {1} }}", DateTime.UtcNow.ToString("u"), temp.ToString()));
 
