@@ -2,6 +2,8 @@
 
 This sample uses the .NET nanoFramework Azure IoT Hub SDK with MQTT protocol. You can find it here: <https://github.com/nanoframework/nanoFramework.Azure.Devices>. You will find in the main readme the detailed information as well.
 
+Note: the samples include the Azure IoT certificate. You can as well upload it into your device as explained in the [main readme](https://github.com/nanoframework/nanoFramework.Azure.Devices).
+
 ## Testing the sample
 
 This sample uses a very popular BMP280 sensor. If you don't have this sensor, there is part of the code that is marked as comment. Just comment those lines and uncomment one of the line. This will simply simulate the sensor with static data.
