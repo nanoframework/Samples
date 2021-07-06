@@ -22,8 +22,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Web;
-using uPLibrary.Networking.M2Mqtt;
-using uPLibrary.Networking.M2Mqtt.Messages;
+using nanoFramework.M2Mqtt;
+using nanoFramework.M2Mqtt.Messages;
 
 const string DeviceID = "nanoDeepSleep";
 const string IotBrokerAddress = "YOURIOTHUB.azure-devices.net";
@@ -105,7 +105,7 @@ try
         $"{IotBrokerAddress}/{DeviceID}/api-version=2020-09-30",
         GetSharedAccessSignature(null, SasKey, $"{IotBrokerAddress}/devices/{DeviceID}", new TimeSpan(24, 0, 0)),
         false,
-        MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE,
+        MqttQoSLevel.ExactlyOnce,
         false, "$iothub/twin/GET/?$rid=999",
         "Disconnected",
         false,
@@ -122,13 +122,13 @@ try
                 "$iothub/twin/res/#"
             },
             new[] {
-                    MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE,
-                    MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE
+                    MqttQoSLevel.AtLeastOnce,
+                    MqttQoSLevel.AtLeastOnce
             }
         );
 
         Trace("Getting twin properties");
-        mqttc.Publish($"{TwinDesiredPropertiesTopic}?$rid={Guid.NewGuid()}", Encoding.UTF8.GetBytes(""), MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE, false);
+        mqttc.Publish($"{TwinDesiredPropertiesTopic}?$rid={Guid.NewGuid()}", Encoding.UTF8.GetBytes(""), MqttQoSLevel.AtLeastOnce, false);
 
         CancellationTokenSource cstwins = new(10000);
         CancellationToken tokentwins = cstwins.Token;
@@ -143,7 +143,7 @@ try
         }
 
         Trace("Sending twin properties");
-        mqttc.Publish($"{TwinReportedPropertiesTopic}?$rid={Guid.NewGuid()}", Encoding.UTF8.GetBytes($"{{\"Firmware\":\"nanoFramework\",\"TimeToSleep\":{minutesToGoToSleep}}}"), MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE, false);
+        mqttc.Publish($"{TwinReportedPropertiesTopic}?$rid={Guid.NewGuid()}", Encoding.UTF8.GetBytes($"{{\"Firmware\":\"nanoFramework\",\"TimeToSleep\":{minutesToGoToSleep}}}"), MqttQoSLevel.AtLeastOnce, false);
 
         // I2C#	Data	Clock
         // I2C1	GPIO 18	GPIO 19
@@ -161,7 +161,7 @@ try
         Trace($"Pressure: {readResult.Pressure.Hectopascals}hPa");
 
         //Publish telemetry data
-        messageID = mqttc.Publish(telemetryTopic, Encoding.UTF8.GetBytes($"{{\"Temperature\":{readResult.Temperature.DegreesCelsius},\"Pressure\":{readResult.Pressure.Hectopascals}}}"), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
+        messageID = mqttc.Publish(telemetryTopic, Encoding.UTF8.GetBytes($"{{\"Temperature\":{readResult.Temperature.DegreesCelsius},\"Pressure\":{readResult.Pressure.Hectopascals}}}"), MqttQoSLevel.ExactlyOnce, false);
         Trace($"Message ID for telemetry: {messageID}");
 
         // Wait for the message or cancel if waiting for too long
