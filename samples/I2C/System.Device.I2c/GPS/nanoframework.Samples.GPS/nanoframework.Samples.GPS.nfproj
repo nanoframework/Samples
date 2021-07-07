@@ -32,7 +32,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Device.I2c, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.Device.I2c.1.0.1-preview.38\lib\System.Device.I2c.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.System.Device.I2c.1.0.1-preview.39\lib\System.Device.I2c.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
