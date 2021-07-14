@@ -10,6 +10,11 @@ Shows how to use the HTTP related APIs in [System.Net](http://docs.nanoframework
 > the samples collection, and GitHub, see [Get the UWP samples from GitHub](https://aka.ms/ovu2uq). 
 > For more samples, see the [Samples portal](https://aka.ms/winsamples) on the Windows Dev Center.  -->
 
+> NOTE: when working with ESP32 edit the nfproj files and add `BUIID_FOR_ESP32` to the DefineConstants, like this:
+```text
+<DefineConstants>$(DefineConstants);BUIID_FOR_ESP32;</DefineConstants>
+```
+
 ## Scenarios
 
 ### HTTP listener

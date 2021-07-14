@@ -30,7 +30,7 @@ Any hardware device running a nanoFramework image that supports WiFi.
 ```csharp
  string sas = "<Enter SAS Token Here See Read Me for example>";
 ```
-7. Enter your Wifi Settings in the program.cs file and create a #define HAS_WIFI
+7. Enter your Wifi Settings in the program.cs file and create a #define BUILD_FOR_ESP32
 ```csharp
 private const string MySsid = "<replace-with-valid-ssid";
 private const string MyPassword = "<replace-with-valid-password>";

@@ -15,7 +15,7 @@ using System.Text;
 using System.Threading;
 using Windows.Devices.Gpio;
 
-#if HAS_WIFI
+#if BUILD_FOR_ESP32
 using Windows.Devices.WiFi;
 #endif
 
@@ -23,7 +23,7 @@ namespace HttpSamples.HttpAzurePOST
 {
     public class Program
     {
-#if HAS_WIFI
+#if BUILD_FOR_ESP32
         private static string MySsid = "ssid";
         private static string MyPassword = "password";      
 #endif
@@ -40,7 +40,7 @@ namespace HttpSamples.HttpAzurePOST
             Debug.WriteLine("Waiting for network up and IP address...");
             bool success;
             CancellationTokenSource cs = new(60000);
-#if HAS_WIFI
+#if BUILD_FOR_ESP32
             success = NetworkHelper.ConnectWifiDhcp(MySsid, MyPassword, setDateTime: true, token: cs.Token);
 #else
             success = NetworkHelper.WaitForValidIPAndDate(true, System.Net.NetworkInformation.NetworkInterfaceType.Ethernet, cs.Token);
