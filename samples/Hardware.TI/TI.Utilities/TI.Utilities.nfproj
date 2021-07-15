@@ -28,7 +28,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Hardware.TI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Hardware.TI.1.0.0-preview.46\lib\nanoFramework.Hardware.TI.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.Hardware.TI.1.0.0-preview.47\lib\nanoFramework.Hardware.TI.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
