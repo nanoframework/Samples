@@ -27,7 +27,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Runtime.Native, Version=1.5.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Runtime.Native.1.5.1-preview.46\lib\nanoFramework.Runtime.Native.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.Runtime.Native.1.5.1-preview.47\lib\nanoFramework.Runtime.Native.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
