@@ -30,8 +30,8 @@
       <HintPath>..\packages\nanoFramework.Runtime.Events.1.9.1\lib\nanoFramework.Runtime.Events.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Windows.Devices.Gpio, Version=1.5.2.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Windows.Devices.Gpio.1.5.2-preview.47\lib\Windows.Devices.Gpio.dll</HintPath>
+    <Reference Include="Windows.Devices.Gpio, Version=1.5.2.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Windows.Devices.Gpio.1.5.2\lib\Windows.Devices.Gpio.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Windows.Devices.Pwm, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
