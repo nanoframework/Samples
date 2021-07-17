@@ -34,8 +34,8 @@
       <HintPath>..\packages\nanoFramework.Windows.Devices.Gpio.1.5.2\lib\Windows.Devices.Gpio.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Windows.Devices.Pwm, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Windows.Devices.Pwm.1.6.0-preview.46\lib\Windows.Devices.Pwm.dll</HintPath>
+    <Reference Include="Windows.Devices.Pwm, Version=1.6.0.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Windows.Devices.Pwm.1.6.0\lib\Windows.Devices.Pwm.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
