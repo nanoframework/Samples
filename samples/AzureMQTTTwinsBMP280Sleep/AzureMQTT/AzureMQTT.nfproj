@@ -31,7 +31,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Iot.Device.Bmxx80, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\nanoFramework.Iot.Device.Bmxx80.1.0.136\lib\Iot.Device.Bmxx80.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.Iot.Device.Bmxx80.1.0.138\lib\Iot.Device.Bmxx80.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib, Version=1.10.5.4, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -47,11 +47,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Logging.1.0.0-preview.120\lib\nanoFramework.Logging.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.Logging.1.0.0-preview.122\lib\nanoFramework.Logging.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Logging.Serial, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\nanoFramework.Logging.Serial.1.0.0-preview.120\lib\nanoFramework.Logging.Serial.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.Logging.Serial.1.0.0-preview.122\lib\nanoFramework.Logging.Serial.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.M2Mqtt, Version=5.0.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
