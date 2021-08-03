@@ -23,7 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Amqp.nanoFramework, Version=2.1.0.0, Culture=neutral, PublicKeyToken=905a7b1e6458e0c3">
-      <HintPath>..\packages\AMQPNetLite.nanoFramework.2.4.3-preview.236\lib\Amqp.nanoFramework.dll</HintPath>
+      <HintPath>..\packages\AMQPNetLite.nanoFramework.2.4.4-preview.1\lib\Amqp.nanoFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib, Version=1.10.5.4, Culture=neutral, PublicKeyToken=c07d481e9758c731">
