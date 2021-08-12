@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "DpsSampleApp", "DpsSampleApp.nfproj", "{78B925BE-F9D8-40EA-9277-4494D5E0B6B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78B925BE-F9D8-40EA-9277-4494D5E0B6B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78B925BE-F9D8-40EA-9277-4494D5E0B6B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78B925BE-F9D8-40EA-9277-4494D5E0B6B6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{78B925BE-F9D8-40EA-9277-4494D5E0B6B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78B925BE-F9D8-40EA-9277-4494D5E0B6B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78B925BE-F9D8-40EA-9277-4494D5E0B6B6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DEE2E1AD-D4DA-4382-AFC3-5FBEB3CCBCA6}
+	EndGlobalSection
+EndGlobal
