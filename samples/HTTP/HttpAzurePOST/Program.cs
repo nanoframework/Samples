@@ -78,7 +78,7 @@ namespace HttpSamples.HttpAzurePOST
             var to = sas.IndexOf(".");
             string iotHubName = sas.Substring(from, to - from);
             // strip the deviceName from the SAS
-            to = sas.IndexOf("1&") + 1;
+            to = sas.IndexOf("&");
             from = sas.IndexOf("%2Fdevices%2F") + 13;
             string deviceName = sas.Substring(from, to - from);
 
