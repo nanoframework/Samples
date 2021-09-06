@@ -1,10 +1,18 @@
 # MQTT sample pack
 
-Shows how to use various MQTT services.
+The M2Mqtt library provides a main class `MqttClient` that represents the MQTT client to connect to a broker. You can connect to the broker providing its IP address or host name and optionally some parameters related to MQTT protocol.
 
-- [AWS IoT Core](AwsMQTT/)
-- [Azure IoT Hub](AzureMQTT/)
-- [Local broquer and Mosquito test server](TestMqtt/)
+After connecting to the broker you can use `Publish()` method to publish a message to a topic and `Subscribe()` method to subscribe to a topic and receive message published on it. The `MqttClient` class is events based so that you receive an event when a message is published to a topic you subscribed to. You can receive event when a message publishing is complete, you have subscribed or unsubscribed to a topic.
+
+For more details, see the comments inside the samples.
+
+
+| Sample | Description | 
+|---|---|
+|[BasicExample.Ethernet](./TestMqtt/BasicExample.Ethernet)|The most basic usage, without authentication or certificates. Ready to run on Ethernet-based boards.|
+|[BasicExample.WiFi](./TestMqtt/BasicExample.WiFi)|The most basic usage, without authentication or certificates. Ready to run on WiFi-based boards.|
+|[AdvancedExample.Certificates](./TestMqtt/AdvancedExample.Certificate)|Basic usage, but uses secure connection and certificate-based authorization.|
+
 
 > **Note:** This sample is part of a large collection of nanoFramework feature samples.
 > If you are unfamiliar with Git and GitHub, you can download the entire collection as a
