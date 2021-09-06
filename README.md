@@ -17,7 +17,7 @@ Feel free to browse, take what you like and contribute back if you want.
 | Communication | | |
 | --- | --- | --- |
 | [SerialCommunication sample pack](samples/SerialCommunication) | [CAN sample](samples/CAN) | [AMQP sample pack](samples/AMQP) |
-| [MQTT sample pack](samples/MQTT/TestMqtt) | [MQTT sample with Azure IoT Hub](samples/MQTT/AzureMQTT) | [MQTT sample with Amazon Web Services (AWS) IoT](samples/MQTT/AwsMQTT) |
+| [MQTT sample pack](samples/MQTT) | | |
 | [Azure MQTT with twins and BMP280 sleep function](samples/AzureMQTTTwinsBMP280Sleep) | [Azure IoT Hub SDK](samples/AzureSDK/AzureSDK) | [Azure IoT Hub SDK with twins and BMP280 sleep function](samples/AzureSDK/AzureSDKSleepBMP280) |
 | [Azure IoT Device Provisioning Service (DPS)](samples/AzureSDK/DpsSampleApp) |  |  |
 
