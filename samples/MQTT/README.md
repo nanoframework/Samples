@@ -9,9 +9,11 @@ For more details, see the comments inside the samples.
 
 | Sample | Description | 
 |---|---|
-|[BasicExample.Ethernet](./TestMqtt/BasicExample.Ethernet)|The most basic usage, without authentication or certificates. Ready to run on Ethernet-based boards.|
-|[BasicExample.WiFi](./TestMqtt/BasicExample.WiFi)|The most basic usage, without authentication or certificates. Ready to run on WiFi-based boards.|
-|[AdvancedExample.Certificates](./TestMqtt/AdvancedExample.Certificate)|Basic usage, but uses secure connection and certificate-based authorization.|
+|[BasicExample.Ethernet](./BasicExample.Ethernet)|The most basic usage, without authentication or certificates. Ready to run on Ethernet-based boards.|
+|[BasicExample.WiFi](./BasicExample.WiFi)|The most basic usage, without authentication or certificates. Ready to run on WiFi-based boards.|
+|[AdvancedExample.Certificates](./AdvancedExample.Certificate)|Basic usage, but uses secure connection and certificate-based authorization.|
+|[AdvancedExample.Aws](./AdvancedExample.Aws)|Very advanced sample of how to use MQTT in AWS. Requires having an AWS account.|
+|[AdvancedExample.Azure](./AdvancedExample.Azure)|Very advanced sample of how to use MQTT in Azure. Requires having an Azure account.|
 
 
 > **Note:** This sample is part of a large collection of nanoFramework feature samples.
@@ -25,7 +27,7 @@ For more details, see the comments inside the samples.
 ## Hardware requirements
 
 An hardware device with networking capabilities running a nanoFramework image.
-These samples have been tested with SMT32F769IDISCOVERY and ESP-WROVER-KIT boards.
+These samples have been tested with SMT32F769IDISCOVERY, ESP-WROVER-KIT and ESP32 Pico boards.
 
 ## Related topics
 
