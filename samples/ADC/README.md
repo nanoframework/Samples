@@ -1,4 +1,4 @@
-# System.Random sample
+# ADC sample
 
 Shows how to use the [Windows.Devices.Adc](http://docs.nanoframework.net/api/Windows.Devices.Adc.html) API to read external voltages using an ADC.
 
