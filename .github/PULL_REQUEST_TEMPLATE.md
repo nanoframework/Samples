@@ -20,6 +20,7 @@
 - [ ] Improvement (non-breaking change that improves a sample)
 - [ ] Bug fix (fixes an issue with a current sample)
 - [ ] New Sample (adds a new sample)
+- [ ] Config and build (change in the configuration and build system, has no impact on code or features)
 
 ## Checklist:
 <!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
