@@ -30,9 +30,6 @@ jobs:
         with:
           repository: nanoframework/nf-tools
           path: tools
-      # - name: Update dependencies
-      #   run: ./github-actions/update-nf-dependencies.ps1 -targetPath samples
-      #   working-directory: tools
       - name: Install build components for nanoFramework
         run: ./github-actions/install-nf-build-components.ps1
         working-directory: tools
