@@ -24,17 +24,31 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  nugetPackageName: ''
 
 steps:
+### Following steps take from https://github.com/nanoframework/nf-tools/blob/main/azure-pipelines-templates/class-lib-build.yml
+- task: InstallnFBuildComponents@1
+  condition: and( succeeded(), ne( variables['StartReleaseCandidate'], true ) )
+  displayName: Install nanoFramework MSBuild components
 
-# step from template @ nf-tools repo
-# all build, update and publish steps
-- template: azure-pipelines-templates/class-lib-build.yml@templates
-  parameters:
-    sonarCloudProject: ''
-    runUnitTests: false
-    unitTestRunsettings: ''
+- template: install-nuget.yml
+
+- task: NuGetCommand@2
+  condition: and( succeeded(), not( ${{ parameters.skipNuGetRestore }} ), ne( variables['StartReleaseCandidate'], true ) )
+  displayName: NuGet restore
+  inputs:
+    restoreSolution: '$(solution)'
+    feedsToUse: config
+    nugetConfigPath: ${{ parameters.nugetConfigPath }}
+
+- task: VSBuild@1
+  condition: and( succeeded(), ne( variables['StartReleaseCandidate'], true ) )
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    msbuildArgs: '/p:PublicRelease=true ${{ parameters.msbuildExtraParams }}'
+    configuration: '$(buildConfiguration)'
+###
 
 # step from template @ nf-tools repo
 # report error
