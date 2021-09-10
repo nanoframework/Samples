@@ -1,10 +1,8 @@
 trigger:
   branches:
-    include: [main, develop, "release-*" ]
+    include: [main]
   paths:
-    exclude: [README.md, LICENSE.md, NuGet.Config, .github_changelog_generator, .gitignore]
-  tags:
-    include: ["v*"]
+    exclude: [README.md, LICENSE.md, NuGet.Config, .gitignore]
 
 # PR always trigger build
 
@@ -26,31 +24,25 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-### Following steps take from https://github.com/nanoframework/nf-tools/blob/main/azure-pipelines-templates/class-lib-build.yml
 - task: InstallnFBuildComponents@1
-  condition: and( succeeded(), ne( variables['StartReleaseCandidate'], true ) )
   displayName: Install nanoFramework MSBuild components
 
-- template: install-nuget.yml
+- template: azure-pipelines-templates/install-nuget.yml@templates
 
 - task: NuGetCommand@2
-  condition: and( succeeded(), not( ${{ parameters.skipNuGetRestore }} ), ne( variables['StartReleaseCandidate'], true ) )
   displayName: NuGet restore
   inputs:
     restoreSolution: '$(solution)'
     feedsToUse: config
-    nugetConfigPath: ${{ parameters.nugetConfigPath }}
+    nugetConfigPath: 'NuGet.config'
 
 - task: VSBuild@1
-  condition: and( succeeded(), ne( variables['StartReleaseCandidate'], true ) )
+  condition: succeeded()
   inputs:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
-    msbuildArgs: '/p:PublicRelease=true ${{ parameters.msbuildExtraParams }}'
     configuration: '$(buildConfiguration)'
-###
 
-# step from template @ nf-tools repo
 # report error
 - template: azure-pipelines-templates/discord-webhook-task.yml@templates  
   parameters:
