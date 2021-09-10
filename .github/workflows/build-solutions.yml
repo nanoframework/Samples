@@ -1,9 +1,7 @@
 # Copyright (c) .NET Foundation and Contributors
 # See LICENSE file in the project root for full license information.
 
-# This workflow will periodically check .NET nanoFramework dependencies and updates them in the repository it's running.
-
-name: Daily update dependencies
+name: Build Solutions
 
 on:
   # schedule:
@@ -19,8 +17,8 @@ defaults:
 
 jobs:
   build-sample-solutions:
-    name: Update .NET nanoFramework dependencies
-    timeout-minutes: 60 # Non default as Samples has lots of things to update!
+    name: Build Sample solutions
+    timeout-minutes: 60 # Non default as Samples has lots of things to build!
     runs-on: windows-latest
     steps:
       - name: Checkout
