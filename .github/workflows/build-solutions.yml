@@ -38,12 +38,17 @@ jobs:
         working-directory: tools
       - name: Setup MSBuild Path
         uses: microsoft/setup-msbuild@v1.0.2
+      - name: Install NuGet client
+        uses: nuget/setup-nuget@v1
+        # with:
+        #   nuget-version: '5.8.0'
       - name: Build all sample programs
         run: |
           # find every solution file in the samples repository
           $solutionFiles = (Get-ChildItem -Path "samples" -Include "*.sln"  -Recurse)
           foreach ($solutionFile in $solutionFiles)
           {
+            nuget restore ${{ $solutionFile }}
             msbuild ${{ $solutionFile }} /p:Configuration="Release"
           }
         working-directory: main
