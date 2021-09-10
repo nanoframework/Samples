@@ -17,7 +17,7 @@ defaults:
     shell: pwsh
 
 jobs:
-  update-dotnet-preview:
+  update-nugets:
     name: Update .NET nanoFramework dependencies
     timeout-minutes: 60 # Non default as Samples has lots of things to update!
     runs-on: windows-latest
@@ -34,20 +34,21 @@ jobs:
       - name: Update dependencies
         run: ./github-actions/update-nf-dependencies.ps1 -targetPath samples
         working-directory: tools
-      - name: Install build components for nanoFramework
-        run: ./github-actions/install-nf-build-components.ps1
-        working-directory: tools
-      - name: Setup MSBuild Path
-        uses: microsoft/setup-msbuild@v1.0.2
-      - name: Build all sample programs
-        run: |
-          # find every solution file in the samples repository
-          $solutionFiles = (Get-ChildItem -Path "samples" -Include "*.sln"  -Recurse)
-          foreach ($solutionFile in $solutionFiles)
-          {
-            msbuild ${{ $solutionFile }} /p:Configuration="Release"
-          }
-        working-directory: main
+      # - name: Install build components for nanoFramework
+      #   run: ./github-actions/install-nf-build-components.ps1
+      #   working-directory: tools
+      # - name: Setup MSBuild Path
+      #   uses: microsoft/setup-msbuild@v1.0.2
+      # - name: Build all sample programs
+      #   run: |
+      #     # find every solution file in the samples repository
+      #     $solutionFiles = (Get-ChildItem -Path "samples" -Include "*.sln"  -Recurse)
+      #     foreach ($solutionFile in $solutionFiles)
+      #     {
+      #       msbuild ${{ $solutionFile }} /p:Configuration="Release"
+      #     }
+      #   working-directory: main
+      #   continue-on-error: true
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         if: env.CREATE_PR == 'true'
