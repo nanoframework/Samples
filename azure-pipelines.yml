@@ -1,0 +1,51 @@
+trigger:
+  branches:
+    include: [main]
+  paths:
+    exclude: [README.md, LICENSE.md, NuGet.Config, .gitignore]
+
+# PR always trigger build
+
+# add nf-tools repo to resources (for Azure Pipelines templates)
+resources:
+  repositories:
+    - repository: templates
+      type: github
+      name: nanoframework/nf-tools
+      endpoint: nanoframework
+
+pool:
+  vmImage: 'windows-2019'
+
+variables:
+  DOTNET_NOLOGO: true
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: InstallnFBuildComponents@1
+  displayName: Install nanoFramework MSBuild components
+
+- template: azure-pipelines-templates/install-nuget.yml@templates
+
+- task: NuGetCommand@2
+  displayName: NuGet restore
+  inputs:
+    restoreSolution: '$(solution)'
+    feedsToUse: config
+    nugetConfigPath: 'NuGet.config'
+
+- task: VSBuild@1
+  condition: succeeded()
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+# report error
+- template: azure-pipelines-templates/discord-webhook-task.yml@templates  
+  parameters:
+    status: 'failure'
+    webhookUrl: '$(DiscordWebhook)'
+    message: ''
