@@ -1,9 +1,9 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.757
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "AzureMQTT", "AzureMQTT\AzureMQTT.nfproj", "{134D1FF7-73CC-4B27-AA43-58FE42996DD1}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "AdvancedExample.Azure", "AdvancedExample.Azure.nfproj", "{134D1FF7-73CC-4B27-AA43-58FE42996DD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,6 +22,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C967FC56-9F2D-40AD-8B89-52B96DFD776B}
+		SolutionGuid = {C7B142EE-D5BB-479A-9CE0-EB52F2834351}
 	EndGlobalSection
 EndGlobal
