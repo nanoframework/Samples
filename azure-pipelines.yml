@@ -102,35 +102,41 @@ steps:
     # get unique folder names
     $sampleFolders = $results | Sort-Object | Select-Object | Foreach-Object {$_.Groups["folder"].Value} | Get-Unique 
 
-    Write-host "Found $($sampleFolders.count) samples to build"
+    Write-host "Found $($sampleFolders.count) sample(s) to build"
 
     foreach ($folder in $sampleFolders)
     {
         "" | Write-Host -ForegroundColor Yellow
         "***********************" | Write-Host -ForegroundColor Yellow
-        "Processing '$folder'..." | Write-Host -ForegroundColor Yellow
+        "Processing sample '$folder'..." | Write-Host -ForegroundColor Yellow
         "***********************" | Write-Host -ForegroundColor Yellow
         "" | Write-Host -ForegroundColor Yellow
         
-        # try to find the solution
+        # try to find all solution files
         $solutionFiles = Get-ChildItem -Path "samples\$folder\" -Include "*.sln" -Recurse
 
         if($null -eq $solutionFiles)
         {
             "Couldn't find any solution file!"  | Write-Host -ForegroundColor Red
-            throw "Couldn't the solution for '$folder'..."
+            throw "Couldn't find any solution file inside '$folder'..."
         }
         else
         {
             foreach ($sln in $solutionFiles)
             {
+                "" | Write-Host -ForegroundColor Yellow
+                "***********************" | Write-Host -ForegroundColor Yellow
                 "Building solution: '$sln'" | Write-Host -ForegroundColor Yellow
+                "***********************" | Write-Host -ForegroundColor Yellow
+                "" | Write-Host -ForegroundColor Yellow
                         
                 # need to restore NuGets first
                 nuget restore $sln
+                if (-not $?) { throw "Error restoring '$sln'" }
 
                 # build solution
                 & "$msbuild" "$sln" /verbosity:normal /p:Configuration=Release
+                if (-not $?) { throw "Error building '$sln'" }
             }
         }
     }
