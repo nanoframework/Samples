@@ -208,7 +208,7 @@ namespace AzureMQTT
             // handler for unsubscriber
             mqttc.MqttMsgUnsubscribed += client_MqttMsgUnsubscribed;
 
-            byte code = mqttc.Connect(
+            MqttReasonCode code = mqttc.Connect(
                 deviceID,
                 String.Format("{0}/{1}/api-version=2018-06-30", iotBrokerAddress, deviceID),
                 GetSharedAccessSignature(null, SasKey, String.Format("{0}/devices/{1}", iotBrokerAddress, deviceID), new TimeSpan(24, 0, 0)),
