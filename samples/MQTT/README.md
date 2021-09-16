@@ -32,6 +32,7 @@ These samples have been tested with SMT32F769IDISCOVERY, ESP-WROVER-KIT and ESP3
 ## Related topics
 
 ### Reference
+- See API documentation [here](https://docs.nanoframework.net/api/nanoFramework.M2Mqtt.html).
 
 ## Build the sample
 
