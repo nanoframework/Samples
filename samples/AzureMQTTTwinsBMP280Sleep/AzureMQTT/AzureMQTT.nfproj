@@ -55,16 +55,17 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.M2Mqtt, Version=5.0.2.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.M2Mqtt.5.0.2-preview.1\lib\nanoFramework.M2Mqtt.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.M2Mqtt.5.0.2-preview.9\lib\nanoFramework.M2Mqtt.dll</HintPath>
       <Private>True</Private>
+      <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="nanoFramework.NetworkHelper, Version=1.3.3.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.NetWorkHelper.1.3.3-preview.5\lib\nanoFramework.NetworkHelper.dll</HintPath>
+    <Reference Include="nanoFramework.NetworkHelper, Version=1.3.4.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.NetWorkHelper.1.3.4-preview.3\lib\nanoFramework.NetworkHelper.dll</HintPath>
       <Private>True</Private>
+      <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="nanoFramework.Networking.Sntp, Version=1.5.3.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Networking.Sntp.1.5.3\lib\nanoFramework.Networking.Sntp.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="nanoFramework.Networking.Sntp">
+      <HintPath>..\packages\nanoFramework.Networking.Sntp.1.5.7-preview.2\lib\nanoFramework.Networking.Sntp.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.ResourceManager, Version=1.1.2.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.ResourceManager.1.1.2\lib\nanoFramework.ResourceManager.dll</HintPath>
@@ -134,8 +135,8 @@
       <HintPath>..\packages\UnitsNet.nanoFramework.Temperature.4.102.0\lib\UnitsNet.Temperature.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Windows.Devices.Wifi, Version=1.3.2.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Windows.Devices.Wifi.1.3.2\lib\Windows.Devices.Wifi.dll</HintPath>
+    <Reference Include="Windows.Devices.Wifi, Version=1.3.3.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Windows.Devices.Wifi.1.3.3\lib\Windows.Devices.Wifi.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Windows.Storage.Streams, Version=1.12.2.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
