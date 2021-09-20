@@ -30,7 +30,6 @@
     <Compile Include="Wireless80211.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Resources\Images\favicon.png" />
     <None Include="Resources\favicon.ico.bmp" />
