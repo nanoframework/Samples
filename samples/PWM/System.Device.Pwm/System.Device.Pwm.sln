@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "System.Device.Pwm", "System.Device.Pwm.nfproj", "{B362ACD8-DCD0-4CA3-A0B5-7F1583574A3A}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "PwmSample", "PwmSample.nfproj", "{B362ACD8-DCD0-4CA3-A0B5-7F1583574A3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

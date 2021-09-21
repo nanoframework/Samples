@@ -1,4 +1,6 @@
-# PWM sample
+# Windows.Devices.Pwm sample
+
+Please prefer to use [System.Device.Pwm](https://github.com/nanoframework/System.Device.Pwm). This is going o be deprecated. Sample available [here](../System.Device.Pwm).
 
 Shows how to use the [Windows.Devices.Pwm](http://docs.nanoframework.net/api/Windows.Devices.Pwm.html) API to drive a GPIO pin with a PWM signal. This pin is connected to an LED thus increasing and decreasing its light intensity periodically.
 
