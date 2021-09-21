@@ -100,7 +100,7 @@ try
     mqttc.MqttMsgPublished += ClientMqttMsgPublished;
 
     // Now connect the device
-    byte code = mqttc.Connect(
+    MqttReasonCode code = mqttc.Connect(
         DeviceID,
         $"{IotBrokerAddress}/{DeviceID}/api-version=2020-09-30",
         GetSharedAccessSignature(null, SasKey, $"{IotBrokerAddress}/devices/{DeviceID}", new TimeSpan(24, 0, 0)),

@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "AdvancedExample.Aws", "AdvancedExample.Aws.nfproj", "{2F835D0B-3393-4274-8433-B4BCBDA10DC4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F835D0B-3393-4274-8433-B4BCBDA10DC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F835D0B-3393-4274-8433-B4BCBDA10DC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F835D0B-3393-4274-8433-B4BCBDA10DC4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2F835D0B-3393-4274-8433-B4BCBDA10DC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F835D0B-3393-4274-8433-B4BCBDA10DC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F835D0B-3393-4274-8433-B4BCBDA10DC4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54578138-AF50-4A2B-9623-6C407FD38629}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,152 @@
+trigger:
+  branches:
+    include: [main]
+  paths:
+    exclude: [README.md, LICENSE.md, NuGet.Config, .gitignore]
+
+# PR always trigger build
+pr:
+  autoCancel: true
+
+# add nf-tools repo to resources (for Azure Pipelines templates)
+resources:
+  repositories:
+    - repository: templates
+      type: github
+      name: nanoframework/nf-tools
+      endpoint: nanoframework
+
+pool:
+  vmImage: 'windows-2019'
+
+variables:
+  DOTNET_NOLOGO: true
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+
+# need this here in order to persist GitHub credentials 
+# only need the latest commit
+- checkout: self
+  fetchDepth: 1
+
+- template: azure-pipelines-templates/install-nuget.yml@templates
+
+- task: InstallnFBuildComponents@1
+  displayName: Install nanoFramework MSBuild components
+
+# only build solutions that need to be build
+- powershell: |
+    # setup msbuild
+    $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+    $msbuild = & $vswhere -latest -products * -requires Microsoft.Component.MSBuild -property installationPath
+    if ($msbuild) {
+        $msbuild = join-path $msbuild 'MSBuild\Current\Bin\MSBuild.exe'
+    }
+
+    # compute authorization header in format "AUTHORIZATION: basic 'encoded token'"
+    # 'encoded token' is the Base64 of the string "nfbot:personal-token"
+    $auth = "basic $([System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("nfbot:${env:MY_GITHUBTOKEN}"))))"
+
+    if($env:System_PullRequest_PullRequestId -ne $null)
+    {
+        "" | Write-Host -ForegroundColor Yellow
+        "**********************" | Write-Host -ForegroundColor Yellow
+        "* Building from a PR *" | Write-host -ForegroundColor Yellow
+        "**********************" | Write-Host -ForegroundColor Yellow
+        "" | Write-Host -ForegroundColor Yellow
+
+        # get files changed in PR, if this is a PR
+        # can get max of 100 files using this method (for more requires paging)
+        $commit = Invoke-RestMethod -Uri "https://api.github.com/repos/nanoframework/Samples/pulls/$env:System_PullRequest_PullRequestNumber/files?per_page=100" -Header @{"Authorization"="$auth"} -ContentType "application/json" -Method GET
+
+        # filter removed files              
+        $files = $commit.where{$_.status -ne 'removed'}
+    }
+    else
+    {
+        "" | Write-Host -ForegroundColor Yellow
+        "**************************" | Write-Host -ForegroundColor Yellow
+        "* Building from a commit *" | Write-host -ForegroundColor Yellow
+        "**************************" | Write-Host -ForegroundColor Yellow
+        "" | Write-Host -ForegroundColor Yellow
+
+        # get files changed in the commit, if this is NOT a PR
+        $commit = Invoke-RestMethod -Uri "https://api.github.com/repos/nanoframework/Samples/commits/$(Build.SourceVersion)" -Header @{"Authorization"="$auth"} -ContentType "application/json" -Method GET
+
+        # filter removed files              
+        $files = $commit.files.where{$_.status -ne 'removed'}
+    }
+
+    # get file names only
+    $files1 = $files | % {$_.filename} | Where-Object {$_ -match 'samples/*'} 
+
+    if($null -eq $files1)
+    {
+        Write-host "No 'samples' found to build"
+        exit
+    }
+
+    Write-host "Files changed:"
+    $files1 | % { Write-host $_ }
+    Write-host ""
+
+    # pattern to select samples folder name
+    $pattern = '(samples\/)(?<folder>[a-zA-Z0-9._]+)(?>\/)'
+
+    # filter out the collection
+    $results = [Regex]::Matches($files1, $pattern)
+
+    # get unique folder names
+    $sampleFolders = $results | Sort-Object | Select-Object | Foreach-Object {$_.Groups["folder"].Value} | Get-Unique 
+
+    Write-host "Found $($sampleFolders.count) sample(s) to build"
+
+    foreach ($folder in $sampleFolders)
+    {
+        "" | Write-Host -ForegroundColor Yellow
+        "***********************" | Write-Host -ForegroundColor Yellow
+        "Processing sample '$folder'..." | Write-Host -ForegroundColor Yellow
+        "***********************" | Write-Host -ForegroundColor Yellow
+        "" | Write-Host -ForegroundColor Yellow
+        
+        # try to find all solution files
+        $solutionFiles = Get-ChildItem -Path "samples\$folder\" -Include "*.sln" -Recurse
+
+        if($null -eq $solutionFiles)
+        {
+            "Couldn't find any solution file!"  | Write-Host -ForegroundColor Red
+            throw "Couldn't find any solution file inside '$folder'..."
+        }
+        else
+        {
+            foreach ($sln in $solutionFiles)
+            {
+                "" | Write-Host -ForegroundColor Yellow
+                "***********************" | Write-Host -ForegroundColor Yellow
+                "Building solution: '$sln'" | Write-Host -ForegroundColor Yellow
+                "***********************" | Write-Host -ForegroundColor Yellow
+                "" | Write-Host -ForegroundColor Yellow
+                        
+                # need to restore NuGets first
+                nuget restore $sln
+                if (-not $?) { throw "Error restoring '$sln'" }
+
+                # build solution
+                & "$msbuild" "$sln" /verbosity:normal /p:Configuration=Release
+                if (-not $?) { throw "Error building '$sln'" }
+            }
+        }
+    }
+  displayName: Build solutions
+  env:
+    MY_GITHUBTOKEN: $(GitHubToken)
+
+# report error
+- template: azure-pipelines-templates/discord-webhook-task.yml@templates  
+  parameters:
+    status: 'failure'
+    webhookUrl: '$(DiscordWebhook)'
+    message: ''
