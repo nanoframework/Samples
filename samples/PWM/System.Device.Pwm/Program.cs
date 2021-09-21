@@ -1,4 +1,4 @@
-//
+﻿//
 // Copyright (c) .NET Foundation and Contributors
 // See LICENSE file in the project root for full license information.
 //
@@ -9,6 +9,7 @@ using System;
 using System.Device.Pwm;
 using System.Diagnostics;
 using System.Threading;
+
 
 Debug.WriteLine("Hello from Pwm!");
 
@@ -29,7 +30,7 @@ PwmChannel pwmPin = PwmChannel.CreateFromPin(18, 40000, 0);
 // Start the PWM
 pwmPin.Start();
 
-while(true)
+while (true)
 {
     if (goingUp)
     {
@@ -37,7 +38,8 @@ while(true)
         dutyCycle += 0.05f;
 
         // change direction if reaching maximum duty cycle (100%)
-        if (dutyCycle > .95) goingUp = !goingUp;
+        if (dutyCycle > .95)
+            goingUp = !goingUp;
     }
     else
     {
@@ -45,7 +47,8 @@ while(true)
         dutyCycle -= 0.05f;
 
         // change direction if reaching minimum duty cycle (0%)
-        if (dutyCycle < 0.10) goingUp = !goingUp;
+        if (dutyCycle < 0.10)
+            goingUp = !goingUp;
     }
 
     // update duty cycle

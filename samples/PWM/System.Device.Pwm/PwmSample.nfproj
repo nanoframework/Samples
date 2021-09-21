@@ -12,8 +12,8 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <FileAlignment>512</FileAlignment>
-    <RootNamespace>System.Device.Pwm</RootNamespace>
-    <AssemblyName>System.Device.Pwm</AssemblyName>
+    <RootNamespace>PwmSample</RootNamespace>
+    <AssemblyName>PwmSample</AssemblyName>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
@@ -33,7 +33,7 @@
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="System.Device.Pwm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Device.Pwm.1.0.0-preview.12\lib\System.Device.Pwm.dll</HintPath>
+      <HintPath>packages\nanoFramework.System.Device.Pwm.1.0.0-preview.14\lib\System.Device.Pwm.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
