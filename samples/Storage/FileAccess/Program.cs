@@ -54,7 +54,8 @@ namespace FileAccess
                 Scenario3_WriteAndReadTextInAFile.Execute(device);
 
                 // write bytes and read to/from a file
-                Scenario4_WriteAndReadBytesInAFile.Execute(device);
+                // NOTE: this scenario is not supported anymore and won't be updated.
+                // The plan is to deprecate Windows.Storage entirely and use System.IO.FileSystem going forward
 
                 // Create multi level folders
                 Scenario5_CreateMultiLevelFolders.Execute(device);
@@ -90,17 +91,19 @@ namespace FileAccess
 
             // Get the logical root folder for all internal storage devices
             // in nanoFramework the drive letters are fixed, being:
-            // I: Internal SPIFFS flash partition
-            // Note : SPIFFS devices do no support folders
+            // I: Internal SPIFFS flash first (and default) partition
+            // J: Internal SPIFFS flash second partition
+
+            ////////////////////////////////////////////////
+            // Note: SPIFFS devices do no support folders //
+            ////////////////////////////////////////////////
+
             var InternalDevices = Windows.Storage.KnownFolders.InternalDevices;
 
             // Get a list all of Internal storage devices 
             var flashDevices = InternalDevices.GetFolders();
-            if (flashDevices.Length > 0)
+            foreach (var device in flashDevices)
             {
-                // Use the first internal storage device
-                var device = flashDevices[0];
-
                 // Note we are unable to create folders otherwise we will get an Unsupported error
                 
                 // create a file
@@ -110,13 +113,15 @@ namespace FileAccess
                 Scenario3_WriteAndReadTextInAFile.Execute(device);
 
                 // write bytes and read to/from a file
-                Scenario4_WriteAndReadBytesInAFile.Execute(device);
+                // NOTE: this scenario is not supported anymore and won't be updated.
+                // The plan is to deprecate Windows.Storage entirely and use System.IO.FileSystem going forward
 
                 // Rename file
                 Scenario9_RenameFile.Execute(device);
 
             }
-            else
+            
+            if(flashDevices.Length == 0)
             {
                 // there is no removable device present
                 Debug.WriteLine($"ERROR: Can't do anything. There is no internal devices present.");

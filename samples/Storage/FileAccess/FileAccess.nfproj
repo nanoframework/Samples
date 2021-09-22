@@ -23,7 +23,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenario0_MountDevice.cs" />
-    <Compile Include="Scenario4_WriteAndReadBytesInAFile.cs" />
     <Compile Include="Scenario3_WriteAndReadTextInAFile.cs" />
     <Compile Include="Scenario2_CreateAFileInStorage.cs" />
     <Compile Include="Scenario1_CreateAFolderInStorage.cs" />
