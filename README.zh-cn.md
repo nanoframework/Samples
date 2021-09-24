@@ -167,7 +167,7 @@
 
 ## 信用
 
-本项目贡献者可在 [CONTRIBUTORS](https://github.com/nanoframework/Home/blob/master/CONTRIBUTORS.md) 中找到
+本项目贡献者可在 [CONTRIBUTORS](https://github.com/nanoframework/Home/blob/main/CONTRIBUTORS.md) 中找到
 
 ## 授权
 
