@@ -5,7 +5,7 @@ This sample shows how to use the [NanoFramework.System.Net](https://docs.nanofra
 
 > **Note:** This sample is part of a large collection of nanoFramework feature samples.
 > If you are unfamiliar with Git and GitHub, you can download the entire collection as a
-> [ZIP file](https://github.com/nanoframework/Samples/archive/master.zip), but be
+> [ZIP file](https://github.com/nanoframework/Samples/archive/main.zip), but be
 > sure to unzip everything to access any shared dependencies.
 
 ## Hardware requirements
@@ -16,7 +16,7 @@ Any hardware device running a nanoFramework image that supports WiFi.
 
 ### References
 
-- [Sample.AMQP](https://github.com/nanoframework/Samples/tree/master/samples/AMQP)
+- [Sample.AMQP](https://github.com/nanoframework/Samples/tree/main/samples/AMQP)
 - [Wikipedia POST Overview](https://en.wikipedia.org/wiki/POST_(HTTP))
 - [Wikipedia X.509 Certificate .pem format](https://en.wikipedia.org/wiki/X.509#Certificate_filename_extensions)
 

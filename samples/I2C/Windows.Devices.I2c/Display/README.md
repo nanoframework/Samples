@@ -10,7 +10,7 @@ Following a touch event (and as long as the screen is pressed) the console outpu
 
 > **Note:** This sample is part of a large collection of nanoFramework feature samples.
 > If you are unfamiliar with Git and GitHub, you can download the entire collection as a
-> [ZIP file](https://github.com/nanoframework/Samples/archive/master.zip), but be
+> [ZIP file](https://github.com/nanoframework/Samples/archive/main.zip), but be
 > sure to unzip everything to access any shared dependencies.
 <!-- For more info on working with the ZIP file, 
 > the samples collection, and GitHub, see [Get the UWP samples from GitHub](https://aka.ms/ovu2uq). 
