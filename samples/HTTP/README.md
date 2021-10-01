@@ -2,14 +2,6 @@
 
 Shows how to use the HTTP related APIs in [System.Net](http://docs.nanoframework.net/api/System.Net.html).
 
-> **Note:** This sample is part of a large collection of nanoFramework feature samples.
-> If you are unfamiliar with Git and GitHub, you can download the entire collection as a
-> [ZIP file](https://github.com/nanoframework/Samples/archive/main.zip), but be
-> sure to unzip everything to access any shared dependencies.
-<!-- For more info on working with the ZIP file, 
-> the samples collection, and GitHub, see [Get the UWP samples from GitHub](https://aka.ms/ovu2uq). 
-> For more samples, see the [Samples portal](https://aka.ms/winsamples) on the Windows Dev Center.  -->
-
 > NOTE: when working with ESP32 edit the nfproj files and add `BUIID_FOR_ESP32` to the DefineConstants, like this:
 ```text
 <DefineConstants>$(DefineConstants);BUIID_FOR_ESP32;</DefineConstants>
@@ -19,13 +11,21 @@ Shows how to use the HTTP related APIs in [System.Net](http://docs.nanoframework
 
 ### HTTP listener
 
-Example on how to implement a HTTP listener to reply to incoming HTTP requests.
+[Example](./HttpListener) on how to implement a HTTP listener to reply to incoming HTTP requests.
 
 > **Note:** this is **NOT** an HTTP server, just a sample to illustrate how to use the HTTP Listener class.  
 
 ### HTTP Web Request
 
-Example on how to perform a HTTP Web requests. Optionally to secured (TLS) servers.
+[Example](./HttpWebRequest) on how to perform a HTTP Web requests. Optionally to secured (TLS) servers.
+
+### HTTP Azure Get
+
+Illustrates how to connect to [Azure and perform GET requests](./AzureGET).
+
+### HTTP Azure POST
+
+Illustrates how to connect to [Azure and perform POST requests](./AzurePOST).
 
 ## Hardware requirements
 
@@ -40,10 +40,9 @@ This sample is coded to use the STM32F769IDiscovery target board, but can be eas
 
 ## Build the sample
 
-1. If you download the samples ZIP, be sure to unzip the entire archive, not just the folder with the sample you want to build. 
-2. Start Microsoft Visual Studio 2019 (VS 2017 should be OK too) and select **File** \> **Open** \> **Project/Solution**.
-3. Starting in the folder where you unzipped the samples, go to the subfolder for this specific sample. Double-click the Visual Studio Solution (.sln) file.
-4. Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
+1. Start Microsoft Visual Studio 2019 (VS 2017 should be OK too) and select `File > Open > Project/Solution`.
+1. Starting in the folder where you unzipped the samples/cloned the repository, go to the subfolder for this specific sample. Double-click the Visual Studio Solution (.sln) file.
+1. Press `Ctrl+Shift+B`, or select `Build > Build Solution`.
 
 ## Run the sample
 
@@ -51,8 +50,12 @@ The next steps depend on whether you just want to deploy the sample or you want 
 
 ### Deploying the sample
 
-- Select Build > Deploy Solution.
+- Select `Build > Deploy Solution`.
 
 ### Deploying and running the sample
 
-- To debug the sample and then run it, press F5 or select Debug >  Start Debugging.
+- To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
+
+> **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
+
+> **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

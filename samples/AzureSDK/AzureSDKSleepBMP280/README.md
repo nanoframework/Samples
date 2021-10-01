@@ -21,7 +21,7 @@ The sample uses wifi, this part can be as well replaced with an ethernet connect
 1. Simply adjust the device IoT Hub elements and your network.
 2. Start Microsoft Visual Studio 2019 by opening the solution.
 3. Make sure you have your ESP32 showing up in the Device Explorer window.
-4. Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
+4. Press `Ctrl+Shift+B`, or select **Build** \> **Build Solution**.
 
 ## Run the sample
 

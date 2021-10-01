@@ -96,7 +96,7 @@ Use your Azure Subscription for following steps:
 ### Building the sample
 
 1. Go to sample and Double-click the Visual Studio Solution (.sln) file.
-2. Press Ctrl+Shift+B, or select **Build** \> **Build Solution**.
+2. Press `Ctrl+Shift+B`, or select **Build** \> **Build Solution**.
 3. Make sure to click on device explorer and select your device.
 
 The next steps depend on whether you just want to deploy the sample or you want to both deploy and run it.

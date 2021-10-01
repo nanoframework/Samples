@@ -16,148 +16,155 @@
 
 ### 通信
 
-<table>
- <tr>
-  <td><a href="samples/SerialCommunication">串口例程</a></td>
-  <td><a href="samples/CAN">CAN 例程</a></td>
-  <td><a href="samples/AMQP">AMQP 例程</a></td>
- </tr>
- <tr>
-  <td><a href="samples/MQTT/TestMqtt">MQTT sample pack</a></td>
-  <td><a href="samples/MQTT/AzureMQTT">MQTT with Azure IoT sample</a></td>
-  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
- </tr>
-</table>
+<devices>
 
-### 外设
+## Special beginner
 
-<table>
- <tr>
-  <td><a href="samples/ADC">ADC</a></td>
-  <td><a href="samples/1-Wire">1-Wire</a></td>
-  <td><a href="samples/Gpio">Gpio</a></td>
- </tr>
-<tr>
-  <td><a href="samples/I2C">I2C</a></td>
-  <td><a href="samples/PWM">PWM</a></td>
-  <td><a href="samples/RTC">RTC 例程</a></td>
- </tr>
-  <td><a href="samples/SPI">SPI</a></td>
-  <td><a href="DAC">DAC</a></td>
-  <td><!--<a href="RTXC">RTC</a>--></td>
- </tr>
-</table>
+* [Blinky sample](samples/Blinky)
+* [System.Device.Pwm](samples/PWM/System.Device.Pwm)
 
-### Graphics
-<table>
- <tr>
-  <td><a href="samples/GraphicsWpf/Primitives">Primitives</a></td>
-  <td><a href="samples/GraphicsWpf/SimpleWpf">SimpleWpf</a></td>
-  <td><a href="samples/GraphicsWpf/Tetris">Tetris</a></td>
-  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
- </tr>
-</table>
+## Gpio, I2C, Spi, Pwm, Adc, Dac, 1-Wire, Serial
 
-### 网络
+* [1-Wire sample](samples/1-Wire)
+* [Analogic/Digital converter](samples/ADC)
+* [Blinky sample](samples/Blinky)
+* [Digital Analog Converter sample](samples/DAC)
+* [GPIO and events sample](samples/Gpio/Gpio+Events)
+* [GPIO and events sample (.NET IoT style)](samples/Gpio/Gpio+Events%20IoT%20Style)
+* [GPIO sample pack](samples/Gpio)
+* [I2C GPS sample](samples/I2C/System.Device.I2c/GPS)
+* [I2C sample sample pack](samples/I2C)
+* [System.Device.Pwm](samples/PWM/System.Device.Pwm)
+* [System.Device.PWM sample](samples/PWM)
+* [System.Device.Spi sample](samples/SPI/System.Device.Spi)
+* [System.IO.Ports serial Communication sample](samples/SerialCommunication)
+* [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
 
-<table>
- <tr>
-  <td><a href="samples/Networking">Sockets 例程</a></td>
-  <td><a href="samples/SSL">SSL 例程</a></td>
-  <td><a href="samples/HTTP">HTTP</a></td>
-  <td><a href="samples/Webserver">Webserver sample pack</a></td>
- </tr>
-</table>
+## Networking including HTTP, SSL
 
-### ESP32
-<table>
- <tr>
-  <td><a href="samples/HardwareEsp32">Esp32 硬件</a></td>
-  <td><a href="samples/Wifi">WiFi</a></td>
-  <td><a href="samples/WiFiAP">WiFi Soft AP</a></td>
-  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
- </tr>
-</table>
+* [.NET **nanoFramework** Webserver sample pack](samples/Webserver)
+* [Error](samples/HTTP/HttpAzurePOST)
+* [Error](samples/HTTP/HttpAzureGET)
+* [HTTP Listener sample](samples/HTTP/HttpListener)
+* [HTTP Listener sample](samples/HTTP/HttpWebRequest)
+* [HTTP sample pack](samples/HTTP)
+* [MQTT sample pack](samples/MQTT)
+* [Networking sample pack](samples/Networking)
+* [SSL sample pack](samples/SSL)
+* [WiFI samples](samples/Wifi)
+* [WiFi Soft AP sample](samples/WiFiAP)
 
-### STM32
+## MQTT
 
-<table>
- <tr>
-  <td><a href="samples/Hardware.Stm32">STM32 硬件</a></td>
-  <td><!--<a href="Utility/util2">Utility Two</a>--></td>
-  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
- </tr>
-</table>
+* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureMQTTTwinsBMP280Sleep)
+* [MQTT sample pack](samples/MQTT)
 
-### TI CC13xx
+## Azure specific
 
-<table>
- <tr>
-  <td><a href="samples/TI.EasyLink">TI.EasyLink</a></td>
-  <td><a href="samples/Hardware.TI">TI SimpleLink 硬件</a></td>
-  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
- </tr>
-</table>
+* [AMQP sample pack](samples/AMQP)
+* [Azure AMQP sample](samples/AMQP/Azure-IoT-Hub)
+* [Azure IoT Device Provisioning Service (DPS) example](samples/AzureSDK/DpsSampleApp)
+* [Azure IoT Hub SDK with MQTT protocol](samples/AzureSDK/AzureSDK)
+* [Azure SDK sample pack](samples/AzureSDK)
+* [Azure Service Bus AMQP sample](samples/AMQP/Azure-ServiceBus-Sender)
+* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
+* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureMQTTTwinsBMP280Sleep)
+* [Error](samples/HTTP/HttpAzurePOST)
+* [Error](samples/HTTP/HttpAzureGET)
+* [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
 
-### 系统
+## Real Time Clock
 
-<table>
- <tr>
-  <td><a href="samples/Converter.Base64">Converter.Base64</a></td>
-  <td><a href="samples/DebugGC.Test">GC调试</a></td>
-  <td><a href="samples/ExecutionConstraint">执行约束</a></td>
- </tr>
-<tr>
-  <td><a href="samples/ManagedResources">资源管理</a></td>
-  <td><a href="samples/System.Random">随机数</a></td>
-  <td><a href="samples/ToStringTest">ToString 测试</a></td>
- </tr>
- <tr>
-  <td><a href="samples/NumberParser">数字分析测试</a></td>
-  <td><a href="samples/Threading">Threading</a></td>
-  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
- </tr>
-</table>
+* [RTC sample](samples/RTC)
 
-### Tools and utilities
+## Graphics for screens
 
-<table>
- <tr>
-  <td><a href="samples/NFUnitTestDemo">Unit Test Framework</a></td>
-  <td><!--<a href="samples/DebugGC.Test">Runtime GC Test</a>--></td>
-  <td><!--<a href="samples/ExecutionConstraint">Execution Constraint demo</a>--></td>
- </tr>
-<tr>
-  <td><!--<a href="samples/ManagedResources">Resource Manager</a>--></td>
-  <td><!--<a href="samples/System.Random">System Random sample</a>--></td>
-  <td><!--<a href="samples/ToStringTest">ToString Test</a>--></td>
- </tr>
- <tr>
-  <td><!--<a href="samples/NumberParser">Number Parser Test</a>--></td>
-  <td><!--<a href="samples/Threading">Threading</a>--></td>
-  <td><!--<a href="Utility/util3">Utility Three</a>--></td>
- </tr>
-</table>
+* [Graphics Primitives](samples/Graphics/Primitives)
+* [Graphics samples](samples/Graphics)
+* [Simple WPF](samples/Graphics/SimpleWpf)
+* [Tetris Demo Game for nanoFramework](samples/Graphics/Tetris)
 
-### 其它
+## CAN
 
-<table>
- <tr>
-  <td><a href="samples/Blinky">Blinky</a></td>
-  <td><a href="samples/GCStressTest">GC压测</a></td>
-  <td><a href="samples/Interop">互操作</a></td>
- </tr>
- <tr>
-  <td><a href="samples/Reflection">反射</a></td>
-  <td><a href="samples/Timer">定时器</a></td>
-  <td><a href="samples/Storage">存储</a></td>
- </tr>
- <tr>
-  <td><a href="samples/Json nanoFramework">Json</a></td>
-  <td><a href="samples/NativeEvents">Native Events</a></td>
-  <td><a href="samples/System.IO.FileSystem">File System sample</a></td>
- </tr>
-</table>
+* [CAN sample](samples/CAN)
+
+## AMQP
+
+* [AMQP sample pack](samples/AMQP)
+* [Azure AMQP sample](samples/AMQP/Azure-IoT-Hub)
+* [Azure Service Bus AMQP sample](samples/AMQP/Azure-ServiceBus-Sender)
+
+## ESP32 specific
+
+* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
+* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureMQTTTwinsBMP280Sleep)
+* [Hardware ESP32 Deep sleep sample](samples/Hardware.Esp32)
+* [Hardware ESP32 RMT sample pack](samples/Hardware.Esp32.Rmt)
+* [NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStripLowMemory)
+* [NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStrip)
+* [Ultrasonic HC-SR04 sensor with RMT](samples/Hardware.Esp32.Rmt/Ultrasonic)
+
+## STM32 Specific
+
+* [Hardware STM32 sample pack](samples/Hardware.Stm32)
+* [STM32 Alarm](samples/Hardware.Stm32/Stm32.TestAlarms)
+* [STM32 Backup Memory](samples/Hardware.Stm32/Stm32.BackupMemory)
+* [STM32 Power Mode](samples/Hardware.Stm32/Stm32.PowerMode)
+* [STM32 Read Device ID](samples/Hardware.Stm32/Stm32.ReadDeviceIDs)
+
+## Texas Instrument specific
+
+* [Hardware TI SimpleLink sample pack](samples/Hardware.TI)
+* [Texas Instruments EasyLink sample pack](samples/TI.EasyLink)
+* [TI Power Mode](samples/Hardware.TI/TI.PowerMode)
+* [TI utilities](samples/Hardware.TI/TI.Utilities)
+
+## System related
+
+* [Collections sample](samples/Collections)
+* [Convert Base64 sample pack](samples/Converter.Base64)
+* [Debug Garbage Collector Test](samples/DebugGC.Test)
+* [Execution Constraint demo](samples/ExecutionConstraint)
+* [GC stress test](samples/GCStressTest)
+* [GPIO and events sample](samples/Gpio/Gpio+Events)
+* [GPIO and events sample (.NET IoT style)](samples/Gpio/Gpio+Events%20IoT%20Style)
+* [Interop sample](samples/Interop)
+* [Managed resources sample](samples/ManagedResources)
+* [Native events sample](samples/NativeEvents)
+* [Number Parsing sample pack](samples/NumberParser)
+* [Reflection sample pack](samples/Reflection)
+* [RTC sample](samples/Timer)
+* [System.Random sample](samples/System.Random)
+* [Threading sample pack](samples/Threading)
+* [ToString samples](samples/ToStringTest)
+
+## Tools and utilities
+
+* [Logging samples](samples/Logging)
+* [Unit Test framework sample pack](samples/UnitTest)
+
+## Interop
+
+* [Interop sample](samples/Interop)
+* [Native events sample](samples/NativeEvents)
+
+## File and storage access
+
+* [System.IO.FileSystem smaple](samples/System.IO.FileSystem)
+* [Windows.Storage sample pack](samples/Storage)
+
+## Wifi
+
+* [WiFI samples](samples/Wifi)
+* [WiFi Soft AP sample](samples/WiFiAP)
+
+## IoT.Device
+
+* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
+* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureMQTTTwinsBMP280Sleep)
+* [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
+
+</devices>
 
 ## 文档反馈
 

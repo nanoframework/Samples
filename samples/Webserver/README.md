@@ -4,9 +4,8 @@ Shows how to use .NET **nanoFramework** Webserver library in common usage scenar
 
 ## Samples
 
-[REST and GPIO](WebServer.GpioRest/)
-
-[HTTP server](WebServer.Sample/)
+- [REST and GPIO](WebServer.GpioRest/)
+- [HTTP server](WebServer.Sample/)
 
 ## Usage
 
@@ -341,3 +340,25 @@ using (WebServer server = new WebServer(443, HttpProtocol.Https)
 > IMPORTANT: because the certificate above is not issued from a Certificate Authority it won't be recognized as a valid certificate. If you want to access the nanoFramework device with your browser, for example, you'll have to add the (CRT file)[WebServer.Sample\webserver-cert.crt] as a trusted one. On Windows, you just have to double click on the CRT file and then click "Install Certificate...".
 
 You can of course use the routes as defined earlier. Both will work, event or route with the notion of controller.
+
+## Build the sample
+
+1. Start Microsoft Visual Studio 2019 (VS 2017 should be OK too) and select `File > Open > Project/Solution`.
+1. Starting in the folder where you unzipped the samples/cloned the repository, go to the subfolder for this specific sample. Double-click the Visual Studio Solution (.sln) file.
+1. Press `Ctrl+Shift+B`, or select `Build > Build Solution`.
+
+## Run the sample
+
+The next steps depend on whether you just want to deploy the sample or you want to both deploy and run it.
+
+### Deploying the sample
+
+- Select `Build > Deploy Solution`.
+
+### Deploying and running the sample
+
+- To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
+
+> **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
+
+> **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.
