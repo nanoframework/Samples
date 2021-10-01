@@ -1,8 +1,6 @@
 # nanoFramework Json sample
 
-**NOTE: THIS SAMPLE USES A DEPRECIATED LIBRARY.** Do not use anymore this library.
-
-Please see: https://github.com/nanoframework/lib-nanoFramework.Json/tree/develop/nanoFramework.Json.Test for an updated sample usage.
+Please [see()]https://github.com/nanoframework/nanoFramework.Json/tree/develop/nanoFramework.Json.Test) for nmore sample usage.
 
 Shows how to use the nanoFramework Json library to store and retrieve configuration from storage.
 
