@@ -17,10 +17,10 @@ namespace DacSample
         public static void Execute(ref DacChannel channel)
         {
             int upperValue, midRange;
-            float radian = 0;
+            double radian = 0;
 
             // get upper value from DAC resolution
-            upperValue = (int)Math.Pow(2, Scenario1ConfigureDac.dacResolution);
+            upperValue = (int)Math.Pow(2.0, Scenario1ConfigureDac.dacResolution);
 
             // compute a reasonable increment value from the resolution
             float increment = maxRads / (Scenario1ConfigureDac.dacResolution * 10);

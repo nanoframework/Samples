@@ -19,10 +19,10 @@ namespace DacSample
             int upperValue;
 
             // get upper value from DAC resolution
-            upperValue = (int)Math.Pow(2, Scenario1ConfigureDac.dacResolution);
+            upperValue = (int)Math.Pow(2.0, Scenario1ConfigureDac.dacResolution);
 
             // compute a reasonable increment value from the the DAC resolution
-            uint increment = (uint)Math.Pow(2, Scenario1ConfigureDac.dacResolution / 2);
+            uint increment = (uint)Math.Pow(2.0, Scenario1ConfigureDac.dacResolution / 2);
 
 
             for (; ; )

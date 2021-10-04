@@ -1,4 +1,4 @@
-# Primitives sample
+# Graphics Primitives
 
 This demonstrates the low level graphic functions that are available.
 These can be used directly without using the WPF graphics model.
@@ -6,7 +6,6 @@ These can be used directly without using the WPF graphics model.
 Very useful for memory constrained devices with smaller screens.
 
 - ESP32 without PSRAM
-
 
 The primitive features demonstrated are:-
 

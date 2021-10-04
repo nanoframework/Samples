@@ -1,4 +1,4 @@
-using nanoFramework.Json;
+﻿using nanoFramework.Json;
 using System;
 using System.Text;
 using Windows.Storage;
@@ -30,14 +30,14 @@ namespace JsonConfigurationStore
             var configFile = StorageFile.GetFileFromPath(configFilePath);
 
             string json = FileIO.ReadText(configFile);
-            Configuration config = (Configuration)JsonSerializer.DeserializeString(json);
+            Configuration config = (Configuration)JsonConvert.DeserializeObject(json, typeof(Configuration));
             return config;
         }
         public bool WriteConfig(Configuration config)
         {
             try
             {
-                var configJson = JsonSerializer.SerializeObject(config);
+                var configJson = JsonConvert.SerializeObject(config);
                 StorageFile configFile = configFolder.CreateFile("configuration.json", CreationCollisionOption.ReplaceExisting);
                 FileIO.WriteText(configFile, configJson);
                 return true;

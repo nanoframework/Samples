@@ -144,6 +144,37 @@ steps:
   env:
     MY_GITHUBTOKEN: $(GitHubToken)
 
+# Adjust the readmes
+- task: DotNetCoreCLI@2
+  displayName: Adjust READMEs
+  condition: and( succeeded(), eq(variables['System.PullRequest.PullRequestId'], ''))
+  inputs:
+    command: custom
+    custom: run
+    projects: '**/device-listing.csproj'
+
+- task: PowerShell@2
+  condition: and( succeeded(), eq(variables['System.PullRequest.PullRequestId'], ''))
+  displayName: Push READMEs to GitHub
+  continueOnError: true
+  inputs:
+    targetType: 'inline'
+    script: |
+      git config user.email 'nanoframework@outlook.com'
+      git config user.name 'nfbot'
+
+      git add README.md
+      git add README-zh-cn.md
+      git commit -m "Update device lists" -m"***NO_CI***"
+
+      git rebase origin/main
+
+      # compute authorization header in format "AUTHORIZATION: basic 'encoded token'"
+      # 'encoded token' is the Base64 of the string "nfbot:personal-token"
+      $auth = "basic $([System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("nfbot:$(GitHubToken)"))))"
+      git -c http.extraheader="AUTHORIZATION: $auth" push origin "HEAD:$(Build.SourceBranchName)"
+
+
 # report error
 - template: azure-pipelines-templates/discord-webhook-task.yml@templates  
   parameters:

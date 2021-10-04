@@ -20,7 +20,7 @@ namespace DacSample
             int halfPeriod;
 
             // get upper value from DAC resolution
-            upperValue = (int)Math.Pow(2, Scenario1ConfigureDac.dacResolution);
+            upperValue = (int)Math.Pow(2.0, Scenario1ConfigureDac.dacResolution);
 
             // figure out an expedite way to get a more or less square wave from the DAC and time resolution
             halfPeriod = ( upperValue / (Scenario1ConfigureDac.s_timeResolution * 10) ) / 2;
