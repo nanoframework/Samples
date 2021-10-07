@@ -17,7 +17,7 @@ These can also be used with smaller screens on more memory constrained devices.
 
 ## Screens
 
-This demonstrates the low level text function that is available. Very useful for memory constrained devices with smaller screens.
+This demonstrates the low level text display function that is available. Very useful for memory constrained devices with smaller screens.
 
 ## SimpleWPF
 
