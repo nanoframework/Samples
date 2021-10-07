@@ -15,6 +15,10 @@ These can also be used with smaller screens on more memory constrained devices.
 
 - ESP32 without PSRAM
 
+## Screens
+
+This demonstrates the low level text display function that is available. Very useful for memory constrained devices with smaller screens.
+
 ## SimpleWPF
 
 This contains an animated graphical menu with allows the selection of pages that demonstrates features of the limited WPF that's available in nanoFramework.
