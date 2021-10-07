@@ -1,6 +1,6 @@
 # m5stack Screens sample
 
-This demonstrates the low level text function that is available.
+This demonstrates the low level text display function that is available.
 Very useful for memory constrained devices with smaller screens.
 
 This sample was tested in:
