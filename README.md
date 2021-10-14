@@ -43,10 +43,10 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 ## Networking including HTTP, SSL
 
 * [.NET **nanoFramework** Webserver sample pack](samples/Webserver)
-* [Error](samples/HTTP/HttpAzurePOST)
 * [Error](samples/HTTP/HttpAzureGET)
-* [HTTP Listener sample](samples/HTTP/HttpListener)
+* [Error](samples/HTTP/HttpAzurePOST)
 * [HTTP Listener sample](samples/HTTP/HttpWebRequest)
+* [HTTP Listener sample](samples/HTTP/HttpListener)
 * [HTTP sample pack](samples/HTTP)
 * [MQTT sample pack](samples/MQTT)
 * [Networking sample pack](samples/Networking)
@@ -69,8 +69,8 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 * [Azure Service Bus AMQP sample](samples/AMQP/Azure-ServiceBus-Sender)
 * [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
 * [Complete Azure MQTT sample using BMP280 sensor](samples/AzureMQTTTwinsBMP280Sleep)
-* [Error](samples/HTTP/HttpAzurePOST)
 * [Error](samples/HTTP/HttpAzureGET)
+* [Error](samples/HTTP/HttpAzurePOST)
 * [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
 
 ## Real Time Clock
@@ -154,7 +154,7 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 
 ## File and storage access
 
-* [System.IO.FileSystem smaple](samples/System.IO.FileSystem)
+* [System.IO.FileSystem sample](samples/System.IO.FileSystem)
 * [Windows.Storage sample pack](samples/Storage)
 
 ## Wifi
