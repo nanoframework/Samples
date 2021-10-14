@@ -154,7 +154,7 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 
 ## File and storage access
 
-* [System.IO.FileSystem sample](samples/System.IO.FileSystem)
+* [System.IO.FileSystem samples](samples/System.IO.FileSystem)
 * [Windows.Storage sample pack](samples/Storage)
 
 ## Wifi
