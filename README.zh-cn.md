@@ -150,7 +150,7 @@
 
 ## File and storage access
 
-* [System.IO.FileSystem smaple](samples/System.IO.FileSystem)
+* [System.IO.FileSystem samples](samples/System.IO.FileSystem)
 * [Windows.Storage sample pack](samples/Storage)
 
 ## Wifi
