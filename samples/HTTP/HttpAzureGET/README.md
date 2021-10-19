@@ -1,4 +1,3 @@
-﻿
 # HTTP.HttpAzureGET Sample
 
 This sample shows how to use the [NanoFramework.System.Net](https://docs.nanoframework.net/api/System.Net.html) API to GET a message from the Azure IoT Hub. This can also be used as a starting point to understand a HTTP GET.
