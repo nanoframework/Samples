@@ -16,8 +16,8 @@ namespace Primitives.SimplePrimitives
                 int shorterSide = Math.Min(fullScreenBitmap.Width, fullScreenBitmap.Height);
                 // Calculate an image size for the waterFall bitmap that will fit inside the bounds of the destination bitmap
                 // The diaganol of the image is the longest size
-                Single diagonalLength = Math.Sqrt(waterFall.Width * waterFall.Width + waterFall.Height * waterFall.Height);
-                Single scaleFactor = shorterSide / diagonalLength;
+                var diagonalLength = Math.Sqrt((double)(waterFall.Width * waterFall.Width) + waterFall.Height * waterFall.Height);
+                var scaleFactor = shorterSide / diagonalLength;
 
                 // Stretch the watefall image into the large size
                 int scaledImageWidth = (int)(waterFall.Width * scaleFactor);
