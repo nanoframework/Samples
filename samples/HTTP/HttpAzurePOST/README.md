@@ -1,4 +1,3 @@
-﻿
 # HTTP.HttpAzurePOST Sample
 
 This sample shows how to use the [NanoFramework.System.Net](https://docs.nanoframework.net/api/System.Net.html) API to POST a message to the Azure IoT Hub. This can also be used as a starting point to understand a HTTP Post.

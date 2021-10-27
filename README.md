@@ -43,11 +43,11 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 ## Networking including HTTP, SSL
 
 * [.NET **nanoFramework** Webserver sample pack](samples/Webserver)
-* [Error](samples/HTTP/HttpAzurePOST)
-* [Error](samples/HTTP/HttpAzureGET)
-* [HTTP Listener sample](samples/HTTP/HttpListener)
 * [HTTP Listener sample](samples/HTTP/HttpWebRequest)
+* [HTTP Listener sample](samples/HTTP/HttpListener)
 * [HTTP sample pack](samples/HTTP)
+* [HTTP.HttpAzureGET Sample](samples/HTTP/HttpAzureGET)
+* [HTTP.HttpAzurePOST Sample](samples/HTTP/HttpAzurePOST)
 * [MQTT sample pack](samples/MQTT)
 * [Networking sample pack](samples/Networking)
 * [SSL sample pack](samples/SSL)
@@ -67,10 +67,10 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 * [Azure IoT Hub SDK with MQTT protocol](samples/AzureSDK/AzureSDK)
 * [Azure SDK sample pack](samples/AzureSDK)
 * [Azure Service Bus AMQP sample](samples/AMQP/Azure-ServiceBus-Sender)
-* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
 * [Complete Azure MQTT sample using BMP280 sensor](samples/AzureMQTTTwinsBMP280Sleep)
-* [Error](samples/HTTP/HttpAzurePOST)
-* [Error](samples/HTTP/HttpAzureGET)
+* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
+* [HTTP.HttpAzureGET Sample](samples/HTTP/HttpAzureGET)
+* [HTTP.HttpAzurePOST Sample](samples/HTTP/HttpAzurePOST)
 * [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
 
 ## Real Time Clock
@@ -96,8 +96,8 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 
 ## ESP32 specific
 
-* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
 * [Complete Azure MQTT sample using BMP280 sensor](samples/AzureMQTTTwinsBMP280Sleep)
+* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
 * [Hardware ESP32 Deep sleep sample](samples/Hardware.Esp32)
 * [Hardware ESP32 RMT sample pack](samples/Hardware.Esp32.Rmt)
 * [NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStripLowMemory)
@@ -154,7 +154,7 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 
 ## File and storage access
 
-* [System.IO.FileSystem smaple](samples/System.IO.FileSystem)
+* [System.IO.FileSystem samples](samples/System.IO.FileSystem)
 * [Windows.Storage sample pack](samples/Storage)
 
 ## Wifi
@@ -164,8 +164,8 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 
 ## IoT.Device
 
-* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
 * [Complete Azure MQTT sample using BMP280 sensor](samples/AzureMQTTTwinsBMP280Sleep)
+* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
 * [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
 
 </devices>
