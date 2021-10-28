@@ -1,4 +1,7 @@
-﻿using nanoFramework.Presentation.Media;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
 
 namespace Primitives.SimplePrimitives
@@ -33,6 +36,5 @@ namespace Primitives.SimplePrimitives
             fullScreenBitmap.DrawText(strCourierRegular10, fntCourierRegular10, blue, 30, 180);
             fullScreenBitmap.Flush();
         }
-
     }
 }

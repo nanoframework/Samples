@@ -1,8 +1,9 @@
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using System;
 using System.Collections;
 using System.Device.Gpio;
-
-using nanoFramework.UI;
 using nanoFramework.UI.Input;
 using nanoFramework.UI.Threading;
 using nanoFramework.Presentation;
@@ -59,7 +60,6 @@ namespace SimpleWPF
         /// <param name="gpioPinNumber">GPIO pin number</param>
         /// <param name="button">Button that this pin represents</param>
         /// <param name="internalPullup">If true will enable the internal pull up on pin ( SetDriveMode = InputPullUp )
-
         public void AddButton(int gpioPinNumber, Button button, bool internalPullup)
         {
             GpioPin pin = Gpio.OpenPin(gpioPinNumber);

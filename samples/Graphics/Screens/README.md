@@ -73,10 +73,6 @@ Configuration.SetPinFunction(15, DeviceFunction.SPI1_MOSI);
 Configuration.SetPinFunction(13, DeviceFunction.SPI1_CLOCK);
 ```
 
-When running this sample, the end result in the screen looks like this:
-
-- ToDo
-
 ## Wroover
 
 Configuration:

@@ -1,4 +1,7 @@
-﻿using nanoFramework.Presentation.Media;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
 using System;
 
@@ -20,6 +23,7 @@ namespace Primitives.SimplePrimitives
                 this.Height = height;
             }
         }
+        
         struct Point { public int X; public int Y; };
         private Rectangle[] BallLocation;
         private Point[] BallVelocity;
@@ -37,6 +41,7 @@ namespace Primitives.SimplePrimitives
             }
 
         }
+
         private void SetupBalls()
         {
             Random rand = new Random();
@@ -109,7 +114,6 @@ namespace Primitives.SimplePrimitives
                                                        BallLocation[ball_num].Height);
             }
         }
-
 
         private void DrawBalls()
         {

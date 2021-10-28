@@ -1,11 +1,14 @@
-﻿using nanoFramework.Presentation.Media;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
 
 namespace Primitives.SimplePrimitives
 {
     public class SliceScaling9
     {
-        public SliceScaling9(Bitmap fullScreenBitmap,  Font DisplayFont)
+        public SliceScaling9(Bitmap fullScreenBitmap, Font DisplayFont)
         {
             Font fontHeading = Resource.GetFont(Resource.FontResources.ComicSansMS16);
 
@@ -26,6 +29,7 @@ namespace Primitives.SimplePrimitives
             InformationBar.DrawInformationBar(fullScreenBitmap, DisplayFont, InfoBarPosition.bottom, "9 Slice Scaling ( Scale 9 grid) ");
             fullScreenBitmap.Flush();
         }
+
         public void Scale9ImageManaged(Bitmap bmpDest, int xDst, int yDst, int widthDst, int heightDst, Bitmap bitmap, int leftBorder, int topBorder, int rightBorder, int bottomBorder, ushort opacity)
         {
             if (widthDst < leftBorder || heightDst < topBorder)
@@ -39,37 +43,57 @@ namespace Primitives.SimplePrimitives
 
             //top-left
             if (widthDst >= leftBorder && heightDst >= topBorder)
+            {
                 bmpDest.StretchImage(xDst, yDst, leftBorder, topBorder, bitmap, 0, 0, leftBorder, topBorder, opacity);
+            }
 
             //top-right
             if (widthDst > leftBorder /*&& heightDst >= topBorder*/)
+            {
                 bmpDest.StretchImage(xDst + widthDst - rightBorder, yDst, rightBorder, topBorder, bitmap, widthSrc - rightBorder, 0, rightBorder, topBorder, opacity);
+            }
+
             //bottom-left
             if (/*widthDst >= leftBorder && */heightDst > topBorder)
+            {
                 bmpDest.StretchImage(xDst, yDst + heightDst - bottomBorder, leftBorder, bottomBorder, bitmap, 0, heightSrc - bottomBorder, leftBorder, bottomBorder, opacity);
+            }
+
             //bottom-right
             if (widthDst > leftBorder && heightDst > topBorder)
+            {
                 bmpDest.StretchImage(xDst + widthDst - rightBorder, yDst + heightDst - bottomBorder, rightBorder, bottomBorder, bitmap, widthSrc - rightBorder, heightSrc - bottomBorder, rightBorder, bottomBorder, opacity);
+            }
 
             //left
             if (/*widthDst >= leftBorder &&*/ centerHeightDst > 0)
+            {
                 bmpDest.StretchImage(xDst, yDst + topBorder, leftBorder, centerHeightDst, bitmap, 0, topBorder, leftBorder, centerHeightSrc, opacity);
+            }
 
             //top
             if (centerWidthDst > 0 /*&& heightDst >= topBorder*/)
+            {
                 bmpDest.StretchImage(xDst + leftBorder, yDst, centerWidthDst, topBorder, bitmap, leftBorder, 0, centerWidthSrc, topBorder, opacity);
+            }
 
             //right
             if (widthDst > leftBorder && centerHeightDst > 0)
+            {
                 bmpDest.StretchImage(xDst + widthDst - rightBorder, yDst + topBorder, rightBorder, centerHeightDst, bitmap, widthSrc - rightBorder, topBorder, rightBorder, centerHeightSrc, opacity);
+            }
 
             //bottom
             if (centerWidthDst > 0 && heightDst > topBorder)
+            {
                 bmpDest.StretchImage(xDst + leftBorder, yDst + heightDst - bottomBorder, centerWidthDst, bottomBorder, bitmap, leftBorder, heightSrc - bottomBorder, centerWidthSrc, bottomBorder, opacity);
+            }
 
             //center
             if (centerWidthDst > 0 && centerHeightDst > 0)
+            {
                 bmpDest.StretchImage(xDst + leftBorder, yDst + topBorder, centerWidthDst, centerHeightDst, bitmap, leftBorder, topBorder, centerWidthSrc, centerHeightSrc, opacity);
+            }
         }
     }
 }

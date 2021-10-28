@@ -1,5 +1,6 @@
-﻿using nanoFramework.Presentation.Media;
-using nanoFramework.Presentation.Shapes;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using nanoFramework.UI;
 using System;
 using System.Diagnostics;
@@ -78,6 +79,7 @@ namespace Primitives.SimplePrimitives
                 System.Threading.Thread.Sleep(500);
             }
         }
+
         private class Rect
         {
             public int x;
