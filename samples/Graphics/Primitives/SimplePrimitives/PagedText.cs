@@ -1,17 +1,15 @@
-﻿using nanoFramework.Presentation.Media;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
-using System;
-using System.Reflection;
-//using System.Text;
 using System.Threading;
 
 namespace Primitives.SimplePrimitives
 {
     class PagedText
     {
-
         public PagedText(Bitmap fullScreenBitmap, Font DisplayFont)
-
         {
             //Bitmap bmp = new Bitmap(fullScreenBitmap.Width, fullScreenBitmap.Height);
             Font fntSegoeUIRegular12 = Resource.GetFont(Resource.FontResources.SegoeUIRegular12);
@@ -30,6 +28,7 @@ namespace Primitives.SimplePrimitives
                       "displayed. This enables you to build up a display " +
                       "to show text over mulitple pages.";
             bool completed;
+
             do
             {
                 int x = 0;

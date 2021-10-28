@@ -1,4 +1,7 @@
-﻿using nanoFramework.Presentation.Media;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
 
 namespace Primitives.SimplePrimitives
@@ -8,6 +11,7 @@ namespace Primitives.SimplePrimitives
         Top,
         bottom
     }
+
     public static class InformationBar
     {
         public static void DrawInformationBar(Bitmap theBitmap, Font DisplayFont, InfoBarPosition pos, string TextToDisplay)
@@ -16,6 +20,5 @@ namespace Primitives.SimplePrimitives
                 0, theBitmap.Height - 20, Color.White, 0, theBitmap.Height, Bitmap.OpacityOpaque);
             theBitmap.DrawText(TextToDisplay, DisplayFont, Color.Black, 0, theBitmap.Height - 20);
         }
-
     }
 }

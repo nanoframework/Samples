@@ -1,4 +1,7 @@
-﻿using nanoFramework.Presentation.Media;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
 using System;
 
@@ -13,13 +16,14 @@ namespace Primitives.SimplePrimitives
             public int width;
             public int height;
         }
-        public RandomClipping(Bitmap fullScreenBitmap,  Font DisplayFont)
+
+        public RandomClipping(Bitmap fullScreenBitmap, Font DisplayFont)
         {
             Random random = new Random();
             fullScreenBitmap.Clear();
             fullScreenBitmap.Flush();
 
-            Rect r0 = new Rect { x = 0, y = 0, width = fullScreenBitmap.Width, height = fullScreenBitmap.Height-20 };
+            Rect r0 = new Rect { x = 0, y = 0, width = fullScreenBitmap.Width, height = fullScreenBitmap.Height - 20 };
             Rect r1 = new Rect { x = 20, y = 20, width = 100, height = 100 };
             Rect r2 = new Rect { x = 180, y = 80, width = 100, height = 100 };
             Rect r3 = new Rect { x = 20, y = 170, width = 100, height = 30 };
@@ -35,20 +39,21 @@ namespace Primitives.SimplePrimitives
                     fullScreenBitmap.SetClippingRectangle(r1.x, r1.y, r1.width, r1.height);
                     fullScreenBitmap.Flush();
                 }
-                if (i == 200)
+                else if (i == 200)
                 {
                     additionalInfo = "Clipping inside region [180,80,280,180]";
                     ResetClippingAndDrawClippingRectangular(fullScreenBitmap, r2);
                     fullScreenBitmap.SetClippingRectangle(r2.x, r2.y, r2.width, r2.height);
                     fullScreenBitmap.Flush();
                 }
-                if (i == 300)
+                else if (i == 300)
                 {
                     additionalInfo = "Clipping inside region [20,170,120,200]";
                     ResetClippingAndDrawClippingRectangular(fullScreenBitmap, r3);
                     fullScreenBitmap.SetClippingRectangle(r3.x, r3.y, r3.width, r3.height);
                     fullScreenBitmap.Flush();
                 }
+
                 int radiusX = random.Next(100);
                 int radiusY = random.Next(100);
                 int thicknessOutline = random.Next(5);
@@ -60,15 +65,16 @@ namespace Primitives.SimplePrimitives
                 DrawInformationBar(fullScreenBitmap, DisplayFont, additionalInfo);
                 fullScreenBitmap.Flush();
             }
+
             fullScreenBitmap.SetClippingRectangle(0, 0, fullScreenBitmap.Width, fullScreenBitmap.Height);
         }
 
-        private void ResetClippingAndDrawClippingRectangular(Bitmap fullScreenBitmap,Rect r1)
+        private void ResetClippingAndDrawClippingRectangular(Bitmap fullScreenBitmap, Rect r1)
         {
             fullScreenBitmap.SetClippingRectangle(0, 0, fullScreenBitmap.Width, fullScreenBitmap.Height);
             fullScreenBitmap.DrawRectangle(colorOutline: Color.Bisque, thicknessOutline: 1,
-                                                x: r1.x-1, y: r1.y-1,
-                                                width: r1.width+2, height: r1.height+2,
+                                                x: r1.x - 1, y: r1.y - 1,
+                                                width: r1.width + 2, height: r1.height + 2,
                                                 xCornerRadius: 0, yCornerRadius: 0,
                                                 colorGradientStart: 0,
                                                 xGradientStart: 0, yGradientStart: 0,
@@ -89,6 +95,7 @@ namespace Primitives.SimplePrimitives
                                                 xGradientEnd: fullScreenBitmap.Width, yGradientEnd: fullScreenBitmap.Height,
                                                 opacity: 200);
         }
+
         private void DrawInformationBar(Bitmap fullScreenBitmap, Font DisplayFont, string value)
         {
             fullScreenBitmap.DrawRectangle(Color.White, 0, 0, fullScreenBitmap.Height - 20, 320, 22, 0, 0, Color.White,

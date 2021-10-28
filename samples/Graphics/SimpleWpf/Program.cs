@@ -1,4 +1,10 @@
-﻿using nanoFramework.Presentation;
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+// Adjust to your need
+#define STM32F769I_DISCO
+
+using nanoFramework.Presentation;
 using nanoFramework.UI;
 using nanoFramework.UI.Input;
 using SimpleWPF;
@@ -20,26 +26,30 @@ namespace SimpleWpf
 
         // Declare the main window.
         static Window mainWindow;
-
-
         
         /// <summary>
         /// The executable entry point.
         /// </summary>
         public static void Main()
         {
-            // Create application object
-            MySimpleWPFApplication myApplication = new MySimpleWPFApplication();
-
-            // Add main window to application
-            mainWindow = new MainMenuWindow(myApplication);
 
             // Create the object that handles the buttons presses on GPIO pins.
             GPIOButtonInputProvider inputProvider = new GPIOButtonInputProvider(null);
 
-
-            // Uncomment/Change required GPIO pins used for Keys
-
+#if ESP32   // This is an example mapping, work them out for your needs!
+            int backLightPin = 32;
+            int chipSelect = 14;
+            int dataCommand = 27;
+            int reset = 33;
+            // Add the nanoFramework.Hardware.Esp32 to the solution
+            Configuration.SetPinFunction(19, DeviceFunction.SPI1_MISO);
+            Configuration.SetPinFunction(23, DeviceFunction.SPI1_MOSI);
+            Configuration.SetPinFunction(18, DeviceFunction.SPI1_CLOCK);
+            // Adjust as well the size of your screen and the position of the screen on the driver
+            DisplayControl.Initialize(new SpiConfiguration(1, chipSelect, dataCommand, reset, backLightPin), new ScreenConfiguration(0, 0, 320, 240));
+            // Depending on you ESP32, you may also have to use either PWM either GPIO to set the backlight pin mode on
+            // GpioController.OpenPin(backLightPin, PinMode.Output);
+            // GpioController.Write(backLightPin, PinValue.High);
             // Assign GPIO / Key functions to GPIOButtonInputProvider
             // Esp32
             inputProvider.AddButton(12, Button.VK_LEFT, true);
@@ -47,14 +57,24 @@ namespace SimpleWpf
             inputProvider.AddButton(34, Button.VK_UP, true);
             inputProvider.AddButton(35, Button.VK_SELECT, true);
             inputProvider.AddButton(36, Button.VK_DOWN, true);
-
+#elif STM32F769I_DISCO // This is an example (working) button map, work the actual pins out for your need!
+            //WARNING: Invalid pin mappings will never be returned, and may need you to reflash the device!
             // STM32
-            //inputProvider.AddButton(PinNumber('A', 0), Button.VK_LEFT, true);
-            //inputProvider.AddButton(PinNumber('A', 1), Button.VK_RIGHT, true);
-            //inputProvider.AddButton(PinNumber('A', 2), Button.VK_UP, true);
-            //inputProvider.AddButton(PinNumber('A', 3), Button.VK_SELECT, true);
-            //inputProvider.AddButton(PinNumber('A', 4), Button.VK_DOWN, true);
+            inputProvider.AddButton(PinNumber('A', 0), Button.VK_LEFT, true);
+            inputProvider.AddButton(PinNumber('A', 1), Button.VK_RIGHT, true);
+            inputProvider.AddButton(PinNumber('A', 2), Button.VK_UP, true);
+            inputProvider.AddButton(PinNumber('A', 3), Button.VK_SELECT, true);
+            inputProvider.AddButton(PinNumber('A', 4), Button.VK_DOWN, true);
+            DisplayControl.Initialize(new SpiConfiguration(), new ScreenConfiguration());
+#else
+            throw new System.Exception("Unknown button and/or display mapping!");
+#endif
 
+            // Create application object
+            MySimpleWPFApplication myApplication = new MySimpleWPFApplication();
+
+            // Add main window to application
+            mainWindow = new MainMenuWindow(myApplication);
 
             // Load the fonts resources used by demo.
             NinaBFont = Resource.GetFont(Resource.FontResources.NinaB);
