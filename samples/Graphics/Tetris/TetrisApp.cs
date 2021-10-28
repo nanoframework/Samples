@@ -1,22 +1,28 @@
-//-----------------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------------
 // 
-//  Tetris game for .NET Micro Framework
+//  Tetris game for .NET nanoFramework
 //
-//  http://bansky.net/blog
+//  Original source from http://bansky.net/blog (no longer available).
 // 
 // This code was written by Pavel Bansky. It is released under the terms of 
 // the Creative Commons "Attribution NonCommercial ShareAlike 2.5" license.
 // http://creativecommons.org/licenses/by-nc-sa/2.5/
 //-----------------------------------------------------------------------------
 
+
+// !!!----------- SAMPLE - ENSURE YOU CHOOSE THE CORRECT TARGET HERE --------------!!!
+
+//#define ESP32_WROVER //Comment this out for any STM32 target!
+#define STM32F769I_DISCO //Comment this out for any other target!
+
+// !!!-----------------------------------------------------------------------------!!!
+
+
 using System;
 using nanoFramework.UI;
 using nanoFramework.UI.Input;
-using Tetris;
 using Tetris.GameLogic;
 using Tetris.Presentation;
-using nanoFramework.Runtime.Events;
-using System.Threading;
 
 namespace Tetris
 {
@@ -37,20 +43,27 @@ namespace Tetris
             GPIOButtonInputProvider inputProvider = new GPIOButtonInputProvider(null);
 
             // Assign GPIO / Key functions to GPIOButtonInputProvider
-            // Esp32
+#if ESP32_WROVER   // This is an example mapping, work them out for your needs!
             inputProvider.AddButton(12, Button.VK_LEFT, true);
             inputProvider.AddButton(13, Button.VK_RIGHT, true);
             inputProvider.AddButton(34, Button.VK_UP, true);
             inputProvider.AddButton(35, Button.VK_SELECT, true);
             inputProvider.AddButton(36, Button.VK_DOWN, true);
 
-            // STM32
-            //inputProvider.AddButton(PinNumber('A', 0), Button.VK_LEFT, true);
-            //inputProvider.AddButton(PinNumber('A', 1), Button.VK_RIGHT, true);
-            //inputProvider.AddButton(PinNumber('A', 2), Button.VK_UP, true);
-            //inputProvider.AddButton(PinNumber('A', 3), Button.VK_SELECT, true);
-            //inputProvider.AddButton(PinNumber('A', 4), Button.VK_DOWN, true);
+            DisplayControl.Initialize(new SpiConfiguration(1, 22, 21, 18, 5), new ScreenConfiguration(0, 0, 320, 240));
 
+#elif STM32F769I_DISCO // This is an example (working) button map, work the actual pins out for your need!
+            //WARNING: Invalid pin mappings will never be returned, and may need you to reflash the device!
+            inputProvider.AddButton(PinNumber('J', 0), Button.VK_LEFT, true);
+            inputProvider.AddButton(PinNumber('J', 1), Button.VK_RIGHT, true);
+            inputProvider.AddButton(PinNumber('J', 3), Button.VK_UP, true);
+            inputProvider.AddButton(PinNumber('J', 4), Button.VK_DOWN, true);
+            inputProvider.AddButton(PinNumber('A', 6), Button.VK_SELECT, true);
+
+            DisplayControl.Initialize(new SpiConfiguration(), new ScreenConfiguration()); //TODO: surely this should "actually" be I2C?!
+#else
+            System.Diagnostics.Debug.WriteLine("Unknown button and/or display mapping!");
+#endif
 
             // Create ExtendedWeakReference for high score table
             highScoreEWD = ExtendedWeakReference.RecoverOrCreate(
@@ -73,7 +86,7 @@ namespace Tetris
         /// </summary>        
         protected override void OnStartup(EventArgs e)
         {
-            this.MainWindow = new MainMenuWindow(this);
+            MainWindow = new MainMenuWindow(this);
             base.OnStartup(e);
         }
 
@@ -82,7 +95,7 @@ namespace Tetris
         /// </summary>
         public void SetFocus()
         {            
-            Buttons.Focus(this.MainWindow);
+            Buttons.Focus(MainWindow);
         }
 
         /// <summary>
