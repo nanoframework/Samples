@@ -1,8 +1,9 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-// Adjust to your need
+// !!!----------- SAMPLE - ENSURE YOU CHOOSE THE CORRECT TARGET HERE --------------!!!
 #define STM32F769I_DISCO
+// !!!-----------------------------------------------------------------------------!!!
 
 using System.Threading;
 using nanoFramework.UI;
@@ -34,7 +35,7 @@ namespace Primitives
             //WARNING: Invalid pin mappings will never be returned, and may need you to reflash the device!
             DisplayControl.Initialize(new SpiConfiguration(), new ScreenConfiguration());
 #else
-            throw new System.Exception("Unknown button and/or display mapping!");
+            throw new System.Exception("Unknown display mapping!");
 #endif
 
             // Get full screen bitmap from displayControl to draw on.

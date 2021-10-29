@@ -11,10 +11,7 @@
 
 
 // !!!----------- SAMPLE - ENSURE YOU CHOOSE THE CORRECT TARGET HERE --------------!!!
-
-//#define ESP32_WROVER //Comment this out for any STM32 target!
 #define STM32F769I_DISCO //Comment this out for any other target!
-
 // !!!-----------------------------------------------------------------------------!!!
 
 
@@ -43,7 +40,7 @@ namespace Tetris
             GPIOButtonInputProvider inputProvider = new GPIOButtonInputProvider(null);
 
             // Assign GPIO / Key functions to GPIOButtonInputProvider
-#if ESP32_WROVER   // This is an example mapping, work them out for your needs!
+#if ESP32   // This is an example mapping, work them out for your needs!
             inputProvider.AddButton(12, Button.VK_LEFT, true);
             inputProvider.AddButton(13, Button.VK_RIGHT, true);
             inputProvider.AddButton(34, Button.VK_UP, true);
@@ -62,7 +59,7 @@ namespace Tetris
 
             DisplayControl.Initialize(new SpiConfiguration(), new ScreenConfiguration()); //TODO: surely this should "actually" be I2C?!
 #else
-            System.Diagnostics.Debug.WriteLine("Unknown button and/or display mapping!");
+            throw new System.Exception("Unknown button and/or display mapping!");
 #endif
 
             // Create ExtendedWeakReference for high score table
