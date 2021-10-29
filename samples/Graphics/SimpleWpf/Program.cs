@@ -1,8 +1,9 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-// Adjust to your need
+// !!!----------- SAMPLE - ENSURE YOU CHOOSE THE CORRECT TARGET HERE --------------!!!
 #define STM32F769I_DISCO
+// !!!-----------------------------------------------------------------------------!!!
 
 using nanoFramework.Presentation;
 using nanoFramework.UI;
@@ -59,12 +60,12 @@ namespace SimpleWpf
             inputProvider.AddButton(36, Button.VK_DOWN, true);
 #elif STM32F769I_DISCO // This is an example (working) button map, work the actual pins out for your need!
             //WARNING: Invalid pin mappings will never be returned, and may need you to reflash the device!
-            // STM32
-            inputProvider.AddButton(PinNumber('A', 0), Button.VK_LEFT, true);
-            inputProvider.AddButton(PinNumber('A', 1), Button.VK_RIGHT, true);
-            inputProvider.AddButton(PinNumber('A', 2), Button.VK_UP, true);
-            inputProvider.AddButton(PinNumber('A', 3), Button.VK_SELECT, true);
-            inputProvider.AddButton(PinNumber('A', 4), Button.VK_DOWN, true);
+            inputProvider.AddButton(PinNumber('J', 0), Button.VK_LEFT, true);
+            inputProvider.AddButton(PinNumber('J', 1), Button.VK_RIGHT, true);
+            inputProvider.AddButton(PinNumber('J', 3), Button.VK_UP, true);
+            inputProvider.AddButton(PinNumber('J', 4), Button.VK_DOWN, true);
+            inputProvider.AddButton(PinNumber('A', 6), Button.VK_SELECT, true);
+
             DisplayControl.Initialize(new SpiConfiguration(), new ScreenConfiguration());
 #else
             throw new System.Exception("Unknown button and/or display mapping!");
