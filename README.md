@@ -43,8 +43,8 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 ## Networking including HTTP, SSL
 
 * [.NET **nanoFramework** Webserver sample pack](samples/Webserver)
-* [HTTP Listener sample](samples/HTTP/HttpWebRequest)
 * [HTTP Listener sample](samples/HTTP/HttpListener)
+* [HTTP Listener sample](samples/HTTP/HttpWebRequest)
 * [HTTP sample pack](samples/HTTP)
 * [HTTP.HttpAzureGET Sample](samples/HTTP/HttpAzureGET)
 * [HTTP.HttpAzurePOST Sample](samples/HTTP/HttpAzurePOST)
