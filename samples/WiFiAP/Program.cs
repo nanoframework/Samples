@@ -104,7 +104,7 @@ namespace WiFiAP
                 WirelessAPConfiguration wapconf = WirelessAPConfiguration.GetAllWirelessAPConfigurations()[0];
                 WirelessAPStation station = wapconf.GetConnectedStations(e.StationIndex);
 
-                string macString = BitConverter.ToString(station.MacAddres);
+                string macString = BitConverter.ToString(station.MacAddress);
                 Debug.WriteLine($"Station mac {macString} Rssi:{station.Rssi} PhyMode:{station.PhyModes} ");
 
                 connectedCount++;
