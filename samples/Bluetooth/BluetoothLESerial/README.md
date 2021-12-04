@@ -5,7 +5,7 @@ Shows how to use the Serial Protocol Profile APIs included in the [NanoFramework
 The sample allows a Bluetooth Terminal program to connect and send/receive text messages. There are a number of applications on both Android and IOS
 that will work.
 
-The device should be seen a "nanoFrameworkSerial" when scanning for the device.
+The device should be seen as "nanoFrameworkSerial" when scanning for the device.
 
 Send device 'help' to get information on what messages it will respond to.
 
@@ -13,9 +13,9 @@ This sample is a example of what you could do to provision your device with requ
 
 ## Hardware requirements
 
-A ESP32 devive running a nanoFramework image with the Bluetooth enabled.
+A ESP32 device running a nanoFramework image with the Bluetooth enabled.
 
-Currently there are 3 firmware images that support Bluetooth:-
+Currently there are 2 firmware images that support Bluetooth:-
 
 - ESP32_BLE_REV0
 - ESP32_BLE_REV3
