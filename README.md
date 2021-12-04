@@ -97,6 +97,7 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 
 ## ESP32 specific
 
+* [Bluetooth samples](samples/Bluetooth)
 * [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
 * [Complete Azure MQTT sample using BMP280 sensor](samples/AzureMQTTTwinsBMP280Sleep)
 * [Hardware ESP32 Deep sleep sample](samples/Hardware.Esp32)
