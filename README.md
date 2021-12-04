@@ -104,7 +104,6 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 * [NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStrip)
 * [NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStripLowMemory)
 * [Ultrasonic HC-SR04 sensor with RMT](samples/Hardware.Esp32.Rmt/Ultrasonic)
-* [Bluetooth Low Energy Serial(SPP) sample](samples/Bluetooth/BluetoothLESerial)
 
 ## STM32 Specific
 
