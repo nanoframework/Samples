@@ -103,6 +103,7 @@
 * [NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStripLowMemory)
 * [NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStrip)
 * [Ultrasonic HC-SR04 sensor with RMT](samples/Hardware.Esp32.Rmt/Ultrasonic)
+* [Bluetooth Low Energy Serial(SPP) sample](samples/Bluetooth/BluetoothLESerial)
 
 ## STM32 Specific
 
