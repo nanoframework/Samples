@@ -19,7 +19,7 @@ namespace m5stick.screen
             Debug.WriteLine("Hello from nanoFramework!");
             InitiM5Stick();
             // For M5Stick, values from 8 to 12 are working fine
-            power.LDO2OutputVoltage = 8;
+            power.LDO2OutputVoltage = ElectricPotential.FromVolts(8);
 
             int backLightPin = -1; // Not managed thru ESP32 but thru AXP192
             int chipSelect = 5;
@@ -87,8 +87,8 @@ namespace m5stick.screen
             // This allows to understand the selection dome.
             // Set LDO2 & LDO3(TFT_LED & TFT) 3.0V
             // I2cWrite(Register.VoltageSettingLdo2_3, 0xcc);
-            power.LDO2OutputVoltage = 0xC;
-            power.LDO3OutputVoltage = 0xC;
+            power.LDO2OutputVoltage = ElectricPotential.FromVolts(3);
+            power.LDO3OutputVoltage = ElectricPotential.FromVolts(3);
             // Set ADC sample rate to 200hz
             // I2cWrite(Register.AdcFrequency, 0xF2);
             power.AdcFrequency = AdcFrequency.Frequency200Hz;
