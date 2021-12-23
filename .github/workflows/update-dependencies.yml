@@ -7,8 +7,8 @@ name: Daily update dependencies
 
 on:
   schedule:
-  # Update daily at 00:00 UTC
-  - cron:  '0 0 * * *'
+  # At 00:00 UTC every Mon, Wed and Friday.
+  - cron:  '00 00 * * 1,3,5'
   repository_dispatch:
     types: update-dependencies
 
@@ -19,7 +19,7 @@ defaults:
 jobs:
   update-nugets:
     name: Update .NET nanoFramework dependencies
-    timeout-minutes: 60 # Non default as Samples has lots of things to update!
+    timeout-minutes: 120 # Non default as Samples has lots of things to update!
     runs-on: windows-latest
     steps:
       - name: Checkout
