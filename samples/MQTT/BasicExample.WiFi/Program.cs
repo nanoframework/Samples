@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using nanoFramework.M2Mqtt;
 using nanoFramework.M2Mqtt.Messages;
-using Windows.Devices.WiFi;
+using System.Device.WiFi;
 
 namespace BasicExample.WiFi
 {

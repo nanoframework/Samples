@@ -105,13 +105,13 @@ azurePEMCertBaltimore
 
             // As we are using TLS, we need a valid date & time
             // We will wait maximum 1 minute to get connected and have a valid date
-            var success = NetworkHelper.ConnectWifiDhcp(MySsid, MyPassword, setDateTime: true, token: new CancellationTokenSource(WifiSleepTime).Token);
+            var success = WiFiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: new CancellationTokenSource(WifiSleepTime).Token);
             if (!success)
             {
-                Debug.WriteLine($"Can't connect to wifi: {NetworkHelper.ConnectionError.Error}");
-                if (NetworkHelper.ConnectionError.Exception != null)
+                Debug.WriteLine($"Can't connect to wifi: {WiFiNetworkHelper.Status}");
+                if (WiFiNetworkHelper.HelperException != null)
                 {
-                    Debug.WriteLine($"NetworkHelper.ConnectionError.Exception");
+                    Debug.WriteLine($"WiFiNetworkHelper.HelperException");
                 }
             }
 

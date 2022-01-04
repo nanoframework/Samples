@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading;
-using Windows.Devices.WiFi;
+using System.Device.WiFi;
 using nanoFramework.Hardware.Esp32;
 using nanoFramework.Runtime.Native;
 

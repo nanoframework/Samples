@@ -14,7 +14,7 @@ using Windows.Devices.Gpio;
 using AmqpTrace = Amqp.Trace;
 
 #if HAS_WIFI
-using Windows.Devices.WiFi;
+using System.Device.WiFi;
 #endif
 
 namespace AmqpSamples.AzureSB.Sender
@@ -44,17 +44,26 @@ namespace AmqpSamples.AzureSB.Sender
             bool success;
             CancellationTokenSource cs = new(60000);
 #if HAS_WIFI
-            success = NetworkHelper.ConnectWifiDhcp(MySsid, MyPassword, setDateTime: true, token: cs.Token);
+            success = WiFiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
 #else
-            success = NetworkHelper.WaitForValidIPAndDate(true, System.Net.NetworkInformation.NetworkInterfaceType.Ethernet, cs.Token);
+            success = NetworkHelper.SetupAndConnectNetwork(cs.Token, true);
 #endif
             if (!success)
             {
-                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.ConnectionError.Error}.");
-                if (NetworkHelper.ConnectionError.Exception != null)
+#if HAS_WIFI
+                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {WiFiNetworkHelper.Status}.");
+                if (WiFiNetworkHelper.HelperException != null)
                 {
-                    Debug.WriteLine($"Exception: {NetworkHelper.ConnectionError.Exception}");
+                    Debug.WriteLine($"Exception: {WiFiNetworkHelper.HelperException}");
                 }
+#else
+                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.Status}.");
+                if (NetworkHelper.HelperException != null)
+                {
+                    Debug.WriteLine($"Exception: {NetworkHelper.HelperException}");
+                }
+#endif
+
                 return;
             }
 
