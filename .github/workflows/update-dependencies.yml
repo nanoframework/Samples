@@ -7,8 +7,8 @@ name: Daily update dependencies
 
 on:
   schedule:
-  # At 00:00 UTC every Mon, Wed and Friday.
-  - cron:  '00 00 * * 1,3,5'
+  # At 00:00 UTC every day.
+  - cron:  '00 00 * * *'
   repository_dispatch:
     types: update-dependencies
 
@@ -17,36 +17,17 @@ defaults:
     shell: pwsh
 
 jobs:
-  update-nugets:
+  update-dotnet-preview:
     name: Update .NET nanoFramework dependencies
-    timeout-minutes: 120 # Non default as Samples has lots of things to update!
+    timeout-minutes: 15
     runs-on: windows-latest
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          path: main
-      - name: Checkout tools repo
-        uses: actions/checkout@v2
-        with:
-          repository: nanoframework/nf-tools
-          path: tools
       - name: Update dependencies
-        run: ./github-actions/update-nf-dependencies.ps1 -targetPath samples
-        working-directory: tools
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
-        if: env.CREATE_PR == 'true'
+        uses: nanoframework/nanodu@v1
         with:
-          title: '${{ env.PR_TITLE }}'
-          body: |
-            ${{ env.PR_MESSAGE }}
-            
-            [version update]
-            
-            ### :warning: This is an automated update. :warning:
-          committer: 'nfbot <dependencybot@nanoframework.net>'
-          branch: ${{ env.BRANCH_NAME }}
-          path: main
-          labels: |
-            Type: dependencies
+          solutionsToCheck: '*.sln'
+          workingDirectory: '${{ github.workspace }}/devices'
