@@ -30,4 +30,4 @@ jobs:
         uses: nanoframework/nanodu@v1
         with:
           solutionsToCheck: '*.sln'
-          workingDirectory: '${{ github.workspace }}/devices'
+          workingDirectory: '${{ github.workspace }}/samples'
