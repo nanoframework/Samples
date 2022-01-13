@@ -1,10 +1,15 @@
-﻿using System;
+﻿//
+// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+//
+
+using System;
+using System.Device.Gpio;
 using System.Diagnostics;
-using System.Threading;
 using System.Net.NetworkInformation;
-using nanoFramework.Runtime.Native;
-using Windows.Devices.Gpio;
+using System.Threading;
 using nanoFramework.Networking;
+using nanoFramework.Runtime.Native;
 
 namespace WiFiAP
 {
@@ -23,12 +28,12 @@ namespace WiFiAP
         {
             Debug.WriteLine("Welcome to WiFI Soft AP world!");
 
-            GpioPin setupButton = GpioController.GetDefault().OpenPin(SETUP_PIN);
-            setupButton.SetDriveMode(GpioPinDriveMode.InputPullUp);
+            var gpioController = new GpioController();
+            GpioPin setupButton = gpioController.OpenPin(SETUP_PIN, PinMode.InputPullUp);
 
             // If Wireless station is not enabled then start Soft AP to allow Wireless configuration
             // or Button pressed
-            if (!Wireless80211.IsEnabled() || (setupButton.Read() == GpioPinValue.Low))
+            if (!Wireless80211.IsEnabled() || (setupButton.Read() == PinValue.High))
             {
 
                 Wireless80211.Disable();
@@ -52,30 +57,26 @@ namespace WiFiAP
             {
                 Debug.WriteLine($"Running in normal mode, connecting to Access point");
                 var conf = Wireless80211.GetConfiguration();
+
                 bool success;
+
                 // For devices like STM32, the password can't be read
                 if (string.IsNullOrEmpty(conf.Password))
                 {
                     // In this case, we will let the automatic connection happen
-                    success = NetworkHelper.ReconnectWifi(setDateTime: true, token: new CancellationTokenSource(60000).Token);
+                    success = WiFiNetworkHelper.Reconnect(requiresDateTime: true, token: new CancellationTokenSource(60000).Token);
                 }
                 else
                 {
                     // If we have access to the password, we will force the reconnection
                     // This is mainly for ESP32 which will connect normaly like that.
-                    success = NetworkHelper.ConnectWifiDhcp(conf.Ssid, conf.Password, token: new CancellationTokenSource(60000).Token);
+                    success = WiFiNetworkHelper.ConnectDhcp(conf.Ssid, conf.Password, requiresDateTime: true, token: new CancellationTokenSource(60000).Token);
                 }
-                Debug.WriteLine($"Connection is {success}");
+
                 if (success)
                 {
-                    string IpAdr = Wireless80211.WaitIP();
-                    Debug.WriteLine($"Connected as {IpAdr}");
-                    // We can even wait for a DateTime now
-                    success = NetworkHelper.WaitForValidIPAndDate(true, NetworkInterfaceType.Wireless80211, new CancellationTokenSource(60000).Token);
-                    if (success)
-                    {
-                        Debug.WriteLine($"We have a valid date: {DateTime.UtcNow}");
-                    }
+                    Debug.WriteLine($"Connection is {success}");
+                    Debug.WriteLine($"We have a valid date: {DateTime.UtcNow}");
                 }
                 else
                 {

@@ -1,9 +1,14 @@
-﻿using System;
+﻿//
+// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+//
+
+using System;
+using System.Collections;
 using System.Diagnostics;
 using System.IO;
-using System.Collections;
-using System.Threading;
 using System.Net;
+using System.Threading;
 using nanoFramework.Runtime.Native;
 
 namespace WiFiAP

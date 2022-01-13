@@ -1,7 +1,12 @@
-﻿using nanoFramework.Networking;
+﻿//
+// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+//
+
 using System.Diagnostics;
 using System.Net.NetworkInformation;
 using System.Threading;
+using nanoFramework.Networking;
 
 namespace WiFiAP
 {
@@ -32,7 +37,7 @@ namespace WiFiAP
         public static bool Configure(string ssid, string password)
         {            
             // And we have to force connect once here even for a short time
-            var success = NetworkHelper.ConnectWifiDhcp(ssid, password, token: new CancellationTokenSource(10000).Token);
+            var success = WiFiNetworkHelper.ConnectDhcp(ssid, password, token: new CancellationTokenSource(10000).Token);
             Debug.WriteLine($"Connection is {success}");
             Wireless80211Configuration wconf = GetConfiguration();
             wconf.Options = Wireless80211Configuration.ConfigurationOptions.AutoConnect | Wireless80211Configuration.ConfigurationOptions.Enable;
@@ -63,23 +68,6 @@ namespace WiFiAP
                 }
             }
             return null;
-        }
-
-
-        public static string WaitIP()
-        {
-            while (true)
-            {
-                NetworkInterface ni = GetInterface();
-                if (ni.IPv4Address != null && ni.IPv4Address.Length > 0)
-                {
-                    if (ni.IPv4Address[0] != '0')
-                    {
-                        return ni.IPv4Address;
-                    }
-                }
-                Thread.Sleep(500);
-            }
         }
     }
 }
