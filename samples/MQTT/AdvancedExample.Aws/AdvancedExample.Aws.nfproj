@@ -61,14 +61,14 @@
     <Reference Include="nanoFramework.System.Text">
       <HintPath>packages\nanoFramework.System.Text.1.1.3-preview.13\lib\nanoFramework.System.Text.dll</HintPath>
     </Reference>
+    <Reference Include="System.Device.WiFi">
+      <HintPath>packages\nanoFramework.System.Device.WiFi.1.4.0-preview.32\lib\System.Device.WiFi.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net">
       <HintPath>packages\nanoFramework.System.Net.1.8.0-preview.23\lib\System.Net.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading">
       <HintPath>packages\nanoFramework.System.Threading.1.0.4-preview.14\lib\System.Threading.dll</HintPath>
-    </Reference>
-    <Reference Include="Windows.Devices.Wifi">
-      <HintPath>packages\nanoFramework.Windows.Devices.Wifi.1.3.4-preview.39\lib\Windows.Devices.Wifi.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />

@@ -4,7 +4,7 @@
 //
 
 // !!!----------- SAMPLE - ENSURE YOU CHOOSE THE CORRECT NETWORK TYPE HERE --------------!!!
-// #define HAS_WIFI // Uncomment if you use WiFi instead of Ethernet.
+#define HAS_WIFI // Uncomment if you use WiFi instead of Ethernet.
 // !!!-----------------------------------------------------------------------------------!!!
 
 using nanoFramework.Networking;
@@ -17,7 +17,7 @@ using nanoFramework.M2Mqtt;
 using nanoFramework.M2Mqtt.Messages;
 
 #if HAS_WIFI
-using Windows.Devices.WiFi;
+using System.Device.WiFi;
 #endif
 
 namespace AwsMQTT
@@ -161,7 +161,7 @@ lIBzJXkrbY11FY6TNX4YFU2McIX2Ge0058Pozx6tumJ4KxvB9Ges8g==
         {
             while (true)
             {
-                string SampleData = $"{{\"MQTT on Nanoframework\" : {DateTime.UtcNow.ToString("u")}}}";
+                string SampleData = $"{{\"MQTT on nanoFramework\" : {DateTime.UtcNow.ToString("o")}}}";
                 client.Publish("devices/nanoframework/data", Encoding.UTF8.GetBytes(SampleData), MqttQoSLevel.AtMostOnce, false);
 
                 Debug.WriteLine("Message sent: " + SampleData);
