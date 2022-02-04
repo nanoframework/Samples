@@ -4,7 +4,9 @@
 //
 
 // !!!----------- SAMPLE - ENSURE YOU CHOOSE THE CORRECT NETWORK TYPE HERE --------------!!!
-#define HAS_WIFI // Uncomment if you use WiFi instead of Ethernet.
+// NOTE: nanoFramework.System.Device.WiFi nuget must be added to the project!
+// Then Uncomment the `define` if you use WiFi instead of Ethernet.
+// #define HAS_WIFI
 // !!!-----------------------------------------------------------------------------------!!!
 
 using nanoFramework.Networking;
