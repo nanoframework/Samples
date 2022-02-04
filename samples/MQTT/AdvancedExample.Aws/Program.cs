@@ -122,11 +122,20 @@ lIBzJXkrbY11FY6TNX4YFU2McIX2Ge0058Pozx6tumJ4KxvB9Ges8g==
 #endif
             if (!success)
             {
+#if HAS_WIFI
+                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {WiFiNetworkHelper.Status}.");
+                if (NetworkHelper.HelperException != null)
+                {
+                    Debug.WriteLine($"Exception: {WiFiNetworkHelper.HelperException}");
+                }
+#else
                 Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.Status}.");
                 if (NetworkHelper.HelperException != null)
                 {
                     Debug.WriteLine($"Exception: {NetworkHelper.HelperException}");
                 }
+#endif
+
                 return;
             }
         }
