@@ -3,6 +3,10 @@
 // See LICENSE file in the project root for full license information.
 //
 
+// !!!----------- SAMPLE - ENSURE YOU CHOOSE THE CORRECT NETWORK TYPE HERE --------------!!!
+// #define HAS_WIFI // Uncomment if you use WiFi instead of Ethernet.
+// !!!-----------------------------------------------------------------------------------!!!
+
 using nanoFramework.Networking;
 using System;
 using System.Diagnostics;
@@ -97,28 +101,34 @@ lIBzJXkrbY11FY6TNX4YFU2McIX2Ge0058Pozx6tumJ4KxvB9Ges8g==
 
         public static void Main()
         {
+            SetupNetwork();
 
-            Debug.WriteLine("Waiting for network up and IP address...");
-            bool success;
-            CancellationTokenSource cs = new(60000);
-#if HAS_WIFI
-            success = NetworkHelper.ConnectWifiDhcp(MySsid, MyPassword, setDateTime: true, token: cs.Token);
-#else
-            success = NetworkHelper.WaitForValidIPAndDate(true, System.Net.NetworkInformation.NetworkInterfaceType.Ethernet, cs.Token);
-#endif
-            if (!success)
-            {
-                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.ConnectionError.Error}.");
-                if (NetworkHelper.ConnectionError.Exception != null)
-                {
-                    Debug.WriteLine($"Exception: {NetworkHelper.ConnectionError.Exception}");
-                }
-                return;
-            }
+            Debug.WriteLine($"Time after network available: {DateTime.UtcNow.ToString("o")}");
 
             SetupMqtt();
 
             Thread.Sleep(Timeout.Infinite);
+        }
+
+        static void SetupNetwork()
+        {
+            Debug.WriteLine("Waiting for network up and IP address...");
+            bool success;
+            CancellationTokenSource cs = new(60000);
+#if HAS_WIFI
+            success = WiFiNetworkHelper.ScanAndConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
+#else
+            success = NetworkHelper.SetupAndConnectNetwork(requiresDateTime: true, token: cs.Token);
+#endif
+            if (!success)
+            {
+                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.Status}.");
+                if (NetworkHelper.HelperException != null)
+                {
+                    Debug.WriteLine($"Exception: {NetworkHelper.HelperException}");
+                }
+                return;
+            }
         }
 
         static void SetupMqtt()
