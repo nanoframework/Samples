@@ -3,17 +3,21 @@
 // See LICENSE file in the project root for full license information.
 //
 
+//#define HAS_WIFI
+
 using nanoFramework.Runtime.Events;
 using nanoFramework.Networking;
 using System;
 using System.Diagnostics;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 
+
 #if HAS_WIFI
-using Windows.Devices.WiFi;
+using System.Device.WiFi;
 #endif
 
 namespace SecureClient
@@ -22,26 +26,33 @@ namespace SecureClient
     {
 #if HAS_WIFI
         private static string MySsid = "ssid";
-        private static string MyPassword = "password";      
+        private static string MyPassword = "password";
 #endif
+
         public static void Main()
         {
             Debug.WriteLine("Waiting for network up and IP address...");
+
             bool success;
             CancellationTokenSource cs = new(60000);
 #if HAS_WIFI
-            success = NetworkHelper.ConnectWifiDhcp(MySsid, MyPassword, setDateTime: true, token: cs.Token);
+            success = WiFiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
 #else
-            success = NetworkHelper.WaitForValidIPAndDate(true, System.Net.NetworkInformation.NetworkInterfaceType.Ethernet, cs.Token);
+            success = NetworkHelper.SetupAndConnectNetwork(cs.Token, true);
 #endif
             if (!success)
             {
-                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.ConnectionError.Error}.");
-                if (NetworkHelper.ConnectionError.Exception != null)
+                Debug.WriteLine($"{DateTime.UtcNow} Can't get a proper IP address and DateTime, error: {NetworkHelper.Status}.");
+                if (NetworkHelper.HelperException != null)
                 {
-                    Debug.WriteLine($"Exception: {NetworkHelper.ConnectionError.Exception}");
+                    Debug.WriteLine($"ex: {NetworkHelper.HelperException}");
                 }
+
                 return;
+            }
+            else
+            {
+                Debug.WriteLine($"{DateTime.UtcNow} Network connected");
             }
 
             // get host entry for How's my SSL test site
@@ -50,7 +61,8 @@ namespace SecureClient
             // need an IPEndPoint from that one above
             IPEndPoint ep = new IPEndPoint(hostEntry.AddressList[0], 80);
 
-            Debug.WriteLine("Opening socket...");
+            Debug.WriteLine($"{DateTime.UtcNow} Opening socket...{hostEntry.AddressList[0]} ");
+
             using (Socket mySocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
             {
                 try
@@ -66,7 +78,7 @@ namespace SecureClient
 
                     Debug.WriteLine($"Wrote {buffer.Length} bytes");
 
-                    // setup buffer to read data from socket
+                    // set up buffer to read data from socket
                     buffer = new byte[1024];
 
                     // trying to read from socket
@@ -94,6 +106,7 @@ namespace SecureClient
                     Debug.WriteLine("Closing socket");
                     mySocket.Close();
                 }
+
             }
 
             Thread.Sleep(Timeout.Infinite);
