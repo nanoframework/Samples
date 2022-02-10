@@ -10,7 +10,7 @@ An hardware device running a nanoFramework image with networking capabilities en
 
 Three samples are provided:
 - **QOTDClient** : show how to use `UdpClient` as an udp client. It connect to a public `Quote of the day` server and display the result.
-- **UdpEchoServer** : show how to use `UdpClient` as an udp server. It implements a simple Udp server that listen to messages and echo them back to the sender. You need a companion sender application to test it.
+- **UdpEchoServer** : show how to use `UdpClient` as an udp server. It implements a simple Udp server that listen to messages and echo them back to the sender. You need a companion sender application to test it. The `Sender.ipynb` notebook in the folder can be used with .net interactive in vscode to send messages to the servers.
 - **DumpSSDPRequests** : show how to join a multicast group and get multicast messages. This sample display the SSDP messages that are sent by the different devices on the local network.
 
 ## Build the sample
