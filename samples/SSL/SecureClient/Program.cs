@@ -35,14 +35,14 @@ namespace SecureClient
 #if BUILD_FOR_ESP32
             success = WiFiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
 #else
-            success = NetworkHelper.WaitForValidIPAndDate(true, System.Net.NetworkInformation.NetworkInterfaceType.Ethernet, cs.Token);
+            success = NetworkHelper.SetupAndConnectNetwork(requiresDateTime: true, token: cs.Token);
 #endif
             if (!success)
             {
-                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {WiFiNetworkHelper.Status}.");
-                if (WiFiNetworkHelper.HelperException != null)
+                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.Status}.");
+                if (NetworkHelper.HelperException != null)
                 {
-                    Debug.WriteLine($"Exception: {WiFiNetworkHelper.HelperException}");
+                    Debug.WriteLine($"Exception: {NetworkHelper.HelperException}");
                 }
                 return;
             }
