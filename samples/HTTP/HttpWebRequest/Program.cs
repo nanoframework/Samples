@@ -88,6 +88,7 @@ namespace HttpSamples.HttpWebRequestSample
 
                     byte[] buffer = new byte[1024];
                     int bytesRead = 0;
+                    int totalBytesRead = 0;
 
                     Debug.WriteLine("Http response follows");
                     Debug.WriteLine(">>>>>>>>>>>>>");
@@ -95,13 +96,19 @@ namespace HttpSamples.HttpWebRequestSample
                     do
                     {
                         bytesRead = stream.Read(buffer, 0, buffer.Length);
-                        Debug.Write(Encoding.UTF8.GetString(buffer, 0, bytesRead));
+
+                        if (bytesRead > 0)
+                        {
+                            totalBytesRead += bytesRead;
+                            Debug.Write(Encoding.UTF8.GetString(buffer, 0, bytesRead));
+                        }
                     }
-                    while (bytesRead >= buffer.Length);
+                    while (totalBytesRead < httpWebResponse.ContentLength);
                 }
 
                 Debug.WriteLine(">>>>>>>>>>>>>");
                 Debug.WriteLine("End of Http response");
+                Debug.WriteLine($"Read {totalBytesRead} bytes");
             }
 
             Thread.Sleep(Timeout.Infinite);
