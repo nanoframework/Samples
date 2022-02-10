@@ -10,7 +10,9 @@ An hardware device running a nanoFramework image with networking capabilities en
 
 Three samples are provided:
 - **QOTDClient** : show how to use `UdpClient` as an udp client. It connect to a public `Quote of the day` server and display the result.
-- **UdpEchoServer** : show how to use `UdpClient` as an udp server. It implements a simple Udp server that listen to messages and echo them back to the sender. You need a companion sender application to test it. The `Sender.ipynb` notebook in the folder can be used with .net interactive in vscode to send messages to the servers.
+
+- **UdpEchoServer** : show how to use `UdpClient` as an udp server. It implements a simple Udp server that listen to messages and echo them back to the sender. You need a companion sender application to test it. The `Sender.ipynb` notebook in the folder can be used with .net interactive in vscode to send messages to the server (check https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.dotnet-interactive-vscode on how to proceed).
+
 - **DumpSSDPRequests** : show how to join a multicast group and get multicast messages. This sample display the SSDP messages that are sent by the different devices on the local network.
 
 ## Build the sample
@@ -21,7 +23,8 @@ Three samples are provided:
 
 ## Run the sample
 
-You need to select the sample you want to run. If you want to use wifi, define the HAS_WIFI variable and set your wifi parameters in the code.
+You need to select the sample you want to run. If you want to use wifi, you must include a reference to the `System.Device.WiFi` package, define the HAS_WIFI variable and set your wifi parameters in the code.
+
 The next steps depend on whether you just want to deploy the sample or you want to both deploy and run it.
 
 ### Deploying the sample
