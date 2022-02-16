@@ -55,7 +55,7 @@ namespace NFWebSockets.Client.Example
             //If message is of type Text, echo message back to client
             if (e.Frame.MessageType == WebSocketMessageType.Text)
             {
-                //check if message is not framgented
+                //check if message is not fragmented
                 if (!e.Frame.IsFragmented)
                 {
                     string message = Encoding.UTF8.GetString(e.Frame.Buffer, 0, e.Frame.MessageLength);
@@ -64,7 +64,7 @@ namespace NFWebSockets.Client.Example
                 //close connection because fragmented messages are not allowed
                 else
                 {
-                    client.Close(WebSocketCloseStatus.PolicyViolation, "Framgented messages are not allowed"!);
+                    client.Close(WebSocketCloseStatus.PolicyViolation, "Fragmented messages are not allowed"!);
                 }
             }
         }
