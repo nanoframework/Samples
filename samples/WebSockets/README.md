@@ -6,7 +6,7 @@ Shows how to use the WebSockets related APIs in [System.Net.WebSockets](http://d
 
 ### WebSockets sample listener
 
-[Sample1](./Websockets.Sample1) shows how to configure and start a WebSocket Server and Client.
+[Client.SslSample](./Websockets.ServerClient.Sample) shows how to configure and start a WebSocket Server and Client.
 
 ## Hardware requirements
 
