@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "NFWebSockets.Server.RgbExample", "NFWebSockets.Server.RgbExample.nfproj", "{5F445929-F0D2-4280-AC92-47EE05A8EFCA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F445929-F0D2-4280-AC92-47EE05A8EFCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F445929-F0D2-4280-AC92-47EE05A8EFCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F445929-F0D2-4280-AC92-47EE05A8EFCA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5F445929-F0D2-4280-AC92-47EE05A8EFCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F445929-F0D2-4280-AC92-47EE05A8EFCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F445929-F0D2-4280-AC92-47EE05A8EFCA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7C20893-22C0-4EAB-B3F2-EBE6A41FCEE7}
+	EndGlobalSection
+EndGlobal
