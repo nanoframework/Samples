@@ -95,7 +95,6 @@ namespace NFWebSockets.Server.RgbExample
             }
         }
 
-
         //WebApp
         private static string html = @"<!DOCTYPE html>
 <html lang=""en"">
