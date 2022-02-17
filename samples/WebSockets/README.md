@@ -11,7 +11,7 @@ Shows how to use the WebSockets related APIs in [System.Net.WebSockets](http://d
 
 ### WebSockets Client Sample 
 
-[ServerClient.Sample](./Websockets.ServerClient.Sample) shows how to use the Websocket Client.
+[Client.Sample](./Websockets.Client.Sample) shows how to use the Websocket Client.
 
 ### WebSockets Server and Client sample 
 
