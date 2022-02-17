@@ -56,7 +56,6 @@ namespace NFWebSockets.Server.RgbExample
             Thread.Sleep(Timeout.Infinite);
         }
 
-
         //webserver receive message
         private static void WebServer_CommandReceived(object obj, WebServerEventArgs e)
         {
