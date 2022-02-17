@@ -1,26 +1,14 @@
-# WebSocket sample pack
+# WebSocket Client Sample
 
-Shows how to use the WebSockets related APIs in [System.Net.WebSockets](http://docs.nanoframework.net/api/System.Net.WebSockets.html).
+Shows how to use the WebSockets related APIs in [System.Net.WebSockets](http://docs.nanoframework.net/api/System.Net.WebSockets.html). Documentation on the Websocket library can be found in the [WebSockets Repo](https://github.com/nanoframework/System.Net.WebSockets).
 
-## Samples
+## Sample
 
-
-### WebSockets Server Sample 
-
-[Server.RgbSample](./WebSockets.Server.RgbSample) shows howto use Websocket Server with a Webserver hosting a WebApp that controlls a rgb led.
-
-### WebSockets Client Sample 
-
-[Client.Sample](./Websockets.Client.Sample) shows how to use the Websocket Client.
-
-### WebSockets Server and Client sample 
-
-[ServerClient.Sample](./Websockets.ServerClient.Sample) shows how to configure and start a WebSocket Server and (ssl) Client.
+This sample shows howto use Websocket Client. 
 
 ## Hardware requirements
 
 An hardware device with networking capabilities running a nanoFramework image.
-The Websocket Server Sample requires a M5Stack ATOM Lite board, but can be easily changed to another board connected to a rgb led.
 
 ## Related topics
 
@@ -28,12 +16,14 @@ The Websocket Server Sample requires a M5Stack ATOM Lite board, but can be easil
 
 - [nanoFramework.Net.WebSockets](https://github.com/nanoframework/System.Net.WebSockets/blob/develop/README.md)
 - [System.Net.WebSockets](http://docs.nanoframework.net/api/System.Net.WebSockets.html)
+- [getting started guide](https://www.feiko.io/posts/2022-01-03-getting-started-with-net-nanoframework)
 
 ## Building the samples
 
 1. Start Microsoft Visual Studio 2022 (VS 2019 and VS 2017 should be OK too) and select `File > Open > Project/Solution`.
-1. Starting in the folder where you unzipped the samples/cloned the repository, go to the subfolder for this specific sample. Double-click the Visual Studio Solution (.sln) file.
-1. Press `Ctrl+Shift+B`, or select `Build > Build Solution`.
+2. Starting in the folder where you unzipped the samples/cloned the repository, go to the subfolder for this specific sample. Double-click the Visual Studio Solution (.sln) file.
+3. Change the WiFi Ssid and Password on line 14 and 15, also change the url for the websocket server on line 41.  
+4. Press `Ctrl+Shift+B`, or select `Build > Build Solution`.
 
 ## Run the sample
 
