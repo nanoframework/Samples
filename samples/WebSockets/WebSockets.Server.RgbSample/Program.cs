@@ -28,7 +28,7 @@ namespace NFWebSockets.Server.RgbExample
             if (!success)
             {
                 //Red Light indicates no Wifi connection
-                AtomLite.NeoPixel.SetColor(Color.FromArgb(255, 0, 0));
+                AtomLite.NeoPixel.SetColor(Color.Red);
                 Thread.Sleep(Timeout.Infinite);
             }
 
@@ -51,7 +51,7 @@ namespace NFWebSockets.Server.RgbExample
             Debug.WriteLine($"http://{IPAddress.GetDefaultLocalAddress()}/");
 
             //set Led to green to indicate that everything is running OK. 
-            AtomLite.NeoPixel.SetColor(Color.FromArgb(0, 255, 0));
+            AtomLite.NeoPixel.SetColor(Color.Green);
 
             Thread.Sleep(Timeout.Infinite);
         }
