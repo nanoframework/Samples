@@ -20,7 +20,7 @@ Shows how to use the WebSockets related APIs in [System.Net.WebSockets](http://d
 ## Hardware requirements
 
 An hardware device with networking capabilities running a nanoFramework image.
-The Websocket Server Sample requires a M5Stack Atom Light board, but can be easily changed to another board connected to a rgb led.
+The Websocket Server Sample requires a M5Stack ATOM Lite board, but can be easily changed to another board connected to a rgb led.
 
 ## Related topics
 
