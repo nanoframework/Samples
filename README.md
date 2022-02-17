@@ -54,6 +54,7 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 * [SSL sample pack](samples/SSL)
 * [WiFI samples](samples/Wifi)
 * [WiFi Soft AP sample](samples/WiFiAP)
+* [WebSocket samples] (samples/WebSockets)
 
 ## MQTT
 
