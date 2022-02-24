@@ -1,4 +1,4 @@
-//
+﻿//
 // Copyright (c) .NET Foundation and Contributors
 // See LICENSE file in the project root for full license information.
 //
@@ -11,16 +11,18 @@ using System.IO.Ports;
 using nanoFramework.Hardware.Esp32;
 #endif
 
-//////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////
-///                                                                        ///
-/// NOTE: when working with ESP32 edit the nfproj file and add             ///
-/// BUIID_FOR_ESP32 to the DefineConstants, like this:                     ///
-///                                                                        ///
-/// <DefineConstants>$(DefineConstants);BUIID_FOR_ESP32;</DefineConstants> ///
-///                                                                        ///
-//////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+///                                                                             ///
+/// NOTE: when working with ESP32 edit the nfproj file and add                  ///
+/// BUIID_FOR_ESP32 to the DefineConstants, like this:                          ///
+///                                                                             ///
+/// <DefineConstants>$(DefineConstants);BUIID_FOR_ESP32;</DefineConstants>      ///
+///                                                                             ///
+/// You'll also need to add a reference to 'nanoFramework.Hardware.Esp32' NuGet ///
+///                                                                             ///
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
 
 namespace SerialCommunication
 {
@@ -54,15 +56,19 @@ namespace SerialCommunication
             ///////////////////////////////////////////////////////////////////////////////////////////////////
             // COM6 in STM32F769IDiscovery board (Tx, Rx pins exposed in Arduino header CN13: TX->D1, RX->D0)
             // open COM6
-            _serialDevice = new SerialPort("COM2");
+            _serialDevice = new SerialPort("COM6");
 #endif
             // set parameters
             _serialDevice.BaudRate = 9600;
-            _serialDevice.Parity = Parity.None ;
+            _serialDevice.Parity = Parity.None;
             _serialDevice.StopBits = StopBits.One;
             _serialDevice.Handshake = Handshake.None;
             _serialDevice.DataBits = 8;
 
+            // if dealing with massive data input, increase the buffer size
+            _serialDevice.ReadBufferSize = 2048;
+
+            // open the serial port with the above settings
             _serialDevice.Open();
 
             // uncomment the scenario to test (!!note that none of these returns!!)
