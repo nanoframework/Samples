@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading;
 
 #if BUILD_FOR_ESP32
-using Windows.Devices.WiFi;
+using System.Device.WiFi;
 #endif
 
 namespace HttpSamples.HttpWebRequestSample
@@ -29,16 +29,16 @@ namespace HttpSamples.HttpWebRequestSample
             bool success;
             CancellationTokenSource cs = new(60000);
 #if BUILD_FOR_ESP32
-            success = NetworkHelper.ConnectWifiDhcp(MySsid, MyPassword, setDateTime: true, token: cs.Token);
+            success = WiFiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
 #else
-            success = NetworkHelper.WaitForValidIPAndDate(true, System.Net.NetworkInformation.NetworkInterfaceType.Ethernet, cs.Token);
+            success = NetworkHelper.SetupAndConnectNetwork(cs.Token, true);
 #endif
             if (!success)
             {
-                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.ConnectionError.Error}.");
-                if (NetworkHelper.ConnectionError.Exception != null)
+                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {WiFiNetworkHelper.Status}.");
+                if (WiFiNetworkHelper.HelperException != null)
                 {
-                    Debug.WriteLine($"Exception: {NetworkHelper.ConnectionError.Exception}");
+                    Debug.WriteLine($"Exception: {WiFiNetworkHelper.HelperException}");
                 }
                 return;
             }
@@ -77,6 +77,8 @@ namespace HttpSamples.HttpWebRequestSample
             // 2. the device has already stored a root CA bundle that will use when performing the authentication
             httpWebRequest.HttpsAuthentCert = rootCACert;
 
+            int totalBytesRead = 0;
+
             // get the response as a HttpWebResponse
             // wrap the response object with a using statement to make sure that it's disposed
             using (var httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse())
@@ -88,7 +90,6 @@ namespace HttpSamples.HttpWebRequestSample
 
                     byte[] buffer = new byte[1024];
                     int bytesRead = 0;
-                    int totalBytesRead = 0;
 
                     Debug.WriteLine("Http response follows");
                     Debug.WriteLine(">>>>>>>>>>>>>");

@@ -20,7 +20,7 @@ using nanoFramework.M2Mqtt;
 using nanoFramework.M2Mqtt.Messages;
 
 #if HAS_WIFI
-using Windows.Devices.WiFi;
+using System.Device.WiFi;
 #endif
 
 namespace AzureMQTT
@@ -51,16 +51,16 @@ namespace AzureMQTT
             bool success;
             CancellationTokenSource cs = new(60000);
 #if HAS_WIFI
-            success = NetworkHelper.ConnectWifiDhcp(MySsid, MyPassword, setDateTime: true, token: cs.Token);
+            success = WiFiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
 #else
-            success = NetworkHelper.WaitForValidIPAndDate(true, System.Net.NetworkInformation.NetworkInterfaceType.Ethernet, cs.Token);
+            success = NetworkHelper.SetupAndConnectNetwork(cs.Token, true);
 #endif
             if (!success)
             {
-                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.ConnectionError.Error}.");
-                if (NetworkHelper.ConnectionError.Exception != null)
+                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {WiFiNetworkHelper.Status}.");
+                if (WiFiNetworkHelper.HelperException != null)
                 {
-                    Debug.WriteLine($"Exception: {NetworkHelper.ConnectionError.Exception}");
+                    Debug.WriteLine($"Exception: {WiFiNetworkHelper.HelperException}");
                 }
                 return;
             }
