@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading;
 
 #if BUILD_FOR_ESP32
-using System.Device.WiFi;
 using nanoFramework.Networking;
 #endif
 
@@ -35,17 +34,18 @@ namespace SecureServer
             Debug.WriteLine("Waiting for network up and IP address...");
             bool success;
             CancellationTokenSource cs = new(60000);
+
 #if BUILD_FOR_ESP32
             success = WiFiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
 #else
-            success = NetworkHelper.SetupAndConnectNetwork(cs.Token, true);
+            success = NetworkHelper.SetupAndConnectNetwork(requiresDateTime: true, token: cs.Token);
 #endif
             if (!success)
             {
-                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {WiFiNetworkHelper.Status}.");
-                if (WiFiNetworkHelper.HelperException != null)
+                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.Status}.");
+                if (NetworkHelper.HelperException != null)
                 {
-                    Debug.WriteLine($"Exception: {WiFiNetworkHelper.HelperException}");
+                    Debug.WriteLine($"Exception: {NetworkHelper.HelperException}");
                 }
                 return;
             }
