@@ -1,4 +1,4 @@
-using nanoFramework.Azure.Devices.Client;
+﻿using nanoFramework.Azure.Devices.Client;
 using nanoFramework.Azure.Devices.Provisioning.Client;
 using nanoFramework.Azure.Devices.Shared;
 using nanoFramework.Networking;
@@ -167,4 +167,3 @@ bool ConnectToWifi()
     Debug.WriteLine($"Date and time is now {DateTime.UtcNow}");
     return success;
 }
-

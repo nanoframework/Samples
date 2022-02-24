@@ -1,4 +1,4 @@
-//
+﻿//
 // Copyright (c) 2017 The nanoFramework project contributors
 // Portions Copyright (c) Microsoft Corporation.  All rights reserved.
 // See LICENSE file in the project root for full license information.
@@ -13,6 +13,8 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using Windows.Devices.Gpio;
+using System.Net.Http;
+using System;
 
 #if BUILD_FOR_ESP32
 using System.Device.WiFi;
@@ -24,30 +26,35 @@ namespace HttpSamples.HttpAzureGET
     {
 #if BUILD_FOR_ESP32
         private static string MySsid = "ssid";
-        private static string MyPassword = "password";      
+        private static string MyPassword = "password";
 #endif
 
         private static AutoResetEvent sendMessage = new AutoResetEvent(false);
         private static GpioPin _userButton;
         private static SetPoint _setPoint = new SetPoint();
+        private static HttpClient _httpClient;
 
         public static void Main()
         {
             Debug.WriteLine("Waiting for network up and IP address...");
+
             bool success;
             CancellationTokenSource cs = new(60000);
+
 #if BUILD_FOR_ESP32
             success = WiFiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
 #else
-            success = NetworkHelper.WaitForValidIPAndDate(true, System.Net.NetworkInformation.NetworkInterfaceType.Ethernet, cs.Token);
+            success = NetworkHelper.SetupAndConnectNetwork(cs.Token, true);
 #endif
             if (!success)
             {
                 Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {WiFiNetworkHelper.Status}.");
+
                 if (WiFiNetworkHelper.HelperException != null)
                 {
                     Debug.WriteLine($"Exception: {WiFiNetworkHelper.HelperException}");
                 }
+
                 return;
             }
 
@@ -56,10 +63,14 @@ namespace HttpSamples.HttpAzureGET
             _userButton.SetDriveMode(GpioPinDriveMode.Input);
             _userButton.ValueChanged += UserButton_ValueChanged;
 
+            // crate HTTP Client
+            _httpClient = new HttpClient();
+            _httpClient.SslProtocols = System.Net.Security.SslProtocols.Tls12;
+
             /////////////////////////////////////////////////////////////////////////////////////
             ////add certificate in PEM format(as a string in the app). This was taken from Azure's sample at https://github.com/Azure/azure-iot-sdk-c/blob/master/certs/certs.c
             /// chis cert should be used when connecting to Azure IoT on the Azure Cloud available globally. Additional certs can be found in the link above
-            X509Certificate rootCACert = new X509Certificate(azurePEMCertBaltimore);
+            _httpClient.HttpsAuthentCert = new X509Certificate(azurePEMCertBaltimore);
             /////////////////////////////////////////////////////////////////////////////////////
 
             ///////////////////////////////////////////////////////////////////////////////////
@@ -68,6 +79,9 @@ namespace HttpSamples.HttpAzureGET
             /// See "Readme" for more details
             string sas = "<Enter SAS Token Here See Read Me for example>";
             ///////////////////////////////////////////////////////////////////////////////////
+
+            // add an Authorization header of our SAS
+            _httpClient.DefaultRequestHeaders.Add("Authorization", sas);
 
             //strip the device iotHubName from the SAS token
             var from = sas.IndexOf('=') + 1;
@@ -79,66 +93,41 @@ namespace HttpSamples.HttpAzureGET
             string deviceName = sas.Substring(from, to - from);
 
             //Create the url for the azure iot hub
-            string url = $"https://{iotHubName}.azure-devices.net/devices/{deviceName}/messages/devicebound?api-version=2020-03-13";
-            Debug.WriteLine($"Your IOT Hub Name: {iotHubName} and your Device Name: {deviceName}");
-            Debug.WriteLine($"Performing Http request to: {url}");
+            _httpClient.BaseAddress = new Uri($"https://{iotHubName}.azure-devices.net/devices/{deviceName}/messages/devicebound?api-version=2020-03-13");
 
-            WorkerThread(url, sas, rootCACert);
+            Debug.WriteLine($"Your IOT Hub Name: {iotHubName} and your Device Name: {deviceName}");
+            Debug.WriteLine($"Getting data from: {_httpClient.BaseAddress.AbsoluteUri}");
+
+            WorkerThread();
 
             // A custom class that we will convert to Json and pass as the body of the post
             Thread.Sleep(Timeout.Infinite);
         }
 
-        private static void WorkerThread(string url, string sas, X509Certificate rootCACert)
+        private static void WorkerThread()
         {
-            byte[] buffer = new byte[1024];
-            int bytesRead = 0;
-            HttpWebResponse httpWebResponse;
-
             while (true)
             {
-                /////////////////////////////////////////////////////////////////////////////////
-                /// Send data to the IOT device using Azure IOT Explorer cloud-device message ///
-                /////////////////////////////////////////////////////////////////////////////////
-                
-                // perform the request as a HttpWebRequest
-
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
-                httpWebRequest.Method = "GET";
-
-                // add an Authorization header of our SAS
-                httpWebRequest.Headers.Add("Authorization", sas);
-
-                // this example uses Tls 1.2 with Azure Iot Hub
-                httpWebRequest.SslProtocols = System.Net.Security.SslProtocols.Tls12;
-
-                // use the pem certificate we created earlier
-                httpWebRequest.HttpsAuthentCert = rootCACert;
-
                 //wait for button press to do this just ground the pin set above (Pin 0 in this sample)
                 sendMessage.WaitOne();
                 Debug.WriteLine("Button Clicked");
 
-                httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-                // wrap the response stream on a using statement to make sure that it's disposed
-                using (Stream stream = httpWebResponse.GetResponseStream())
+                /////////////////////////////////////////////////////////////////////////////////
+                /// Send data to the IOT device using Azure IOT Explorer cloud-device message ///
+                /////////////////////////////////////////////////////////////////////////////////
+
+                // perform the request via HTTP Client
+                var response = _httpClient.GetString("");
+
+                if (string.IsNullOrEmpty(response))
                 {
-                    bytesRead = stream.Read(buffer, 0, buffer.Length);
-                    string Stream = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-                    Debug.WriteLine(Stream.Length.ToString());
-                    if (Stream.Length != 0)
-                    {
-                        _setPoint = (SetPoint)JsonConvert.DeserializeObject(Stream, typeof(SetPoint));
-                        Debug.WriteLine($"Device ID: {_setPoint.DeviceID} Value: {_setPoint.Value}");
-                    }
-                    else
-                    {
-                        Debug.WriteLine("No Data was returned");
-                    }
+                    Debug.WriteLine("No Data was returned");
                 }
-                httpWebRequest.Dispose();
-                httpWebResponse.Close();
-                bytesRead = 0;
+                else
+                {
+                    _setPoint = (SetPoint)JsonConvert.DeserializeObject(response, typeof(SetPoint));
+                    Debug.WriteLine($"Device ID: {_setPoint.DeviceID} Value: {_setPoint.Value}");
+                }
             }
         }
 

@@ -56,7 +56,7 @@ namespace nanoFramework.WebServer.Sample
 #if HAS_WIFI
                 success = WiFiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
 #else
-                success = NetworkHelper.WaitForValidIPAndDate(true, System.Net.NetworkInformation.NetworkInterfaceType.Ethernet, cs.Token);
+                success = NetworkHelper.SetupAndConnectNetwork(cs.Token, true);
 #endif
                 if(!success)
                 {
