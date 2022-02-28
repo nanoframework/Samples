@@ -13,7 +13,7 @@ using System.Buffers.Binary;
 using System.Collections;
 using System.Diagnostics;
 using System.IO;
-using System.Net;
+using System.Net.Http;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
@@ -38,6 +38,7 @@ DeviceClient azure;
 Assembly toRun = null;
 bool isRunning = false;
 FileSettings[] filesToDownload = null;
+HttpClient httpClient = new HttpClient();
 
 try
 {
@@ -96,7 +97,7 @@ try
             Thread.Sleep(2000);
             goto RetryTwins;
         }
-        
+
         ProcessTwinAndDownloadFiles(twins.Properties.Desired);
     }
 
@@ -113,8 +114,6 @@ catch (Exception ex)
 }
 
 Thread.Sleep(Timeout.InfiniteTimeSpan);
-// Just go to sleep when we will arrive at this point
-GoToSleep();
 
 void ProcessTwinAndDownloadFiles(TwinCollection desired)
 {
@@ -142,7 +141,7 @@ void ProcessTwinAndDownloadFiles(TwinCollection desired)
         // Now download all the files from the twin
         string token = (string)desired["Token"];
         var desiredFiles = desired["Files"] as ArrayList;
-        filesToDownload = new FileSettings[files.Length];
+        filesToDownload = new FileSettings[desiredFiles.Count];
         int inc = 0;
         foreach (var singleFile in desiredFiles)
         {
@@ -290,62 +289,27 @@ void GoToSleep()
 
 void DownloadBinaryFile(string url, string sas)
 {
-    int bytesRead = 0;
-    int totalBytes = 0;
-    HttpWebResponse httpWebResponse;
     string fileName = url.Substring(url.LastIndexOf('/') + 1);
-
-    var httpWebRequest = (HttpWebRequest)WebRequest.Create($"{url}?{sas}");
-    httpWebRequest.Method = "GET";
-
-    // add an Authorization header of our SAS
-    httpWebRequest.Headers.Add("x-ms-blob-type: BlockBlob");
-
-    // this example uses Tls 1.2 with Azure Iot Hub
-    httpWebRequest.SslProtocols = System.Net.Security.SslProtocols.Tls12;
-
-    // use the pem certificate we created earlier
-    httpWebRequest.HttpsAuthentCert = new X509Certificate(Resource.GetBytes(Resource.BinaryResources.azurePEMCertBaltimore));
-
     // If we are connected to Azure, we will disconnect as small devices only have limited memory
     if (azure.IsConnected)
     {
         azure.Close();
     }
 
-    httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-    // wrap the response stream on a using statement to make sure that it's disposed
+    httpClient.DefaultRequestHeaders.Add("x-ms-blob-type", "BlockBlob");
+    // this example uses Tls 1.2 with Azure
+    httpClient.SslProtocols = System.Net.Security.SslProtocols.Tls12;
+    // use the pem certificate we created earlier
+    httpClient.HttpsAuthentCert = new X509Certificate(Resource.GetBytes(Resource.BinaryResources.azurePEMCertBaltimore));
+    HttpResponseMessage response = httpClient.Get($"{url}?{sas}");
+    response.EnsureSuccessStatusCode();
 
     using FileStream fs = new FileStream($"{RootPath}{fileName}", FileMode.Create, FileAccess.Write);
-    using Stream stream = httpWebResponse.GetResponseStream();
-    Trace($"Can seek: {stream.CanSeek}, Lengh: {stream.Length}");
-    if (httpWebResponse.StatusCode != HttpStatusCode.OK)
-    {
-        Trace($"Not OK status code: {httpWebResponse.StatusCode}");
-    }
-    else
-    {
-        byte[] buffer = new byte[1024];
-        do
-        {
-            bytesRead = stream.Read(buffer, 0, buffer.Length);
-            totalBytes += bytesRead;
-            fs.Write(buffer, 0, bytesRead);
-        }
-        while (totalBytes < httpWebResponse.ContentLength);
-        // As it's a using variable, this is not normally needed
-        // Keep it in case you're not using the using pattern
-        fs.Close();
-        fs.Dispose();
-        Trace($"Total bytes read: {totalBytes}");
-    }
-
-    // As it's a using variable, this is not normally needed
-    // Keep it in case you're not using the using pattern
-    httpWebResponse.Close();
-    httpWebResponse.Dispose();
+    response.Content.ReadAsStream().CopyTo(fs);
+    fs.Flush();
+    fs.Close();
+    response.Dispose();
 }
-
 
 void Trace(string message)
 {
