@@ -43,7 +43,7 @@
       <HintPath>..\packages\nanoFramework.CoreLibrary.1.12.0-preview.9\lib\mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.Azure.Devices.Client">
-      <HintPath>..\packages\nanoFramework.Azure.Devices.Client.1.0.0-preview.222\lib\nanoFramework.Azure.Devices.Client.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.Azure.Devices.Client.1.0.0-preview.224\lib\nanoFramework.Azure.Devices.Client.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.Hardware.Esp32">
       <HintPath>..\packages\nanoFramework.Hardware.Esp32.1.3.5-preview.7\lib\nanoFramework.Hardware.Esp32.dll</HintPath>
@@ -91,7 +91,7 @@
       <HintPath>..\packages\nanoFramework.System.Net.1.8.0-preview.29\lib\System.Net.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
-      <HintPath>..\packages\nanoFramework.System.Net.Http.Client.1.4.0-preview.28\lib\System.Net.Http.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.System.Net.Http.Client.1.4.0-preview.29\lib\System.Net.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading">
       <HintPath>..\packages\nanoFramework.System.Threading.1.0.4-preview.16\lib\System.Threading.dll</HintPath>
