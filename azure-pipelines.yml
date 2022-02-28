@@ -32,6 +32,12 @@ steps:
 - checkout: self
   fetchDepth: 1
 
+- task: UseDotNet@2
+  displayName: Install .NET SDK
+  inputs:
+    packageType: sdk
+    version: 6.x
+
 - template: azure-pipelines-templates/install-nuget.yml@templates
 
 - task: InstallnFBuildComponents@1
