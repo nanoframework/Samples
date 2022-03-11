@@ -27,30 +27,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Iot.Device.Bmxx80, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Iot.Device.Bmxx80.1.0.288-preview.65\lib\Iot.Device.Bmxx80.dll</HintPath>
-      <Private>True</Private>
-      <SpecificVersion>True</SpecificVersion>
+    <Reference Include="Iot.Device.Bmxx80">
+      <HintPath>packages\nanoFramework.Iot.Device.Bmxx80.1.0.288-preview.86\lib\Iot.Device.Bmxx80.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib, Version=1.12.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.CoreLibrary.1.12.0-preview.9\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="nanoFramework.Azure.Devices.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Azure.Devices.Client.1.0.0-preview.222\lib\nanoFramework.Azure.Devices.Client.dll</HintPath>
-      <Private>True</Private>
-      <SpecificVersion>True</SpecificVersion>
+    <Reference Include="nanoFramework.Azure.Devices.Client">
+      <HintPath>packages\nanoFramework.Azure.Devices.Client.1.0.0-preview.232\lib\nanoFramework.Azure.Devices.Client.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.Hardware.Esp32, Version=1.3.5.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.Hardware.Esp32.1.3.5-preview.7\lib\nanoFramework.Hardware.Esp32.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="nanoFramework.Json, Version=2.1.2.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Json.2.1.2-preview.44\lib\nanoFramework.Json.dll</HintPath>
-      <Private>True</Private>
-      <SpecificVersion>True</SpecificVersion>
+    <Reference Include="nanoFramework.Json">
+      <HintPath>packages\nanoFramework.Json.2.1.2-preview.50\lib\nanoFramework.Json.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.M2Mqtt, Version=5.0.2.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.M2Mqtt.5.0.2-preview.80\lib\nanoFramework.M2Mqtt.dll</HintPath>
@@ -107,45 +101,31 @@
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="System.Net.Http, Version=1.4.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Net.Http.1.4.0-preview.28\lib\System.Net.Http.dll</HintPath>
-      <Private>True</Private>
-      <SpecificVersion>True</SpecificVersion>
+    <Reference Include="System.Net.Http">
+      <HintPath>packages\nanoFramework.System.Net.Http.1.4.0-preview.35\lib\System.Net.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading, Version=1.0.4.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.System.Threading.1.0.4-preview.16\lib\System.Threading.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="UnitsNet.Duration, Version=4.121.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.Duration.4.121.0\lib\UnitsNet.Duration.dll</HintPath>
-      <Private>True</Private>
-      <SpecificVersion>True</SpecificVersion>
+    <Reference Include="UnitsNet.Duration">
+      <HintPath>packages\UnitsNet.nanoFramework.Duration.4.125.0\lib\UnitsNet.Duration.dll</HintPath>
     </Reference>
-    <Reference Include="UnitsNet.ElectricResistance, Version=4.121.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.ElectricResistance.4.121.0\lib\UnitsNet.ElectricResistance.dll</HintPath>
-      <Private>True</Private>
-      <SpecificVersion>True</SpecificVersion>
+    <Reference Include="UnitsNet.ElectricResistance">
+      <HintPath>packages\UnitsNet.nanoFramework.ElectricResistance.4.125.0\lib\UnitsNet.ElectricResistance.dll</HintPath>
     </Reference>
-    <Reference Include="UnitsNet.Length, Version=4.121.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.Length.4.121.0\lib\UnitsNet.Length.dll</HintPath>
-      <Private>True</Private>
-      <SpecificVersion>True</SpecificVersion>
+    <Reference Include="UnitsNet.Length">
+      <HintPath>packages\UnitsNet.nanoFramework.Length.4.125.0\lib\UnitsNet.Length.dll</HintPath>
     </Reference>
-    <Reference Include="UnitsNet.Pressure, Version=4.121.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.Pressure.4.121.0\lib\UnitsNet.Pressure.dll</HintPath>
-      <Private>True</Private>
-      <SpecificVersion>True</SpecificVersion>
+    <Reference Include="UnitsNet.Pressure">
+      <HintPath>packages\UnitsNet.nanoFramework.Pressure.4.125.0\lib\UnitsNet.Pressure.dll</HintPath>
     </Reference>
-    <Reference Include="UnitsNet.RelativeHumidity, Version=4.121.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.RelativeHumidity.4.121.0\lib\UnitsNet.RelativeHumidity.dll</HintPath>
-      <Private>True</Private>
-      <SpecificVersion>True</SpecificVersion>
+    <Reference Include="UnitsNet.RelativeHumidity">
+      <HintPath>packages\UnitsNet.nanoFramework.RelativeHumidity.4.125.0\lib\UnitsNet.RelativeHumidity.dll</HintPath>
     </Reference>
-    <Reference Include="UnitsNet.Temperature, Version=4.121.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.Temperature.4.121.0\lib\UnitsNet.Temperature.dll</HintPath>
-      <Private>True</Private>
-      <SpecificVersion>True</SpecificVersion>
+    <Reference Include="UnitsNet.Temperature">
+      <HintPath>packages\UnitsNet.nanoFramework.Temperature.4.125.0\lib\UnitsNet.Temperature.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

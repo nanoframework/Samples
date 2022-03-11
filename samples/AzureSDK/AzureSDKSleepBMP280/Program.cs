@@ -1,4 +1,4 @@
-using Iot.Device.Bmxx80;
+﻿using Iot.Device.Bmxx80;
 using Iot.Device.Bmxx80.ReadResult;
 using nanoFramework.Azure.Devices.Client;
 using nanoFramework.Azure.Devices.Shared;
@@ -36,6 +36,7 @@ try
     readResult = i2CBmp280.Read();
 
     ConnectToWifi();
+
     // If you have uploaded the Azure Certificate on the device, just use:
     //DeviceClient azureIoT = new(IotHubAddress, DeviceID, SasKey);
     // Otherwise, use:
