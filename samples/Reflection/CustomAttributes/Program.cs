@@ -18,12 +18,14 @@ namespace Reflection.CustomAttributes
             Type myType = typeof(MyClass1);
 
             // Display the attributes of MyClass1.
-            Object[] myAttributes = myType.GetCustomAttributes(true);
+            object[] myAttributes = myType.GetCustomAttributes(true);
             if (myAttributes.Length > 0)
             {
                 Debug.WriteLine($"\nThe attributes for the class '{myType.Name}' are:");
                 for (int j = 0; j < myAttributes.Length; j++)
+                {
                     Debug.WriteLine($"  {myAttributes[j]}");
+                }
             }
 
             // Get the methods associated with MyClass1.
@@ -33,24 +35,54 @@ namespace Reflection.CustomAttributes
             for (int i = 0; i < myMethods.Length; i++)
             {
                 myAttributes = myMethods[i].GetCustomAttributes(true);
+
                 if (myAttributes.Length > 0)
                 {
                     Debug.WriteLine($"\nThe attributes for the method '{myMethods[i].Name}' of class '{myType.Name}' are:");
+
                     for (int j = 0; j < myAttributes.Length; j++)
                     {
                         Debug.WriteLine($"  {myAttributes[j]}");
 
                         // check if the method has Attribute1
-                        if (typeof(Attribute1Attribute).Equals(myAttributes[j]))
+                        if (myAttributes[j] is Attribute1Attribute)
                         {
                             Debug.WriteLine($"  >>>>>>> {myMethods[i].Name} has 'Attribute1' attribute");
                         }
 
                         // check if the method has IgnoreAttribute
-                        if (typeof(IgnoreAttribute).Equals(myAttributes[j]))
+                        if (myAttributes[j] is IgnoreAttribute)
                         {
                             Debug.WriteLine($"  >>>>>>> {myMethods[i].Name} has 'IgnoreAttribute' attribute");
                         }
+
+                        // check if the method has DataRowAttribute
+                        if (myAttributes[j] is DataRowAttribute)
+                        {
+                            Debug.WriteLine($"  >>>>>>> {myMethods[i].Name} has 'DataRowAttribute' attribute");
+
+                            DataRowAttribute attDataRow = (DataRowAttribute)myAttributes[j];
+
+                            int index = 0;
+
+                            foreach (var dataRow in attDataRow.Arguments)
+                            {
+                                Console.WriteLine($"          DataRowAttribute.Arg[{index++}] has: {dataRow}");
+                            }
+                        }
+
+                        // check if the method has ComplexAttribute
+                        if (myAttributes[j] is ComplexAttribute)
+                        {
+                            Debug.WriteLine($"  >>>>>>> {myMethods[i].Name} has 'ComplexAttribute' attribute");
+
+                            ComplexAttribute attDataRow = (ComplexAttribute)myAttributes[j];
+
+                            Console.WriteLine($"          ComplexAttribute.Max is {attDataRow.Max}");
+                            Console.WriteLine($"          ComplexAttribute.B   is {attDataRow.B}");
+                            Console.WriteLine($"          ComplexAttribute.S   is {attDataRow.S}");
+                        }
+
                     }
                 }
             }
