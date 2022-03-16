@@ -42,6 +42,8 @@ steps:
 
 - task: InstallnFBuildComponents@1
   displayName: Install nanoFramework MSBuild components
+  env:
+    GITHUB_TOKEN: $(GitHubToken)
 
 # only build solutions that need to be build
 - powershell: |
