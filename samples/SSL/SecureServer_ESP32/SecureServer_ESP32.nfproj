@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="Globals">
     <NanoFrameworkProjectSystemPath>$(MSBuildExtensionsPath)\nanoFramework\v1.0\</NanoFrameworkProjectSystemPath>
   </PropertyGroup>
@@ -8,33 +8,32 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{11A8DD76-328B-46DF-9F39-F559912D0360};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{4FFF49B0-79C5-458D-8C85-E50369AA71E3}</ProjectGuid>
+    <ProjectGuid>b795119d-a3f0-43fa-99aa-ae582de61ac2</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <FileAlignment>512</FileAlignment>
     <RootNamespace>SecureServer</RootNamespace>
     <AssemblyName>SecureServer</AssemblyName>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+    <DefineConstants>$(DefineConstants);BUILD_FOR_ESP32;</DefineConstants>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
-    <Compile Include="..\SecureServer_ESP32\Program.cs">
-      <Link>Program.cs</Link>
-    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib">
       <HintPath>..\packages\nanoFramework.CoreLibrary.1.12.0-preview.18\lib\mscorlib.dll</HintPath>
     </Reference>
-    <Reference Include="nanoFramework.ResourceManager">
-      <HintPath>..\packages\nanoFramework.ResourceManager.1.1.4-preview.11\lib\nanoFramework.ResourceManager.dll</HintPath>
-    </Reference>
     <Reference Include="nanoFramework.Runtime.Events">
       <HintPath>..\packages\nanoFramework.Runtime.Events.1.10.0-preview.11\lib\nanoFramework.Runtime.Events.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.System.Text">
       <HintPath>..\packages\nanoFramework.System.Text.1.1.3-preview.22\lib\nanoFramework.System.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Device.WiFi">
+      <HintPath>..\packages\nanoFramework.System.Device.WiFi.1.4.0-preview.46\lib\System.Device.WiFi.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Streams">
       <HintPath>..\packages\nanoFramework.System.IO.Streams.1.0.0-preview.17\lib\System.IO.Streams.dll</HintPath>

@@ -6,10 +6,7 @@ using System.Net.Sockets;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
-
-#if BUILD_FOR_ESP32
 using nanoFramework.Networking;
-#endif
 
 namespace SecureServer
 {
