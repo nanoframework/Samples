@@ -19,7 +19,7 @@ using nanoFramework.Device.Bluetooth.GenericAttributeProfile;
 /// - Both characteristic read/write same value.
 /// 
 /// You will be able to connect to the service and read values or subscribe to Notified ever 10 seconds.
-/// Suitable Phone apps. "LightBlue" or "nRF Connect"
+/// Suitable Phone apps: "LightBlue" or "nRF Connect"
 /// </summary>
 namespace BluetoothLESample2
 {
