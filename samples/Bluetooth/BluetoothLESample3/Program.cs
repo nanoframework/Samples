@@ -13,7 +13,7 @@ using nanoFramework.Device.Bluetooth.Services;
 using nanoFramework.Runtime.Native;
 
 /// <summary>
-/// Bluetooth Sample 3 is a application which shows the use of:-
+/// Bluetooth Sample 3 is a application which shows the use of:
 /// 
 /// - Standard Services
 /// -- Device Information
