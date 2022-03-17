@@ -19,7 +19,7 @@ namespace nanoFramework.Device.Bluetooth.Services
 
         /// <summary>
         /// Create a new Device Information Service on Provider using supplied string.
-        /// If a string is null the Characteristic will not be included in service
+        /// If a string is null the Characteristic will not be included in service.
         /// </summary>
         /// <param name="provider"></param>
         /// <param name="Manufacturer"></param>
