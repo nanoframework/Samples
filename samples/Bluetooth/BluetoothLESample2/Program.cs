@@ -28,7 +28,8 @@ namespace BluetoothLESample2
         static GattLocalCharacteristic _readWriteCharacteristic1;
         static GattLocalCharacteristic _readWriteCharacteristic2;
 
-        static Int32 _value; // Vlaue used to read/write
+        // value used to read/write
+        static Int32 _value;
 
         public static void Main()
         {
