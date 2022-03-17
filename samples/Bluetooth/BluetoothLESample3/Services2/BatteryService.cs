@@ -36,7 +36,7 @@ namespace nanoFramework.Device.Bluetooth.Services
         }
 
         /// <summary>
-        /// Get or Set current battery level
+        /// Get or Set current battery level.
         /// </summary>
         public byte BatteryLevel
         {
