@@ -22,7 +22,7 @@ namespace nanoFramework.Device.Bluetooth.Services
     /// This implementation doesn't support the optional "Local Time Information" or "Reference Time Information" characteristics.
     /// </para>
     /// </summary>
-    class CurrentTimeService
+    public class CurrentTimeService
     {
         private readonly GattLocalService _currentTimeService;
         private readonly GattLocalCharacteristic _currentTimeCharacteristic;

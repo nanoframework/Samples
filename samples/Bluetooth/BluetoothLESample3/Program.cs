@@ -15,11 +15,11 @@ using nanoFramework.Runtime.Native;
 /// <summary>
 /// Bluetooth Sample 3 is a application which shows the use of:
 /// 
-/// - Standard Services
-/// -- Device Information
-/// -- Battery Level
-/// -- Current Time
-/// -- Environmental Sensor
+/// Standard Services:
+/// - Device Information
+/// - Battery Level
+/// - Current Time
+/// - Environmental Sensor
 ///  
 /// Suitable Phone apps for testing: "nRF Connect" or "LightBlue" 
 /// </summary>

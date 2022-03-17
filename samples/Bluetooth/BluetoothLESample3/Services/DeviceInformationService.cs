@@ -11,7 +11,7 @@ namespace nanoFramework.Device.Bluetooth.Services
     /// Device Information Service.
     /// Contains information about the device.
     /// </summary>
-    class DeviceInformationServiceService
+    public class DeviceInformationServiceService
     {
         private readonly GattLocalService _deviceInformationService;
 

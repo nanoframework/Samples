@@ -8,11 +8,11 @@ using nanoFramework.Device.Bluetooth.GenericAttributeProfile;
 
 namespace nanoFramework.Device.Bluetooth.Services
 {
-    class BatteryService
+    public class BatteryService
     {
-        GattLocalService _batteryService;
-        GattLocalCharacteristic _batteryLevelCharacteristic;
-        byte _batteryLevel;
+        private readonly GattLocalService _batteryService;
+        private readonly GattLocalCharacteristic _batteryLevelCharacteristic;
+        private byte _batteryLevel;
 
         public BatteryService(GattServiceProvider provider)
         {

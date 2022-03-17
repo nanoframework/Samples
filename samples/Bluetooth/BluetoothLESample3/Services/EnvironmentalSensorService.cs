@@ -8,7 +8,7 @@ using nanoFramework.Device.Bluetooth.GenericAttributeProfile;
 
 namespace nanoFramework.Device.Bluetooth.Services
 {
-    class EnvironmentalSensorService
+    public class EnvironmentalSensorService
     {
         private readonly GattLocalService _service;
         private readonly ArrayList _sensors;
