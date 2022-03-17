@@ -52,7 +52,7 @@ namespace nanoFramework.Device.Bluetooth.Services
         }
 
         /// <summary>
-        /// Set if Battery not connected or error reading battery level
+        /// Set if Battery not connected or error reading battery level.
         /// </summary>
         public bool DeviceInError { get; set; }
 
