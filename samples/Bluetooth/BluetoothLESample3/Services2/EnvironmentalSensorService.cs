@@ -33,7 +33,7 @@ namespace nanoFramework.Device.Bluetooth.Services
             Count = 0x07
         };
 
-        struct sensorItem
+        private struct sensorItem
         {
             public SensorType sensorType;
             public GattLocalCharacteristic sensorChar;
