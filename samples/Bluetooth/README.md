@@ -22,7 +22,7 @@ This shows how to create a custom service which shows the use of:-
 - Read and Write a value                          - Read/Write 3 bytes RGB
 
 You will be able to connect to the service and read values or subscribe to be Notified ever 60 seconds.
-Suitable Phone apps. "LightBlue" or "nRF Connect"
+Suitable Phone apps: "LightBlue" or "nRF Connect"
 
 * [Bluetooth Low energy sample 2](BluetoothLESample2)
 This Sample adds security to the Characteristic access. This will force the Server/Client to bond/pair which is 
