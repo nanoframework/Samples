@@ -47,7 +47,7 @@ namespace nanoFramework.Device.Bluetooth.Services
         }
 
         /// <summary>
-        /// Add the sensor to the Environmental Sensor Service
+        /// Add the sensor to the Environmental Sensor Service.
         /// </summary>
         /// <param name="sType">Type of Sensor</param>
         /// <param name="description">Description / location</param>
