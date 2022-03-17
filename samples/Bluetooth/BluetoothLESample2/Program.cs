@@ -11,7 +11,7 @@ using nanoFramework.Device.Bluetooth;
 using nanoFramework.Device.Bluetooth.GenericAttributeProfile;
 
 /// <summary>
-/// Bluetooth Sample 2 is a custom service which shows the use of:-
+/// Bluetooth Sample 2 is a custom service which shows the use of:
 /// 
 /// - Adding security to characteristics
 /// - 1st characteristic you can read without pairing but will need to be paired to write
