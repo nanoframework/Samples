@@ -11,7 +11,7 @@ using nanoFramework.Device.Bluetooth;
 using nanoFramework.Device.Bluetooth.GenericAttributeProfile;
 
 /// <summary>
-/// Bluetooth Sample 1 is a custom service which shows the use of:-
+/// Bluetooth Sample 1 is a custom service which shows the use of:
 /// 
 /// - Read static value 
 /// - Read a dynamic value using an event 
