@@ -21,7 +21,7 @@ using nanoFramework.Runtime.Native;
 /// -- Current Time
 /// -- Environmental Sensor
 ///  
-/// Suitable Phone apps for testing. "nRF Connect" or "LightBlue" 
+/// Suitable Phone apps for testing: "nRF Connect" or "LightBlue" 
 /// </summary>
 namespace BluetoothLESample3
 {
