@@ -206,7 +206,7 @@ namespace BluetoothLESample1
         }
 
         /// <summary>
-        /// Write handler for  Read/Write characteristic
+        /// Write handler for  Read/Write characteristic.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="WriteRequestEventArgs"></param>
