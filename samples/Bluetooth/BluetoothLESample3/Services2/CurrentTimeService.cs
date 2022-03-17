@@ -105,7 +105,7 @@ namespace nanoFramework.Device.Bluetooth.Services
         }
 
         /// <summary>
-        /// Format date time as buffer object
+        /// Format date time as buffer object.
         /// </summary>
         /// <param name="dt"></param>
         /// <param name="reason"></param>
