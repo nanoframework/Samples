@@ -127,6 +127,7 @@ namespace nanoFramework.Device.Bluetooth.Services
                 si.sensorChar.NotifyValue(si.dataBuffer);
             }
         }
+
         private void Sensor_ReadRequested(GattLocalCharacteristic sender, GattReadRequestedEventArgs ReadRequestEventArgs)
         {
             GattReadRequest request = ReadRequestEventArgs.GetRequest();
