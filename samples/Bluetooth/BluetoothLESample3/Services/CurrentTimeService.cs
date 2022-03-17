@@ -131,7 +131,7 @@ namespace nanoFramework.Device.Bluetooth.Services
         }
 
         /// <summary>
-        /// Handle a Write request 
+        /// Handle a Write request.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="WriteRequestEventArgs"></param>
