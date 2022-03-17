@@ -48,7 +48,7 @@ namespace nanoFramework.Device.Bluetooth.Services
         }
 
         /// <summary>
-        /// Create static Characteristic if not null
+        /// Create static Characteristic if not null.
         /// </summary>
         /// <param name="Uuid">Characteristic UUID</param>
         /// <param name="data">string data or null</param>
