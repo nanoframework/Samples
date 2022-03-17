@@ -18,7 +18,7 @@ using nanoFramework.Device.Bluetooth.GenericAttributeProfile;
 /// - Notifying clients of changed value
 /// 
 /// You will be able to connect to the service and read values or subscribe to Notified every 10 seconds.
-/// Suitable Phone apps. "LightBlue" or "nRF Connect"
+/// Suitable Phone apps: "LightBlue" or "nRF Connect"
 /// </summary>
 namespace BluetoothLESample1
 {
