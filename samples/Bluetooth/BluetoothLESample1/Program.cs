@@ -157,7 +157,7 @@ namespace BluetoothLESample1
         }
 
         /// <summary>
-        /// Event handler for Read characteristic
+        /// Event handler for Read characteristic.
         /// </summary>
         /// <param name="sender">GattLocalCharacteristic object</param>
         /// <param name="ReadRequestEventArgs"></param>
