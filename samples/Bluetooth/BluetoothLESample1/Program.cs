@@ -187,7 +187,7 @@ namespace BluetoothLESample1
         }
 
         /// <summary>
-        /// Read event handler for Read/Write characteristic
+        /// Read event handler for Read/Write characteristic.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="ReadRequestEventArgs"></param>
