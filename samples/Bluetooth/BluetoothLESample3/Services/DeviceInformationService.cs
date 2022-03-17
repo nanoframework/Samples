@@ -9,7 +9,7 @@ namespace nanoFramework.Device.Bluetooth.Services
 {
     /// <summary>
     /// Device Information Service.
-    /// Contain information about the device
+    /// Contains information about the device.
     /// </summary>
     class DeviceInformationServiceService
     {
