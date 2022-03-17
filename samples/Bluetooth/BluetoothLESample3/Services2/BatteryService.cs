@@ -57,7 +57,7 @@ namespace nanoFramework.Device.Bluetooth.Services
         public bool DeviceInError { get; set; }
 
         /// <summary>
-        /// Read event handler
+        /// Read event handler.
         /// </summary>
         /// <param name="sender">GattLocalCharacteristic sender</param>
         /// <param name="ReadRequestEventArgs">Request args</param>
