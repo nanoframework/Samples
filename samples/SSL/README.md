@@ -2,7 +2,15 @@
 
 Shows how to use various APIs related with SSL.
 
-### Test certificates
+## Samples
+
+- [Parsing a Certificate to access details](ParseCertificate/)
+- [Secure Client for Ethernet connected devices](SecureClient/)
+- [Secure Client for ESP32 devices (Wi-Fi connection)](SecureClient_ESP32/)
+- [Secure Server for Ethernet connected devices](SecureServer/)
+- [Secure Server for ESP32 devices (Wi-Fi connection)](SecureServer_ESP32/)
+
+## Test certificates
 
 The test certificates used in the code are available in this folder.
 
@@ -13,7 +21,8 @@ The test certificates used in the code are available in this folder.
 - [X509 Certificate RSA PEM format 2048 bytes](512b-rsa-example-cert.pem)
 - [X509 Certificate RSA DER format 2048 bytes](512b-rsa-example-cert.der)
 
-> NOTE: when working with ESP32 edit the nfproj files and add `BUIID_FOR_ESP32` to the DefineConstants, like this:
+> NOTE: if you're editing the project files, when working with ESP32, make sure to add `BUIID_FOR_ESP32` into the DefineConstants, like this:
+
 ```text
 <DefineConstants>$(DefineConstants);BUIID_FOR_ESP32;</DefineConstants>
 ```

@@ -10,7 +10,6 @@ namespace Reflection.CustomAttributes
     [Attribute4]
     public class MyClass1
     {
-
         [Attribute1]
         [Attribute3]
         public void MyMethod1(int i)
@@ -22,6 +21,12 @@ namespace Reflection.CustomAttributes
         public void MyMethodToIgnore()
         {
 
+        }
+
+        [DataRow((int)-1, (byte)2, (long)345678, (string)"A string", (bool)true)]
+        [Complex(0xBEEF, "Another string", false)]
+        public void MyMethodWithData()
+        {
         }
 
         private readonly int _myField;

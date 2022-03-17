@@ -9,6 +9,8 @@
     <Import_RootNamespace>CustomAttributes.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ComplexAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataRowAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AuthorAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IgnoreAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MaxAttribute.cs" />
