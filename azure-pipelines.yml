@@ -17,7 +17,7 @@ resources:
       endpoint: nanoframework
 
 pool:
-  vmImage: 'windows-2019'
+  vmImage: 'windows-latest'
 
 variables:
   DOTNET_NOLOGO: true
@@ -172,10 +172,10 @@ steps:
       git config user.name 'nfbot'
 
       git add README.md
-      git add README-zh-cn.md
+      git add README.zh-cn.md
       git commit -m "Update device lists" -m"***NO_CI***"
 
-      git rebase origin/main
+      git rebase origin
 
       # compute authorization header in format "AUTHORIZATION: basic 'encoded token'"
       # 'encoded token' is the Base64 of the string "nfbot:personal-token"

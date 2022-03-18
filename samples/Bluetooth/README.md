@@ -10,8 +10,58 @@ On other firmware versions a not supported exception will be returned.
 ## Samples
 
 * [Bluetooth Low energy serial](BluetoothLESerial)
-* [ ]()
+Shows how to use the built-in SSP(Serial Service Profile) which simulates a serial link over Bluetooth. Use a phone app. 
+such as "Serial Bluetooth Terminal" to connect to device and send and receive messages.
 
+* [Bluetooth Low energy sample 1](BluetoothLESample1)
+This shows how to create a custom service which shows the use of:
+
+| Custom service | Behavior |
+| --- | --- |
+| Read static value (value that doesn't change) | Value text |
+| Read a dynamic value using an event handler. | value 3 bytes (Hour/Minute/Seconds) |
+| Notifying clients of a changed value | Notify time every 60 seconds or when date updated. |
+| Read and Write a value | Read/Write 3 bytes RGB |
+
+You will be able to connect to the service and read values or subscribe to be Notified ever 60 seconds.
+Suitable Phone apps: "LightBlue" or "nRF Connect"
+
+* [Bluetooth Low energy sample 2](BluetoothLESample2)
+This sample adds security to the Characteristic access. This will force the Server/Client to bond/pair which is 
+used to generate key pairs for communications. All access is now encrypted. 
+
+| Custom service | Behavior |
+| --- | --- |
+| Read and Write (requires encryption) a value | Read/Write Int32 |
+| Read (requires encryption) and Write a value | Read/Write Int32 (same value) |
+
+The 1st Characteristic allows the read but the write requires it to be paired.
+The 2nd Characteristic allows writes but requires to be paired for the read.
+
+* [Bluetooth Low energy sample 3](BluetoothLESample3)
+This show cases the use of adding extra services to main service or replacing an existing service 
+like the default "Device Information Service". 
+
+This sample also includes some standard Bluetooth services as separate classes which may be useful 
+for any Bluetooth LE project.
+
+### Device Information Service 
+
+Provides device information like Manufacturer, model, software version etc.
+
+### Battery Level Service
+
+Publishes the current battery level as a percentage.
+
+### Current Time Service
+
+Publishes the current date/time of device and optionally allows the date/time to be set on device.
+
+### Environmental Sensor service
+
+This allows multiple environmental sensors to be published such as Temperature, Humidity, Pressure, Rainfall.
+This sample class includes these 4 but other types can easily added to class. Multiple sensor of same type can be added.
+The sample shows 3 Temperatures (Instantaneous, Maximum, Minimum) added to service and a humidity sensor.
 
 ## Build the sample
 

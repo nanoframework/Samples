@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "BluetoothLESample1", "BluetoothLESample1.nfproj", "{E5353D20-0D64-4A0C-B0F8-65AA69DC22A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5353D20-0D64-4A0C-B0F8-65AA69DC22A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5353D20-0D64-4A0C-B0F8-65AA69DC22A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5353D20-0D64-4A0C-B0F8-65AA69DC22A7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E5353D20-0D64-4A0C-B0F8-65AA69DC22A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5353D20-0D64-4A0C-B0F8-65AA69DC22A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5353D20-0D64-4A0C-B0F8-65AA69DC22A7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99DD0E07-50B5-4110-99C6-8FB438D388F8}
+	EndGlobalSection
+EndGlobal
