@@ -31,6 +31,7 @@ string[] categoriesToDisplay = new string[]
     "file",
     "wifi",
     "iot-device",
+    "ble"
 };
 
 Dictionary<string, string?> categoriesDescriptions = new()
@@ -58,6 +59,7 @@ Dictionary<string, string?> categoriesDescriptions = new()
     { "interop", "Interop" },
     { "json", "Json" },
     { "file", "File and storage access" },
+    { "ble", "Bluetooth"}
 };
 
 HashSet<string> ignoredDeviceDirectories = new()
