@@ -172,7 +172,7 @@ steps:
       git config user.name 'nfbot'
 
       git add README.md
-      git add README-zh-cn.md
+      git add README.zh-cn.md
       git commit -m "Update device lists" -m"***NO_CI***"
 
       git rebase origin/main
