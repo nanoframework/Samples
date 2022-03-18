@@ -1,8 +1,19 @@
+# Copyright (c) .NET Foundation and Contributors
+# See LICENSE file in the project root for full license information.
+
 trigger:
   branches:
-    include: [main]
+    include:
+      - main
   paths:
-    exclude: [README.md, LICENSE.md, NuGet.Config, .gitignore]
+    exclude:
+      - .gitignore
+      - CODE_OF_CONDUCT.md
+      - LICENSE.md
+      - README.md
+      - README.zh-cn.md
+      - NuGet.Config
+      - .github/*
 
 # PR always trigger build
 pr:
@@ -21,16 +32,19 @@ pool:
 
 variables:
   DOTNET_NOLOGO: true
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
 
 steps:
 
 # need this here in order to persist GitHub credentials 
 # only need the latest commit
 - checkout: self
-  fetchDepth: 1
+  clean: true
+
+- script: |
+    git config --global user.email 'nanoframework@outlook.com'
+    git config --global user.name 'nfbot'
+    git config --global core.autocrlf true
+  displayName: Setup git identity
 
 - task: UseDotNet@2
   displayName: Install .NET SDK
@@ -155,31 +169,41 @@ steps:
 # Adjust the readmes
 - task: DotNetCoreCLI@2
   displayName: Adjust READMEs
-  condition: and( succeeded(), eq(variables['System.PullRequest.PullRequestId'], ''))
+  condition: >-
+    and(
+      succeeded(),
+      eq(variables['System.PullRequest.PullRequestId'], '')
+    )
   inputs:
     command: custom
     custom: run
     projects: '**/device-listing.csproj'
 
 - task: PowerShell@2
-  condition: and( succeeded(), eq(variables['System.PullRequest.PullRequestId'], ''))
+  condition: >-
+    and(
+      succeeded(),
+      eq(variables['System.PullRequest.PullRequestId'], '')
+    )
   displayName: Push READMEs to GitHub
   continueOnError: true
   inputs:
     targetType: 'inline'
     script: |
+      git add README.md
+      git add README.zh-cn.md
+      git commit -m "Update READMEs" -m"***NO_CI***"
+
+      Write-Host "Pushing READMEs to $(Build.SourceBranchName)"
+
       git config user.email 'nanoframework@outlook.com'
       git config user.name 'nfbot'
 
-      git add README.md
-      git add README.zh-cn.md
-      git commit -m "Update device lists" -m"***NO_CI***"
-
-      # compute authorization header in format "AUTHORIZATION: basic 'encoded token'"
-      # 'encoded token' is the Base64 of the string "nfbot:personal-token"
-      $auth = "basic $([System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("nfbot:$(GitHubToken)"))))"
+      $binToken = [System.Text.Encoding]::UTF8.GetBytes("nfbot:$env:TOKEN")
+      $auth = "basic $([System.Convert]::ToBase64String($binToken)))"
       git -c http.extraheader="AUTHORIZATION: $auth" push origin "HEAD:$(Build.SourceBranchName)"
-
+  env:
+    TOKEN: $(GitHubToken)
 
 # report error
 - template: azure-pipelines-templates/discord-webhook-task.yml@templates  
