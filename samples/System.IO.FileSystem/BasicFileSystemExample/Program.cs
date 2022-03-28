@@ -15,6 +15,7 @@ namespace BasicFileSystemExample
 
             string sampeFilePath = "D:\\sampleFile.txt";
             string sampleFileUsbPath = "E:\\sampleFileUSB.txt";
+            string sampleFileInternalPath = "I:\\sampleFileInternal.txt";
             string sampleText = "Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ";
 
             #endregion
@@ -23,10 +24,14 @@ namespace BasicFileSystemExample
             #region Init
 
             // Init
-            Thread.Sleep(3000);     // Wait until the Storage Devices are mounted (SD Card & USB). This usally takes some seconds after startup.
-
+            // Wait until the Storage Devices are mounted (SD Card & USB). 
+            // This usally takes some seconds after startup.
+            // Not required for Internal drive or drives mounted from managed code. See mount sample.
+            Thread.Sleep(3000);     
+            
             // D: is SD Card
-            // E:: is USB drive
+            // E: is USB drive
+            // I: is Internal flash drive
 
             #endregion
 
@@ -55,20 +60,14 @@ namespace BasicFileSystemExample
             }
 
             fs.Dispose();
-
-
             Debug.WriteLine("+++++ Copy a file to USB drive +++++");
             File.Copy(sampeFilePath, sampleFileUsbPath);
-
 
             Debug.WriteLine("+++++ Move File Back to SD card +++++");
             File.Move(sampleFileUsbPath, "D:\\sampleFile2.txt");
 
-
             Debug.WriteLine("+++++ Change file attributes +++++");
             File.SetAttributes(sampleFileUsbPath, FileAttributes.ReadOnly);
-
-
 
             Debug.WriteLine("+++++ Read text from file +++++");
             FileStream fs2 = new FileStream(sampleFileUsbPath, FileMode.Open, FileAccess.Read);
