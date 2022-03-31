@@ -7,10 +7,11 @@ name: Daily update dependencies
 
 on:
   schedule:
-  # At 00:00 UTC every day.
-  - cron:  '00 00 * * *'
+  # At 00:00 UTC every Friday.
+  - cron:  '00 00 * * 6'
   repository_dispatch:
     types: update-dependencies
+  workflow_dispatch:
 
 defaults:
   run:
@@ -19,13 +20,15 @@ defaults:
 jobs:
   update-dotnet-preview:
     name: Update .NET nanoFramework dependencies
-    timeout-minutes: 15
+    timeout-minutes: 360 # Non default as samples repo it's huge and has lots of solutions to update!
     runs-on: windows-latest
     env:
       GITHUB_TOKEN: ${{ github.token }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Update dependencies
         uses: nanoframework/nanodu@v1
         with:

@@ -64,8 +64,9 @@ steps:
     # setup msbuild
     $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
     $msbuild = & $vswhere -latest -products * -requires Microsoft.Component.MSBuild -property installationPath
+
     if ($msbuild) {
-        $msbuild = join-path $msbuild 'MSBuild\Current\Bin\MSBuild.exe'
+      $msbuild = join-path $msbuild 'MSBuild\Current\Bin\amd64\MSBuild.exe'
     }
 
     # compute authorization header in format "AUTHORIZATION: basic 'encoded token'"
