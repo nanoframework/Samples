@@ -22,12 +22,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+    <Reference Include="mscorlib">
       <HintPath>packages\nanoFramework.CoreLibrary.1.12.0\lib\mscorlib.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="NF.AwesomeLib">
-      <HintPath>..\awesome-library\bin\Debug\NF.AwesomeLib.dll</HintPath>
+      <HintPath>..\awesome-library\bin\$(Configuration)\NF.AwesomeLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
