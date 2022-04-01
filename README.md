@@ -153,7 +153,7 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 
 ## Json
 
-* [nanoFramework Json sample](samples/Json%20nanoFramework)
+* [nanoFramework Json sample](samples/Json)
 
 ## File and storage access
 
