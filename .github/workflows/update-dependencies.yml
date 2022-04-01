@@ -33,7 +33,5 @@ jobs:
         uses: nanoframework/nanodu@v1
         with:
           solutionsToCheck: '*.sln'
-          exclusionList: |
-            device-listing
-            Amqp.Samples
+          exclusionList: "device-listing,Amqp.Samples"
           workingDirectory: '${{ github.workspace }}/samples'
