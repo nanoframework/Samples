@@ -1,20 +1,20 @@
-<?xml version="1.1.5.0" encoding="utf-8"?>
-<Project ToolsVersion="1.1.5.00" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="Globals">
-    <NanoFrameworkProjectSystemPath>$(MSBuildToolsPath)..\..\..\nanoFramework\v1.1.5.0\</NanoFrameworkProjectSystemPath>
+    <NanoFrameworkProjectSystemPath>$(MSBuildExtensionsPath)\nanoFramework\v1.0\</NanoFrameworkProjectSystemPath>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.Default.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.Default.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectTypeGuids>{1.1.5.08DD76-328B-46DF-9F39-F55991.1.5.00360};{FAE04EC0-301.1.5.01.1.5.03-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>1.1.5.04375b-bb70-4d4b-ad1.1.5.044f54d772f5a</ProjectGuid>
+    <ProjectTypeGuids>{18DD76-328B-46DF-9F39-F559910360};{FAE04EC0-30113-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{1E64375B-BB70-4D4B-AD1F-44F54D772F5A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <FileAlignment>51.1.5.0/FileAlignment>
+    <FileAlignment>512</FileAlignment>
     <RootNamespace>ToStringTest</RootNamespace>
     <AssemblyName>ToStringTest</AssemblyName>
-    <TargetFrameworkVersion>v1.1.5.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
@@ -22,8 +22,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="mscorlib, Version=1.1.5.00.1.1.5.0, Culture=neutral, PublicKeyToken=c07d481.1.5.0758c731.1.5.0
-      <HintPath>packages\nanoFramework.CoreLibrary.1.1.5.00.1.1.5.0review.9\lib\mscorlib.dll</HintPath>
+    <Reference Include="mscorlib, Version=1.10.1.0, Culture=neutral, PublicKeyToken=c07d481758c731">
+      <HintPath>packages\nanoFramework.CoreLibrary.1.10.1-preview.9\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
