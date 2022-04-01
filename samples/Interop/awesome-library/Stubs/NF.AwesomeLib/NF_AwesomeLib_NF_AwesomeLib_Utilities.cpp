@@ -24,10 +24,10 @@ void Utilities::NativeGetHardwareSerial( CLR_RT_TypedArray_UINT8 param0, HRESULT
 
 
     ////////////////////////////////
-    // implementation starts here //    
+    // implementation starts here //
 
 
-    // implementation ends here   //    
+    // implementation ends here   //
     ////////////////////////////////
 
 

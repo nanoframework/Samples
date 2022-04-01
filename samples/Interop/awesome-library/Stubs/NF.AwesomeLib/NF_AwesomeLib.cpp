@@ -8,6 +8,8 @@
 
 #include "NF_AwesomeLib.h"
 
+// clang-format off
+
 static const CLR_RT_MethodHandler method_lookup[] =
 {
     NULL,
@@ -21,7 +23,9 @@ static const CLR_RT_MethodHandler method_lookup[] =
 const CLR_RT_NativeAssemblyData g_CLR_AssemblyNative_NF_AwesomeLib =
 {
     "NF.AwesomeLib",
-    0xBB94F141,
+    0xEE794AFB,
     method_lookup,
     { 1, 0, 0, 0 }
 };
+
+// clang-format on

@@ -24,10 +24,10 @@ double Math::NativeSuperComplicatedCalculation( double param0, HRESULT &hr )
     double retValue = 0;
 
     ////////////////////////////////
-    // implementation starts here //    
+    // implementation starts here //
 
 
-    // implementation ends here   //    
+    // implementation ends here   //
     ////////////////////////////////
 
     return retValue;

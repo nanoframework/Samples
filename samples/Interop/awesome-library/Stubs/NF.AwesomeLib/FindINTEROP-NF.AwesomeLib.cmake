@@ -1,5 +1,5 @@
 #
-# Copyright(c) 2020 The nanoFramework project contributors
+# Copyright (c) .NET Foundation and Contributors
 # See LICENSE file in the project root for full license information.
 #
 
@@ -35,17 +35,17 @@ set(NF.AwesomeLib_SRCS
 )
 
 foreach(SRC_FILE ${NF.AwesomeLib_SRCS})
-
     set(NF.AwesomeLib_SRC_FILE SRC_FILE-NOTFOUND)
-    find_file(NF.AwesomeLib_SRC_FILE ${ SRC_FILE}
+    find_file(NF.AwesomeLib_SRC_FILE ${SRC_FILE}
         PATHS
-	        "${BASE_PATH_FOR_THIS_MODULE}"
-	        "${TARGET_BASE_LOCATION}"
+	        ${BASE_PATH_FOR_THIS_MODULE}
+	        ${TARGET_BASE_LOCATION}
+            ${PROJECT_SOURCE_DIR}/src/NF.AwesomeLib
 
 	    CMAKE_FIND_ROOT_PATH_BOTH
     )
-# message("${SRC_FILE} >> ${NF.AwesomeLib_SRC_FILE}") # debug helper
-list(APPEND NF.AwesomeLib_SOURCES ${NF.AwesomeLib_SRC_FILE})
+    # message("${SRC_FILE} >> ${NF.AwesomeLib_SRC_FILE}") # debug helper
+    list(APPEND NF.AwesomeLib_SOURCES ${NF.AwesomeLib_SRC_FILE})
 endforeach()
 
 include(FindPackageHandleStandardArgs)

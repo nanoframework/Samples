@@ -11,6 +11,7 @@
 
 #include <nanoCLR_Interop.h>
 #include <nanoCLR_Runtime.h>
+#include <nanoPackStruct.h>
 
 struct Library_NF_AwesomeLib_NF_AwesomeLib_Math
 {
