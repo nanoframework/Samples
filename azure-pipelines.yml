@@ -129,6 +129,8 @@ steps:
 
     foreach ($folder in $sampleFolders)
     {
+      try
+      {
         "" | Write-Host -ForegroundColor Yellow
         "***********************" | Write-Host -ForegroundColor Yellow
         "Processing sample '$folder'..." | Write-Host -ForegroundColor Yellow
@@ -162,6 +164,22 @@ steps:
                 if (-not $?) { throw "Error building '$sln'" }
             }
         }
+      }
+      catch
+      {
+          "" | Write-Host -ForegroundColor Red
+          "*****************************************" | Write-Host -ForegroundColor Red
+          ">>>ERROR: build failed, check output <<<"  | Write-Host -ForegroundColor Red
+          "*****************************************" | Write-Host -ForegroundColor Red
+          "" | Write-Host -ForegroundColor Red
+
+          "" | Write-Host -ForegroundColor Red
+          "Eception was: $_" | Write-Host -ForegroundColor Red
+          "" | Write-Host -ForegroundColor Red
+
+          # set flag
+          $buildFailed = $true
+      }
     }
   displayName: Build solutions
   env:
