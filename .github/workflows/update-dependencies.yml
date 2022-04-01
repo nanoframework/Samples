@@ -34,5 +34,6 @@ jobs:
         with:
           solutionsToCheck: '*.sln'
           exclusionList: |
+            device-listing
             Amqp.Samples
           workingDirectory: '${{ github.workspace }}/samples'
