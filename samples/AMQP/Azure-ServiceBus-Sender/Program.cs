@@ -5,12 +5,11 @@
 
 using Amqp;
 using Amqp.Framing;
-using nanoFramework.Networking;
 using System;
+using System.Device.Gpio;
 using System.Diagnostics;
 using System.Text;
 using System.Threading;
-using Windows.Devices.Gpio;
 using AmqpTrace = Amqp.Trace;
 
 #if HAS_WIFI
@@ -69,9 +68,9 @@ namespace AmqpSamples.AzureSB.Sender
 
             // setup user button
             // F769I-DISCO -> USER_BUTTON is @ PA0 -> (0 * 16) + 0 = 0
-            _userButton = GpioController.GetDefault().OpenPin(0);
-            _userButton.SetDriveMode(GpioPinDriveMode.Input);
-            _userButton.ValueChanged += UserButton_ValueChanged;
+            var _gpioController = new GpioController();
+            _userButton = _gpioController.OpenPin(0, PinMode.Input);
+            _userButton.ValueChanged += _userButton_ValueChanged;
 
             // setup AMQP
             // set trace level 
@@ -124,9 +123,9 @@ namespace AmqpSamples.AzureSB.Sender
             connection.Close();
         }
 
-        private static void UserButton_ValueChanged(object sender, GpioPinValueChangedEventArgs e)
+        private static void _userButton_ValueChanged(object sender, PinValueChangedEventArgs e)
         {
-            if (e.Edge == GpioPinEdge.FallingEdge)
+            if (e.ChangeType == PinEventTypes.Falling)
             {
                 // user button pressed, generate a random temperature value
                 temperature = _random.Next(50);
