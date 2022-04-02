@@ -150,9 +150,7 @@ steps:
             foreach ($sln in $solutionFiles)
             {
                 "" | Write-Host -ForegroundColor Yellow
-                "***********************" | Write-Host -ForegroundColor Yellow
-                "Building solution: '$sln'" | Write-Host -ForegroundColor Yellow
-                "***********************" | Write-Host -ForegroundColor Yellow
+                "INFO: Building solution: '$sln'" | Write-Host -ForegroundColor Yellow
                 "" | Write-Host -ForegroundColor Yellow
                         
                 # need to restore NuGets first
