@@ -38,7 +38,8 @@ steps:
 # need this here in order to persist GitHub credentials 
 # only need the latest commit
 - checkout: self
-  clean: true
+- checkout: templates
+  fetchDepth: 1
 
 - script: |
     git config --global user.email 'nanoframework@outlook.com'
@@ -180,6 +181,7 @@ steps:
       }
     }
   displayName: Build solutions
+  workingDirectory: 'Samples'
   env:
     MY_GITHUBTOKEN: $(GitHubToken)
 
@@ -195,6 +197,7 @@ steps:
     command: custom
     custom: run
     projects: '**/device-listing.csproj'
+    workingDirectory: 'Samples'
 
 - task: PowerShell@2
   condition: >-
@@ -206,21 +209,22 @@ steps:
   continueOnError: true
   inputs:
     targetType: 'inline'
+    workingDirectory: 'Samples'
     script: |
       git add README.md
       git add README.zh-cn.md
       git commit -m "Update READMEs" -m"***NO_CI***"
 
+      Write-Host "Rebasing..."
+      
+      git rebase origin/main
+
       Write-Host "Pushing READMEs to $(Build.SourceBranchName)"
 
-      git config user.email 'nanoframework@outlook.com'
-      git config user.name 'nfbot'
-
-      $binToken = [System.Text.Encoding]::UTF8.GetBytes("nfbot:$env:TOKEN")
-      $auth = "basic $([System.Convert]::ToBase64String($binToken)))"
+      # compute authorization header in format "AUTHORIZATION: basic 'encoded token'"
+      # 'encoded token' is the Base64 of the string "nfbot:personal-token"
+      $auth = "basic $([System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("nfbot:$(GitHubToken)"))))"
       git -c http.extraheader="AUTHORIZATION: $auth" push origin "HEAD:$(Build.SourceBranchName)"
-  env:
-    TOKEN: $(GitHubToken)
 
 # report error
 - template: azure-pipelines-templates/discord-webhook-task.yml@templates  
