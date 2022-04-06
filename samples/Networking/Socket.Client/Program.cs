@@ -24,6 +24,7 @@ namespace SecureClient
 {
     public class Program
     {
+
 #if HAS_WIFI
         private static string MySsid = "ssid";
         private static string MyPassword = "password";
@@ -35,14 +36,17 @@ namespace SecureClient
 
             bool success;
             CancellationTokenSource cs = new(60000);
+
 #if HAS_WIFI
-            success = WiFiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
+            success = WiFiNetworkHelper.Reconnect();
 #else
-            success = NetworkHelper.SetupAndConnectNetwork(cs.Token, true);
+            success = NetworkHelper.SetupAndConnectNetwork(cs.Token);
 #endif
+
             if (!success)
             {
-                Debug.WriteLine($"{DateTime.UtcNow} Can't get a proper IP address and DateTime, error: {NetworkHelper.Status}.");
+                Debug.WriteLine($"{DateTime.UtcNow} Can't get a proper IP address, error: {NetworkHelper.Status}.");
+
                 if (NetworkHelper.HelperException != null)
                 {
                     Debug.WriteLine($"ex: {NetworkHelper.HelperException}");
