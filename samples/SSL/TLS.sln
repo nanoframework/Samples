@@ -4,9 +4,9 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "ParseCertificate", "ParseCertificate\ParseCertificate.nfproj", "{638EFFB7-ED4A-402C-B70A-0406796B8BA9}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "SecureClient_ESP32", "SecureClient_ESP32\SecureClient_ESP32.nfproj", "{AE046A9A-FACA-4A43-B0A5-B8B808C4F606}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "SecureClient_WiFi", "SecureClient_WiFi\SecureClient_WiFi.nfproj", "{AE046A9A-FACA-4A43-B0A5-B8B808C4F606}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "SecureServer_ESP32", "SecureServer_ESP32\SecureServer_ESP32.nfproj", "{B795119D-A3F0-43FA-99AA-AE582DE61AC2}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "SecureServer_WiFi", "SecureServer_WiFi\SecureServer_WiFi.nfproj", "{B795119D-A3F0-43FA-99AA-AE582DE61AC2}"
 EndProject
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "SecureClient", "SecureClient\SecureClient.nfproj", "{28B7CB4B-5BE1-4E56-850E-851CD026A8A1}"
 EndProject

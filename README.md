@@ -40,7 +40,7 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 * [System.IO.Ports serial Communication sample](samples/SerialCommunication)
 * [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
 
-## Networking including HTTP, SSL
+## Networking including HTTP, TLS
 
 * [.NET **nanoFramework** Webserver sample pack](samples/Webserver)
 * [HTTP Listener sample](samples/HTTP/HttpListener)
@@ -50,7 +50,7 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 * [HTTP.HttpAzurePOST Sample](samples/HTTP/HttpAzurePOST)
 * [MQTT sample pack](samples/MQTT)
 * [Networking sample pack](samples/Networking)
-* [SSL sample pack](samples/SSL)
+* [TLS sample pack](samples/TLS)
 * [WebSocket sample pack](samples/WebSockets)
 * [WiFI samples](samples/Wifi)
 * [WiFi Soft AP sample](samples/WiFiAP)

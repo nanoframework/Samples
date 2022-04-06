@@ -40,7 +40,7 @@
 * [System.IO.Ports serial Communication sample](samples/SerialCommunication)
 * [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
 
-## Networking including HTTP, SSL
+## Networking including HTTP, TLS
 
 * [.NET **nanoFramework** Webserver sample pack](samples/Webserver)
 * [Error](samples/HTTP/HttpAzurePOST)
@@ -50,7 +50,7 @@
 * [HTTP sample pack](samples/HTTP)
 * [MQTT sample pack](samples/MQTT)
 * [Networking sample pack](samples/Networking)
-* [SSL sample pack](samples/SSL)
+* [TLS sample pack](samples/TLS)
 * [WiFI samples](samples/Wifi)
 * [WiFi Soft AP sample](samples/WiFiAP)
 

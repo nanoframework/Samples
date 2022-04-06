@@ -15,7 +15,7 @@
     <RootNamespace>SecureServer</RootNamespace>
     <AssemblyName>SecureServer</AssemblyName>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
-    <DefineConstants>$(DefineConstants);BUILD_FOR_ESP32;</DefineConstants>
+    <DefineConstants>$(DefineConstants);HAS_WIFI;</DefineConstants>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>

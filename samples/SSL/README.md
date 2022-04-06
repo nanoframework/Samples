@@ -1,6 +1,6 @@
-# SSL sample pack
+# TLS sample pack
 
-Shows how to use various APIs related with SSL.
+Shows how to use various APIs related with TLS (Transport Layer Security).
 
 ## Samples
 
@@ -21,10 +21,10 @@ The test certificates used in the code are available in this folder.
 - [X509 Certificate RSA PEM format 2048 bytes](512b-rsa-example-cert.pem)
 - [X509 Certificate RSA DER format 2048 bytes](512b-rsa-example-cert.der)
 
-> NOTE: if you're editing the project files, when working with ESP32, make sure to add `BUIID_FOR_ESP32` into the DefineConstants, like this:
+> NOTE: if you're editing the project files, when working with a target with Wi-Fi capabilities, make sure to add `HAS_WIFI` into the DefineConstants, like this:
 
 ```text
-<DefineConstants>$(DefineConstants);BUIID_FOR_ESP32;</DefineConstants>
+<DefineConstants>$(DefineConstants);HAS_WIFI;</DefineConstants>
 ```
 
 > **Note:** This sample is part of a large collection of nanoFramework feature samples.

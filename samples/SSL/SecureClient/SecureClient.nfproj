@@ -18,11 +18,11 @@
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
-    <Compile Include="..\SecureClient_ESP32\Program.cs">
+    <Compile Include="..\SecureClient_WiFi\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\SecureClient_ESP32\Resources.Designer.cs">
+    <Compile Include="..\SecureClient_WiFi\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -32,7 +32,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\SecureClient_ESP32\Resources.resx" Link="Resources.resx" />
+    <EmbeddedResource Include="..\SecureClient_WiFi\Resources.resx" Link="Resources.resx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731">
