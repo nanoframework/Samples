@@ -30,17 +30,18 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 * [Blink your first led](samples/Blinky)
 * [Digital Analog Converter sample](samples/DAC)
 * [GPIO and events sample](samples/Gpio/Gpio+Events)
-* [GPIO and events sample (.NET IoT style)](samples/Gpio/Gpio+Events%20IoT%20Style)
+* [GPIO and events sample (.NET IoT style)](samples/Gpio/Gpio+EventsIoTStyle)
 * [GPIO sample pack](samples/Gpio)
 * [I2C GPS sample](samples/I2C/System.Device.I2c/GPS)
 * [I2C sample sample pack](samples/I2C)
+* [I2C Scanner sample](samples/I2C/NanoI2cScanner)
 * [System.Device.Pwm](samples/PWM/System.Device.Pwm)
 * [System.Device.PWM sample](samples/PWM)
 * [System.Device.Spi sample](samples/SPI/System.Device.Spi)
 * [System.IO.Ports serial Communication sample](samples/SerialCommunication)
 * [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
 
-## Networking including HTTP, TLS
+## Networking including HTTP, SSL
 
 * [.NET **nanoFramework** Webserver sample pack](samples/Webserver)
 * [HTTP Listener sample](samples/HTTP/HttpListener)
@@ -50,7 +51,7 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 * [HTTP.HttpAzurePOST Sample](samples/HTTP/HttpAzurePOST)
 * [MQTT sample pack](samples/MQTT)
 * [Networking sample pack](samples/Networking)
-* [TLS sample pack](samples/TLS)
+* [TLS sample pack](samples/SSL)
 * [WebSocket sample pack](samples/WebSockets)
 * [WiFI samples](samples/Wifi)
 * [WiFi Soft AP sample](samples/WiFiAP)
@@ -130,7 +131,7 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 * [Execution Constraint demo](samples/ExecutionConstraint)
 * [GC stress test](samples/GCStressTest)
 * [GPIO and events sample](samples/Gpio/Gpio+Events)
-* [GPIO and events sample (.NET IoT style)](samples/Gpio/Gpio+Events%20IoT%20Style)
+* [GPIO and events sample (.NET IoT style)](samples/Gpio/Gpio+EventsIoTStyle)
 * [Interop sample](samples/Interop)
 * [Managed resources sample](samples/ManagedResources)
 * [Native events sample](samples/NativeEvents)
@@ -170,6 +171,14 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 * [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
 * [Complete Azure MQTT sample using BMP280 sensor](samples/AzureMQTTTwinsBMP280Sleep)
 * [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
+
+## Bluetooth
+
+* [Bluetooth Low Energy Serial profile sample](samples/Bluetooth/BluetoothLESerial)
+* [Bluetooth Low energy: adding, replacing services to the main service](samples/Bluetooth/BluetoothLESample3)
+* [Bluetooth Low energy: read static and dynamic values, notification, read/write value](samples/Bluetooth/BluetoothLESample1)
+* [Bluetooth Low energy: read/write with encryption a value](samples/Bluetooth/BluetoothLESample2)
+* [Bluetooth samples](samples/Bluetooth)
 
 </devices>
 
