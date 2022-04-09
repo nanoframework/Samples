@@ -29,12 +29,16 @@
       <HintPath>packages\nanoFramework.Iot.Device.Button.1.0.300\lib\Iot.Device.Button.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Iot.Device.Ws28xx.Esp32, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Iot.Device.Ws28xx.Esp32.1.0.300\lib\Iot.Device.Ws28xx.Esp32.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.CoreLibrary.1.12.0\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.AtomLite, Version=1.0.4.42696, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.AtomLite.1.0.4\lib\nanoFramework.AtomLite.dll</HintPath>
+    <Reference Include="nanoFramework.AtomLite, Version=1.0.10.52205, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.AtomLite.1.0.10\lib\nanoFramework.AtomLite.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Hardware.Esp32, Version=1.3.6.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
