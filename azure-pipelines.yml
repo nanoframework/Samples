@@ -232,3 +232,4 @@ steps:
     status: 'failure'
     webhookUrl: '$(DiscordWebhook)'
     message: ''
+    workingDirectory: 'Samples'
