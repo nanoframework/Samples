@@ -28,7 +28,7 @@ namespace Stm32.PowerMode
             //GpioPin led = GpioController().OpenStm32Pin('A', 5);
 
             led.SetDriveMode(GpioPinDriveMode.Output);
-            led.Write(GpioPinValue.High);
+            led.Write(PinValue.High);
 
             // query target about wake-up reason
             switch (STM32.Power.WakeupReason)

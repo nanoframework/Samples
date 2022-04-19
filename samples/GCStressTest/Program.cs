@@ -53,7 +53,7 @@ namespace GCStressTest
             int period4 = _randomizer.Next(1000 * 3);
             int period5 = _randomizer.Next(1000 * 3);
 
-            _led = GpioController().OpenPin(PinNumber('G', 14), PinMode.Output);
+            _led = new GpioController().OpenPin(PinNumber('G', 14), PinMode.Output);
 
             // quick timers
 

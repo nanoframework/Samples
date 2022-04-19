@@ -58,7 +58,7 @@ namespace HttpSamples.HttpAzurePOST
             }
 
             // setup user button
-            _userButton = GpioController().OpenPin(0, PinMode.Input);
+            _userButton = new GpioController().OpenPin(0, PinMode.Input);
             _userButton.ValueChanged += UserButton_ValueChanged;
 
             // crate HTTP Client
