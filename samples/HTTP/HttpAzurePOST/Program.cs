@@ -13,7 +13,7 @@ using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
-using Windows.Devices.Gpio;
+using System.Device.Gpio;
 using System.Net.Http;
 
 #if BUILD_FOR_ESP32
@@ -58,8 +58,7 @@ namespace HttpSamples.HttpAzurePOST
             }
 
             // setup user button
-            _userButton = GpioController.GetDefault().OpenPin(0);
-            _userButton.SetDriveMode(GpioPinDriveMode.Input);
+            _userButton = GpioController.OpenPin(0, PinMode.Input);
             _userButton.ValueChanged += UserButton_ValueChanged;
 
             // crate HTTP Client

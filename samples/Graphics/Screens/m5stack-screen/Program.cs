@@ -4,7 +4,7 @@ using nanoFramework.UI;
 using System;
 using System.Diagnostics;
 using System.Threading;
-using Windows.Devices.Pwm;
+using System.Device.Pwm;
 
 namespace m5stack.screen
 {

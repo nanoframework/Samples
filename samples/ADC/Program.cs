@@ -6,7 +6,7 @@
 using System;
 using System.Diagnostics;
 using System.Threading;
-using Windows.Devices.Adc;
+using System.Device.Adc;
 
 namespace TestAdc
 {

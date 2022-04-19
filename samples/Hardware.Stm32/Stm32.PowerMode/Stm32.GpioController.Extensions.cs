@@ -8,7 +8,7 @@ using System;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // using the same namespace makes the extensions usable out of the box, without requiring adding other using //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-namespace Windows.Devices.Gpio
+namespace System.Device.Gpio
 {
     public static class GpioControllerExtensions
     {
@@ -22,12 +22,12 @@ namespace Windows.Devices.Gpio
         /// <remarks>
         /// This extension is valid for STM32 MCUs and relies on the port naming used by STM, such as PA2 or PB9.
         /// </remarks>
-        public static Windows.Devices.Gpio.GpioPin OpenStm32Pin(
-            this Windows.Devices.Gpio.GpioController controller, 
+        public static System.Device.Gpio.GpioPin OpenStm32Pin(
+            this System.Device.Gpio.GpioController controller, 
             char port, 
             byte pin)
         {
-            return controller.OpenStm32Pin(port, pin, Windows.Devices.Gpio.GpioSharingMode.Exclusive);
+            return controller.OpenStm32Pin(port, pin, System.Device.Gpio.GpioSharingMode.Exclusive);
         }
 
         /// <summary>
@@ -41,11 +41,11 @@ namespace Windows.Devices.Gpio
         /// <remarks>
         /// This extension is valid for STM32 MCUs and relies on the port naming used by STM, such as PA2 or PB9.
         /// </remarks>
-        public static Windows.Devices.Gpio.GpioPin OpenStm32Pin(
-            this Windows.Devices.Gpio.GpioController controller, 
+        public static System.Device.Gpio.GpioPin OpenStm32Pin(
+            this System.Device.Gpio.GpioController controller, 
             char port, 
             byte pin,
-            Windows.Devices.Gpio.GpioSharingMode sharingMode)
+            System.Device.Gpio.GpioSharingMode sharingMode)
         {
             if ((port < 'A' || port > 'J') ||
                 (pin > 15))

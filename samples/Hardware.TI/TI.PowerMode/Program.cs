@@ -6,7 +6,7 @@
 using System;
 using System.Diagnostics;
 using System.Threading;
-using Windows.Devices.Gpio;
+using System.Device.Gpio;
 using TIPower = nanoFramework.Hardware.TI.Power;
 
 namespace Hardware.TI.PowerMode
@@ -16,9 +16,8 @@ namespace Hardware.TI.PowerMode
         public static void Main()
         {
             // TI CC13x2 Launchpad: DIO_07 it's the green LED
-            GpioPin led = GpioController.GetDefault().OpenPin(7);
+            GpioPin led = GpioController.OpenPin(7, PinMode.Output);
 
-            led.SetDriveMode(GpioPinDriveMode.Output);
             led.Write(GpioPinValue.High);
 
             // query target about wake-up reason
