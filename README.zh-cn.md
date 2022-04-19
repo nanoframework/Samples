@@ -69,8 +69,8 @@
 * [Azure IoT Hub SDK with MQTT protocol](samples/AzureSDK/AzureSDK)
 * [Azure SDK sample pack](samples/AzureSDK)
 * [Azure Service Bus AMQP sample](samples/AMQP/Azure-ServiceBus-Sender)
-* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
 * [Complete Azure MQTT sample using BMP280 sensor](samples/AzureMQTTTwinsBMP280Sleep)
+* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
 * [HTTP.HttpAzureGET Sample](samples/HTTP/HttpAzureGET)
 * [HTTP.HttpAzurePOST Sample](samples/HTTP/HttpAzurePOST)
 * [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
@@ -100,12 +100,12 @@
 ## ESP32 specific
 
 * [Bluetooth samples](samples/Bluetooth)
-* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
 * [Complete Azure MQTT sample using BMP280 sensor](samples/AzureMQTTTwinsBMP280Sleep)
+* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
 * [Hardware ESP32 Deep sleep sample](samples/Hardware.Esp32)
 * [Hardware ESP32 RMT sample pack](samples/Hardware.Esp32.Rmt)
-* [NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStripLowMemory)
 * [NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStrip)
+* [NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStripLowMemory)
 * [Ultrasonic HC-SR04 sensor with RMT](samples/Hardware.Esp32.Rmt/Ultrasonic)
 
 ## STM32 Specific
@@ -168,8 +168,8 @@
 
 ## IoT.Device
 
-* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
 * [Complete Azure MQTT sample using BMP280 sensor](samples/AzureMQTTTwinsBMP280Sleep)
+* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
 * [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
 
 ## Bluetooth
