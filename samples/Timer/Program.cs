@@ -18,9 +18,9 @@ namespace TimerSample
         {
             // mind to set a pin that exists on the board being tested
             // PJ5 is LD2 in STM32F769I_DISCO
-            _led = GpioController.OpenPin(PinNumber('J', 5), PinMode.Output);
+            _led = GpioController().OpenPin(PinNumber('J', 5), PinMode.Output);
             // PG14 is LEDLD4 in F429I_DISCO
-            //_led = GpioController.OpenPin(PinNumber('G', 14), PinMode.Output);
+            //_led = GpioController().OpenPin(PinNumber('G', 14), PinMode.Output);
 
             // create timer
             Debug.WriteLine(DateTime.UtcNow.ToString() + ": creating timer, due in 1 second");

@@ -16,7 +16,7 @@ namespace Hardware.TI.PowerMode
         public static void Main()
         {
             // TI CC13x2 Launchpad: DIO_07 it's the green LED
-            GpioPin led = GpioController.OpenPin(7, PinMode.Output);
+            GpioPin led = GpioController().OpenPin(7, PinMode.Output);
 
             led.Write(GpioPinValue.High);
 

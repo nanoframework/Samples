@@ -15,11 +15,11 @@ namespace Can.TestApp
         public static void Main()
         {
             // PJ5 is LD2 in STM32F769I_DISCO
-            //_led = GpioController.OpenPin(PinNumber('J', 5), PinMode.Output);
+            //_led = GpioController().OpenPin(PinNumber('J', 5), PinMode.Output);
             // PG14 is LEDLD4 in F429I_DISCO
-            //_led = GpioController.OpenPin(PinNumber('G', 14), PinMode.Output);
+            //_led = GpioController().OpenPin(PinNumber('G', 14), PinMode.Output);
             // PD13 is LED3 in DISCOVERY4
-            _led = GpioController.OpenPin(PinNumber('D', 13), PinMode.Output);
+            _led = GpioController().OpenPin(PinNumber('D', 13), PinMode.Output);
 
             // set settings for CAN controller
             CanSettings canSettings = new CanSettings(6, 8, 1, 0);

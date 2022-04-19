@@ -38,8 +38,7 @@ private const string MyPassword = "<replace-with-valid-password>";
 8. Connect a button from the GPIO pin in Program.cs (Pin 0) to ground. When you press the button it will create a connection from Pin 0 to ground and send a message to the cloud.
 ```charp
 // setup user button
-_userButton = GpioController.GetDefault().OpenPin(0);
-_userButton.SetDriveMode(GpioPinDriveMode.Input);
+_userButton = GpioController().OpenPin(0, PinMode.Input);
 _userButton.ValueChanged += UserButton_ValueChanged;
 ```
 

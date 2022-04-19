@@ -49,8 +49,8 @@ namespace SimpleWpf
             // Adjust as well the size of your screen and the position of the screen on the driver
             DisplayControl.Initialize(new SpiConfiguration(1, chipSelect, dataCommand, reset, backLightPin), new ScreenConfiguration(0, 0, 320, 240));
             // Depending on you ESP32, you may also have to use either PWM either GPIO to set the backlight pin mode on
-            // GpioController.OpenPin(backLightPin, PinMode.Output);
-            // GpioController.Write(backLightPin, PinValue.High);
+            // GpioController().OpenPin(backLightPin, PinMode.Output);
+            // GpioController().Write(backLightPin, PinValue.High);
             // Assign GPIO / Key functions to GPIOButtonInputProvider
             // Esp32
             inputProvider.AddButton(12, Button.VK_LEFT, true);
