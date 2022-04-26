@@ -1,15 +1,17 @@
-﻿using nanoFramework.Json;
-using System;
+﻿//
+// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+//
+
+using System.IO;
 using System.Text;
-using Windows.Storage;
+using nanoFramework.Json;
 
 namespace JsonConfigurationStore
 {
     public class ConfigurationStore
     {
-        private StorageFolder configFolder { get; set; }
         private string configFilePath { get; set; }
-
 
         public ConfigurationStore(string path = "I:\\configuration.json")
         {
@@ -23,14 +25,11 @@ namespace JsonConfigurationStore
 
         public Configuration GetConfig()
         {
-            var InternalDevices = Windows.Storage.KnownFolders.InternalDevices;
-            var flashDevices = InternalDevices.GetFolders();
-            var configFolder = flashDevices[0];
+            var configFile = Directory.GetFiles(configFilePath);
 
-            var configFile = StorageFile.GetFileFromPath(configFilePath);
-
-            string json = FileIO.ReadText(configFile);
+            var json = new FileStream(configFile[0], FileMode.Open);
             Configuration config = (Configuration)JsonConvert.DeserializeObject(json, typeof(Configuration));
+
             return config;
         }
         public bool WriteConfig(Configuration config)
@@ -38,8 +37,13 @@ namespace JsonConfigurationStore
             try
             {
                 var configJson = JsonConvert.SerializeObject(config);
-                StorageFile configFile = configFolder.CreateFile("configuration.json", CreationCollisionOption.ReplaceExisting);
-                FileIO.WriteText(configFile, configJson);
+
+                var json = new FileStream(configFilePath, FileMode.OpenOrCreate);
+
+                byte[] buffer = Encoding.UTF8.GetBytes(configJson);
+                json.Write(buffer, 0, buffer.Length);
+                json.Dispose();
+
                 return true;
             }
             catch
