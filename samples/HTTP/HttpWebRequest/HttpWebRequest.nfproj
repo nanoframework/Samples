@@ -43,9 +43,8 @@
       <HintPath>..\packages\nanoFramework.CoreLibrary.1.12.0\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Networking.Sntp, Version=1.5.8.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Networking.Sntp.1.5.8\lib\nanoFramework.Networking.Sntp.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="nanoFramework.Networking.Sntp">
+      <HintPath>..\packages\nanoFramework.Networking.Sntp.1.6.1\lib\nanoFramework.Networking.Sntp.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.ResourceManager, Version=1.1.4.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.ResourceManager.1.1.4\lib\nanoFramework.ResourceManager.dll</HintPath>

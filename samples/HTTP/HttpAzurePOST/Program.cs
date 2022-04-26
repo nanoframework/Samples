@@ -134,9 +134,9 @@ namespace HttpSamples.HttpAzurePOST
             }
         }
 
-        private static void UserButton_ValueChanged(object sender, GpioPinValueChangedEventArgs e)
+        private static void UserButton_ValueChanged(object sender, PinValueChangedEventArgs e)
         {
-            if (e.Edge == GpioPinEdge.FallingEdge)
+            if (e.ChangeType == PinEventTypes.Falling)
             {
                 // user button pressed, generate a random temperature value
                 temperature = _random.Next(10);

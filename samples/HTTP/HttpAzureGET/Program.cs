@@ -130,9 +130,9 @@ namespace HttpSamples.HttpAzureGET
             }
         }
 
-        private static void UserButton_ValueChanged(object sender, GpioPinValueChangedEventArgs e)
+        private static void UserButton_ValueChanged(object sender, PinValueChangedEventArgs e)
         {
-            if (e.Edge == GpioPinEdge.FallingEdge)
+            if (e.ChangeType == PinEventTypes.Falling)
             {
                 // signal event
                 sendMessage.Set();
