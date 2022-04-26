@@ -5,9 +5,10 @@
 
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Threading;
-using Windows.Storage;
-using Windows.Storage.Devices;
+using nanoFramework.System.IO.FileSystem;
+
 
 namespace MountDevices
 {
@@ -15,7 +16,7 @@ namespace MountDevices
     {
         public static void Main()
         {
-            
+            SDCard sdCard = null;
 
             //  Windows.Storage.Devices.SDCard is a static class used to mount the SDcard.
             //  Currently implemented for ESP32 as the SDCard is not automatically mounted when the card is inserted.
@@ -24,14 +25,16 @@ namespace MountDevices
             try
             {
                 // Mount a MMC sdcard using 4 bit data ( e.g Wrover boards )
-                SDCard.MountMMC(false);
+                sdCard = new SDCard(new SDCard.SDCardMmcParameters() { dataWidth = SDCard.SDDataWidth._4_bit });
 
                 // Mount a MMC sdcard using 1 bit data ( e.g Olimex EVB boards )
-            //    SDCard.MountMMC(true);
+                // var sdCard = new SDCard(new SDCard.SDCardMmcParameters() { dataWidth = SDCard.SDDataWidth._1_bit });
 
                 // Mount a SPI connected SDCard passing the SPI bus and the Chip select pin
-            //    SDCard.MountSpi("SPI1", 26);
+                //    SDCard.MountSpi("SPI1", 26);
+                //var sdCard = new SDCard(new SDCard.SDCardSpiParameters() { chipSelectPin = 26 });
 
+                sdCard.Mount();
             }
             catch ( Exception ex)
             {
@@ -39,36 +42,31 @@ namespace MountDevices
             }
 
             // SDCard is mounted ?
-            if (SDCard.IsMounted)
+            if (sdCard.IsMounted)
             {
                 // Get the logical root folder for all removable storage devices
                 // in nanoFramework the drive letters are fixed, being:
                 // D: SD Card
-                StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
 
-                // list all removable storage devices
-                var removableDevices = externalDevices.GetFolders();
+                // get folders on 1st removable device
+                var foldersInDevice = Directory.GetDirectories("D:");
 
-                if (removableDevices.Length > 0)
+                // List all directories
+                foreach (var dir in foldersInDevice)
                 {
-                    // get folders on 1st removable device
-                    var foldersInDevice = removableDevices[0].GetFolders();
-                    // List all folders
-                    foreach(StorageFolder folder in foldersInDevice)
-                    {
-                        Debug.WriteLine($"Folder ->{folder.Path}");
-                    }
-
-
-                    // get files on the root of the 1st removable device
-                    var filesInDevice = removableDevices[0].GetFiles();
-                    // List all files
-                    foreach (StorageFile file in filesInDevice)
-                    {
-                        Debug.WriteLine($"file ->{file.Path}");
-                    }
-
+                    Debug.WriteLine($"Folder ->{dir}");
                 }
+
+
+                // get files on the root of the 1st removable device
+                var filesInDevice = Directory.GetFiles("D:");
+                
+                // List all files
+                foreach (var file in filesInDevice)
+                {
+                    Debug.WriteLine($"file ->{file}");
+                }
+
             }
 
             Thread.Sleep(Timeout.Infinite);
