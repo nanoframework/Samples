@@ -57,12 +57,6 @@ namespace m5stack.screen
             DisplayControl.Initialize(new SpiConfiguration(1, chipSelect, dataCommand, reset, backLightPin), new ScreenConfiguration(0, 0, screenWidth, screenHeight), screenBufferSize);
             Debug.WriteLine("Screen initialized");
 
-            PwmController pwm = PwmController.GetDefault();
-            pwm.SetDesiredFrequency(44100);
-            PwmPin pwmPin = pwm.OpenPin(backLightPin);
-            pwmPin.SetActiveDutyCyclePercentage(0.1);
-            pwmPin.Start();
-
             Font DisplayFont = Resource.GetFont(Resource.FontResources.segoeuiregular12);
             Bitmap charBitmap = new Bitmap(DisplayFont.MaxWidth + 1, DisplayFont.Height);
 
