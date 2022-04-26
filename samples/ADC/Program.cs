@@ -14,11 +14,8 @@ namespace TestAdc
     {
         public static void Main()
         {
-            string devs = AdcController.GetDeviceSelector();
 
-            Debug.WriteLine("devs=" + devs);
-
-            AdcController adc1 = AdcController.GetDefault();
+            AdcController adc1 = new AdcController();
 
             int max1 = adc1.MaxValue;
             int min1 = adc1.MinValue;
