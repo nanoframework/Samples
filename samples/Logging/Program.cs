@@ -11,7 +11,7 @@ using nanoFramework.Logging.Stream;
 using System;
 using System.Diagnostics;
 using System.Threading;
-using Windows.Devices.SerialCommunication;
+using System.IO.Ports;
 #if BUIID_FOR_ESP32
 using nanoFramework.Hardware.Esp32;
 #endif

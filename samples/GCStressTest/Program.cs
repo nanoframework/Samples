@@ -6,7 +6,7 @@
 using System;
 using System.Diagnostics;
 using System.Threading;
-using Windows.Devices.Gpio;
+using System.Device.Gpio;
 
 namespace GCStressTest
 {
@@ -53,8 +53,7 @@ namespace GCStressTest
             int period4 = _randomizer.Next(1000 * 3);
             int period5 = _randomizer.Next(1000 * 3);
 
-            _led = GpioController.GetDefault().OpenPin(PinNumber('G', 14));
-            _led.SetDriveMode(GpioPinDriveMode.Output);
+            _led = new GpioController().OpenPin(PinNumber('G', 14), PinMode.Output);
 
             // quick timers
 

@@ -36,9 +36,8 @@
       <HintPath>..\packages\nanoFramework.Json.2.1.2\lib\nanoFramework.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Networking.Sntp, Version=1.5.8.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Networking.Sntp.1.5.8\lib\nanoFramework.Networking.Sntp.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="nanoFramework.Networking.Sntp">
+      <HintPath>..\packages\nanoFramework.Networking.Sntp.1.6.1\lib\nanoFramework.Networking.Sntp.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.ResourceManager, Version=1.1.4.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.ResourceManager.1.1.4\lib\nanoFramework.ResourceManager.dll</HintPath>
@@ -80,8 +79,8 @@
       <HintPath>..\packages\nanoFramework.System.Threading.1.0.4\lib\System.Threading.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Windows.Devices.Gpio, Version=1.5.5.4, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Windows.Devices.Gpio.1.5.5\lib\Windows.Devices.Gpio.dll</HintPath>
+    <Reference Include="System.Device.Gpio">
+      <HintPath>..\packages\nanoFramework.System.Device.Gpio.1.0.4\lib\System.Device.Gpio.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

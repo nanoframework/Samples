@@ -11,7 +11,7 @@ This sample is coded to use the STM32F769IDiscovery target board, but can be eas
 
 ### Reference
 
-- [Windows.Devices.SerialCommunication](http://docs.nanoframework.net/api/nanoFramework.System.Collection.Hashtable.html)
+- [System.Collections.Hastable](http://docs.nanoframework.net/api/nanoFramework.System.Collection.Hashtable.html).
 
 ## Build the sample
 

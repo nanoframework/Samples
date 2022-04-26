@@ -12,7 +12,7 @@ using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
-using Windows.Devices.Gpio;
+using System.Device.Gpio;
 using System.Net.Http;
 using System;
 
@@ -59,8 +59,7 @@ namespace HttpSamples.HttpAzureGET
             }
 
             // setup user button
-            _userButton = GpioController.GetDefault().OpenPin(0);
-            _userButton.SetDriveMode(GpioPinDriveMode.Input);
+            _userButton = new GpioController().OpenPin(0, PinMode.Input);
             _userButton.ValueChanged += UserButton_ValueChanged;
 
             // crate HTTP Client
@@ -131,9 +130,9 @@ namespace HttpSamples.HttpAzureGET
             }
         }
 
-        private static void UserButton_ValueChanged(object sender, GpioPinValueChangedEventArgs e)
+        private static void UserButton_ValueChanged(object sender, PinValueChangedEventArgs e)
         {
-            if (e.Edge == GpioPinEdge.FallingEdge)
+            if (e.ChangeType == PinEventTypes.Falling)
             {
                 // signal event
                 sendMessage.Set();

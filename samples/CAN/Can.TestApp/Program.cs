@@ -2,7 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.Threading;
-using Windows.Devices.Gpio;
+using System.Device.Gpio;
 
 namespace Can.TestApp
 {
@@ -15,12 +15,11 @@ namespace Can.TestApp
         public static void Main()
         {
             // PJ5 is LD2 in STM32F769I_DISCO
-            //_led = GpioController.GetDefault().OpenPin(PinNumber('J', 5));
+            //_led = new GpioController().OpenPin(PinNumber('J', 5), PinMode.Output);
             // PG14 is LEDLD4 in F429I_DISCO
-            //_led = GpioController.GetDefault().OpenPin(PinNumber('G', 14));
+            //_led = new GpioController().OpenPin(PinNumber('G', 14), PinMode.Output);
             // PD13 is LED3 in DISCOVERY4
-            _led = GpioController.GetDefault().OpenPin(PinNumber('D', 13));
-            _led.SetDriveMode(GpioPinDriveMode.Output);
+            _led = new GpioController().OpenPin(PinNumber('D', 13), PinMode.Output);
 
             // set settings for CAN controller
             CanSettings canSettings = new CanSettings(6, 8, 1, 0);
@@ -74,7 +73,7 @@ namespace Can.TestApp
         static void BlinkLED()
         {
             // blink led for each message received
-            _led.Write(GpioPinValue.High);
+            _led.Write(PinValue.High);
             Thread.Sleep(500);
             _led.Toggle();
         }

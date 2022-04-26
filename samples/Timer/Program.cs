@@ -6,7 +6,7 @@
 using System;
 using System.Diagnostics;
 using System.Threading;
-using Windows.Devices.Gpio;
+using System.Device.Gpio;
 
 namespace TimerSample
 {
@@ -18,11 +18,9 @@ namespace TimerSample
         {
             // mind to set a pin that exists on the board being tested
             // PJ5 is LD2 in STM32F769I_DISCO
-            _led = GpioController.GetDefault().OpenPin(PinNumber('J', 5));
+            _led = new GpioController().OpenPin(PinNumber('J', 5), PinMode.Output);
             // PG14 is LEDLD4 in F429I_DISCO
-            //_led = GpioController.GetDefault().OpenPin(PinNumber('G', 14));
-
-            _led.SetDriveMode(GpioPinDriveMode.Output);
+            //_led = new GpioController().OpenPin(PinNumber('G', 14), PinMode.Output);
 
             // create timer
             Debug.WriteLine(DateTime.UtcNow.ToString() + ": creating timer, due in 1 second");
@@ -53,9 +51,9 @@ namespace TimerSample
         {
             Debug.WriteLine(DateTime.UtcNow.ToString() + ": blink");
 
-            _led.Write(GpioPinValue.High);
+            _led.Write(PinValue.High);
             Thread.Sleep(125);
-            _led.Write(GpioPinValue.Low);
+            _led.Write(PinValue.Low);
         }
 
         static int PinNumber(char port, byte pin)
