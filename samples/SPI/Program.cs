@@ -1,3 +1,8 @@
+﻿//
+// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+//
+
 using System;
 using System.Device.Spi;
 using System.Diagnostics;
@@ -14,14 +19,8 @@ namespace SpiExamples
             Debug.WriteLine("Hello from sample for System.Device.Spi!");
             // You can get the values of SpiBus
             SpiBusInfo spiBusInfo = SpiDevice.GetBusInfo(1);
-            Debug.WriteLine($"{nameof(spiBusInfo.ChipSelectLineCount)}: {spiBusInfo.ChipSelectLineCount}");
             Debug.WriteLine($"{nameof(spiBusInfo.MaxClockFrequency)}: {spiBusInfo.MaxClockFrequency}");
             Debug.WriteLine($"{nameof(spiBusInfo.MinClockFrequency)}: {spiBusInfo.MinClockFrequency}");
-            Debug.WriteLine($"{nameof(spiBusInfo.SupportedDataBitLengths)}: ");
-            foreach (var data in spiBusInfo.SupportedDataBitLengths)
-            {
-                Debug.WriteLine($"  {data}");
-            }
 
             // Note: the ChipSelect pin should be adjusted to your device, here 12
             connectionSettings = new SpiConnectionSettings(1, 12);
