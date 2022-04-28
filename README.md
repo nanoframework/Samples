@@ -37,7 +37,7 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 * [I2C Scanner sample](samples/I2C/NanoI2cScanner)
 * [System.Device.Pwm](samples/PWM/System.Device.Pwm)
 * [System.Device.PWM sample](samples/PWM)
-* [System.Device.Spi sample](samples/SPI/System.Device.Spi)
+* [System.Device.Spi sample](samples/SPI)
 * [System.IO.Ports serial Communication sample](samples/SerialCommunication)
 * [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
 
@@ -104,8 +104,8 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 * [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
 * [Hardware ESP32 Deep sleep sample](samples/Hardware.Esp32)
 * [Hardware ESP32 RMT sample pack](samples/Hardware.Esp32.Rmt)
-* [NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStripLowMemory)
 * [NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStrip)
+* [NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStripLowMemory)
 * [Ultrasonic HC-SR04 sensor with RMT](samples/Hardware.Esp32.Rmt/Ultrasonic)
 
 ## STM32 Specific
