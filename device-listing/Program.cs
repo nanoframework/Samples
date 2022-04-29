@@ -31,7 +31,8 @@ string[] categoriesToDisplay = new string[]
     "file",
     "wifi",
     "iot-device",
-    "ble"
+    "ble",
+    "reader",
 };
 
 Dictionary<string, string?> categoriesDescriptions = new()
@@ -39,32 +40,34 @@ Dictionary<string, string?> categoriesDescriptions = new()
     { "beginner", "Special beginner" },
     { "device", "Gpio, I2C, Spi, Pwm, Adc, Dac, 1-Wire, Serial" },
 
-    { "networking", "Networking including HTTP, SSL" },
-    { "mqtt", "MQTT" },
     { "amqp", "AMQP" },
-    { "azure", "Azure specific" },
     { "aws", "AWS specific" },
-    { "wifi", "Wifi" },
-
-    { "rtc", "Real Time Clock" },
+    { "azure", "Azure specific" },
+    { "ble", "Bluetooth" },
     { "can", "CAN" },
+    { "esp32", "ESP32 specific" },
+    { "file", "File and storage access" },
     { "graphics", "Graphics for screens" },
     { "iot-device", "IoT.Device" },
-
-    { "esp32", "ESP32 specific" },
-    { "stm32", "STM32 Specific" },
-    { "ti", "Texas Instrument specific" },
-    { "system", "System related" },
-    { "tools", "Tools and utilities" },
     { "interop", "Interop" },
     { "json", "Json" },
-    { "file", "File and storage access" },
-    { "ble", "Bluetooth"}
+    { "mqtt", "MQTT" },
+    { "networking", "Networking including HTTP, SSL" },
+    { "reader", "Readers" },
+    { "rtc", "Real Time Clock" },
+    { "stm32", "STM32 Specific" },
+    { "ti", "Texas Instrument specific" },
+    { "tools", "Tools and utilities" },
+    { "system", "System related" },
+    { "wifi", "Wifi" },
 };
 
 HashSet<string> ignoredDeviceDirectories = new()
 {
     "Archive",
+    "packages",
+    "bin",
+    "obj",
 };
 
 string? repoRoot = FindRepoRoot(Environment.CurrentDirectory);
@@ -75,11 +78,11 @@ if (repoRoot is null)
     return;
 }
 
-string amplesPath = Path.Combine(repoRoot, "samples");
+string samplesPath = Path.Combine(repoRoot, "samples");
 
 List<SampleInfo> samples = new();
 
-GetAllDirectoriesAndPopulate(Directory.EnumerateDirectories(amplesPath));
+GetAllDirectoriesAndPopulate(Directory.EnumerateDirectories(samplesPath));
 
 samples.Sort();
 
@@ -94,7 +97,9 @@ foreach (SampleInfo sample in samples)
         {
             if (!categoriesDescriptions.ContainsKey(category))
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine($"Warning: Category `{category}` is missing description (`{sample.Title}`). [{sample.ReadmePath}]");
+                Console.ForegroundColor = ConsoleColor.White;
             }
         }
 
@@ -104,12 +109,14 @@ foreach (SampleInfo sample in samples)
     if (!beingDisplayed && sample.CategoriesFileExists)
     {
         // We do not want to show the warning when file doesn't exist as you will get separate warning that category.txt is missing in that case.
+        Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine($"Warning: Sample `{sample.Title}` is not being displayed under any category. [{sample.CategoriesFilePath}]");
+        Console.ForegroundColor = ConsoleColor.White;
     }
 }
 
 string alphabeticalDevicesIndex = Path.Combine(repoRoot, "README.md");
-string categorizedDeviceListing = GetCategorizedDeviceListing(amplesPath, samples);
+string categorizedDeviceListing = GetCategorizedDeviceListing(samplesPath, samples);
 ReplacePlaceholder(alphabeticalDevicesIndex, "devices", categorizedDeviceListing);
 alphabeticalDevicesIndex = Path.Combine(repoRoot, "README.zh-cn.md");
 ReplacePlaceholder(alphabeticalDevicesIndex, "devices", categorizedDeviceListing);
@@ -135,7 +142,7 @@ string GetCategorizedDeviceListing(string devicesPath, IEnumerable<SampleInfo> d
             string listingInCurrentCategory = GetDeviceListing(devicesPath, devices.Where((d) => d.Categories.Contains(categoryToDisplay)));
             if (!string.IsNullOrEmpty(listingInCurrentCategory))
             {
-                sampleListing.AppendLine($"## {categoryDescription}");
+                sampleListing.AppendLine($"### {categoryDescription}");
                 sampleListing.AppendLine();
                 sampleListing.AppendLine(listingInCurrentCategory);
             }
