@@ -1,6 +1,6 @@
 # Analogic/Digital converter
 
-Shows how to use the [Windows.Devices.Adc](http://docs.nanoframework.net/api/Windows.Devices.Adc.html) API to read external voltages using an ADC.
+Shows how to use the [System.Devices.Adc](http://docs.nanoframework.net/api/System.Device.Adc.html) API to read external voltages using an ADC.
 
 ## Hardware requirements
 
@@ -10,7 +10,7 @@ Any hardware device running a nanoFramework image.
 
 ### Reference
 
-- [Windows.Devices.Adc](http://docs.nanoframework.net/api/Windows.Devices.Adc.html)
+- [System.Devices.Adc](http://docs.nanoframework.net/api/System.Device.Adc.html)
 
 ## Build the sample
 
