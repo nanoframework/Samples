@@ -45,8 +45,8 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 
 * [.NET **nanoFramework** Webserver sample pack](samples/Webserver)
 * [HTTP Listener sample](samples/HTTP/HttpListener)
-* [HTTP Listener sample](samples/HTTP/HttpWebRequest)
 * [HTTP sample pack](samples/HTTP)
+* [HTTP WebRequest sample](samples/HTTP/HttpWebRequest)
 * [HTTP.HttpAzureGET Sample](samples/HTTP/HttpAzureGET)
 * [HTTP.HttpAzurePOST Sample](samples/HTTP/HttpAzurePOST)
 * [MQTT sample pack](samples/MQTT)
@@ -54,6 +54,7 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 * [TLS sample pack](samples/SSL)
 * [UdpClient sample pack](samples/UdpClient)
 * [WebSocket Client Sample](samples/WebSockets/WebSockets.Client.Sample)
+* [WebSocket Client Sample](samples/WebSockets/Websockets.ServerClient.Sample)
 * [WebSocket sample pack](samples/WebSockets)
 * [WebSocket Server Sample](samples/WebSockets/WebSockets.Server.RgbSample)
 * [WiFI samples](samples/Wifi)
@@ -61,7 +62,7 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 
 ### MQTT
 
-* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureMQTTTwinsBMP280Sleep)
+* [Complete Azure MQTT sample using BMP280 sensor without Azure lib](samples/AzureMQTTTwinsBMP280Sleep)
 * [MQTT sample pack](samples/MQTT)
 
 ### Azure specific
@@ -74,8 +75,8 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 * [Azure IoT Plug & Play with MQTT protocol](samples/AzureSDK/AzureIoTPnP)
 * [Azure SDK sample pack](samples/AzureSDK)
 * [Azure Service Bus AMQP sample](samples/AMQP/Azure-ServiceBus-Sender)
-* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
-* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureMQTTTwinsBMP280Sleep)
+* [Complete Azure MQTT sample using BMP280 sensor with Azure lib](samples/AzureSDK/AzureSDKSleepBMP280)
+* [Complete Azure MQTT sample using BMP280 sensor without Azure lib](samples/AzureMQTTTwinsBMP280Sleep)
 * [HTTP.HttpAzureGET Sample](samples/HTTP/HttpAzureGET)
 * [HTTP.HttpAzurePOST Sample](samples/HTTP/HttpAzurePOST)
 * [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
@@ -105,12 +106,12 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 ### ESP32 specific
 
 * [Bluetooth samples](samples/Bluetooth)
-* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
-* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureMQTTTwinsBMP280Sleep)
+* [Complete Azure MQTT sample using BMP280 sensor with Azure lib](samples/AzureSDK/AzureSDKSleepBMP280)
+* [Complete Azure MQTT sample using BMP280 sensor without Azure lib](samples/AzureMQTTTwinsBMP280Sleep)
 * [Hardware ESP32 Deep sleep sample](samples/Hardware.Esp32)
 * [Hardware ESP32 RMT sample pack](samples/Hardware.Esp32.Rmt)
-* [NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStripLowMemory)
 * [NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStrip)
+* [NeoPixel Strip WS2812 with RMT low memory](samples/Hardware.Esp32.Rmt/NeoPixelStripLowMemory)
 * [Ultrasonic HC-SR04 sensor with RMT](samples/Hardware.Esp32.Rmt/Ultrasonic)
 
 ### STM32 Specific
@@ -173,8 +174,8 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 
 ### IoT.Device
 
-* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureSDK/AzureSDKSleepBMP280)
-* [Complete Azure MQTT sample using BMP280 sensor](samples/AzureMQTTTwinsBMP280Sleep)
+* [Complete Azure MQTT sample using BMP280 sensor with Azure lib](samples/AzureSDK/AzureSDKSleepBMP280)
+* [Complete Azure MQTT sample using BMP280 sensor without Azure lib](samples/AzureMQTTTwinsBMP280Sleep)
 * [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
 
 ### Bluetooth
