@@ -41,6 +41,84 @@
 * [System.IO.Ports serial Communication sample](samples/SerialCommunication)
 * [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
 
+### AMQP
+
+* [AMQP sample pack](samples/AMQP)
+* [Azure AMQP sample](samples/AMQP/Azure-IoT-Hub)
+* [Azure Service Bus AMQP sample](samples/AMQP/Azure-ServiceBus-Sender)
+
+### Azure specific
+
+* [AMQP sample pack](samples/AMQP)
+* [Azure AMQP sample](samples/AMQP/Azure-IoT-Hub)
+* [Azure Edge OTA example](samples/AzureSDK/AzureEdgeOta)
+* [Azure IoT Device Provisioning Service (DPS) example](samples/AzureSDK/DpsSampleApp)
+* [Azure IoT Hub SDK with MQTT protocol](samples/AzureSDK/AzureSDK)
+* [Azure IoT Plug & Play with MQTT protocol](samples/AzureSDK/AzureIoTPnP)
+* [Azure SDK sample pack](samples/AzureSDK)
+* [Azure Service Bus AMQP sample](samples/AMQP/Azure-ServiceBus-Sender)
+* [Complete Azure MQTT sample using BMP280 sensor with Azure lib](samples/AzureSDK/AzureSDKSleepBMP280)
+* [Complete Azure MQTT sample using BMP280 sensor without Azure lib](samples/AzureMQTTTwinsBMP280Sleep)
+* [HTTP.HttpAzureGET Sample](samples/HTTP/HttpAzureGET)
+* [HTTP.HttpAzurePOST Sample](samples/HTTP/HttpAzurePOST)
+* [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
+
+### Bluetooth
+
+* [Bluetooth Low Energy Serial profile sample](samples/Bluetooth/BluetoothLESerial)
+* [Bluetooth Low energy: adding, replacing services to the main service](samples/Bluetooth/BluetoothLESample3)
+* [Bluetooth Low energy: read static and dynamic values, notification, read/write value](samples/Bluetooth/BluetoothLESample1)
+* [Bluetooth Low energy: read/write with encryption a value](samples/Bluetooth/BluetoothLESample2)
+* [Bluetooth samples](samples/Bluetooth)
+
+### CAN
+
+* [CAN sample](samples/CAN)
+
+### ESP32 specific
+
+* [Bluetooth samples](samples/Bluetooth)
+* [Complete Azure MQTT sample using BMP280 sensor with Azure lib](samples/AzureSDK/AzureSDKSleepBMP280)
+* [Complete Azure MQTT sample using BMP280 sensor without Azure lib](samples/AzureMQTTTwinsBMP280Sleep)
+* [Hardware ESP32 Deep sleep sample](samples/Hardware.Esp32)
+* [Hardware ESP32 RMT sample pack](samples/Hardware.Esp32.Rmt)
+* [NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStrip)
+* [NeoPixel Strip WS2812 with RMT low memory](samples/Hardware.Esp32.Rmt/NeoPixelStripLowMemory)
+* [Ultrasonic HC-SR04 sensor with RMT](samples/Hardware.Esp32.Rmt/Ultrasonic)
+
+### File and storage access
+
+* [System.IO.FileSystem samples](samples/System.IO.FileSystem)
+* [Windows.Storage sample pack](samples/Storage)
+
+### Graphics for screens
+
+* [Graphics Primitives](samples/Graphics/Primitives)
+* [Graphics samples](samples/Graphics)
+* [Screen samples](samples/Graphics/Screens)
+* [Simple WPF](samples/Graphics/SimpleWpf)
+* [Tetris Demo Game for nanoFramework](samples/Graphics/Tetris)
+
+### IoT.Device
+
+* [Complete Azure MQTT sample using BMP280 sensor with Azure lib](samples/AzureSDK/AzureSDKSleepBMP280)
+* [Complete Azure MQTT sample using BMP280 sensor without Azure lib](samples/AzureMQTTTwinsBMP280Sleep)
+* [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
+
+### Interop
+
+* [Interop sample](samples/Interop)
+* [Native events sample](samples/NativeEvents)
+
+### Json
+
+* [nanoFramework Json sample](samples/Json)
+
+### MQTT
+
+* [Complete Azure MQTT sample using BMP280 sensor without Azure lib](samples/AzureMQTTTwinsBMP280Sleep)
+* [MQTT sample pack](samples/MQTT)
+
 ### Networking including HTTP, SSL
 
 * [.NET **nanoFramework** Webserver sample pack](samples/Webserver)
@@ -60,59 +138,9 @@
 * [WiFI samples](samples/Wifi)
 * [WiFi Soft AP sample](samples/WiFiAP)
 
-### MQTT
-
-* [Complete Azure MQTT sample using BMP280 sensor without Azure lib](samples/AzureMQTTTwinsBMP280Sleep)
-* [MQTT sample pack](samples/MQTT)
-
-### Azure specific
-
-* [AMQP sample pack](samples/AMQP)
-* [Azure AMQP sample](samples/AMQP/Azure-IoT-Hub)
-* [Azure Edge OTA example](samples/AzureSDK/AzureEdgeOta)
-* [Azure IoT Device Provisioning Service (DPS) example](samples/AzureSDK/DpsSampleApp)
-* [Azure IoT Hub SDK with MQTT protocol](samples/AzureSDK/AzureSDK)
-* [Azure IoT Plug & Play with MQTT protocol](samples/AzureSDK/AzureIoTPnP)
-* [Azure SDK sample pack](samples/AzureSDK)
-* [Azure Service Bus AMQP sample](samples/AMQP/Azure-ServiceBus-Sender)
-* [Complete Azure MQTT sample using BMP280 sensor with Azure lib](samples/AzureSDK/AzureSDKSleepBMP280)
-* [Complete Azure MQTT sample using BMP280 sensor without Azure lib](samples/AzureMQTTTwinsBMP280Sleep)
-* [HTTP.HttpAzureGET Sample](samples/HTTP/HttpAzureGET)
-* [HTTP.HttpAzurePOST Sample](samples/HTTP/HttpAzurePOST)
-* [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
-
 ### Real Time Clock
 
 * [RTC sample](samples/RTC)
-
-### Graphics for screens
-
-* [Graphics Primitives](samples/Graphics/Primitives)
-* [Graphics samples](samples/Graphics)
-* [Screen samples](samples/Graphics/Screens)
-* [Simple WPF](samples/Graphics/SimpleWpf)
-* [Tetris Demo Game for nanoFramework](samples/Graphics/Tetris)
-
-### CAN
-
-* [CAN sample](samples/CAN)
-
-### AMQP
-
-* [AMQP sample pack](samples/AMQP)
-* [Azure AMQP sample](samples/AMQP/Azure-IoT-Hub)
-* [Azure Service Bus AMQP sample](samples/AMQP/Azure-ServiceBus-Sender)
-
-### ESP32 specific
-
-* [Bluetooth samples](samples/Bluetooth)
-* [Complete Azure MQTT sample using BMP280 sensor with Azure lib](samples/AzureSDK/AzureSDKSleepBMP280)
-* [Complete Azure MQTT sample using BMP280 sensor without Azure lib](samples/AzureMQTTTwinsBMP280Sleep)
-* [Hardware ESP32 Deep sleep sample](samples/Hardware.Esp32)
-* [Hardware ESP32 RMT sample pack](samples/Hardware.Esp32.Rmt)
-* [NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStrip)
-* [NeoPixel Strip WS2812 with RMT low memory](samples/Hardware.Esp32.Rmt/NeoPixelStripLowMemory)
-* [Ultrasonic HC-SR04 sensor with RMT](samples/Hardware.Esp32.Rmt/Ultrasonic)
 
 ### STM32 Specific
 
@@ -128,6 +156,11 @@
 * [Texas Instruments EasyLink sample pack](samples/TI.EasyLink)
 * [TI Power Mode](samples/Hardware.TI/TI.PowerMode)
 * [TI utilities](samples/Hardware.TI/TI.Utilities)
+
+### Tools and utilities
+
+* [Logging samples](samples/Logging)
+* [Unit Test framework sample pack](samples/UnitTest)
 
 ### System related
 
@@ -148,43 +181,10 @@
 * [Threading sample pack](samples/Threading)
 * [ToString samples](samples/ToStringTest)
 
-### Tools and utilities
-
-* [Logging samples](samples/Logging)
-* [Unit Test framework sample pack](samples/UnitTest)
-
-### Interop
-
-* [Interop sample](samples/Interop)
-* [Native events sample](samples/NativeEvents)
-
-### Json
-
-* [nanoFramework Json sample](samples/Json)
-
-### File and storage access
-
-* [System.IO.FileSystem samples](samples/System.IO.FileSystem)
-* [Windows.Storage sample pack](samples/Storage)
-
 ### Wifi
 
 * [WiFI samples](samples/Wifi)
 * [WiFi Soft AP sample](samples/WiFiAP)
-
-### IoT.Device
-
-* [Complete Azure MQTT sample using BMP280 sensor with Azure lib](samples/AzureSDK/AzureSDKSleepBMP280)
-* [Complete Azure MQTT sample using BMP280 sensor without Azure lib](samples/AzureMQTTTwinsBMP280Sleep)
-* [Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
-
-### Bluetooth
-
-* [Bluetooth Low Energy Serial profile sample](samples/Bluetooth/BluetoothLESerial)
-* [Bluetooth Low energy: adding, replacing services to the main service](samples/Bluetooth/BluetoothLESample3)
-* [Bluetooth Low energy: read static and dynamic values, notification, read/write value](samples/Bluetooth/BluetoothLESample1)
-* [Bluetooth Low energy: read/write with encryption a value](samples/Bluetooth/BluetoothLESample2)
-* [Bluetooth samples](samples/Bluetooth)
 
 </devices>
 
