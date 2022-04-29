@@ -12,7 +12,7 @@ Some boards like most of the ESP32 dev kits and most of the STM32 boards have an
 
 ### Reference
 
-- [System.Device.Gpio](http://docs.nanoframework.net/api/Sindows.Device.Gpio.html)
+- [System.Device.Gpio](http://docs.nanoframework.net/api/System.Device.Gpio.html)
 
 ## Build the sample
 
