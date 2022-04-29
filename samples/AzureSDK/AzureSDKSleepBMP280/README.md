@@ -1,4 +1,4 @@
-# Complete Azure MQTT sample using BMP280 sensor
+# Complete Azure MQTT sample using BMP280 sensor with Azure lib
 
 Shows how to use the Azure IoT SDK library measuring a BMP280 sensor. This leverages the [nanoFramework.IoT.Device](https://github.com/nanoframework/nanoFramework.IoT.Device) repository and [Azure SDK](https://github.com/nanoframework/nanoFramework.Azure.Devices).
 

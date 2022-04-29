@@ -1,4 +1,4 @@
-# HTTP Listener sample
+# HTTP WebRequest sample
 
 Shows how to use the HTTP related APIs in [System.Net](http://docs.nanoframework.net/api/System.Net.html). Shows how to perform a HTTP Web requests. Optionally to secured (TLS) servers.
 
