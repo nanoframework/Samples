@@ -72,8 +72,8 @@
       <HintPath>..\packages\nanoFramework.M2Mqtt.5.0.2\lib\nanoFramework.M2Mqtt.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Networking.Sntp, Version=1.5.8.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Networking.Sntp.1.5.8\lib\nanoFramework.Networking.Sntp.dll</HintPath>
+    <Reference Include="nanoFramework.Networking.Sntp, Version=1.6.1.57368, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Networking.Sntp.1.6.1\lib\nanoFramework.Networking.Sntp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.ResourceManager, Version=1.1.4.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">

@@ -97,6 +97,14 @@
       <HintPath>packages\nanoFramework.System.IO.Streams.1.0.0\lib\System.IO.Streams.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Windows.Storage, Version=1.4.7.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Windows.Storage.1.4.7\lib\Windows.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Windows.Storage.Streams, Version=1.12.4.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Windows.Storage.Streams.1.12.4\lib\Windows.Storage.Streams.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <ProjectExtensions>
