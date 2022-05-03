@@ -40,7 +40,7 @@ namespace SecureClient
 #else
             success = NetworkHelper.SetupAndConnectNetwork(requiresDateTime: true, token: cs.Token);
 #endif
-            
+
             if (!success)
             {
                 Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.Status}.");
@@ -65,7 +65,7 @@ namespace SecureClient
             // get host entry for How's my SSL test site
             //IPHostEntry hostEntry = Dns.GetHostEntry("www.howsmyssl.com");
             // get host entry for Global Root test site
-            IPHostEntry hostEntry = Dns.GetHostEntry("https://global-root-ca.chain-demos.digicert.com");
+            IPHostEntry hostEntry = Dns.GetHostEntry("global-root-ca.chain-demos.digicert.com");
 
             // need an IPEndPoint from that one above
             IPEndPoint ep = new IPEndPoint(hostEntry.AddressList[0], 443);
