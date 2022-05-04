@@ -136,7 +136,7 @@
 * [WebSocket sample pack](samples/WebSockets)
 * [WebSocket Server Sample](samples/WebSockets/WebSockets.Server.RgbSample)
 * [WiFI samples](samples/Wifi)
-* [WiFi Soft AP sample](samples/WiFiAP)
+* [Wifi Soft AP sample](samples/WiFiAP)
 
 ### Real Time Clock
 
@@ -184,7 +184,7 @@
 ### Wifi
 
 * [WiFI samples](samples/Wifi)
-* [WiFi Soft AP sample](samples/WiFiAP)
+* [Wifi Soft AP sample](samples/WiFiAP)
 
 </devices>
 

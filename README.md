@@ -136,7 +136,7 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 * [WebSocket sample pack](samples/WebSockets)
 * [WebSocket Server Sample](samples/WebSockets/WebSockets.Server.RgbSample)
 * [WiFI samples](samples/Wifi)
-* [WiFi Soft AP sample](samples/WiFiAP)
+* [Wifi Soft AP sample](samples/WiFiAP)
 
 ### Real Time Clock
 
@@ -184,7 +184,7 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 ### Wifi
 
 * [WiFI samples](samples/Wifi)
-* [WiFi Soft AP sample](samples/WiFiAP)
+* [Wifi Soft AP sample](samples/WiFiAP)
 
 </devices>
 
