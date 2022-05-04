@@ -9,7 +9,7 @@ This sample shows how to use the [NanoFramework.System.Net](https://docs.nanofra
 
 ## Hardware requirements
 
-Any hardware device running a nanoFramework image that supports WiFi.
+Any hardware device running a nanoFramework image that supports Wifi.
 
 ## Related topics
 

@@ -17,7 +17,7 @@ using System.Threading;
 
 
 #if HAS_WIFI
-using System.Device.WiFi;
+using System.Device.Wifi;
 #endif
 
 namespace SecureClient
@@ -38,7 +38,7 @@ namespace SecureClient
             CancellationTokenSource cs = new(60000);
 
 #if HAS_WIFI
-            success = WiFiNetworkHelper.Reconnect();
+            success = WifiNetworkHelper.Reconnect();
 #else
             success = NetworkHelper.SetupAndConnectNetwork(cs.Token);
 #endif

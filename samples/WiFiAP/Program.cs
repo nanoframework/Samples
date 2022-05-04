@@ -11,7 +11,7 @@ using System.Threading;
 using nanoFramework.Networking;
 using nanoFramework.Runtime.Native;
 
-namespace WiFiAP
+namespace WifiAP
 {
     public class Program
     {
@@ -64,13 +64,13 @@ namespace WiFiAP
                 if (string.IsNullOrEmpty(conf.Password))
                 {
                     // In this case, we will let the automatic connection happen
-                    success = WiFiNetworkHelper.Reconnect(requiresDateTime: true, token: new CancellationTokenSource(60000).Token);
+                    success = WifiNetworkHelper.Reconnect(requiresDateTime: true, token: new CancellationTokenSource(60000).Token);
                 }
                 else
                 {
                     // If we have access to the password, we will force the reconnection
                     // This is mainly for ESP32 which will connect normaly like that.
-                    success = WiFiNetworkHelper.ConnectDhcp(conf.Ssid, conf.Password, requiresDateTime: true, token: new CancellationTokenSource(60000).Token);
+                    success = WifiNetworkHelper.ConnectDhcp(conf.Ssid, conf.Password, requiresDateTime: true, token: new CancellationTokenSource(60000).Token);
                 }
 
                 if (success)

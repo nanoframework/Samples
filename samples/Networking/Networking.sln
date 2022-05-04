@@ -4,7 +4,7 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Socket.Client", "Socket.Client\Socket.Client.nfproj", "{88AA2FAA-0570-47E2-8866-B36BC8B36A6A}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Socket.Client_WiFi", "Socket.Client_WiFi\Socket.Client_WiFi.nfproj", "{50F4D87E-CAEE-4D03-A0E8-2109C10EEB6F}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Socket.Client_Wifi", "Socket.Client_Wifi\Socket.Client_Wifi.nfproj", "{50F4D87E-CAEE-4D03-A0E8-2109C10EEB6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

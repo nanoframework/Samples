@@ -8,17 +8,17 @@ using System.Text;
 using System.Threading;
 using nanoFramework.M2Mqtt;
 using nanoFramework.M2Mqtt.Messages;
-using System.Device.WiFi;
+using System.Device.Wifi;
 
-namespace BasicExample.WiFi
+namespace BasicExample.Wifi
 {
     public class Program
     {
         public static void Main()
         {
             // STEP 1: setup network
-            // You need to set WiFi connection credentials in the configuration first!
-            // Go to Device Explorer -> Edit network configuration -> WiFi proiles and set SSID and password there.
+            // You need to set Wifi connection credentials in the configuration first!
+            // Go to Device Explorer -> Edit network configuration -> Wifi proiles and set SSID and password there.
             SetupAndConnectNetwork();
 
             // STEP 2: connect to MQTT broker
@@ -58,7 +58,7 @@ namespace BasicExample.WiFi
         private static void SetupAndConnectNetwork()
         {
             // Get the first WiFI Adapter
-            var wifiAdapter = WiFiAdapter.FindAllAdapters()[0];
+            var wifiAdapter = WifiAdapter.FindAllAdapters()[0];
 
             // Begin network scan.
             wifiAdapter.ScanAsync();
@@ -79,9 +79,9 @@ namespace BasicExample.WiFi
                     if (network.Ssid == wiFiConfiguration.Ssid)
                     {
 
-                        var result = wifiAdapter.Connect(network, WiFiReconnectionKind.Automatic, wiFiConfiguration.Password);
+                        var result = wifiAdapter.Connect(network, WifiReconnectionKind.Automatic, wiFiConfiguration.Password);
 
-                        if (result.ConnectionStatus == WiFiConnectionStatus.Success)
+                        if (result.ConnectionStatus == WifiConnectionStatus.Success)
                         {
                             Debug.WriteLine($"Connected to Wifi network {network.Ssid}.");
                             needToConnect = false;

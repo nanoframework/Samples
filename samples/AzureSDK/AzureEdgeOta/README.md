@@ -87,7 +87,7 @@ Twin for the device:
 
 - [nanoFramework.IoT.Device Bmxx80 devices](https://github.com/nanoframework/nanoFramework.IoT.Device/tree/develop/devices/Bmxx80).
 - [Azure IoT documentation for MQTT](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support).
-- [nanoFramework Network helpers](https://github.com/nanoframework/Windows.Devices.WiFi)
+- [nanoFramework Network helpers](https://github.com/nanoframework/Windows.Devices.Wifi)
 
 ## Build the sample
 

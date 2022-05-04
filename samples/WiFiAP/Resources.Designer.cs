@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WiFiAP
+namespace WifiAP
 {
     
     internal partial class Resources
@@ -20,7 +20,7 @@ namespace WiFiAP
             {
                 if ((Resources.manager == null))
                 {
-                    Resources.manager = new System.Resources.ResourceManager("WiFiAP.Resources", typeof(Resources).Assembly);
+                    Resources.manager = new System.Resources.ResourceManager("WifiAP.Resources", typeof(Resources).Assembly);
                 }
                 return Resources.manager;
             }

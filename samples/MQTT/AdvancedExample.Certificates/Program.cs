@@ -40,8 +40,8 @@ m/XriWr/Cq4h/JfB7NTsezVslgkBaoU=
         public static void Main()
         {
             // STEP 1: setup network
-            // This sample id for Ethernet boards, like STM32F769. If you have a WiFi one (i.e. ESP32),
-            // copy SetupAndConnectNetwork() function from BasicExample.WiFi project.
+            // This sample id for Ethernet boards, like STM32F769. If you have a Wifi one (i.e. ESP32),
+            // copy SetupAndConnectNetwork() function from BasicExample.Wifi project.
             SetupAndConnectNetwork();
 
             // STEP 2: connect to MQTT broker

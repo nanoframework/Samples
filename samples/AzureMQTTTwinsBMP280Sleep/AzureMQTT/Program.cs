@@ -54,18 +54,18 @@ try
     serial.BaudRate = 115200;
     logger = new SerialLogger(ref serial, "My logger");
     logger.MinLogLevel = LogLevel.Debug;
-    Trace("Program Started, connecting to WiFi.");
+    Trace("Program Started, connecting to Wifi.");
 
     // As we are using TLS, we need a valid date & time
     // We will wait maximum 1 minute to get connected and have a valid date
     CancellationTokenSource cs = new(sleepTimeMinutes);
-    var success = WiFiNetworkHelper.ConnectDhcp(Ssid, Password, requiresDateTime: true, token: cs.Token);
+    var success = WifiNetworkHelper.ConnectDhcp(Ssid, Password, requiresDateTime: true, token: cs.Token);
     if (!success)
     {
         Trace($"Can't connect to wifi: {NetworkHelper.Status}");
-        if (WiFiNetworkHelper.HelperException!= null)
+        if (WifiNetworkHelper.HelperException!= null)
         {
-            Trace($"WiFiNetworkHelper.HelperException");
+            Trace($"WifiNetworkHelper.HelperException");
         }
 
         GoToSleep();

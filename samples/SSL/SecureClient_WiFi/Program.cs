@@ -15,7 +15,7 @@ using System.Text;
 using System.Threading;
 
 #if HAS_WIFI
-using System.Device.WiFi;
+using System.Device.Wifi;
 #endif
 
 namespace SecureClient
@@ -36,7 +36,7 @@ namespace SecureClient
             CancellationTokenSource cs = new(60000);
 
 #if HAS_WIFI
-            success = WiFiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
+            success = WifiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
 #else
             success = NetworkHelper.SetupAndConnectNetwork(requiresDateTime: true, token: cs.Token);
 #endif

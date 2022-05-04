@@ -5,7 +5,7 @@
 
 using System.Net.NetworkInformation;
 
-namespace WiFiAP
+namespace WifiAP
 {
     public static class WirelessAP
     {

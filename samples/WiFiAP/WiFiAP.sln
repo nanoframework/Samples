@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "WiFiAP", "WiFiAP.nfproj", "{275E5F0E-3692-4CE2-BCF0-76857914F866}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "WifiAP", "WifiAP.nfproj", "{275E5F0E-3692-4CE2-BCF0-76857914F866}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

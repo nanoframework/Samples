@@ -86,7 +86,7 @@ Use your Azure Subscription for following steps:
     -----END CERTIFICATE-----";
     ```
 
-7. Enter your WiFi Settings in the `Program.cs` file
+7. Enter your Wifi Settings in the `Program.cs` file
 
     ```csharp
     const string  MySsid = "<replace-with-valid-ssid";

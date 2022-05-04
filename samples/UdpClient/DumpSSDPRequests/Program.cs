@@ -29,7 +29,7 @@ namespace DumpSSDPRequests
             bool success;
 
 #if HAS_WIFI
-            success = WiFiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
+            success = WifiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
 #else
             success = NetworkHelper.SetupAndConnectNetwork(cs.Token, true);
 #endif

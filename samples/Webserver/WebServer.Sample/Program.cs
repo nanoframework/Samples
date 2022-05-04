@@ -19,7 +19,7 @@ using System.Security.Cryptography.X509Certificates;
 using WebServer.Sample;
 
 #if HAS_WIFI
-using System.Device.WiFi;
+using System.Device.Wifi;
 #endif
 
 #if HAS_STORAGE
@@ -54,16 +54,16 @@ namespace nanoFramework.WebServer.Sample
                 bool success;
                 CancellationTokenSource cs = new(60000);
 #if HAS_WIFI
-                success = WiFiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
+                success = WifiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
 #else
                 success = NetworkHelper.SetupAndConnectNetwork(cs.Token, true);
 #endif
                 if(!success)
                 {
-                    Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {WiFiNetworkHelper.Status}.");
-                    if(WiFiNetworkHelper.HelperException !=null)
+                    Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {WifiNetworkHelper.Status}.");
+                    if(WifiNetworkHelper.HelperException !=null)
                     {
-                        Debug.WriteLine($"Exception: {WiFiNetworkHelper.HelperException}");
+                        Debug.WriteLine($"Exception: {WifiNetworkHelper.HelperException}");
                     }
                     return;
                 }

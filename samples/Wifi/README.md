@@ -1,16 +1,16 @@
 # WiFI samples
 
-Shows how to use various APIs related with WiFi. Scan WiFI Networks and connect to a specified network
+Shows how to use various APIs related with Wifi. Scan WiFI Networks and connect to a specified network
 
 ## Hardware requirements
 
-An hardware device with WiFi networking capabilities running a nanoFramework image.
+An hardware device with Wifi networking capabilities running a nanoFramework image.
 
 ## Related topics
 
 ### Reference
 
-- [Windows.Device.WiFi](http://docs.nanoframework.net/api/Windows.Device.WiFi.html)
+- [Windows.Device.Wifi](http://docs.nanoframework.net/api/Windows.Device.Wifi.html)
 
 ## Build the sample
 
