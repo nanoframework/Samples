@@ -23,7 +23,7 @@ Three samples are provided:
 
 ## Run the sample
 
-You need to select the sample you want to run. If you want to use wifi, you must include a reference to the `System.Device.WiFi` package, define the HAS_WIFI variable and set your wifi parameters in the code.
+You need to select the sample you want to run. If you want to use wifi, you must include a reference to the `System.Device.Wifi` package, define the HAS_WIFI variable and set your wifi parameters in the code.
 
 The next steps depend on whether you just want to deploy the sample or you want to both deploy and run it.
 

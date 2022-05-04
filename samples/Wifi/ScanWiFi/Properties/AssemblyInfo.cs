@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ScanWiFi")]
-[assembly: AssemblyDescription("Sample WiFi scaanner using Windows.Device.WiFi")]
+[assembly: AssemblyTitle("ScanWifi")]
+[assembly: AssemblyDescription("Sample Wifi scaanner using Windows.Device.Wifi")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ScanWiFi sample")]
+[assembly: AssemblyProduct("ScanWifi sample")]
 [assembly: AssemblyCopyright("Copyright (c) .NET Foundation and Contributors")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

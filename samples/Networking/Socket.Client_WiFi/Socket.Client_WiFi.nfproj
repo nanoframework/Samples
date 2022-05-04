@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <FileAlignment>512</FileAlignment>
     <RootNamespace>Networking</RootNamespace>
-    <AssemblyName>Networking_WiFi</AssemblyName>
+    <AssemblyName>Networking_Wifi</AssemblyName>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
     <DefineConstants>$(DefineConstants);HAS_WIFI;</DefineConstants>
   </PropertyGroup>

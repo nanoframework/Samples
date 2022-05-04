@@ -22,7 +22,7 @@ An hardware device with networking capabilities running a nanoFramework image.
 
 1. Start Microsoft Visual Studio 2022 (VS 2019 and VS 2017 should be OK too) and select `File > Open > Project/Solution`.
 2. Starting in the folder where you unzipped the samples/cloned the repository, go to the subfolder for this specific sample. Double-click the Visual Studio Solution (.sln) file.
-3. Change the WiFi Ssid and Password on line 14 and 15, also change the url for the websocket server on line 41.  
+3. Change the Wifi Ssid and Password on line 14 and 15, also change the url for the websocket server on line 41.  
 4. Press `Ctrl+Shift+B`, or select `Build > Build Solution`.
 
 ## Run the sample

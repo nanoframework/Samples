@@ -1,6 +1,6 @@
-# WiFi Soft AP sample
+# Wifi Soft AP sample
 
-Shows how to use various APIs related with WiFi Soft AP. Starts a Soft AP (Hot spot) and runs a simple web server to configure the Wireless connection parameters.
+Shows how to use various APIs related with Wifi Soft AP. Starts a Soft AP (Hot spot) and runs a simple web server to configure the Wireless connection parameters.
 
 The sample uses GPIO pin 5 to switch back into the SoftAP configuration mode. When pulled to ground on boot will switch into Soft AP mode.  
 You can connect to the web server via the url http://192.168.4.1/
@@ -10,7 +10,7 @@ and the Soft AP will be disabled.
 
 ## Hardware requirements
 
-An hardware device with WiFi networking capabilities running a nanoFramework image.
+An hardware device with Wifi networking capabilities running a nanoFramework image.
 
 ## Related topics
 

@@ -12,8 +12,8 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <FileAlignment>512</FileAlignment>
-    <RootNamespace>WiFiAP</RootNamespace>
-    <AssemblyName>WiFiAP</AssemblyName>
+    <RootNamespace>WifiAP</RootNamespace>
+    <AssemblyName>WifiAP</AssemblyName>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />

@@ -17,7 +17,7 @@ using System.Device.Gpio;
 using System.Net.Http;
 
 #if BUILD_FOR_ESP32
-using System.Device.WiFi;
+using System.Device.Wifi;
 #endif
 
 namespace HttpSamples.HttpAzurePOST
@@ -43,16 +43,16 @@ namespace HttpSamples.HttpAzurePOST
             bool success;
             CancellationTokenSource cs = new(60000);
 #if BUILD_FOR_ESP32
-            success = WiFiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
+            success = WifiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
 #else
             success = NetworkHelper.SetupAndConnectNetwork(cs.Token, true);
 #endif
             if (!success)
             {
-                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {WiFiNetworkHelper.Status}.");
-                if (WiFiNetworkHelper.HelperException != null)
+                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {WifiNetworkHelper.Status}.");
+                if (WifiNetworkHelper.HelperException != null)
                 {
-                    Debug.WriteLine($"Exception: {WiFiNetworkHelper.HelperException}");
+                    Debug.WriteLine($"Exception: {WifiNetworkHelper.HelperException}");
                 }
                 return;
             }

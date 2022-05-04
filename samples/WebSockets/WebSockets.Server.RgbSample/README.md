@@ -22,7 +22,7 @@ This Sample was written for the [M5Stack ATOM Lite](https://shop.m5stack.com/pro
 
 1. Start Microsoft Visual Studio 2022 (VS 2019 and VS 2017 should be OK too) and select `File > Open > Project/Solution`.
 2. Starting in the folder where you unzipped the samples/cloned the repository, go to the subfolder for this specific sample. Double-click the Visual Studio Solution (.sln) file.
-3. Change the WiFi Ssid and Password on line 22 and 23.
+3. Change the Wifi Ssid and Password on line 22 and 23.
 4. Press `Ctrl+Shift+B`, or select `Build > Build Solution`.
  
 ## Run the sample

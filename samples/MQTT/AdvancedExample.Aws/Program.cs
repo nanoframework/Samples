@@ -4,8 +4,8 @@
 //
 
 // !!!----------- SAMPLE - ENSURE YOU CHOOSE THE CORRECT NETWORK TYPE HERE --------------!!!
-// NOTE: nanoFramework.System.Device.WiFi nuget must be added to the project!
-// Then Uncomment the `define` if you use WiFi instead of Ethernet.
+// NOTE: nanoFramework.System.Device.Wifi nuget must be added to the project!
+// Then Uncomment the `define` if you use Wifi instead of Ethernet.
 // #define HAS_WIFI
 // !!!-----------------------------------------------------------------------------------!!!
 
@@ -19,7 +19,7 @@ using nanoFramework.M2Mqtt;
 using nanoFramework.M2Mqtt.Messages;
 
 #if HAS_WIFI
-using System.Device.WiFi;
+using System.Device.Wifi;
 #endif
 
 namespace AwsMQTT
@@ -118,17 +118,17 @@ lIBzJXkrbY11FY6TNX4YFU2McIX2Ge0058Pozx6tumJ4KxvB9Ges8g==
             bool success;
             CancellationTokenSource cs = new(60000);
 #if HAS_WIFI
-            success = WiFiNetworkHelper.ScanAndConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
+            success = WifiNetworkHelper.ScanAndConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
 #else
             success = NetworkHelper.SetupAndConnectNetwork(requiresDateTime: true, token: cs.Token);
 #endif
             if (!success)
             {
 #if HAS_WIFI
-                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {WiFiNetworkHelper.Status}.");
+                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {WifiNetworkHelper.Status}.");
                 if (NetworkHelper.HelperException != null)
                 {
-                    Debug.WriteLine($"Exception: {WiFiNetworkHelper.HelperException}");
+                    Debug.WriteLine($"Exception: {WifiNetworkHelper.HelperException}");
                 }
 #else
                 Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.Status}.");

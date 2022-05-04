@@ -17,7 +17,7 @@ namespace NFWebSockets.Client.Example
 
             // Give 60 seconds to the wifi join to happen
             CancellationTokenSource cs = new(60000);
-            var success = WiFiNetworkHelper.ScanAndConnectDhcp(Ssid, Password, token: cs.Token);
+            var success = WifiNetworkHelper.ScanAndConnectDhcp(Ssid, Password, token: cs.Token);
             if (!success)
             {
                 //Red Light indicates no Wifi connection

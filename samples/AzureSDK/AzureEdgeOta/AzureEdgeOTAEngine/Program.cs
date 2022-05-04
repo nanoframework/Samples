@@ -48,13 +48,13 @@ try
     // As we are using TLS, we need a valid date & time
     // We will wait maximum 1 minute to get connected and have a valid date
     CancellationTokenSource cs = new(sleepTimeMinutes);
-    var success = WiFiNetworkHelper.ConnectDhcp(Secrets.Ssid, Secrets.Password, requiresDateTime: true, token: cs.Token);
+    var success = WifiNetworkHelper.ConnectDhcp(Secrets.Ssid, Secrets.Password, requiresDateTime: true, token: cs.Token);
     if (!success)
     {
-        Trace($"Can't connect to wifi: {WiFiNetworkHelper.Status}");
-        if (WiFiNetworkHelper.HelperException != null)
+        Trace($"Can't connect to wifi: {WifiNetworkHelper.Status}");
+        if (WifiNetworkHelper.HelperException != null)
         {
-            Trace($"{WiFiNetworkHelper.HelperException}");
+            Trace($"{WifiNetworkHelper.HelperException}");
         }
 
         GoToSleep();

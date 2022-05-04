@@ -33,7 +33,7 @@ namespace SecureServer
             CancellationTokenSource cs = new(60000);
 
 #if HAS_WIFI
-            success = WiFiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
+            success = WifiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
 #else
             success = NetworkHelper.SetupAndConnectNetwork(requiresDateTime: true, token: cs.Token);
 #endif

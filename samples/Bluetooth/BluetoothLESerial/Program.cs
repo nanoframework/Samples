@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading;
-using System.Device.WiFi;
+using System.Device.Wifi;
 using nanoFramework.Hardware.Esp32;
 using nanoFramework.Runtime.Native;
 
@@ -12,7 +12,7 @@ namespace BluetoothLESerial
     public static class Program
     {
         static NordicSpp spp;
-        static WiFiAdapter wifi;
+        static WifiAdapter wifi;
 
         public static void Main()
         {
@@ -62,12 +62,12 @@ namespace BluetoothLESerial
                 {
                     // Scan for wifi networks
                     case "scan":
-                        InitWiFiScan();
+                        InitWifiScan();
                         sender.SendString("Scanning Networks\n");
                         wifi.ScanAsync();
                         break;
 
-                    // Dummy set WiFi credentials
+                    // Dummy set Wifi credentials
                     case "wifi":
                         if (args.Length != 3)
                         {
@@ -98,7 +98,7 @@ namespace BluetoothLESerial
                     case "help":
                         sender.SendString("Help\n");
                         sender.SendString("-------------------------------------------\n");
-                        sender.SendString("'scan' - Scan WiFi networks\n");
+                        sender.SendString("'scan' - Scan Wifi networks\n");
                         sender.SendString("'mem' - Show native free memory\n");
                         sender.SendString("'reboot' - Reboot device\n");
                         sender.SendString("'wifi ssid password' - Set WiFI credentials\n");
@@ -109,28 +109,28 @@ namespace BluetoothLESerial
             }
         }
 
-        #region WiFi Scanning
-        private static void InitWiFiScan()
+        #region Wifi Scanning
+        private static void InitWifiScan()
         {
             if (wifi == null)
             {
                 // Get the first WiFI Adapter
-                wifi = WiFiAdapter.FindAllAdapters()[0];
+                wifi = WifiAdapter.FindAllAdapters()[0];
 
                 // Set up the AvailableNetworksChanged event to pick up when scan has completed
                 wifi.AvailableNetworksChanged += Wifi_AvailableNetworksChanged;
             }
         }
 
-        private static void Wifi_AvailableNetworksChanged(WiFiAdapter sender, object e)
+        private static void Wifi_AvailableNetworksChanged(WifiAdapter sender, object e)
         {
             if (spp.IsConnected)
             {
-                // Get Report of all scanned WiFi networks
-                WiFiNetworkReport report = sender.NetworkReport;
+                // Get Report of all scanned Wifi networks
+                WifiNetworkReport report = sender.NetworkReport;
 
                 // Enumerate though networks and send to client
-                foreach (WiFiAvailableNetwork net in report.AvailableNetworks)
+                foreach (WifiAvailableNetwork net in report.AvailableNetworks)
                 {
                     // Show all networks found
                     if (spp.IsConnected)

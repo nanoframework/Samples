@@ -17,7 +17,7 @@ namespace BasicExample.Ethernet
         public static void Main()
         {
             // STEP 1: setup network
-            // Different nanoFramework target have different networks. For example, ESP32 usually use WiFi,
+            // Different nanoFramework target have different networks. For example, ESP32 usually use Wifi,
             // while STM32F769 has Ethernet. Need to set it up and wait for a valid IP address.
             SetupAndConnectNetwork();
 

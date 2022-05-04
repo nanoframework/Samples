@@ -12,8 +12,8 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <FileAlignment>512</FileAlignment>
-    <RootNamespace>ScanWiFi</RootNamespace>
-    <AssemblyName>ScanWiFi</AssemblyName>
+    <RootNamespace>ScanWifi</RootNamespace>
+    <AssemblyName>ScanWifi</AssemblyName>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />

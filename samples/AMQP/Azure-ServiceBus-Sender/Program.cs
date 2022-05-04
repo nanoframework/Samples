@@ -13,7 +13,7 @@ using System.Threading;
 using AmqpTrace = Amqp.Trace;
 
 #if HAS_WIFI
-using System.Device.WiFi;
+using System.Device.Wifi;
 #endif
 
 namespace AmqpSamples.AzureSB.Sender
@@ -43,17 +43,17 @@ namespace AmqpSamples.AzureSB.Sender
             bool success;
             CancellationTokenSource cs = new(60000);
 #if HAS_WIFI
-            success = WiFiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
+            success = WifiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
 #else
             success = NetworkHelper.SetupAndConnectNetwork(cs.Token, true);
 #endif
             if (!success)
             {
 #if HAS_WIFI
-                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {WiFiNetworkHelper.Status}.");
-                if (WiFiNetworkHelper.HelperException != null)
+                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {WifiNetworkHelper.Status}.");
+                if (WifiNetworkHelper.HelperException != null)
                 {
-                    Debug.WriteLine($"Exception: {WiFiNetworkHelper.HelperException}");
+                    Debug.WriteLine($"Exception: {WifiNetworkHelper.HelperException}");
                 }
 #else
                 Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.Status}.");

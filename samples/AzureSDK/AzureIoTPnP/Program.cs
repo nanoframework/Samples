@@ -53,17 +53,17 @@ Thread.Sleep(Timeout.Infinite);
 
 bool ConnectToWifi()
 {
-    Debug.WriteLine("Program Started, connecting to WiFi.");
+    Debug.WriteLine("Program Started, connecting to Wifi.");
 
     // As we are using TLS, we need a valid date & time
     // We will wait maximum 1 minute to get connected and have a valid date
-    var success = WiFiNetworkHelper.ConnectDhcp(Secrets.Ssid, Secrets.Passwd, requiresDateTime: true, token: new CancellationTokenSource(60000).Token);
+    var success = WifiNetworkHelper.ConnectDhcp(Secrets.Ssid, Secrets.Passwd, requiresDateTime: true, token: new CancellationTokenSource(60000).Token);
     if (!success)
     {
-        Debug.WriteLine($"Can't connect to wifi: {WiFiNetworkHelper.Status}");
-        if (WiFiNetworkHelper.HelperException != null)
+        Debug.WriteLine($"Can't connect to wifi: {WifiNetworkHelper.Status}");
+        if (WifiNetworkHelper.HelperException != null)
         {
-            Debug.WriteLine($"WiFiNetworkHelper.HelperException");
+            Debug.WriteLine($"WifiNetworkHelper.HelperException");
         }
     }
 

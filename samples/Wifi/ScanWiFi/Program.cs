@@ -6,13 +6,13 @@
 using System;
 using System.Diagnostics;
 using System.Threading;
-using System.Device.WiFi;
+using System.Device.Wifi;
 
-namespace ScanWiFi
+namespace ScanWifi
 {
     public class Program
     {
-        // Set the SSID & Password to your local WiFi network
+        // Set the SSID & Password to your local Wifi network
         const string MYSSID = "MySsdid";
         const string MYPASSWORD = "MyPassword";
 
@@ -21,7 +21,7 @@ namespace ScanWiFi
             try
             {
                 // Get the first WiFI Adapter
-                WiFiAdapter wifi = WiFiAdapter.FindAllAdapters()[0];
+                WifiAdapter wifi = WifiAdapter.FindAllAdapters()[0];
 
                 // Set up the AvailableNetworksChanged event to pick up when scan has completed
                 wifi.AvailableNetworksChanged += Wifi_AvailableNetworksChanged;
@@ -29,7 +29,7 @@ namespace ScanWiFi
                 // Loop forever scanning every 30 seconds
                 while (true)
                 {
-                    Debug.WriteLine("starting WiFi scan");
+                    Debug.WriteLine("starting Wifi scan");
                     wifi.ScanAsync();
 
                     Thread.Sleep(30000);
@@ -45,19 +45,19 @@ namespace ScanWiFi
         }
 
         /// <summary>
-        /// Event handler for when WiFi scan completes
+        /// Event handler for when Wifi scan completes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private static void Wifi_AvailableNetworksChanged(WiFiAdapter sender, object e)
+        private static void Wifi_AvailableNetworksChanged(WifiAdapter sender, object e)
         {
             Debug.WriteLine("Wifi_AvailableNetworksChanged - get report");
 
-            // Get Report of all scanned WiFi networks
-            WiFiNetworkReport report = sender.NetworkReport;
+            // Get Report of all scanned Wifi networks
+            WifiNetworkReport report = sender.NetworkReport;
 
             // Enumerate though networks looking for our network
-            foreach (WiFiAvailableNetwork net in report.AvailableNetworks)
+            foreach (WifiAvailableNetwork net in report.AvailableNetworks)
             {
                 // Show all networks found
                 Debug.WriteLine( $"Net SSID :{net.Ssid},  BSSID : {net.Bsid},  rssi : {net.NetworkRssiInDecibelMilliwatts.ToString()},  signal : {net.SignalBars.ToString()}");
@@ -69,10 +69,10 @@ namespace ScanWiFi
                     sender.Disconnect();
 
                     // Connect to network
-                    WiFiConnectionResult result = sender.Connect(net, WiFiReconnectionKind.Automatic, MYPASSWORD);
+                    WifiConnectionResult result = sender.Connect(net, WifiReconnectionKind.Automatic, MYPASSWORD);
 
                     // Display status
-                    if (result.ConnectionStatus == WiFiConnectionStatus.Success)
+                    if (result.ConnectionStatus == WifiConnectionStatus.Success)
                     {
                         Debug.WriteLine("Connected to Wifi network");
                     }

@@ -18,7 +18,7 @@
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
-    <Compile Include="..\SecureServer_WiFi\Program.cs">
+    <Compile Include="..\SecureServer_Wifi\Program.cs">
       <Link>Program.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
