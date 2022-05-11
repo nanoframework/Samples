@@ -36,9 +36,6 @@
       <HintPath>..\packages\nanoFramework.Json.2.1.2\lib\nanoFramework.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Networking.Sntp">
-      <HintPath>..\packages\nanoFramework.Networking.Sntp.1.6.1\lib\nanoFramework.Networking.Sntp.dll</HintPath>
-    </Reference>
     <Reference Include="nanoFramework.ResourceManager, Version=1.1.4.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.ResourceManager.1.1.4\lib\nanoFramework.ResourceManager.dll</HintPath>
       <Private>True</Private>
@@ -62,10 +59,6 @@
     <Reference Include="System.Device.Gpio">
       <HintPath>..\packages\nanoFramework.System.Device.Gpio.1.0.4\lib\System.Device.Gpio.dll</HintPath>
     </Reference>
-    <Reference Include="System.Device.Wifi, Version=1.4.0.12, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.Device.Wifi.1.4.0.12\lib\System.Device.Wifi.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.IO.Streams, Version=1.0.0.2, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.System.IO.Streams.1.0.0\lib\System.IO.Streams.dll</HintPath>
       <Private>True</Private>
@@ -74,9 +67,8 @@
       <HintPath>..\packages\nanoFramework.System.Net.1.8.2.3\lib\System.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net.Http, Version=1.4.0.10, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+    <Reference Include="System.Net.Http">
       <HintPath>..\packages\nanoFramework.System.Net.Http.Client.1.4.0.10\lib\System.Net.Http.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Threading, Version=1.0.4.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.System.Threading.1.0.4\lib\System.Threading.dll</HintPath>

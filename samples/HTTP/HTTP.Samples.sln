@@ -10,6 +10,14 @@ Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "HttpAzureGET", "HttpAzureGE
 EndProject
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "HttpAzurePOST", "HttpAzurePOST\HttpAzurePOST.nfproj", "{CB1EE621-6285-4AE7-837E-CDC27DDE0113}"
 EndProject
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "HttpWebRequest_Wifi", "HttpWebRequest_Wifi\HttpWebRequest_Wifi.nfproj", "{C0416744-A7E2-42E3-8F4D-1182420F9746}"
+EndProject
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "HttpListener_Wifi", "HttpListener_Wifi\HttpListener_Wifi.nfproj", "{3D3561FF-CE21-4181-8F22-B1B1D02F6967}"
+EndProject
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "HttpAzurePOST_Wifi", "HttpAzurePOST_Wifi\HttpAzurePOST_Wifi.nfproj", "{2A06646D-E30F-45D1-BD30-442FD709A6A6}"
+EndProject
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "HttpAzureGET_Wifi", "HttpAzureGET_Wifi\HttpAzureGET_Wifi.nfproj", "{86282DD7-9EA1-413B-9F7E-5A72E6372B52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +48,30 @@ Global
 		{CB1EE621-6285-4AE7-837E-CDC27DDE0113}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB1EE621-6285-4AE7-837E-CDC27DDE0113}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CB1EE621-6285-4AE7-837E-CDC27DDE0113}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C0416744-A7E2-42E3-8F4D-1182420F9746}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0416744-A7E2-42E3-8F4D-1182420F9746}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0416744-A7E2-42E3-8F4D-1182420F9746}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C0416744-A7E2-42E3-8F4D-1182420F9746}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0416744-A7E2-42E3-8F4D-1182420F9746}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0416744-A7E2-42E3-8F4D-1182420F9746}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3D3561FF-CE21-4181-8F22-B1B1D02F6967}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D3561FF-CE21-4181-8F22-B1B1D02F6967}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D3561FF-CE21-4181-8F22-B1B1D02F6967}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3D3561FF-CE21-4181-8F22-B1B1D02F6967}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D3561FF-CE21-4181-8F22-B1B1D02F6967}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D3561FF-CE21-4181-8F22-B1B1D02F6967}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2A06646D-E30F-45D1-BD30-442FD709A6A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A06646D-E30F-45D1-BD30-442FD709A6A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A06646D-E30F-45D1-BD30-442FD709A6A6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2A06646D-E30F-45D1-BD30-442FD709A6A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A06646D-E30F-45D1-BD30-442FD709A6A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A06646D-E30F-45D1-BD30-442FD709A6A6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{86282DD7-9EA1-413B-9F7E-5A72E6372B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86282DD7-9EA1-413B-9F7E-5A72E6372B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86282DD7-9EA1-413B-9F7E-5A72E6372B52}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{86282DD7-9EA1-413B-9F7E-5A72E6372B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86282DD7-9EA1-413B-9F7E-5A72E6372B52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86282DD7-9EA1-413B-9F7E-5A72E6372B52}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

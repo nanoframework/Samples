@@ -12,7 +12,7 @@ using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 
-#if BUILD_FOR_ESP32
+#if HAS_WIFI
 using System.Device.Wifi;
 #endif
 
@@ -20,7 +20,7 @@ namespace HttpSamples.HttpListenerSample
 {
     public class Program
     {
-#if BUILD_FOR_ESP32
+#if HAS_WIFI
         private static string MySsid = "ssid";
         private static string MyPassword = "password";      
 #endif
@@ -29,20 +29,33 @@ namespace HttpSamples.HttpListenerSample
         {
             X509Certificate _myWebServerCertificate509 = new X509Certificate2(_myWebServerCrt, _myWebServerPrivateKey, "");
 
-            Debug.WriteLine("Waiting for network up and IP address...");
+            Debug.WriteLine("Waiting for network up, IP address and valid date & time...");
+
             bool success;
             CancellationTokenSource cs = new(60000);
-#if BUILD_FOR_ESP32
+
+#if HAS_WIFI
+
+            // if the device doesn't have the Wifi credentials stored
             success = WifiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
+
+            /////////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////////
+            // if the device has the Wifi credentials already stored, this call it's faster    //
+            // success = WifiNetworkHelper.Reconnect(requiresDateTime: true, token: cs.Token); //
+            /////////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////////
+
 #else
             success = NetworkHelper.SetupAndConnectNetwork(cs.Token, true);
 #endif
+
             if (!success)
             {
-                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {WifiNetworkHelper.Status}.");
-                if (WifiNetworkHelper.HelperException != null)
+                Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {NetworkHelper.Status}.");
+                if (NetworkHelper.HelperException != null)
                 {
-                    Debug.WriteLine($"Exception: {WifiNetworkHelper.HelperException}");
+                    Debug.WriteLine($"Exception: {NetworkHelper.HelperException}");
                 }
                 return;
             }
