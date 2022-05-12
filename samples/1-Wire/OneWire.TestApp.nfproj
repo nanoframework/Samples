@@ -29,9 +29,8 @@
       <HintPath>packages\nanoFramework.CoreLibrary.1.12.0\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Devices.OneWire, Version=1.3.3.4, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Devices.OneWire.1.3.3\lib\nanoFramework.Devices.OneWire.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="nanoFramework.Device.OneWire">
+      <HintPath>packages\nanoFramework.Device.OneWire.1.3.4\lib\nanoFramework.Device.OneWire.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />

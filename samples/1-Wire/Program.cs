@@ -1,8 +1,9 @@
-﻿using nanoFramework.Devices.OneWire;
+﻿using nanoFramework.Device.OneWire;
 using System;
 using System.Collections;
 using System.Threading;
 using System.Diagnostics;
+using nanoFramework.Hardware.Esp32;
 
 namespace OneWire.TestApp
 {
@@ -10,8 +11,15 @@ namespace OneWire.TestApp
     {
         public static void Main()
         {
+            ///////////////////////////////////////////////////////////////////////////
+            // when connecting to an ESP32 device, need to configure the GPIOs for
+            // the COM port being used for 1-Wire.
+            // In .NET nanoFramework official images that's COM3.
+            //Configuration.SetPinFunction(21, DeviceFunction.COM3_RX);
+            //Configuration.SetPinFunction(22, DeviceFunction.COM3_TX);
+
             // get controller for OneWire
-            OneWireController oneWire = new OneWireController();
+            OneWireHost oneWire = new OneWireHost();
 
             ////////////////////////////////////////////////////////////////////
             // Sample code to read serial number for a devices present in bus
