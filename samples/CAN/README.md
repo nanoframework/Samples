@@ -1,6 +1,6 @@
 # CAN sample
 
-Shows how to use the [nanoFramework.Devices.Can](http://docs.nanoframework.net/api/nanoFramework.Devices.Can.html) API to read and write from/to a Can device.
+Shows how to use the [nanoFramework.Device.Can](http://docs.nanoframework.net/api/nanoFramework.Device.Can.html) API to read and write from/to a Can device.
 
 ## Hardware requirements
 
@@ -13,7 +13,7 @@ The code sample is demonstrative of the use of the CAN API.
 
 ### Reference
 
-- [nanoFramework.Devices.Can](http://docs.nanoframework.net/api/nanoFramework.Devices.Can.html)
+- [nanoFramework.Device.Can](http://docs.nanoframework.net/api/nanoFramework.Device.Can.html)
 - [CAN bus explained](https://www.csselectronics.com/screen/page/simple-intro-to-can-bus/language/en) by CSS Electronics.
 
 ## Build the sample

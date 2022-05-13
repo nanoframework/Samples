@@ -1,4 +1,4 @@
-﻿using nanoFramework.Devices.Can;
+﻿using nanoFramework.Device.Can;
 using System;
 using System.Diagnostics;
 using System.Threading;
