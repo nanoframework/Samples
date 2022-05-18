@@ -22,8 +22,10 @@ if (!ConnectToWifi()) return;
 // each provisioning. Uncomment the provisioning type you want to use.
 // https://docs.microsoft.com/en-us/azure/iot-dps/
 
-const string DpsAddress = "global.azure-devices-provisioning.net"; // You can use as well your own address like yourdps.azure-devices-provisioning.net
-const string IdScope = "0neXXXXXXXX"; // Replace the OneXX by the ID scope you'll find in your DPS
+// You can use as well your own address like yourdps.azure-devices-provisioning.net
+const string DpsAddress = "global.azure-devices-provisioning.net"; 
+// Replace the 0neXXXXXXXX by the ID scope you'll find in your DPS
+const string IdScope = "0neXXXXXXXX"; 
 
 // Individual registration, uncomment to use this
 /*
@@ -41,11 +43,11 @@ var provisioning = ProvisioningDeviceClient.Create(DpsAddress, IdScope, Registra
 // end of comments for group
 */
 
-// Individual certificate registration, uncomment to use this
+// Individual X.509 certificate registration, uncomment to use this
 const string RegistrationID = "nanoCertTest";
 
 // Those certificates are self signed and provided as example
-// You will have to provide your own certificates
+// You will have to provide your own X.509 certificates
 const string cert = @"-----BEGIN CERTIFICATE-----
 MIIDNjCCAh6gAwIBAgIQNw39CRZLRI9C2MRpqKEOBTANBgkqhkiG9w0BAQsFADAz
 MQswCQYDVQQGEwJVUzENMAsGA1UECgwEVEVTVDEVMBMGA1UEAwwMbmFub0NlcnRU
@@ -103,13 +105,13 @@ lOSLtZJ072NZegNiDXIVZQ==
 X509Certificate azureCA = new X509Certificate(DpsSampleApp.Resources.GetBytes(DpsSampleApp.Resources.BinaryResources.BaltimoreRootCA_crt));
 X509Certificate2 deviceCert = new X509Certificate2(cert, privateKey, "1234");
 var provisioning = ProvisioningDeviceClient.Create(DpsAddress, IdScope, RegistrationID, deviceCert, azureCA);
-// end of comments for certification
+// end of comments for X.509 certificates
 
 var myDevice = provisioning.Register(null, new CancellationTokenSource(30000).Token);
 
 if(myDevice.Status != ProvisioningRegistrationStatusType.Assigned)
 {
-    Debug.WriteLine($"Registration is not assigned: {myDevice.Status}, error message: {myDevice.ErrorMessage}");
+    Debug.WriteLine($"Registration is not assigned: {myDevice.Status}, error message: {myDevice.ErrorMessage} [code {myDevice.ErrorCode}]");
     return;
 }
 
@@ -117,8 +119,6 @@ Debug.WriteLine($"Device successfully assigned:");
 Debug.WriteLine($"  Assigned Hub: {myDevice.AssignedHub}");
 Debug.WriteLine($"  Created time: {myDevice.CreatedDateTimeUtc}");
 Debug.WriteLine($"  Device ID: {myDevice.DeviceId}");
-Debug.WriteLine($"  Error code: {myDevice.ErrorCode}");
-Debug.WriteLine($"  Error message: {myDevice.ErrorMessage}");
 Debug.WriteLine($"  ETAG: {myDevice.Etag}");
 Debug.WriteLine($"  Generation ID: {myDevice.GenerationId}");
 Debug.WriteLine($"  Last update: {myDevice.LastUpdatedDateTimeUtc}");
@@ -127,9 +127,9 @@ Debug.WriteLine($"  Sub Status: {myDevice.Substatus}");
 
 // Uncomment the following for Individual or group SAS based DPS:
 //var device = new DeviceClient(myDevice.AssignedHub, myDevice.DeviceId, SasKey, nanoFramework.M2Mqtt.Messages.MqttQoSLevel.AtMostOnce, azureCA);
-// Uncomment the following for certificate based DPS:
+// Uncomment the following for X.509 certificate based DPS:
 var device = new DeviceClient(myDevice.AssignedHub, myDevice.DeviceId, deviceCert, nanoFramework.M2Mqtt.Messages.MqttQoSLevel.AtMostOnce, azureCA);
-// Keep only oner of the previous line commented depending on if you're certificate based or SAS based registration.
+// Keep only one of the previous lines uncommented depending on if you're using X.509 certificate or SAS based registration.
 
 var res = device.Open();
 if(!res)
@@ -158,6 +158,7 @@ bool ConnectToWifi()
     if (!success)
     {
         Debug.WriteLine($"Can't connect to wifi: {WifiNetworkHelper.Status}");
+
         if (WifiNetworkHelper.HelperException != null)
         {
             Debug.WriteLine($"WifiNetworkHelper.HelperException");
@@ -165,5 +166,6 @@ bool ConnectToWifi()
     }
 
     Debug.WriteLine($"Date and time is now {DateTime.UtcNow}");
+
     return success;
 }

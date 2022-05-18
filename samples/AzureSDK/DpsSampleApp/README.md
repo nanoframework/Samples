@@ -1,6 +1,6 @@
 # Azure IoT Device Provisioning Service (DPS) example
 
-You will find a sample to show how to connect to Azure IoT Device Provisioning Service (DPS). DPS allows you to provision devices individually, by group with SAS token or with certificate. Those 4 scenarios are fully supported and represented in the same.
+You will find a sample to show how to connect to Azure IoT Device Provisioning Service (DPS). DPS allows you to provision devices individually, by group with authentication with SAS token or X.509 certificates. Those 4 scenarios are fully supported and described below.
 
 **IMPORTANT:** please refer to the DPS documentation to understand how to create each provisioning. Uncomment the provisioning type you want to use.
 
@@ -10,11 +10,11 @@ Refer to the main [.NET nanoFramework SDK](https://github.com/nanoframework/nano
 
 ## Usage
 
-You **must** be connected to a network and have a valid date and time.
+The device **must** be connected to the Internet and have a valid date and time.
 
 ### Provisioning using symmetric key
 
-For symmetric key provisioning you only need the following elements:
+For symmetric key provisioning you need the following elements:
 
 - A registration ID
 - The ID Scope
@@ -43,6 +43,7 @@ if(myDevice.Status != ProvisioningRegistrationStatusType.Assigned)
 
 // You can then create the device
 var device = new DeviceClient(myDevice.AssignedHub, myDevice.DeviceId, SasKey, nanoFramework.M2Mqtt.Messages.MqttQoSLevel.AtMostOnce, azureCA);
+
 // Open it and continue like for the previous sections
 var res = device.Open();
 if(!res)
@@ -52,17 +53,17 @@ if(!res)
 }
 ```
 
-Note: like for the `DeviceClient` you need to make sure you are connected to a network properly and also have a proper data and time set on the device.
+Note: like for the `DeviceClient` you need to make sure you are connected to a network and that the system has a valid date and time.
 
-### Provisioning using certificates
+### Provisioning using X.509 certificates
 
-For symmetric key provisioning you only need the following elements:
+For provisioning using a X.509 certificate you need the following elements:
 
 - A registration ID
 - The ID Scope
 - The device name
-- The device certificate
-- Make sure that your IoT Hub is as well aware of the root/intermediate certificate you are using otherwise you won't be able to connect to your IoT Hub once your device provisioned
+- A X.509 device certificate
+- Make sure that your IoT Hub is as well aware of the root/intermediate certificate you are using otherwise you won't be able to connect to your IoT Hub once your device is provisioned
 
 The code is then straight forward:
 
@@ -86,7 +87,8 @@ the encrypted private key
 // See the previous sections in the SDK help, you either need to have the Azure certificate embedded
 // Either passing it in the constructor
 X509Certificate azureCA = new X509Certificate(DpsSampleApp.Resources.GetBytes(DpsSampleApp.Resources.BinaryResources.BaltimoreRootCA_crt));
-// Note: if your private key is not protected with a password, you don't need to pass it
+
+// Note: if the private key is not encrypted with a password, use an empty string for the password parameter
 // You can as well store your certificate directly in the device certificate store
 // And you can store it as a resource as well if needed
 X509Certificate2 deviceCert = new X509Certificate2(cert, privateKey, "1234");
