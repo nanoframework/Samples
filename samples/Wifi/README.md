@@ -10,11 +10,11 @@ An hardware device with Wifi networking capabilities running a nanoFramework ima
 
 ### Reference
 
-- [Windows.Device.Wifi](http://docs.nanoframework.net/api/Windows.Device.Wifi.html)
+- [System.Device.Wifi](http://docs.nanoframework.net/api/System.Device.Wifi.html)
 
 ## Build the sample
 
-1. Start Microsoft Visual Studio 2019 (VS 2017 should be OK too) and select `File > Open > Project/Solution`.
+1. Start Microsoft Visual Studio 2022 (VS 2019 should be OK too) and select `File > Open > Project/Solution`.
 1. Starting in the folder where you unzipped the samples/cloned the repository, go to the subfolder for this specific sample. Double-click the Visual Studio Solution (.sln) file.
 1. Press `Ctrl+Shift+B`, or select `Build > Build Solution`.
 
