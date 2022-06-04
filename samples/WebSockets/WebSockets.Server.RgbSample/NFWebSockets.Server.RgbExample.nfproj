@@ -37,8 +37,8 @@
       <HintPath>packages\nanoFramework.CoreLibrary.1.12.0\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.AtomLite, Version=1.0.66.24331, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.AtomLite.1.0.66.24331\lib\nanoFramework.AtomLite.dll</HintPath>
+    <Reference Include="nanoFramework.AtomLite, Version=1.0.79.53990, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.AtomLite.1.0.79.53990\lib\nanoFramework.AtomLite.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Hardware.Esp32, Version=1.3.6.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -61,8 +61,8 @@
       <HintPath>packages\nanoFramework.System.Text.1.1.3\lib\nanoFramework.System.Text.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.WebServer, Version=1.0.0.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.WebServer.1.0.0\lib\nanoFramework.WebServer.dll</HintPath>
+    <Reference Include="nanoFramework.WebServer, Version=1.1.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.WebServer.1.1.1\lib\nanoFramework.WebServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Device.Adc, Version=1.0.2.4, Culture=neutral, PublicKeyToken=c07d481e9758c731">
