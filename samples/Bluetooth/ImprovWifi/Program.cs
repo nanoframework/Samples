@@ -48,7 +48,7 @@ namespace ImprovWifi
 
             // Now wait for Device to be Provisioned
             // we could also just use the OnProvisioningComplete event
-            while (_imp.CurrentState != Improv.ImprovState.PROVISIONED)
+            while (_imp.CurrentState != Improv.ImprovState.provisioned)
             {
                 Thread.Sleep(500);
             }
@@ -109,7 +109,7 @@ namespace ImprovWifi
                 Console.WriteLine("Failed to Connect to Wifi!");
 
                 // if not successful set error and return
-                _imp.ErrorState = Improv.ImprovError.UNABLE_CONNECT;
+                _imp.ErrorState = Improv.ImprovError.unableConnect;
             }
         }
 

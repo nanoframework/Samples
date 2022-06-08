@@ -16,34 +16,34 @@ namespace ImprovWifi
     public class Improv
     {
         /// <summary>
-        /// Improv error states
+        /// Improv error states.
         /// </summary>
         public enum ImprovError
         {
             /// <summary>
             /// This shows there is no current error state.
             /// </summary>
-            NO_ERROR,
+            noError,
             /// <summary>
             /// RPC packet was malformed/invalid.
             /// </summary>
-            INVALID_RPC_PACKET,
+            invalidRpcPacket,
             /// <summary>
             /// The command sent is unknown.
             /// </summary>
-            UNKNOWN_RPC_PACKET,
+            unknownRpcPacket,
             /// <summary>
             /// The credentials have been received and an attempt to connect to the network has failed.
             /// </summary>
-            UNABLE_CONNECT,
+            unableConnect,
             /// <summary>
             /// Credentials were sent via RPC but the Improv service is not authorized.
             /// </summary>
-            NOT_AUTHORISED,
+            notAuthorised,
             /// <summary>
             /// Unknown error
             /// </summary>
-            UNKNOWN_ERROR
+            unknownError
         };
 
         /// <summary>
@@ -54,19 +54,19 @@ namespace ImprovWifi
             /// <summary>
             /// Awaiting authorization via physical interaction.
             /// </summary>
-            AUTHORIZATION_REQUIRED = 1,
+            authorizationRequired = 1,
             /// <summary>
             /// Ready to accept credentials.
             /// </summary>
-            AUTHORIZED = 2,
+            authorized = 2,
             /// <summary>
             /// Credentials received, attempt to connect.
             /// </summary>
-            PROVISIONING = 3,
+            provisioning = 3,
             /// <summary>
             /// Connection successful.
             /// </summary>
-            PROVISIONED = 4
+            provisioned = 4
         };
 
         private GattServiceProvider _serviceProvider;
@@ -82,7 +82,6 @@ namespace ImprovWifi
         public event OnIdentifyEventDelegate OnIdentify;
         public event OnProvisionedEventDelegate OnProvisioned;
         public event OnProvisioningCompleteEventDelegate OnProvisioningComplete;
-
 
         private bool _started = false;
         private ImprovState _currentState;
@@ -130,16 +129,16 @@ namespace ImprovWifi
         {
             if (auth)
             {
-                if (CurrentState == ImprovState.AUTHORIZATION_REQUIRED)
+                if (CurrentState == ImprovState.authorizationRequired)
                 {
-                    CurrentState = ImprovState.AUTHORIZED;
+                    CurrentState = ImprovState.authorized;
                 }
             }
             else
             {
-                if (CurrentState == ImprovState.AUTHORIZED)
+                if (CurrentState == ImprovState.authorized)
                 {
-                    CurrentState = ImprovState.AUTHORIZATION_REQUIRED;
+                    CurrentState = ImprovState.authorizationRequired;
                 }
             }
         }
@@ -202,8 +201,8 @@ namespace ImprovWifi
             Guid improvChrRpcResultUuid = new ("00467768-6228-2272-4663-277478268004");
             Guid improvChrCapsUuid = new ("00467768-6228-2272-4663-277478268005");
 
-            CurrentState = ImprovState.AUTHORIZATION_REQUIRED;
-            ErrorState = ImprovError.NO_ERROR;
+            CurrentState = ImprovState.authorizationRequired;
+            ErrorState = ImprovError.noError;
 
             GattServiceProviderResult result = GattServiceProvider.Create(improvSeviceUuid);
             if (result.Error != BluetoothError.Success)
@@ -299,8 +298,8 @@ namespace ImprovWifi
             return BluetoothError.Success;
         }
 
-
         #region Characteristic event handlers
+
         private Buffer GetByteBuffer(byte value)
         {
             DataWriter dw = new();
@@ -359,9 +358,9 @@ namespace ImprovWifi
             switch (command)
             {
                 case 1:  //  Send WiFi settings
-                    if (CurrentState != ImprovState.AUTHORIZED)
+                    if (CurrentState != ImprovState.authorized)
                     {
-                        ErrorState = ImprovError.NOT_AUTHORISED;
+                        ErrorState = ImprovError.notAuthorised;
                     }
                     else
                     {
@@ -375,7 +374,7 @@ namespace ImprovWifi
 
                         byte csum = rdr.ReadByte();
 
-                        ErrorState = ImprovError.NO_ERROR;
+                        ErrorState = ImprovError.noError;
 
                         string ssid = UTF8Encoding.UTF8.GetString(bssid, 0, bssid.Length);
                         string password = UTF8Encoding.UTF8.GetString(bpassword, 0, bpassword.Length);
@@ -383,7 +382,7 @@ namespace ImprovWifi
                         //Console.WriteLine($"Rpc Send Wifi SSID:{ssid} Password:{password}");
 
                         // Start provisioning
-                        CurrentState = ImprovState.PROVISIONING;
+                        CurrentState = ImprovState.provisioning;
 
                         // User handling provisioning ?
                         if (OnProvisioned == null)
@@ -391,13 +390,13 @@ namespace ImprovWifi
                             // No OnProvisioned user event so try to automatically connect to wifi
                             if (ConnectWiFi(ssid, password))
                             {
-                                CurrentState = ImprovState.PROVISIONED;
+                                CurrentState = ImprovState.provisioned;
                             }
                             else
                             {
                                 // Unable to connect, go back to authorised state so it can be retried
-                                ErrorState = ImprovError.UNABLE_CONNECT;
-                                CurrentState = ImprovState.AUTHORIZED;
+                                ErrorState = ImprovError.unableConnect;
+                                CurrentState = ImprovState.authorized;
                             }
                         }
                         else
@@ -405,15 +404,15 @@ namespace ImprovWifi
                             // User provisioning, call event
                             OnProvisioned.Invoke(this, new ProvisionedEventArgs(ssid, password));
 
-                            if (ErrorState == ImprovError.NO_ERROR)
+                            if (ErrorState == ImprovError.noError)
                             {
-                                CurrentState = ImprovState.PROVISIONED;
+                                CurrentState = ImprovState.provisioned;
                             }
                         }
 
-                        if (CurrentState == ImprovState.PROVISIONED)
+                        if (CurrentState == ImprovState.provisioned)
                         {
-                            ErrorState = ImprovError.NO_ERROR;
+                            ErrorState = ImprovError.noError;
 
                             if (OnProvisioningComplete != null)
                             {
@@ -429,11 +428,11 @@ namespace ImprovWifi
 
                 case 2:  //  Identify
                     FireOnIdentify();
-                    ErrorState = ImprovError.NO_ERROR;
+                    ErrorState = ImprovError.noError;
                     break;
 
                 default: // Invalid
-                    ErrorState = ImprovError.UNKNOWN_RPC_PACKET;
+                    ErrorState = ImprovError.unknownRpcPacket;
                     break;
             }
 
@@ -444,7 +443,7 @@ namespace ImprovWifi
             }
         }
 
-        Buffer SetupRpcResult()
+        private Buffer SetupRpcResult()
         {
             byte cs = 0;
 
@@ -493,7 +492,6 @@ namespace ImprovWifi
                 cs += b;
             }
         }
-
 
         /// <summary>
         /// Connect to the Wifi
