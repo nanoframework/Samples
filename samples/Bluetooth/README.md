@@ -8,6 +8,9 @@ Currently only support on ESP32 devices running either the ESP32_BLE_REV0, ESP32
 On other firmware versions a not supported exception will be returned.
 
 ## Samples
+* [Bluetooth Low energy Improv sample](ImprovWifi)
+Provision device directly from a web page using *Improv* standard.
+See sample readme for more information.
 
 * [Bluetooth Low energy serial](BluetoothLESerial)
 Shows how to use the built-in SSP(Serial Service Profile) which simulates a serial link over Bluetooth. Use a phone app. 
