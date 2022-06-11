@@ -65,7 +65,6 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 
 ### Bluetooth
 
-* [Improv Wifi provisioning over Bluetooth Low Energy sample](samples/Bluetooth/ImprovWifi)
 * [Bluetooth Low Energy Serial profile sample](samples/Bluetooth/BluetoothLESerial)
 * [Bluetooth Low energy: adding, replacing services to the main service](samples/Bluetooth/BluetoothLESample3)
 * [Bluetooth Low energy: read static and dynamic values, notification, read/write value](samples/Bluetooth/BluetoothLESample1)
