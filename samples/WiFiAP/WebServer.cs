@@ -153,7 +153,7 @@ namespace WifiAP
         static string CreateMainPage(string message)
         {
 
-            return "<!DOCTYPE html><html><body>" +
+            return $"<!DOCTYPE html><html>{GetCss()}<body>" +
                     "<h1>NanoFramework</h1>" +
                     "<form method='POST'>" +
                     "<fieldset><legend>Wireless configuration</legend>" +
@@ -164,6 +164,19 @@ namespace WifiAP
                     "</fieldset>" +
                     "<b>" + message + "</b>" +
                     "</form></body></html>";
+        }
+
+        static string GetCss()
+        {
+            return "<head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><style>" +
+                "*{box-sizing: border-box}" +
+                "h1,legend {text-align:center;}" +
+                "form {max-width: 250px;margin: 10px auto 0 auto;}" +
+                "fieldset {border-radius: 5px;box-shadow: 3px 3px 15px hsl(0, 0%, 90%);font-size: large;}" +
+                "input {width: 100%;padding: 4px;margin-bottom: 8px;border: 1px solid hsl(0, 0%, 50%);border-radius: 3px;font-size: medium;}" +
+                "input[type=submit]:hover {cursor: pointer;background-color: hsl(0, 0%, 90%);transition: 0.5s;}" +
+                " @media only screen and (max-width: 768px) { form {max-width: 100%;}} " +
+                "</style><title>NanoFramework</title></head>";
         }
     }
 }
