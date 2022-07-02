@@ -37,8 +37,8 @@
       <HintPath>packages\nanoFramework.CoreLibrary.1.12.0\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.AtomLite, Version=1.0.92.59206, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.AtomLite.1.0.92.59206\lib\nanoFramework.AtomLite.dll</HintPath>
+    <Reference Include="nanoFramework.AtomLite, Version=1.0.107.13280, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.AtomLite.1.0.107.13280\lib\nanoFramework.AtomLite.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Hardware.Esp32, Version=1.3.6.7, Culture=neutral, PublicKeyToken=c07d481e9758c731">
