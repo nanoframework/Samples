@@ -159,6 +159,7 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 
 ### Tools and utilities
 
+* [Dependency injection sample pack](samples/DependencyInjection)
 * [Logging samples](samples/Logging)
 * [Unit Test framework sample pack](samples/UnitTest)
 
