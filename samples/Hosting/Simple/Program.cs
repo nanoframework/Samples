@@ -48,10 +48,15 @@ namespace Hosting
             _hardware = hardware;
         }
 
-        protected override void ExecuteAsync()
+        public override void Start()
         {
             Debug.WriteLine("LED Hosted Service running.");
 
+            base.Start();
+        }
+
+        protected override void ExecuteAsync()
+        {
             var ledPin = 16; 
 
             GpioPin led = _hardware.GpioController.OpenPin(ledPin, PinMode.Output);
@@ -61,6 +66,13 @@ namespace Hosting
                 led.Toggle();
                 Thread.Sleep(100);
             }
+        }
+
+        public override void Stop()
+        {
+            Debug.WriteLine("LED Hosted Service stopped.");
+
+            base.Stop();
         }
     }
 }

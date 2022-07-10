@@ -1,4 +1,4 @@
-//
+﻿//
 // Copyright (c) .NET Foundation and Contributors
 // See LICENSE file in the project root for full license information.
 //
@@ -12,8 +12,10 @@ namespace Hosting
     {
         public static void Main()
         {
-            var hostBuilder = CreateHostBuilder();
-            var host = hostBuilder.Build();
+            IHostBuilder hostBuilder = CreateHostBuilder();
+            IHost host = hostBuilder.Build();
+
+            // starts application and blocks the main calling thread 
             host.Run();
         }
 

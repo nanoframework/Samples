@@ -7,8 +7,6 @@ Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "SlowBlink", "SlowBlink.nfpr
 EndProject
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "nanoFramework.Hosting", "..\..\..\..\nanoFramework.Hosting\nanoFramework.Hosting\nanoFramework.Hosting.nfproj", "{AEEA2C38-FF56-4ACD-9DF5-E0BEA2D1263A}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "nanoFramework.DependencyInjection", "..\..\..\..\nanoFramework.DependencyInjection\nanoFramework.DependencyInjection\nanoFramework.DependencyInjection.nfproj", "{A2B2222C-0553-4877-8CF1-4458B30C0081}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,12 +25,6 @@ Global
 		{AEEA2C38-FF56-4ACD-9DF5-E0BEA2D1263A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEEA2C38-FF56-4ACD-9DF5-E0BEA2D1263A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AEEA2C38-FF56-4ACD-9DF5-E0BEA2D1263A}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{A2B2222C-0553-4877-8CF1-4458B30C0081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A2B2222C-0553-4877-8CF1-4458B30C0081}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A2B2222C-0553-4877-8CF1-4458B30C0081}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{A2B2222C-0553-4877-8CF1-4458B30C0081}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A2B2222C-0553-4877-8CF1-4458B30C0081}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A2B2222C-0553-4877-8CF1-4458B30C0081}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

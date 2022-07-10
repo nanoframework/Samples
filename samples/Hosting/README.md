@@ -1,14 +1,24 @@
 # Hosting sample pack
 
+The .NET nanoFramework Generic Host provides convenience methods for creating [dependency injection (DI)](https://github.com/nanoframework/nanoFramework.DependencyInjection/tree/main) application containers with preconfigured defaults.
+
 ## Samples
 
-### Dependency injection application container sample 
+### Generic Host application container sample 
 
-[SlowBlink](./SlowBlink) shows how to create a dependency injection application container including gpio and logging.  Project sample will require a working led connected to a GPIO port.
+[Simple](./Simple) shows how to create a very simple Generic Host object.
 
-###  Dependency injection usage sample 
+###  Hardware sample 
 
-[Simple](./Simple) shows how to create a very simple dependency injection object.
+[SlowBlink](./SlowBlink) shows how to create a Generic Host application container including gpio hardware.  Project sample will require a working led connected to a GPIO port.
+
+###  Sensor Queue sample 
+
+[Sensor Queue](./SensorQueue) shows how to create a background queue to process sensor data using the Generic Host object.
+
+###  Logging sample 
+
+[Logging](./Logging) shows how to use extention methods to add logging to a Generic Host object.
 
 ## Building the samples
 

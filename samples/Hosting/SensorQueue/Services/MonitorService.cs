@@ -27,7 +27,7 @@ namespace Hosting
             base.Start();
         }
 
-        protected override void ExecuteAsync(object state)
+        protected override void ExecuteAsync()
         {
             Debug.WriteLine($"Queue Depth: {_queue.QueueCount}");
         }
