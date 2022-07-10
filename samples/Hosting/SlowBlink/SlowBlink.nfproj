@@ -48,6 +48,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\nanoFramework.DependencyInjection\nanoFramework.DependencyInjection\nanoFramework.DependencyInjection.nfproj" />
+    <ProjectReference Include="..\..\..\..\nanoFramework.Hosting\nanoFramework.Hosting\nanoFramework.Hosting.nfproj" />
     <ProjectReference Include="..\..\..\nanoFramework.DependencyInjection\nanoFramework.DependencyInjection\nanoFramework.DependencyInjection.nfproj" />
     <ProjectReference Include="..\..\nanoFramework.Hosting\nanoFramework.Hosting.nfproj" />
   </ItemGroup>

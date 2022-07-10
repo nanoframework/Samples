@@ -20,16 +20,15 @@ namespace Hosting
             _queue = queue;
         }
 
-        protected override void ExecuteAsync(CancellationToken cancellationToken)
+        protected override void ExecuteAsync()
         {
             Debug.WriteLine($"Service '{nameof(DisplayService)}' is now running in the background.");
-            cancellationToken.Register(() => Debug.WriteLine($"Service '{nameof(DisplayService)}' is stopping."));
 
-            while (!cancellationToken.IsCancellationRequested)
+            while (!CancellationRequested)
             {
                 try
                 {
-                    Thread.Sleep(50);
+                    Thread.Sleep(5);
 
                     var workItem = _queue.Dequeue();
                     if (workItem == null)

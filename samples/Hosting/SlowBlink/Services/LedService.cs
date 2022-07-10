@@ -19,13 +19,13 @@ namespace Hosting
             _hardware = hardware;
         }
 
-        protected override void ExecuteAsync(CancellationToken cancellationToken)
+        protected override void ExecuteAsync()
         {
             var ledPin = 16;
 
             GpioPin led = _hardware.GpioController.OpenPin(ledPin, PinMode.Output);
 
-            while (!cancellationToken.IsCancellationRequested)
+            while (!CancellationRequested)
             {
                 led.Toggle();
                 Thread.Sleep(1000);

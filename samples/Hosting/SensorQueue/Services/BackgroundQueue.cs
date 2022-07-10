@@ -3,7 +3,6 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using System;
 using System.Collections;
 
 namespace Hosting
@@ -24,11 +23,6 @@ namespace Hosting
 
         public void Enqueue(object item)
         {
-            if (item == null)
-            {
-                throw new ArgumentNullException(nameof(item));
-            }
-
             if (_items.Count < _maxQueueCount)
             {
                 lock (_syncLock)
@@ -44,11 +38,7 @@ namespace Hosting
             {
                 lock (_syncLock)
                 {
-                    var workItem = _items.Dequeue();
-                    if (workItem != null)
-                    {
-                        return workItem;
-                    }
+                    return _items.Dequeue();
                 }
             }
 

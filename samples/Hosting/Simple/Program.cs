@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading;
 using System.Device.Gpio;
 using System.Diagnostics;
@@ -21,7 +21,6 @@ namespace Hosting
                 {
                     services.AddSingleton(typeof(HardwareService));
                     services.AddHostedService(typeof(LedHostedService));
-                    services.AddHostedService(typeof(TimedHostedService));
                 });
     }
 
@@ -49,54 +48,19 @@ namespace Hosting
             _hardware = hardware;
         }
 
-        protected override void ExecuteAsync(CancellationToken cancellationToken)
+        protected override void ExecuteAsync()
         {
             Debug.WriteLine("LED Hosted Service running.");
 
-            cancellationToken.Register(() => Debug.WriteLine("LED Hosted Service is stopping."));
-
-            var ledPin = 16; //LD1;
+            var ledPin = 16; 
 
             GpioPin led = _hardware.GpioController.OpenPin(ledPin, PinMode.Output);
 
-            while (!cancellationToken.IsCancellationRequested)
+            while (!CancellationRequested)
             {
                 led.Toggle();
                 Thread.Sleep(100);
             }
-        }
-    }
-    
-    internal class TimedHostedService : IHostedService, IDisposable
-    {
-        private Timer _timer = null;
-        private int executionCount = 0;
-
-        public void StartAsync()
-        {
-            Debug.WriteLine("Timed Hosted Service running.");
-
-            _timer = new Timer(DoWork, null, TimeSpan.Zero,
-                TimeSpan.FromSeconds(5));
-        }
-
-        private void DoWork(object state)
-        {
-            var count = Interlocked.Increment(ref executionCount);
-
-            Debug.WriteLine($"Timed Hosted Service is working. Count: {count}");
-        }
-
-        public void StopAsync()
-        {
-            Debug.WriteLine("Timed Hosted Service is stopping.");
-
-            _timer.Change(Timeout.Infinite, 0);
-        }
-
-        public void Dispose()
-        {
-            _timer.Dispose();
         }
     }
 }

@@ -20,11 +20,11 @@ namespace Hosting
             _queue = queue;
         }
 
-        public override void StartAsync()
+        public override void Start()
         {
             Debug.WriteLine($"Service '{nameof(MonitorService)}' is now running in the background.");
 
-            base.StartAsync();
+            base.Start();
         }
 
         protected override void ExecuteAsync(object state)
@@ -32,11 +32,11 @@ namespace Hosting
             Debug.WriteLine($"Queue Depth: {_queue.QueueCount}");
         }
 
-        public override void StopAsync()
+        public override void Stop()
         {
             Debug.WriteLine($"Service '{nameof(MonitorService)}' is stopping.");
             
-            base.StopAsync();
+            base.Stop();
         }
     }
 }

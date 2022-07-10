@@ -1,4 +1,4 @@
-//
+﻿//
 // Copyright (c) .NET Foundation and Contributors
 // See LICENSE file in the project root for full license information.
 //
@@ -17,7 +17,7 @@ namespace Hosting
 
         public static IHostBuilder CreateHostBuilder() =>
             Host.CreateDefaultBuilder()
-                .ConfigureServices(services =>
+            .ConfigureServices(services =>
                 {
                     services.AddSingleton(typeof(BackgroundQueue));
                     services.AddHostedService(typeof(SensorService));

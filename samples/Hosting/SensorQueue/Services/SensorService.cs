@@ -22,12 +22,11 @@ namespace Hosting
             _random = new Random();
         }
 
-        protected override void ExecuteAsync(CancellationToken cancellationToken)
+        protected override void ExecuteAsync()
         {
             Debug.WriteLine($"Service '{nameof(SensorService)}' is now running in the background.");
-            cancellationToken.Register(() => Debug.WriteLine($"Service '{nameof(SensorService)}' is stopping."));
 
-            while (!cancellationToken.IsCancellationRequested)
+            while (!CancellationRequested)
             {
                 try
                 {
@@ -44,7 +43,7 @@ namespace Hosting
 
         private int FakeSensor()
         {
-            Thread.Sleep(_random.Next(100));
+            Thread.Sleep(_random.Next(10));
             return _random.Next(1000);
         }
     }
