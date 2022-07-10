@@ -60,6 +60,10 @@ namespace Blinky
             // ULX3S FPGA board: for the red D22 LED from the ESP32-WROOM32, GPIO5
             //GpioPin led = s_GpioController.OpenPin(5, PinMode.Output);
 
+            // Silabs SLSTK3701A: LED1 PH14 is LLED1
+            //GpioPin led = s_GpioController.OpenPin(PinNumber('H', 14), PinMode.Output);
+
+
             led.Write(PinValue.Low);
 
             while (true)
