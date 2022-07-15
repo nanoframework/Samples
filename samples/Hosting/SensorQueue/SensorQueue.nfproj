@@ -30,21 +30,17 @@
       <HintPath>packages\nanoFramework.CoreLibrary.1.12.0\lib\mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.DependencyInjection">
-      <HintPath>packages\nanoFramework.DependencyInjection.1.0.0.11\lib\nanoFramework.DependencyInjection.dll</HintPath>
+      <HintPath>packages\nanoFramework.DependencyInjection.1.0.2\lib\nanoFramework.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="nanoFramework.Hosting">
+      <HintPath>packages\nanoFramework.Hosting.1.0.7\lib\nanoFramework.Hosting.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.System.Collections">
       <HintPath>packages\nanoFramework.System.Collections.1.4.0\lib\nanoFramework.System.Collections.dll</HintPath>
     </Reference>
-    <Reference Include="System.Threading">
-      <HintPath>packages\nanoFramework.System.Threading.1.0.4\lib\System.Threading.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\nanoFramework.Hosting\nanoFramework.Hosting\nanoFramework.Hosting.nfproj" />
-    <ProjectReference Include="..\..\nanoFramework.Hosting\nanoFramework.Hosting.nfproj" />
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <ProjectExtensions>

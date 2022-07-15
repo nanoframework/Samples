@@ -12,7 +12,8 @@ namespace Hosting
     {
         public static void Main()
         { 
-            CreateHostBuilder().Build().Run();
+            var host = CreateHostBuilder().Build();
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder() =>

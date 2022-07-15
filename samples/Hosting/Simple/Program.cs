@@ -12,16 +12,21 @@ namespace Hosting
     {
         public static void Main()
         {
-            CreateHostBuilder().Build().Run();
-        }
+            IHostBuilder builder = new HostBuilder();
+            builder.ConfigureServices(services =>
+            {
+                services.AddSingleton(typeof(HardwareService));
+                services.AddHostedService(typeof(LedHostedService));
+            });
 
-        public static IHostBuilder CreateHostBuilder() =>
-            Host.CreateDefaultBuilder()
-                .ConfigureServices(services =>
-                {
-                    services.AddSingleton(typeof(HardwareService));
-                    services.AddHostedService(typeof(LedHostedService));
-                });
+            IHost host = builder.Build();
+
+            // blink for 5 seconds and then stop and dispose of host 
+            host.Start();
+            Thread.Sleep(5000);
+            host.Stop();
+            host.Dispose();
+        }
     }
 
     internal class HardwareService : IDisposable
