@@ -160,6 +160,7 @@
 ### Tools and utilities
 
 * [Dependency injection sample pack](samples/DependencyInjection)
+* [Hosting sample pack](samples/Hosting)
 * [Logging samples](samples/Logging)
 * [Unit Test framework sample pack](samples/UnitTest)
 
