@@ -28,8 +28,9 @@
     <Reference Include="mscorlib">
       <HintPath>packages\nanoFramework.CoreLibrary.1.12.0\lib\mscorlib.dll</HintPath>
     </Reference>
-    <Reference Include="nanoFramework.DependencyInjection">
-      <HintPath>packages\nanoFramework.DependencyInjection.1.0.0.11\lib\nanoFramework.DependencyInjection.dll</HintPath>
+    <Reference Include="nanoFramework.DependencyInjection, Version=1.0.2.6345, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.DependencyInjection.1.0.2\lib\nanoFramework.DependencyInjection.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Logging">
       <HintPath>packages\nanoFramework.Logging.1.0.1.29\lib\nanoFramework.Logging.dll</HintPath>
