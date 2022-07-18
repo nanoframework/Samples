@@ -37,8 +37,8 @@
       <HintPath>packages\nanoFramework.CoreLibrary.1.12.0\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.AtomLite, Version=1.1.7.59075, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.AtomLite.1.1.7\lib\nanoFramework.AtomLite.dll</HintPath>
+    <Reference Include="nanoFramework.AtomLite, Version=1.1.12.63558, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.AtomLite.1.1.12\lib\nanoFramework.AtomLite.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Hardware.Esp32, Version=1.3.6.7, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -81,8 +81,8 @@
       <HintPath>packages\nanoFramework.System.Device.I2c.1.0.3\lib\System.Device.I2c.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Device.Spi, Version=1.3.2.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Device.Spi.1.3.2\lib\System.Device.Spi.dll</HintPath>
+    <Reference Include="System.Device.Spi, Version=1.3.4.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Device.Spi.1.3.4\lib\System.Device.Spi.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Device.Wifi, Version=1.4.0.22, Culture=neutral, PublicKeyToken=c07d481e9758c731">
