@@ -11,11 +11,10 @@ There are two Solutions in this sample:
 
 Please read this [blog post](https://jsimoesblog.wordpress.com/2018/06/19/interop-in-net-nanoframework/) with a detailed explanation on how to create, build and use an Interop library.
 
-This sample shows how to set the date and time of the RTC on a target device.
-
 ## Hardware requirements
 
-Any hardware device running a nanoFramework image.
+Any hardware device running a .NET nanoFramework image.
+You'll be replacing the existing image with one that includes support for the Interop library.
 
 ## Related topics
 
@@ -23,7 +22,7 @@ Any hardware device running a nanoFramework image.
 
 ## Build the sample
 
-1. Start Microsoft Visual Studio 2019 (VS 2017 should be OK too) and select `File > Open > Project/Solution`.
+1. Start Microsoft Visual Studio 2022 (VS 2019 and 2017 should be OK too) and select `File > Open > Project/Solution`.
 1. Starting in the folder where you unzipped the samples/cloned the repository, go to the subfolder for this specific sample. Double-click the Visual Studio Solution (.sln) file.
 1. Press `Ctrl+Shift+B`, or select `Build > Build Solution`.
 
