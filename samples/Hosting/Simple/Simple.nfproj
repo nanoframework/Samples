@@ -25,11 +25,13 @@
     <Reference Include="mscorlib">
       <HintPath>packages\nanoFramework.CoreLibrary.1.12.0\lib\mscorlib.dll</HintPath>
     </Reference>
-    <Reference Include="nanoFramework.DependencyInjection">
-      <HintPath>packages\nanoFramework.DependencyInjection.1.0.2\lib\nanoFramework.DependencyInjection.dll</HintPath>
+    <Reference Include="nanoFramework.DependencyInjection, Version=1.0.5.30235, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.DependencyInjection.1.0.5\lib\nanoFramework.DependencyInjection.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Hosting">
-      <HintPath>packages\nanoFramework.Hosting.1.0.7\lib\nanoFramework.Hosting.dll</HintPath>
+    <Reference Include="nanoFramework.Hosting, Version=1.0.10.61858, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Hosting.1.0.10\lib\nanoFramework.Hosting.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Runtime.Events">
       <HintPath>packages\nanoFramework.Runtime.Events.1.10.0\lib\nanoFramework.Runtime.Events.dll</HintPath>

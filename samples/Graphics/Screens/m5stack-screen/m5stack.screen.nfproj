@@ -45,8 +45,8 @@
       <HintPath>packages\nanoFramework.Graphics.1.0.3.6\lib\nanoFramework.Graphics.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Hardware.Esp32, Version=1.3.6.7, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Hardware.Esp32.1.3.6.7\lib\nanoFramework.Hardware.Esp32.dll</HintPath>
+    <Reference Include="nanoFramework.Hardware.Esp32, Version=1.4.1.63006, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Hardware.Esp32.1.4.1\lib\nanoFramework.Hardware.Esp32.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.ResourceManager, Version=1.1.4.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
