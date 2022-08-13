@@ -9,6 +9,8 @@ namespace WifiAP
 {
     public static class WirelessAP
     {
+        public const string SoftApIP = "192.168.4.1";
+
         /// <summary>
         /// Disable the Soft AP for next restart.
         /// </summary>
@@ -25,8 +27,6 @@ namespace WifiAP
         /// <returns>True if already set-up</returns>
         public static bool Setup()
         {
-            string SoftApIP = "192.168.4.1";
-
             NetworkInterface ni = GetInterface();
             WirelessAPConfiguration wapconf = GetConfiguration();
 
