@@ -32,8 +32,8 @@ namespace BluetoothLESample3
             Debug.WriteLine("Hello from Bluetooth Sample 3");
 
             // Define used custom Uuid 
-            Guid serviceUuid = new Guid("A7EEDF2C-DA87-4CB5-A9C5-5151C78B0057");
-            Guid readStaticCharUuid = new Guid("A7EEDF2C-DA89-4CB5-A9C5-5151C78B0057");
+            Guid serviceUuid = new("A7EEDF2C-DA87-4CB5-A9C5-5151C78B0057");
+            Guid readStaticCharUuid = new("A7EEDF2C-DA89-4CB5-A9C5-5151C78B0057");
 
             //The GattServiceProvider is used to create and advertise the primary service definition.
             //An extra device information service will be automatically created.
@@ -51,7 +51,7 @@ namespace BluetoothLESample3
             #region Static read characteristic
             // Now we add an characteristic to service
             // If the read value is not going to change then you can just use a Static value
-            DataWriter sw = new DataWriter();
+            DataWriter sw = new();
             sw.WriteString("This is Bluetooth sample 3");
 
             GattLocalCharacteristicResult characteristicResult = service.CreateCharacteristic(readStaticCharUuid,
@@ -79,7 +79,7 @@ namespace BluetoothLESample3
             // The default version just has a Manufacturer name of "nanoFramework and model or "Esp32"
             // You can add your own service which will replace the default one.
             // To make it easy we have included some standard services classes to this sample
-            DeviceInformationServiceService DifService = new DeviceInformationServiceService(
+            DeviceInformationServiceService DifService = new(
                     serviceProvider,
                     "MyGreatCompany",
                     "Model-1",
@@ -91,7 +91,7 @@ namespace BluetoothLESample3
             // === Battery Service ===
             // https://www.bluetooth.com/specifications/specs/battery-service-1-0/
             // Battery service exposes the current battery level percentage
-            BatteryService BatService = new BatteryService(serviceProvider);
+            BatteryService BatService = new(serviceProvider);
 
             // Update the Battery service the current battery level regularly. In this case 94%
             BatService.BatteryLevel = 94;
@@ -102,12 +102,12 @@ namespace BluetoothLESample3
             // optionally allows the date time to be updated. You can call the Notify method to inform
             // any connected devices of changed in date/time.  Any subscribed clients will be automatically 
             // be notified every 60 seconds.
-            CurrentTimeService CtService = new CurrentTimeService(serviceProvider, true);
+            CurrentTimeService CtService = new(serviceProvider, true);
 
             // === Environmental Sensor Service ===
             // https://www.bluetooth.com/specifications/specs/environmental-sensing-service-1-0/
             // This service exposes measurement data from an environmental sensors.
-            EnvironmentalSensorService EnvService = new EnvironmentalSensorService(serviceProvider);
+            EnvironmentalSensorService EnvService = new(serviceProvider);
 
             // Add sensors to service, return index so sensor can be updated later.
             int iTempOut = EnvService.AddSensor(EnvironmentalSensorService.SensorType.Temperature, "Outside Temp");
@@ -133,6 +133,37 @@ namespace BluetoothLESample3
                 IsDiscoverable = true
             });
             #endregion 
+
+            Thread.Sleep(60000);
+
+            while (true)
+            {
+                float t1 = 23.4F;
+                float t3 = 7.5F;
+
+                // Up
+                while (t1 < 120)
+                {
+                    t1 += 1.3F;
+                    t3 += 2.1F;
+
+                    EnvService.UpdateValue(iTempOut, t1);
+                    EnvService.UpdateValue(iTempOutMin, t3);
+                    Thread.Sleep(5000);
+                }
+
+                // Up
+                while (t1 > -50F)
+                {
+                    t1 -= 1.3F;
+                    t3 -= 2.1F;
+
+                    EnvService.UpdateValue(iTempOut, t1);
+                    EnvService.UpdateValue(iTempOutMin, t3);
+                    Thread.Sleep(5000);
+                }
+
+            }
 
             Thread.Sleep(Timeout.Infinite);
         }

@@ -19,7 +19,7 @@ such as "Serial Bluetooth Terminal" to connect to device and send and receive me
 * [Bluetooth Low energy sample 1](BluetoothLESample1)
 This shows how to create a custom service which shows the use of:
 
-| Custom service | Behavior |
+| Custom service | Behaviour |
 | --- | --- |
 | Read static value (value that doesn't change) | Value text |
 | Read a dynamic value using an event handler. | value 3 bytes (Hour/Minute/Seconds) |
@@ -33,7 +33,7 @@ Suitable Phone apps: "LightBlue" or "nRF Connect"
 This sample adds security to the Characteristic access. This will force the Server/Client to bond/pair which is 
 used to generate key pairs for communications. All access is now encrypted. 
 
-| Custom service | Behavior |
+| Custom service | Behaviour |
 | --- | --- |
 | Read and Write (requires encryption) a value | Read/Write Int32 |
 | Read (requires encryption) and Write a value | Read/Write Int32 (same value) |
@@ -66,7 +66,19 @@ This allows multiple environmental sensors to be published such as Temperature, 
 This sample class includes these 4 but other types can easily added to class. Multiple sensor of same type can be added.
 The sample shows 3 Temperatures (Instantaneous, Maximum, Minimum) added to service and a humidity sensor.
 
-## Build the sample
+* [Simple Watcher sample](Central1)
+
+This a simple sample showing how to scan for Bluetooth LE devices.
+
+* [Central Data Collect sample](Central2)
+
+Sample will scan for devices with a name starting with "Sample" and connect to all found devices.
+It will then read and set-up notifications for changes in Environmental Service temperatures.
+
+The [Bluetooth Low energy sample 2](BluetoothLESample2) was changed for this purpose so that the temperatures are
+always changing up and down.
+
+## Building the samples
 
 1. Start Microsoft Visual Studio 2019 (VS 2017 or VS 2022 should be OK too) and select `File > Open > Project/Solution`.
 1. Starting in the folder where you unzipped the samples/cloned the repository, go to the subfolder for this specific sample. Double-click the Visual Studio Solution (.sln) file.
