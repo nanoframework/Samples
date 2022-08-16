@@ -42,6 +42,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Iot.Device.DhcpServer">
+      <HintPath>packages\nanoFramework.Iot.Device.DhcpServer.1.2.6\lib\Iot.Device.DhcpServer.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.CoreLibrary.1.12.0\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
