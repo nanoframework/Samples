@@ -141,7 +141,7 @@ namespace BluetoothLESample3
                 float t1 = 23.4F;
                 float t3 = 7.5F;
 
-                // Up
+                // Move temperatures up
                 while (t1 < 120)
                 {
                     t1 += 1.3F;
@@ -152,7 +152,7 @@ namespace BluetoothLESample3
                     Thread.Sleep(5000);
                 }
 
-                // Up
+                // Move temperatures down
                 while (t1 > -50F)
                 {
                     t1 -= 1.3F;

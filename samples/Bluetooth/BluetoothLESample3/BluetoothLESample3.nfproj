@@ -33,14 +33,8 @@
       <HintPath>packages\nanoFramework.CoreLibrary.1.12.0\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-<<<<<<< Updated upstream
-    <Reference Include="nanoFramework.Device.Bluetooth, Version=1.1.2.41302, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Device.Bluetooth.1.1.2\lib\nanoFramework.Device.Bluetooth.dll</HintPath>
-      <Private>True</Private>
-=======
     <Reference Include="nanoFramework.Device.Bluetooth">
       <HintPath>..\..\..\..\nanoFramework.Device.Bluetooth.main\nanoFramework.Device.Bluetooth\bin\Debug\nanoFramework.Device.Bluetooth.dll</HintPath>
->>>>>>> Stashed changes
     </Reference>
     <Reference Include="nanoFramework.Runtime.Events, Version=1.10.0.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.Runtime.Events.1.10.0\lib\nanoFramework.Runtime.Events.dll</HintPath>
@@ -50,14 +44,11 @@
       <HintPath>packages\nanoFramework.Runtime.Native.1.5.4\lib\nanoFramework.Runtime.Native.dll</HintPath>
       <Private>True</Private>
     </Reference>
-<<<<<<< Updated upstream
-=======
     <Reference Include="nanoFramework.System.Collections, Version=1.4.0.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.System.Collections.1.4.0\lib\nanoFramework.System.Collections.dll</HintPath>
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
->>>>>>> Stashed changes
     <Reference Include="nanoFramework.System.Text, Version=1.2.3.51943, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.System.Text.1.2.3\lib\nanoFramework.System.Text.dll</HintPath>
       <Private>True</Private>
