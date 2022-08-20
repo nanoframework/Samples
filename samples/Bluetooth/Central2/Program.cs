@@ -17,7 +17,7 @@ namespace Central2
     /// <summary>
     /// Sample to collect temperature values from a collection of
     /// Environmental Sensor devices. Designed to work with 
-    /// the Server Sample 3.
+    /// the Bluetooth Sample 3.
     /// 
     /// It will first watch for advertisements from Sensor devices 
     /// for 15 seconds after finding first device.
@@ -73,9 +73,16 @@ namespace Central2
 
         private static void Watcher_Received(BluetoothLEAdvertisementWatcher sender, BluetoothLEAdvertisementReceivedEventArgs args)
         {
-            if (args.Advertisement.LocalName.StartsWith("Sample"))
+            // Print information about received advertisement
+            // You don't receive all information in 1 event and it can be split across 2 events
+            // AdvertisementTypes 0 and 4
+            Console.WriteLine($"Received advertisement address:{args.BluetoothAddress:X}/{args.BluetoothAddressType} Name:{args.Advertisement.LocalName}  Advert type:{args.AdvertisementType}  Services:{args.Advertisement.ServiceUuids.Length}");
+
+            // Look for advert with our primary service UUID from Bluetooth Sample 3
+            if (args.Advertisement.ServiceUuids.Length > 0 &&
+                args.Advertisement.ServiceUuids[0].Equals(new Guid("A7EEDF2C-DA87-4CB5-A9C5-5151C78B0057")))
             {
-                Console.WriteLine($"Found Environmental sensor :{args.BluetoothAddress:X}");
+                Console.WriteLine($"Found an Environmental test sensor :{args.BluetoothAddress:X}");
 
                 // Check we haven't already found this device
                 foreach (BluetoothLEDevice dev in s_foundDevices)
@@ -88,22 +95,13 @@ namespace Central2
                 }
 
                 // Add it to list as a BluetoothLEDevice
-                s_foundDevices.Add(BluetoothLEDevice.FromBluetoothAddress(args.BluetoothAddress));
+                s_foundDevices.Add(BluetoothLEDevice.FromBluetoothAddress(args.BluetoothAddress, args.BluetoothAddressType));
             }
         }
-
 
         private static void DataCollector()
         {
             bool collectorRunning = true;
-
-            foreach (BluetoothLEDevice device in s_foundDevices)
-            {
-                // Monitor status
-                device.ConnectionStatusChanged += Device_ConnectionStatusChanged;
-
-                ConnectAndRegister(device);
-            }
 
             while (collectorRunning)
             {
@@ -137,7 +135,6 @@ namespace Central2
         {
             bool result = false;
 
-            // Get Environmental Sensor service which contain Temperature Characteristics
             GattDeviceServicesResult sr = device.GetGattServicesForUuid(GattServiceUuids.EnvironmentalSensing);
             if (sr.Status == GattCommunicationStatus.Success)
             {
@@ -147,6 +144,8 @@ namespace Central2
                 // Pick up all temperature characteristics
                 foreach (GattDeviceService service in sr.Services)
                 {
+                    Console.WriteLine($"Service UUID {service.Uuid}");
+
                     GattCharacteristicsResult cr = service.GetCharacteristicsForUuid(GattCharacteristicUuids.Temperature);
                     if (cr.Status == GattCommunicationStatus.Success)
                     {
@@ -160,7 +159,7 @@ namespace Central2
                             {
                                 // Read current value and output
                                 OutputTemp(gc, ReadTempValue(rr.Value));
-    
+
                                 // Set up a notify value changed event
                                 gc.ValueChanged += TempValueChanged;
                                 // and configure CCCD for Notify
