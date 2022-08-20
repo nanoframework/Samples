@@ -136,6 +136,7 @@ namespace BluetoothLESample3
 
             Thread.Sleep(60000);
 
+            // Update values after 1 min. to simulate real sensors
             while (true)
             {
                 float t1 = 23.4F;
