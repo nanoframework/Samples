@@ -27,7 +27,7 @@ namespace ParseCertificate
             Debug.WriteLine($"Expiry Date:: {cert.GetExpirationDate()}");
 
             // check raw data against buffer
-            if (cert.GetRawCertData().GetHashCode() != Encoding.UTF8.GetBytes(x509RsaPem2048bytesCertificate).GetHashCode())
+            if (cert.GetRawCertData().GetHashCode() == Encoding.UTF8.GetBytes(x509RsaPem2048bytesCertificate).GetHashCode())
             {
                 Debug.WriteLine("Raw data checks");
             }
@@ -50,7 +50,7 @@ namespace ParseCertificate
             Debug.WriteLine($"Expiry Date:: {cert.GetExpirationDate()}");
 
             // check raw data against buffer
-            if (cert.GetRawCertData().GetHashCode() !=  Resources.GetBytes(Resources.BinaryResources.DigiCertGlobalRootCA).GetHashCode())
+            if (cert.GetRawCertData().GetHashCode() ==  Resources.GetBytes(Resources.BinaryResources.DigiCertGlobalRootCA).GetHashCode())
             {
                 Debug.WriteLine("Raw data checks");
             }
@@ -74,7 +74,7 @@ namespace ParseCertificate
             Debug.WriteLine($"Expiry Date:: {cert.GetExpirationDate()}");
 
             // check raw data against buffer
-            if (cert.GetRawCertData().GetHashCode() != Encoding.UTF8.GetBytes(x509RsaPem2048bytesCertificate).GetHashCode())
+            if (cert.GetRawCertData().GetHashCode() == Encoding.UTF8.GetBytes(x509RsaPem2048bytesCertificate).GetHashCode())
             {
                 Debug.WriteLine("Raw data checks");
             }
