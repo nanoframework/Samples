@@ -6,6 +6,9 @@ like the default "Device Information Service".
 This sample also includes some standard Bluetooth services as separate classes which may be useful 
 for any Bluetooth LE project.
 
+The temperature values for the Environmental Service are incremented up and down to simulate temperature 
+changes from a real sensor. These are used by the Central2 data collection sample.
+
 ## Device Information Service 
 
 Provides device information like Manufacturer, model, software version etc.

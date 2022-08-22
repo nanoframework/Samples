@@ -92,7 +92,7 @@ namespace nanoFramework.Device.Bluetooth.Services
                 case SensorType.Temperature:
                     // Temperature in Celsius
                     // uint16 - hundreds of C, 9543 = 95.43c
-                    Int16 temp = (Int16)(value * 100);
+                    short temp = (short)(value * 100);
                     writer.WriteInt16(temp);                  // Temperature 
                     updated = true;
                     break;
@@ -100,21 +100,21 @@ namespace nanoFramework.Device.Bluetooth.Services
                 case SensorType.Humidity:
                     // Humidity percentage
                     // uint16 - hundreds of %, 9543 = 95.43%
-                    UInt16 humidity = (UInt16)(value * 100);
+                    ushort humidity = (ushort)(value * 100);
                     writer.WriteUInt16(humidity);
                     updated = true;
                     break;
 
                 case SensorType.Pressure:
                     // Pressure Pascal
-                    UInt32 pa = (UInt32)(value * 10);
+                    uint pa = (uint)(value * 10);
                     writer.WriteUInt32(pa);
                     updated = true;
                     break;
 
                 case SensorType.Rainfall:
                     // Rainfall in mm
-                    writer.WriteUInt16((UInt16)value);
+                    writer.WriteUInt16((ushort)value);
                     updated = true;
                     break;
             }
@@ -144,9 +144,9 @@ namespace nanoFramework.Device.Bluetooth.Services
             request.RespondWithProtocolError(GattProtocolError.AttributeNotFound);
         }
 
-        private Guid GetUuidForType(SensorType type)
+        private Guid GetUuidForType(SensorType sensorType)
         {
-            switch (type)
+            switch (sensorType)
             {
                 case SensorType.Temperature:
                     return GattCharacteristicUuids.Temperature;
