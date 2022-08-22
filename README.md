@@ -12,7 +12,7 @@ Feel free to browse, take what you like and contribute back if you want.
 
 > Note: sometimes it's convenient to reference the source code instead of the NuGet packages in projects that require debugging by following the execution flow into other projects or even class libraries. For that we recommend using a very handy Visual Studio extension that allows NuGet assembly references to project references switching. That's [NuGet Reference Switcher](https://github.com/rsuter/NuGetReferenceSwitcher).
 
-If you are looking for Iot.Device samples, they are all in the [Iot.Device repository](https://github.com/nanoFrameork/nanoFramewok.IoT.Device).
+If you are looking for Iot.Device samples, they are all in the [Iot.Device repository](https://github.com/nanoFramework/nanoFramework.IoT.Device).
 
 ## Sample by category
 
