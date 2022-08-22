@@ -41,7 +41,6 @@
   <ItemGroup>
     <Reference Include="mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.CoreLibrary.1.12.0\lib\mscorlib.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Azure.Devices.Client, Version=1.1.19.30021, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.Azure.Devices.Client.1.1.19\lib\nanoFramework.Azure.Devices.Client.dll</HintPath>

@@ -102,7 +102,7 @@ try
     }
 
     // Subscribe to the twin change
-    azure.TwinUpated += TwinUpdated;
+    azure.TwinUpdated += TwinUpdated;
 }
 catch (Exception ex)
 {
