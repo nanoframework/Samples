@@ -24,7 +24,7 @@ if (!ConnectToWifi())
 // Create and Azure IoT connection
 // You will find the model here: https://github.com/Azure/iot-plugandplay-models/blob/main/dtmi/com/example/thermostat-1.json
 DeviceClient azureIoT = new DeviceClient(Secrets.IotHub, Secrets.DeviceName, Secrets.SasKey, azureCert: new X509Certificate(Resource.GetBytes(Resource.BinaryResources.AzureRoot)), modelId: "dtmi:com:example:Thermostat;1");
-azureIoT.TwinUpated += AzureTwinUpdated;
+azureIoT.TwinUpdated += AzureTwinUpdated;
 azureIoT.AddMethodCallback(getMaxMinReport);
 
 if (!azureIoT.Open())

@@ -42,7 +42,7 @@ try
 {
     if (!ConnectToWifi()) return;
 
-    azureIoT.TwinUpated += TwinUpdatedEvent;
+    azureIoT.TwinUpdated += TwinUpdatedEvent;
     azureIoT.StatusUpdated += StatusUpdatedEvent;
     azureIoT.CloudToDeviceMessage += CloudToDeviceMessageEvent;
     azureIoT.AddMethodCallback(MethodCalbackTest);

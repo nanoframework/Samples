@@ -11,10 +11,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindPeFiles", "FindPeFiles\FindPeFiles.csproj", "{FB5A2D69-0660-481E-929D-6109A72C28CB}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		OtaInterface\OtaInterface.projitems*{d836967a-a9ee-4a90-8af1-3dae5e3f64fe}*SharedItemsImports = 13
-		OtaInterface\OtaInterface.projitems*{fb5a2d69-0660-481e-929d-6109a72c28cb}*SharedItemsImports = 5
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -34,11 +30,17 @@ Global
 		{D5F674EE-F974-4E8D-ACA2-D15AEF662C74}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{FB5A2D69-0660-481E-929D-6109A72C28CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FB5A2D69-0660-481E-929D-6109A72C28CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB5A2D69-0660-481E-929D-6109A72C28CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB5A2D69-0660-481E-929D-6109A72C28CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C967FC56-9F2D-40AD-8B89-52B96DFD776B}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		OtaInterface\OtaInterface.projitems*{d836967a-a9ee-4a90-8af1-3dae5e3f64fe}*SharedItemsImports = 13
+		OtaInterface\OtaInterface.projitems*{fb5a2d69-0660-481e-929d-6109a72c28cb}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
