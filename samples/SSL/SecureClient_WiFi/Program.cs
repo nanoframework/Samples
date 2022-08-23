@@ -24,15 +24,15 @@ namespace SecureClient
     {
 #if HAS_WIFI
         private static string MySsid = "ssid";
-        private static string MyPassword = "password";      
+        private static string MyPassword = "password";
 #endif
 
         public static void Main()
         {
             Debug.WriteLine("Waiting for network up and IP address...");
-            
+
             bool success;
-            
+
             CancellationTokenSource cs = new(60000);
 
 #if HAS_WIFI
@@ -61,11 +61,24 @@ namespace SecureClient
             // add certificate in CER format (as a managed resource)
             X509Certificate digiCertGlobalRootCACert = new X509Certificate(Resources.GetBytes(Resources.BinaryResources.DigiCertGlobalRootCA));
             /////////////////////////////////////////////////////////////////////////////////////
+            
+            /////////////////////////////////////////////////////////////////////////////////////
+            // add certificate in CER format (as a managed resource)
+            X509Certificate digiCertGlobalG2CACert = new X509Certificate(Resources.GetBytes(Resources.BinaryResources.DigiCert_Global_G2_Azure));
+            /////////////////////////////////////////////////////////////////////////////////////
 
-            // get host entry for How's my SSL test site
+            // **** get host entry for How's my SSL test site
             //IPHostEntry hostEntry = Dns.GetHostEntry("www.howsmyssl.com");
-            // get host entry for Global Root test site
+            // **** get host entry for Global Root test site
             IPHostEntry hostEntry = Dns.GetHostEntry("global-root-ca.chain-demos.digicert.com");
+            // **** get host entry for Azure IoT test site
+            //IPHostEntry hostEntry = Dns.GetHostEntry("g2cert.azure-devices.net");
+
+            ////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////
+            // MAKE sure your using the same URL when calling AuthenticateAsClient below ///
+            ////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////
 
             // need an IPEndPoint from that one above
             IPEndPoint ep = new IPEndPoint(hostEntry.AddressList[0], 443);
@@ -93,7 +106,7 @@ namespace SecureClient
                         // the 'clientCertificate' parameter when calling AuthenticateAsClient(...)
                         //
                         /////////////////////////////////////////////////////////////////////////////////// 
-                        //stream.UseStoredDeviceCertificate = true;
+                        //sslStream.UseStoredDeviceCertificate = true;
 
                         ///////////////////////////////////////////////////////////////////////////////////
                         // Authenticating the server can be handled in one of three ways:
@@ -103,27 +116,30 @@ namespace SecureClient
                         // 2. Having the target device preloaded with the root CA certificate.
                         // 
                         // !! NOT SECURED !! NOT RECOMENDED !!
-                        // 3. Forcing the authentication workflow to NOT validate the server certificate.
+                        // 3. Forcing the authentication work-flow to NOT validate the server certificate.
                         //
                         /////////////////////////////////////////////////////////////////////////////////// 
 
                         // option 1 
                         // setup authentication (add CA root certificate to the call)
-                        // Let's encrypt test certificate
-                        //stream.AuthenticateAsClient("www.howsmyssl.com", null, letsEncryptCACert, SslProtocols.Tls11);
-                        // GlobalRoot CA cert from resources
+
+                        // **** Let's encrypt test certificate for How's My SSL
+                        //sslStream.AuthenticateAsClient("www.howsmyssl.com", null, letsEncryptCACert, SslProtocols.Tls11);
+                        // **** GlobalRoot CA cert from resources
                         sslStream.AuthenticateAsClient("global-root-ca.chain-demos.digicert.com", null, digiCertGlobalRootCACert, SslProtocols.Tls12);
+                        // **** DigiCert Global G2 cert from resources
+                        //sslStream.AuthenticateAsClient("g2cert.azure-devices.net", null, digiCertGlobalG2CACert, SslProtocols.Tls12);
 
                         // option 2
                         // setup authentication (without providing root CA certificate)
                         // this requires that the trusted root CA certificates are available in the device certificate store
-                        //stream.AuthenticateAsClient("www.howsmyssl.com", SslProtocols.Tls11);
-                        //stream.AuthenticateAsClient("global-root-ca.chain-demos.digicert.com", SslProtocols.Tls12);
+                        //sslStream.AuthenticateAsClient("www.howsmyssl.com", SslProtocols.Tls11);
+                        //sslStream.AuthenticateAsClient("global-root-ca.chain-demos.digicert.com", SslProtocols.Tls12);
 
                         // option 3
                         // disable certificate validation
-                        //stream.SslVerification = SslVerification.NoVerification;
-                        //stream.AuthenticateAsClient("www.howsmyssl.com", SslProtocols.TLSv11);
+                        //sslStream.SslVerification = SslVerification.NoVerification;
+                        //sslStream.AuthenticateAsClient("www.howsmyssl.com", SslProtocols.TLSv11);
 
                         Debug.WriteLine("SSL handshake OK!");
 
@@ -140,7 +156,7 @@ namespace SecureClient
                             var bufferLenght = sslStream.Length;
 
                             // if available length is 0, need to read at least 1 byte to get it started
-                            if(bufferLenght == 0)
+                            if (bufferLenght == 0)
                             {
                                 bufferLenght = 1;
                             }

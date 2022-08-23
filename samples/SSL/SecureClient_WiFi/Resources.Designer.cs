@@ -32,6 +32,7 @@ namespace SecureClient
         [System.SerializableAttribute()]
         internal enum BinaryResources : short
         {
+            DigiCert_Global_G2_Azure = -5408,
             DigiCertGlobalRootCA = 1766,
         }
     }
