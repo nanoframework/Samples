@@ -25,7 +25,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextService.cs" />
-    <Compile Include="TextServiceSingleton.cs" />
     <Compile Include="WebServerDi.cs" />
   </ItemGroup>
   <ItemGroup>

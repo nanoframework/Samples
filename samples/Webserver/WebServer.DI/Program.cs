@@ -51,8 +51,8 @@ namespace nanoFramework.WebServer.Sample
         private static ServiceProvider ConfigureServices()
         {
             return new ServiceCollection()
-                .AddSingleton(typeof(ITextService), typeof(TextService))
-                .AddTransient(typeof(ITextServiceSingleton), typeof(TextServiceSingleton))
+                .AddTransient(typeof(ITextService), typeof(TextService))
+                .AddSingleton(typeof(ITextServiceSingleton), typeof(TextService))
                 .BuildServiceProvider();
         }
     }

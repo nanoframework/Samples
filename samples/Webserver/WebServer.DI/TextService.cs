@@ -7,7 +7,7 @@ using System;
 
 namespace nanoFramework.WebServer.Sample
 {
-    internal class TextService : ITextService
+    internal class TextService : ITextService, ITextServiceSingleton
     {
         public Guid guid { get; }
 
