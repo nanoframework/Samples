@@ -82,6 +82,13 @@ You will find in simple [GPIO controller sample](./WebServer.GpioRest) REST API.
   - You can use low of 0, it has the same effect and will place the pin in low value
 - To read the pin 4: http://yoururl/read/4, you will get as a raw text `high`or `low`depending on the state
 
+## DI integration with controllers
+Check [WebServer.DI sample](./WebServer.DI) if you want to use controllers with automatically injecting services from [nanoFramework.DependencyInjection](https://github.com/nanoframework/nanoFramework.DependencyInjection).
+
+- Type you credentials in Program.cs files
+- Navigate to http://yoururl/test
+- You should get text with two GUIDs, one should stay the same across all requests (singleton service)
+
 ## Authentication on controllers
 
 Controllers support authentication. 3 types of authentications are currently implemented on controllers only:

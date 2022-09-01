@@ -1,4 +1,4 @@
-//
+﻿//
 // Copyright (c) 2020 Laurent Ellerbach and the project contributors
 // See LICENSE file in the project root for full license information.
 //
@@ -17,6 +17,7 @@ using System.Text;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using WebServer.Sample;
+using System.Net.Security;
 
 #if HAS_WIFI
 using System.Device.Wifi;
@@ -93,7 +94,7 @@ namespace nanoFramework.WebServer.Sample
 #if USE_TLS
                     server.HttpsCert = _myWebServerCertificate509;
 
-                    server.SslProtocols = System.Net.Security.SslProtocols.Tls11 | System.Net.Security.SslProtocols.Tls12;
+                    server.SslProtocols = SslProtocols.Tls11 | SslProtocols.Tls12;
 #endif
 
                     // Start the server.
