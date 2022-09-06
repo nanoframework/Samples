@@ -70,6 +70,10 @@ namespace Central2
                     // Connect and register notify events
                     if (ConnectAndRegister(device))
                     {
+                        if (s_dataDevices.Contains(device.BluetoothAddress))
+                        {
+                            s_dataDevices.Remove(device.BluetoothAddress);
+                        }
                         s_dataDevices.Add(device.BluetoothAddress, device);
                     }
                 }
@@ -85,7 +89,7 @@ namespace Central2
         private static bool IsValidDevice(BluetoothLEAdvertisementReceivedEventArgs args)
         {
             if (args.Advertisement.ServiceUuids.Length > 0 &&
-                args.Advertisement.ServiceUuids[0].Equals(new Guid("A7EEDF2C-DA87-4CB5-A9C5-5151C78B0066")))
+                args.Advertisement.ServiceUuids[0].Equals(new Guid("A7EEDF2C-DA87-4CB5-A9C5-5151C78B0057")))
             {
                 if (!s_foundDevices.Contains(args.BluetoothAddress))
                 {
@@ -102,6 +106,11 @@ namespace Central2
             // You don't receive all information in 1 event and it can be split across 2 events
             // AdvertisementTypes 0 and 4
             Console.WriteLine($"Received advertisement address:{args.BluetoothAddress:X}/{args.BluetoothAddressType} Name:{args.Advertisement.LocalName}  Advert type:{args.AdvertisementType}  Services:{args.Advertisement.ServiceUuids.Length}");
+
+            if (args.Advertisement.ServiceUuids.Length > 0)
+            {
+                Console.WriteLine($"Advert Service UUID {args.Advertisement.ServiceUuids[0]}");
+            }
 
             // Look for advert with our primary service UUID from Bluetooth Sample 3
             if (IsValidDevice(args))
