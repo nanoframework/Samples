@@ -134,7 +134,7 @@ namespace BluetoothLESample1
             // devices can see it. 
             serviceProvider.StartAdvertising(new GattServiceProviderAdvertisingParameters()
             {
-                DeviceName = "Sample 1 Device",
+                DeviceName = "Sample1",
                 IsConnectable = true,
                 IsDiscoverable = true
             });

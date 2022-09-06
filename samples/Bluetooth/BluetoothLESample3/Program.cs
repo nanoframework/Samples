@@ -128,7 +128,7 @@ namespace BluetoothLESample3
             // devices can see it with a specific device name.
             serviceProvider.StartAdvertising(new GattServiceProviderAdvertisingParameters()
             {
-                DeviceName = "Sample 3 Device",
+                DeviceName = "Sample3",
                 IsConnectable = true,
                 IsDiscoverable = true
             });
@@ -165,8 +165,6 @@ namespace BluetoothLESample3
                 }
 
             }
-
-            Thread.Sleep(Timeout.Infinite);
         }
     }
 }

@@ -35,7 +35,7 @@ This a simple sample showing how to scan for Bluetooth LE devices.
 
 * [Central Data Collect sample](Central2)
 
-Sample will scan for devices with a name starting with "Sample" and connect to all found devices.
+Sample will scan for devices with the service UUID used in the BluetoothLESample3 sample and connect to all found devices.
 It will then read and set-up notifications for changes in Environmental Service temperatures.
 
 The [Bluetooth Low energy sample 3](BluetoothLESample3) was changed to provide notifications of temperture changes.
