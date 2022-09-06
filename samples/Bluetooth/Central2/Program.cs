@@ -28,47 +28,72 @@ namespace Central2
     /// </summary>
     public static class Program
     {
-        // Devices to collect from. Added by watcher
-        private readonly static ArrayList s_foundDevices = new();
+        // Devices found by watcher
+        private readonly static Hashtable s_foundDevices = new();
+
+        // Devices to collect from. Added when connected
+        private readonly static Hashtable s_dataDevices = new();
 
         public static void Main()
         {
             Console.WriteLine("Sample Client/Central 2 : Collect data from Environmental sensors");
-
             Console.WriteLine("Searching for Environmental Sensors");
 
-            // Find all advertising Environmental sensors (Sample 3)
-            FindDevices();
-
-            Console.WriteLine($"Devices found {s_foundDevices.Count}");
-
-            Console.WriteLine("Connecting and Reading Sensors");
-
-            // Connect and collect temperatures
-            DataCollector();
-
-            Thread.Sleep(Timeout.Infinite);
-        }
-
-        private static void FindDevices()
-        {
+            // Create a watcher
             BluetoothLEAdvertisementWatcher watcher = new();
             watcher.ScanningMode = BluetoothLEScanningMode.Active;
             watcher.Received += Watcher_Received;
 
-            Console.WriteLine("Starting BluetoothLEAdvertisementWatcher");
-
-            watcher.Start();
-
-            // Run until we have found some devices
-            while (s_foundDevices.Count == 0)
+            while (true)
             {
-                Thread.Sleep(15000);
+                Console.WriteLine("Starting BluetoothLEAdvertisementWatcher");
+                watcher.Start();
+
+                // Run until we have found some devices to connect to
+                while (s_foundDevices.Count == 0)
+                {
+                    Thread.Sleep(10000);
+                }
+
+                Console.WriteLine("Stopping BluetoothLEAdvertisementWatcher");
+
+                // We can't connect if watch running so stop it.
+                watcher.Stop();
+
+                Console.WriteLine($"Devices found {s_foundDevices.Count}");
+                Console.WriteLine("Connecting and Reading Sensors");
+
+                foreach (DictionaryEntry entry in s_foundDevices)
+                {
+                    BluetoothLEDevice device = entry.Value as BluetoothLEDevice;
+
+                    // Connect and register notify events
+                    if (ConnectAndRegister(device))
+                    {
+                        s_dataDevices.Add(device.BluetoothAddress, device);
+                    }
+                }
+                s_foundDevices.Clear();
+            }
+        }
+
+        /// <summary>
+        /// Check fir device with correct Service UUID in advert and not already found
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
+        private static bool IsValidDevice(BluetoothLEAdvertisementReceivedEventArgs args)
+        {
+            if (args.Advertisement.ServiceUuids.Length > 0 &&
+                args.Advertisement.ServiceUuids[0].Equals(new Guid("A7EEDF2C-DA87-4CB5-A9C5-5151C78B0066")))
+            {
+                if (!s_foundDevices.Contains(args.BluetoothAddress))
+                {
+                    return true;
+                }
             }
 
-            Console.WriteLine("Stopping BluetoothLEAdvertisementWatcher");
-
-            watcher.Stop();
+            return false;
         }
 
         private static void Watcher_Received(BluetoothLEAdvertisementWatcher sender, BluetoothLEAdvertisementReceivedEventArgs args)
@@ -79,51 +104,15 @@ namespace Central2
             Console.WriteLine($"Received advertisement address:{args.BluetoothAddress:X}/{args.BluetoothAddressType} Name:{args.Advertisement.LocalName}  Advert type:{args.AdvertisementType}  Services:{args.Advertisement.ServiceUuids.Length}");
 
             // Look for advert with our primary service UUID from Bluetooth Sample 3
-            if (args.Advertisement.ServiceUuids.Length > 0 &&
-                args.Advertisement.ServiceUuids[0].Equals(new Guid("A7EEDF2C-DA87-4CB5-A9C5-5151C78B0057")))
+            if (IsValidDevice(args))
             {
                 Console.WriteLine($"Found an Environmental test sensor :{args.BluetoothAddress:X}");
 
-                // Check we haven't already found this device
-                foreach (BluetoothLEDevice dev in s_foundDevices)
-                {
-                    if (dev.BluetoothAddress == args.BluetoothAddress)
-                    {
-                        // found ignore
-                        return;
-                    }
-                }
-
                 // Add it to list as a BluetoothLEDevice
-                s_foundDevices.Add(BluetoothLEDevice.FromBluetoothAddress(args.BluetoothAddress, args.BluetoothAddressType));
+                s_foundDevices.Add(args.BluetoothAddress, BluetoothLEDevice.FromBluetoothAddress(args.BluetoothAddress, args.BluetoothAddressType));
             }
         }
 
-        private static void DataCollector()
-        {
-            bool collectorRunning = true;
-
-            while (collectorRunning)
-            {
-                Thread.Sleep(30000);
-                foreach (BluetoothLEDevice device in s_foundDevices)
-                {
-                    if (device.ConnectionStatus != BluetoothConnectionStatus.Connected)
-                    {
-                        Console.WriteLine($"Device {device.BluetoothAddress:X} is disconnected, try reconnect");
-                        // try to reconnect
-                        if (ConnectAndRegister(device))
-                        {
-                            Console.WriteLine($"Device {device.BluetoothAddress:X} re-connected");
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Device {device.BluetoothAddress:X} unable to reconnect");
-                        }
-                    }
-                }
-            }
-        }
 
         /// <summary>
         /// Connect and set-up Temperature Characteristics for value 
@@ -179,7 +168,9 @@ namespace Central2
             {
                 Console.WriteLine($"Device {dev.BluetoothAddress:X} disconnected");
 
-                // Reconnect in main loop
+                // Remove device. We get picked up again once advert seen.
+                s_dataDevices.Remove(dev.BluetoothAddress);
+                dev.Dispose();
             }
         }
 
