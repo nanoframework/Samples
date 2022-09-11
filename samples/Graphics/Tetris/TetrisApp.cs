@@ -11,7 +11,8 @@
 
 
 // !!!----------- SAMPLE - ENSURE YOU CHOOSE THE CORRECT TARGET HERE --------------!!!
-#define STM32F769I_DISCO //Comment this out for any other target!
+//#define STM32F769I_DISCO // Comment this in if for the target!
+//#define ESP32 // Comment this in if for the target platform!
 // !!!-----------------------------------------------------------------------------!!!
 
 
