@@ -61,8 +61,9 @@
     <Reference Include="nanoFramework.WebServer">
       <HintPath>packages\nanoFramework.WebServer.1.1.19\lib\nanoFramework.WebServer.dll</HintPath>
     </Reference>
-    <Reference Include="System.Device.Gpio">
-      <HintPath>packages\nanoFramework.System.Device.Gpio.1.0.4\lib\System.Device.Gpio.dll</HintPath>
+    <Reference Include="System.Device.Gpio, Version=1.1.5.11286, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Device.Gpio.1.1.5\lib\System.Device.Gpio.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Device.Wifi">
       <HintPath>packages\nanoFramework.System.Device.Wifi.1.5.8\lib\System.Device.Wifi.dll</HintPath>
