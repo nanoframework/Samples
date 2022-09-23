@@ -31,6 +31,3 @@
 - [ ] I have read the **CONTRIBUTING** document.
 - [ ] I have added tests to cover my changes.
 - [ ] All new and existing tests passed.
-
-<!--- It would be nice if you could sign off your contribution by replacing the name with your GitHub user name and GitHub email contact. -->
-Signed-off-by: GITHUB_USER <GITHUB_USER_EMAIL>
