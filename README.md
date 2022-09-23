@@ -26,6 +26,7 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 ### Gpio, I2C, Spi, Pwm, Adc, Dac, 1-Wire, Serial
 
 * [1-Wire sample](samples/1-Wire)
+* [Analogic/Digital converter](samples/GiantGecko.Adc)
 * [Analogic/Digital converter](samples/ADC)
 * [Blink your first led](samples/Blinky)
 * [Digital Analog Converter sample](samples/DAC)
