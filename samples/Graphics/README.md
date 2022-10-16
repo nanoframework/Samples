@@ -1,4 +1,4 @@
-# Graphics samples
+# 🌶️🌶️ to 🌶️🌶️🌶️ -Graphics samples
 
 These samples show how utilizing graphics on displays can be achieved using nanoFramework.
 

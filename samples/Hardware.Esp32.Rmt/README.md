@@ -1,4 +1,4 @@
-# Hardware ESP32 RMT sample pack
+# 🌶️🌶️ - Hardware ESP32 RMT sample pack
 
 Shows how to use the [nanoFramework.Hardware.Esp32.Rmt](http://docs.nanoframework.net/api/nanoFramework.Hardware.Esp32.Rmt.html) 
 API to access the ESP32 RMT functions.
@@ -7,9 +7,11 @@ The RMT(remote control) is primarily used to send and receive remote control com
 
 Samples
 
-- [HC-SR04 ultrasonic ranging](Ultrasonic/)
-- [NeoPixel Strip WS2812](NeoPixelStrip/)
-- [NeoPixel Strip WS2812 with low memory consumption](NeoPixelStripLowMemory/)
+- [🌶️🌶️ - HC-SR04 ultrasonic ranging](Ultrasonic/)
+- [🌶️🌶️ - NeoPixel Strip WS2812](NeoPixelStrip/)
+- [🌶️🌶️ - NeoPixel Strip WS2812 with low memory consumption](NeoPixelStripLowMemory/)
+
+> **Note**: those sensors and devices are available as nuget in [Device.IoT repository](https://github.com/nanoFramework/nanoFramework.Deive.IoT).
 
 ## Hardware requirements
 

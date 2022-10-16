@@ -1,4 +1,4 @@
-# STM32 Read Device ID
+# 🌶️ - STM32 Read Device ID
 
 This samples shows how to read Device ID from STM32.
 

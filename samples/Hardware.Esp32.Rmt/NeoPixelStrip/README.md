@@ -1,4 +1,4 @@
-# NeoPixel Strip WS2812 with RMT
+# 🌶️🌶️ - NeoPixel Strip WS2812 with RMT
 
 Shows how to use ESP32 RMT with an NeoPixel Strip WS2812
 

@@ -1,4 +1,4 @@
-# System.Device.Pwm
+# 🌶️ - System.Device.Pwm
 
 Shows how to use the [System.Devices.Pwm](https://github.com/nanoframework/System.Device.Pwm) API to drive a GPIO pin with a PWM signal. This pin is connected to an LED thus increasing and decreasing its light intensity periodically.
 

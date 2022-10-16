@@ -1,4 +1,4 @@
-# Digital Analog Converter sample
+# 🌶️ - Digital Analog Converter sample
 
 Shows how to use the [System.Device.Dac](http://docs.nanoframework.net/api/System.Device.Dac.html) API to output values to a DAC.
 
@@ -22,19 +22,19 @@ This scenario demonstrates the how to instantiate the device default DAC control
 
 ### Output a triangle wave
 
-![](images/triangle-wave.jpg)
+![Triangle wave](images/triangle-wave.jpg)
 
 This scenario demonstrates the use the DAC to output a triangle wave.
 
 ### Output a square wave
 
-![](images/square-wave.jpg)
+![Square wave](images/square-wave.jpg)
 
 This scenario demonstrates the use the DAC to output a square wave.
 
 ### Output a sine wave
 
-![](images/sine-wave.jpg)
+![Sine wave](images/sine-wave.jpg)
 
 This scenario demonstrates the use the DAC to output a sine wave.
 

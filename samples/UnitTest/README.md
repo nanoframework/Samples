@@ -1,10 +1,10 @@
-# Unit Test framework sample pack
+# 🌶️ - Unit Test framework sample pack
 
 Shows how to use the .NET nanoFramework [Unit Test framework](http://docs.nanoframework.net/).
 
 ## Samples
 
-- [NF Unit Test Demo](./NFUnitTestDemo/): Example of a regular Unit Test project demoing the various attributes that can be added to a test class.
+- [🌶️ - NF Unit Test Demo](./NFUnitTestDemo/): Example of a regular Unit Test project demoing the various attributes that can be added to a test class.
 
 ## Hardware requirements
 

@@ -1,4 +1,4 @@
-# STM32 Backup Memory
+# 🌶️🌶️ - STM32 Backup Memory
 
 This samples shows how to use the backup memory from STM32.
 

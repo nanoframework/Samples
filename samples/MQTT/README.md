@@ -1,4 +1,4 @@
-# MQTT sample pack
+# 🌶️🌶️ to 🌶️🌶️🌶️ - MQTT sample pack
 
 The M2Mqtt library provides a main class `MqttClient` that represents the MQTT client to connect to a broker. You can connect to the broker providing its IP address or host name and optionally some parameters related to MQTT protocol.
 
@@ -8,11 +8,11 @@ For more details, see the comments inside the samples.
 
 | Sample | Description | 
 |---|---|
-|[BasicExample.Ethernet](./BasicExample.Ethernet)|The most basic usage, without authentication or certificates. Ready to run on Ethernet-based boards.|
-|[BasicExample.Wifi](./BasicExample.Wifi)|The most basic usage, without authentication or certificates. Ready to run on Wifi-based boards.|
-|[AdvancedExample.Certificates](./AdvancedExample.Certificates)|Basic usage, but uses secure connection and certificate-based authorization.|
-|[AdvancedExample.Aws](./AdvancedExample.Aws)|Very advanced sample of how to use MQTT in AWS. Requires having an AWS account.|
-|[AdvancedExample.Azure](./AdvancedExample.Azure)|Very advanced sample of how to use MQTT in Azure. Requires having an Azure account.|
+|[🌶️🌶️ - BasicExample.Ethernet](./BasicExample.Ethernet)|The most basic usage, without authentication or certificates. Ready to run on Ethernet-based boards.|
+|[🌶️🌶️ -BasicExample.Wifi](./BasicExample.Wifi)|The most basic usage, without authentication or certificates. Ready to run on Wifi-based boards.|
+|[🌶️🌶️🌶️ - AdvancedExample.Certificates](./AdvancedExample.Certificates)|Basic usage, but uses secure connection and certificate-based authorization.|
+|[🌶️🌶️🌶️ - AdvancedExample.Aws](./AdvancedExample.Aws)|Very advanced sample of how to use MQTT in AWS. Requires having an AWS account.|
+|[🌶️🌶️🌶️ - AdvancedExample.Azure](./AdvancedExample.Azure)|Very advanced sample of how to use MQTT in Azure. Requires having an Azure account.|
 
 ## Hardware requirements
 

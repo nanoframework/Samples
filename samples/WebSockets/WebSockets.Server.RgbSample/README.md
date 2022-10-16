@@ -1,10 +1,10 @@
-# WebSocket Server Sample
+# 🌶️🌶️ - WebSocket Server Sample with RGB Led
 
 Shows how to use the WebSockets related APIs in [System.Net.WebSockets](http://docs.nanoframework.net/api/System.Net.WebSockets.html). Documentation on the Websocket library can be found in the [WebSockets Repo](https://github.com/nanoframework/System.Net.WebSockets).
 
 ## Sample
 
-This sample shows howto use Websocket Server with a Webserver hosting a WebApp that controlls a rgb led.
+This sample shows how to use Websocket Server with a Webserver hosting a WebApp that controls a rgb led.
 
 ## Hardware requirements
 

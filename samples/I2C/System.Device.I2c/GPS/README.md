@@ -1,4 +1,4 @@
-# I2C GPS sample
+# 🌶️🌶️ - I2C GPS sample
 
 Shows how to use the [System.Device.I2c](http://docs.nanoframework.net/api/System.Device.I2c.html) API to read and write from/to an I2C device.
 In this sample we'll be using a [IES-SHIELD-GPS](https://i-groupuk.com/downloads/global-positioning-system-gps-shield-for-arduino/) GPS controller mounted on a [STM32F769I DISCOVERY](http://www.st.com/en/evaluation-tools/32f769idiscovery.html) board.

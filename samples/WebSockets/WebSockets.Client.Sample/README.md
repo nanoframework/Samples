@@ -1,4 +1,4 @@
-# WebSocket Client Sample
+# 🌶️ - WebSocket Client Sample
 
 Shows how to use the WebSockets related APIs in [System.Net.WebSockets](http://docs.nanoframework.net/api/System.Net.WebSockets.html). Documentation on the Websocket library can be found in the [WebSockets Repo](https://github.com/nanoframework/System.Net.WebSockets).
 

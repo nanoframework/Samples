@@ -1,4 +1,4 @@
-# GPIO and events sample
+# 🌶️ - GPIO and events sample
 
 Shows how to use the [Windows.Devices.Gpio](http://docs.nanoframework.net/api/Windows.Devices.Gpio.html) API allowing your to set and read the state of GPIO pins.
 
@@ -16,7 +16,7 @@ Any hardware device running a nanoFramework image built with GPIO support enable
 
 ### Samples
 
-[GPIO and events sample](/Gpio+Events)
+[🌶️ -  GPIO and events sample](./Gpio+Events)
 
 ### Reference
 

@@ -1,4 +1,4 @@
-# Azure IoT Hub SDK with MQTT protocol
+# 🌶️🌶️ - Azure IoT Hub SDK with MQTT protocol
 
 This sample uses the .NET nanoFramework Azure IoT Hub SDK with MQTT protocol. You can find it here: <https://github.com/nanoframework/nanoFramework.Azure.Devices>. You will find in the main readme the detailed information as well.
 

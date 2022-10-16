@@ -1,4 +1,4 @@
-# TI utilities
+# 🌶️ - TI utilities
 
 This samples shows how to the power mode from TI.
 

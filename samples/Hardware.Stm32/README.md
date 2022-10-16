@@ -1,11 +1,11 @@
-# Hardware STM32 sample pack
+# 🌶️ to 🌶️🌶️ - Hardware STM32 sample pack
 
 Shows how to use various APIs specific to STM32 targets.
 
-- [Alarm test](Stm32.TestAlarms)
-- [Backup memory](/Stm32.BackupMemory)
-- [Read device IDs](/Stm32.ReadDeviceIDs)
-- [Power down/off test](/Stm32.PowerMode)
+- [🌶️ - Alarm test](Stm32.TestAlarms)
+- [🌶️🌶️ - Backup memory](/Stm32.BackupMemory)
+- [🌶️ - Read device IDs](/Stm32.ReadDeviceIDs)
+- [🌶️🌶️ -Power down/off test](/Stm32.PowerMode)
 
 ## Hardware requirements
 

@@ -1,4 +1,4 @@
-# TI Power Mode
+# 🌶️🌶️ - TI Power Mode
 
 This samples shows how to the power mode from TI.
 

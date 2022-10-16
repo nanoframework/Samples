@@ -1,4 +1,4 @@
-# Native events sample
+# 🌶️🌶️ - Native events sample
 
 Shows how to use the [CustomEvent](http://docs.nanoframework.net/api/nanoFramework.Runtime.Events.CustomEvent.html) class that allows to post events from the native code to the managed application.
 

@@ -21,6 +21,8 @@ namespace TimerSample
             _led = new GpioController().OpenPin(PinNumber('J', 5), PinMode.Output);
             // PG14 is LEDLD4 in F429I_DISCO
             //_led = new GpioController().OpenPin(PinNumber('G', 14), PinMode.Output);
+            // If you are using an ESP32, adjust the number for the proper GPIO
+            //_led = new GpioController().OpenPin(4, PinMode.Output);
 
             // create timer
             Debug.WriteLine(DateTime.UtcNow.ToString() + ": creating timer, due in 1 second");

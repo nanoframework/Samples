@@ -1,4 +1,4 @@
-# Azure Edge OTA example
+# 🌶️🌶️🌶️ - Azure Edge OTA example
 
 This examples is a complete code Over the Air (OTA) example using Azure IoT. You have a detailed explanation on [this blog post](https://www.nanoframework.net/over-the-air-net-nanoframework-code-update-using-azure-iot/).
 

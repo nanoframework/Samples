@@ -1,4 +1,4 @@
-# Azure AMQP sample
+# 🌶️🌶️ -Azure AMQP sample
 
 Shows how to use AMQP.Net Lite library with Azure.
 

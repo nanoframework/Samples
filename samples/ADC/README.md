@@ -1,4 +1,4 @@
-# Analogic/Digital converter
+# 🌶️ - Analogic/Digital converter
 
 Shows how to use the [System.Devices.Adc](http://docs.nanoframework.net/api/System.Device.Adc.html) API to read external voltages using an ADC.
 

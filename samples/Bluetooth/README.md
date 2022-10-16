@@ -1,4 +1,4 @@
-# Bluetooth samples
+# 🌶️ to 🌶️🌶️🌶️ - Bluetooth sample pack
 
 These samples are using [nanoFramework.Device.Bluetooth](https://github.com/nanoframework/nanoFramework.Device.Bluetooth) to work with the nimble BLE implementation on the ESP32 device. For more information about the library you can check [nanoFrameworkDevice.Bluetooth Library repository](https://github.com/nanoframework/nanoFramework.Device.Bluetooth) and the API documentation.
 
@@ -8,37 +8,38 @@ Currently only support on ESP32 devices running either the ESP32_BLE_REV0, ESP32
 On other firmware versions a not supported exception will be returned.
 
 ## Server Samples
-* [Bluetooth Low energy Improv sample](ImprovWifi)
+
+* [🌶️🌶️🌶️ -  Bluetooth Low energy Improv sample](ImprovWifi)
 Provision device directly from a web page using *Improv* standard.
 See sample readme for more information.
 
-* [Bluetooth Low energy serial](BluetoothLESerial)
+* [🌶️ -  Bluetooth Low energy serial](BluetoothLESerial)
 Shows how to use the built-in SSP(Serial Service Profile) which simulates a serial link over Bluetooth. Use a phone app. 
 such as "Serial Bluetooth Terminal" to connect to device and send and receive messages.
 
-* [Bluetooth Low energy sample 1](BluetoothLESample1)
+* [🌶️🌶️ -  Bluetooth Low energy sample 1](BluetoothLESample1)
 This shows how to create a custom service.
 
-* [Bluetooth Low energy sample 2](BluetoothLESample2)
+* [🌶️🌶️ -  Bluetooth Low energy sample 2](BluetoothLESample2)
 This sample adds security to the Characteristic access. This will force the Server/Client to pair which is 
 used to generate key pairs for communications. All access is now encrypted. Authenication is not currently supported. 
 
-* [Bluetooth Low energy sample 3](BluetoothLESample3)
+* [🌶️ -  Bluetooth Low energy sample 3](BluetoothLESample3)
 This show cases the use of adding extra services to main service or replacing an existing service 
 like the default "Device Information Service".  
 
 ## Central/Client samples
 
-* [Simple Watcher sample](Central1)
+* [🌶️ -  Simple Watcher sample](Central1)
 
 This a simple sample showing how to scan for Bluetooth LE devices.
 
-* [Central Data Collect sample](Central2)
+* [🌶️🌶️ -  Central Data Collect sample](Central2)
 
 Sample will scan for devices with the service UUID used in the BluetoothLESample3 sample and connect to all found devices.
 It will then read and set-up notifications for changes in Environmental Service temperatures.
 
-The [Bluetooth Low energy sample 3](BluetoothLESample3) was changed to provide notifications of temperture changes.
+The [🌶️ -  Bluetooth Low energy sample 3](BluetoothLESample3) was changed to provide notifications of temperture changes.
 
 ## Building the samples
 

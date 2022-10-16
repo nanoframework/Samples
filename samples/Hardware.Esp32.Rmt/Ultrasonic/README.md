@@ -1,4 +1,4 @@
-# Ultrasonic HC-SR04 sensor with RMT
+# 🌶️🌶️ - Ultrasonic HC-SR04 sensor with RMT
 
 Shows how to use ESP32 RMT with an Ultrasonic HC-SR04 sensor
 
@@ -12,7 +12,7 @@ The SR04 has 4 pins.
 - VCC -  5V or 3.3V depending on version of SR04
 - GND -  Ground signal
 - TRIG - Any available GPIO pin capable of output
-- ECHO - Any available GPIO pin 
+- ECHO - Any available GPIO pin
 
 > Note: When connecting ECHO to ESP32 pin be aware that if using a 5v version of SR04 a level shifter should be used.
 OK for short tests but for long term use connect a resistor between SR04 output and ESP32 pin(10K) to limit current.

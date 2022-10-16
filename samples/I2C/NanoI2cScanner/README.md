@@ -1,4 +1,4 @@
-# I2C Scanner sample
+# 🌶️🌶️ - I2C Scanner sample
 
 Shows how to use the [System.Device.I2c](http://docs.nanoframework.net/api/System.Device.I2c.html) API to scan the I2C bus.
 

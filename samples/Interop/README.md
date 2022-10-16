@@ -1,4 +1,4 @@
-# Interop sample
+# 🌶️🌶️🌶️ - Interop sample
 
 This project illustrates the use of the 'Interop' feature which allow a C# manage API to call native code.
 

@@ -1,4 +1,4 @@
-# Analogic/Digital converter
+# 🌶️ - Analogic/Digital converter
 
 Shows how to use the [nanoFramework.GiantGecko.Adc](http://docs.nanoframework.net/api/nanoFramework.GiantGecko.Adc.html) API to interact with the Giant Gecko ADC.
 
@@ -8,8 +8,8 @@ A Giant Gecko device running a .NET nanoFramework image.
 
 ## Samples
 
-- [Read ADC channel](Read.Channel/)
-- [Continuous Scanning ADC](ContinuousSampling/)
+- [🌶️ -  Read ADC channel](Read.Channel/)
+- [🌶️ -  Continuous Scanning ADC](ContinuousSampling/)
 
 ## Related topics
 

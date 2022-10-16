@@ -1,4 +1,4 @@
-# RTC sample
+# 🌶️ - RTC sample
 
 Shows how to use the [nanoFramework.Runtime.Native.RTC](http://docs.nanoframework.net/api/nanoFramework.Runtime.Native.RTC.html) API to set the **R**eal **T**ime **C**lock in a target device.
 

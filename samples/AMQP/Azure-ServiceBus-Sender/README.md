@@ -1,4 +1,4 @@
-# Azure Service Bus AMQP sample
+# 🌶️🌶️ - Azure Service Bus AMQP sample
 
 Shows how to use AMQP.Net Lite library with Azure Servic eBus.
 

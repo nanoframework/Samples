@@ -1,4 +1,4 @@
-# STM32 Alarm
+# 🌶️ - STM32 Alarm
 
 This samples shows how to the alarm feature from STM32.
 

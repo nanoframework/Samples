@@ -1,4 +1,4 @@
-# System.IO.Ports serial Communication sample
+# 🌶️ to 🌶️🌶️ - System.IO.Ports serial Communication sample
 
 Shows how to use the [System.IO.Ports](http://docs.nanoframework.net/api/System.IO.Ports.html) API to send/receive data using an UART (COM port).
 
@@ -15,7 +15,8 @@ This sample allows the user to configure and communicate with a Serial device ov
 
 This scenario demonstrates the how to instantiate a Serial Device and use of various Get/Set property APIs in order to query for/alter Serial device properties such as Baud Rate, Stop Bits etc.
 
-> NOTE: when working with ESP32 edit the nfproj file and add `BUIID_FOR_ESP32` to the DefineConstants, like this:
+When working with ESP32 edit the nfproj file and add `BUIID_FOR_ESP32` to the DefineConstants, like this:
+
 ```text
 <DefineConstants>$(DefineConstants);BUIID_FOR_ESP32;</DefineConstants>
 ```

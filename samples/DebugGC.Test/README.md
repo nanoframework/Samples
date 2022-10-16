@@ -1,4 +1,4 @@
-# Debug Garbage Collector Test
+# 🌶️ - Debug Garbage Collector Test
 
 Shows how to use the Garbage collector to force freeing the memory and getting the free memory amount.
 

@@ -1,4 +1,4 @@
-# System.Device.Spi sample
+# 🌶️ - System.Device.Spi sample
 
 This sample shows basic usage of System.Device.Spi.
 

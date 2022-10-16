@@ -1,4 +1,4 @@
-# Number Parsing sample pack
+# 🌶️ - Number Parsing sample pack
 
 Tests number parsing.
 
@@ -10,7 +10,7 @@ Any hardware device running a nanoFramework image.
 
 ### Reference
 
-- [System.Convert](http://docs.nanoframework.net/api/System.Convert.html) 
+- [System.Convert](http://docs.nanoframework.net/api/System.Convert.html)
 - [System.SByte](http://docs.nanoframework.net/api/System.SByte.html)
 - [System.Int16](http://docs.nanoframework.net/api/System.Int16.html)
 - [System.Int32](http://docs.nanoframework.net/api/System.Int32.html)
