@@ -1,10 +1,10 @@
-# 🌶️ - STM32 Read Device ID
+# 🌶️ - Giant Gecko Read Device IDs
 
-This samples shows how to read Device ID from STM32.
+This samples shows how to read various Device IDs from Silabs Giant Gecko.
 
 ## Build the sample
 
-1. Start Microsoft Visual Studio 2019 (VS 2017 should be OK too) and select `File > Open > Project/Solution`.
+1. Start Microsoft Visual Studio 2022 (VS 2019 should be OK too) and select `File > Open > Project/Solution`.
 1. Starting in the folder where you unzipped the samples/cloned the repository, go to the subfolder for this specific sample. Double-click the Visual Studio Solution (.sln) file.
 1. Press `Ctrl+Shift+B`, or select `Build > Build Solution`.
 
