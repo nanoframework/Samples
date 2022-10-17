@@ -148,6 +148,7 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 
 * [🌶️ - STM32 Alarm](samples/Hardware.Stm32/Stm32.TestAlarms)
 * [🌶️ - STM32 Read Device ID](samples/Hardware.Stm32/Stm32.ReadDeviceIDs)
+* [🌶️ - STM32 Read Device ID](samples/Hardware.GiantGecko/GiantGecko.ReadDeviceIDs)
 * [🌶️ to 🌶️🌶️ - Hardware STM32 sample pack](samples/Hardware.Stm32)
 * [🌶️🌶️ - STM32 Backup Memory](samples/Hardware.Stm32/Stm32.BackupMemory)
 * [🌶️🌶️ - STM32 Power Mode](samples/Hardware.Stm32/Stm32.PowerMode)
@@ -189,6 +190,10 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 
 * [🌶️ - WiFI samples](samples/Wifi)
 * [🌶️🌶️ - Wifi Soft AP sample](samples/WiFiAP)
+
+### Giant Gecko specific
+
+* [🌶️ to 🌶️🌶️ - Hardware Giant Gecko sample pack](samples/Hardware.GiantGecko)
 
 </devices>
 
