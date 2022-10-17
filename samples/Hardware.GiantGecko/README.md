@@ -2,7 +2,7 @@
 
 Shows how to use various APIs specific to Silabs Giant Gecko targets.
 
-- [🌶️ - Read device IDs](/GiantGecko.ReadDeviceIDs)
+- [🌶️ - Read device IDs](GiantGecko.ReadDeviceIDs/)
 
 ## Hardware requirements
 
