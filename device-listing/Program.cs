@@ -34,6 +34,7 @@ string[] categoriesToDisplay = new string[]
     "tools",
     "system",
     "wifi",
+    "ggecko",
 };
 
 Dictionary<string, string?> categoriesDescriptions = new()
@@ -61,6 +62,7 @@ Dictionary<string, string?> categoriesDescriptions = new()
     { "tools", "Tools and utilities" },
     { "system", "System related" },
     { "wifi", "Wifi" },
+    { "ggecko", "Giant Gecko specific"},
 };
 
 HashSet<string> ignoredDeviceDirectories = new()
