@@ -1,4 +1,4 @@
-# ToString samples
+# 🌶️ - ToString samples
 
 Those samples are used mainly as tests. You still can run them and compare the results with the Desktop application.
 

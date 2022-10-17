@@ -1,4 +1,4 @@
-# Hardware ESP32 Deep sleep sample
+# 🌶️ - Hardware ESP32 Deep sleep sample
 
 Shows how to use the [nanoFramework.Hardware.Esp32](http://docs.nanoframework.net/api/nanoFramework.Hardware.Esp32.html) API to access the ESP32 specific functions.
 

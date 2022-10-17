@@ -68,6 +68,8 @@ try
             Trace($"WifiNetworkHelper.HelperException");
         }
 
+        // This prevent to debug, once in deep sleep, you won't be able to connect to the device
+        // So comment to, start with and check what's happening.
         GoToSleep();
     }
 
@@ -184,6 +186,11 @@ catch
     // To sleep
 }
 
+
+// This prevent to debug, once in deep sleep, you won't be able to connect to the device
+// So comment to, start with and check what's happening.
+// And un comment the next line
+////Thread.Sleep(Timeout.Infinite);
 // Just go to sleep when we will arrive at this point
 GoToSleep();
 

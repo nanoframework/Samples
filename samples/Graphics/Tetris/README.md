@@ -1,4 +1,4 @@
-# Tetris Demo Game for nanoFramework
+# 🌶️🌶️🌶️ - Tetris Demo Game for nanoFramework
 
 This was converted from an .net Micro Framework created on _(January 28th 2008)_
 

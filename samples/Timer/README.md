@@ -1,4 +1,4 @@
-# RTC sample
+# 🌶️ - RTC sample
 
 Shows how to use a [System.Threading.Timer](http://docs.nanoframework.net/api/System.Threading.Timer.html) to set the timer parameters, setup a callback and make things happen.
 

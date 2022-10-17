@@ -1,11 +1,12 @@
-# .NET **nanoFramework** Webserver sample pack
+# 🌶️ to 🌶️🌶️ - .NET **nanoFramework** Webserver sample pack
 
 Shows how to use .NET **nanoFramework** Webserver library in common usage scenarios.
 
 ## Samples
 
-- [REST and GPIO](WebServer.GpioRest/)
-- [HTTP server](WebServer.Sample/)
+- [🌶️ - REST and GPIO](./WebServer.GpioRest/)
+- [🌶️🌶️ - HTTP server](./WebServer.Sample/)
+- [🌶️🌶️ - Dependency Injection](./WebServer.DI/)
 
 ## Usage
 

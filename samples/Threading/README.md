@@ -1,16 +1,16 @@
-# Threading sample pack
+# 🌶️ to 🌶️🌶️ - Threading sample pack
 
 Demonstration on how to use [System.Threading](http://docs.nanoframework.net/api/System.Threading.html) API and related classes in order to start threads, control execution, accessing shared resources and using synchronization primitives.
 
 ## Samples
 
-- [Basic threading](./01-Basic%20Threading/)
-- [Passing parameters](./02-Passing%20Parameters/)
-- [Retrieving data from threads](./03-Retrieving%20data%20from%20threads/)
-- [Controlling threads](./04-Controlling%20threads/)
-- [ManualResetEvent](05-ManualResetEvent/)
-- [AutoResetEvent](06-AutoResetEvent/)
-- [Accessing shared resources](07-Sharing%20resources/)
+- [🌶️ - Basic threading](./01-Basic%20Threading/)
+- [🌶️ - Passing parameters](./02-Passing%20Parameters/)
+- [🌶️🌶️ - Retrieving data from threads](./03-Retrieving%20data%20from%20threads/)
+- [🌶️ - Controlling threads](./04-Controlling%20threads/)
+- [🌶️🌶️ - ManualResetEvent](05-ManualResetEvent/)
+- [🌶️🌶️ - AutoResetEvent](06-AutoResetEvent/)
+- [🌶️🌶️ - Accessing shared resources](07-Sharing%20resources/)
 
 ## Build the sample
 

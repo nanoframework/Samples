@@ -1,4 +1,4 @@
-# System.Random sample
+# 🌶️ - System.Random sample
 
 Shows how to use the [System.Random](http://docs.nanoframework.net/api/System.Random.html) API to generate random numbers.
 

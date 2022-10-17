@@ -1,4 +1,4 @@
-# Complete Azure MQTT sample using BMP280 sensor with Azure lib
+# 🌶️🌶️🌶️ - Complete Azure MQTT sample using BMP280 sensor **with** Azure lib and deep sleep
 
 Shows how to use the Azure IoT SDK library measuring a BMP280 sensor. This leverages the [nanoFramework.IoT.Device](https://github.com/nanoframework/nanoFramework.IoT.Device) repository and [Azure SDK](https://github.com/nanoframework/nanoFramework.Azure.Devices).
 
@@ -8,6 +8,8 @@ An hardware device with networking capabilities running a nanoFramework image.
 This code has been tested with ESP32 boards. This can be replaced by any other board with networking capabilities.
 
 The sample uses wifi, this part can be as well replaced with an ethernet connection. It will work the exact same way.
+
+> **Important**: In this sample, if the connection or something is not setup properly you won't be able to debug properly. Please make sure you are using another sample to understand how Azure Client with a sample and deep sleep is working before using this one.
 
 ### Reference
 

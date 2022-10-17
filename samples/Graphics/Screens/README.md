@@ -1,4 +1,4 @@
-# Screen samples
+# 🌶️🌶️ - Screen samples
 
 These samples demonstrate the low level text display and graphics display functions that are available.
 

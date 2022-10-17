@@ -1,4 +1,4 @@
-# Improv Wifi provisioning
+# 🌶️🌶️🌶️ - Improv Wifi provisioning
 
 This sample shows the use of the *Improv class* to provision the Wifi credentials for an ESP32 device via Bluetooth LE. 
 

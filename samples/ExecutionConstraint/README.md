@@ -1,4 +1,4 @@
-# Execution Constraint demo
+# 🌶️🌶️ - Execution Constraint demo
 
 Shows how to use the [nanoFramework.Runtime.Native.ExecutionConstraint](http://docs.nanoframework.net/api/nanoFramework.Runtime.Native.ExecutionConstraint.html) API to make sure a code segment doesn't block the code ahead if it's not executed in the specified amount of time.
 

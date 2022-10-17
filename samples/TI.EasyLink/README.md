@@ -1,9 +1,9 @@
-# Texas Instruments EasyLink sample pack
+# 🌶️ - Texas Instruments EasyLink sample pack
 
 Shows how to use TI EasyLink API to send/receive packets over a radio link.
 
-- [Simple Node](EasyLink.Node/)
-- [Concentrator](EasyLink.Concentrator/)
+- [🌶️ - Simple Node](EasyLink.Node/)
+- [🌶️ - Concentrator](EasyLink.Concentrator/)
 
 It will be hard to debug both Solutions simultaneously in the same machine because that requires two instances of Visual Studio open simultaneously.
 You can try that, but that's not recommended. The suggestion goes toward loading the Node solution first, build and deploy. Because the application runs without a debugger attached you'll have a standalone board transmitting whatever you've programmed it to. Next load the Concentrator Solutions, build and start a debug session to receive radio packets from the other board.

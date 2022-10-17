@@ -1,4 +1,4 @@
-# Dependency injection sample pack
+# 🌶️ - Dependency injection sample pack
 
 A Dependency Injection (DI) Container provides functionality and automates many of the tasks involved in Object Composition, Interception, and Lifetime Management. These API mirrors as close as possible the official .NET 
 [Dependency Injection](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection). Exceptions are mainly derived from the lack of generics support in .NET nanoFramework.
@@ -7,11 +7,11 @@ A Dependency Injection (DI) Container provides functionality and automates many 
 
 ### Dependency injection application container sample 
 
-[SlowBlink](./SlowBlink) shows how to create a dependency injection application container including gpio and logging.  Project sample will require a working led connected to a GPIO port.
+[🌶️ -  SlowBlink](./SlowBlink) shows how to create a dependency injection application container including gpio and logging.  Project sample will require a working led connected to a GPIO port.
 
-###  Dependency injection usage sample 
+### Dependency injection usage sample
 
-[Simple](./Simple) shows how to create a very simple dependency injection object.
+[🌶️ -  Simple](./Simple) shows how to create a very simple dependency injection object.
 
 ## Building the samples
 

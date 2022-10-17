@@ -1,4 +1,4 @@
-# CAN sample
+# 🌶️ - CAN sample
 
 Shows how to use the [nanoFramework.Device.Can](http://docs.nanoframework.net/api/nanoFramework.Device.Can.html) API to read and write from/to a Can device.
 

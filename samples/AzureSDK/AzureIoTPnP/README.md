@@ -1,4 +1,4 @@
-# Azure IoT Plug & Play with MQTT protocol
+# 🌶️🌶️ - Azure IoT Plug & Play with MQTT protocol
 
 This sample uses the .NET nanoFramework Azure IoT Plug & Play. You can find it here: <https://github.com/nanoframework/nanoFramework.Azure.Devices>. You will find in the main readme the detailed information as well.
 

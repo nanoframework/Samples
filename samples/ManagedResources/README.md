@@ -1,10 +1,10 @@
-# Managed resources sample
+# 🌶️ - Managed resources sample
 
 Shows how to use the [System.Resources.ResourceManager](http://docs.nanoframework.net/api/System.Resources.ResourceManager.html) API to access the application managed resources.
 
 This sample illustrates how to access from the code the application managed resources.
 
-> **warning**: To access the application managed resources the project has to have a reference to `nanoFramework.Runtime.Native`.
+> **Important**: To access the application managed resources the project has to have to reference `nanoFramework.Runtime.Native` and make sure you have the nanoFramework Resources nuget installed.
 
 ## Hardware requirements
 

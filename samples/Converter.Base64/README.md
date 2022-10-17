@@ -1,4 +1,4 @@
-# Convert Base64 sample pack
+# 🌶️ - Convert Base64 sample pack
 
 Shows how to use Convert Base64 related API.
 

@@ -1,4 +1,4 @@
-# AMQP sample pack
+# 🌶️🌶️ - AMQP sample pack
 
 Shows how to use AMQP.Net Lite library.
 

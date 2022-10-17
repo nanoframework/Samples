@@ -1,4 +1,4 @@
-# NeoPixel Strip WS2812 with RMT low memory
+# 🌶️🌶️ - NeoPixel Strip WS2812 with RMT low memory
 
 Shows how to use ESP32 RMT with an NeoPixel Strip WS2812
 
@@ -11,9 +11,10 @@ This sample send signal to strip with pin D5.
 - +5V - External Power Supply 5V min 2A  
 
 > Notes:
-> - Put resistor 400 Ohm between GIN and GPIO pin  
-> - Join the ground of the external power supply and the GND of ESP32 
-> - This example require a preview firmware dont use *-stable* parameter on *nanoff*
+>
+>- Put resistor 400 Ohm between GIN and GPIO pin
+>- Join the ground of the external power supply and the GND of ESP32
+>- This example require a preview firmware dont use *-stable* parameter on *nanoff*
 
 ## Hardware requirements
 
@@ -46,5 +47,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

@@ -16,6 +16,8 @@ If you are looking for Iot.Device samples, they are all in the [Iot.Device repos
 
 ## Sample by category
 
+Our samples uses 🌶️ to show how easy or complicated those samples are. The samples with 🌶️ are easy and recommended for beginners. The ones with 🌶️🌶️🌶️ are more advanced and requires some knowledge. This knowledge may not be on .NET nanoFramework but on some other elements like certificates or networking for example.
+
 <devices>
 
 ### Special beginner

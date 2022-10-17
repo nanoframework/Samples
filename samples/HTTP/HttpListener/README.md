@@ -1,13 +1,16 @@
-# HTTP Listener sample
+# 🌶️🌶️ - HTTP Listener sample
 
 Shows how to use the HTTP related APIs in [System.Net](http://docs.nanoframework.net/api/System.Net.html). Shows how to implement a HTTP listener to reply to incoming HTTP requests.
 
 > **Note:** this is **NOT** an HTTP server, just a sample to illustrate how to use the HTTP Listener class.  
 
-> NOTE: when working with ESP32 edit the nfproj files and add `BUIID_FOR_ESP32` to the DefineConstants, like this:
+When working with ESP32 edit the nfproj files and add `BUIID_FOR_ESP32` to the DefineConstants, like this:
+
 ```text
 <DefineConstants>$(DefineConstants);BUIID_FOR_ESP32;</DefineConstants>
 ```
+
+> **Important**: You need to have a good understanding of certificates to be able to properly write code using SSL with a specific certificate. We do recommend you to get some knowledge about this before trying to adjust the sample without knowing which certificate to use.
 
 ## Hardware requirements
 

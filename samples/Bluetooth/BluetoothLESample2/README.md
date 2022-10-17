@@ -1,4 +1,4 @@
-# Bluetooth Low energy: read/write with encryption a value
+# 🌶️🌶️ - Bluetooth Low energy: read/write with encryption a value
 
 This sample adds security to the Characteristic access. This will force the Server/Client to bond/pair which is 
 used to generate key pairs for communications. All access is now encrypted. 

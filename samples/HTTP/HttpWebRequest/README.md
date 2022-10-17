@@ -1,11 +1,14 @@
-# HTTP WebRequest sample
+# 🌶️🌶️ - HTTP WebRequest sample
 
 Shows how to use the HTTP related APIs in [System.Net](http://docs.nanoframework.net/api/System.Net.html). Shows how to perform a HTTP Web requests. Optionally to secured (TLS) servers.
 
-> NOTE: when working with ESP32 edit the nfproj files and add `BUIID_FOR_ESP32` to the DefineConstants, like this:
+When working with ESP32 edit the nfproj files and add `BUIID_FOR_ESP32` to the DefineConstants, like this:
+
 ```text
 <DefineConstants>$(DefineConstants);BUIID_FOR_ESP32;</DefineConstants>
 ```
+
+> **Important**: You need to have a good understanding of certificates to be able to properly write code using SSL with a specific certificate. We do recommend you to get some knowledge about this before trying to adjust the sample without knowing which certificate to use.
 
 ## Hardware requirements
 

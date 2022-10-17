@@ -1,4 +1,4 @@
-# Simple WPF
+# 🌶️🌶️ -Simple WPF
 
 This contains an animated graphical menu with allows the selection of pages that demonstrates features of the limited WPF that's available in nanoFramework.
 

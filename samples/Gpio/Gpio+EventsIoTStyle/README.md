@@ -1,11 +1,11 @@
-# GPIO and events sample (.NET IoT style)
+# 🌶️ - GPIO and events sample (.NET IoT style)
 
 Shows how to use the [System.Device.Gpio](http://docs.nanoframework.net/api/System.Device.Gpio.html) API allowing your to set and read the state of GPIO pins.
 This sample is using the .NET IoT API style.
 
-Shows how to use the [System.Device.Gpio]() API allowing your to:
+Shows how to use the [System.Device.Gpio](http://docs.nanoframework.net/api/System.Device.Gpio.html) API allowing your to:
 
-- set the state of output GPIO pins 
+- set the state of output GPIO pins
 - read state of input GPIO pins
 - setup handlers to react to GPIO state change events on external stimulus
 

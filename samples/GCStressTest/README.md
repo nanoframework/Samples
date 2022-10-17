@@ -1,4 +1,4 @@
-# GC stress test
+# 🌶️🌶️ - GC stress test
 
 This app aims to stress the GC by spawning 6 timers with random periods each making a bunch of repeated or random object creation and manipulation.
 

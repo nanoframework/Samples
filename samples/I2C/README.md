@@ -1,8 +1,8 @@
-# I2C sample sample pack
+# 🌶️🌶️ - I2C sample sample pack
 
 ## System.Device.I2c
 
-- [IES-SHIELD-GPS module](./System.Device.I2c/GPS)
+- [🌶️🌶️ - IES-SHIELD-GPS module](./System.Device.I2c/GPS)
 
 ## Build the sample
 

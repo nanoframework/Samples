@@ -1,4 +1,4 @@
-# Graphics Primitives
+# 🌶️🌶️ - Graphics Primitives
 
 This demonstrates the low level graphic functions that are available.
 These can be used directly without using the WPF graphics model.
@@ -16,4 +16,4 @@ The primitive features demonstrated are:-
 - Text display and formatting.
 - Working with pixcels.
 - Clipping.
-- Matrix rain demo. 
+- Matrix rain demo.

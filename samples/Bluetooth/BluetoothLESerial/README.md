@@ -1,4 +1,4 @@
-# Bluetooth Low Energy Serial profile sample
+# 🌶️ - Bluetooth Low Energy Serial profile sample
 
 Shows how to use the Serial Protocol Profile APIs included in the [NanoFramework.Device.Bluetooth](http://docs.nanoframework.net/api/NanoFramework.Device.Bluetooth.html).   
 

@@ -1,12 +1,11 @@
-# System.IO.FileSystem samples
+# 🌶️ - System.IO.FileSystem samples
 
 Shows how to use the System.IO.FileSystem Library in nanoFramework.
 
 ## Samples
 
-- [Basic FileSystem Example](BasicFileSystemExample/)
-- [SD card Mount Example](MountExample/)
-
+- [🌶️ - Basic FileSystem Example](BasicFileSystemExample/)
+- [🌶️ - SD card Mount Example](MountExample/)
 
 ## Build the sample
 

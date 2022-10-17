@@ -1,31 +1,32 @@
-# HTTP sample pack
+# 🌶️🌶️ - HTTP sample pack
 
 Shows how to use the HTTP related APIs in [System.Net](http://docs.nanoframework.net/api/System.Net.html).
 
 Please note that samples are offered in "pairs": one for wired connected targets and another one for Wi-Fi connected targets.
+
 ## Scenarios
 
 ### HTTP listener
 
-[Example](./HttpListener) on how to implement a HTTP listener to reply to incoming HTTP requests.
-[Example](./HttpListener_Wifi) on how to implement a HTTP listener to reply to incoming HTTP requests for Wi-Fi connected targets..
+[🌶️🌶️ - Http Listener](./HttpListener) on how to implement a HTTP listener to reply to incoming HTTP requests.
+[🌶️🌶️ - Http Listener with wifi](./HttpListener_Wifi) on how to implement a HTTP listener to reply to incoming HTTP requests for Wi-Fi connected targets..
 
 > **Note:** this is **NOT** an HTTP server, just a sample to illustrate how to use the HTTP Listener class.  
 
 ### HTTP Web Request
 
-[Example](./HttpWebRequest) on how to perform a HTTP Web requests. Optionally to secured (TLS) servers.
-[Example](./HttpWebRequest_Wifi) on how to perform a HTTP Web requests for Wi-Fi connected targets. Optionally to secured (TLS) servers.
+[🌶️🌶️ - Http Web Request](./HttpWebRequest) on how to perform a HTTP Web requests. Optionally to secured (TLS) servers.
+[🌶️🌶️ - Http Web Request with wifi](./HttpWebRequest_Wifi) on how to perform a HTTP Web requests for Wi-Fi connected targets. Optionally to secured (TLS) servers.
 
 ### HTTP Azure Get
 
-Illustrates how to connect to [Azure and perform GET requests](./AzureGET).
-Illustrates how to connect to [Azure and perform GET requests](./AzureGET_Wifi) for Wi-Fi connected targets.
+Illustrates how to connect to [🌶️🌶️🌶️ - Azure and perform GET requests](./AzureGET).
+Illustrates how to connect to [🌶️🌶️🌶️ - Azure and perform GET requests with wifi](./AzureGET_Wifi) for Wi-Fi connected targets.
 
 ### HTTP Azure POST
 
-Illustrates how to connect to [Azure and perform POST requests](./AzurePOST).
-Illustrates how to connect to [Azure and perform POST requests](./AzurePOST) for Wi-Fi connected targets.
+Illustrates how to connect to [🌶️🌶️🌶️ - Azure and perform POST requests](./AzurePOST).
+Illustrates how to connect to [🌶️🌶️🌶️ - Azure and perform POST requests with wifi](./AzurePOST) for Wi-Fi connected targets.
 
 ## Hardware requirements
 

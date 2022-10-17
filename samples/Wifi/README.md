@@ -1,4 +1,4 @@
-# WiFI samples
+# 🌶️ - WiFI samples
 
 Shows how to use various APIs related with Wifi. Scan WiFI Networks and connect to a specified network
 

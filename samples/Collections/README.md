@@ -1,4 +1,4 @@
-# Collections sample
+# 🌶️ - Collections sample
 
 Shows how to use the [System.Collections.Hastable](http://docs.nanoframework.net/api/nanoFramework.System.Collection.Hashtable.html).
 

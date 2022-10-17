@@ -1,4 +1,4 @@
-# Bluetooth Low energy: read static and dynamic values, notification, read/write value
+# 🌶️🌶️ - Bluetooth Low energy: read static and dynamic values, notification, read/write value
 
 This shows how to create a custom service which shows the use of:
 

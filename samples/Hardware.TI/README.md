@@ -1,4 +1,4 @@
-# Hardware TI SimpleLink sample pack
+# 🌶️ to 🌶️🌶️ - Hardware TI SimpleLink sample pack
 
 Shows how to use various APIs specific to TI SimpleLink targets.
 
@@ -13,8 +13,8 @@ An TI SimpleLink hardware device running a nanoFramework image.
 
 ### Reference
 
-- [nanoFramework.Hardware.TI.Power](http://docs.nanoframework.net/api/nanoFramework.Hardware.TI.Power.html)
-- [nanoFramework.Hardware.TI.Utilities](http://docs.nanoframework.net/api/nanoFramework.Hardware.TI.Utilities.html)
+- [🌶️🌶️ - nanoFramework.Hardware.TI.Power](http://docs.nanoframework.net/api/nanoFramework.Hardware.TI.Power.html)
+- [🌶️ - nanoFramework.Hardware.TI.Utilities](http://docs.nanoframework.net/api/nanoFramework.Hardware.TI.Utilities.html)
 
 ## Build the sample
 

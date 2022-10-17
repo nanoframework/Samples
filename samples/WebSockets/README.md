@@ -1,21 +1,20 @@
-# WebSocket sample pack
+# 🌶️ to 🌶️🌶️ - WebSocket sample pack
 
 Shows how to use the WebSockets related APIs in [System.Net.WebSockets](http://docs.nanoframework.net/api/System.Net.WebSockets.html).
 
 ## Samples
 
+### WebSockets Server Sample
 
-### WebSockets Server Sample 
+[🌶️🌶️ - Server.RgbSample](./WebSockets.Server.RgbSample) shows howto use Websocket Server with a Webserver hosting a WebApp that controlls a rgb led.
 
-[Server.RgbSample](./WebSockets.Server.RgbSample) shows howto use Websocket Server with a Webserver hosting a WebApp that controlls a rgb led.
+### WebSockets Client Sample
 
-### WebSockets Client Sample 
+[🌶️ - Client.Sample](./Websockets.Client.Sample) shows how to use the Websocket Client.
 
-[Client.Sample](./Websockets.Client.Sample) shows how to use the Websocket Client.
+### WebSockets Server and Client sample
 
-### WebSockets Server and Client sample 
-
-[ServerClient.Sample](./Websockets.ServerClient.Sample) shows how to configure and start a WebSocket Server and (ssl) Client.
+[🌶️🌶️ - ServerClient.Sample](./Websockets.ServerClient.Sample) shows how to configure and start a WebSocket Server and (ssl) Client.
 
 ## Hardware requirements
 

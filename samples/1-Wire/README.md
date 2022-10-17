@@ -1,4 +1,4 @@
-# 1-Wire sample
+# 🌶️ - 1-Wire sample
 
 Shows how to use the [nanoFramework.Device.OneWire](http://docs.nanoframework.net/api/nanoFramework.Device.OneWire.html) API to read and write from/to a 1-Wire device.
 

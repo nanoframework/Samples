@@ -1,4 +1,4 @@
-# Logging samples
+# 🌶️ - Logging samples
 
 You will find a short sample in [this project](./Program.cs).
 

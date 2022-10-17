@@ -1,4 +1,4 @@
-# STM32 Power Mode
+# 🌶️🌶️ - STM32 Power Mode
 
 This samples shows how to use the Power Mode from STM32.
 

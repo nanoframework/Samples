@@ -1,4 +1,4 @@
-# Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework
+# 🌶️🌶️🌶️ - Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework
 
 M5Stack is a modular, stackable, and portable device which is powered with an ESP-32 core. And .NET nanoFramework image can be loaded in the board to enable the writing of managed code applications.
 
@@ -8,6 +8,8 @@ This sample application includes a scenario:
 Every 3 seconds application reads temperature value from BMP280 sensor and turns on LED after reading the value. Then this temperature value is pushed to IoT Hub with device name and after every successfull push LED will turn off. Data will be handled by IoT Hub message routing and will be pushed to blob storage to store.
 
 ![M5Stack with nanoFramework to Azure Iot Hub](images/M5Stack-Azure-flow.png)
+
+> **Note**: this sample requires a good understanding on how certificate authentication works. And how to set them up properly in Azure IoT.
 
 ## Getting Started with nanoFramework
 
