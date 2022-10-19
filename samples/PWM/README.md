@@ -1,4 +1,4 @@
-# System.Device.PWM sample
+# 🌶️ - System.Device.PWM sample
 
 You will find samples for:
 

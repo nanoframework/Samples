@@ -6,72 +6,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
+using System.Text.Json;
+using DeviceListing;
 using Iot.Tools.DeviceListing;
 
-string[] categoriesToDisplay = new string[]
-{
-    "beginner",
-    "device",
-
-    "amqp",
-    "aws",
-    "azure",
-    "ble",
-    "can",
-    "esp32",
-    "file",
-    "graphics",
-    "iot-device",
-    "interop",
-    "json",
-    "mqtt",
-    "networking",
-    "reader",
-    "rtc",
-    "stm32",
-    "ti",
-    "tools",
-    "system",
-    "wifi",
-    "ggecko",
-};
-
-Dictionary<string, string?> categoriesDescriptions = new()
-{
-    { "beginner", "Special beginner" },
-    { "device", "Gpio, I2C, Spi, Pwm, Adc, Dac, 1-Wire, Serial" },
-
-    { "amqp", "AMQP" },
-    { "aws", "AWS specific" },
-    { "azure", "Azure specific" },
-    { "ble", "Bluetooth" },
-    { "can", "CAN" },
-    { "esp32", "ESP32 specific" },
-    { "file", "File and storage access" },
-    { "graphics", "Graphics for screens" },
-    { "iot-device", "IoT.Device" },
-    { "interop", "Interop" },
-    { "json", "Json" },
-    { "mqtt", "MQTT" },
-    { "networking", "Networking including HTTP, SSL" },
-    { "reader", "Readers" },
-    { "rtc", "Real Time Clock" },
-    { "stm32", "STM32 Specific" },
-    { "ti", "Texas Instrument specific" },
-    { "tools", "Tools and utilities" },
-    { "system", "System related" },
-    { "wifi", "Wifi" },
-    { "ggecko", "Giant Gecko specific"},
-};
-
-HashSet<string> ignoredDeviceDirectories = new()
-{
-    "Archive",
-    "packages",
-    "bin",
-    "obj",
-};
+Configuration configuration = JsonSerializer.Deserialize<Configuration>(File.ReadAllText("Configuration.json"));
 
 string? repoRoot = FindRepoRoot(Environment.CurrentDirectory);
 
@@ -98,7 +37,7 @@ foreach (SampleInfo sample in samples)
     {
         if (allCategories.Add(category))
         {
-            if (!categoriesDescriptions.ContainsKey(category))
+            if (!configuration.Categories.Where(m => m.Name == category).Any())
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine($"Warning: Category `{category}` is missing description (`{sample.Title}`). [{sample.ReadmePath}]");
@@ -106,7 +45,7 @@ foreach (SampleInfo sample in samples)
             }
         }
 
-        beingDisplayed |= !beingDisplayed && categoriesToDisplay.Contains(category);
+        beingDisplayed |= !beingDisplayed && configuration.Categories.Where(m => m.Name == category).Any();
     }
 
     if (!beingDisplayed && sample.CategoriesFileExists)
@@ -138,9 +77,10 @@ string GetDeviceListing(string devicesPath, IEnumerable<SampleInfo> samples)
 string GetCategorizedDeviceListing(string devicesPath, IEnumerable<SampleInfo> devices)
 {
     var sampleListing = new StringBuilder();
-    foreach (string categoryToDisplay in categoriesToDisplay)
+    foreach (string categoryToDisplay in configuration.Categories.Select(m => m.Name))
     {
-        if (categoriesDescriptions.TryGetValue(categoryToDisplay, out string? categoryDescription))
+        var categoryDescription = configuration.Categories.Where(m => m.Name == categoryToDisplay).FirstOrDefault()?.Description;
+        if (!string.IsNullOrEmpty(categoryDescription))
         {
             string listingInCurrentCategory = GetDeviceListing(devicesPath, devices.Where((d) => d.Categories.Contains(categoryToDisplay)));
             if (!string.IsNullOrEmpty(listingInCurrentCategory))
@@ -198,7 +138,7 @@ string CreateMarkdownLinkFromPath(string path, string parentPath)
 bool IsIgnoredDevice(string path)
 {
     string dirName = new DirectoryInfo(path).Name;
-    return ignoredDeviceDirectories.Contains(dirName);
+    return configuration.Ignored.Contains(dirName);
 }
 
 void ReplacePlaceholder(string filePath, string placeholderName, string newContent)

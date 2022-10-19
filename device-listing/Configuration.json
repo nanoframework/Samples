@@ -1,0 +1,103 @@
+{
+    "Categories": [
+        {
+            "Name": "beginner",
+            "Description": "Special beginner"
+        },
+        {
+            "Name": "device",
+            "Description": "Gpio, I2C, Spi, Pwm, Adc, Dac, 1-Wire, Serial"
+        },
+
+        {
+            "Name": "amqp",
+            "Description": "AMQP"
+        },
+        {
+            "Name": "aws",
+            "Description": "AWS specific"
+        },
+        {
+            "Name": "azure",
+            "Description": "Azure specific"
+        },
+        {
+            "Name": "ble",
+            "Description": "Bluetooth"
+        },
+        {
+            "Name": "can",
+            "Description": "CAN"
+        },
+        {
+            "Name": "esp32",
+            "Description": "ESP32 specific"
+        },
+        {
+            "Name": "file",
+            "Description": "File and storage access"
+        },
+        {
+            "Name": "ggecko",
+            "Description": "Giant Gecko specific"
+        },
+        {
+            "Name": "graphics",
+            "Description": "Graphics for screens"
+        },
+        {
+            "Name": "iot-device",
+            "Description": "IoT.Device"
+        },
+        {
+            "Name": "interop",
+            "Description": "Interop"
+        },
+        {
+            "Name": "json",
+            "Description": "Json"
+        },
+        {
+            "Name": "mqtt",
+            "Description": "MQTT"
+        },
+        {
+            "Name": "networking",
+            "Description": "Networking including HTTP, SSL"
+        },
+        {
+            "Name": "reader",
+            "Description": "Readers"
+        },
+        {
+            "Name": "rtc",
+            "Description": "Real Time Clock"
+        },
+        {
+            "Name": "stm32",
+            "Description": "STM32 Specific"
+        },
+        {
+            "Name": "ti",
+            "Description": "Texas Instrument specific"
+        },
+        {
+            "Name": "tools",
+            "Description": "Tools and utilities"
+        },
+        {
+            "Name": "system",
+            "Description": "System related"
+        },
+        {
+            "Name": "wifi",
+            "Description": "Wifi"
+        }
+    ],
+    "Ignored": [
+        "Archive",
+        "packages",
+        "bin",
+        "obj"
+    ]
+}

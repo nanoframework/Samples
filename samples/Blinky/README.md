@@ -1,4 +1,4 @@
-# 🌶️ -  Blink your first led
+# 🌶️ - Blink your first led
 
 Shows how to use the [System.Device.Gpio](http://docs.nanoframework.net/api/System.Device.Gpio.html) API to set GPIO pins.
 
