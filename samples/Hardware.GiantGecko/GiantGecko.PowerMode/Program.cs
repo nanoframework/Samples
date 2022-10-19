@@ -35,13 +35,15 @@ namespace PowerMode
             // *** these calls never return *** //
             //////////////////////////////////////
             
+            /////////////////////////////////////////////////////////////////////////////////
+            // Uncomment one of the following according to the power mode you want to test //
+            /////////////////////////////////////////////////////////////////////////////////
+
             // after this the target will enter EM4 hibernate mode (RTC will be on and counting)
             GiantGecko.Power.EnterHibernateMode();
 
             // after this the target will enter EM4 shutoff mode: nothing is running on the device and everything is shutoff 
-            GiantGecko.Power.EnterShutoffMode();
-
-            Thread.Sleep(Timeout.Infinite);
+            // GiantGecko.Power.EnterShutoffMode();
         }
 
         static int PinNumber(char port, byte pin)
