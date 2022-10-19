@@ -18,7 +18,7 @@
 
 <devices>
 
-### Special beginner
+### TAGADA
 
 * [🌶️ -  Blink your first led](samples/Blinky)
 * [🌶️ - System.Device.Pwm](samples/PWM/System.Device.Pwm)
@@ -34,13 +34,13 @@
 * [🌶️ - GPIO and events sample (.NET IoT style)](samples/Gpio/Gpio+EventsIoTStyle)
 * [🌶️ - GPIO sample pack](samples/Gpio)
 * [🌶️ - System.Device.Pwm](samples/PWM/System.Device.Pwm)
+* [🌶️ - System.Device.PWM sample](samples/PWM)
 * [🌶️ - System.Device.Spi sample](samples/SPI)
 * [🌶️ to 🌶️🌶️ - System.IO.Ports serial Communication sample](samples/SerialCommunication)
 * [🌶️🌶️ - I2C GPS sample](samples/I2C/System.Device.I2c/GPS)
 * [🌶️🌶️ - I2C sample sample pack](samples/I2C)
 * [🌶️🌶️ - I2C Scanner sample](samples/I2C/NanoI2cScanner)
 * [🌶️🌶️🌶️ - Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
-* [System.Device.PWM sample](samples/PWM)
 
 ### AMQP
 
@@ -71,6 +71,7 @@
 * [🌶️ to 🌶️🌶️🌶️ - Bluetooth sample pack](samples/Bluetooth)
 * [🌶️🌶️ - Bluetooth Low energy: read static and dynamic values, notification, read/write value](samples/Bluetooth/BluetoothLESample1)
 * [🌶️🌶️ - Bluetooth Low energy: read/write with encryption a value](samples/Bluetooth/BluetoothLESample2)
+* [🌶️🌶️🌶️ - Improv Wifi provisioning](samples/Bluetooth/ImprovWifi)
 
 ### CAN
 
@@ -86,10 +87,16 @@
 * [🌶️🌶️ - Ultrasonic HC-SR04 sensor with RMT](samples/Hardware.Esp32.Rmt/Ultrasonic)
 * [🌶️🌶️🌶️ - Complete Azure MQTT sample using BMP280 sensor **with** Azure lib and deep sleep](samples/AzureSDK/AzureSDKSleepBMP280)
 * [🌶️🌶️🌶️ - Complete Azure MQTT sample using BMP280 sensor **without Azure lib** and with deep sleep](samples/AzureMQTTTwinsBMP280Sleep)
+* [🌶️🌶️🌶️ - Improv Wifi provisioning](samples/Bluetooth/ImprovWifi)
 
 ### File and storage access
 
 * [🌶️ - System.IO.FileSystem samples](samples/System.IO.FileSystem)
+
+### Giant Gecko specific
+
+* [🌶️ to 🌶️🌶️ - Giant Gecko hardware sample pack](samples/Hardware.GiantGecko)
+* [🌶️🌶️ - Giant Gecko Power Mode](samples/Hardware.GiantGecko/GiantGecko.PowerMode)
 
 ### Graphics for screens
 
@@ -188,11 +195,6 @@
 
 * [🌶️ - WiFI samples](samples/Wifi)
 * [🌶️🌶️ - Wifi Soft AP sample](samples/WiFiAP)
-
-### Giant Gecko specific
-
-* [🌶️ to 🌶️🌶️ - Giant Gecko hardware sample pack](samples/Hardware.GiantGecko)
-* [🌶️🌶️ - Giant Gecko Power Mode](samples/Hardware.GiantGecko/GiantGecko.PowerMode)
 
 </devices>
 
