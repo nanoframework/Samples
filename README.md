@@ -20,7 +20,7 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 
 <devices>
 
-### TAGADA
+### Special beginner
 
 * [🌶️ -  Blink your first led](samples/Blinky)
 * [🌶️ - System.Device.Pwm](samples/PWM/System.Device.Pwm)

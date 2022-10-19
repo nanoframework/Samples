@@ -18,7 +18,7 @@
 
 <devices>
 
-### TAGADA
+### Special beginner
 
 * [🌶️ -  Blink your first led](samples/Blinky)
 * [🌶️ - System.Device.Pwm](samples/PWM/System.Device.Pwm)
