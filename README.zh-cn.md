@@ -20,12 +20,12 @@
 
 ### Special beginner
 
-* [🌶️ -  Blink your first led](samples/Blinky)
+* [🌶️ - Blink your first led](samples/Blinky)
 * [🌶️ - System.Device.Pwm](samples/PWM/System.Device.Pwm)
 
 ### Gpio, I2C, Spi, Pwm, Adc, Dac, 1-Wire, Serial
 
-* [🌶️ -  Blink your first led](samples/Blinky)
+* [🌶️ - Blink your first led](samples/Blinky)
 * [🌶️ - 1-Wire sample](samples/1-Wire)
 * [🌶️ - Analogic/Digital converter](samples/ADC)
 * [🌶️ - Analogic/Digital converter](samples/GiantGecko.Adc)
