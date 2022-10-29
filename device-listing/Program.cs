@@ -5,12 +5,17 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using DeviceListing;
 using Iot.Tools.DeviceListing;
 
-Configuration configuration = JsonSerializer.Deserialize<Configuration>(File.ReadAllText("Configuration.json"));
+// get path from where it's executing to be able to run it on AZDO pipeline
+var fullPath = Path.GetFullPath(Assembly.GetExecutingAssembly().Location);
+string executingPath = Path.GetDirectoryName(fullPath);
+
+Configuration configuration = JsonSerializer.Deserialize<Configuration>(File.ReadAllText(Path.Combine(executingPath, "Configuration.json")));
 
 string? repoRoot = FindRepoRoot(Environment.CurrentDirectory);
 
