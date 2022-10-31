@@ -25,11 +25,11 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 * [🌶️ - Blink your first led](samples/Blinky)
 * [🌶️ - System.Device.Pwm](samples/PWM/System.Device.Pwm)
 
-### Gpio, I2C, Spi, Pwm, Adc, Dac, 1-Wire, Serial
+### Gpio, I2C, I2S, Spi, Pwm, Adc, Dac, 1-Wire, Serial
 
 * [🌶️ - 1-Wire sample](samples/1-Wire)
-* [🌶️ - Analogic/Digital converter](samples/ADC)
 * [🌶️ - Analogic/Digital converter](samples/GiantGecko.Adc)
+* [🌶️ - Analogic/Digital converter](samples/ADC)
 * [🌶️ - Blink your first led](samples/Blinky)
 * [🌶️ - Digital Analog Converter sample](samples/DAC)
 * [🌶️ - GPIO and events sample](samples/Gpio/Gpio+Events)
@@ -42,6 +42,7 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 * [🌶️🌶️ - I2C GPS sample](samples/I2C/System.Device.I2c/GPS)
 * [🌶️🌶️ - I2C sample sample pack](samples/I2C)
 * [🌶️🌶️ - I2C Scanner sample](samples/I2C/NanoI2cScanner)
+* [🌶️🌶️ - I2S sample pack](samples/I2S)
 * [🌶️🌶️🌶️ - Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
 
 ### AMQP
