@@ -6,7 +6,7 @@
         },
         {
             "Name": "device",
-            "Description": "Gpio, I2C, Spi, Pwm, Adc, Dac, 1-Wire, Serial"
+            "Description": "Gpio, I2C, I2S, Spi, Pwm, Adc, Dac, 1-Wire, Serial"
         },
 
         {
