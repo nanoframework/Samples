@@ -90,6 +90,10 @@
             "Description": "System related"
         },
         {
+            "Name": "usbclient",
+            "Description": "USB Client related"
+        },
+        {
             "Name": "wifi",
             "Description": "Wifi"
         }
