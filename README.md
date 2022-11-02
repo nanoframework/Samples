@@ -194,6 +194,10 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 * [🌶️🌶️ - Reflection sample pack](samples/Reflection)
 * [🌶️🌶️🌶️ - Interop sample](samples/Interop)
 
+### USB Client related
+
+* [System.Device.UsbClient sample pack](samples/UsbClient)
+
 ### Wifi
 
 * [🌶️ - WiFI samples](samples/Wifi)
