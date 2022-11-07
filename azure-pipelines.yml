@@ -55,7 +55,7 @@ steps:
 
 - template: azure-pipelines-templates/install-nuget.yml@templates
 
-- task: InstallnFBuildComponents@1
+- task: InstallNanoMSBuildComponents@1
   displayName: Install nanoFramework MSBuild components
   env:
     GITHUB_TOKEN: $(GitHubToken)
