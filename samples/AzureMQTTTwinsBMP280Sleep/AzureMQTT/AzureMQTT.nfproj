@@ -45,7 +45,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Iot.Device.Common.WeatherHelper, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Iot.Device.Common.WeatherHelper.1.2.132\lib\Iot.Device.Common.WeatherHelper.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.Iot.Device.Common.WeatherHelper.1.2.144\lib\Iot.Device.Common.WeatherHelper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -68,8 +68,8 @@
       <HintPath>..\packages\nanoFramework.Logging.Serial.1.1.47\lib\nanoFramework.Logging.Serial.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.M2Mqtt, Version=5.1.48.53231, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.M2Mqtt.5.1.48\lib\nanoFramework.M2Mqtt.dll</HintPath>
+    <Reference Include="nanoFramework.M2Mqtt, Version=5.1.53.29824, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.M2Mqtt.5.1.53\lib\nanoFramework.M2Mqtt.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Networking.Sntp, Version=1.6.1.57368, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -120,8 +120,8 @@
       <HintPath>..\packages\nanoFramework.System.IO.Streams.1.1.27\lib\System.IO.Streams.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Math, Version=1.5.15.2306, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.Math.1.5.15\lib\System.Math.dll</HintPath>
+    <Reference Include="System.Math, Version=1.5.18.41298, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.Math.1.5.18\lib\System.Math.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Net, Version=1.10.38.33445, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -136,28 +136,28 @@
       <HintPath>..\packages\nanoFramework.System.Threading.1.1.8\lib\System.Threading.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="UnitsNet.Duration, Version=4.145.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\UnitsNet.nanoFramework.Duration.4.145.0\lib\UnitsNet.Duration.dll</HintPath>
+    <Reference Include="UnitsNet.Duration, Version=4.148.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\UnitsNet.nanoFramework.Duration.4.148.0\lib\UnitsNet.Duration.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="UnitsNet.ElectricResistance, Version=4.145.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\UnitsNet.nanoFramework.ElectricResistance.4.145.0\lib\UnitsNet.ElectricResistance.dll</HintPath>
+    <Reference Include="UnitsNet.ElectricResistance, Version=4.148.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\UnitsNet.nanoFramework.ElectricResistance.4.148.0\lib\UnitsNet.ElectricResistance.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="UnitsNet.Length, Version=4.145.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\UnitsNet.nanoFramework.Length.4.145.0\lib\UnitsNet.Length.dll</HintPath>
+    <Reference Include="UnitsNet.Length, Version=4.148.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\UnitsNet.nanoFramework.Length.4.148.0\lib\UnitsNet.Length.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="UnitsNet.Pressure, Version=4.145.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\UnitsNet.nanoFramework.Pressure.4.145.0\lib\UnitsNet.Pressure.dll</HintPath>
+    <Reference Include="UnitsNet.Pressure, Version=4.148.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\UnitsNet.nanoFramework.Pressure.4.148.0\lib\UnitsNet.Pressure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="UnitsNet.RelativeHumidity, Version=4.145.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\UnitsNet.nanoFramework.RelativeHumidity.4.145.0\lib\UnitsNet.RelativeHumidity.dll</HintPath>
+    <Reference Include="UnitsNet.RelativeHumidity, Version=4.148.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\UnitsNet.nanoFramework.RelativeHumidity.4.148.0\lib\UnitsNet.RelativeHumidity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="UnitsNet.Temperature, Version=4.145.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\UnitsNet.nanoFramework.Temperature.4.145.0\lib\UnitsNet.Temperature.dll</HintPath>
+    <Reference Include="UnitsNet.Temperature, Version=4.148.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\UnitsNet.nanoFramework.Temperature.4.148.0\lib\UnitsNet.Temperature.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
