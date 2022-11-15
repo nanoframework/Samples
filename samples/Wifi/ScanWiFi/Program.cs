@@ -26,11 +26,22 @@ namespace ScanWifi
                 // Set up the AvailableNetworksChanged event to pick up when scan has completed
                 wifi.AvailableNetworksChanged += Wifi_AvailableNetworksChanged;
 
+                // give it some time to perform the initial "connect"
+                // trying to scan while the device is still in the connect procedure will throw an exception
+                Thread.Sleep(10_000);
+
                 // Loop forever scanning every 30 seconds
                 while (true)
                 {
-                    Debug.WriteLine("starting Wifi scan");
-                    wifi.ScanAsync();
+                    try
+                    {
+                        Debug.WriteLine("starting Wi-Fi scan");
+                        wifi.ScanAsync();
+                    }
+                    catch(Exception ex)
+                    {
+                        Debug.WriteLine($"Failure starting a scan operation: {ex}");
+                    }
 
                     Thread.Sleep(30000);
                 }
