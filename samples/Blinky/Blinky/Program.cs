@@ -7,6 +7,8 @@ using System.Device.Gpio;
 using System;
 using System.Threading;
 
+//using nanoFramework.Hardware.Esp32;
+
 namespace Blinky
 {
     public class Program
@@ -63,6 +65,15 @@ namespace Blinky
             // Silabs SLSTK3701A: LED1 PH14 is LLED1
             //GpioPin led = s_GpioController.OpenPin(PinNumber('H', 14), PinMode.Output);
 
+            // Sparkfun Thing Plus - ESP32 WROOM 
+            //GpioPin led = s_GpioController.OpenPin(Gpio.IO13, PinMode.Output);
+
+            // RAK11200 on RAK5005/RAK19001/19007. The RAK19001 needs battery connected or power switch in rechargeable position
+            //GpioPin led = s_GpioController.OpenPin(Gpio.IO12, PinMode.Output); // LED1 Green
+            //GpioPin led = s_GpioController.OpenPin(Gpio.IO02, PinMode.Output); // LED2 Blue
+
+            // RAK2305 
+            //GpioPin led = s_GpioController.OpenPin(Gpio.IO18, PinMode.Output); // LED Green (Test LED) on device
 
             led.Write(PinValue.Low);
 
