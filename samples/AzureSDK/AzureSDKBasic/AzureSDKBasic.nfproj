@@ -30,8 +30,8 @@
     <Reference Include="mscorlib">
       <HintPath>packages\nanoFramework.CoreLibrary.1.12.0\lib\mscorlib.dll</HintPath>
     </Reference>
-    <Reference Include="nanoFramework.Azure.Devices.Client, Version=1.1.97.17959, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Azure.Devices.Client.1.1.97\lib\nanoFramework.Azure.Devices.Client.dll</HintPath>
+    <Reference Include="nanoFramework.Azure.Devices.Client, Version=1.1.106.4565, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Azure.Devices.Client.1.1.106\lib\nanoFramework.Azure.Devices.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Hardware.Esp32">
@@ -41,8 +41,9 @@
       <HintPath>packages\nanoFramework.Json.2.2.72\lib\nanoFramework.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.M2Mqtt">
-      <HintPath>packages\nanoFramework.M2Mqtt.5.1.53\lib\nanoFramework.M2Mqtt.dll</HintPath>
+    <Reference Include="nanoFramework.M2Mqtt, Version=5.1.61.46161, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.M2Mqtt.5.1.61\lib\nanoFramework.M2Mqtt.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.ResourceManager">
       <HintPath>packages\nanoFramework.ResourceManager.1.2.7\lib\nanoFramework.ResourceManager.dll</HintPath>
@@ -68,8 +69,9 @@
     <Reference Include="System.Net">
       <HintPath>packages\nanoFramework.System.Net.1.10.38\lib\System.Net.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http">
-      <HintPath>packages\nanoFramework.System.Net.Http.1.5.54\lib\System.Net.Http.dll</HintPath>
+    <Reference Include="System.Net.Http, Version=1.5.61.54415, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Net.Http.1.5.61\lib\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Threading">
       <HintPath>packages\nanoFramework.System.Threading.1.1.8\lib\System.Threading.dll</HintPath>
