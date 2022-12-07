@@ -52,6 +52,7 @@ steps:
   inputs:
     packageType: sdk
     version: 6.x
+    performMultiLevelLookup: true
 
 - template: azure-pipelines-templates/install-nuget.yml@templates
 
