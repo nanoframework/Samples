@@ -26,8 +26,9 @@
       <HintPath>..\packages\nanoFramework.CoreLibrary.1.14.2\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.GiantGecko.Adc">
-      <HintPath>..\packages\nanoFramework.GiantGecko.Adc.1.0.27\lib\nanoFramework.GiantGecko.Adc.dll</HintPath>
+    <Reference Include="nanoFramework.GiantGecko.Adc, Version=1.0.34.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.GiantGecko.Adc.1.0.34\lib\nanoFramework.GiantGecko.Adc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
