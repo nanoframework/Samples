@@ -8,30 +8,18 @@ name: Scheduled nuget dependency check
 on:
   schedule:
   # At 00:00 UTC every Friday.
-  - cron:  '00 00 * * 6'
+  - cron:  '00 03 * * Fri'
   repository_dispatch:
     types: update-dependencies
   workflow_dispatch:
 
-defaults:
-  run:
-    shell: pwsh
-
 jobs:
-  update-nuget-dependencies:
-    name: Update .NET nanoFramework nuget dependencies
-    timeout-minutes: 360 # Non default as the repo is large and has lots of solutions to update!
-    runs-on: windows-latest
-    env:
-      GITHUB_TOKEN: ${{ github.token }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Update solution nugets
-        uses: nanoframework/nanodu@v1
-        with:
-          solutionsToCheck: '*.sln'
-          exclusionList: "device-listing,Amqp.Samples"
-          workingDirectory: '${{ github.workspace }}/samples'
+  update-dependencies:
+    name: nanoFramework
+    uses: nanoframework/nf-tools/.github/workflows/update-dependencies.yml@main
+    secrets: inherit
+    with:
+      solutionsToCheck: '*.sln'
+      exclusionList: "device-listing,Amqp.Samples"
+      workingDirectory: '${{ github.workspace }}/samples'
+      nugetConfig: Nuget.config
