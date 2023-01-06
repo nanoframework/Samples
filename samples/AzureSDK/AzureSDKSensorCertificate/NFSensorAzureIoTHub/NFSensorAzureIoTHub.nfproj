@@ -66,7 +66,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Buffers.Binary.BinaryPrimitives, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.Buffers.Binary.BinaryPrimitives.1.2.188\lib\System.Buffers.Binary.BinaryPrimitives.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.System.Buffers.Binary.BinaryPrimitives.1.2.211\lib\System.Buffers.Binary.BinaryPrimitives.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Device.Gpio, Version=1.1.28.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
