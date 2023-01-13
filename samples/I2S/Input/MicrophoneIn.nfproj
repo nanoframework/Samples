@@ -39,8 +39,9 @@
       <HintPath>packages\nanoFramework.System.Text.1.2.37\lib\nanoFramework.System.Text.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Device.I2s">
-      <HintPath>packages\nanoFramework.System.Device.I2s.1.0.3\lib\System.Device.I2s.dll</HintPath>
+    <Reference Include="System.Device.I2s, Version=1.0.10.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Device.I2s.1.0.10\lib\System.Device.I2s.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.IO.FileSystem, Version=1.1.23.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.System.IO.FileSystem.1.1.23\lib\System.IO.FileSystem.dll</HintPath>
