@@ -1,3 +1,5 @@
+Document Language: [English](README.md) | [简体中文](README.zh-cn.md)
+
 # 🌶️ - WiFI samples
 
 Shows how to use various APIs related with Wifi. Scan WiFI Networks and connect to a specified network
