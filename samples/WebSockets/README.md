@@ -1,3 +1,5 @@
+Document Language: [English](README.md) | [简体中文](README.zh-cn.md)
+
 # 🌶️ to 🌶️🌶️ - WebSocket sample pack
 
 Shows how to use the WebSockets related APIs in [System.Net.WebSockets](http://docs.nanoframework.net/api/System.Net.WebSockets.html).
