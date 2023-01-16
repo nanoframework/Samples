@@ -2,7 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 // !!!----------- SAMPLE - ENSURE YOU CHOOSE THE CORRECT TARGET HERE --------------!!!
-#define STM32F769I_DISCO
+//#define STM32F769I_DISCO // Comment this in if for the target!
+//#define ESP32 // Comment this in if for the target platform!
 // !!!-----------------------------------------------------------------------------!!!
 
 using System.Threading;
@@ -22,15 +23,14 @@ namespace Primitives
             int chipSelect = 14;
             int dataCommand = 27;
             int reset = 33;
-            // Add the nanoFramework.Hardware.Esp32 to the solution
-            Configuration.SetPinFunction(19, DeviceFunction.SPI1_MISO);
-            Configuration.SetPinFunction(23, DeviceFunction.SPI1_MOSI);
-            Configuration.SetPinFunction(18, DeviceFunction.SPI1_CLOCK);
+
             // Adjust as well the size of your screen and the position of the screen on the driver
             DisplayControl.Initialize(new SpiConfiguration(1, chipSelect, dataCommand, reset, backLightPin), new ScreenConfiguration(0, 0, 320, 240));
+
             // Depending on you ESP32, you may also have to use either PWM either GPIO to set the backlight pin mode on
             // new GpioController().OpenPin(backLightPin, PinMode.Output);
             // GpioController().Write(backLightPin, PinValue.High);
+
 #elif STM32F769I_DISCO // This is an example (working) button map, work the actual pins out for your need!
             //WARNING: Invalid pin mappings will never be returned, and may need you to reflash the device!
             DisplayControl.Initialize(new SpiConfiguration(), new ScreenConfiguration());
