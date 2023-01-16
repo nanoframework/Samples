@@ -26,8 +26,8 @@
 ### Gpio, I2C, I2S, Spi, Pwm, Adc, Dac, 1-Wire, Serial
 
 * [🌶️ - 1-Wire sample](samples/1-Wire)
-* [🌶️ - Analogic/Digital converter](samples/GiantGecko.Adc)
 * [🌶️ - Analogic/Digital converter](samples/ADC)
+* [🌶️ - Analogic/Digital converter](samples/GiantGecko.Adc)
 * [🌶️ - Blink your first led](samples/Blinky)
 * [🌶️ - Digital Analog Converter sample](samples/DAC)
 * [🌶️ - GPIO and events sample](samples/Gpio/Gpio+Events)
@@ -132,21 +132,21 @@
 ### Networking including HTTP, SSL
 
 * [🌶️ - UdpClient sample pack](samples/UdpClient)
-* [🌶️ - WebSocket Client Sample](samples/WebSockets/WebSockets.Client.Sample)
-* [🌶️ - WiFI samples](samples/Wifi)
 * [🌶️ to 🌶️🌶️ - .NET **nanoFramework** Webserver sample pack](samples/Webserver)
-* [🌶️ to 🌶️🌶️ - WebSocket sample pack](samples/WebSockets)
 * [🌶️🌶️ - HTTP Listener sample](samples/HTTP/HttpListener)
 * [🌶️🌶️ - HTTP sample pack](samples/HTTP)
 * [🌶️🌶️ - HTTP WebRequest sample](samples/HTTP/HttpWebRequest)
 * [🌶️🌶️ - Networking sample pack](samples/Networking)
-* [🌶️🌶️ - WebSocket Server Sample with RGB Led](samples/WebSockets/WebSockets.Server.RgbSample)
-* [🌶️🌶️ - WebSocket ServerClient Sample](samples/WebSockets/Websockets.ServerClient.Sample)
 * [🌶️🌶️ - Wifi Soft AP sample](samples/WiFiAP)
 * [🌶️🌶️ to 🌶️🌶️🌶️ - MQTT sample pack](samples/MQTT)
 * [🌶️🌶️ to 🌶️🌶️🌶️ - TLS sample pack](samples/SSL)
 * [🌶️🌶️🌶️ - HTTP.HttpAzureGET Sample](samples/HTTP/HttpAzureGET)
 * [🌶️🌶️🌶️ - HTTP.HttpAzurePOST Sample](samples/HTTP/HttpAzurePOST)
+* [Error](samples/Wifi)
+* [Error](samples/WebSockets)
+* [Error](samples/WebSockets/WebSockets.Client.Sample)
+* [Error](samples/WebSockets/WebSockets.Server.RgbSample)
+* [Error](samples/WebSockets/Websockets.ServerClient.Sample)
 
 ### Real Time Clock
 
@@ -200,8 +200,8 @@
 
 ### Wifi
 
-* [🌶️ - WiFI samples](samples/Wifi)
 * [🌶️🌶️ - Wifi Soft AP sample](samples/WiFiAP)
+* [Error](samples/Wifi)
 
 </devices>
 
