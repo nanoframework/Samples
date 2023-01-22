@@ -103,5 +103,9 @@
         "packages",
         "bin",
         "obj"
+    ],
+    "Languages": [
+        "",
+        "zh-cn"
     ]
 }

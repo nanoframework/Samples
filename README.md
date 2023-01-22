@@ -5,7 +5,7 @@
 -----
 Document Language: [English](README.md) | [简体中文](README.zh-cn.md)
 
-## Welcome to the **nanoFramework** team code samples repository!
+# Welcome to the **nanoFramework** team code samples repository!
 
 This repo contains code samples used by the team when testing, working on proof of concepts for new and improved features and other explorational endeavours.
 Feel free to browse, take what you like and contribute back if you want.
@@ -39,11 +39,12 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 * [🌶️ - System.Device.PWM sample](samples/PWM)
 * [🌶️ - System.Device.Spi sample](samples/SPI)
 * [🌶️ to 🌶️🌶️ - System.IO.Ports serial Communication sample](samples/SerialCommunication)
-* [🌶️🌶️ - I2C GPS sample](samples/I2C/System.Device.I2c/GPS)
 * [🌶️🌶️ - I2C sample sample pack](samples/I2C)
 * [🌶️🌶️ - I2C Scanner sample](samples/I2C/NanoI2cScanner)
+* [🌶️🌶️ - I2S Microphone sample](samples/I2S/Input)
 * [🌶️🌶️ - I2S sample pack](samples/I2S)
-* [🌶️🌶️🌶️ - Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
+* [🌶️🌶️ - I2S Speaker sample](samples/I2S/Output)
+* [🌶️🌶️🌶️ - Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate/Readme.md)
 
 ### AMQP
 
@@ -65,7 +66,7 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 * [🌶️🌶️🌶️ - Complete Azure MQTT sample using BMP280 sensor **without Azure lib** and with deep sleep](samples/AzureMQTTTwinsBMP280Sleep)
 * [🌶️🌶️🌶️ - HTTP.HttpAzureGET Sample](samples/HTTP/HttpAzureGET)
 * [🌶️🌶️🌶️ - HTTP.HttpAzurePOST Sample](samples/HTTP/HttpAzurePOST)
-* [🌶️🌶️🌶️ - Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
+* [🌶️🌶️🌶️ - Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate/Readme.md)
 * [Azure IoT Device Provisioning Service (DPS) example](samples/AzureSDK/DpsSampleApp)
 
 ### Bluetooth
@@ -115,7 +116,7 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 
 * [🌶️🌶️🌶️ - Complete Azure MQTT sample using BMP280 sensor **with** Azure lib and deep sleep](samples/AzureSDK/AzureSDKSleepBMP280)
 * [🌶️🌶️🌶️ - Complete Azure MQTT sample using BMP280 sensor **without Azure lib** and with deep sleep](samples/AzureMQTTTwinsBMP280Sleep)
-* [🌶️🌶️🌶️ - Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
+* [🌶️🌶️🌶️ - Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate/Readme.md)
 
 ### Interop
 
@@ -134,21 +135,21 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 ### Networking including HTTP, SSL
 
 * [🌶️ - UdpClient sample pack](samples/UdpClient)
+* [🌶️ - WebSocket Client Sample](samples/WebSockets/WebSockets.Client.Sample)
+* [🌶️ - WiFI samples](samples/Wifi)
 * [🌶️ to 🌶️🌶️ - .NET **nanoFramework** Webserver sample pack](samples/Webserver)
+* [🌶️ to 🌶️🌶️ - WebSocket sample pack](samples/WebSockets)
 * [🌶️🌶️ - HTTP Listener sample](samples/HTTP/HttpListener)
 * [🌶️🌶️ - HTTP sample pack](samples/HTTP)
 * [🌶️🌶️ - HTTP WebRequest sample](samples/HTTP/HttpWebRequest)
 * [🌶️🌶️ - Networking sample pack](samples/Networking)
+* [🌶️🌶️ - WebSocket Server Sample with RGB Led](samples/WebSockets/WebSockets.Server.RgbSample)
+* [🌶️🌶️ - WebSocket ServerClient Sample](samples/WebSockets/Websockets.ServerClient.Sample)
 * [🌶️🌶️ - Wifi Soft AP sample](samples/WiFiAP)
 * [🌶️🌶️ to 🌶️🌶️🌶️ - MQTT sample pack](samples/MQTT)
 * [🌶️🌶️ to 🌶️🌶️🌶️ - TLS sample pack](samples/SSL)
 * [🌶️🌶️🌶️ - HTTP.HttpAzureGET Sample](samples/HTTP/HttpAzureGET)
 * [🌶️🌶️🌶️ - HTTP.HttpAzurePOST Sample](samples/HTTP/HttpAzurePOST)
-* [Error](samples/Wifi)
-* [Error](samples/WebSockets)
-* [Error](samples/WebSockets/WebSockets.Client.Sample)
-* [Error](samples/WebSockets/WebSockets.Server.RgbSample)
-* [Error](samples/WebSockets/Websockets.ServerClient.Sample)
 
 ### Real Time Clock
 
@@ -198,12 +199,12 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 
 ### USB Client related
 
-* [System.Device.UsbClient sample pack](samples/UsbClient)
+* [🌶️🌶️ - System.Device.UsbClient sample pack](samples/UsbClient)
 
 ### Wifi
 
+* [🌶️ - WiFI samples](samples/Wifi)
 * [🌶️🌶️ - Wifi Soft AP sample](samples/WiFiAP)
-* [Error](samples/Wifi)
 
 </devices>
 

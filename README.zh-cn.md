@@ -5,7 +5,7 @@
 -----
 文档语言: [English](README.md) | [简体中文](README.zh-cn.md)
 
-## 欢迎使用 **nanoFramework** 例程库！
+# 欢迎使用 **nanoFramework** 例程库！
 
 本库包括了团队在测试时使用的例程代码，用于验证新增功能以及其它实验室探索。
 随意浏览，随心所欲，尽享回报。
@@ -37,11 +37,12 @@
 * [🌶️ - System.Device.PWM sample](samples/PWM)
 * [🌶️ - System.Device.Spi sample](samples/SPI)
 * [🌶️ to 🌶️🌶️ - System.IO.Ports serial Communication sample](samples/SerialCommunication)
-* [🌶️🌶️ - I2C GPS sample](samples/I2C/System.Device.I2c/GPS)
 * [🌶️🌶️ - I2C sample sample pack](samples/I2C)
 * [🌶️🌶️ - I2C Scanner sample](samples/I2C/NanoI2cScanner)
+* [🌶️🌶️ - I2S Microphone sample](samples/I2S/Input)
 * [🌶️🌶️ - I2S sample pack](samples/I2S)
-* [🌶️🌶️🌶️ - Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
+* [🌶️🌶️ - I2S Speaker sample](samples/I2S/Output)
+* [🌶️🌶️🌶️ - Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate/Readme.md)
 
 ### AMQP
 
@@ -63,7 +64,7 @@
 * [🌶️🌶️🌶️ - Complete Azure MQTT sample using BMP280 sensor **without Azure lib** and with deep sleep](samples/AzureMQTTTwinsBMP280Sleep)
 * [🌶️🌶️🌶️ - HTTP.HttpAzureGET Sample](samples/HTTP/HttpAzureGET)
 * [🌶️🌶️🌶️ - HTTP.HttpAzurePOST Sample](samples/HTTP/HttpAzurePOST)
-* [🌶️🌶️🌶️ - Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
+* [🌶️🌶️🌶️ - Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate/Readme.md)
 * [Azure IoT Device Provisioning Service (DPS) example](samples/AzureSDK/DpsSampleApp)
 
 ### Bluetooth
@@ -113,7 +114,7 @@
 
 * [🌶️🌶️🌶️ - Complete Azure MQTT sample using BMP280 sensor **with** Azure lib and deep sleep](samples/AzureSDK/AzureSDKSleepBMP280)
 * [🌶️🌶️🌶️ - Complete Azure MQTT sample using BMP280 sensor **without Azure lib** and with deep sleep](samples/AzureMQTTTwinsBMP280Sleep)
-* [🌶️🌶️🌶️ - Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate)
+* [🌶️🌶️🌶️ - Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate/Readme.md)
 
 ### Interop
 
@@ -132,21 +133,21 @@
 ### Networking including HTTP, SSL
 
 * [🌶️ - UdpClient sample pack](samples/UdpClient)
+* [🌶️ - WebSocket 客户端示例](samples/WebSockets/WebSockets.Client.Sample/README.zh-cn.md)
+* [🌶️ - WiFI 示例](samples/Wifi/README.zh-cn.md)
 * [🌶️ to 🌶️🌶️ - .NET **nanoFramework** Webserver sample pack](samples/Webserver)
+* [🌶️ to 🌶️🌶️ - WebSocket示例包](samples/WebSockets/README.zh-cn.md)
 * [🌶️🌶️ - HTTP Listener sample](samples/HTTP/HttpListener)
 * [🌶️🌶️ - HTTP sample pack](samples/HTTP)
 * [🌶️🌶️ - HTTP WebRequest sample](samples/HTTP/HttpWebRequest)
 * [🌶️🌶️ - Networking sample pack](samples/Networking)
+* [🌶️🌶️ - WebSocket ServerClient Sample](samples/WebSockets/Websockets.ServerClient.Sample/README.zh-cn.md)
+* [🌶️🌶️ - WebSocket Server示例与RGB Led](samples/WebSockets/WebSockets.Server.RgbSample/README.zh-cn.md)
 * [🌶️🌶️ - Wifi Soft AP sample](samples/WiFiAP)
 * [🌶️🌶️ to 🌶️🌶️🌶️ - MQTT sample pack](samples/MQTT)
 * [🌶️🌶️ to 🌶️🌶️🌶️ - TLS sample pack](samples/SSL)
 * [🌶️🌶️🌶️ - HTTP.HttpAzureGET Sample](samples/HTTP/HttpAzureGET)
 * [🌶️🌶️🌶️ - HTTP.HttpAzurePOST Sample](samples/HTTP/HttpAzurePOST)
-* [Error](samples/Wifi)
-* [Error](samples/WebSockets)
-* [Error](samples/WebSockets/WebSockets.Client.Sample)
-* [Error](samples/WebSockets/WebSockets.Server.RgbSample)
-* [Error](samples/WebSockets/Websockets.ServerClient.Sample)
 
 ### Real Time Clock
 
@@ -196,12 +197,12 @@
 
 ### USB Client related
 
-* [System.Device.UsbClient sample pack](samples/UsbClient)
+* [🌶️🌶️ - System.Device.UsbClient sample pack](samples/UsbClient)
 
 ### Wifi
 
+* [🌶️ - WiFI 示例](samples/Wifi/README.zh-cn.md)
 * [🌶️🌶️ - Wifi Soft AP sample](samples/WiFiAP)
-* [Error](samples/Wifi)
 
 </devices>
 
