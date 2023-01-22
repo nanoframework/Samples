@@ -20,5 +20,10 @@ namespace DeviceListing
         /// Gets or sets the list of ignored folders.
         /// </summary>
         public string[] Ignored { get; set; }
+
+        /// <summary>
+        /// Gets or sets the list of languages to generate.
+        /// </summary>
+        public string[] Languages {get; set;}
     }
 }

@@ -17,6 +17,7 @@ namespace Iot.Tools.DeviceListing
         public HashSet<string> Categories { get; private set; } = new HashSet<string>();
         public string CategoriesFilePath { get; private set; }
         public bool CategoriesFileExists { get; private set; }
+        public string Language { get; private set; }
 
         public SampleInfo(string readmePath, string categoriesFilePath)
         {
@@ -25,6 +26,7 @@ namespace Iot.Tools.DeviceListing
             Title = GetTitle(readmePath) ?? "Error";
             CategoriesFilePath = categoriesFilePath;
             CategoriesFileExists = File.Exists(categoriesFilePath);
+            Language = FindLanguage(readmePath);
 
             ImportCategories();
         }
@@ -32,6 +34,23 @@ namespace Iot.Tools.DeviceListing
         public int CompareTo(SampleInfo? other)
         {
             return Title.CompareTo(other?.Title);
+        }
+
+        public string FindLanguage(string filepath)
+        {
+            // Pattern is like path\name.zn-cn.ext or path\name.ext
+            var separator = Path.DirectorySeparatorChar;
+            var file = filepath.Substring(filepath.LastIndexOf(separator) + 1);
+            var filewithoutext = file.Substring(0, file.LastIndexOf('.'));
+            var posdot = filewithoutext.LastIndexOf('.');
+            // We do have another dot, so by convention, it does contain our langage
+            if (posdot > 0)
+            {
+                return filewithoutext.Substring(posdot + 1);
+            }
+
+            // Neutral language by convention
+            return string.Empty;
         }
 
         private void ImportCategories()
@@ -59,10 +78,16 @@ namespace Iot.Tools.DeviceListing
         private static string? GetTitle(string readmePath)
         {
             string[] lines = File.ReadAllLines(readmePath);
-            if (lines[0].StartsWith("# "))
+            int inc = 0;
+            do
             {
-                return lines[0].Substring(2);
-            }
+                if (lines[inc].StartsWith("# "))
+                {
+                    return lines[inc].Substring(2);
+                }
+
+                inc++;
+            } while (inc < lines.Length);
 
             return null;
         }

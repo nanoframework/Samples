@@ -1,4 +1,4 @@
-# System.Device.UsbClient sample pack
+# 🌶️🌶️ - System.Device.UsbClient sample pack
 
 Shows how to use the [System.Device.UsbClient](http://docs.nanoframework.net/api/System.Device.UsbClient.html) API to use the various USB client classes.
 

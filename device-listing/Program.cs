@@ -26,47 +26,49 @@ if (repoRoot is null)
 }
 
 string samplesPath = Path.Combine(repoRoot, "samples");
+List<SampleInfo> samples;
 
-List<SampleInfo> samples = new();
-
-GetAllDirectoriesAndPopulate(Directory.EnumerateDirectories(samplesPath));
-
-samples.Sort();
-
-var allCategories = new HashSet<string>();
-
-foreach (SampleInfo sample in samples)
+// We will iterate one per language
+foreach (var language in configuration.Languages)
 {
-    bool beingDisplayed = false;
-    foreach (string category in sample.Categories)
+    samples = new();
+
+    GetAllDirectoriesAndPopulate(Directory.EnumerateDirectories(samplesPath), language);
+
+    samples.Sort();
+
+    var allCategories = new HashSet<string>();
+
+    foreach (SampleInfo sample in samples)
     {
-        if (allCategories.Add(category))
+        bool beingDisplayed = false;
+        foreach (string category in sample.Categories)
         {
-            if (!configuration.Categories.Where(m => m.Name == category).Any())
+            if (allCategories.Add(category))
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine($"Warning: Category `{category}` is missing description (`{sample.Title}`). [{sample.ReadmePath}]");
-                Console.ForegroundColor = ConsoleColor.White;
+                if (!configuration.Categories.Where(m => m.Name == category).Any())
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine($"Warning: Category `{category}` is missing description (`{sample.Title}`). [{sample.ReadmePath}]");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
             }
+
+            beingDisplayed |= !beingDisplayed && configuration.Categories.Where(m => m.Name == category).Any();
         }
 
-        beingDisplayed |= !beingDisplayed && configuration.Categories.Where(m => m.Name == category).Any();
+        if (!beingDisplayed && sample.CategoriesFileExists)
+        {
+            // We do not want to show the warning when file doesn't exist as you will get separate warning that category.txt is missing in that case.
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"Warning: Sample `{sample.Title}` is not being displayed under any category. [{sample.CategoriesFilePath}]");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
     }
-
-    if (!beingDisplayed && sample.CategoriesFileExists)
-    {
-        // We do not want to show the warning when file doesn't exist as you will get separate warning that category.txt is missing in that case.
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine($"Warning: Sample `{sample.Title}` is not being displayed under any category. [{sample.CategoriesFilePath}]");
-        Console.ForegroundColor = ConsoleColor.White;
-    }
+    string alphabeticalDevicesIndex = Path.Combine(repoRoot, $"README{(string.IsNullOrEmpty(language) ? string.Empty : $".{language}")}.md");
+    string categorizedDeviceListing = GetCategorizedDeviceListing(samplesPath, samples);
+    ReplacePlaceholder(alphabeticalDevicesIndex, "devices", categorizedDeviceListing);
 }
-
-string alphabeticalDevicesIndex = Path.Combine(repoRoot, "README.md");
-string categorizedDeviceListing = GetCategorizedDeviceListing(samplesPath, samples);
-ReplacePlaceholder(alphabeticalDevicesIndex, "devices", categorizedDeviceListing);
-alphabeticalDevicesIndex = Path.Combine(repoRoot, "README.zh-cn.md");
-ReplacePlaceholder(alphabeticalDevicesIndex, "devices", categorizedDeviceListing);
 
 string GetDeviceListing(string devicesPath, IEnumerable<SampleInfo> samples)
 {
@@ -87,7 +89,7 @@ string GetCategorizedDeviceListing(string devicesPath, IEnumerable<SampleInfo> d
         var categoryDescription = configuration.Categories.Where(m => m.Name == categoryToDisplay).FirstOrDefault()?.Description;
         if (!string.IsNullOrEmpty(categoryDescription))
         {
-            string listingInCurrentCategory = GetDeviceListing(devicesPath, devices.Where((d) => d.Categories.Contains(categoryToDisplay)));
+            string listingInCurrentCategory = GetDeviceListing(devicesPath, devices.Where(d => d.Categories.Contains(categoryToDisplay)));
             if (!string.IsNullOrEmpty(listingInCurrentCategory))
             {
                 sampleListing.AppendLine($"### {categoryDescription}");
@@ -173,7 +175,7 @@ void ReplacePlaceholder(string filePath, string placeholderName, string newConte
         fileContent.Substring(endIdx));
 }
 
-void GetAllDirectoriesAndPopulate(IEnumerable<string> path)
+void GetAllDirectoriesAndPopulate(IEnumerable<string> path, string language)
 {
     foreach (string directory in path)
     {
@@ -182,11 +184,19 @@ void GetAllDirectoriesAndPopulate(IEnumerable<string> path)
             continue;
         }
 
-        string readme = Path.Combine(directory, "README.md");
         string categories = Path.Combine(directory, "category.txt");
 
-        if (File.Exists(readme))
+        // Find the README.xx.md files
+        var files = Directory.EnumerateFiles(directory, $"README{(string.IsNullOrEmpty(language) ? string.Empty : $".{language}")}.md");
+        // If we don't have any, then fall back to the neutral langauge
+        if (!files.Any())
         {
+            files = Directory.EnumerateFiles(directory, "README.md");
+        }
+
+        foreach (var readme in files)
+        {
+            // string readme = Path.Combine(directory, "README.md");
             var device = new SampleInfo(readme, categories);
 
             if (device.Title == null)
@@ -196,15 +206,8 @@ void GetAllDirectoriesAndPopulate(IEnumerable<string> path)
             }
 
             samples.Add(device);
-        }
-        else
-        {
-            if (File.Exists(categories))
-            {
-                Console.WriteLine($"Warning: Device directory does not have a README.md file. [{directory}]");
-            }
-        }
 
-        GetAllDirectoriesAndPopulate(Directory.EnumerateDirectories(directory));
+            GetAllDirectoriesAndPopulate(Directory.EnumerateDirectories(directory), language);
+        }
     }
 }
