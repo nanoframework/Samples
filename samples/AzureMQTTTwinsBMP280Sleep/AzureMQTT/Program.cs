@@ -63,7 +63,7 @@ try
     if (!success)
     {
         Trace($"Can't connect to wifi: {NetworkHelper.Status}");
-        if (WifiNetworkHelper.HelperException!= null)
+        if (WifiNetworkHelper.HelperException != null)
         {
             Trace($"WifiNetworkHelper.HelperException");
         }
@@ -135,7 +135,7 @@ try
         );
 
         Trace("Getting twin properties");
-        mqttc.Publish($"{TwinDesiredPropertiesTopic}?$rid={Guid.NewGuid()}", Encoding.UTF8.GetBytes(""),string.Empty, new System.Collections.ArrayList(), MqttQoSLevel.AtLeastOnce, false);
+        mqttc.Publish($"{TwinDesiredPropertiesTopic}?$rid={Guid.NewGuid()}", Encoding.UTF8.GetBytes(""), string.Empty, new System.Collections.ArrayList(), MqttQoSLevel.AtLeastOnce, false);
 
         CancellationTokenSource cstwins = new(10000);
         CancellationToken tokentwins = cstwins.Token;
@@ -150,7 +150,7 @@ try
         }
 
         Trace("Sending twin properties");
-        mqttc.Publish($"{TwinReportedPropertiesTopic}?$rid={Guid.NewGuid()}", Encoding.UTF8.GetBytes($"{{\"Firmware\":\"nanoFramework\",\"TimeToSleep\":{minutesToGoToSleep}}}"),string.Empty,new System.Collections.ArrayList(), MqttQoSLevel.AtLeastOnce, false);
+        mqttc.Publish($"{TwinReportedPropertiesTopic}?$rid={Guid.NewGuid()}", Encoding.UTF8.GetBytes($"{{\"Firmware\":\"nanoFramework\",\"TimeToSleep\":{minutesToGoToSleep}}}"), string.Empty, new System.Collections.ArrayList(), MqttQoSLevel.AtLeastOnce, false);
 
         // I2C#	Data	Clock
         // I2C1	GPIO 18	GPIO 19
@@ -168,7 +168,7 @@ try
         Trace($"Pressure: {readResult.Pressure.Hectopascals}hPa");
 
         //Publish telemetry data
-        messageID = mqttc.Publish(telemetryTopic, Encoding.UTF8.GetBytes($"{{\"Temperature\":{readResult.Temperature.DegreesCelsius},\"Pressure\":{readResult.Pressure.Hectopascals}}}"),string.Empty, new System.Collections.ArrayList(), MqttQoSLevel.ExactlyOnce, false);
+        messageID = mqttc.Publish(telemetryTopic, Encoding.UTF8.GetBytes($"{{\"Temperature\":{readResult.Temperature.DegreesCelsius},\"Pressure\":{readResult.Pressure.Hectopascals}}}"), string.Empty, new System.Collections.ArrayList(), MqttQoSLevel.ExactlyOnce, false);
         Trace($"Message ID for telemetry: {messageID}");
 
         // Wait for the message or cancel if waiting for too long
@@ -200,7 +200,7 @@ catch
 GoToSleep();
 
 void GoToSleep()
-{    
+{
     Trace($"Full operation took: {DateTime.UtcNow - allupOperation}");
     Trace($"Set wakeup by timer for {minutesToGoToSleep} minutes to retry.");
     Sleep.EnableWakeupByTimer(new TimeSpan(0, 0, minutesToGoToSleep, 0));
