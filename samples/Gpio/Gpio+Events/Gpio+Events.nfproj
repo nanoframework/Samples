@@ -23,13 +23,13 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib">
-      <HintPath>packages\nanoFramework.CoreLibrary.1.12.0\lib\mscorlib.dll</HintPath>
+      <HintPath>packages\nanoFramework.CoreLibrary.1.14.2\lib\mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.Runtime.Events">
-      <HintPath>packages\nanoFramework.Runtime.Events.1.10.0\lib\nanoFramework.Runtime.Events.dll</HintPath>
+      <HintPath>packages\nanoFramework.Runtime.Events.1.11.6\lib\nanoFramework.Runtime.Events.dll</HintPath>
     </Reference>
     <Reference Include="System.Device.Gpio">
-      <HintPath>packages\nanoFramework.System.Device.Gpio.1.1.11\lib\System.Device.Gpio.dll</HintPath>
+      <HintPath>packages\nanoFramework.System.Device.Gpio.1.1.28\lib\System.Device.Gpio.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
