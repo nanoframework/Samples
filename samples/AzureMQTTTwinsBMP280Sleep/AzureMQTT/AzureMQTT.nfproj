@@ -44,8 +44,9 @@
     <Reference Include="Iot.Device.Bmxx80">
       <HintPath>..\packages\nanoFramework.Iot.Device.Bmxx80.1.2.222\lib\Iot.Device.Bmxx80.dll</HintPath>
     </Reference>
-    <Reference Include="Iot.Device.Common.WeatherHelper">
-      <HintPath>..\packages\nanoFramework.Iot.Device.Common.WeatherHelper.1.2.221\lib\Iot.Device.Common.WeatherHelper.dll</HintPath>
+    <Reference Include="Iot.Device.Common.WeatherHelper, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Iot.Device.Common.WeatherHelper.1.2.233\lib\Iot.Device.Common.WeatherHelper.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>..\packages\nanoFramework.CoreLibrary.1.14.2\lib\mscorlib.dll</HintPath>
@@ -113,23 +114,29 @@
     <Reference Include="System.Threading">
       <HintPath>..\packages\nanoFramework.System.Threading.1.1.19\lib\System.Threading.dll</HintPath>
     </Reference>
-    <Reference Include="UnitsNet.Duration">
-      <HintPath>..\packages\UnitsNet.nanoFramework.Duration.4.150.0\lib\UnitsNet.Duration.dll</HintPath>
+    <Reference Include="UnitsNet.Duration, Version=5.1.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\UnitsNet.nanoFramework.Duration.5.1.0\lib\UnitsNet.Duration.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="UnitsNet.ElectricResistance">
-      <HintPath>..\packages\UnitsNet.nanoFramework.ElectricResistance.4.150.0\lib\UnitsNet.ElectricResistance.dll</HintPath>
+    <Reference Include="UnitsNet.ElectricResistance, Version=5.1.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\UnitsNet.nanoFramework.ElectricResistance.5.1.0\lib\UnitsNet.ElectricResistance.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="UnitsNet.Length">
-      <HintPath>..\packages\UnitsNet.nanoFramework.Length.4.150.0\lib\UnitsNet.Length.dll</HintPath>
+    <Reference Include="UnitsNet.Length, Version=5.1.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\UnitsNet.nanoFramework.Length.5.1.0\lib\UnitsNet.Length.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="UnitsNet.Pressure">
-      <HintPath>..\packages\UnitsNet.nanoFramework.Pressure.4.150.0\lib\UnitsNet.Pressure.dll</HintPath>
+    <Reference Include="UnitsNet.Pressure, Version=5.1.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\UnitsNet.nanoFramework.Pressure.5.1.0\lib\UnitsNet.Pressure.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="UnitsNet.RelativeHumidity">
-      <HintPath>..\packages\UnitsNet.nanoFramework.RelativeHumidity.4.150.0\lib\UnitsNet.RelativeHumidity.dll</HintPath>
+    <Reference Include="UnitsNet.RelativeHumidity, Version=5.1.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\UnitsNet.nanoFramework.RelativeHumidity.5.1.0\lib\UnitsNet.RelativeHumidity.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="UnitsNet.Temperature">
-      <HintPath>..\packages\UnitsNet.nanoFramework.Temperature.4.150.0\lib\UnitsNet.Temperature.dll</HintPath>
+    <Reference Include="UnitsNet.Temperature, Version=5.1.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\UnitsNet.nanoFramework.Temperature.5.1.0\lib\UnitsNet.Temperature.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
