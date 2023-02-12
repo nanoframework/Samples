@@ -37,26 +37,38 @@ namespace nanoFramework.device.sensor
 		public Sr04(int TxPin, int RxPin)
 		{
 			// Set-up TX & RX channels
-
 			// We need to send a 10us pulse to initiate measurement
-			_txChannel = new TransmitterChannel(TxPin);
+			var txChannelSettings = new TransmitChannelSettings(pinNumber: TxPin)
+			{
+				// 1us clock ( 80Mhz / 80 ) = 1Mhz
+				ClockDivider = 80,
+				EnableCarrierWave = true,
+				IdleLevel = false,
+			};
 
-			_txPulse = new RmtCommand(10, true, 10, false);
-			_txChannel.AddCommand(_txPulse);
-			_txChannel.AddCommand(new RmtCommand(20, true, 15, false));
-
-			_txChannel.ClockDivider = 80;
-			_txChannel.CarrierEnabled = false;
-			_txChannel.IdleLevel = false;
+			_txChannel = new TransmitterChannel(txChannelSettings);
+			// we only need 1 pulse of 10 us high
+			_txChannel.AddCommand(new RmtCommand(10, true, 0, false));
 
 			// The received echo pulse width represents the distance to obstacle
 			// 150us to 38ms
-			_rxChannel = new ReceiverChannel(RxPin);
-			
-			_rxChannel.ClockDivider = 80; // 1us clock ( 80Mhz / 80 ) = 1Mhz
-			_rxChannel.EnableFilter(true, 100); // filter out 100Us / noise 
-			_rxChannel.SetIdleThresold(40000);  // 40ms based on 1us clock
-			_rxChannel.ReceiveTimeout = new TimeSpan(0, 0, 0, 0, 60); 
+			var rxChannelSettings = new ReceiverChannelSettings(pinNumber: RxPin)
+			{
+				// 1us clock ( 80Mhz / 80 ) = 1Mhz
+				ClockDivider = 80,
+
+				// filter out 200Us / noise
+				EnableFilter = true,
+				FilterThreshold = 200,
+
+				// 40ms based on 1us clock
+				IdleThreshold = 40_000,
+
+				// 100 millisecond timeout is enough
+				ReceiveTimeout = TimeSpan.FromMilliseconds(100)
+			};
+
+			_rxChannel = new ReceiverChannel(rxChannelSettings);
 		}
 
 		
