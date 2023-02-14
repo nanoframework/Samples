@@ -80,7 +80,7 @@ namespace Hardware.TI.PowerMode
             TIPower.EnterShutdownMode();
 
             /////////////////////////////////////////////////////////////////////////////////////////
-            // standby: second lowest power mode, CPU stopped depending on power mangement policy, //
+            // standby: second lowest power mode, CPU stopped depending on power management policy, //
             // wake-up after specified time lapsed                                                 //
             /////////////////////////////////////////////////////////////////////////////////////////
 
