@@ -83,6 +83,7 @@
 ### ESP32 specific
 
 * [🌶️ - Hardware ESP32 Deep sleep sample](samples/Hardware.Esp32)
+* [🌶️ - Touch pad ESP32 sample](samples/TouchESP32)
 * [🌶️ to 🌶️🌶️🌶️ - Bluetooth sample pack](samples/Bluetooth)
 * [🌶️🌶️ - Hardware ESP32 RMT sample pack](samples/Hardware.Esp32.Rmt)
 * [🌶️🌶️ - NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStrip)
