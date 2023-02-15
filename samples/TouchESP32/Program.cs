@@ -20,9 +20,13 @@ namespace TestTouchApp
 
             // Adjust the touch pad you want to use
             // S2/S3 goes from 1 to 13.
-            // ESP32 from 0 to 9
             const int TouchPadNumber0 = 5;
             const int TouchPadNumber1 = 12;
+
+            // ESP32 from 0 to 9
+            // const int TouchPadNumber0 = 0;
+            // const int TouchPadNumber1 = 9;
+
             Debug.WriteLine("Hello touch pad on ESP32 and S2/S3!");
 
             var pinNum = TouchPad.GetGpioNumberFromTouchNumber(TouchPadNumber0);
@@ -33,14 +37,14 @@ namespace TestTouchApp
             //TestVoltageChange();
             //TestTriggerMode();
             //TestWakeupMode();
-            TestDenoise();
+            //TestDenoise();
 
             TouchPad touchpad0 = new(TouchPadNumber0);
             Debug.WriteLine("Initialized!");
 
             //TestChargeSpeed(touchpad0);
             //TestThreshold(touchpad0);
-            //TestCMeasurementTime();
+            //TestMeasurementTime();
 
             // Always sets the voltage before calibrating
             TouchPad.SetVoltage(TouchHighVoltage.Volt2V7, TouchLowVoltage.Volt0V5, TouchHighVoltageAttenuation.Volt1V0);
@@ -48,15 +52,15 @@ namespace TestTouchApp
             // This function calibrate
             Calibrate(touchpad0);
 
-            // On ESP32: Setup a threshold, usually 2/3 or 80% is a good value.
-            // touchpad0.Threshold = (uint)(touchpad0.CalibrationData * 2 / 3);
-            // On S2/S3, the actual read vallues will be higher, so let's use 20% more
+            // On S2/S3, the actual read vallues will be higher, so let's use 30% more
             TouchPad.TouchTriggerMode = TouchTriggerMode.AboveThreshold;
             touchpad0.Threshold = (uint)(touchpad0.CalibrationData * 1.3);
+
+            // On ESP32: Setup a threshold, usually 2/3 or 80% is a good value.
+            // touchpad0.Threshold = (uint)(touchpad0.CalibrationData * 2 / 3);
             // Optional, you can setup a filter for ESP32
             // TestFilterEsp();
             // TestFilterS2();
-
 
             Console.WriteLine("Testing timer mode for 20 seconds, touch the pad to generate events");
             TouchPad.MeasurementMode = MeasurementMode.Timer;
@@ -82,7 +86,13 @@ namespace TestTouchApp
             touchpad1.GetCalibrationData();
             Console.WriteLine($"Calibration touchpad {touchpad1.TouchPadNumber}: {touchpad1.CalibrationData}");
             Console.WriteLine("Testing timer mode for 20 seconds, touch the pads to generate events");
+
+            // On S2/S3, the actual read vallues will be higher, so let's use 30% more
             touchpad1.Threshold = (uint)(touchpad1.CalibrationData * 1.3);
+
+            // On ESP32: Setup a threshold, usually 2/3 or 80% is a good value.
+            // touchpad1.Threshold = (uint)(touchpad1.CalibrationData * 2 / 3);
+
             TouchPad.MeasurementMode = MeasurementMode.Timer;
 
             Thread.Sleep(20_000);
@@ -262,7 +272,7 @@ namespace TestTouchApp
             }
         }
 
-        private static void TestCMeasurementTime()
+        private static void TestMeasurementTime()
         {
             var meas = TouchPad.GetMeasurementTime();
             Console.WriteLine($"Cycles speed: {meas.SleepCycles} meas {meas.MeasurementCycles.TotalMilliseconds} ms");
