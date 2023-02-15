@@ -11,23 +11,26 @@ namespace JsonConfigurationStore
 {
     public class ConfigurationStore
     {
-        private string configFilePath { get; set; }
+        private string _configFile { get; set; }
 
-        public ConfigurationStore(string path = "I:\\configuration.json")
+        public ConfigurationStore(string configFile = "I:\\configuration.json")
         {
-            configFilePath = path;
+            _configFile = configFile;
         }
 
-        public bool ClearConfig()
+        public void ClearConfig()
         {
-            return WriteConfig(new Configuration());
+            if (File.Exists(_configFile))
+            {
+                File.Delete(_configFile);
+            }
         }
+
+        public bool IsConfigFileExisting => File.Exists(_configFile);
 
         public Configuration GetConfig()
         {
-            var configFile = Directory.GetFiles(configFilePath);
-
-            var json = new FileStream(configFile[0], FileMode.Open);
+            var json = new FileStream(_configFile, FileMode.Open);
             Configuration config = (Configuration)JsonConvert.DeserializeObject(json, typeof(Configuration));
 
             return config;
@@ -38,7 +41,7 @@ namespace JsonConfigurationStore
             {
                 var configJson = JsonConvert.SerializeObject(config);
 
-                var json = new FileStream(configFilePath, FileMode.OpenOrCreate);
+                var json = new FileStream(_configFile, FileMode.Create);
 
                 byte[] buffer = Encoding.UTF8.GetBytes(configJson);
                 json.Write(buffer, 0, buffer.Length);
