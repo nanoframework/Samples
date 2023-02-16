@@ -20,8 +20,14 @@ namespace NeoPixel
         public NeopixelChain(byte gpioPin, ushort size)
         {
             _gpioPin = gpioPin;
-            _transmitterChannel = new TransmitterChannel(_gpioPin);
-            ConfigureTransmitter(_transmitterChannel);
+
+            var transmitterChannelSettings = new TransmitChannelSettings(pinNumber: _gpioPin)
+            {
+                EnableCarrierWave = false,
+                ClockDivider = ClockDivider,
+                IdleLevel = false,
+            };
+            _transmitterChannel = new TransmitterChannel(transmitterChannelSettings);
 
             _nrOfLeds = size;
             var nrOfAllBits = 24 * _nrOfLeds;
@@ -31,7 +37,6 @@ namespace NeoPixel
             _resPulse = getResPulse(MinPulse);
         }
 
-        
         public void MovePixel()
         {
             ushort led;
@@ -76,15 +81,6 @@ namespace NeoPixel
 
             _transmitterChannel.SendData(_ledData, false);
         }
-        
-		protected void ConfigureTransmitter(TransmitterChannel commandList)
-		{
-			commandList.CarrierEnabled = false;
-			commandList.ClockDivider = ClockDivider;
-			commandList.SourceClock = SourceClock.APB;
-			commandList.IdleLevel = false;
-			commandList.IsChannelIdle = true;
-		}
 
         private byte[] getResPulse(float min_pulse)
         {
