@@ -35,9 +35,15 @@ namespace NeoPixel
 
 		public void Update()
 		{
-			using (var commandList = new TransmitterChannel(_gpioPin))
+			var transmitterChannelSettings = new TransmitChannelSettings(pinNumber: _gpioPin)
 			{
-				ConfigureTransmitter(commandList);
+				EnableCarrierWave = false,
+				ClockDivider = ClockDivider,
+				IdleLevel = false,
+			};
+
+			using (var commandList = new TransmitterChannel(transmitterChannelSettings))
+			{
 				for (uint pixel = 0; pixel < Pixels.Length; ++pixel)
 				{
 					SerializeColor(Pixels[pixel].G, commandList);
@@ -58,19 +64,10 @@ namespace NeoPixel
 			}
 		}
 
-		protected void ConfigureTransmitter(TransmitterChannel commandList)
-		{
-			commandList.CarrierEnabled = false;
-			commandList.ClockDivider = ClockDivider;
-			commandList.SourceClock = SourceClock.APB;
-			commandList.IdleLevel = false;
-			commandList.IsChannelIdle = true;
-		}
-
 		public Color this[uint i]
 		{
 			get => Pixels[i];
 			set => Pixels[i] = value;
-        }
+		}
 	}
 }
