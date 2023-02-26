@@ -1,6 +1,6 @@
 # 🌶️ - Bluetooth Low energy: adding, replacing services to the main service
 
-This show cases the use of adding extra services to main service or replacing an existing service 
+This show cases the use of adding extra services and replacing an existing service 
 like the default "Device Information Service". 
 
 This sample also includes some standard Bluetooth services as separate classes which may be useful 

@@ -40,9 +40,16 @@ namespace nanoFramework.Device.Bluetooth.Services
             public Buffer dataBuffer;
         };
 
-        public EnvironmentalSensorService(GattServiceProvider provider)
+        public EnvironmentalSensorService()
         {
-            _service = provider.AddService(GattServiceUuids.EnvironmentalSensing);
+            GattServiceProviderResult pr = GattServiceProvider.Create(GattServiceUuids.EnvironmentalSensing);
+            if (pr.Error != BluetoothError.Success)
+            {
+                throw new Exception("Unable to create service");
+            }
+
+            // Pick up service
+            _service = pr.ServiceProvider.Service;
             _sensors = new();
         }
 

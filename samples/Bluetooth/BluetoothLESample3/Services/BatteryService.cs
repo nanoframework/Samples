@@ -14,11 +14,16 @@ namespace nanoFramework.Device.Bluetooth.Services
         private readonly GattLocalCharacteristic _batteryLevelCharacteristic;
         private byte _batteryLevel;
 
-        public BatteryService(GattServiceProvider provider)
+        public BatteryService()
         {
-            // Add new Battery service to provider
-            _batteryService = provider.AddService(GattServiceUuids.Battery);
+            GattServiceProviderResult pr = GattServiceProvider.Create(GattServiceUuids.Battery);
+            if (pr.Error != BluetoothError.Success)
+            {
+                throw new Exception("Unable to create service");
+            }
 
+            // Pick up service
+            _batteryService = pr.ServiceProvider.Service;
 
             GattLocalCharacteristicResult result =
                 _batteryService.CreateCharacteristic(GattCharacteristicUuids.BatteryLevel, new GattLocalCharacteristicParameters()

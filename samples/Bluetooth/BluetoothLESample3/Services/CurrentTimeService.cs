@@ -38,10 +38,16 @@ namespace nanoFramework.Device.Bluetooth.Services
             UPDATE_REASON_DAYLIGHT_SAVING = 8
         };
 
-        public CurrentTimeService(GattServiceProvider provider, bool AllowWrite)
+        public CurrentTimeService(bool AllowWrite)
         {
-            // Add new Current Time service to provider
-            _currentTimeService = provider.AddService(GattServiceUuids.CurrentTime);
+            GattServiceProviderResult pr = GattServiceProvider.Create(GattServiceUuids.CurrentTime);
+            if (pr.Error != BluetoothError.Success)
+            {
+                throw new Exception("Unable to create service");
+            }
+
+            // Pick up service
+            _currentTimeService = pr.ServiceProvider.Service;
 
             GattCharacteristicProperties cprop = GattCharacteristicProperties.Read | GattCharacteristicProperties.Notify;
             if (AllowWrite)
