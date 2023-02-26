@@ -1,6 +1,8 @@
 # 🌶️🌶️ - Bluetooth Low energy: read static and dynamic values, notification, read/write value
 
-This shows how to create a custom service which shows the use of:
+This shows how to create a Bluetooth Server with a custom service.
+
+Shows the use of:-
 
 | Custom service | Behavior |
 | --- | --- |

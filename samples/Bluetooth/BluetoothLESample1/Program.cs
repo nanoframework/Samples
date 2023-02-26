@@ -36,6 +36,13 @@ namespace BluetoothLESample1
         {
             Debug.WriteLine("Hello from Bluetooth Sample 1");
 
+            // BluetoothLEServer is a singleton object so gets its instance. The Object is created when you first access it
+            // and can be disposed to free up memory.
+            BluetoothLEServer server = BluetoothLEServer.Instance;
+
+            // Give device a name
+            server.DeviceName = "Sample1";
+
             // Define some custom Uuids
             Guid serviceUuid = new Guid("A7EEDF2C-DA87-4CB5-A9C5-5151C78B0057");
             Guid readCharUuid = new Guid("A7EEDF2C-DA88-4CB5-A9C5-5151C78B0057");
@@ -134,7 +141,6 @@ namespace BluetoothLESample1
             // devices can see it. 
             serviceProvider.StartAdvertising(new GattServiceProviderAdvertisingParameters()
             {
-                DeviceName = "Sample1",
                 IsConnectable = true,
                 IsDiscoverable = true
             });

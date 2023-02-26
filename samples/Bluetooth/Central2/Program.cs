@@ -1,5 +1,4 @@
-﻿
-//
+﻿//
 // Copyright (c) .NET Foundation and Contributors
 // See LICENSE file in the project root for full license information.
 //
@@ -82,7 +81,7 @@ namespace Central2
         }
 
         /// <summary>
-        /// Check fir device with correct Service UUID in advert and not already found
+        /// Check for device with correct Service UUID in advert and not already found
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
