@@ -1,4 +1,4 @@
-# 🌶️ - Infrared remote based on VS1838 with RMT
+# 🌶️🌶️ - Infrared remote receiver based on VS1838 with RMT
 
 Shows how to use ESP32 RMT with VS1838 infrared receiver to create remote. Nec protocol parser is defined with base class for other protocols.
 
