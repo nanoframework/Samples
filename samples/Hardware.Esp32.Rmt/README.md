@@ -10,7 +10,6 @@ Samples
 - [🌶️🌶️ - HC-SR04 ultrasonic ranging](Ultrasonic/)
 - [🌶️🌶️ - NeoPixel Strip WS2812](NeoPixelStrip/)
 - [🌶️🌶️ - NeoPixel Strip WS2812 with low memory consumption](NeoPixelStripLowMemory/)
-- [🌶️🌶️ - Infrared remote receiver using VS1838](InfraredRemoveReceiver/)
 
 > **Note**: those sensors and devices are available as nuget in [Device.IoT repository](https://github.com/nanoFramework/nanoFramework.Deive.IoT).
 
