@@ -19,6 +19,7 @@ namespace InfraredRemote
         {
             SignalLengthTolerance = signalLengthTolerance;
         }
+
         protected SignalData lastData = null;
         protected abstract int PulseLengthInMicroseconds { get; }
 
