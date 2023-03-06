@@ -148,7 +148,9 @@ namespace InfraredRemote
             for (int i = binaryValue.Length - 1; i >= 0; i--)
             {
                 if (binaryValue[i] == '1')
+                {
                     dec_value += base1;
+                }
                 base1 = base1 * 2;
             }
 
