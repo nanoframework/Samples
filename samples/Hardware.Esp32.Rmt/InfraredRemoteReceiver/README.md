@@ -74,6 +74,7 @@ Protocol: 1 Address: 0 Command: 90 from Payload: 0000000011111111010110101010010
 ```
 
 Example of correct message mixed with repeat, see length = 36 pulses:
+
 ```
 Length:36
 new RmtCommand(9288,false,4530,true),
