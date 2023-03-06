@@ -17,12 +17,12 @@ namespace InfraredRemote
             Payload = payload;
         }
 
-        public int AddressNumber { private set; get; } = -1;
-        public int CommandNumber { private set; get; } = -1;
+        public int AddressNumber { get; private set; } = -1;
+        public int CommandNumber { get; private set; } = -1;
 
-        public string RawAddress { private set; get; }
-        public string RawCommand { private set; get; }
-        public Protocol Protocol { private get; set; } = Protocol.Unknown;
-        public string Payload { private get; set; }
+        public string RawAddress { get; private set; }
+        public string RawCommand { get; private set; }
+        public Protocol Protocol { get; private set; } = Protocol.Unknown;
+        public string Payload { get; private set; }
     }
 }
