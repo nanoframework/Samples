@@ -42,15 +42,30 @@ namespace InfraredRemote
             _rxChannel = new ReceiverChannel(settings);       
         }
 
+        /// <summary>
+        /// Event handler for new signal.
+        /// </summary>
+        /// <param name="sender">Sender of event.</param>
+        /// <param name="signal">Signal representation.</param>
         public delegate void SignalEventHandler(object sender, RmtCommand[] signal);
 
+        /// <summary>
+        /// Event raised when new signal arrives.
+        /// </summary>
         public event SignalEventHandler? SignalEvent;
+
+        /// <summary>
+        /// Starts listener.
+        /// </summary>
         public void Start()
         {
             _t = new Thread(Run);
             _t.Start();
         }
 
+        /// <summary>
+        /// Stops listener.
+        /// </summary>
         public void Stop()
         {
             _t.Abort();

@@ -7,12 +7,22 @@ namespace InfraredRemote
 {
     public class SignalData
     {
-        public int AddressNumber { set; get; } = -1;
-        public int CommandNumber { set; get; } = -1;
+        public SignalData(int addressNumber, int commandNumber, string rawAddress, string rawCommand, Protocol protocol, string payload)
+        {
+            AddressNumber = addressNumber;
+            CommandNumber = commandNumber;
+            RawAddress = rawAddress;
+            RawCommand = rawCommand;
+            Protocol = protocol;
+            Payload = payload;
+        }
 
-        public string RawAddress { set; get; }
-        public string RawCommand { set; get; }
-        public Protocol Protocol { get; set; } = Protocol.Unknown;
-        public string Payload { get; set; }
+        public int AddressNumber { private set; get; } = -1;
+        public int CommandNumber { private set; get; } = -1;
+
+        public string RawAddress { private set; get; }
+        public string RawCommand { private set; get; }
+        public Protocol Protocol { private get; set; } = Protocol.Unknown;
+        public string Payload { private get; set; }
     }
 }

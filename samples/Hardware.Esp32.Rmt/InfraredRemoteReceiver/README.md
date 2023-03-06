@@ -22,7 +22,7 @@ It may happen, especially with poor quality remotes, that signal won't be recogn
 
 Example of correct message:
 
-```
+``` text 
 Length:34
 new RmtCommand(9375,false,4441,true),
 new RmtCommand(666,false,515,true),
@@ -65,7 +65,7 @@ Protocol: 1 Address: 0 Command: 90 from Payload: 0000000011111111010110101010010
 
 Example of correct repeat message:
 
-```
+``` text
 Length:2
 new RmtCommand(9371,false,2178,true),
 new RmtCommand(661,false,0,true),
@@ -74,7 +74,8 @@ Protocol: 1 Address: 0 Command: 90 from Payload: 0000000011111111010110101010010
 ```
 
 Example of correct message mixed with repeat, see length = 36 pulses:
-```
+
+``` text
 Length:36
 new RmtCommand(9288,false,4530,true),
 new RmtCommand(572,false,585,true),

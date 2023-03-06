@@ -19,24 +19,18 @@ namespace InfraredRemote
         {
             SignalLengthTolerance = signalLengthTolerance;
         }
+
         protected SignalData lastData = null;
         protected abstract int PulseLengthInMicroseconds { get; }
-
         protected abstract int HeaderMark { get; }
         protected abstract int HeaderSpace { get; }
         protected abstract int RepeatSpace { get; }
-
         protected abstract int ZeroSpace { get; }
-
         protected abstract int OneSpace { get; }
-
         protected abstract Protocol Protocol { get; }
         protected double SignalLengthTolerance { get; private set; } = 0.2;
-
         protected abstract int SignalLength { get; }
-
         protected abstract bool UseLessSignificantBitFirst { get; }
-
         protected abstract int AddressBits { get; }
         protected abstract int CommandBits { get; }
 
@@ -47,8 +41,6 @@ namespace InfraredRemote
         /// <returns>SignalData object.</returns>
         public virtual SignalData Decode(RmtCommand[] receivedSignal)
         {
-            SignalData signalData = new SignalData();
-
             var firstPulse = receivedSignal[0];
             var lastPulse = receivedSignal[receivedSignal.Length - 1];
             bool isHeaderMark = Match(firstPulse.Duration0, HeaderMark);
@@ -57,33 +49,31 @@ namespace InfraredRemote
                                        lastPulse.Level1;
             bool isRepeat = receivedSignal.Length == 2 && Match(firstPulse.Duration0, HeaderMark) && !firstPulse.Level0 && Match(firstPulse.Duration1, RepeatSpace) && firstPulse.Level1;
 
-            var message = ExtractRawPayload(receivedSignal);
-
             if (isRepeat)
             {
                 return lastData;
             }
 
+            SignalData signalData = null;
             if (isHeaderMark && isSpaceMark && (receivedSignal.Length == SignalLength) && isEndOfTransmission)
             {
-                signalData.Protocol = Protocol;
+                var message = ExtractRawPayload(receivedSignal);
                 var address = ExtractAddress(message);
                 var command = ExtractCommand(message);
-                signalData.RawAddress = address;
-                signalData.RawCommand = command;
-                signalData.Payload = message;
+                int addressNumber = 0;
+                int commandNumber = 0;
                 if (UseLessSignificantBitFirst)
                 {
-                    signalData.AddressNumber = Convert.ToInt32(Reverse(address), 2);
-                    signalData.CommandNumber = ToInt32(Reverse(command));
-                    var temp = Convert.ToInt32(Reverse(command), 2);
+                    addressNumber = Convert.ToInt32(Reverse(address), 2);
+                    commandNumber = ToInt32(Reverse(command));
                 }
                 else
                 {
-                    signalData.AddressNumber = ToInt32(address);
-                    signalData.CommandNumber = ToInt32(command);
+                    addressNumber = ToInt32(address);
+                    commandNumber = ToInt32(command);
                 }
 
+                signalData = new SignalData(addressNumber, commandNumber, address, command, Protocol, message);
                 lastData = signalData;
             }
 
