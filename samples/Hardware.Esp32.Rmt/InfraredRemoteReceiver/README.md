@@ -60,7 +60,6 @@ new RmtCommand(647,false,1612,true),
 new RmtCommand(658,false,0,true),
 
 Protocol: 1 Address: 0 Command: 90 from Payload: 00000000111111110101101010100101
-
 ```
 
 Example of correct repeat message:
