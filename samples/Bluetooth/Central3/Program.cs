@@ -4,7 +4,6 @@
 //
 
 using System;
-using System.Diagnostics;
 using System.Threading;
 
 using nanoFramework.Device.Bluetooth;
@@ -16,7 +15,6 @@ namespace Central3
     /// <summary>
     /// Sample to show how to Watch for advertisments and connect to a device which requires 
     /// pairing and authentication to access the Characteristics value.
-    /// 
     /// Pairing can be done before or adhoc when the accessing the Characteristic.
     /// If Characteristic requires security or Authentication when accessed the system will automatically start a pairing operation.
     /// </summary>
@@ -29,7 +27,7 @@ namespace Central3
 
         public static void Main()
         {
-            Debug.WriteLine("Central: Simple Bluetooth LE watcher");
+            Console.WriteLine("Central: Simple Bluetooth LE watcher");
 
             // Create a BluetoothLEAdvertisementWatcher to look for Bluetooth adverts.
             BluetoothLEAdvertisementWatcher watcher = new();
