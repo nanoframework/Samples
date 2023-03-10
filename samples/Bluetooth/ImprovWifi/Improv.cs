@@ -104,7 +104,8 @@ namespace ImprovWifi
         {
             if (!_started)
             {
-                _serviceProvider.StartAdvertising(new GattServiceProviderAdvertisingParameters() { DeviceName = deviceName, IsConnectable = true, IsDiscoverable = true });
+                BluetoothLEServer.Instance.DeviceName = deviceName;
+                _serviceProvider.StartAdvertising(new GattServiceProviderAdvertisingParameters() { IsConnectable = true, IsDiscoverable = true });
                 _started = true;
             }
         }
