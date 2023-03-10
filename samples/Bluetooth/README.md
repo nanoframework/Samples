@@ -18,15 +18,15 @@ Shows how to use the built-in SSP(Serial Service Profile) which simulates a seri
 such as "Serial Bluetooth Terminal" to connect to device and send and receive messages.
 
 * [🌶️🌶️ -  Bluetooth Low energy sample 1](BluetoothLESample1)
-This shows how to create a custom service.
+This shows how to create a simple bare bones custom service.
 
 * [🌶️🌶️ -  Bluetooth Low energy sample 2](BluetoothLESample2)
 This sample adds security to the Characteristic access. This will force the Server/Client to pair which is 
-used to generate key pairs for communications. All access is now encrypted. Authenication is not currently supported. 
+used to generate key pairs for communications. See sample for details. 
 
 * [🌶️ -  Bluetooth Low energy sample 3](BluetoothLESample3)
-This show cases the use of adding extra services to main service or replacing an existing service 
-like the default "Device Information Service".  
+This show cases the use of adding extra services or replacing an existing service 
+like the default "Device Information Service". 
 
 ## Central/Client samples
 
@@ -34,12 +34,11 @@ like the default "Device Information Service".
 
 This a simple sample showing how to scan for Bluetooth LE devices.
 
-* [🌶️🌶️ -  Central Data Collect sample](Central2)
+* [🌶️🌶️ -  Central Data Collect sample](Central2) This Sample will scan for devices with the service UUID used in the BluetoothLESample3 sample and connect to all found devices.
+It will then read and set-up notifications for changes in Environmental Service temperatures. The [🌶️ -  Bluetooth Low energy sample 3](BluetoothLESample3) was changed to provide notifications of temperture changes.
 
-Sample will scan for devices with the service UUID used in the BluetoothLESample3 sample and connect to all found devices.
-It will then read and set-up notifications for changes in Environmental Service temperatures.
-
-The [🌶️ -  Bluetooth Low energy sample 3](BluetoothLESample3) was changed to provide notifications of temperture changes.
+* [🌶️🌶️🌶️ -  Demonstrates pairing and authentication in Client program.](Central3) Central/Client sample to show how to watch for advertisments and connect to a device which requires encryption and 
+authentication to access the Characteristics values.
 
 ## Building the samples
 

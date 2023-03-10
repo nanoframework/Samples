@@ -6,7 +6,7 @@ The device will advertise with the name "Improv sample" and support the *Improv 
 or any other web page.
 
 This is an initial working version of the *Improv* class showing what can be done.
-Probably later this class can be moved to a separate repo, so it has its own nuGet package to make it easy to consume by applications.
+Probably later this class can be moved to a separate repo, so it has its own nuGet package to make it easy to be consumed by applications.
 
 *Improv* is a free open standard which allows the device to be provisioned directly from a web page.
 This works for Chrome and Edge browsers.

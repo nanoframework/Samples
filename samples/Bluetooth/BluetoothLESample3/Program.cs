@@ -35,6 +35,13 @@ namespace BluetoothLESample3
             Guid serviceUuid = new("A7EEDF2C-DA87-4CB5-A9C5-5151C78B0057");
             Guid readStaticCharUuid = new("A7EEDF2C-DA89-4CB5-A9C5-5151C78B0057");
 
+            // BluetoothLEServer is a singleton object so gets its instance. The Object is created when you first access it
+            // and can be disposed to free up memory.
+            BluetoothLEServer server = BluetoothLEServer.Instance;
+
+            // Give device a name
+            server.DeviceName = "Sample3";
+
             //The GattServiceProvider is used to create and advertise the primary service definition.
             //An extra device information service will be automatically created.
             GattServiceProviderResult result = GattServiceProvider.Create(serviceUuid);
@@ -80,7 +87,6 @@ namespace BluetoothLESample3
             // You can add your own service which will replace the default one.
             // To make it easy we have included some standard services classes to this sample
             DeviceInformationServiceService DifService = new(
-                    serviceProvider,
                     "MyGreatCompany",
                     "Model-1",
                     null, // no serial number
@@ -91,7 +97,7 @@ namespace BluetoothLESample3
             // === Battery Service ===
             // https://www.bluetooth.com/specifications/specs/battery-service-1-0/
             // Battery service exposes the current battery level percentage
-            BatteryService BatService = new(serviceProvider);
+            BatteryService BatService = new();
 
             // Update the Battery service the current battery level regularly. In this case 94%
             BatService.BatteryLevel = 94;
@@ -102,12 +108,12 @@ namespace BluetoothLESample3
             // optionally allows the date time to be updated. You can call the Notify method to inform
             // any connected devices of changed in date/time.  Any subscribed clients will be automatically 
             // be notified every 60 seconds.
-            CurrentTimeService CtService = new(serviceProvider, true);
+            CurrentTimeService CtService = new(true);
 
             // === Environmental Sensor Service ===
             // https://www.bluetooth.com/specifications/specs/environmental-sensing-service-1-0/
             // This service exposes measurement data from an environmental sensors.
-            EnvironmentalSensorService EnvService = new(serviceProvider);
+            EnvironmentalSensorService EnvService = new();
 
             // Add sensors to service, return index so sensor can be updated later.
             int iTempOut = EnvService.AddSensor(EnvironmentalSensorService.SensorType.Temperature, "Outside Temp");
@@ -128,7 +134,6 @@ namespace BluetoothLESample3
             // devices can see it with a specific device name.
             serviceProvider.StartAdvertising(new GattServiceProviderAdvertisingParameters()
             {
-                DeviceName = "Sample3",
                 IsConnectable = true,
                 IsDiscoverable = true
             });
@@ -163,7 +168,6 @@ namespace BluetoothLESample3
                     EnvService.UpdateValue(iTempOutMin, t3);
                     Thread.Sleep(5000);
                 }
-
             }
         }
     }
