@@ -68,6 +68,10 @@ This is a nanoFramework version of the Tetris game with high scores.
 
 Requires the GPIO pins numbers to be defined for the Left, Right, Up, Down & Select keys.
 
+## Using the Generic Graphic Drivers
+
+Those samples will show you how to use the generic driver capabilities. One of the example shows how to crate fully a driver and the other one how to use it once created from our nuget library.
+
 ## Build the sample
 
 1. Start Microsoft Visual Studio 2019 (VS 2017 should be OK too) and select `File > Open > Project/Solution`.
