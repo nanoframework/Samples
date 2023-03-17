@@ -29,8 +29,9 @@
       <HintPath>packages\nanoFramework.CoreLibrary.1.14.2\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Device.Bluetooth">
+    <Reference Include="nanoFramework.Device.Bluetooth, Version=1.1.40.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.Device.Bluetooth.1.1.40\lib\nanoFramework.Device.Bluetooth.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Hardware.Esp32, Version=1.6.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.Hardware.Esp32.1.6.1\lib\nanoFramework.Hardware.Esp32.dll</HintPath>
