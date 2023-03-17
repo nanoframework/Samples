@@ -13,9 +13,9 @@ using nanoFramework.Device.Bluetooth.GenericAttributeProfile;
 namespace Central3
 {
     /// <summary>
-    /// Sample to show how to Watch for advertisments and connect to a device which requires 
+    /// Sample to show how to Watch for advertisements and connect to a device which requires 
     /// pairing and authentication to access the Characteristics value.
-    /// Pairing can be done before or adhoc when the accessing the Characteristic.
+    /// Pairing can be done before or ad hoc when the accessing the Characteristic.
     /// If Characteristic requires security or Authentication when accessed the system will automatically start a pairing operation.
     /// </summary>
     public static class Program
@@ -77,7 +77,7 @@ namespace Central3
         }
 
         /// <summary>
-        /// With low memory devices, no spiram you can have problems with low native memmory
+        /// With low memory devices, no spiram you can have problems with low native memory
         /// </summary>
         /// <param name="info"></param>
         static void MemoryCheck(string info)
@@ -170,7 +170,7 @@ namespace Central3
         /// - (Optional pair) commented out as it will automatically pair on Read value
         /// - Connect
         /// - Get services & Characteristics
-        /// - Find Characteristic which authenication and read value
+        /// - Find Characteristic which authentication and read value
         /// </summary>
         /// <param name="device"></param>
         static void TestConnectAndPair(BluetoothLEDevice device)
@@ -189,7 +189,7 @@ namespace Central3
             Console.WriteLine($"=== Pair & Connect to {device.BluetoothAddress:X} ====");
             DevicePairingResult pairResult = device.Pairing.Pair();
 
-            // Display result of pairing, if succesful then IsPaired and optionally IsAuthenticated will be true
+            // Display result of pairing, if successful then IsPaired and optionally IsAuthenticated will be true
             Console.WriteLine($"Pairing result:{pairResult.Status}");
             Console.WriteLine($" -IsAuthenticated:{device.Pairing.IsAuthenticated}");
             Console.WriteLine($" -IsPaired:{device.Pairing.IsPaired}");
@@ -198,6 +198,10 @@ namespace Central3
             if (pairResult.Status == DevicePairingResultStatus.Paired)
             {
                 Console.WriteLine($"Connection status {device.ConnectionStatus}");
+
+                Console.WriteLine($"From Generic Access service for connect device");
+                Console.WriteLine($"- Device name {device.Name}");
+                Console.WriteLine($"- Appearance {device.Appearance:X}");
 
                 GattDeviceServicesResult srvsResult = device.GetGattServices();
                 if (srvsResult.Status == GattCommunicationStatus.Success)
@@ -223,7 +227,7 @@ namespace Central3
                                 {
                                     Console.WriteLine($"Characteristic found access, read value");
 
-                                    // Reading a value that requires Authenication will start a pairing
+                                    // Reading a value that requires Authentication will start a pairing
                                     // PairingRequested event handler supplies Authentication pin.
                                     var res = characteristic.ReadValue();
                                     if (res.Status == GattCommunicationStatus.Success)

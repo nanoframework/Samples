@@ -3,9 +3,9 @@
 Sample to collect temperature values from a collection of
 Environmental Sensor devices. 
 
-This sample will watch for Environmental sensors advertisments and connect to sensor reading temperture values.
+This sample will watch for Environmental sensors advertisements and connect to sensor reading temperture values.
 
-Shows how to watch for advertisments and connect to devices.
+Shows how to watch for advertisements and connect to devices.
 
 Designed to work with the Bluetooth Sample 3.
 

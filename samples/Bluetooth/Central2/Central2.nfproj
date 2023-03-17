@@ -27,7 +27,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Device.Bluetooth">
-      <HintPath>packages\nanoFramework.Device.Bluetooth.1.1.37\lib\nanoFramework.Device.Bluetooth.dll</HintPath>
+      <HintPath>packages\nanoFramework.Device.Bluetooth.1.1.40\lib\nanoFramework.Device.Bluetooth.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.Runtime.Events, Version=1.11.6.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.Runtime.Events.1.11.6\lib\nanoFramework.Runtime.Events.dll</HintPath>
