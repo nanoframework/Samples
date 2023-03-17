@@ -17,12 +17,12 @@ using nanoFramework.Device.Bluetooth.GenericAttributeProfile;
 /// - 2nd characteristic you can read & write but will required device to paired so encryption is enabled. If you try to access this characteristic
 ///       a pairing will be forced.  You can use a just works type of pairing for this.
 /// - 3nd characteristic you can read & write but will required device to paired and authenticated. If you try to access this characteristic
-///       a pairing will be forced.  A pin number of 654321 will need to be entered to pair succesfully.
+///       a pairing will be forced.  A pin number of 654321 will need to be entered to pair successfully.
 ///       
 /// - All characteristics read/write same value.
 /// 
 /// You will be able to connect to the service and read values or subscribe to Notified ever 10 seconds.
-/// Suitable Phone apps: "LightBlue" or "nRF Connect".  If using a smaller then six digits for pin then use leading zeroes in these apps.
+/// Suitable Phone apps: "LightBlue" or "nRF Connect".  If using a smaller then six digits for pin then use leading zeros in these apps.
 /// </summary>
 namespace BluetoothLESample2
 {
@@ -37,6 +37,7 @@ namespace BluetoothLESample2
 
         // Default pin
         const int PASSKEY = 654321;
+        const ushort APPEARANCE_SPORTS_WATCH = 0x00C1;
 
         public static void Main()
         {
@@ -52,8 +53,11 @@ namespace BluetoothLESample2
             // and can be disposed to free up memory.
             BluetoothLEServer server = BluetoothLEServer.Instance;
             
-            // Give device a name
+            // Give device a name and appearance.
             server.DeviceName = "Sample2";
+
+            // Set appearance (optional)
+            server.Appearance = APPEARANCE_SPORTS_WATCH;
 
             // Set up an event handler for handling pairing requests
             server.Pairing.PairingRequested += Pairing_PairingRequested;
@@ -65,9 +69,10 @@ namespace BluetoothLESample2
             // The IOCapabilities define the input /output capabilities of the device and the type of pairings that is available.
             // See Bluetooth pairing matrix for more information. 
             // With NoInputNoOutput on both ends then only "Just works" pairing is available and only first 2 characteristics will be accesable.
-            server.Pairing.IOCapabilities = DevicePairingIOCapabilities.NoInputNoOutput;
+            
+            //server.Pairing.IOCapabilities = DevicePairingIOCapabilities.NoInputNoOutput;
 
-            // By making it a display we force an Authenication, Remove following comment to try this out
+            // By making it a display we force an Authentication.
             server.Pairing.IOCapabilities = DevicePairingIOCapabilities.DisplayOnly;
 
             // Start the Bluetooth server. 
