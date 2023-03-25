@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Esp32PulseCounter", "Esp32PulseCounter.nfproj", "{77C7EE1C-C3F9-44A6-8B78-D6F3FE575E2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77C7EE1C-C3F9-44A6-8B78-D6F3FE575E2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77C7EE1C-C3F9-44A6-8B78-D6F3FE575E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77C7EE1C-C3F9-44A6-8B78-D6F3FE575E2D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{77C7EE1C-C3F9-44A6-8B78-D6F3FE575E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77C7EE1C-C3F9-44A6-8B78-D6F3FE575E2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77C7EE1C-C3F9-44A6-8B78-D6F3FE575E2D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F8CD15C-3EA4-4FC9-B65A-70CBE2BFCAEB}
+	EndGlobalSection
+EndGlobal
