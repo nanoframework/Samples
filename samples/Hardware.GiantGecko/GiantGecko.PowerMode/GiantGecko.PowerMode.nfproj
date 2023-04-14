@@ -26,8 +26,8 @@
       <HintPath>..\packages\nanoFramework.CoreLibrary.1.14.2\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Hardware.GiantGecko, Version=1.0.9.49094, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Hardware.GiantGecko.1.0.9\lib\nanoFramework.Hardware.GiantGecko.dll</HintPath>
+    <Reference Include="nanoFramework.Hardware.GiantGecko, Version=1.1.1.61567, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Hardware.GiantGecko.1.1.1\lib\nanoFramework.Hardware.GiantGecko.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Runtime.Events, Version=1.11.6.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
