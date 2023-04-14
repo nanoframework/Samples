@@ -1,7 +1,6 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2046
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Stm32BackupMemory", "Stm32.BackupMemory\Stm32BackupMemory.nfproj", "{3F0E07F9-2E2F-45AC-8C9D-04CA963D46F6}"
 EndProject
@@ -19,6 +18,7 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3F0E07F9-2E2F-45AC-8C9D-04CA963D46F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3F0E07F9-2E2F-45AC-8C9D-04CA963D46F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F0E07F9-2E2F-45AC-8C9D-04CA963D46F6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{3F0E07F9-2E2F-45AC-8C9D-04CA963D46F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F0E07F9-2E2F-45AC-8C9D-04CA963D46F6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3F0E07F9-2E2F-45AC-8C9D-04CA963D46F6}.Release|Any CPU.Deploy.0 = Release|Any CPU
@@ -34,7 +34,6 @@ Global
 		{E636394B-4E2D-4B66-9AA7-FE2299B45F7A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{35BE18F3-ACF1-4A59-A929-6F86F05B2748}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{35BE18F3-ACF1-4A59-A929-6F86F05B2748}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{35BE18F3-ACF1-4A59-A929-6F86F05B2748}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{35BE18F3-ACF1-4A59-A929-6F86F05B2748}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35BE18F3-ACF1-4A59-A929-6F86F05B2748}.Release|Any CPU.Build.0 = Release|Any CPU
 		{35BE18F3-ACF1-4A59-A929-6F86F05B2748}.Release|Any CPU.Deploy.0 = Release|Any CPU
