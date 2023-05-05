@@ -3,6 +3,7 @@
 
 using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
+using System.Drawing;
 
 namespace Primitives.SimplePrimitives
 {

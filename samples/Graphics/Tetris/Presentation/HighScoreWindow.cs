@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------------
 // 
 //  Tetris game for .NET Micro Framework
 //
@@ -17,6 +17,7 @@ using Tetris;
 using nanoFramework.Presentation.Controls;
 using nanoFramework.Presentation;
 using nanoFramework.Presentation.Media;
+using System.Drawing;
 
 namespace Tetris.Presentation
 {
@@ -217,7 +218,7 @@ namespace Tetris.Presentation
         private void UpdateHint()
         {
             Font hintFont = nfResource.GetFont(nfResource.FontResources.NinaB);
-            Color hintColor = ColorUtility.ColorFromRGB(206, 206, 206);
+            Color hintColor = Color.FromArgb(206, 206, 206);
 
             hintTextFlow.TextRuns.Clear();
 

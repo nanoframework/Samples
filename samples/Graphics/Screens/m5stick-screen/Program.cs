@@ -1,10 +1,11 @@
-using Iot.Device.Axp192;
+﻿using Iot.Device.Axp192;
 using nanoFramework.Hardware.Esp32;
 using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
 using System;
 using System.Device.I2c;
 using System.Diagnostics;
+using System.Drawing;
 using System.Threading;
 using UnitsNet;
 
@@ -32,10 +33,10 @@ namespace m5stick.screen
             Debug.WriteLine($"DisplayControl.MaximumBufferSize:{DisplayControl.MaximumBufferSize}");
 
             ushort[] toSend = new ushort[100];
-            var blue = ColorUtility.To16Bpp(Color.Blue);
-            var red = ColorUtility.To16Bpp(Color.Red);
-            var green = ColorUtility.To16Bpp(Color.Green);
-            var white = ColorUtility.To16Bpp(Color.White);
+            var blue = Color.Blue.ToBgr565();
+            var red = Color.Red.ToBgr565();
+            var green = Color.Green.ToBgr565();
+            var white = Color.White.ToBgr565();
 
             for (int i = 0; i < toSend.Length; i++)
             {

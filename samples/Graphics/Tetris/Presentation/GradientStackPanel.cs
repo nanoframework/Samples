@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------------
 // 
 //  Tetris game for .NET Micro Framework
 //
@@ -9,6 +9,7 @@
 // http://creativecommons.org/licenses/by-nc-sa/2.5/
 //-----------------------------------------------------------------------------
 
+using System.Drawing;
 using nanoFramework.Presentation.Controls;
 using nanoFramework.Presentation.Media;
 
@@ -34,7 +35,7 @@ namespace Tetris.Presentation
         {            
             this.startColor = startColor;
             this.endColor = endColor;
-            this.solidBrush = new SolidColorBrush(ColorUtility.ColorFromRGB(164, 164, 164));
+            this.solidBrush = new SolidColorBrush(Color.FromArgb(164, 164, 164));
         }        
 
         public override void OnRender(nanoFramework.Presentation.Media.DrawingContext dc)

@@ -4,6 +4,7 @@
 using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
 using System;
+using System.Drawing;
 
 namespace Primitives.SimplePrimitives
 {
@@ -19,7 +20,7 @@ namespace Primitives.SimplePrimitives
             for (int i = 100; i > 0; i--)
             {
                 int thickness = random.Next(8);
-                fullScreenBitmap.DrawLine((Color)random.Next(0xFFFFFF),
+                fullScreenBitmap.DrawLine(Color.FromArgb(random.Next(0xFFFFFF)),
                                            thickness,
                                            random.Next(fullScreenBitmap.Width),
                                            random.Next(fullScreenBitmap.Height - 22),

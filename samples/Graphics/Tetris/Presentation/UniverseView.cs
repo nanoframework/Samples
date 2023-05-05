@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------------
 // 
 //  Tetris game for .NET Micro Framework
 //
@@ -15,6 +15,7 @@ using Tetris;
 using Tetris.GameLogic;
 using nanoFramework.Presentation.Media;
 using nanoFramework.Presentation;
+using System.Drawing;
 
 namespace Tetris.Presentation
 {
@@ -38,7 +39,7 @@ namespace Tetris.Presentation
             this.gameUniverse = gameUniverse;
 
             blockPen = new Pen(Color.Black);
-            gridPen = new Pen(ColorUtility.ColorFromRGB(25, 25, 25));
+            gridPen = new Pen(Color.FromArgb(25, 25, 25));
         }
 
         public override void OnRender(DrawingContext dc)

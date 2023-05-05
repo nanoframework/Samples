@@ -1,4 +1,4 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 using System;
@@ -12,6 +12,7 @@ using nanoFramework.UI;
 using nanoFramework.UI.Threading;
 using nanoFramework.Runtime.Events;
 using SimpleWpf;
+using System.Drawing;
 
 namespace SimpleWPF
 {
@@ -71,11 +72,11 @@ namespace SimpleWPF
             : base(program)
         {
             // Create some colors for the text items.
-            Color instructionTextColor = ColorUtility.ColorFromRGB(255, 255, 255);
-            Color backgroundColor = ColorUtility.ColorFromRGB(0, 0, 0);
-            Color upperBackgroundColor = ColorUtility.ColorFromRGB(69, 69, 69);
-            Color unselectedItemColor = ColorUtility.ColorFromRGB(192, 192, 192);
-            Color selectedItemColor = ColorUtility.ColorFromRGB(128, 128, 128);
+            Color instructionTextColor = Color.FromArgb(255, 255, 255);
+            Color backgroundColor = Color.FromArgb(0, 0, 0);
+            Color upperBackgroundColor = Color.FromArgb(69, 69, 69);
+            Color unselectedItemColor = Color.FromArgb(192, 192, 192);
+            Color selectedItemColor = Color.FromArgb(128, 128, 128);
 
             // The Main window contains a vertical StackPanel.
             StackPanel panel = new StackPanel(Orientation.Vertical);
@@ -217,7 +218,7 @@ namespace SimpleWPF
             for (Int32 x = 0; x < shapes.Length; x++)
             {
                 Shape s = shapes[x];
-                s.Fill = new SolidColorBrush(ColorUtility.ColorFromRGB(0, 255, 0));
+                s.Fill = new SolidColorBrush(Color.FromArgb(0, 255, 0));
                 s.Stroke = new Pen(Color.Black, 2);
                 s.Visibility = Visibility.Visible;
                 s.HorizontalAlignment = HorizontalAlignment.Center;
@@ -250,7 +251,7 @@ namespace SimpleWPF
         {
             Canvas canvas = new Canvas();
             this.Child = canvas;
-            this.Background = new SolidColorBrush(ColorUtility.ColorFromRGB(0, 255, 255));
+            this.Background = new SolidColorBrush(Color.FromArgb(0, 255, 255));
 
             for (Int32 x = 0; x < Width; x += Width / 4)
             {
@@ -444,9 +445,9 @@ namespace SimpleWPF
 
             // Make a brush and pen for drawing scroll bars.
             SolidColorBrush brush =
-                new SolidColorBrush(ColorUtility.ColorFromRGB(224, 224, 224));
-            SolidColorBrush sliderBrush = new SolidColorBrush(ColorUtility.ColorFromRGB(64, 64, 64));
-            Pen pen = new Pen(ColorUtility.ColorFromRGB(64, 64, 64));
+                new SolidColorBrush(Color.FromArgb(224, 224, 224));
+            SolidColorBrush sliderBrush = new SolidColorBrush(Color.FromArgb(64, 64, 64));
+            Pen pen = new Pen(Color.FromArgb(64, 64, 64));
 
             // Draw the horizontal scroll bar.
             int hOffset = (int)(_viewer.HorizontalOffset * _hScrollRatio);
@@ -500,7 +501,7 @@ namespace SimpleWPF
             this.Child = panel;
 
             // Set the background color.
-            this.Background = new SolidColorBrush(ColorUtility.ColorFromRGB(64, 64, 255));
+            this.Background = new SolidColorBrush(Color.FromArgb(64, 64, 255));
         }
 
         /// <summary>
@@ -569,15 +570,15 @@ namespace SimpleWPF
         public override void OnRender(DrawingContext dc)
         {
             // Paint the background.
-            dc.DrawRectangle(new SolidColorBrush(ColorUtility.ColorFromRGB(128, 0, 255)), new Pen(ColorUtility.ColorFromRGB(128, 0, 255)), 0, 0, Width, Height);
+            dc.DrawRectangle(new SolidColorBrush(Color.FromArgb(128, 0, 255)), new Pen(Color.FromArgb(128, 0, 255)), 0, 0, Width, Height);
 
             // Draw some circles.
             for (int i = 0; i < 3; i++)
-                dc.DrawEllipse(new SolidColorBrush(ColorUtility.ColorFromRGB((byte)(64 * i), 128, 128)), new Pen(ColorUtility.ColorFromRGB(255, (byte)(64 * i), 255)), Width / 5, Height / 5, i * (Width / 10 - (i * 2)), i * (Height / 10 - (i * 2)));
+                dc.DrawEllipse(new SolidColorBrush(Color.FromArgb((byte)(64 * i), 128, 128)), new Pen(Color.FromArgb(255, (byte)(64 * i), 255)), Width / 5, Height / 5, i * (Width / 10 - (i * 2)), i * (Height / 10 - (i * 2)));
 
             // Draw some lines.
             for (int i = 0; i < 20; i++)
-                dc.DrawLine(new Pen(ColorUtility.ColorFromRGB((byte)(16 * i),
+                dc.DrawLine(new Pen(Color.FromArgb((byte)(16 * i),
                     (byte)(16 * (20 - i)), (byte)(16 * (2 * i)))),
                     _random.Next(Width / 2) + Width / 3,
                     _random.Next(Height / 3) + Height / 3,
@@ -585,17 +586,17 @@ namespace SimpleWPF
                     _random.Next(Height / 4) + Height / 2);
 
             // Draw a rectangle.
-            dc.DrawRectangle(new SolidColorBrush(ColorUtility.ColorFromRGB(255, 0, 0)), new Pen(ColorUtility.ColorFromRGB(0, 0, 255)), Width - 40, 0, 30, 100);
+            dc.DrawRectangle(new SolidColorBrush(Color.FromArgb(255, 0, 0)), new Pen(Color.FromArgb(0, 0, 255)), Width - 40, 0, 30, 100);
 
             // Draw a polyline.
             int[] points = { 10, 230, 30, 210, 0, 180, 30, 130, 50, 130, 80, 180, 50, 210, 70, 230 };
             if (Width > Height)
                 for (int i = 1; i < points.Length; i += 2)
                     points[i] -= 20;
-            dc.DrawPolygon(new SolidColorBrush(ColorUtility.ColorFromRGB(32, 0, 128)), new Pen(ColorUtility.ColorFromRGB(0, 0, 0)), points);
+            dc.DrawPolygon(new SolidColorBrush(Color.FromArgb(32, 0, 128)), new Pen(Color.FromArgb(0, 0, 0)), points);
 
             // Draw some text.
-            dc.DrawText(Resource.GetString(Resource.StringResources.DrawTextSample), Resource.GetFont(Resource.FontResources.NinaB), ColorUtility.ColorFromRGB(255, 255, 255), _random.Next(Width / 4), Height - 20);
+            dc.DrawText(Resource.GetString(Resource.StringResources.DrawTextSample), Resource.GetFont(Resource.FontResources.NinaB), Color.FromArgb(255, 255, 255), _random.Next(Width / 4), Height - 20);
 
         }
     }

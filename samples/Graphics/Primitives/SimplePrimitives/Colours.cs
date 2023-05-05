@@ -1,6 +1,7 @@
 ﻿using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
 using System;
+using System.Drawing;
 using System.Reflection;
 using System.Threading;
 
@@ -216,9 +217,9 @@ namespace Primitives.SimplePrimitives
                                                    can.Colour,                  // gradient end color
                                                    0, 0,                        // gradient end coordinates
                                                    Bitmap.OpacityOpaque);       // opacity
-                Color contrastTextColour = ColorUtility.ColorFromRGB((byte)(255 - ColorUtility.GetRValue(can.Colour)),
-                                                                     (byte)(255 - ColorUtility.GetGValue(can.Colour)),
-                                                                     (byte)(255 - ColorUtility.GetBValue(can.Colour)));
+                Color contrastTextColour = Color.FromArgb((byte)(255 - can.Colour.R),
+                                                                     (byte)(255 - can.Colour.G),
+                                                                     (byte)(255 - can.Colour.B));
                 fullScreenBitmap.DrawText(can.Name, fnt12, contrastTextColour, xCoordText, yCoordText);
 
                 if (remainder == 3)

@@ -3,6 +3,7 @@
 
 using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
+using System.Drawing;
 using System.Threading;
 
 namespace Primitives.SimplePrimitives
@@ -40,7 +41,7 @@ namespace Primitives.SimplePrimitives
                                      ref x, ref y, // x and y text position
                                      20, 20,       // x and y (rectangle top left)
                                      150, 150,     // width and height of rectangle
-                                     Bitmap.DT_AlignmentLeft | Bitmap.DT_WordWrap,
+                                     (uint)(DrawTextOptions.AlignmentLeft | DrawTextOptions.WordWrap),
                                      Color.White,  // color
                                      fntSegoeUIRegular12);        // font
                 fullScreenBitmap.Flush();

@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------------
 // 
 //  Tetris game for .NET Micro Framework
 //
@@ -14,6 +14,7 @@ using Tetris.GameLogic;
 using nanoFramework.Presentation.Controls;
 using nanoFramework.Presentation.Media;
 using nanoFramework.Presentation;
+using System.Drawing;
 
 namespace Tetris.Presentation
 {

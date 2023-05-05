@@ -1,6 +1,7 @@
 ﻿using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
 using System;
+using System.Drawing;
 using System.Threading;
 
 //
@@ -75,11 +76,17 @@ namespace Primitives
             _timer = new Timer(new TimerCallback(AnimationTimerTick), null, 0, timerInterval);
         }
 
+        public void Stop()
+        {
+            _timer.Change(0, 0);
+            _timer.Dispose();
+        }
+
         private void Initialize()
         {
             _matrixFont = Primitives.Resource.GetFont(Resource.FontResources.MatrixFont);
             _backgroundColour = Color.Black;
-            _textColour = ColorUtility.ColorFromRGB(0x66, 0xff, 00);
+            _textColour = Color.FromArgb(0x66, 0xff, 00);
             _letterAdvanceWidth = _matrixFont.CharWidth('c');
             _letterAdvanceHeight = _matrixFont.Height;
             _xOffset = 1;

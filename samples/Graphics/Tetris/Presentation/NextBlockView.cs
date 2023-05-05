@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------------
 // 
 //  Tetris game for .NET Micro Framework
 //
@@ -10,6 +10,7 @@
 //-----------------------------------------------------------------------------
 
 using System;
+using System.Drawing;
 using nanoFramework.Presentation;
 using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
@@ -41,7 +42,7 @@ namespace Tetris.Presentation
 
             _blockPen = new Pen(Color.Black);
             _linePen = new Pen(Color.White, 4);
-            _fillBrush = new SolidColorBrush(ColorUtility.ColorFromRGB(164, 164, 164));
+            _fillBrush = new SolidColorBrush(Color.FromArgb(164, 164, 164));
         }
 
         public override void OnRender(nanoFramework.Presentation.Media.DrawingContext dc)

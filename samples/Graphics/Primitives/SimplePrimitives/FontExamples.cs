@@ -3,6 +3,7 @@
 
 using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
+using System.Drawing;
 
 namespace Primitives.SimplePrimitives
 {
@@ -23,9 +24,9 @@ namespace Primitives.SimplePrimitives
             string strCourierRegular10 = Resource.GetString(Resource.StringResources.strCourierRegular10);
             string strSegoeUIRegular12 = Resource.GetString(Resource.StringResources.strSegoeUIRegular12);
 
-            Color red = ColorUtility.ColorFromRGB(255, 0, 0);
-            Color green = ColorUtility.ColorFromRGB(0, 255, 0);
-            Color blue = ColorUtility.ColorFromRGB(0, 0, 255);
+            Color red = Color.Red;
+            Color green = Color.Green;
+            Color blue = Color.Blue;
 
             fullScreenBitmap.Clear();
             fullScreenBitmap.Flush();

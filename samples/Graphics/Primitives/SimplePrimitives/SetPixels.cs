@@ -3,6 +3,7 @@
 
 using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
+using System.Drawing;
 
 namespace Primitives.SimplePrimitives
 {
@@ -14,12 +15,12 @@ namespace Primitives.SimplePrimitives
             fullScreenBitmap.Flush();
             for (int i = 0; i < fullScreenBitmap.Height; ++i)
             {
-                fullScreenBitmap.SetPixel(i, i, (Color)((255 - i) << 16));
+                fullScreenBitmap.SetPixel(i, i, Color.FromArgb((255 - i) << 16));
             }
 
             for (int i = 0; i < fullScreenBitmap.Height; i += 2)
             {
-                fullScreenBitmap.SetPixel(fullScreenBitmap.Height - i, i, (Color)(i << 8));
+                fullScreenBitmap.SetPixel(fullScreenBitmap.Height - i, i, Color.FromArgb(i << 8));
             }
 
             InformationBar.DrawInformationBar(fullScreenBitmap, DisplayFont, InfoBarPosition.bottom, "Set individual Pixels");

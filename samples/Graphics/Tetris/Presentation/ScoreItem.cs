@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------------
 // 
 //  Tetris game for .NET Micro Framework
 //
@@ -16,6 +16,7 @@ using nanoFramework.UI;
 using nanoFramework.UI.Threading;
 using nanoFramework.Runtime.Events;
 using nanoFramework.Presentation;
+using System.Drawing;
 
 namespace Tetris.Presentation
 {
@@ -42,7 +43,7 @@ namespace Tetris.Presentation
         Text scoreLabel;
         StackPanel nameStack;
         DispatcherTimer blinkTimer;
-        readonly Color normalColor = ColorUtility.ColorFromRGB(206, 206, 206);
+        readonly Color normalColor = Color.FromArgb(206, 206, 206);
         readonly Color selectedColor = Color.Black;    
 
         /// <summary>
