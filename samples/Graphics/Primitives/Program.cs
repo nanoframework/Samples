@@ -3,10 +3,11 @@
 
 // !!!----------- SAMPLE - ENSURE YOU CHOOSE THE CORRECT TARGET HERE --------------!!!
 //#define STM32F769I_DISCO // Comment this in if for the target!
-//#define ESP32 // Comment this in if for the target platform!
+#define ESP32 // Comment this in if for the target platform!
 // !!!-----------------------------------------------------------------------------!!!
 
 using System.Threading;
+using nanoFramework.Hardware.Esp32;
 using nanoFramework.UI;
 using Primitives.SimplePrimitives;
 
@@ -16,16 +17,20 @@ namespace Primitives
     {
         public static void Main()
         {
-            int delayBetween = 1100;
+            int delayBetween = 3000;
 
 #if ESP32   // This is an example mapping, work them out for your needs!
-            int backLightPin = 32;
-            int chipSelect = 14;
-            int dataCommand = 27;
-            int reset = 33;
+            int backLightPin = 5;
+            int chipSelect = 22;
+            int dataCommand = 21;
+            int reset = 18;
+
+            Configuration.SetPinFunction(25, DeviceFunction.SPI1_MISO);
+            Configuration.SetPinFunction(23, DeviceFunction.SPI1_MOSI);
+            Configuration.SetPinFunction(19, DeviceFunction.SPI1_CLOCK);
 
             // Adjust as well the size of your screen and the position of the screen on the driver
-            DisplayControl.Initialize(new SpiConfiguration(1, chipSelect, dataCommand, reset, backLightPin), new ScreenConfiguration(0, 0, 320, 240));
+            DisplayControl.Initialize(new SpiConfiguration(1, chipSelect, dataCommand, reset, backLightPin), new ScreenConfiguration(0, 0, 320, 240), 2 *1024 * 1024);
 
             // Depending on you ESP32, you may also have to use either PWM either GPIO to set the backlight pin mode on
             // new GpioController().OpenPin(backLightPin, PinMode.Output);
@@ -38,6 +43,7 @@ namespace Primitives
             throw new System.Exception("Unknown display mapping!");
 #endif
 
+            //DisplayControl.ChangeOrientation(DisplayOrientation.Portrait180);
             // Get full screen bitmap from displayControl to draw on.
             Bitmap fullScreenBitmap = DisplayControl.FullScreen;  
 
@@ -47,6 +53,9 @@ namespace Primitives
 
             while (true)
             {
+                WritePoint wrtPoint = new WritePoint();
+                Thread.Sleep(delayBetween);
+
                 RandomDrawLine rdlt = new RandomDrawLine(fullScreenBitmap, DisplayFont);
                 Thread.Sleep(delayBetween);
 
@@ -87,7 +96,8 @@ namespace Primitives
                 Thread.Sleep(delayBetween);
 
                 MatrixRain mr = new MatrixRain(fullScreenBitmap);
-                Thread.Sleep(Timeout.Infinite);
+                Thread.Sleep(delayBetween * 10);
+                mr.Stop();
             }
         }
     }

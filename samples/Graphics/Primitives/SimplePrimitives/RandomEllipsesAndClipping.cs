@@ -4,6 +4,7 @@
 using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
 using System;
+using System.Drawing;
 
 namespace Primitives.SimplePrimitives
 {
@@ -57,10 +58,10 @@ namespace Primitives.SimplePrimitives
                 int radiusX = random.Next(100);
                 int radiusY = random.Next(100);
                 int thicknessOutline = random.Next(5);
-                Color colourGradientStart = ColorUtility.ColorFromRGB((byte)random.Next(255), (byte)random.Next(255), (byte)random.Next(255));
-                Color colourGradientEnd = ColorUtility.ColorFromRGB((byte)random.Next(255), (byte)random.Next(255), (byte)random.Next(255));
+                Color colourGradientStart = Color.FromArgb((byte)random.Next(255), (byte)random.Next(255), (byte)random.Next(255));
+                Color colourGradientEnd = Color.FromArgb((byte)random.Next(255), (byte)random.Next(255), (byte)random.Next(255));
 
-                fullScreenBitmap.DrawEllipse((nanoFramework.Presentation.Media.Color)random.Next(0xFFFFFF), thicknessOutline,
+                fullScreenBitmap.DrawEllipse(Color.FromArgb(random.Next(0xFFFFFF)), thicknessOutline,
                                 random.Next(fullScreenBitmap.Width), random.Next(fullScreenBitmap.Height - 20), radiusX, radiusY, colourGradientStart, 0, 0, colourGradientEnd, radiusX, radiusY, (ushort)random.Next(256));
                 DrawInformationBar(fullScreenBitmap, DisplayFont, additionalInfo);
                 fullScreenBitmap.Flush();
@@ -76,9 +77,9 @@ namespace Primitives.SimplePrimitives
                                                 x: r1.x - 1, y: r1.y - 1,
                                                 width: r1.width + 2, height: r1.height + 2,
                                                 xCornerRadius: 0, yCornerRadius: 0,
-                                                colorGradientStart: 0,
+                                                colorGradientStart: Color.Black,
                                                 xGradientStart: 0, yGradientStart: 0,
-                                                colorGradientEnd: 0,
+                                                colorGradientEnd: Color.Black,
                                                 xGradientEnd: 0, yGradientEnd: 0,
                                                 opacity: 100);
         }

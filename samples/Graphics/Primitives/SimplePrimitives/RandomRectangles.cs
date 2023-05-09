@@ -4,6 +4,7 @@
 using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
 using System;
+using System.Drawing;
 
 namespace Primitives.SimplePrimitives
 {
@@ -19,7 +20,7 @@ namespace Primitives.SimplePrimitives
 
             for (int i = 0; i < 100; i++)
             {
-                Color fillColor = (nanoFramework.Presentation.Media.Color)random.Next(0xFFFFFF);
+                Color fillColor = Color.FromArgb(random.Next(0xFFFFFF));
 
                 if (i % 2 == 0)
                 {
@@ -32,7 +33,7 @@ namespace Primitives.SimplePrimitives
                     yCornerRadius = 0;
                 }
 
-                fullScreenBitmap.DrawRectangle((nanoFramework.Presentation.Media.Color)random.Next(0xFFFFFF), random.Next(1),
+                fullScreenBitmap.DrawRectangle(Color.FromArgb(random.Next(0xFFFFFF)), random.Next(1),
                     random.Next(fullScreenBitmap.Width), random.Next(fullScreenBitmap.Height - 20), random.Next(fullScreenBitmap.Width), random.Next(fullScreenBitmap.Height - 20), xCornerRadius, yCornerRadius, fillColor, 0, 0, fillColor, 0, 0, (ushort)random.Next(256));
                 InformationBar.DrawInformationBar(fullScreenBitmap, DisplayFont, InfoBarPosition.bottom, $"Rectangle Number {i}");
                 fullScreenBitmap.Flush();

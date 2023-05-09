@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------------
 // 
 //  Tetris game for .NET Micro Framework
 //
@@ -10,6 +10,7 @@
 //-----------------------------------------------------------------------------
 
 using System;
+using System.Drawing;
 using nanoFramework.Presentation.Media;
 
 
@@ -28,19 +29,19 @@ namespace Tetris.Presentation
             _blockBrush = new SolidColorBrush[7];
 
             // O
-            _blockBrush[0] = new SolidColorBrush(ColorUtility.ColorFromRGB(240, 240, 0));
+            _blockBrush[0] = new SolidColorBrush(Color.FromArgb(240, 240, 0));
             // J
-            _blockBrush[1] = new SolidColorBrush(ColorUtility.ColorFromRGB(0, 0, 240));
+            _blockBrush[1] = new SolidColorBrush(Color.FromArgb(0, 0, 240));
             // L
-            _blockBrush[2] = new SolidColorBrush(ColorUtility.ColorFromRGB(240, 160, 0));
+            _blockBrush[2] = new SolidColorBrush(Color.FromArgb(240, 160, 0));
             // T
-            _blockBrush[3] = new SolidColorBrush(ColorUtility.ColorFromRGB(160, 0, 240));
+            _blockBrush[3] = new SolidColorBrush(Color.FromArgb(160, 0, 240));
             // Z
-            _blockBrush[4] = new SolidColorBrush(ColorUtility.ColorFromRGB(240, 0, 0));
+            _blockBrush[4] = new SolidColorBrush(Color.FromArgb(240, 0, 0));
             // S
-            _blockBrush[5] = new SolidColorBrush(ColorUtility.ColorFromRGB(0, 216, 0));
+            _blockBrush[5] = new SolidColorBrush(Color.FromArgb(0, 216, 0));
             // I
-            _blockBrush[6] = new SolidColorBrush(ColorUtility.ColorFromRGB(0, 240, 240));
+            _blockBrush[6] = new SolidColorBrush(Color.FromArgb(0, 240, 240));
         }
 
         /// <summary>

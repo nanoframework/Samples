@@ -3,6 +3,7 @@
 
 using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
+using System.Drawing;
 
 namespace Primitives.SimplePrimitives
 {
@@ -16,10 +17,10 @@ namespace Primitives.SimplePrimitives
             fullScreenBitmap.Flush();
 
             fullScreenBitmap.DrawText($"Scale image", fontHeading, Color.Beige, 0, 0);
-            fullScreenBitmap.DrawRectangle(Color.White, 0, 0, 0, fullScreenBitmap.Width, fullScreenBitmap.Height, 0, 0, Color.White, 0, 0, 0, 0, 0, 256);
+            fullScreenBitmap.DrawRectangle(Color.White, 0, 0, 0, fullScreenBitmap.Width, fullScreenBitmap.Height, 0, 0, Color.White, 0, 0, Color.Black, 0, 0, 256);
 
             Bitmap bmpScaleWaterFall = new Bitmap(WaterFallJpg.WaterFall, Bitmap.BitmapImageType.Jpeg);
-            bmpScaleWaterFall.MakeTransparent(ColorUtility.ColorFromRGB(255, 0, 255));
+            bmpScaleWaterFall.MakeTransparent(Color.FromArgb(255, 0, 255));
             fullScreenBitmap.Scale9Image(30, 30, fullScreenBitmap.Width / 3, fullScreenBitmap.Height / 3, bmpScaleWaterFall, 6, 6, 6, 6, 256);
             fullScreenBitmap.Scale9Image(fullScreenBitmap.Width / 2, fullScreenBitmap.Height / 2, fullScreenBitmap.Width / 3, 30, bmpScaleWaterFall, 6, 6, 6, 6, 256);
             fullScreenBitmap.Scale9Image(30, fullScreenBitmap.Height / 2, 30, fullScreenBitmap.Height / 3, bmpScaleWaterFall, 6, 6, 6, 6, 256);

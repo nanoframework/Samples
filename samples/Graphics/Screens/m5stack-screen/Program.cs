@@ -5,6 +5,7 @@ using System;
 using System.Diagnostics;
 using System.Threading;
 using System.Device.Pwm;
+using System.Drawing;
 
 namespace m5stack.screen
 {

@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------------
 // 
 //  Tetris game for .NET Micro Framework
 //
@@ -17,6 +17,7 @@ using Tetris;
 using nanoFramework.Presentation;
 using nanoFramework.Presentation.Controls;
 using nanoFramework.Presentation.Media;
+using System.Drawing;
 
 namespace Tetris.Presentation
 {
@@ -53,8 +54,8 @@ namespace Tetris.Presentation
 
             #region ListBox event handler
             Color selectedItemColor = Color.White;
-            Color unselectedItemColor = ColorUtility.ColorFromRGB(206, 206, 206);
-            Brush selectedBackground = new SolidColorBrush(ColorUtility.ColorFromRGB(0, 148, 255));
+            Color unselectedItemColor = Color.FromArgb(206, 206, 206);
+            Brush selectedBackground = new SolidColorBrush(Color.FromArgb(0, 148, 255));
 
             menuListBox = new ListBox()
             {

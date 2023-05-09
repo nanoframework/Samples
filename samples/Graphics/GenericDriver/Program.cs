@@ -6,6 +6,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Threading;
 using nanoFramework.Hardware.Esp32;
 using nanoFramework.Presentation.Media;
@@ -170,10 +171,10 @@ namespace GenericDriver
             Debug.WriteLine($"init screen initialized");
 
             ushort[] toSend = new ushort[100];
-            var blue = ColorUtility.To16Bpp(Color.Blue);
-            var red = ColorUtility.To16Bpp(Color.Red);
-            var green = ColorUtility.To16Bpp(Color.Green);
-            var white = ColorUtility.To16Bpp(Color.White);
+            var blue = Color.Blue.ToBgr565();
+            var red = Color.Red.ToBgr565();
+            var green = Color.Green.ToBgr565();
+            var white = Color.White.ToBgr565();
 
             for (int i = 0; i < toSend.Length; i++)
             {

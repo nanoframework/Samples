@@ -4,6 +4,7 @@
 using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
 using System;
+using System.Drawing;
 
 namespace Primitives.SimplePrimitives
 {
@@ -121,7 +122,7 @@ namespace Primitives.SimplePrimitives
             for (int i = 0; i < BallLocation.Length; i++)
             {
                 ScreenBitmap.DrawEllipse(Color.Yellow, 1, BallLocation[i].X, BallLocation[i].Y, BallLocation[i].Width, BallLocation[i].Height,
-                                              0, 0, 0, 0, 0, 0, Bitmap.OpacityOpaque);
+                                              Color.Black, 0, 0, Color.Black, 0, 0, Bitmap.OpacityOpaque);
             }
             ScreenBitmap.Flush();
         }

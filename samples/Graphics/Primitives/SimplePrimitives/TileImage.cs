@@ -3,6 +3,7 @@
 
 using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
+using System.Drawing;
 
 namespace Primitives.SimplePrimitives
 {
@@ -18,7 +19,7 @@ namespace Primitives.SimplePrimitives
             fullScreenBitmap.Clear();
             fullScreenBitmap.Flush();
 
-            fullScreenBitmap.DrawRectangle(Color.White, 0, 0, 0, fullScreenBitmap.Width, fullScreenBitmap.Height, 0, 0, Color.White, 0, 0, 0, 0, 0, 256);
+            fullScreenBitmap.DrawRectangle(Color.White, 0, 0, 0, fullScreenBitmap.Width, fullScreenBitmap.Height, 0, 0, Color.White, 0, 0, Color.Black, 0, 0, 256);
             Font fntComicSansMS16 = Resource.GetFont(Resource.FontResources.ComicSansMS16);
             fullScreenBitmap.DrawText("Tile Image Example", fntComicSansMS16, Color.Black, 10, 0);
             fullScreenBitmap.TileImage(20, 20, btn, fullScreenBitmap.Width - 50, fullScreenBitmap.Height - 50, 256);
