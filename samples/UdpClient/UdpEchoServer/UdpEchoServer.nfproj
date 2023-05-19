@@ -49,8 +49,8 @@
       <HintPath>..\packages\nanoFramework.System.Net.1.10.52\lib\System.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net.Sockets.UdpClient, Version=1.1.43.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.Net.Sockets.UdpClient.1.1.43\lib\System.Net.Sockets.UdpClient.dll</HintPath>
+    <Reference Include="System.Net.Sockets.UdpClient, Version=1.1.48.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.Net.Sockets.UdpClient.1.1.48\lib\System.Net.Sockets.UdpClient.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Threading, Version=1.1.19.33722, Culture=neutral, PublicKeyToken=c07d481e9758c731">
