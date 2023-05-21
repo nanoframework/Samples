@@ -4,12 +4,17 @@
 // !!!----------- SAMPLE - ENSURE YOU CHOOSE THE CORRECT TARGET HERE --------------!!!
 //#define STM32F769I_DISCO // Comment this in if for the target!
 #define ESP32 // Comment this in if for the target platform!
+//#define M5Core2 // Comment this in if for the target platform!
 // !!!-----------------------------------------------------------------------------!!!
 
 using System.Threading;
 using nanoFramework.Hardware.Esp32;
 using nanoFramework.UI;
 using Primitives.SimplePrimitives;
+
+using nanoFramework.M5Core2;
+using nanoFramework.UI;
+using Stack = nanoFramework.M5Stack;
 
 namespace Primitives
 {
@@ -39,6 +44,8 @@ namespace Primitives
 #elif STM32F769I_DISCO // This is an example (working) button map, work the actual pins out for your need!
             //WARNING: Invalid pin mappings will never be returned, and may need you to reflash the device!
             DisplayControl.Initialize(new SpiConfiguration(), new ScreenConfiguration());
+#elif M5Core2
+            Stack.M5Core2.InitializeScreen();
 #else
             throw new System.Exception("Unknown display mapping!");
 #endif
