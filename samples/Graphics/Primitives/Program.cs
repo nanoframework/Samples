@@ -11,9 +11,6 @@ using System.Threading;
 using nanoFramework.Hardware.Esp32;
 using nanoFramework.UI;
 using Primitives.SimplePrimitives;
-
-using nanoFramework.M5Core2;
-using nanoFramework.UI;
 using Stack = nanoFramework.M5Stack;
 
 namespace Primitives
