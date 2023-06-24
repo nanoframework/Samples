@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="AzureRoot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\AzureRoot.der;System.Byte[], mscorlib, Version=1.10.5.4, Culture=neutral, PublicKeyToken=c07d481e9758c731</value>
+  <data name="AzureRootCerts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resource\AzureRootCerts.pem;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>
