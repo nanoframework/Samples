@@ -8,31 +8,31 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AzureMQTT
+namespace AzureIoTExample
 {
     
-    internal partial class Resources
+    internal partial class Resource
     {
         private static System.Resources.ResourceManager manager;
         internal static System.Resources.ResourceManager ResourceManager
         {
             get
             {
-                if ((Resources.manager == null))
+                if ((Resource.manager == null))
                 {
-                    Resources.manager = new System.Resources.ResourceManager("AzureMQTT.Resources", typeof(Resources).Assembly);
+                    Resource.manager = new System.Resources.ResourceManager("AzureIoTExample.Resource", typeof(Resource).Assembly);
                 }
-                return Resources.manager;
+                return Resource.manager;
             }
         }
-        internal static byte[] GetBytes(Resources.BinaryResources id)
+        internal static string GetString(Resource.StringResources id)
         {
-            return ((byte[])(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id)));
+            return ((string)(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id)));
         }
         [System.SerializableAttribute()]
-        internal enum BinaryResources : short
+        internal enum StringResources : short
         {
-            AzureRoot = 22997,
+            AzureRootCerts = -6742,
         }
     }
 }
