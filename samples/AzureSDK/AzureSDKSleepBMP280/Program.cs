@@ -8,6 +8,7 @@ using System;
 using System.Device.I2c;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
+using AzureSDKSleepBMP280;
 
 const string DeviceID = "nanoEdgeTwin";
 const string IotHubAddress = "youriothub.azure-devices.net";
@@ -40,7 +41,7 @@ try
     // If you have uploaded the Azure Certificate on the device, just use:
     //DeviceClient azureIoT = new(IotHubAddress, DeviceID, SasKey);
     // Otherwise, use:
-    DeviceClient azureIoT = new(IotHubAddress, DeviceID, SasKey, azureCert: new X509Certificate(AzureSDKSleepBMP280.Resources.GetBytes(AzureSDKSleepBMP280.Resources.BinaryResources.AzureRoot)));
+    DeviceClient azureIoT = new(IotHubAddress, DeviceID, SasKey, azureCert: new X509Certificate(Resource.GetString(Resource.StringResources.AzureRootCerts)));
     azureIoT.Open();
 
     // Gets the twin
