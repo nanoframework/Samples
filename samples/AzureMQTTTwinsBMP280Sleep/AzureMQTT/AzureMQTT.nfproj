@@ -18,10 +18,10 @@
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
-    <Compile Include="Resources.Designer.cs">
+    <Compile Include="Resource.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
+      <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="StringExtensions.cs" />
     <Compile Include="TwinProperties.cs" />
@@ -31,13 +31,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Resources\BaltimoreCyberTrustRoot.der" />
-    <None Include="Resources\DigiCertGlobalRootG2.der" />
+    <None Include="Resource\AzureRootCerts.pem" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources.resx">
+    <EmbeddedResource Include="Resource.resx">
       <Generator>nFResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
