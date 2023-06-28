@@ -73,7 +73,7 @@ try
     }
 
     // We are storing this certificate in the resources
-    X509Certificate azureRootCACert = new X509Certificate(Resource.GetBytes(Resource.BinaryResources.AzureRoot));
+    X509Certificate azureRootCACert = new X509Certificate(Resource.GetString(Resource.StringResources.AzureRootCerts));
     azure = new(Secrets.IotBrokerAddress, Secrets.DeviceID, Secrets.SasKey, MqttQoSLevel.AtLeastOnce, azureRootCACert);
     if (!azure.Open())
     {
@@ -300,7 +300,7 @@ void DownloadBinaryFile(string url, string sas)
     // this example uses Tls 1.2 with Azure
     httpClient.SslProtocols = System.Net.Security.SslProtocols.Tls12;
     // use the pem certificate we created earlier
-    httpClient.HttpsAuthentCert = new X509Certificate(Resource.GetBytes(Resource.BinaryResources.azurePEMCertBaltimore));
+    httpClient.HttpsAuthentCert = new X509Certificate(Resource.GetString(Resource.StringResources.AzureRootCerts));
     HttpResponseMessage response = httpClient.Get($"{url}?{sas}");
     response.EnsureSuccessStatusCode();
 
