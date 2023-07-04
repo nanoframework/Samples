@@ -240,11 +240,11 @@ namespace AzureMQTT
 
 
                 Trace("Sending twin properties");
-                mqttc.Publish(String.Format("{0}?$rid={1}", twinReportedPropertiesTopic, Guid.NewGuid()), Encoding.UTF8.GetBytes("{ \"Firmware\": \"nanoFramework\"}"), MqttQoSLevel.AtLeastOnce, false);
+                mqttc.Publish(String.Format("{0}?$rid={1}", twinReportedPropertiesTopic, Guid.NewGuid()), Encoding.UTF8.GetBytes("{ \"Firmware\": \"nanoFramework\"}"), null, null, MqttQoSLevel.AtLeastOnce, false);
 
 
                 Trace("Getting twin properties");
-                mqttc.Publish(String.Format("{0}?$rid={1}", twinDesiredPropertiesTopic, Guid.NewGuid()), Encoding.UTF8.GetBytes(""), MqttQoSLevel.AtLeastOnce, false);
+                mqttc.Publish(String.Format("{0}?$rid={1}", twinDesiredPropertiesTopic, Guid.NewGuid()), Encoding.UTF8.GetBytes(""), null, null, MqttQoSLevel.AtLeastOnce, false);
 
 
                 Trace("[MQTT Client] Start to send telemetry");
@@ -261,7 +261,7 @@ namespace AzureMQTT
 
 
                 //Publish telemetry data using AT LEAST ONCE QOS Level
-                mqttc.Publish(telemetryTopic, Encoding.UTF8.GetBytes("{ Temperature: " + temp + "}"), MqttQoSLevel.AtLeastOnce, false);
+                mqttc.Publish(telemetryTopic, Encoding.UTF8.GetBytes("{ Temperature: " + temp + "}"), null, null, MqttQoSLevel.AtLeastOnce, false);
 
                 Trace(String.Format("{0} [MQTT Client] Sent telemetry {{ Temperature: {1} }}", DateTime.UtcNow.ToString("u"), temp.ToString()));
 
