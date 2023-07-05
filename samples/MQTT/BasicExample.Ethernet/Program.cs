@@ -35,7 +35,7 @@ namespace BasicExample.Ethernet
             // STEP 4: publish something and watch it coming back
             for (int i = 0; i < 5; i++)
             {
-                client.Publish("nf-mqtt/basic-demo", Encoding.UTF8.GetBytes("===== Hello MQTT! ====="), MqttQoSLevel.AtLeastOnce, false);
+                client.Publish("nf-mqtt/basic-demo", Encoding.UTF8.GetBytes("===== Hello MQTT! ====="), null, null, MqttQoSLevel.AtLeastOnce, false);
                 Thread.Sleep(5000);
             }
 

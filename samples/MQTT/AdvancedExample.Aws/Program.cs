@@ -173,7 +173,7 @@ lIBzJXkrbY11FY6TNX4YFU2McIX2Ge0058Pozx6tumJ4KxvB9Ges8g==
             while (true)
             {
                 string SampleData = $"{{\"MQTT on nanoFramework\" : {DateTime.UtcNow.ToString("o")}}}";
-                client.Publish("devices/nanoframework/data", Encoding.UTF8.GetBytes(SampleData), MqttQoSLevel.AtMostOnce, false);
+                client.Publish("devices/nanoframework/data", Encoding.UTF8.GetBytes(SampleData), null, null, MqttQoSLevel.AtMostOnce, false);
 
                 Debug.WriteLine("Message sent: " + SampleData);
 
