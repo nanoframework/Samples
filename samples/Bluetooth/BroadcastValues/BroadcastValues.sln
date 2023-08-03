@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "BroadcastValues", "BroadcastValues.nfproj", "{D567031F-6747-473F-811D-C778A8F0EE86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D567031F-6747-473F-811D-C778A8F0EE86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D567031F-6747-473F-811D-C778A8F0EE86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D567031F-6747-473F-811D-C778A8F0EE86}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D567031F-6747-473F-811D-C778A8F0EE86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D567031F-6747-473F-811D-C778A8F0EE86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D567031F-6747-473F-811D-C778A8F0EE86}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7EA5B3B8-9729-4DEB-BD7F-F9E58BF1401D}
+	EndGlobalSection
+EndGlobal

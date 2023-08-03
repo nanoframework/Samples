@@ -137,7 +137,7 @@ namespace Central3
             BluetoothLEAdvertisement adv = args.Advertisement;
 
             Console.WriteLine();
-            Console.WriteLine($"=== Advert received ====");
+            Console.WriteLine($"=== Advert received - type {args.AdvertisementType} ====");
             Console.WriteLine($"Address:{args.BluetoothAddress:X}");
             Console.WriteLine($"Local name:{adv.LocalName}");
             Console.WriteLine($"Manufacturers Data:{adv.ManufacturerData.Count}");
