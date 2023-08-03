@@ -121,7 +121,6 @@ namespace Central2
             }
         }
 
-
         /// <summary>
         /// Connect and set-up Temperature Characteristics for value 
         /// changed notifications.

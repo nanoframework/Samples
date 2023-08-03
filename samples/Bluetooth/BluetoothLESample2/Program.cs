@@ -68,7 +68,7 @@ namespace BluetoothLESample2
 
             // The IOCapabilities define the input /output capabilities of the device and the type of pairings that is available.
             // See Bluetooth pairing matrix for more information. 
-            // With NoInputNoOutput on both ends then only "Just works" pairing is available and only first 2 characteristics will be accesable.
+            // With NoInputNoOutput on both ends then only "Just works" pairing is available and only first 2 characteristics will be accessible.
             
             //server.Pairing.IOCapabilities = DevicePairingIOCapabilities.NoInputNoOutput;
 
@@ -173,11 +173,13 @@ namespace BluetoothLESample2
             // Once all the Characteristics have been created you need to advertise the Service so 
             // other devices can see it. Here we also say the device can be connected too and other
             // devices can see it. 
-            serviceProvider.StartAdvertising(new GattServiceProviderAdvertisingParameters()
+            GattServiceProviderAdvertisingParameters gpaPars = new GattServiceProviderAdvertisingParameters()
             {
                 IsConnectable = true,
                 IsDiscoverable = true
-            });
+            };
+
+            serviceProvider.StartAdvertising(gpaPars);
 
             Console.WriteLine($"Sample 2 Advertising");
 
@@ -189,7 +191,7 @@ namespace BluetoothLESample2
             Console.WriteLine($"Session_SessionStatusChanged status->{args.Status} Error->{args.Error}");
             if (args.Status == GattSessionStatus.Active)
             {
-                Console.WriteLine($"Client connected, address {BluetoothLEServer.Instance.Session.DeviceId:X}");
+                Console.WriteLine($"Client connected, address {BluetoothLEServer.Instance.Session.DeviceId.Id:X}");
             }
             else
             {
