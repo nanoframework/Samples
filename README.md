@@ -76,7 +76,10 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 * [🌶️ to 🌶️🌶️🌶️ - Bluetooth sample pack](samples/Bluetooth)
 * [🌶️🌶️ - Bluetooth Low energy: read static and dynamic values, notification, read/write value](samples/Bluetooth/BluetoothLESample1)
 * [🌶️🌶️ - Bluetooth Low energy: read/write with encryption a value](samples/Bluetooth/BluetoothLESample2)
+* [🌶️🌶️🌶️ - Bluetooth Low energy: Demonstrates how to use the watcher filter classes.](WatcherFilters)
 * [🌶️🌶️🌶️ - Improv Wifi provisioning](samples/Bluetooth/ImprovWifi)
+* [🌶️🌶️🌶️ - Bluetooth Low energy: Create an IBeacon](samples/Bluetooth/BluetoothBeacon)
+* [🌶️🌶️ -  Bluetooth Low energy: Broadcast current values in an advertisement](BroadcastValues) 
 
 ### CAN
 
