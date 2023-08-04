@@ -14,6 +14,7 @@ using nanoFramework.Json;
 using Iot.Device.Bmxx80;
 using System.Device.I2c;
 using System.Security.Cryptography.X509Certificates;
+using AzureIoTExample;
 
 const string DeviceID = "nanoEdgeTwin";
 const string IotBrokerAddress = "youriothub.azure-devices.net";
@@ -34,7 +35,7 @@ Bmp280 bmp280 = new Bmp280(i2cDevice);
 bool ShoudIStop = false;
 
 // If you haven't uploaded the Azure certificate into your device, use this line:
-DeviceClient azureIoT = new DeviceClient(IotBrokerAddress, DeviceID, SasKey, azureCert: new X509Certificate(AzureMQTT.Resources.GetBytes(AzureMQTT.Resources.BinaryResources.AzureRoot)));
+DeviceClient azureIoT = new DeviceClient(IotBrokerAddress, DeviceID, SasKey, azureCert: new X509Certificate(Resource.GetString(Resource.StringResources.AzureRootCerts)));
 // Otherwise you can just use this line:
 //DeviceClient azureIoT = new DeviceClient(IotBrokerAddress, DeviceID, SasKey);
 

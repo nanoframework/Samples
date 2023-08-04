@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AzureIoTPnP
+namespace AzureSDKSleepBMP280
 {
     
     internal partial class Resource
@@ -20,7 +20,7 @@ namespace AzureIoTPnP
             {
                 if ((Resource.manager == null))
                 {
-                    Resource.manager = new System.Resources.ResourceManager("AzureIoTPnP.Resource", typeof(Resource).Assembly);
+                    Resource.manager = new System.Resources.ResourceManager("AzureSDKSleepBMP280.Resource", typeof(Resource).Assembly);
                 }
                 return Resource.manager;
             }

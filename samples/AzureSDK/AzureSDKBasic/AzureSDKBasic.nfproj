@@ -12,8 +12,8 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <FileAlignment>512</FileAlignment>
-    <RootNamespace>TestAzureMqtt</RootNamespace>
-    <AssemblyName>TestAzureMqtt</AssemblyName>
+    <RootNamespace>AzureSDKBasic</RootNamespace>
+    <AssemblyName>AzureSDKBasic</AssemblyName>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
@@ -90,7 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Resources\AzureRoot.der" />
+    <None Include="Resource\AzureRootCerts.pem" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resource.resx">

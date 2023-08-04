@@ -12,8 +12,8 @@ using System.Threading;
 using System.Diagnostics;
 using nanoFramework.Json;
 using System.Security.Cryptography.X509Certificates;
-using TestAzureMqtt;
 using nanoFramework.Hardware.Esp32;
+using AzureSDKBasic;
 
 const string DeviceID = "YourDeviceId";
 const string IotBrokerAddress = "yourIOTHub.azure-devices.net";
@@ -24,7 +24,7 @@ const string Password = "YouWifiPassword";
 bool ShoudIStop = false;
 
 // If you haven't uploaded the Azure certificate into your device, use this line:
-DeviceClient azureIoT = new DeviceClient(IotBrokerAddress, DeviceID, SasKey, azureCert: new X509Certificate(Resource.GetBytes(Resource.BinaryResources.AzureRoot)));
+DeviceClient azureIoT = new DeviceClient(IotBrokerAddress, DeviceID, SasKey, azureCert: new X509Certificate(Resource.GetString(Resource.StringResources.AzureRootCerts)));
 // Otherwise you can just use this line:
 //DeviceClient azureIoT = new DeviceClient(IotBrokerAddress, DeviceID, SasKey);
 

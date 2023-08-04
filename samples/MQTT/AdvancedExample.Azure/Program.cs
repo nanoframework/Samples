@@ -18,6 +18,7 @@ using System.Text;
 using System.Threading;
 using nanoFramework.M2Mqtt;
 using nanoFramework.M2Mqtt.Messages;
+using AdvancedExample.Azure;
 
 #if HAS_WIFI
 using System.Device.Wifi;
@@ -182,7 +183,7 @@ namespace AzureMQTT
             // this can be supplied to the caller (as it's doing on the code bellow) or the Root CA has to be stored in the certificate store
             // Root CA for Azure from here: https://github.com/Azure/azure-iot-sdk-c/blob/master/certs/certs.c
 
-            X509Certificate azureRootCACert = new X509Certificate(Resources.GetBytes(Resources.BinaryResources.AzureCAcertificate));
+            X509Certificate azureRootCACert = new X509Certificate(Resource.GetString(Resource.StringResources.AzureRootCerts));
 
             //Create MQTT Client with default port 8883 using TLS protocol
             MqttClient mqttc = new MqttClient(

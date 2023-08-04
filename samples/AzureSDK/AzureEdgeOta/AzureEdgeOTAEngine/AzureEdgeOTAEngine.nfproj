@@ -29,8 +29,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Resources\azurePEMCertBaltimore.der" />
-    <None Include="Resources\AzureRoot.der" />
+    <None Include="Resource\AzureRootCerts.pem" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resource.resx">

@@ -86,11 +86,7 @@ try
     // Root CA for Azure from here: https://github.com/Azure/azure-iot-sdk-c/blob/master/certs/certs.c
     // We are storing this certificate in the resources
 
-    // Keep in mind the current IoTHub "Hub root certificate" is near to expire 
-    // Old Baltimore
-    // X509Certificate azureRootCACert = new X509Certificate(Resources.GetBytes(Resources.BinaryResources.BaltimoreCyberTrustRoot));
-    // New DigiCert
-    X509Certificate azureRootCACert = new X509Certificate(Resources.GetBytes(Resources.BinaryResources.DigiCertGlobalRootG2));
+    X509Certificate azureRootCACert = new X509Certificate(Resource.GetString(Resource.StringResources.AzureRootCerts));
 
     // Creates MQTT Client with default port 8883 using TLS protocol
     MqttClient mqttc = new MqttClient(
