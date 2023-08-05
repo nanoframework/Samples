@@ -63,9 +63,9 @@ It will then read and set-up notifications for changes in Environmental Service 
 Central/Client sample to show how to watch for advertisements and connect to a device which requires encryption and 
 authentication to access the Characteristics values.
 
-* [🌶️🌶️🌶️ -  Demonstrates how to use the watcher filter classes.](WatcherFilters)
+* [🌶️🌶️ -  Demonstrates how to use the watcher filter classes.](WatcherFilters)
 
-By using filter classes on the Watcher you can only receive advertisements events for your devices. 
+By using filter classes on the Watcher you can filter out all advertisements events except the ones from your devices. 
 
 ## Advertising samples
 
