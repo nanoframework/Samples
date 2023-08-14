@@ -25,14 +25,14 @@ namespace AzureSDKBasic
                 return Resource.manager;
             }
         }
-        internal static string GetString(Resource.StringResources id)
+        internal static byte[] GetBytes(Resource.BinaryResources id)
         {
-            return ((string)(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id)));
+            return ((byte[])(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id)));
         }
         [System.SerializableAttribute()]
-        internal enum StringResources : short
+        internal enum BinaryResources : short
         {
-            AzureRootCerts = -6742,
+            DigiCertGlobalRootG2 = 26599,
         }
     }
 }

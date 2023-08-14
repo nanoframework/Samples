@@ -5,7 +5,6 @@
 
 using nanoFramework.Azure.Devices.Client;
 using nanoFramework.Azure.Devices.Shared;
-using nanoFramework.Networking;
 using System;
 using System.Collections;
 using System.Threading;
@@ -14,17 +13,31 @@ using nanoFramework.Json;
 using System.Security.Cryptography.X509Certificates;
 using nanoFramework.Hardware.Esp32;
 using AzureSDKBasic;
+using IoT.Device.AtModem.Modem;
+using System.IO.Ports;
+using IoT.Device.AtModem;
+using IoT.Device.AtModem.DTOs;
+using IoT.Device.AtModem.Events;
 
-const string DeviceID = "YourDeviceId";
-const string IotBrokerAddress = "yourIOTHub.azure-devices.net";
-const string SasKey = "the_SAS_token";
-const string Ssid = "YouSsid";
-const string Password = "YouWifiPassword";
+const string DeviceID = "nanoTestAtModem";
+const string IotBrokerAddress = "EllerbachIOT.azure-devices.net";
+const string SasKey = "";
+
+Console.WriteLine("Hello SIM7080!");
+
+SerialPort _serialPort;
+OpenSerialPort("COM3");
+
+_serialPort.NewLine = "\r\n";
+AtChannel atChannel = AtChannel.Create(_serialPort);
+atChannel.DebugEnabled = true;
+int retries = 10;
+Sim7080 modem = new(atChannel);
 
 bool ShoudIStop = false;
 
 // If you haven't uploaded the Azure certificate into your device, use this line:
-DeviceClient azureIoT = new DeviceClient(IotBrokerAddress, DeviceID, SasKey, azureCert: new X509Certificate(Resource.GetString(Resource.StringResources.AzureRootCerts)));
+DeviceClient azureIoT = new DeviceClient(IotBrokerAddress, DeviceID, SasKey, azureCert: new X509Certificate(Resource.GetBytes(Resource.BinaryResources.DigiCertGlobalRootG2)));
 // Otherwise you can just use this line:
 //DeviceClient azureIoT = new DeviceClient(IotBrokerAddress, DeviceID, SasKey);
 
@@ -32,12 +45,12 @@ try
 {
 wifiRetry:
     // Step 1: we must have a proper wifi connection
-    if (!ConnectToWifi())
+    if (!EnsureNetworkConnection())
     {
         // If we are not properly connected we will rety. Waiting 1 second and then we will try again.
         // You may in a real project want to adjust this pattern a bit.
         Thread.Sleep(1000);
-        Console.WriteLine("Trying again to connect to your wifi. Please make sure that the information is correct.");
+        Console.WriteLine("Trying again to connect to any network. Please make sure that the information is correct.");
         goto wifiRetry;
     }
 
@@ -59,7 +72,7 @@ wifiRetry:
 
     // Ste 4: get the twin configuration.
     // Important: this require to have an Azure IoT 
-    var twin = azureIoT.GetTwin(new CancellationTokenSource(5000).Token);
+    var twin = azureIoT.GetTwin(new CancellationTokenSource(15000).Token);
     if (twin == null)
     {
         // We will just display an error message here.
@@ -118,7 +131,7 @@ Thread.Sleep(Timeout.InfiniteTimeSpan);
 void ConnectAzureIot()
 {
 azureOpenRetry:
-    bool isOpen = azureIoT.Open();
+    bool isOpen = azureIoT.Open(modem.MqttClient);
     Console.WriteLine($"Connection is open: {isOpen}");
     if (!isOpen)
     {
@@ -131,24 +144,102 @@ azureOpenRetry:
     }
 }
 
-bool ConnectToWifi()
+bool EnsureNetworkConnection()
 {
     Console.WriteLine("Program Started, connecting to Wifi.");
 
-    // As we are using TLS, we need a valid date & time
-    // We will wait maximum 1 minute to get connected and have a valid date
-    var success = WifiNetworkHelper.ConnectDhcp(Ssid, Password, requiresDateTime: true, token: new CancellationTokenSource(60_000).Token);
-    if (!success)
+    modem.NetworkConnectionChanged += ModemNetworkConnectionChanged;
+    modem.Network.AutoReconnect = true;
+    modem.Network.ApplicationNetworkEvent += NetworkApplicationNetworkEvent;
+
+    var respDeviceInfo = modem.GetDeviceInformation();
+    if (respDeviceInfo.IsSuccess)
     {
-        Console.WriteLine($"Can't connect to wifi: {WifiNetworkHelper.Status}");
-        if (WifiNetworkHelper.HelperException != null)
+        Console.WriteLine($"Device info: {respDeviceInfo.Result}");
+    }
+    else
+    {
+        Console.WriteLine($"Device info failed: {respDeviceInfo.ErrorMessage}");
+    }
+
+RetryConnect:
+    var pinStatus = modem.GetSimStatus();
+    if (pinStatus.IsSuccess)
+    {
+        Console.WriteLine($"SIM status: {(SimStatus)pinStatus.Result}");
+        if ((SimStatus)pinStatus.Result == SimStatus.SIM_PIN)
         {
-            Console.WriteLine($"WifiNetworkHelper.HelperException");
+            var pinRes = modem.EnterSimPin(new PersonalIdentificationNumber("1234"));
+            if (pinRes.IsSuccess)
+            {
+                Console.WriteLine("PIN entered successfully");
+            }
+            else
+            {
+                Console.WriteLine("PIN entered failed");
+            }
+        }
+    }
+    else
+    {
+        Console.WriteLine($"SIM status failed: {pinStatus.ErrorMessage}");
+        // Retry
+        if (retries-- > 0)
+        {
+            Console.WriteLine("Retrying to get SIM status");
+            Thread.Sleep(1000);
+            goto RetryConnect;
+        }
+        else
+        {
+            Console.WriteLine("Giving up");
+            return false;
         }
     }
 
+    // Wait for network registration for 2 minutes max, if not connected, then something is most likely very wrong
+    var isConnected = modem.WaitForNetworkRegistration(new CancellationTokenSource(120_000).Token);
+
+    var network = modem.Network;
+    ////var connectRes = network.Connect(new PersonalIdentificationNumber("1234"), new AccessPointConfiguration("free"));
+    var connectRes = network.Connect(apn: new AccessPointConfiguration("orange"));
+    if (connectRes)
+    {
+        Console.WriteLine($"Connected to network.");
+    }
+    else
+    {
+        Console.WriteLine($"Connected to network failed! Trying to reconnect...");
+        connectRes = network.Reconnect();
+        if (connectRes)
+        {
+            Console.WriteLine($"Reconnected to network.");
+        }
+        else
+        {
+            Console.WriteLine($"Reconnected to network failed!");
+        }
+    }
+
+    NetworkInformation networkInformation = network.NetworkInformation;
+    Console.WriteLine($"Network information:");
+    Console.WriteLine($"  Operator: {networkInformation.NetworkOperator}");
+    Console.WriteLine($"  Connextion status: {networkInformation.ConnectionStatus}");
+    Console.WriteLine($"  IP Address: {networkInformation.IPAddress}");
+    Console.WriteLine($"  Signal quality: {networkInformation.SignalQuality}");    
+
     Console.WriteLine($"Date and time is now {DateTime.UtcNow}");
-    return success;
+    return connectRes;
+}
+
+void ModemNetworkConnectionChanged(object sender, NetworkConnectionEventArgs e)
+{
+    Console.WriteLine($"Network connection changed to: {e.NetworkRegistration}");
+}
+
+void NetworkApplicationNetworkEvent(object sender, ApplicationNetworkEventArgs e)
+{
+    Console.WriteLine($"Application network event received, connection is: {e.IsConnected}");
 }
 
 void ClosAndGoToSleep()
@@ -173,7 +264,7 @@ void StatusUpdatedEvent(object sender, StatusUpdatedEventArgs e)
     {
         Console.WriteLine("Being disconnected from Azure IoT");
         // Trying to reconnect
-        ConnectAzureIot();
+        ////ConnectAzureIot();
     }
 }
 
@@ -223,4 +314,36 @@ void CloudToDeviceMessageEvent(object sender, CloudToDeviceMessageEventArgs e)
         Console.WriteLine("Reboot requested");
         ClosAndGoToSleep();
     }
+}
+
+void OpenSerialPort(
+    string port = "COM3",
+    int baudRate = 115200,
+    Parity parity = Parity.None,
+    StopBits stopBits = StopBits.One,
+    Handshake handshake = Handshake.None,
+    int dataBits = 8,
+    int readTimeout = Timeout.Infinite,
+    int writeTimeout = Timeout.Infinite)
+{
+#if (NANOFRAMEWORK_1_0)
+    // Configure GPIOs 16 and 17 to be used in UART2 (that's refered as COM3)
+    Configuration.SetPinFunction(32, DeviceFunction.COM3_RX);
+    Configuration.SetPinFunction(33, DeviceFunction.COM3_TX);
+#endif
+
+    _serialPort = new(port)
+    {
+        //Set parameters
+        BaudRate = baudRate,
+        Parity = parity,
+        StopBits = stopBits,
+        Handshake = handshake,
+        DataBits = dataBits,
+        ReadTimeout = readTimeout,
+        WriteTimeout = writeTimeout
+    };
+
+    // Open the serial port
+    _serialPort.Open();
 }
