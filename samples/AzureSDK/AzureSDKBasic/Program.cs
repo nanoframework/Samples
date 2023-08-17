@@ -18,6 +18,7 @@ using System.IO.Ports;
 using IoT.Device.AtModem;
 using IoT.Device.AtModem.DTOs;
 using IoT.Device.AtModem.Events;
+using nanoFramework.Runtime.Native;
 
 const string DeviceID = "nanoTestAtModem";
 const string IotBrokerAddress = "EllerbachIOT.azure-devices.net";
@@ -201,6 +202,7 @@ RetryConnect:
     var isConnected = modem.WaitForNetworkRegistration(new CancellationTokenSource(120_000).Token);
 
     var network = modem.Network;
+    network.DateTimeChanged += NetworkDateTimeChanged;
     ////var connectRes = network.Connect(new PersonalIdentificationNumber("1234"), new AccessPointConfiguration("free"));
     var connectRes = network.Connect(apn: new AccessPointConfiguration("orange"));
     if (connectRes)
@@ -221,6 +223,18 @@ RetryConnect:
         }
     }
 
+    // Wait to get a proper datetime
+    CancellationTokenSource cts = new CancellationTokenSource(30_000);
+    while(!cts.IsCancellationRequested)
+    {
+        if (DateTime.UtcNow.Year >= 2023)
+        {
+            cts.Cancel();
+        }
+        
+        cts.Token.WaitHandle.WaitOne(500, true);
+    }
+
     NetworkInformation networkInformation = network.NetworkInformation;
     Console.WriteLine($"Network information:");
     Console.WriteLine($"  Operator: {networkInformation.NetworkOperator}");
@@ -230,6 +244,12 @@ RetryConnect:
 
     Console.WriteLine($"Date and time is now {DateTime.UtcNow}");
     return connectRes;
+}
+
+void NetworkDateTimeChanged(object sender, DateTimeEventArgs e)
+{
+    // Set the native date time
+    Rtc.SetSystemTime(e.DateTime);
 }
 
 void ModemNetworkConnectionChanged(object sender, NetworkConnectionEventArgs e)
