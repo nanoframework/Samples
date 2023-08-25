@@ -110,7 +110,7 @@ catch (Exception ex)
     // This global try catch is to make sure whatever happen, we will safely be able to handle anything.
     Console.WriteLine($"Global exception: {ex.Message})");
     // In this example, we will sleep a bit and then reboot.
-    ClosAndGoToSleep();
+    CloseAndGoToSleep();
 }
 
 Thread.Sleep(Timeout.InfiniteTimeSpan);
@@ -151,7 +151,7 @@ bool ConnectToWifi()
     return success;
 }
 
-void ClosAndGoToSleep()
+void CloseAndGoToSleep()
 {
     azureIoT?.Close();
     Thread.Sleep(1000);
@@ -221,6 +221,6 @@ void CloudToDeviceMessageEvent(object sender, CloudToDeviceMessageEventArgs e)
     {
         // Here, an example where we will just reboot the device.
         Console.WriteLine("Reboot requested");
-        ClosAndGoToSleep();
+        CloseAndGoToSleep();
     }
 }
