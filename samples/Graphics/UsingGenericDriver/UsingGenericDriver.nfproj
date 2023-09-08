@@ -26,13 +26,16 @@
       <HintPath>..\GenericDriver\packages\nanoFramework.CoreLibrary.1.14.2\lib\mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.Graphics">
-      <HintPath>..\GenericDriver\packages\nanoFramework.Graphics.St7735.1.1.23\lib\nanoFramework.Graphics.dll</HintPath>
+      <HintPath>..\GenericDriver\packages\nanoFramework.Graphics.St7735.1.1.37\lib\nanoFramework.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="nanoFramework.Graphics.Core">
+      <HintPath>..\GenericDriver\packages\nanoFramework.Graphics.St7735.1.1.37\lib\nanoFramework.Graphics.Core.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.Graphics.St7735">
-      <HintPath>..\GenericDriver\packages\nanoFramework.Graphics.St7735.1.1.23\lib\nanoFramework.Graphics.St7735.dll</HintPath>
+      <HintPath>..\GenericDriver\packages\nanoFramework.Graphics.St7735.1.1.37\lib\nanoFramework.Graphics.St7735.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.Hardware.Esp32">
-      <HintPath>..\GenericDriver\packages\nanoFramework.Hardware.Esp32.1.6.1\lib\nanoFramework.Hardware.Esp32.dll</HintPath>
+      <HintPath>..\GenericDriver\packages\nanoFramework.Hardware.Esp32.1.6.8\lib\nanoFramework.Hardware.Esp32.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.ResourceManager">
       <HintPath>..\GenericDriver\packages\nanoFramework.ResourceManager.1.2.13\lib\nanoFramework.ResourceManager.dll</HintPath>
