@@ -32,7 +32,6 @@ namespace AzureSDKBasic
         [System.SerializableAttribute()]
         internal enum BinaryResources : short
         {
-            AzureRootCerts = -6742,
             DigiCertGlobalRootG2 = 26599,
         }
     }
