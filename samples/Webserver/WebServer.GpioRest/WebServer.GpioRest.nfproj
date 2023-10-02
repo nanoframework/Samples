@@ -44,7 +44,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.WebServer, Version=1.1.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.WebServer.1.1.73\lib\nanoFramework.WebServer.dll</HintPath>
+      <HintPath>packages\nanoFramework.WebServer.1.1.75\lib\nanoFramework.WebServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Device.Gpio, Version=1.1.28.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -67,8 +67,8 @@
       <HintPath>packages\nanoFramework.System.Net.1.10.52\lib\System.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net.Http, Version=1.5.97.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Net.Http.Server.1.5.97\lib\System.Net.Http.dll</HintPath>
+    <Reference Include="System.Net.Http, Version=1.5.99.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Net.Http.Server.1.5.99\lib\System.Net.Http.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Threading, Version=1.1.19.33722, Culture=neutral, PublicKeyToken=c07d481e9758c731">

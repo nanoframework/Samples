@@ -1,17 +1,11 @@
-# 🌶️🌶️ - Bluetooth Low energy: read static and dynamic values, notification, read/write value
+# 🌶️🌶️ -  Demonstrates how to use the watcher filter classes
 
-This shows how to create a Bluetooth Server with a custom service.
+By using the BluetoothLEAdvertisementFilter class on the Watcher you can select only to receive advertisements 
+events for your devices. 
 
-Shows the use of:-
+The sample shows how to filter adrvertisements by whole advertisement data sections or just a few bytes within a data section to filter advertisements
+received by the watcher event handler.
 
-| Custom service | Behavior |
-| --- | --- |
-| Read static value (value that doesn't change) | Value text |
-| Read a dynamic value using an event handler. | value 3 bytes (Hour/Minute/Seconds) |
-| Notifying clients of a changed value | Notify time every 60 seconds or when date updated. |
-| Read and Write a value | Read/Write 3 bytes RGB |
-
-You will be able to connect to the service and read values or subscribe to be Notified ever 60 seconds.
-Suitable Phone apps: "LightBlue" or "nRF Connect"
+Also how to set up a signal strength filter to only receive advertisements from near devices. 
 
 See [main Bluetooth sample's readme](../README.md) for more information.
