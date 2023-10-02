@@ -1,6 +1,6 @@
-# 🌶️🌶️ - Simple sample **with** Azure lib and retry pattern for connection
+# 🌶️🌶️ - Using a Modem like SIM7080, simple sample **with** Azure lib and retry pattern for connection
 
-Shows how to use the Azure IoT SDK library with a proper pattern to connect, reconnect, manage the connection. This leverages the [Azure SDK](https://github.com/nanoframework/nanoFramework.Azure.Devices).
+Shows how to use the Azure IoT SDK library with a proper pattern to connect, reconnect, manage the connection using a modem like SIM7080 and the embedded MQTT client. This leverages the [Azure SDK](https://github.com/nanoframework/nanoFramework.Azure.Devices).
 
 Please make sure you enter properly your wifi credential and the Azure IoT device information.
 
@@ -10,15 +10,14 @@ You can test this sample by enabling and disabling the device in Azure IoT. You 
 
 ## Hardware requirements
 
-An hardware device with networking capabilities running a nanoFramework image.
-This code has been tested with ESP32 boards. This can be replaced by any other board with networking capabilities.
-
-The sample uses wifi, this part can be as well replaced with an ethernet connection. It will work the exact same way.
+You need one modem supporting MQTT abstraction that is supported to use, see [current list here](https://github.com/nanoframework/nanoFramework.IoT.Device/tree/develop/devices/AtModem#documentation).
+This code has been tested with ESP32 boards. This can be replaced by any other board. The is NO need to have networking capabilities. There is NO dependency on System.Net at all.
 
 > **Important**: In this sample, if the connection or something is not setup properly you won't be able to debug properly. Please make sure you are using another sample to understand how Azure Client with a sample and deep sleep is working before using this one.
 
 ### Reference
 
+- [AT Modem implementation](https://github.com/nanoframework/nanoFramework.IoT.Device/tree/develop/devices/AtModem).
 - [Azure IoT documentation for MQTT](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support).
 - [nanoFramework Network helpers](https://github.com/nanoframework/System.Device.Wifi).
 - [nanoFramework Azure IoT SDK](https://github.com/nanoframework/nanoFramework.Azure.Devices).
