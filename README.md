@@ -32,6 +32,7 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 * [🌶️ - Analogic/Digital converter](samples/GiantGecko.Adc)
 * [🌶️ - Blink your first led](samples/Blinky)
 * [🌶️ - Digital Analog Converter sample](samples/DAC)
+* [🌶️ - ESP32 Pulse Counter sample](samples/Gpio/Esp32PulseCounter)
 * [🌶️ - GPIO and events sample](samples/Gpio/Gpio+Events)
 * [🌶️ - GPIO and events sample (.NET IoT style)](samples/Gpio/Gpio+EventsIoTStyle)
 * [🌶️ - GPIO sample pack](samples/Gpio)
@@ -59,6 +60,7 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 * [🌶️🌶️ - Azure IoT Plug & Play with MQTT protocol](samples/AzureSDK/AzureIoTPnP)
 * [🌶️🌶️ - Azure Service Bus AMQP sample](samples/AMQP/Azure-ServiceBus-Sender)
 * [🌶️🌶️ - Simple sample **with** Azure lib and retry pattern for connection](samples/AzureSDK/AzureSDKBasic)
+* [🌶️🌶️ - Using a Modem like SIM7080, simple sample **with** Azure lib and retry pattern for connection](samples/AzureSDK/AzureSDKBasicFullyManaged)
 * [🌶️🌶️ -Azure AMQP sample](samples/AMQP/Azure-IoT-Hub)
 * [🌶️🌶️ to 🌶️🌶️🌶️ - Azure SDK sample pack](samples/AzureSDK)
 * [🌶️🌶️🌶️ - Azure Edge OTA example](samples/AzureSDK/AzureEdgeOta)
@@ -76,10 +78,7 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 * [🌶️ to 🌶️🌶️🌶️ - Bluetooth sample pack](samples/Bluetooth)
 * [🌶️🌶️ - Bluetooth Low energy: read static and dynamic values, notification, read/write value](samples/Bluetooth/BluetoothLESample1)
 * [🌶️🌶️ - Bluetooth Low energy: read/write with encryption a value](samples/Bluetooth/BluetoothLESample2)
-* [🌶️🌶️🌶️ - Bluetooth Low energy: Demonstrates how to use the watcher filter classes.](WatcherFilters)
 * [🌶️🌶️🌶️ - Improv Wifi provisioning](samples/Bluetooth/ImprovWifi)
-* [🌶️🌶️🌶️ - Bluetooth Low energy: Create an IBeacon](samples/Bluetooth/BluetoothBeacon)
-* [🌶️🌶️ -  Bluetooth Low energy: Broadcast current values in an advertisement](BroadcastValues) 
 
 ### CAN
 
@@ -87,15 +86,17 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 
 ### ESP32 specific
 
+* [🌶️ - ESP32 Pulse Counter sample](samples/Gpio/Esp32PulseCounter)
 * [🌶️ - Hardware ESP32 Deep sleep sample](samples/Hardware.Esp32)
 * [🌶️ - Touch pad ESP32 sample](samples/TouchESP32)
 * [🌶️ to 🌶️🌶️🌶️ - Bluetooth sample pack](samples/Bluetooth)
 * [🌶️🌶️ - Hardware ESP32 RMT sample pack](samples/Hardware.Esp32.Rmt)
+* [🌶️🌶️ - Infrared remote receiver based on VS1838 with RMT](samples/Hardware.Esp32.Rmt/InfraredRemoteReceiver)
 * [🌶️🌶️ - NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStrip)
 * [🌶️🌶️ - NeoPixel Strip WS2812 with RMT low memory](samples/Hardware.Esp32.Rmt/NeoPixelStripLowMemory)
-* [🌶️🌶️ - Infrared remote receiver based on VS1838 with RMT](samples/Hardware.Esp32.Rmt/InfraredRemoteReceiver)
 * [🌶️🌶️ - Simple sample **with** Azure lib and retry pattern for connection](samples/AzureSDK/AzureSDKBasic)
 * [🌶️🌶️ - Ultrasonic HC-SR04 sensor with RMT](samples/Hardware.Esp32.Rmt/Ultrasonic)
+* [🌶️🌶️ - Using a Modem like SIM7080, simple sample **with** Azure lib and retry pattern for connection](samples/AzureSDK/AzureSDKBasicFullyManaged)
 * [🌶️🌶️🌶️ - Complete Azure MQTT sample using BMP280 sensor **with** Azure lib and deep sleep](samples/AzureSDK/AzureSDKSleepBMP280)
 * [🌶️🌶️🌶️ - Complete Azure MQTT sample using BMP280 sensor **without Azure lib** and with deep sleep](samples/AzureMQTTTwinsBMP280Sleep)
 * [🌶️🌶️🌶️ - Improv Wifi provisioning](samples/Bluetooth/ImprovWifi)
@@ -115,7 +116,9 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 * [🌶️🌶️ - Screen samples](samples/Graphics/Screens)
 * [🌶️🌶️ -Simple WPF](samples/Graphics/SimpleWpf)
 * [🌶️🌶️ to 🌶️🌶️🌶️ -Graphics samples](samples/Graphics)
+* [🌶️🌶️🌶️ - Creating your own generic graphic driver](samples/Graphics/GenericDriver)
 * [🌶️🌶️🌶️ - Tetris Demo Game for nanoFramework](samples/Graphics/Tetris)
+* [🌶️🌶️🌶️ - Using an existing generic graphic driver](samples/Graphics/UsingGenericDriver)
 
 ### IoT.Device
 
