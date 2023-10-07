@@ -5,7 +5,7 @@ Shows how to use network Sockets API.
 ## Samples
 
 - [🌶️🌶️ - Socket Client](Socket.Client/)
-- [🌶️🌶️ - Socket Client (Wi-Fi connection)](Socket.Client_Wifi/)
+- [🌶️🌶️ - Socket Client (Wi-Fi connection)](Socket.Client_WiFi/)
 
 Shows how to use various APIs related with networking.
 

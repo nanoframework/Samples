@@ -16,7 +16,7 @@ This Sample was written for the [M5Stack ATOM Lite](https://shop.m5stack.com/pro
 
 ### Reference
 
-- [nanoFramework.Net.WebSockets](https://github.com/nanoframework/System.Net.WebSockets/blob/develop/README.md)
+- [nanoFramework.Net.WebSockets](https://github.com/nanoframework/System.Net.WebSockets/blob/main/README.md)
 - [System.Net.WebSockets](http://docs.nanoframework.net/api/System.Net.WebSockets.html)
 - [getting started guide](https://www.feiko.io/posts/2022-01-03-getting-started-with-net-nanoframework)
 
