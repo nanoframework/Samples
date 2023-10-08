@@ -28,7 +28,7 @@ If you have another type of device supporting 1-Wire, you will have to adjust th
 
 ### Reference
 
-- [nanoFramework.Devices.OneWire](http://docs.nanoframework.net/api/nanoFramework.Device.OneWire.html)
+- [nanoFramework.Device.OneWire](http://docs.nanoframework.net/api/nanoFramework.Device.OneWire.html)
 - [1-Wire Protocol](https://en.wikipedia.org/wiki/1-Wire)
 
 ## Build the sample
