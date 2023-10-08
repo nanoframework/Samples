@@ -1,6 +1,6 @@
 # 🌶️ - GPIO sample pack
 
-Shows how to use the GPIO related APIs in [Windows.Devices.Gpio](http://docs.nanoframework.net/api/Windows.Devices.Gpio.html) and [System.Device.Gpio](http://docs.nanoframework.net/api/System.Device.Gpio.html).
+Shows how to use the GPIO related APIs in [System.Device.Gpio](http://docs.nanoframework.net/api/System.Device.Gpio.html) and [System.Device.Gpio](http://docs.nanoframework.net/api/System.Device.Gpio.html).
 
 ## Samples
 
