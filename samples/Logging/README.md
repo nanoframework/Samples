@@ -2,7 +2,7 @@
 
 You will find a short sample in [this project](./Program.cs).
 
-More examples and how to use it in the [main nanoFramework.Logging documentation](https://github.com/nanoframework/nanoFramework.Logging/blob/develop/README.md).
+More examples and how to use it in the [main nanoFramework.Logging documentation](https://github.com/nanoframework/nanoFramework.Logging/blob/main/README.md).
 
 ## Hardware requirements
 
@@ -12,7 +12,7 @@ Any hardware device running a nanoFramework image.
 
 ### Reference
 
-Check as well the [Tests from the nanoFramework.Logging](https://github.com/nanoframework/nanoFramework.Logging/tree/develop/Tests/UnitTestDebugLogging), they gives as well advance scenarios.
+Check as well the [Tests from the nanoFramework.Logging](https://github.com/nanoframework/nanoFramework.Logging/tree/main/Tests/UnitTestDebugLogging), they gives as well advance scenarios.
 
 ## Build the sample
 

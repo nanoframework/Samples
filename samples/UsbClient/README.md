@@ -4,7 +4,7 @@ Shows how to use the [System.Device.UsbClient](http://docs.nanoframework.net/api
 
 ## Samples
 
-- [UsbStream](UsbStream/)
+- [UsbStream](UsbClient/UsbStream)
 
 ## Hardware requirements
 

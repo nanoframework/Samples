@@ -11,7 +11,7 @@ Samples
 - [🌶️🌶️ - NeoPixel Strip WS2812](NeoPixelStrip/)
 - [🌶️🌶️ - NeoPixel Strip WS2812 with low memory consumption](NeoPixelStripLowMemory/)
 
-> **Note**: those sensors and devices are available as nuget in [Device.IoT repository](https://github.com/nanoFramework/nanoFramework.Deive.IoT).
+> **Note**: those sensors and devices are available as nuget in [Device.IoT repository](https://github.com/nanoFramework/nanoFramework.IoT.Device).
 
 ## Hardware requirements
 

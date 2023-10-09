@@ -20,13 +20,13 @@ Please note that samples are offered in "pairs": one for wired connected targets
 
 ### HTTP Azure Get
 
-Illustrates how to connect to [🌶️🌶️🌶️ - Azure and perform GET requests](./AzureGET).
-Illustrates how to connect to [🌶️🌶️🌶️ - Azure and perform GET requests with wifi](./AzureGET_Wifi) for Wi-Fi connected targets.
+Illustrates how to connect to [🌶️🌶️🌶️ - Azure and perform GET requests](./HttpAzureGET).
+Illustrates how to connect to [🌶️🌶️🌶️ - Azure and perform GET requests with wifi](./HttpAzureGET_Wifi) for Wi-Fi connected targets.
 
 ### HTTP Azure POST
 
-Illustrates how to connect to [🌶️🌶️🌶️ - Azure and perform POST requests](./AzurePOST).
-Illustrates how to connect to [🌶️🌶️🌶️ - Azure and perform POST requests with wifi](./AzurePOST) for Wi-Fi connected targets.
+Illustrates how to connect to [🌶️🌶️🌶️ - Azure and perform POST requests](./HttpAzurePOST).
+Illustrates how to connect to [🌶️🌶️🌶️ - Azure and perform POST requests with wifi](./HttpAzurePOST) for Wi-Fi connected targets.
 
 ## Hardware requirements
 

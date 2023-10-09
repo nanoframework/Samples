@@ -1,6 +1,6 @@
 # 🌶️ - Collections sample
 
-Shows how to use the [System.Collections.Hastable](http://docs.nanoframework.net/api/nanoFramework.System.Collection.Hashtable.html).
+Shows how to use the [System.Collections.Hashtable](http://docs.nanoframework.net/api/System.Collections.Hashtable.html).
 
 ## Hardware requirements
 
@@ -11,7 +11,7 @@ This sample is coded to use the STM32F769IDiscovery target board, but can be eas
 
 ### Reference
 
-- [System.Collections.Hastable](http://docs.nanoframework.net/api/nanoFramework.System.Collection.Hashtable.html).
+- [System.Collections.Hashtable](http://docs.nanoframework.net/api/System.Collections.Hashtable.html).
 
 ## Build the sample
 

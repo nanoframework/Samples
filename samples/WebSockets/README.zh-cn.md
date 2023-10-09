@@ -12,7 +12,7 @@
 
 ### WebSockets Client 示例
 
-[🌶️ - Client.Sample](./Websockets.Client.Sample)展示了如何使用Websocket客户端。
+[🌶️ - Client.Sample](./WebSockets.Client.Sample)展示了如何使用Websocket客户端。
 
 ### WebSockets Server 和 Client 示例
 
@@ -28,7 +28,7 @@ Websocket服务器样本需要一个M5Stack ATOM Lite板，但可以很容易地
 
 ### 引用
 
-- [nanoFramework.Net.WebSockets](https://github.com/nanoframework/System.Net.WebSockets/blob/develop/README.md)
+- [nanoFramework.Net.WebSockets](https://github.com/nanoframework/System.Net.WebSockets/blob/main/README.md)
 - [System.Net.WebSockets](http://docs.nanoframework.net/api/System.Net.WebSockets.html)
 
 ## 构建样本

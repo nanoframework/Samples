@@ -16,7 +16,7 @@ The sample uses wifi, this part can be as well replaced with an ethernet connect
 - [nanoFramework.IoT.Device Bmxx80 devices](https://github.com/nanoframework/nanoFramework.IoT.Device/tree/develop/devices/Bmxx80).
 - [Azure IoT documentation for MQTT](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support).
 - [nanoFramework Network helpers](https://github.com/nanoframework/System.Device.Wifi).
-- [More elements about Azure MQTT connection for nanoFramework](../MQTT/AzureMQTT).
+- [More elements about Azure MQTT connection for nanoFramework](../MQTT/AdvancedExample.Azure).
 
 ## Build the sample
 
