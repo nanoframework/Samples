@@ -42,7 +42,7 @@ sdCard.Mount();
 // I2sWavPlayer to add the I2sMode.Pdm flag when configuring I2sConnectionSettings
 
 const string audioFile = "D:\\Variation-CLJ013901.wav";
-var player = new I2SWavPlayer(I2SWavPlayer.Bus.One, audioFile);
+var player = new I2sWavPlayer(I2sWavPlayer.Bus.One, audioFile);
 player.Play();
 player.Dispose();
 
