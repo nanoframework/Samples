@@ -16,7 +16,7 @@ namespace AudioPlayer
     /// You have to provide pin configuration for I2S communication and a full path to the
     /// WAV file you want to play.
     /// </summary>
-    public class I2SWavPlayer : IDisposable
+    public class I2sWavPlayer : IDisposable
     {
         public enum Bus
         {
@@ -28,7 +28,7 @@ namespace AudioPlayer
         private readonly FileStream _stream;
 
         /// <summary>
-        /// Creating a new instance of <see cref="I2SWavPlayer" />.
+        /// Creating a new instance of <see cref="I2sWavPlayer" />.
         /// </summary>
         /// <param name="bus">The I2S bus ID on ESP32 platforms.</param>
         /// <param name="audioFile">Full path to WAV file.</param>
@@ -36,7 +36,7 @@ namespace AudioPlayer
         /// <param name="dataPin">The Pin ID of the Data Out pin. (33 for <see cref="Bus.One" />).</param>
         /// <param name="wsPin">The Pin ID of the WS pin. (25 for <see cref="Bus.One" />).</param>
         /// <exception cref="IOException">Throws an IOException if the WAV file provided does not have at least 44 bytes (header).</exception>
-        public I2SWavPlayer(Bus bus, string audioFile, int bckPin = 32, int dataPin = 33, int wsPin = 25)
+        public I2sWavPlayer(Bus bus, string audioFile, int bckPin = 32, int dataPin = 33, int wsPin = 25)
         {
             switch (bus)
             {
