@@ -43,9 +43,8 @@
       <HintPath>packages\nanoFramework.System.Text.1.2.37\lib\nanoFramework.System.Text.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.WebServer, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.WebServer.1.2.1\lib\nanoFramework.WebServer.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="nanoFramework.WebServer">
+      <HintPath>packages\nanoFramework.WebServer.1.2.3\lib\nanoFramework.WebServer.dll</HintPath>
     </Reference>
     <Reference Include="System.Device.Gpio, Version=1.1.28.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.System.Device.Gpio.1.1.28\lib\System.Device.Gpio.dll</HintPath>
@@ -73,14 +72,6 @@
     </Reference>
     <Reference Include="System.Threading, Version=1.1.19.33722, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.System.Threading.1.1.19\lib\System.Threading.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Windows.Storage, Version=1.5.33.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Windows.Storage.1.5.33\lib\Windows.Storage.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Windows.Storage.Streams, Version=1.14.24.46541, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Windows.Storage.Streams.1.14.24\lib\Windows.Storage.Streams.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
