@@ -5,7 +5,7 @@
 
 //////////////////////////////////////////
 // uncomment the line bellow to use TLS //
-#define USE_TLS
+//#define USE_TLS
 //////////////////////////////////////////
 
 using System;
@@ -19,12 +19,12 @@ using System.Security.Cryptography.X509Certificates;
 using WebServer.Sample;
 using System.Net.Security;
 
-#if HAS_WIFI
-using System.Device.Wifi;
+#if HAS_STORAGE
+using System.IO;
 #endif
 
-#if HAS_STORAGE
-using Windows.Storage;
+#if HAS_WIFI
+using System.Device.Wifi;
 #endif
 
 namespace nanoFramework.WebServer.Sample
@@ -39,7 +39,12 @@ namespace nanoFramework.WebServer.Sample
 #endif
 
 #if HAS_STORAGE
-        private static StorageFolder _storage;
+        // E = USB storage
+        // D = SD Card
+        // I = Internal storage
+        // Adjust this based on your configuration
+        private const string DirectoryPath = "I:\\";
+        private static string[] _listFiles;
 #endif
 
         private static GpioController _controller;
@@ -59,19 +64,15 @@ namespace nanoFramework.WebServer.Sample
 #else
                 success = NetworkHelper.SetupAndConnectNetwork(cs.Token, true);
 #endif
-                if(!success)
+                if (!success)
                 {
                     Debug.WriteLine($"Can't get a proper IP address and DateTime, error: {WifiNetworkHelper.Status}.");
-                    if(WifiNetworkHelper.HelperException !=null)
+                    if (WifiNetworkHelper.HelperException != null)
                     {
                         Debug.WriteLine($"Exception: {WifiNetworkHelper.HelperException}");
                     }
                     return;
                 }
-
-#if HAS_STORAGE
-                _storage = KnownFolders.RemovableDevices.GetFolders()[0];
-#endif
 
                 _controller = new GpioController();
 
@@ -129,16 +130,17 @@ namespace nanoFramework.WebServer.Sample
 
                     WebServer.OutPutStream(e.Context.Response, "<html><head>" +
                         "<title>Hi from nanoFramework Server</title></head><body>You want me to say hello in a real HTML page!<br/><a href='/useinternal'>Generate an internal text.txt file</a><br />" +
-                        "<a href='/Text.txt'>Download the Text.txt file</a><br>" +
+                        "<a href='/text.txt'>Download the Text.txt file</a><br>" +
                         "Try this url with parameters: <a href='/param.htm?param1=42&second=24&NAme=Ellerbach'>/param.htm?param1=42&second=24&NAme=Ellerbach</a></body></html>");
                 }
 #if HAS_STORAGE
                 else if (url.ToLower() == "/useinternal")
                 {
                     // This tells the web server to use the internal storage and create a simple text file
-                    _storage = KnownFolders.InternalDevices.GetFolders()[0];
-                    var testFile = _storage.CreateFile("text.txt", CreationCollisionOption.ReplaceExisting);
-                    FileIO.WriteText(testFile, "This is an example of file\r\nAnd this is the second line");
+
+                    var testFile = new FileStream("I:\\text.txt", FileMode.Create, FileAccess.ReadWrite);
+                    byte[] buff = Encoding.UTF8.GetBytes("This is an example of file\r\nAnd this is the second line");
+                    testFile.Write(buff, 0, buff.Length);
                     WebServer.OutPutStream(e.Context.Response, "Created a test file text.txt on internal storage");
                 }
 #endif
@@ -280,13 +282,24 @@ namespace nanoFramework.WebServer.Sample
 #if HAS_STORAGE
                 else
                 {
-                    // Very simple example serving a static file on an SD card
-                    var files = _storage.GetFiles();
-                    foreach (var file in files)
+                    // Gets the list of all files in a specific directory
+                    // See the MountExample for more details if you need to mount an SD card and adjust here
+                    // https://github.com/nanoframework/Samples/blob/main/samples/System.IO.FileSystem/MountExample/Program.cs
+                    _listFiles = Directory.GetFiles(DirectoryPath);
+                    // Remove the root directory
+                    for (int i = 0; i < _listFiles.Length; i++)
                     {
-                        if (file.Name == url)
+                        _listFiles[i] = _listFiles[i].Substring(DirectoryPath.Length);
+                    }
+
+                    var fileName = url.Substring(1);
+                    // Note that the file name is case sensitive
+                    // Very simple example serving a static file on an SD card                   
+                    foreach (var file in _listFiles)
+                    {
+                        if (file == fileName)
                         {
-                            WebServer.SendFileOverHTTP(e.Context.Response, file);
+                            WebServer.SendFileOverHTTP(e.Context.Response, DirectoryPath + file);
                             return;
                         }
                     }
@@ -294,7 +307,6 @@ namespace nanoFramework.WebServer.Sample
                     WebServer.OutputHttpCode(e.Context.Response, HttpStatusCode.NotFound);
                 }
 #endif
-
             }
             catch (Exception)
             {
