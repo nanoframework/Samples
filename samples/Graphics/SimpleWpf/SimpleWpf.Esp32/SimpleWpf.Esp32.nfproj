@@ -52,6 +52,10 @@
     <Reference Include="nanoFramework.Runtime.Native">
       <HintPath>..\packages\nanoFramework.Runtime.Native.1.6.6\lib\nanoFramework.Runtime.Native.dll</HintPath>
     </Reference>
+    <Reference Include="nanoFramework.System.Collections, Version=1.5.18.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.Collections.1.5.18\lib\nanoFramework.System.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Device.Gpio">
       <HintPath>..\packages\nanoFramework.System.Device.Gpio.1.1.28\lib\System.Device.Gpio.dll</HintPath>
     </Reference>
