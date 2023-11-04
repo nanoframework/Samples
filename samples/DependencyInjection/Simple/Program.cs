@@ -4,8 +4,7 @@
 //
 
 using System.Diagnostics;
-
-using nanoFramework.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace nanoFramework.Simple
 {
@@ -24,9 +23,7 @@ namespace nanoFramework.Simple
             service.ServiceObject.Three = "3";
 
             // create an updated instance of the root object  
-            var instance = (RootObject)ActivatorUtilities.CreateInstance(
-                                    serviceProvider, typeof(RootObject), 1, "2"
-                                );
+            var instance = (RootObject)ActivatorUtilities.CreateInstance(serviceProvider, typeof(RootObject), 1, "2");
 
             Debug.WriteLine($"One: {instance.One}");
             Debug.WriteLine($"Two: {instance.Two}");
