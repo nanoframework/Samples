@@ -12,8 +12,8 @@ using System.Threading;
 using System.Diagnostics;
 using nanoFramework.Json;
 using System.Security.Cryptography.X509Certificates;
-using TestAzureMqtt;
 using nanoFramework.Hardware.Esp32;
+using AzureSDKBasic;
 
 const string DeviceID = "YourDeviceId";
 const string IotBrokerAddress = "yourIOTHub.azure-devices.net";
@@ -24,7 +24,7 @@ const string Password = "YouWifiPassword";
 bool ShoudIStop = false;
 
 // If you haven't uploaded the Azure certificate into your device, use this line:
-DeviceClient azureIoT = new DeviceClient(IotBrokerAddress, DeviceID, SasKey, azureCert: new X509Certificate(Resource.GetBytes(Resource.BinaryResources.AzureRoot)));
+DeviceClient azureIoT = new DeviceClient(IotBrokerAddress, DeviceID, SasKey, azureCert: new X509Certificate(Resource.GetString(Resource.StringResources.AzureRootCerts)));
 // Otherwise you can just use this line:
 //DeviceClient azureIoT = new DeviceClient(IotBrokerAddress, DeviceID, SasKey);
 
@@ -110,7 +110,7 @@ catch (Exception ex)
     // This global try catch is to make sure whatever happen, we will safely be able to handle anything.
     Console.WriteLine($"Global exception: {ex.Message})");
     // In this example, we will sleep a bit and then reboot.
-    ClosAndGoToSleep();
+    CloseAndGoToSleep();
 }
 
 Thread.Sleep(Timeout.InfiniteTimeSpan);
@@ -151,7 +151,7 @@ bool ConnectToWifi()
     return success;
 }
 
-void ClosAndGoToSleep()
+void CloseAndGoToSleep()
 {
     azureIoT?.Close();
     Thread.Sleep(1000);
@@ -221,6 +221,6 @@ void CloudToDeviceMessageEvent(object sender, CloudToDeviceMessageEventArgs e)
     {
         // Here, an example where we will just reboot the device.
         Console.WriteLine("Reboot requested");
-        ClosAndGoToSleep();
+        CloseAndGoToSleep();
     }
 }

@@ -13,7 +13,7 @@ namespace BasicFileSystemExample
         {
             #region Variables
 
-            string sampeFilePath = "D:\\sampleFile.txt";
+            string sampleFilePath = "D:\\sampleFile.txt";
             string sampleFileUsbPath = "E:\\sampleFileUSB.txt";
             string sampleFileInternalPath = "I:\\sampleFileInternal.txt";
             string sampleText = "Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ";
@@ -38,11 +38,11 @@ namespace BasicFileSystemExample
             Debug.WriteLine("+++++ System.IO.FileSystem examples +++++");
 
             Debug.WriteLine("+++++ Creating a sample file +++++");
-            File.Create(sampeFilePath);
+            File.Create(sampleFilePath);
 
             byte[] sampleBuffer = Encoding.UTF8.GetBytes(sampleText);
 
-            FileStream fs = new FileStream(sampeFilePath, FileMode.Open, FileAccess.ReadWrite);
+            FileStream fs = new FileStream(sampleFilePath, FileMode.Open, FileAccess.ReadWrite);
             fs.Write(sampleBuffer, 0, sampleBuffer.Length);
 
             if(fs.CanSeek)
@@ -61,7 +61,7 @@ namespace BasicFileSystemExample
 
             fs.Dispose();
             Debug.WriteLine("+++++ Copy a file to USB drive +++++");
-            File.Copy(sampeFilePath, sampleFileUsbPath);
+            File.Copy(sampleFilePath, sampleFileUsbPath);
 
             Debug.WriteLine("+++++ Move File Back to SD card +++++");
             File.Move(sampleFileUsbPath, "D:\\sampleFile2.txt");

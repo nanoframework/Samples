@@ -1,4 +1,4 @@
-//
+﻿//
 // Copyright (c) .NET Foundation and Contributors
 // See LICENSE file in the project root for full license information.
 //
@@ -30,7 +30,7 @@ namespace AudioPlayer
         /// <summary>
         /// Creating a new instance of <see cref="I2sWavPlayer" />.
         /// </summary>
-        /// <param name="bus">The I2S bus ID on ESP32 plattforms.</param>
+        /// <param name="bus">The I2S bus ID on ESP32 platforms.</param>
         /// <param name="audioFile">Full path to WAV file.</param>
         /// <param name="bckPin">The Pin ID of the BCK pin. (32 for <see cref="Bus.One" />).</param>
         /// <param name="dataPin">The Pin ID of the Data Out pin. (33 for <see cref="Bus.One" />).</param>
@@ -65,9 +65,10 @@ namespace AudioPlayer
 
             var headerParser = new WavFileHeader(header);
 
-            _i2S = new I2sDevice(new I2sConnectionSettings(1)
+            _i2S = new I2sDevice(new I2sConnectionSettings((int) bus)
             {
                 Mode = I2sMode.Master | I2sMode.Tx,
+                //Mode = I2sMode.Master | I2sMode.Tx | I2sMode.Pdm, // Try this if output contains lots of static and poor audio quality
                 CommunicationFormat = I2sCommunicationFormat.I2S,
 
                 SampleRate = headerParser.SampleRate,
@@ -127,7 +128,7 @@ namespace AudioPlayer
             {
                 1 => I2sChannelFormat.OnlyLeft,
                 2 => I2sChannelFormat.RightLeft,
-                _ => throw new ArgumentOutOfRangeException("channels", "Only supports either Mono or Stereo WAV files.")
+                _ => throw new ArgumentOutOfRangeException(nameof(channels), "Only supports either Mono or Stereo WAV files.")
             };
         }
 
@@ -139,8 +140,7 @@ namespace AudioPlayer
                 16 => I2sBitsPerSample.Bit16,
                 24 => I2sBitsPerSample.Bit24,
                 32 => I2sBitsPerSample.Bit32,
-                _ => throw new ArgumentOutOfRangeException("bitsPerSample",
-                    "Only 8, 16, 24 or 32 bits per sample are supported.")
+                _ => throw new ArgumentOutOfRangeException(nameof(bitsPerSample), "Only 8, 16, 24 or 32 bits per sample are supported.")
             };
         }
     }

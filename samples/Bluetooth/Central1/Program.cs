@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+//
+
+using System;
 using System.Diagnostics;
 using System.Threading;
 
@@ -43,8 +47,8 @@ namespace Central1
             BluetoothLEAdvertisement adv = args.Advertisement;
 
             Console.WriteLine();
-            Console.WriteLine($"=== Advert received ====");
-            Console.WriteLine($"Address:{args.BluetoothAddress:X}");
+            Console.WriteLine($"=== Advert received ==== {DateTime.UtcNow}");
+            Console.WriteLine($"Address:{args.BluetoothAddress:X} RSSI:{args.RawSignalStrengthInDBm}");
             Console.WriteLine($"Local name:{adv.LocalName}");
 
             // List Manufacturers data

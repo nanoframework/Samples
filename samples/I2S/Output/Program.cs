@@ -30,7 +30,7 @@ while (!Debugger.IsAttached)
 }
 
 // SD Card:
-uint cs = 5;
+const uint cs = 5;
 Configuration.SetPinFunction(23, DeviceFunction.SPI1_MOSI);
 Configuration.SetPinFunction(18, DeviceFunction.SPI1_CLOCK);
 Configuration.SetPinFunction(19, DeviceFunction.SPI1_MISO);
@@ -38,7 +38,10 @@ Configuration.SetPinFunction(19, DeviceFunction.SPI1_MISO);
 var sdCard = new SDCard(new SDCard.SDCardSpiParameters { spiBus = 1, chipSelectPin = cs });
 sdCard.Mount();
 
-var audioFile = "D:\\Variation-CLJ013901.wav";
+// NOTE: If the audio has low quality and lots of static you may need to update
+// I2sWavPlayer to add the I2sMode.Pdm flag when configuring I2sConnectionSettings
+
+const string audioFile = "D:\\Variation-CLJ013901.wav";
 var player = new I2sWavPlayer(I2sWavPlayer.Bus.One, audioFile);
 player.Play();
 player.Dispose();

@@ -2,8 +2,8 @@
 
 Shows how to use various APIs specific to TI SimpleLink targets.
 
-- [Power down/off test](/TI.PowerMode)
-- [Read IEEE Address](/TI.Utilities)
+- [Power down/off test](/samples/Hardware.TI/TI.PowerMode)
+- [Read IEEE Address](/samples/Hardware.TI/TI.Utilities)
 
 ## Hardware requirements
 

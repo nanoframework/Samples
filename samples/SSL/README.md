@@ -6,9 +6,9 @@ Shows how to use various APIs related with TLS (Transport Layer Security).
 
 - [🌶️🌶️ - Parsing a Certificate to access details](./ParseCertificate/)
 - [🌶️🌶️ - Secure Client for Ethernet connected devices](./SecureClient/)
-- [🌶️🌶️ - Secure Client for ESP32 devices (Wi-Fi connection)](./SecureClient_ESP32/)
+- [🌶️🌶️ - Secure Client for ESP32 devices (Wi-Fi connection)](./SecureClient_WiFi/)
 - [🌶️🌶️🌶️ - Secure Server for Ethernet connected devices](./SecureServer/)
-- [🌶️🌶️🌶️ - Secure Server for ESP32 devices (Wi-Fi connection)](./SecureServer_ESP32/)
+- [🌶️🌶️🌶️ - Secure Server for ESP32 devices (Wi-Fi connection)](./SecureServer_WiFi/)
 
 ## Test certificates
 

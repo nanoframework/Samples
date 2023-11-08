@@ -9,7 +9,7 @@ Current targets are for the samples are ESP32 and the STM32F769I_DISCOVERY. But 
 
 > **CRITICAL**: all display **must** be initialized before being able to be used.
 
-This initialization can be different depending on your device. ESP32 devices must be properly initialize to work, the GPIO must match the functions. You also need to know the exact size of the screen. See the [M5Stack](../Screens/README.md) and M5Stick examples for more configurations.
+This initialization can be different depending on your device. ESP32 devices must be properly initialize to work, the GPIO must match the functions. You also need to know the exact size of the screen. See the [M5Stack](../Graphics/Screens/README.md) and M5Stick examples for more configurations.
 
 ```csharp
 int backLightPin = 32;

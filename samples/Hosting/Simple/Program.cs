@@ -7,9 +7,8 @@ using System;
 using System.Threading;
 using System.Device.Gpio;
 using System.Diagnostics;
-
+using Microsoft.Extensions.DependencyInjection;
 using nanoFramework.Hosting;
-using nanoFramework.DependencyInjection;
 
 namespace Hosting
 {

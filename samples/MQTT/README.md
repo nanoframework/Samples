@@ -9,7 +9,7 @@ For more details, see the comments inside the samples.
 | Sample | Description | 
 |---|---|
 |[🌶️🌶️ - BasicExample.Ethernet](./BasicExample.Ethernet)|The most basic usage, without authentication or certificates. Ready to run on Ethernet-based boards.|
-|[🌶️🌶️ -BasicExample.Wifi](./BasicExample.Wifi)|The most basic usage, without authentication or certificates. Ready to run on Wifi-based boards.|
+|[🌶️🌶️ -BasicExample.Wifi](./BasicExample.WiFi)|The most basic usage, without authentication or certificates. Ready to run on Wifi-based boards.|
 |[🌶️🌶️🌶️ - AdvancedExample.Certificates](./AdvancedExample.Certificates)|Basic usage, but uses secure connection and certificate-based authorization.|
 |[🌶️🌶️🌶️ - AdvancedExample.Aws](./AdvancedExample.Aws)|Very advanced sample of how to use MQTT in AWS. Requires having an AWS account.|
 |[🌶️🌶️🌶️ - AdvancedExample.Azure](./AdvancedExample.Azure)|Very advanced sample of how to use MQTT in Azure. Requires having an Azure account.|

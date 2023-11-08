@@ -1,11 +1,11 @@
 # 🌶️ - GPIO sample pack
 
-Shows how to use the GPIO related APIs in [Windows.Devices.Gpio](http://docs.nanoframework.net/api/Windows.Devices.Gpio.html) and [System.Device.Gpio](http://docs.nanoframework.net/api/System.Device.Gpio.html).
+Shows how to use the GPIO related APIs in [System.Device.Gpio](http://docs.nanoframework.net/api/System.Device.Gpio.html) and [System.Device.Gpio](http://docs.nanoframework.net/api/System.Device.Gpio.html).
 
 ## Samples
 
-- [🌶️ - GPIO + Events](Gpio2%BEvents/)
-- [🌶️ - Gpio + Events (IoT Style)](Gpio2%BEventsIoTStyle/)
+- [🌶️ - GPIO + Events](Gpio%2BEvents/)
+- [🌶️ - Gpio + Events (IoT Style)](Gpio%2BEventsIoTStyle/)
 - [🌶️ - ESP32 Pulse Count samples](Esp32PulseCounter)
 
 ## Build the sample

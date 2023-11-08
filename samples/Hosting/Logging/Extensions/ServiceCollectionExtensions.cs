@@ -4,10 +4,8 @@
 //
 
 using System;
-
+using Microsoft.Extensions.DependencyInjection;
 using nanoFramework.Logging.Debug;
-using nanoFramework.DependencyInjection;
-
 using Microsoft.Extensions.Logging;
 
 namespace nanoFramework.Logging
