@@ -18,7 +18,8 @@ To use a secured (TLS) connection to Azure IoT Hub the following is required:
 
 1. Generate an SAS Token for your device. [Azure IoT Explorer](https://github.com/Azure/azure-iot-explorer) it's a convenient tool to do this for you.
 After setting up the access to you IoT Hub, navigate to the device, enter the desired parameters and generate the SAS Token (see the print screen below).
-![Azure IoT Explorer](../azure-iot-explorer-sas.png) 
+
+![Azure IoT Explorer](../azure-iot-explorer-sas.png)
 
 ### Reference
 
