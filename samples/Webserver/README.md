@@ -5,7 +5,8 @@ Shows how to use .NET **nanoFramework** Webserver library in common usage scenar
 ## Samples
 
 - [🌶️ - REST and GPIO](./WebServer.GpioRest/)
-- [🌶️🌶️ - HTTP server](./WebServer.Sample/)
+- [🌶️🌶️ - HTTP server](./WebServer.Sample/WebServer.Sample/)
+- [🌶️🌶️ - HTTP server with file system](./WebServer.Sample/WebServer.Sample.FileSystem/)
 - [🌶️🌶️ - Dependency Injection](./WebServer.DI/)
 
 ## Usage
@@ -68,10 +69,10 @@ The `RouteAnyTest`is called whenever the url is `test/any` whatever the method i
 
 There is a more advance example with simple REST API to get a list of Person and add a Person. Check it in the [sample](./WebServer.Sample/ControllerPerson.cs).
 
-> [!Important]
+> ![Important]
 >
-> By default the routes are not case sensitive and the attribute **must** be lowercase.
-> If you want to use case sensitive routes like in the previous example, use the attribute `CaseSensitive`. As in the previous example, you **must** write the route as you want it to be responded to.
+> - By default the routes are not case sensitive and the attribute **must** be lowercase
+> - If you want to use case sensitive routes like in the previous example, use the attribute `CaseSensitive`. As in the previous example, you **must** write the route as you want it to be responded to.
 
 ## A simple GPIO controller REST API
 
@@ -83,6 +84,14 @@ You will find in simple [GPIO controller sample](https://github.com/nanoframewor
   - You can use high or 1, it has the same effect and will place the pin in high value
   - You can use low of 0, it has the same effect and will place the pin in low value
 - To read the pin 4: <http://yoururl/read/4>, you will get as a raw text `high`or `low`depending on the state
+
+## DI integration with controllers
+
+Check [WebServer.DI sample](./WebServer.DI) if you want to use controllers with automatically injecting services from [nanoFramework.DependencyInjection](https://github.com/nanoframework/nanoFramework.DependencyInjection).
+
+- Type you credentials in Program.cs files
+- Navigate to http://yoururl/test
+- You should get text with two GUIDs, one should stay the same across all requests (singleton service)
 
 ## Authentication on controllers
 
@@ -169,7 +178,6 @@ With the previous example the following happens:
 
 All up, this is an example to show how to use authentication, it's been defined to allow flexibility.
 
-
 ## Managing incoming queries thru events
 
 Very basic usage is the following:
@@ -219,7 +227,7 @@ if (url.ToLower().IndexOf("/param.htm") == 0)
 }
 ```
 
-And server static files:
+To serve static files, you have to use the `nanoFramework.WebServer.FileSystem` nuget. This is only supported on devices having the `System.IO.FileSystem` capability.
 
 ```csharp
 // E = USB storage

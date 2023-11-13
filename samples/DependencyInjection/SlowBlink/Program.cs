@@ -3,9 +3,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using Microsoft.Extensions.DependencyInjection;
 using nanoFramework.Logging.Debug;
-using nanoFramework.DependencyInjection;
-
 using Microsoft.Extensions.Logging;
 
 namespace nanoFramework.SlowBlink

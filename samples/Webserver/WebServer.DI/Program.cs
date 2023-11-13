@@ -5,8 +5,8 @@
 
 using System.Threading;
 using nanoFramework.Networking;
-using nanoFramework.DependencyInjection;
 using System;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace nanoFramework.WebServer.Sample
 {

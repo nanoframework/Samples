@@ -5,7 +5,7 @@
 
 using System;
 using System.Net;
-using nanoFramework.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace nanoFramework.WebServer.Sample
 {
