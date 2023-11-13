@@ -7,11 +7,11 @@ A Dependency Injection (DI) Container provides functionality and automates many 
 
 ### Dependency injection application container sample 
 
-[🌶️ -  SlowBlink](./SlowBlink) shows how to create a dependency injection application container including gpio and logging.  Project sample will require a working led connected to a GPIO port.
+[🌶️ -  SlowBlink](./SlowBlink/Program.cs) shows how to create a dependency injection application container including gpio and logging.  Project sample will require a working led connected to a GPIO port.
 
 ### Dependency injection usage sample
 
-[🌶️ -  Simple](./Simple) shows how to create a very simple dependency injection object.
+[🌶️ -  Simple](./Simple/Program.cs) shows how to create a very simple dependency injection object.
 
 ## Building the samples
 

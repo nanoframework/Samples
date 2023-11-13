@@ -2,6 +2,8 @@
 
 Shows how to use the [nanoFramework.Device.OneWire](http://docs.nanoframework.net/api/nanoFramework.Device.OneWire.html) API to read and write from/to a 1-Wire device.
 
+The sample is [located here](./).
+
 ## Hardware requirements
 
 - A .NET nanoFramework target with 1-Wire capability enabled in the firmware for example a STM32F407_DISCO or any of the ESP32 targets.

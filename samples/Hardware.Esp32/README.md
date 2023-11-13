@@ -5,6 +5,8 @@ Shows how to use the [nanoFramework.Hardware.Esp32](http://docs.nanoframework.ne
 This example shows how to use change default pins for devices and to use the Sleep methods in the nanoFramework.Hardware.Esp32 nuget package.
 Putting the ESP32 into Deep sleep mode and waking it up after a set period plus other examples.
 
+The sample is [located here](./Program.cs).
+
 ## Hardware requirements
 
 Any ESP32 hardware device running a nanoFramework image.
@@ -32,5 +34,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

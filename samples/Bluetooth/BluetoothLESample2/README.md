@@ -18,3 +18,5 @@ The 2nd Characteristic allows writes but requires to be paired for the read.
 The 3rd Characteristic allows writes but requires to be paired with authentication for the read.
 
 See [main Bluetooth sample's readme](../README.md) for more information.
+
+The sample is [located here](./Program.cs).

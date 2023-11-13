@@ -11,6 +11,8 @@ Every 3 seconds application reads temperature value from BMP280 sensor and turns
 
 > **Note**: this sample requires a good understanding on how certificate authentication works. And how to set them up properly in Azure IoT.
 
+The sample is [located here](./).
+
 ## Getting Started with nanoFramework
 
 * [Getting Started Guide for managed code (C#)](https://docs.nanoframework.net/content/getting-started-guides/getting-started-managed.html)

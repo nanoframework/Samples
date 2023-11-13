@@ -76,14 +76,14 @@ There is a more advance example with simple REST API to get a list of Person and
 
 ## A simple GPIO controller REST API
 
-You will find in simple [GPIO controller sample](./WebServer.GpioRest) REST API. The controller not case sensitive and is working like this:
+You will find in simple [GPIO controller sample](https://github.com/nanoframework/Samples/tree/main/samples/Webserver/WebServer.GpioRest) REST API. The controller not case sensitive and is working like this:
 
-- To open the pin 2 as output: http://yoururl/open/2/output
-- To open pin 4 as input: http://yoururl/open/4/input
-- To write the value high to pin 2: http://yoururl/write/2/high
+- To open the pin 2 as output: <http://yoururl/open/2/output>
+- To open pin 4 as input: <http://yoururl/open/4/input>
+- To write the value high to pin 2: <http://yoururl/write/2/high>
   - You can use high or 1, it has the same effect and will place the pin in high value
   - You can use low of 0, it has the same effect and will place the pin in low value
-- To read the pin 4: http://yoururl/read/4, you will get as a raw text `high`or `low`depending on the state
+- To read the pin 4: <http://yoururl/read/4>, you will get as a raw text `high`or `low`depending on the state
 
 ## DI integration with controllers
 
@@ -169,12 +169,12 @@ using (WebServer server = new WebServer(80, HttpProtocol.Http, new Type[] { type
 With the previous example the following happens:
 
 - All the controller by default, even when nothing is specified will use the controller credentials. In our case, the Basic authentication with the default user (topuser) and password (topPassword) will be used.
-  - When calling http://yoururl/authbasic from a browser, you will be prompted for the user and password, use the default one topuser and topPassword to get access
-  - When calling http://yoururl/authnone, you won't be prompted because the authentication has been overridden for no authentication
-  - When calling http://yoururl/authbasicspecial, the user and password are different from the defautl ones, user2 and password is the right couple here
+  - When calling <http://yoururl/authbasic> from a browser, you will be prompted for the user and password, use the default one topuser and topPassword to get access
+  - When calling <http://yoururl/authnone>, you won't be prompted because the authentication has been overridden for no authentication
+  - When calling <http://yoururl/authbasicspecial>, the user and password are different from the defautl ones, user2 and password is the right couple here
 - If you would have define in the controller a specific user and password like `[Authentication("Basic:myuser mypassword")]`, then the default one for all the controller would have been myuser and mypassword
-- When calling http://yoururl/authapi, you must pass the header `ApiKey` (case sensitive) with the value `superKey1234` to get authorized, this is overridden the default Basic authentication
-- When calling http://yoururl/authdefaultapi, the default key `ATopSecretAPIKey1234` will be used so you have to pass it in the headers of the request
+- When calling <http://yoururl/authapi>, you must pass the header `ApiKey` (case sensitive) with the value `superKey1234` to get authorized, this is overridden the default Basic authentication
+- When calling <http://yoururl/authdefaultapi>, the default key `ATopSecretAPIKey1234` will be used so you have to pass it in the headers of the request
 
 All up, this is an example to show how to use authentication, it's been defined to allow flexibility.
 
@@ -230,6 +230,13 @@ if (url.ToLower().IndexOf("/param.htm") == 0)
 To serve static files, you have to use the `nanoFramework.WebServer.FileSystem` nuget. This is only supported on devices having the `System.IO.FileSystem` capability.
 
 ```csharp
+// E = USB storage
+// D = SD Card
+// I = Internal storage
+// Adjust this based on your configuration
+const string DirectoryPath = "I:\\";
+string[] _listFiles;
+
 // Gets the list of all files in a specific directory
 // See the MountExample for more details if you need to mount an SD card and adjust here
 // https://github.com/nanoframework/Samples/blob/main/samples/System.IO.FileSystem/MountExample/Program.cs
@@ -254,6 +261,10 @@ foreach (var file in _listFiles)
 
 WebServer.OutputHttpCode(e.Context.Response, HttpStatusCode.NotFound);
 ```
+
+> [!Important]
+>
+> Serving files requires the `nanoFramework.WebServer.FileSystem` nuget **AND** that the device supports storage so `System.IO.FileSystem`.
 
 And also **REST API** is supported, here is a comprehensive example:
 
@@ -359,7 +370,8 @@ using (WebServer server = new WebServer(443, HttpProtocol.Https)
 }
 ```
 
-> IMPORTANT: because the certificate above is not issued from a Certificate Authority it won't be recognized as a valid certificate. If you want to access the nanoFramework device with your browser, for example, you'll have to add the [CRT file](WebServer.Sample\WebServer.Sample\webserver-cert.crt) as a trusted one. On Windows, you just have to double click on the CRT file and then click "Install Certificate...".
+> [!IMPORTANT]
+> Because the certificate above is not issued from a Certificate Authority it won't be recognized as a valid certificate. If you want to access the nanoFramework device with your browser, for example, you'll have to add the [CRT file](WebServer.Sample\webserver-cert.crt) as a trusted one. On Windows, you just have to double click on the CRT file and then click "Install Certificate...".
 
 You can of course use the routes as defined earlier. Both will work, event or route with the notion of controller.
 
@@ -382,5 +394,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

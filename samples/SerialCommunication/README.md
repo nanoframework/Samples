@@ -9,6 +9,8 @@ This sample allows the user to configure and communicate with a Serial device ov
 - Receive data from the Input stream
 - Register for Events on the Serial device
 
+The sample is [located here](./).
+
 ## Scenarios
 
 ### Configure the Serial device
@@ -63,5 +65,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

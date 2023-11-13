@@ -3,6 +3,7 @@
 ## System.Device.I2c
 
 - [🌶️🌶️ - IES-SHIELD-GPS module](./System.Device.I2c/GPS)
+- [🌶️🌶️ - I2C Scanner sample](./NanoI2cScanner/)
 
 ## Build the sample
 
@@ -23,5 +24,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

@@ -8,6 +8,8 @@ The documentation can be found [here](https://docs.microsoft.com/en-us/azure/iot
 
 Refer to the main [.NET nanoFramework SDK](https://github.com/nanoframework/nanoFramework.Azure.Devices) to understand the usage.
 
+The sample is [located here](./).
+
 ## Usage
 
 The device **must** be connected to the Internet and have a valid date and time.

@@ -4,6 +4,8 @@ This examples is a complete code Over the Air (OTA) example using Azure IoT. You
 
 ![Architecture](architecture.png)
 
+The sample is [located here](./).
+
 ## Hardware requirements
 
 An hardware device with networking capabilities running a nanoFramework image. 

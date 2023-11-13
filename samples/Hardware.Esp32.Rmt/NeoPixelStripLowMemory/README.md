@@ -4,6 +4,8 @@ Shows how to use ESP32 RMT with an NeoPixel Strip WS2812
 
 This sample send signal to strip with pin D5.
 
+The sample is [located here](./NeoPixel/).
+
 ## Connections
 
 - GIN -  Any available GPIO pin (D5 in the sample)
@@ -14,7 +16,6 @@ This sample send signal to strip with pin D5.
 >
 >- Put resistor 400 Ohm between GIN and GPIO pin
 >- Join the ground of the external power supply and the GND of ESP32
->- This example require a preview firmware dont use *-stable* parameter on *nanoff*
 
 ## Hardware requirements
 

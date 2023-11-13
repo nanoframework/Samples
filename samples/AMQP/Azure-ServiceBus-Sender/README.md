@@ -1,6 +1,8 @@
 # 🌶️🌶️ - Azure Service Bus AMQP sample
 
-Shows how to use AMQP.Net Lite library with Azure Servic eBus.
+Shows how to use Shows how to use AMQP.Net Lite library with Azure Service Bus.
+
+The sample is [located here](./Program.cs).
 
 ## Hardware requirements
 
@@ -16,7 +18,8 @@ To use a secured (TLS) connection to Azure IoT Hub the following is required:
 
 1. Generate an SAS Token for your device. [Azure IoT Explorer](https://github.com/Azure/azure-iot-explorer) it's a convenient tool to do this for you.
 After setting up the access to you IoT Hub, navigate to the device, enter the desired parameters and generate the SAS Token (see the print screen below).
-![](azure-iot-explorer-sas.png) 
+
+![Azure IoT Explorer](../azure-iot-explorer-sas.png)
 
 ### Reference
 
@@ -41,5 +44,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

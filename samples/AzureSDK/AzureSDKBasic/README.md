@@ -8,6 +8,8 @@ You can test this sample by enabling and disabling the device in Azure IoT. You 
 
 ![telemetry example](./output.png)
 
+The sample is [located here](./).
+
 ## Hardware requirements
 
 An hardware device with networking capabilities running a nanoFramework image.

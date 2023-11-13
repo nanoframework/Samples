@@ -10,6 +10,7 @@ Samples
 - [🌶️🌶️ - HC-SR04 ultrasonic ranging](Ultrasonic/)
 - [🌶️🌶️ - NeoPixel Strip WS2812](NeoPixelStrip/)
 - [🌶️🌶️ - NeoPixel Strip WS2812 with low memory consumption](NeoPixelStripLowMemory/)
+- [🌶️🌶️ - Infrared remote receiver based on VS1838 with RMT](./InfraredRemoteReceiver/)
 
 > **Note**: those sensors and devices are available as nuget in [Device.IoT repository](https://github.com/nanoFramework/nanoFramework.IoT.Device).
 
@@ -40,5 +41,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

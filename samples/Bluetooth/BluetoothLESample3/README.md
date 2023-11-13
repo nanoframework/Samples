@@ -28,3 +28,5 @@ This sample class includes these 4 but other types can easily added to class. Mu
 The sample shows 3 Temperatures (Instantaneous, Maximum, Minimum) added to service and a humidity sensor.
 
 See [main Bluetooth sample's readme](../README.md) for more information.
+
+The sample is [located here](./Program.cs).

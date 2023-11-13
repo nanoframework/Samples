@@ -4,6 +4,8 @@ This sample shows basic usage of System.Device.Spi.
 
 > Please check your board SPI pins. You may be able to configure them. This should be done before creating the SPI device.
 
+The sample is [located here](./Program.cs).
+
 ## Related topics
 
 ### Reference
@@ -30,5 +32,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

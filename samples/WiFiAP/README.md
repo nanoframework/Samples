@@ -8,6 +8,8 @@ You can connect to the web server via the url <http://192.168.4.1/>
 Once you save the wireless configuration the next boot the device will automatically connect to that Access Point
 and the Soft AP will be disabled.
 
+The sample is [located here](./).
+
 ## Hardware requirements
 
 An hardware device with Wifi networking capabilities running a nanoFramework image.
@@ -37,5 +39,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

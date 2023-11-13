@@ -4,10 +4,10 @@ These samples are using [Azure IoT Hub SDK](https://github.com/nanoframework/nan
 
 ## Samples
 
-* [🌶️🌶️ -  Azure IoT Hub SDK with MQTT protocol](AzureSDK)
-* [🌶️🌶️🌶️ -  Complete Azure MQTT sample using BMP280 sensor](AzureSDKSleepBMP280)
-* [🌶️🌶️ -  Azure IoT Device Provisioning Service (DPS) example](DpsSampleApp)
-* [🌶️🌶️🌶️ -  Azure SDK with X.509 CA Signed certificate sample using BMP280 Sensor](AzureSDKSensorCertificate)
+- [🌶️🌶️ -  Azure IoT Hub SDK with MQTT protocol](AzureSDK)
+- [🌶️🌶️🌶️ -  Complete Azure MQTT sample using BMP280 sensor](AzureSDKSleepBMP280)
+- [🌶️🌶️ -  Azure IoT Device Provisioning Service (DPS) example](DpsSampleApp)
+- [🌶️🌶️🌶️ -  Azure SDK with X.509 CA Signed certificate sample using BMP280 Sensor](AzureSDKSensorCertificate)
 
 ## Build the sample
 
@@ -28,5 +28,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

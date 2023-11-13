@@ -12,3 +12,5 @@ You will be able see advertisements from device with ManufacterData value changi
 Suitable Phone applications: "LightBlue" or "nRF Connect"
 
 See [main Bluetooth sample's readme](../README.md) for more information.
+
+The sample is [located here](./Program.cs).

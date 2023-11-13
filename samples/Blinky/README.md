@@ -2,6 +2,8 @@
 
 Shows how to use the [System.Device.Gpio](http://docs.nanoframework.net/api/System.Device.Gpio.html) API to set GPIO pins.
 
+The sample is [located here](./Blinky/Program.cs).
+
 ## Hardware requirements
 
 Any hardware device running a nanoFramework image.
@@ -33,5 +35,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

@@ -4,6 +4,8 @@ Shows how to use ESP32 RMT with an NeoPixel Strip WS2812
 
 This sample send signal to strip with pin D5.
 
+The sample is [located here](./NeoPixel/).
+
 ## Connections
 
 - GIN -  Any available GPIO pin (D5 in the sample)
@@ -11,10 +13,10 @@ This sample send signal to strip with pin D5.
 - +5V - External Power Supply 5V min 2A  
 
 > Notes:
+>
 > - Put resistor 400 Ohm between GIN and GPIO pin  
-> - Join the ground of the external power supply and the GND of ESP32 
-> - This example require a preview firmware dont use *-stable* parameter on *nanoff*
-> - **This example can only manage the first 50 LEDs** due to the ESP32 memory limitation. There is another example to be able to manage more by simplifying the objects used. 
+> - Join the ground of the external power supply and the GND of ESP32
+> - **This example can only manage the first 50 LEDs** due to the ESP32 memory limitation. There is another example to be able to manage more by simplifying the objects used.
 
 ## Hardware requirements
 
@@ -47,5 +49,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.
