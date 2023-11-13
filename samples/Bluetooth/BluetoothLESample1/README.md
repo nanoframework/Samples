@@ -15,3 +15,5 @@ You will be able to connect to the service and read values or subscribe to be No
 Suitable Phone apps: "LightBlue" or "nRF Connect"
 
 See [main Bluetooth sample's readme](../README.md) for more information.
+
+The sample is [located here](./Program.cs).

@@ -9,7 +9,7 @@ Current targets are for the samples are ESP32 and the STM32F769I_DISCOVERY. But 
 
 > **CRITICAL**: all display **must** be initialized before being able to be used.
 
-This initialization can be different depending on your device. ESP32 devices must be properly initialize to work, the GPIO must match the functions. You also need to know the exact size of the screen. See the [M5Stack](../Graphics/Screens/README.md) and M5Stick examples for more configurations.
+This initialization can be different depending on your device. ESP32 devices must be properly initialize to work, the GPIO must match the functions. You also need to know the exact size of the screen. See the [M5Stack](./Screens/README.md) and M5Stick examples for more configurations.
 
 ```csharp
 int backLightPin = 32;
@@ -37,6 +37,15 @@ DisplayControl.Initialize(new SpiConfiguration(), new ScreenConfiguration());
 ```
 
 > **In case the screen is wrongly initialize, the device will hang and you may have to reflash it.**
+
+The sample pack includes:
+
+- [🌶️🌶️🌶️ - Creating your own generic graphic driver](./GenericDriver/)
+- [🌶️🌶️ - Graphics Primitives](./Primitives/)
+- [🌶️🌶️ - Screen samples](./Screens/)
+- [🌶️🌶️ -Simple WPF](./SimpleWpf/)
+- [🌶️🌶️🌶️ - Tetris Demo Game for nanoFramework](./Tetris/)
+- [🌶️🌶️ - Using an existing generic graphic driver](./UsingGenericDriver/)
 
 ## Primitives
 
@@ -91,5 +100,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

@@ -2,6 +2,8 @@
 
 Shows how to use Touch Pad for ESP32 and ESP32-S2. A Touch Pad is a pin that is sensitive to touch. It can be just a wire, a surface made out of various materials.
 
+The sample is [located here](./Program.cs).
+
 ## Hardware requirements
 
 Either an ESP32 or an ESP32-S2. Other series do not support Touch Pad.
@@ -33,5 +35,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

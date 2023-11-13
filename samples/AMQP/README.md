@@ -1,14 +1,8 @@
 # 🌶️🌶️ - AMQP sample pack
 
-Shows how to use AMQP.Net Lite library.
+Shows how to use [AMQP.Net Lite library](http://docs.nanoframework.net/api/AMQP.Net.html).
 
-> **Note:** This sample is part of a large collection of nanoFramework feature samples.
-> If you are unfamiliar with Git and GitHub, you can download the entire collection as a
-> [ZIP file](https://github.com/nanoframework/Samples/archive/main.zip), but be
-> sure to unzip everything to access any shared dependencies.
-<!-- For more info on working with the ZIP file, 
-> the samples collection, and GitHub, see [Get the UWP samples from GitHub](https://aka.ms/ovu2uq). 
-> For more samples, see the [Samples portal](https://aka.ms/winsamples) on the Windows Dev Center.  -->
+The sample pack is [located here](./).
 
 ## Hardware requirements
 
@@ -49,5 +43,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

@@ -2,6 +2,8 @@
 
 Shows how to use the HTTP related APIs in [System.Net](http://docs.nanoframework.net/api/System.Net.html). Shows how to perform a HTTP Web requests. Optionally to secured (TLS) servers.
 
+The sample is [located here](./Program.cs).
+
 When working with ESP32 edit the nfproj files and add `BUIID_FOR_ESP32` to the DefineConstants, like this:
 
 ```text
@@ -40,5 +42,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

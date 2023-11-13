@@ -4,6 +4,8 @@ Shows how to use ESP32 RMT with VS1838 infrared receiver to create remote. Nec p
 
 See explanation of Nec protocol: [Nec protocol doc](https://www.sbprojects.net/knowledge/ir/nec.php)
 
+The sample is [located here](./InfraredRemoteReceiverSample/).
+
 ## Connections
 
 - DATA - Any available GPIO pin, D15 in this case
@@ -135,5 +137,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

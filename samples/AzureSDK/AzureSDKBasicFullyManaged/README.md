@@ -8,6 +8,8 @@ You can test this sample by enabling and disabling the device in Azure IoT. You 
 
 ![telemetry example](./output.png)
 
+The sample is [located here](./).
+
 ## Hardware requirements
 
 You need one modem supporting MQTT abstraction that is supported to use, see [current list here](https://github.com/nanoframework/nanoFramework.IoT.Device/tree/develop/devices/AtModem#documentation).

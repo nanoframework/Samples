@@ -68,40 +68,34 @@ The `RouteAnyTest`is called whenever the url is `test/any` whatever the method i
 
 There is a more advance example with simple REST API to get a list of Person and add a Person. Check it in the [sample](./WebServer.Sample/ControllerPerson.cs).
 
-**Important**
-* By default the routes are not case sensitive and the attribute **must** be lowercase
-* If you want to use case sensitive routes like in the previous example, use the attribute `CaseSensitive`. As in the previous example, you **must** write the route as you want it to be responded to.
+> [!Important]
+>
+> By default the routes are not case sensitive and the attribute **must** be lowercase.
+> If you want to use case sensitive routes like in the previous example, use the attribute `CaseSensitive`. As in the previous example, you **must** write the route as you want it to be responded to.
 
 ## A simple GPIO controller REST API
 
-You will find in simple [GPIO controller sample](./WebServer.GpioRest) REST API. The controller not case sensitive and is working like this:
+You will find in simple [GPIO controller sample](https://github.com/nanoframework/Samples/tree/main/samples/Webserver/WebServer.GpioRest) REST API. The controller not case sensitive and is working like this:
 
-- To open the pin 2 as output: http://yoururl/open/2/output
-- To open pin 4 as input: http://yoururl/open/4/input
-- To write the value high to pin 2: http://yoururl/write/2/high
+- To open the pin 2 as output: <http://yoururl/open/2/output>
+- To open pin 4 as input: <http://yoururl/open/4/input>
+- To write the value high to pin 2: <http://yoururl/write/2/high>
   - You can use high or 1, it has the same effect and will place the pin in high value
   - You can use low of 0, it has the same effect and will place the pin in low value
-- To read the pin 4: http://yoururl/read/4, you will get as a raw text `high`or `low`depending on the state
-
-## DI integration with controllers
-Check [WebServer.DI sample](./WebServer.DI) if you want to use controllers with automatically injecting services from [nanoFramework.DependencyInjection](https://github.com/nanoframework/nanoFramework.DependencyInjection).
-
-- Type you credentials in Program.cs files
-- Navigate to http://yoururl/test
-- You should get text with two GUIDs, one should stay the same across all requests (singleton service)
+- To read the pin 4: <http://yoururl/read/4>, you will get as a raw text `high`or `low`depending on the state
 
 ## Authentication on controllers
 
 Controllers support authentication. 3 types of authentications are currently implemented on controllers only:
 
 - Basic: the classic user and password following the HTTP standard. Usage:
-    - `[Authentication("Basic")]` will use the default credential of the webserver
-    - `[Authentication("Basic:myuser mypassword")]` will use myuser as a user and my password as a password. Note: the user cannot contains spaces.
+  - `[Authentication("Basic")]` will use the default credential of the webserver
+  - `[Authentication("Basic:myuser mypassword")]` will use myuser as a user and my password as a password. Note: the user cannot contains spaces.
 - APiKey in header: add ApiKey in headers with the API key. Usage:
-    - `[Authentication("ApiKey")]` will use the default credential of the webserver
-    - `[Authentication("ApiKeyc:akey")]` will use akey as ApiKey.
+  - `[Authentication("ApiKey")]` will use the default credential of the webserver
+  - `[Authentication("ApiKeyc:akey")]` will use akey as ApiKey.
 - None: no authentication required. Usage:
-    - `[Authentication("None")]` will use the default credential of the webserver
+  - `[Authentication("None")]` will use the default credential of the webserver
 
 The Authentication attribute applies to both public Classes an public Methods.
 
@@ -166,12 +160,12 @@ using (WebServer server = new WebServer(80, HttpProtocol.Http, new Type[] { type
 With the previous example the following happens:
 
 - All the controller by default, even when nothing is specified will use the controller credentials. In our case, the Basic authentication with the default user (topuser) and password (topPassword) will be used.
-    - When calling http://yoururl/authbasic from a browser, you will be prompted for the user and password, use the default one topuser and topPassword to get access
-    - When calling http://yoururl/authnone, you won't be prompted because the authentication has been overridden for no authentication
-    - When calling http://yoururl/authbasicspecial, the user and password are different from the defautl ones, user2 and password is the right couple here
+  - When calling <http://yoururl/authbasic> from a browser, you will be prompted for the user and password, use the default one topuser and topPassword to get access
+  - When calling <http://yoururl/authnone>, you won't be prompted because the authentication has been overridden for no authentication
+  - When calling <http://yoururl/authbasicspecial>, the user and password are different from the defautl ones, user2 and password is the right couple here
 - If you would have define in the controller a specific user and password like `[Authentication("Basic:myuser mypassword")]`, then the default one for all the controller would have been myuser and mypassword
-- When calling http://yoururl/authapi, you must pass the header `ApiKey` (case sensitive) with the value `superKey1234` to get authorized, this is overridden the default Basic authentication
-- When calling http://yoururl/authdefaultapi, the default key `ATopSecretAPIKey1234` will be used so you have to pass it in the headers of the request
+- When calling <http://yoururl/authapi>, you must pass the header `ApiKey` (case sensitive) with the value `superKey1234` to get authorized, this is overridden the default Basic authentication
+- When calling <http://yoururl/authdefaultapi>, the default key `ATopSecretAPIKey1234` will be used so you have to pass it in the headers of the request
 
 All up, this is an example to show how to use authentication, it's been defined to allow flexibility.
 
@@ -228,18 +222,41 @@ if (url.ToLower().IndexOf("/param.htm") == 0)
 And server static files:
 
 ```csharp
-var files = storage.GetFiles();
-foreach (var file in files)
+// E = USB storage
+// D = SD Card
+// I = Internal storage
+// Adjust this based on your configuration
+const string DirectoryPath = "I:\\";
+string[] _listFiles;
+
+// Gets the list of all files in a specific directory
+// See the MountExample for more details if you need to mount an SD card and adjust here
+// https://github.com/nanoframework/Samples/blob/main/samples/System.IO.FileSystem/MountExample/Program.cs
+_listFiles = Directory.GetFiles(DirectoryPath);
+// Remove the root directory
+for (int i = 0; i < _listFiles.Length; i++)
 {
-    if (file.Name == url)
+    _listFiles[i] = _listFiles[i].Substring(DirectoryPath.Length);
+}
+
+var fileName = url.Substring(1);
+// Note that the file name is case sensitive
+// Very simple example serving a static file on an SD card                   
+foreach (var file in _listFiles)
+{
+    if (file == fileName)
     {
-        WebServer.SendFileOverHTTP(e.Context.Response, file);
+        WebServer.SendFileOverHTTP(e.Context.Response, DirectoryPath + file);
         return;
     }
 }
 
 WebServer.OutputHttpCode(e.Context.Response, HttpStatusCode.NotFound);
 ```
+
+> [!Important]
+>
+> Serving files requires the `nanoFramework.WebServer.FileSystem` nuget **AND** that the device supports storage so `System.IO.FileSystem`.
 
 And also **REST API** is supported, here is a comprehensive example:
 
@@ -345,7 +362,8 @@ using (WebServer server = new WebServer(443, HttpProtocol.Https)
 }
 ```
 
-> IMPORTANT: because the certificate above is not issued from a Certificate Authority it won't be recognized as a valid certificate. If you want to access the nanoFramework device with your browser, for example, you'll have to add the (CRT file)[WebServer.Sample\webserver-cert.crt] as a trusted one. On Windows, you just have to double click on the CRT file and then click "Install Certificate...".
+> [!IMPORTANT]
+> Because the certificate above is not issued from a Certificate Authority it won't be recognized as a valid certificate. If you want to access the nanoFramework device with your browser, for example, you'll have to add the [CRT file](WebServer.Sample\webserver-cert.crt) as a trusted one. On Windows, you just have to double click on the CRT file and then click "Install Certificate...".
 
 You can of course use the routes as defined earlier. Both will work, event or route with the notion of controller.
 
@@ -368,5 +386,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

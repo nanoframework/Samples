@@ -8,8 +8,8 @@ A Giant Gecko device running a .NET nanoFramework image.
 
 ## Samples
 
-- [🌶️ -  Read ADC channel](Read.Channel/)
-- [🌶️ -  Continuous Scanning ADC](ContinuousSampling/)
+- [🌶️ -  Read ADC channel](./Read.Channel/)
+- [🌶️ -  Continuous Scanning ADC](./ContinuousSampling/)
 
 ## Related topics
 

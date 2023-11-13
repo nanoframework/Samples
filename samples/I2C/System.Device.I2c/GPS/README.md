@@ -5,6 +5,8 @@ In this sample we'll be using a [IES-SHIELD-GPS](https://i-groupuk.com/downloads
 
 The sample project includes a full driver for the IES-SHIELD-GPS and IES-SHIELD-GPAM allowing you to retrieve the current date, time, longitude, latitude, heading, speed, (GPAM only: pitch and roll) from the device.
 
+The sample is [located here](./nanoframework.Samples.GPS/Program.cs).
+
 ## Hardware requirements
 
 An [STM32F769II DISCOVERY](http://www.st.com/en/evaluation-tools/32f769idiscovery.html) board.
@@ -35,5 +37,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

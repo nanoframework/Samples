@@ -6,7 +6,7 @@ After connecting to the broker you can use `Publish()` method to publish a messa
 
 For more details, see the comments inside the samples.
 
-| Sample | Description | 
+| Sample | Description |
 |---|---|
 |[🌶️🌶️ - BasicExample.Ethernet](./BasicExample.Ethernet)|The most basic usage, without authentication or certificates. Ready to run on Ethernet-based boards.|
 |[🌶️🌶️ -BasicExample.Wifi](./BasicExample.WiFi)|The most basic usage, without authentication or certificates. Ready to run on Wifi-based boards.|
@@ -44,5 +44,4 @@ The next steps depend on whether you just want to deploy the sample or you want 
 - To debug the sample and then run it, press F5 or select `Debug > Start Debugging`.
 
 > **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
-
 > **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

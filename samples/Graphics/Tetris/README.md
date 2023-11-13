@@ -16,3 +16,5 @@ This Tetris game became almost a benchmark demo for different hardware that supp
 Requires the GPIO pins numbers to be defined for the Left, Right, Up, Down & Select keys in the TetrisApp.cs
 
 The number of Rows of blocks displayed and the size of the blocks can be adjusted to fit your screen in the UniverseView.cs and GameUniverse.cs
+
+The sample is [located here](./).

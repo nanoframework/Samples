@@ -4,6 +4,8 @@ This sample uses the .NET nanoFramework Azure IoT Plug & Play. You can find it h
 
 Note: the samples include the Azure IoT certificate. You can as well upload it into your device as explained in the [main readme](https://github.com/nanoframework/nanoFramework.Azure.Devices).
 
+The sample is [located here](./).
+
 ## Testing the sample
 
 This sample uses a specific DTDL as an example, [you'll find it here](https://github.com/Azure/iot-plugandplay-models/blob/main/dtmi/com/example/thermostat-1.json). The Model ID is `dtmi:com:example:Thermostat;1`. This is what is going to be used in this sample.
