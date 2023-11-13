@@ -1,6 +1,6 @@
 # 🌶️🌶️ - AMQP sample pack
 
-Shows how to use [AMQP.Net Lite library](http://docs.nanoframework.net/api/AMQP.Net.html).
+Shows how to use AMQP.Net Lite library.
 
 The sample pack is [located here](./).
 

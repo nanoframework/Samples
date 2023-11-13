@@ -1,6 +1,6 @@
 # 🌶️🌶️ - Azure Service Bus AMQP sample
 
-Shows how to use Shows how to use [AMQP.Net Lite library](http://docs.nanoframework.net/api/AMQP.Net.html) with Azure Service Bus.
+Shows how to use Shows how to use AMQP.Net Lite library with Azure Service Bus.
 
 The sample is [located here](./Program.cs).
 
