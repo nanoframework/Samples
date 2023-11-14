@@ -67,7 +67,7 @@ In this example, the `RoutePostTest` will be called every time the called url wi
 
 The `RouteAnyTest`is called whenever the url is `test/any` whatever the method is.
 
-There is a more advance example with simple REST API to get a list of Person and add a Person. Check it in the [sample](./WebServer.Sample/ControllerPerson.cs).
+There is a more advance example with simple REST API to get a list of Person and add a Person. Check it in the [sample](./WebServer.Sample/WebServer.Sample/ControllerPerson.cs).
 
 > ![Important]
 >
@@ -356,7 +356,7 @@ MORETEXT
 MORETEXTANDENCRYPTED
 -----END RSA PRIVATE KEY-----";
 
-using (WebServer server = new WebServer(443, HttpProtocol.Https)
+using (WebServer server = new WebServer(443, HttpProtocol.Https))
 {
     // Add a handler for commands that are received by the server.
     server.CommandReceived += ServerCommandReceived;
@@ -371,7 +371,7 @@ using (WebServer server = new WebServer(443, HttpProtocol.Https)
 ```
 
 > [!IMPORTANT]
-> Because the certificate above is not issued from a Certificate Authority it won't be recognized as a valid certificate. If you want to access the nanoFramework device with your browser, for example, you'll have to add the [CRT file](WebServer.Sample\webserver-cert.crt) as a trusted one. On Windows, you just have to double click on the CRT file and then click "Install Certificate...".
+> Because the certificate above is not issued from a Certificate Authority it won't be recognized as a valid certificate. If you want to access the nanoFramework device with your browser, for example, you'll have to add the [CRT file](./WebServer.Sample/WebServer.Sample/webserver-cert.crt) as a trusted one. On Windows, you just have to double click on the CRT file and then click "Install Certificate...".
 
 You can of course use the routes as defined earlier. Both will work, event or route with the notion of controller.
 
