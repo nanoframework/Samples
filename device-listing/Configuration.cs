@@ -25,5 +25,15 @@ namespace DeviceListing
         /// Gets or sets the list of languages to generate.
         /// </summary>
         public string[] Languages {get; set;}
+
+        /// <summary>
+        /// Gets or sets the samples path.
+        /// </summary>
+        public string SamplesPath { get; set;}
+
+        /// <summary>
+        /// Gets or sets whether to add or not README.md in the path to folder/link.
+        /// </summary>
+        public bool AddReadme { get; set; }
     }
 }

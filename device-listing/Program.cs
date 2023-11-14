@@ -25,7 +25,7 @@ if (repoRoot is null)
     return;
 }
 
-string samplesPath = Path.Combine(repoRoot, "samples");
+string samplesPath = Path.Combine(repoRoot, configuration.SamplesPath);
 List<SampleInfo> samples;
 
 // We will iterate one per language
@@ -133,7 +133,12 @@ string CreateMarkdownLinkFromPath(string path, string parentPath)
             throw new Exception($"No common path between `{path}` and `{parentPath}`");
         }
 
-        var relativePath = path.Substring(parentPath.Length + 1).Replace("\\README.md", "");
+        var relativePath = path.Substring(parentPath.Length + 1);
+        if (!configuration.AddReadme)
+        {
+            relativePath  = relativePath.Replace("\\README.md", "");
+        }
+
         UriBuilder uriBuilder = new UriBuilder() { Path = relativePath };
 
         return uriBuilder.Path;
