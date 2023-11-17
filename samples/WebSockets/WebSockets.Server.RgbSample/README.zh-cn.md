@@ -41,5 +41,8 @@
 - 调试输出将显示WebApp的url。请确保您连接到与设备相同的网络，并在浏览器中打开此url。
 - 通过使用WebApp改变rgb led的颜色来设置情绪。
 
+> [!NOTE]
+>
 > **Important**: 在部署或运行示例之前，请确保您的设备在设备资源管理器中可见。
+>
 > **Tip**: 要显示设备资源管理器，请转到Visual Studio菜单: `View > Other Windows > Device Explorer`.
