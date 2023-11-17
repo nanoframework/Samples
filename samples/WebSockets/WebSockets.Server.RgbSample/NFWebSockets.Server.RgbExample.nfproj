@@ -26,103 +26,107 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Iot.Device.Button, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Iot.Device.Button.1.2.329\lib\Iot.Device.Button.dll</HintPath>
+      <HintPath>packages\nanoFramework.Iot.Device.Button.1.2.436\lib\Iot.Device.Button.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Iot.Device.Ws28xx.Esp32, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Iot.Device.Ws28xx.Esp32.1.2.329\lib\Iot.Device.Ws28xx.Esp32.dll</HintPath>
+      <HintPath>packages\nanoFramework.Iot.Device.Ws28xx.Esp32.1.2.436\lib\Iot.Device.Ws28xx.Esp32.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="mscorlib, Version=1.14.3.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.CoreLibrary.1.14.2\lib\mscorlib.dll</HintPath>
+    <Reference Include="mscorlib, Version=1.15.6.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.CoreLibrary.1.15.5\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.AtomLite, Version=1.1.177.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.AtomLite.1.1.177\lib\nanoFramework.AtomLite.dll</HintPath>
+    <Reference Include="nanoFramework.AtomLite, Version=1.1.185.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.AtomLite.1.1.185\lib\nanoFramework.AtomLite.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Graphics.Core, Version=1.1.37.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Graphics.Core.1.1.37\lib\nanoFramework.Graphics.Core.dll</HintPath>
+    <Reference Include="nanoFramework.Graphics.Core, Version=1.2.4.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Graphics.Core.1.2.4\lib\nanoFramework.Graphics.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Hardware.Esp32, Version=1.6.8.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Hardware.Esp32.1.6.8\lib\nanoFramework.Hardware.Esp32.dll</HintPath>
+    <Reference Include="nanoFramework.Hardware.Esp32, Version=1.6.12.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Hardware.Esp32.1.6.12\lib\nanoFramework.Hardware.Esp32.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Hardware.Esp32.Rmt, Version=2.0.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Hardware.Esp32.Rmt.2.0.1\lib\nanoFramework.Hardware.Esp32.Rmt.dll</HintPath>
+    <Reference Include="nanoFramework.Hardware.Esp32.Rmt, Version=2.0.7.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Hardware.Esp32.Rmt.2.0.7\lib\nanoFramework.Hardware.Esp32.Rmt.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Runtime.Events, Version=1.11.6.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Runtime.Events.1.11.6\lib\nanoFramework.Runtime.Events.dll</HintPath>
+    <Reference Include="nanoFramework.Runtime.Events, Version=1.11.15.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Runtime.Events.1.11.15\lib\nanoFramework.Runtime.Events.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.System.Collections, Version=1.5.18.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Collections.1.5.18\lib\nanoFramework.System.Collections.dll</HintPath>
+    <Reference Include="nanoFramework.System.Collections, Version=1.5.31.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Collections.1.5.31\lib\nanoFramework.System.Collections.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.System.Text, Version=1.2.37.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Text.1.2.37\lib\nanoFramework.System.Text.dll</HintPath>
+    <Reference Include="nanoFramework.System.Runtime, Version=1.0.6.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Runtime.1.0.6\lib\nanoFramework.System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nanoFramework.System.Text, Version=1.2.54.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Text.1.2.54\lib\nanoFramework.System.Text.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.WebServer, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.WebServer.1.2.3\lib\nanoFramework.WebServer.dll</HintPath>
+      <HintPath>packages\nanoFramework.WebServer.1.2.14\lib\nanoFramework.WebServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Device.Adc, Version=1.1.6.1168, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Device.Adc.1.1.6\lib\System.Device.Adc.dll</HintPath>
+    <Reference Include="System.Device.Adc, Version=1.1.11.52458, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Device.Adc.1.1.11\lib\System.Device.Adc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Device.Dac, Version=1.5.9.20342, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Device.Dac.1.5.9\lib\System.Device.Dac.dll</HintPath>
+    <Reference Include="System.Device.Dac, Version=1.5.13.54898, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Device.Dac.1.5.13\lib\System.Device.Dac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Device.Gpio, Version=1.1.28.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Device.Gpio.1.1.28\lib\System.Device.Gpio.dll</HintPath>
+    <Reference Include="System.Device.Gpio, Version=1.1.38.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Device.Gpio.1.1.38\lib\System.Device.Gpio.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Device.I2c, Version=1.1.11.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Device.I2c.1.1.11\lib\System.Device.I2c.dll</HintPath>
+    <Reference Include="System.Device.I2c, Version=1.1.16.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Device.I2c.1.1.16\lib\System.Device.I2c.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Device.Spi, Version=1.3.37.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Device.Spi.1.3.37\lib\System.Device.Spi.dll</HintPath>
+    <Reference Include="System.Device.Spi, Version=1.3.43.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Device.Spi.1.3.43\lib\System.Device.Spi.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Device.Wifi, Version=1.5.65.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Device.Wifi.1.5.65\lib\System.Device.Wifi.dll</HintPath>
+    <Reference Include="System.Device.Wifi, Version=1.5.71.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Device.Wifi.1.5.71\lib\System.Device.Wifi.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.IO.FileSystem, Version=1.1.23.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.IO.FileSystem.1.1.23\lib\System.IO.FileSystem.dll</HintPath>
+    <Reference Include="System.IO.FileSystem, Version=1.1.32.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.IO.FileSystem.1.1.32\lib\System.IO.FileSystem.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.IO.Streams, Version=1.1.38.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.IO.Streams.1.1.38\lib\System.IO.Streams.dll</HintPath>
+    <Reference Include="System.IO.Streams, Version=1.1.52.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.IO.Streams.1.1.52\lib\System.IO.Streams.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net, Version=1.10.62.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Net.1.10.62\lib\System.Net.dll</HintPath>
+    <Reference Include="System.Net, Version=1.10.64.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Net.1.10.64\lib\System.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net.Http, Version=1.5.104.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Net.Http.Server.1.5.104\lib\System.Net.Http.dll</HintPath>
+    <Reference Include="System.Net.Http, Version=1.5.113.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Net.Http.Server.1.5.113\lib\System.Net.Http.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net.WebSockets, Version=1.1.68.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Net.WebSockets.Server.1.1.68\lib\System.Net.WebSockets.dll</HintPath>
+    <Reference Include="System.Net.WebSockets, Version=1.1.75.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Net.WebSockets.Server.1.1.75\lib\System.Net.WebSockets.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Threading, Version=1.1.19.33722, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Threading.1.1.19\lib\System.Threading.dll</HintPath>
+    <Reference Include="System.Threading, Version=1.1.32.63105, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Threading.1.1.32\lib\System.Threading.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Windows.Storage, Version=1.5.33.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Windows.Storage.1.5.33\lib\Windows.Storage.dll</HintPath>
+    <Reference Include="Windows.Storage, Version=1.5.45.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Windows.Storage.1.5.45\lib\Windows.Storage.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Windows.Storage.Streams, Version=1.14.24.46541, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Windows.Storage.Streams.1.14.24\lib\Windows.Storage.Streams.dll</HintPath>
+    <Reference Include="Windows.Storage.Streams, Version=1.14.32.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Windows.Storage.Streams.1.14.32\lib\Windows.Storage.Streams.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
