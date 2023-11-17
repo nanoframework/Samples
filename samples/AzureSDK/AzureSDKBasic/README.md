@@ -17,7 +17,9 @@ This code has been tested with ESP32 boards. This can be replaced by any other b
 
 The sample uses wifi, this part can be as well replaced with an ethernet connection. It will work the exact same way.
 
-> **Important**: In this sample, if the connection or something is not setup properly you won't be able to debug properly. Please make sure you are using another sample to understand how Azure Client with a sample and deep sleep is working before using this one.
+> [!Important]
+>
+> In this sample, if the connection or something is not setup properly you won't be able to debug properly. Please make sure you are using another sample to understand how Azure Client with a sample and deep sleep is working before using this one.
 
 ### Reference
 
@@ -34,4 +36,10 @@ The sample uses wifi, this part can be as well replaced with an ethernet connect
 
 ## Run the sample
 
-**Important**: You can debug this sample only for one cycle as the device will very quickly go to sleep. If you want to debug, comment the part where it goes to sleep and replace with and infinite thread sleep timeout or a loop to once of the previous part of the code.
+> [!Important]
+>
+> You can debug this sample only for one cycle as the device will very quickly go to sleep. If you want to debug, comment the part where it goes to sleep and replace with and infinite thread sleep timeout or a loop to once of the previous part of the code.
+>
+> **Important**: Before deploying or running the sample, please make sure your device is visible in the Device Explorer.
+>
+> **Tip**: To display the Device Explorer, go to Visual Studio menus: `View > Other Windows > Device Explorer`.

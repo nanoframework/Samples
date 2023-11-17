@@ -10,7 +10,9 @@ When working with ESP32 edit the nfproj files and add `BUIID_FOR_ESP32` to the D
 <DefineConstants>$(DefineConstants);BUIID_FOR_ESP32;</DefineConstants>
 ```
 
-> **Important**: You need to have a good understanding of certificates to be able to properly write code using SSL with a specific certificate. We do recommend you to get some knowledge about this before trying to adjust the sample without knowing which certificate to use.
+> [!Important]
+>
+> You need to have a good understanding of certificates to be able to properly write code using SSL with a specific certificate. We do recommend you to get some knowledge about this before trying to adjust the sample without knowing which certificate to use.
 
 ## Hardware requirements
 
@@ -25,7 +27,7 @@ This sample is coded to use the STM32F769IDiscovery target board, but can be eas
 
 ## Build the sample
 
-1. Start Microsoft Visual Studio 2019 (VS 2017 should be OK too) and select `File > Open > Project/Solution`.
+1. Start Microsoft Visual Studio 2022 or Visual Studio 2019 (Visual Studio 2017 should be OK too) and select `File > Open > Project/Solution`.
 1. Starting in the folder where you unzipped the samples/cloned the repository, go to the subfolder for this specific sample. Double-click the Visual Studio Solution (.sln) file.
 1. Press `Ctrl+Shift+B`, or select `Build > Build Solution`.
 

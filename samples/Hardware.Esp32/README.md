@@ -17,7 +17,7 @@ Any ESP32 hardware device running a nanoFramework image.
 
 ## Build the sample
 
-1. Start Microsoft Visual Studio 2019 (VS 2017 should be OK too) and select `File > Open > Project/Solution`.
+1. Start Microsoft Visual Studio 2022 or Visual Studio 2019 (Visual Studio 2017 should be OK too) and select `File > Open > Project/Solution`.
 1. Starting in the folder where you unzipped the samples/cloned the repository, go to the subfolder for this specific sample. Double-click the Visual Studio Solution (.sln) file.
 1. Press `Ctrl+Shift+B`, or select `Build > Build Solution`.
 

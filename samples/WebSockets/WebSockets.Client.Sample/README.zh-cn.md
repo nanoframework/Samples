@@ -38,5 +38,8 @@
 
 - 要调试示例并运行它，请按F5或选择 `Debug > Start Debugging`.
 
+> [!NOTE]
+>
 > **Important**: 在部署或运行示例之前，请确保您的设备在设备资源管理器中可见。
+>
 > **Tip**: 要显示设备资源管理器，请转到Visual Studio菜单: `View > Other Windows > Device Explorer`.
