@@ -13,6 +13,7 @@ using nanoFramework.UI.Threading;
 using nanoFramework.Runtime.Events;
 using SimpleWpf;
 using System.Drawing;
+using Rectangle = nanoFramework.Presentation.Shapes.Rectangle;
 
 namespace SimpleWPF
 {
@@ -719,7 +720,7 @@ namespace SimpleWPF
             int scale = 0;
 
             // Set the scaling offset based on the animation step.
-            int scaleOffset = Mathematics.Abs(_animationStep);
+            int scaleOffset = Math.Abs(_animationStep);
 
             // Adjust the x based on the animation step.
             x += _animationStep * 5;
