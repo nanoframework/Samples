@@ -32,37 +32,31 @@
     <Compile Include="Scenario9_RenameFile.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="mscorlib, Version=1.15.6.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.CoreLibrary.1.15.5\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Runtime.Events, Version=1.11.15.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+    <Reference Include="nanoFramework.Runtime.Events">
       <HintPath>..\packages\nanoFramework.Runtime.Events.1.11.15\lib\nanoFramework.Runtime.Events.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Runtime.Native, Version=1.6.12.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+    <Reference Include="nanoFramework.Runtime.Native">
       <HintPath>..\packages\nanoFramework.Runtime.Native.1.6.12\lib\nanoFramework.Runtime.Native.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.System.Runtime, Version=1.0.6.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+    <Reference Include="nanoFramework.System.Runtime">
       <HintPath>..\packages\nanoFramework.System.Runtime.1.0.6\lib\nanoFramework.System.Runtime.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.System.Text, Version=1.2.54.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+    <Reference Include="nanoFramework.System.Text">
       <HintPath>..\packages\nanoFramework.System.Text.1.2.54\lib\nanoFramework.System.Text.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="System.IO.FileSystem, Version=1.1.32.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+    <Reference Include="System.IO.FileSystem">
       <HintPath>..\packages\nanoFramework.System.IO.FileSystem.1.1.32\lib\System.IO.FileSystem.dll</HintPath>
-      <Private>True</Private>
     </Reference>
-    <Reference Include="System.IO.Streams, Version=1.1.52.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+    <Reference Include="System.IO.Streams">
       <HintPath>..\packages\nanoFramework.System.IO.Streams.1.1.52\lib\System.IO.Streams.dll</HintPath>
-      <Private>True</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <ProjectExtensions>
