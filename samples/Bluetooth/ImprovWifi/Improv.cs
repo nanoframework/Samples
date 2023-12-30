@@ -524,11 +524,23 @@ namespace ImprovWifi
             WifiAdapter wa = WifiAdapter.FindAllAdapters()[0];
             wa.Disconnect();
 
-            System.Threading.CancellationTokenSource cs = new(30000);
+            CancellationTokenSource cs = new(30000);
             Console.WriteLine("ConnectDHCP");
-            bool success =  WifiNetworkHelper.ConnectDhcp(ssid, password, requiresDateTime: true, token: cs.Token);
+            WifiNetworkHelper.Disconnect();
+            bool success;
+
+            success = WifiNetworkHelper.ConnectDhcp(ssid, password, WifiReconnectionKind.Automatic, true, token: cs.Token);
+
+            if (!success)
+            {
+                wa.Disconnect();
+                // Network helper only allow 1 configuration, we've most likely try to connect before, let's make it manual
+                var res = wa.Connect(ssid, WifiReconnectionKind.Automatic, password);
+                // If we still arenot connected, it means, it's not good!
+                success = res.ConnectionStatus == WifiConnectionStatus.Success;
+            }
+
             Console.WriteLine($"ConnectDHCP exit {success}");
-            cs.Cancel();
             return success;
         }
 
