@@ -11,6 +11,7 @@ using System.Net.NetworkInformation;
 using System.Device.Wifi;
 using nanoFramework.Networking;
 using nanoFramework.Device.Bluetooth.Advertisement;
+using System.Threading;
 
 namespace ImprovWifi
 {
