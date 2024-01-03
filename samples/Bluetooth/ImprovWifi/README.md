@@ -1,6 +1,6 @@
 # 🌶️🌶️🌶️ - Improv Wifi provisioning
 
-This sample shows the use of the `Improv` class to provision the Wifi credentials for an ESP32 device via Bluetooth LE.
+This sample shows the use of the `Improv` class to provision the Wifi credentials for an ESP32 device via Bluetooth LE. To setup your device, go to the page [<https://www.improv-wifi.com/>](https://www.improv-wifi.com/).
 
 The device will advertise with the name `Improv sample` and support the `Improv Service` allowing the Wifi Credentials to be setup directly from the Improv test page or any other web page.
 
