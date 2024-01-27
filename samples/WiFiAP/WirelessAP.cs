@@ -3,13 +3,57 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System;
+using System.Net;
 using System.Net.NetworkInformation;
+using Iot.Device.DhcpServer;
+using nanoFramework.Runtime.Native;
 
 namespace WifiAP
 {
+    /// <summary>
+    /// Provides methods and properties to manage a wireless access point.
+    /// </summary>
     public static class WirelessAP
     {
-        public const string SoftApIP = "192.168.4.1";
+        /// <summary>
+        /// Gets or sets the IP address of the Soft AP.
+        /// </summary>
+        public static string SoftApIP { get; set; } = "192.168.4.1";
+
+        /// <summary>
+        /// Gets or sets the SSID of the Soft AP.
+        /// </summary>
+        public static string SoftApSsid { get; set; } = "MySuperSSID";
+
+        /// <summary>
+        /// Sets the configuration for the wireless access point.
+        /// </summary>
+        public static void SetWifiAp()
+        {
+            Wireless80211.Disable();
+            if (Setup() == false)
+            {
+                // Reboot device to Activate Access Point on restart
+                Console.WriteLine($"Setup Soft AP, Rebooting device");
+                Power.RebootDevice();
+            }
+
+            var dhcpserver = new DhcpServer
+            {
+                CaptivePortalUrl = $"http://{SoftApIP}"
+            };
+            var dhcpInitResult = dhcpserver.Start(IPAddress.Parse(SoftApIP), new IPAddress(new byte[] { 255, 255, 255, 0 }));
+            if (!dhcpInitResult)
+            {
+                Console.WriteLine($"Error initializing DHCP server.");
+                // This happens after a very freshly flashed device
+                Power.RebootDevice();
+            }
+
+            Console.WriteLine($"Running Soft AP, waiting for client to connect");
+            Console.WriteLine($"Soft AP IP address :{GetIP()}");
+        }
 
         /// <summary>
         /// Disable the Soft AP for next restart.
@@ -51,13 +95,13 @@ namespace WifiAP
                             WirelessAPConfiguration.ConfigurationOptions.Enable;
 
             // Set the SSID for Access Point. If not set will use default  "nano_xxxxxx"
-            //wapconf.Ssid = "MySsid";
+            wapconf.Ssid = SoftApSsid;
 
             // Maximum number of simultaneous connections, reserves memory for connections
             wapconf.MaxConnections = 1;
 
             // To set-up Access point with no Authentication
-            wapconf.Authentication = AuthenticationType.Open;
+            wapconf.Authentication = System.Net.NetworkInformation.AuthenticationType.Open;
             wapconf.Password = "";
 
             // To set up Access point with no Authentication. Password minimum 8 chars.
@@ -80,6 +124,10 @@ namespace WifiAP
             return WirelessAPConfiguration.GetAllWirelessAPConfigurations()[ni.SpecificConfigId];
         }
 
+        /// <summary>
+        /// Gets the network interface for the wireless access point.
+        /// </summary>
+        /// <returns>The network interface for the wireless access point.</returns>
         public static NetworkInterface GetInterface()
         {
             NetworkInterface[] Interfaces = NetworkInterface.GetAllNetworkInterfaces();
