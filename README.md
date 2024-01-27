@@ -45,6 +45,7 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 * [🌶️🌶️ - I2S Microphone sample](samples/I2S/Input)
 * [🌶️🌶️ - I2S sample pack](samples/I2S)
 * [🌶️🌶️ - I2S Speaker sample](samples/I2S/Output)
+* [🌶️🌶️ - WebServer to test pour Servo Motors](samples/Webserver/ServoMotorTester)
 * [🌶️🌶️🌶️ - Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate/Readme.md)
 
 ### AMQP
@@ -158,6 +159,7 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 * [🌶️🌶️ - HTTP sample pack](samples/HTTP)
 * [🌶️🌶️ - HTTP WebRequest sample](samples/HTTP/HttpWebRequest)
 * [🌶️🌶️ - Networking sample pack](samples/Networking)
+* [🌶️🌶️ - WebServer to test pour Servo Motors](samples/Webserver/ServoMotorTester)
 * [🌶️🌶️ - WebSocket Server Sample with RGB Led](samples/WebSockets/WebSockets.Server.RgbSample)
 * [🌶️🌶️ - WebSocket ServerClient Sample](samples/WebSockets/Websockets.ServerClient.Sample)
 * [🌶️🌶️ - Wifi Soft AP sample](samples/WiFiAP)
