@@ -18,84 +18,39 @@ namespace WifiAP
     public class Program
     {
         // Start Simple WebServer
-        static WebServer server = new WebServer();
+        private static WebServer _server = new WebServer();
+        private static bool _wifiApMode = false;
 
         // Connected Station count
-        static int connectedCount = 0;
+        private static int _connectedCount = 0;
 
         // GPIO pin used to put device into AP set-up mode
-        const int SETUP_PIN = 5;
+        private const int SetupPin = 5;
 
         public static void Main()
         {
             Debug.WriteLine("Welcome to WiFI Soft AP world!");
 
             var gpioController = new GpioController();
-            GpioPin setupButton = gpioController.OpenPin(SETUP_PIN, PinMode.InputPullUp);
+            GpioPin setupButton = gpioController.OpenPin(SetupPin, PinMode.InputPullUp);
 
             // If Wireless station is not enabled then start Soft AP to allow Wireless configuration
             // or Button pressed
-            if (!Wireless80211.IsEnabled() || (setupButton.Read() == PinValue.High))
+            if (setupButton.Read() == PinValue.High)
             {
-
-                Wireless80211.Disable();
-                if (WirelessAP.Setup() == false)
-                {
-                    // Reboot device to Activate Access Point on restart
-                    Debug.WriteLine($"Setup Soft AP, Rebooting device");
-                    Power.RebootDevice();
-                }
-
-                var dhcpserver = new DhcpServer
-                {
-                    CaptivePortalUrl = $"http://{WirelessAP.SoftApIP}"
-                };
-                var dhcpInitResult = dhcpserver.Start(IPAddress.Parse(WirelessAP.SoftApIP), new IPAddress(new byte[] { 255, 255, 255, 0 }));
-                if (!dhcpInitResult)
-                {
-                    Debug.WriteLine($"Error initializing DHCP server.");
-                }
-
-                Debug.WriteLine($"Running Soft AP, waiting for client to connect");
-                Debug.WriteLine($"Soft AP IP address :{WirelessAP.GetIP()}");
-
-                // Link up Network event to show Stations connecting/disconnecting to Access point.
-                //NetworkChange.NetworkAPStationChanged += NetworkChange_NetworkAPStationChanged;
-                // Now that the normal Wifi is deactivated, that we have setup a static IP
-                // We can start the Web server
-                server.Start();
+                WirelessAP.SetWifiAp();
+                _wifiApMode = true;
             }
             else
             {
-                Debug.WriteLine($"Running in normal mode, connecting to Access point");
-                var conf = Wireless80211.GetConfiguration();
-
-                bool success;
-
-                // For devices like STM32, the password can't be read
-                if (string.IsNullOrEmpty(conf.Password))
-                {
-                    // In this case, we will let the automatic connection happen
-                    success = WifiNetworkHelper.Reconnect(requiresDateTime: true, token: new CancellationTokenSource(60000).Token);
-                }
-                else
-                {
-                    // If we have access to the password, we will force the reconnection
-                    // This is mainly for ESP32 which will connect normaly like that.
-                    success = WifiNetworkHelper.ConnectDhcp(conf.Ssid, conf.Password, requiresDateTime: true, token: new CancellationTokenSource(60000).Token);
-                }
-
-                if (success)
-                {
-                    Debug.WriteLine($"Connection is {success}");
-                    Debug.WriteLine($"We have a valid date: {DateTime.UtcNow}");
-                }
-                else
-                {
-                    Debug.WriteLine($"Something wrong happened, can't connect at all");
-                }
+                _wifiApMode = Wireless80211.ConnectOrSetAp();
             }
 
+            Console.WriteLine($"Connected with wifi credentials. IP Address: {(_wifiApMode ? WirelessAP.GetIP() : Wireless80211.GetCurrentIPAddress())}");           
+            if( _wifiApMode )
+            {
+                _server.Start();
+            }
 
             // Just wait for now
             // Here you would have the reset of your program using the client WiFI link
@@ -120,26 +75,26 @@ namespace WifiAP
                 string macString = BitConverter.ToString(station.MacAddress);
                 Debug.WriteLine($"Station mac {macString} Rssi:{station.Rssi} PhyMode:{station.PhyModes} ");
 
-                connectedCount++;
+                _connectedCount++;
 
                 // Start web server when it connects otherwise the bind to network will fail as 
                 // no connected network. Start web server when first station connects 
-                if (connectedCount == 1)
+                if (_connectedCount == 1)
                 {
                     // Wait for Station to be fully connected before starting web server
                     // other you will get a Network error
                     Thread.Sleep(2000);
-                    server.Start();
+                    _server.Start();
                 }
             }
             else
             {
                 // Station disconnected. When no more station connected then stop web server
-                if (connectedCount > 0)
+                if (_connectedCount > 0)
                 {
-                    connectedCount--;
-                    if (connectedCount == 0)
-                        server.Stop();
+                    _connectedCount--;
+                    if (_connectedCount == 0)
+                        _server.Stop();
                 }
             }
 

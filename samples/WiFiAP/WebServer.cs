@@ -85,6 +85,12 @@ namespace WifiAP
 
                     string message = "<p>New settings saved.</p><p>Rebooting device to put into normal mode</p>";
 
+                    bool res = Wireless80211.Configure(ssid, password);
+                    if (res)
+                    {
+                        message += $"<p>And your new IP address should be {Wireless80211.GetCurrentIPAddress()}.</p>";
+                    }                                           
+
                     responseString = CreateMainPage(message);
 
                     OutPutResponse(response, responseString);
