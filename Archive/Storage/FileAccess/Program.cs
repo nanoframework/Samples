@@ -35,7 +35,7 @@ namespace FileAccess
             // in nanoFramework the drive letters are fixed, being:
             // D: SD Card
             // E: USB Mass Storage Device
-            var externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
+            var externalDevices = KnownFolders.RemovableDevices;
 
             // list all removable storage devices
             var removableDevices = externalDevices.GetFolders();
@@ -98,7 +98,7 @@ namespace FileAccess
             // Note: SPIFFS devices do no support folders //
             ////////////////////////////////////////////////
 
-            var InternalDevices = Windows.Storage.KnownFolders.InternalDevices;
+            var InternalDevices = KnownFolders.InternalDevices;
 
             // Get a list all of Internal storage devices 
             var flashDevices = InternalDevices.GetFolders();

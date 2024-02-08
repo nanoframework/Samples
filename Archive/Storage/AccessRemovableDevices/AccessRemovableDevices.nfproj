@@ -38,11 +38,11 @@
     <Reference Include="nanoFramework.System.Text">
       <HintPath>..\packages\nanoFramework.System.Text.1.2.54\lib\nanoFramework.System.Text.dll</HintPath>
     </Reference>
-    <Reference Include="System.IO.FileSystem">
-      <HintPath>..\packages\nanoFramework.System.IO.FileSystem.1.1.32\lib\System.IO.FileSystem.dll</HintPath>
+    <Reference Include="Windows.Storage">
+      <HintPath>..\packages\nanoFramework.Windows.Storage.1.5.49\lib\Windows.Storage.dll</HintPath>
     </Reference>
-    <Reference Include="System.IO.Streams">
-      <HintPath>..\packages\nanoFramework.System.IO.Streams.1.1.52\lib\System.IO.Streams.dll</HintPath>
+    <Reference Include="Windows.Storage.Streams">
+      <HintPath>..\packages\nanoFramework.Windows.Storage.Streams.1.14.32\lib\Windows.Storage.Streams.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

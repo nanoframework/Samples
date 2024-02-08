@@ -6,7 +6,7 @@
 using System;
 using System.Diagnostics;
 using System.Threading;
-using nanoFramework.System.IO.FileSystem;
+using Windows.Storage;
 
 namespace RemovableDeviceEvent
 {

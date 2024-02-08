@@ -20,7 +20,7 @@ namespace AccessRemovableDevices
             // in nanoFramework the drive letters are fixed, being:
             // D: SD Card
             // E: USB Mass Storage Device
-            StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
+            StorageFolder externalDevices = KnownFolders.RemovableDevices;
 
             // list all removable storage devices
             var removableDevices = externalDevices.GetFolders();
