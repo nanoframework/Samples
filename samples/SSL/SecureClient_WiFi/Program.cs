@@ -61,7 +61,7 @@ namespace SecureClient
             // add certificate in CER format (as a managed resource)
             X509Certificate digiCertGlobalRootCACert = new X509Certificate(Resources.GetBytes(Resources.BinaryResources.DigiCertGlobalRootCA));
             /////////////////////////////////////////////////////////////////////////////////////
-            
+
             /////////////////////////////////////////////////////////////////////////////////////
             // add certificate in CER format (as a managed resource)
             X509Certificate digiCertGlobalG2CACert = new X509Certificate(Resources.GetBytes(Resources.BinaryResources.DigiCert_Global_G2_Azure));
