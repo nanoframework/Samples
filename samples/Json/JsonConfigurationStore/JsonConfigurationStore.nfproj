@@ -31,8 +31,8 @@
       <HintPath>..\packages\nanoFramework.CoreLibrary.1.15.5\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Json, Version=2.2.103.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Json.2.2.103\lib\nanoFramework.Json.dll</HintPath>
+    <Reference Include="nanoFramework.Json, Version=2.2.113.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Json.2.2.113\lib\nanoFramework.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Runtime.Events, Version=1.11.15.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -51,12 +51,12 @@
       <HintPath>..\packages\nanoFramework.System.Text.1.2.54\lib\nanoFramework.System.Text.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.IO.FileSystem, Version=1.1.32.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.IO.FileSystem.1.1.32\lib\System.IO.FileSystem.dll</HintPath>
+    <Reference Include="System.IO.FileSystem, Version=1.1.36.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.IO.FileSystem.1.1.36\lib\System.IO.FileSystem.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.IO.Streams, Version=1.1.52.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.IO.Streams.1.1.52\lib\System.IO.Streams.dll</HintPath>
+    <Reference Include="System.IO.Streams, Version=1.1.56.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.IO.Streams.1.1.56\lib\System.IO.Streams.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

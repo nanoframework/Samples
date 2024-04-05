@@ -42,24 +42,24 @@
       <HintPath>..\packages\nanoFramework.CoreLibrary.1.15.5\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Azure.Devices.Client, Version=1.2.29.28592, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Azure.Devices.Client.1.2.29\lib\nanoFramework.Azure.Devices.Client.dll</HintPath>
+    <Reference Include="nanoFramework.Azure.Devices.Client, Version=1.2.34.6310, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Azure.Devices.Client.1.2.34\lib\nanoFramework.Azure.Devices.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Hardware.Esp32, Version=1.6.12.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.Hardware.Esp32.1.6.12\lib\nanoFramework.Hardware.Esp32.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Json, Version=2.2.103.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Json.2.2.103\lib\nanoFramework.Json.dll</HintPath>
+    <Reference Include="nanoFramework.Json, Version=2.2.113.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Json.2.2.113\lib\nanoFramework.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.M2Mqtt, Version=5.1.116.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.M2Mqtt.5.1.116\lib\nanoFramework.M2Mqtt.dll</HintPath>
+    <Reference Include="nanoFramework.M2Mqtt, Version=5.1.120.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.M2Mqtt.5.1.120\lib\nanoFramework.M2Mqtt.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.M2Mqtt.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.M2Mqtt.5.1.116\lib\nanoFramework.M2Mqtt.Core.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.M2Mqtt.5.1.120\lib\nanoFramework.M2Mqtt.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Networking.Sntp, Version=1.6.25.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -98,24 +98,24 @@
       <HintPath>..\packages\nanoFramework.System.Device.I2c.1.1.16\lib\System.Device.I2c.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Device.Wifi, Version=1.5.76.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.Device.Wifi.1.5.76\lib\System.Device.Wifi.dll</HintPath>
+    <Reference Include="System.Device.Wifi, Version=1.5.79.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.Device.Wifi.1.5.79\lib\System.Device.Wifi.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.IO.FileSystem, Version=1.1.32.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.IO.FileSystem.1.1.32\lib\System.IO.FileSystem.dll</HintPath>
+    <Reference Include="System.IO.FileSystem, Version=1.1.36.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.IO.FileSystem.1.1.36\lib\System.IO.FileSystem.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.IO.Streams, Version=1.1.52.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.IO.Streams.1.1.52\lib\System.IO.Streams.dll</HintPath>
+    <Reference Include="System.IO.Streams, Version=1.1.56.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.IO.Streams.1.1.56\lib\System.IO.Streams.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net, Version=1.10.72.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.Net.1.10.72\lib\System.Net.dll</HintPath>
+    <Reference Include="System.Net, Version=1.10.75.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.Net.1.10.75\lib\System.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net.Http, Version=1.5.125.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.Net.Http.Client.1.5.125\lib\System.Net.Http.dll</HintPath>
+    <Reference Include="System.Net.Http, Version=1.5.130.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.Net.Http.Client.1.5.130\lib\System.Net.Http.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Threading, Version=1.1.32.63105, Culture=neutral, PublicKeyToken=c07d481e9758c731">

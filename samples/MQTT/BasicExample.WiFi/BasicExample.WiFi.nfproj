@@ -29,12 +29,12 @@
       <HintPath>packages\nanoFramework.CoreLibrary.1.15.5\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.M2Mqtt, Version=5.1.116.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.M2Mqtt.5.1.116\lib\nanoFramework.M2Mqtt.dll</HintPath>
+    <Reference Include="nanoFramework.M2Mqtt, Version=5.1.120.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.M2Mqtt.5.1.120\lib\nanoFramework.M2Mqtt.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.M2Mqtt.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.M2Mqtt.5.1.116\lib\nanoFramework.M2Mqtt.Core.dll</HintPath>
+      <HintPath>packages\nanoFramework.M2Mqtt.5.1.120\lib\nanoFramework.M2Mqtt.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Runtime.Events, Version=1.11.15.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -53,16 +53,16 @@
       <HintPath>packages\nanoFramework.System.Text.1.2.54\lib\nanoFramework.System.Text.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Device.Wifi, Version=1.5.76.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Device.Wifi.1.5.76\lib\System.Device.Wifi.dll</HintPath>
+    <Reference Include="System.Device.Wifi, Version=1.5.79.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Device.Wifi.1.5.79\lib\System.Device.Wifi.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.IO.Streams, Version=1.1.52.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.IO.Streams.1.1.52\lib\System.IO.Streams.dll</HintPath>
+    <Reference Include="System.IO.Streams, Version=1.1.56.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.IO.Streams.1.1.56\lib\System.IO.Streams.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net, Version=1.10.72.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Net.1.10.72\lib\System.Net.dll</HintPath>
+    <Reference Include="System.Net, Version=1.10.75.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Net.1.10.75\lib\System.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Threading, Version=1.1.32.63105, Culture=neutral, PublicKeyToken=c07d481e9758c731">
