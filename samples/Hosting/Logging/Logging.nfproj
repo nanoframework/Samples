@@ -39,8 +39,8 @@
       <HintPath>packages\nanoFramework.Hosting.1.0.40\lib\nanoFramework.Hosting.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Logging, Version=1.1.81.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Logging.1.1.81\lib\nanoFramework.Logging.dll</HintPath>
+    <Reference Include="nanoFramework.Logging, Version=1.1.88.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Logging.1.1.88\lib\nanoFramework.Logging.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
