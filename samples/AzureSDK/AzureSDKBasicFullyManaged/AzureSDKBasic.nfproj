@@ -38,15 +38,15 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Iot.Device.AtModem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Iot.Device.AtModem.1.0.139\lib\Iot.Device.AtModem.dll</HintPath>
+      <HintPath>packages\nanoFramework.Iot.Device.AtModem.1.0.145\lib\Iot.Device.AtModem.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib, Version=1.15.6.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.CoreLibrary.1.15.5\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Azure.Devices.Client, Version=1.2.38.24514, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Azure.Devices.Client.FullyManaged.1.2.38\lib\nanoFramework.Azure.Devices.Client.dll</HintPath>
+    <Reference Include="nanoFramework.Azure.Devices.Client, Version=1.2.41.29389, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Azure.Devices.Client.FullyManaged.1.2.41\lib\nanoFramework.Azure.Devices.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Hardware.Esp32, Version=1.6.12.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -58,7 +58,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.M2Mqtt.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.M2Mqtt.Core.5.1.123\lib\nanoFramework.M2Mqtt.Core.dll</HintPath>
+      <HintPath>packages\nanoFramework.M2Mqtt.Core.5.1.126\lib\nanoFramework.M2Mqtt.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.ResourceManager, Version=1.2.19.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
