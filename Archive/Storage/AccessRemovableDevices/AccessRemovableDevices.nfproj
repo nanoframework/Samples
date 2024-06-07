@@ -40,8 +40,9 @@
     <Reference Include="nanoFramework.System.Text">
       <HintPath>..\packages\nanoFramework.System.Text.1.2.54\lib\nanoFramework.System.Text.dll</HintPath>
     </Reference>
-    <Reference Include="Windows.Storage">
-      <HintPath>..\packages\nanoFramework.Windows.Storage.1.5.49\lib\Windows.Storage.dll</HintPath>
+    <Reference Include="Windows.Storage, Version=1.5.51.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Windows.Storage.1.5.51\lib\Windows.Storage.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Windows.Storage.Streams">
       <HintPath>..\packages\nanoFramework.Windows.Storage.Streams.1.14.32\lib\Windows.Storage.Streams.dll</HintPath>

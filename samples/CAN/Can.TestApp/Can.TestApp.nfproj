@@ -29,8 +29,8 @@
       <HintPath>..\packages\nanoFramework.CoreLibrary.1.15.5\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Device.Can, Version=1.3.9.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Device.Can.1.3.9\lib\nanoFramework.Device.Can.dll</HintPath>
+    <Reference Include="nanoFramework.Device.Can, Version=1.3.12.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Device.Can.1.3.12\lib\nanoFramework.Device.Can.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Devices.Can, Version=1.2.4.3, Culture=neutral, PublicKeyToken=c07d481e9758c731">
