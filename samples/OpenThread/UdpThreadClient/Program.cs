@@ -1,3 +1,8 @@
+﻿//
+// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+//
+
 using System;
 using System.Threading;
 using System.Net;
@@ -7,12 +12,12 @@ namespace Samples
 {
     public class Program
     {
-        const int UDP_PORT = 1234;
+        private const int UDP_PORT = 1234;
 
-        static OpenThread ot;
-        static AutoResetEvent WaitNetAttached = new AutoResetEvent(false);
+        private static OpenThread _ot;
+        private static AutoResetEvent _waitNetAttached = new AutoResetEvent(false);
 
-        public static Led Led = new Led();
+        public static Led _led = new Led();
 
         public static void Main()
         {
@@ -26,15 +31,15 @@ namespace Samples
                 // If you use a specific mesh local address here it will only received by 1 target
                 string remoteAdress = "ff03::1";
 
-                Led.Set(ThreadDeviceRole.Disabled);
+                _led.Set(ThreadDeviceRole.Disabled);
 
                 // Initialize OpenThread stack
                 InitThread();
 
                 Display.Log("Wait for OpenThread to be attached...");
-                WaitNetAttached.WaitOne();
+                _waitNetAttached.WaitOne();
 
-                IPAddress meshLocal = ot.MeshLocalAddress;
+                IPAddress meshLocal = _ot.MeshLocalAddress;
                 Display.Log($"Own mesh local IPV6 address {meshLocal}");
 
                 Display.Log("Display current active dataset");
@@ -44,7 +49,7 @@ namespace Samples
                 CommandAndResult("ipaddr");
 
                 Display.Log("Open UDP socket for communication");
-                NetUtils.OpenUdpSocket("", UDP_PORT, ot.MeshLocalAddress);
+                NetUtils.OpenUdpSocket("", UDP_PORT, _ot.MeshLocalAddress);
 
                 Display.Log("Start a receive thread for UDP message responses");
                 Thread ReceiveUdpthread = new Thread(() => NetUtils.ReceiveUdpMessages());
@@ -54,7 +59,7 @@ namespace Samples
                 {
                     Display.Log($"Send (broadcast) messages on port:{UDP_PORT}");
                     NetUtils.SendMessageSocketTo(UDP_PORT, remoteAdress, $"Test message via socket @ {DateTime.UtcNow}");
-                    Led.SetRxTX();
+                    _led.SetRxTX();
 
                     Thread.Sleep(5000);
                 }
@@ -90,26 +95,26 @@ namespace Samples
             Display.Log("---- Thread Dataset end ------");
 
             // Use local radio, ESP32_C6 or ESP32_H2
-            ot = OpenThread.CreateThreadWithNativeRadio(ThreadDeviceType.Router);
+            _ot = OpenThread.CreateThreadWithNativeRadio(ThreadDeviceType.Router);
 
             // Set up event handlers
-            ot.OnStatusChanged += Ot_OnStatusChanged;
-            ot.OnRoleChanged += Ot_OnRoleChanged;
-            ot.OnConsoleOutputAvailable += Ot_OnConsoleOutputAvailable;
+            _ot.OnStatusChanged += Ot_OnStatusChanged;
+            _ot.OnRoleChanged += Ot_OnRoleChanged;
+            _ot.OnConsoleOutputAvailable += Ot_OnConsoleOutputAvailable;
 
-            ot.Dataset = data;
+            _ot.Dataset = data;
 
             Display.Log($"Starting OpenThread stack");
-            ot.Start();
+            _ot.Start();
 
             Display.Log($"Current Role");
-            Display.Role(ot.Role);
+            Display.Role(_ot.Role);
         }
 
         static void CommandAndResult(string cmd)
         {
             Console.WriteLine($"{Display.LH} command>{cmd}");
-            string[] results = ot.CommandLineInputAndWaitResponse(cmd);
+            string[] results = _ot.CommandLineInputAndWaitResponse(cmd);
             Display.Log(results);
         }
 
@@ -123,7 +128,7 @@ namespace Samples
         private static void Ot_OnRoleChanged(OpenThread sender, OpenThreadRoleChangeEventArgs args)
         {
             Display.Role(args.currentRole);
-            Led.Set(args.currentRole);
+            _led.Set(args.currentRole);
         }
 
         private static void Ot_OnStatusChanged(OpenThread sender, OpenThreadStateChangeEventArgs args)
@@ -136,7 +141,7 @@ namespace Samples
 
                 case ThreadDeviceState.Attached:
                     Display.Log("Status - Attached");
-                    WaitNetAttached.Set();
+                    _waitNetAttached.Set();
                     break;
 
                 case ThreadDeviceState.GotIpv6:

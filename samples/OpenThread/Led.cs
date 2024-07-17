@@ -1,4 +1,9 @@
-﻿using System;
+﻿//
+// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+//
+
+using System;
 using System.Drawing;
 using System.Threading;
 using nanoFramework.Runtime.Native;
@@ -31,17 +36,17 @@ namespace Samples
 
         public void SetRxTX()
         {
-            Set(_role, 0.2d);
+            Set(_role, 0.2f);
             Thread.Sleep(50);
-            Set(_role, 0.1d);
+            Set(_role, 0.1f);
         }
 
         public void Set(ThreadDeviceRole role)
         {
-            Set(role, 0.1d);
+            Set(role, 0.1f);
         }
 
-        private void Set(ThreadDeviceRole role, double brightness)
+        private void Set(ThreadDeviceRole role, float brightness)
         {
             Color col;
 

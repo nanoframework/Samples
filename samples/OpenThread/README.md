@@ -9,14 +9,6 @@ Shows how to use OpenThread Networking API.
 
 Shows how to use various APIs related to OpenThread.
 
-> **Note:** This sample is part of a large collection of nanoFramework feature samples.
-> If you are unfamiliar with Git and GitHub, you can download the entire collection as a
-> [ZIP file](https://github.com/nanoframework/Samples/archive/main.zip), but be
-> sure to unzip everything to access any shared dependencies.
-<!-- For more info on working with the ZIP file, 
-> the samples collection, and GitHub, see [Get the UWP samples from GitHub](https://aka.ms/ovu2uq). 
-> For more samples, see the [Samples portal](https://aka.ms/winsamples) on the Windows Dev Center.  -->
-
 ## Hardware requirements
 
 These project are for the ESP32_C6 and ESP32_H2 Espressif devkit boards with a Ws2812B Neopixel on pin 8. 
@@ -30,6 +22,7 @@ These 2 sample work together to create a client / server communications over Ope
 They use UPD sockets over the IPV6 networking of the OpenThread stack.
 
 The neopixel shows the current role of the node.
+
 - White -> Detached from network
 - Green -> Child
 - Blue  -> Router
@@ -43,13 +36,14 @@ The neopixel shows the current role of the node.
  32Mhz instead of 80Mhz. This will be fixed shortly.
 
 #### UdpThreadClient
+
 This sample will send a broadcast message every 5 seconds using the built-in mesh broadcast address "ff03::1" and port 12324.
 Any UdpThreadServer running on the same mesh network will receive message and respond back to sender. 
 Any received messages are logged on console.
 
 #### UdpThreadServer
-Sample opens sockets and waits for any messages on port 1234. If any message is received to is echoed back to sending address.
 
+Sample opens sockets and waits for any messages on port 1234. If any message is received to is echoed back to sending address.
 
 ## Related topics
 

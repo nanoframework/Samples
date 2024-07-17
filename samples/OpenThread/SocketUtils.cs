@@ -1,4 +1,9 @@
-﻿using System;
+﻿//
+// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+//
+
+using System;
 using System.Net.Sockets;
 using System.Net;
 using System.Text;
@@ -86,7 +91,7 @@ namespace Samples
 
                 Display.Log($"UDP message(sock) >{message}< received from {remoteEp}");
 
-                Program.Led.SetRxTX();
+                Program._led.SetRxTX();
 
                 if (respond)
                 {

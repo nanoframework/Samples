@@ -1,3 +1,8 @@
+﻿//
+// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+//
+
 using System;
 using System.Net;
 using System.Threading;
@@ -7,12 +12,12 @@ namespace Samples
 {
     public class Program
     {
-        const int UDP_PORT = 1234;
+        private const int UDP_PORT = 1234;
 
-        static OpenThread ot;
-        static AutoResetEvent WaitNetAttached = new AutoResetEvent(false);
+        private static OpenThread _ot;
+        private static AutoResetEvent _waitNetAttached = new AutoResetEvent(false);
         
-        public static Led Led = new Led();
+        public static Led _led = new Led();
 
         public static void Main()
         {
@@ -21,13 +26,13 @@ namespace Samples
 
             Display.LogMemoryStats("Start up");
 
-            Led.Set(ThreadDeviceRole.Disabled);
+            _led.Set(ThreadDeviceRole.Disabled);
 
             // Init OpenThread stack
             InitThread();
 
             Display.Log("Wait for OpenThread to be attached...");
-            WaitNetAttached.WaitOne();
+            _waitNetAttached.WaitOne();
 
             Display.Log("== Demonstrate some CLI commands");
             Display.Log("- Display current active dataset");
@@ -36,7 +41,7 @@ namespace Samples
             Display.Log("Display interface IP addresses");
             CommandAndResult("ipaddr");
 
-            IPAddress adr = ot.MeshLocalAddress;
+            IPAddress adr = _ot.MeshLocalAddress;
             Display.Log($"Local Mesh address {adr}");
 
             Display.Log("Open UDP socket for communication");
@@ -52,7 +57,7 @@ namespace Samples
         static void CommandAndResult(string cmd)
         {
             Console.WriteLine($"{Display.LH} command>{cmd}");
-            string[] results = ot.CommandLineInputAndWaitResponse(cmd);
+            string[] results = _ot.CommandLineInputAndWaitResponse(cmd);
             Display.Log(results);
         }
 
@@ -80,23 +85,23 @@ namespace Samples
             Display.Log("---- Thread Dataset end ------");
 
             // Use local radio, ESP32_C6 or ESP32_H2
-            ot = OpenThread.CreateThreadWithNativeRadio(ThreadDeviceType.Router);
+            _ot = OpenThread.CreateThreadWithNativeRadio(ThreadDeviceType.Router);
 
             // Set up event handlers
-            ot.OnStatusChanged += Ot_OnStatusChanged;
-            ot.OnRoleChanged += Ot_OnRoleChanged;
-            ot.OnConsoleOutputAvailable += Ot_OnConsoleOutputAvailable;
+            _ot.OnStatusChanged += Ot_OnStatusChanged;
+            _ot.OnRoleChanged += Ot_OnRoleChanged;
+            _ot.OnConsoleOutputAvailable += Ot_OnConsoleOutputAvailable;
 
-            ot.Dataset = data;
+            _ot.Dataset = data;
 
             Display.Log($"Starting OpenThread stack");
-            ot.Start();
+            _ot.Start();
         }
 
         private static void Ot_OnRoleChanged(OpenThread sender, OpenThreadRoleChangeEventArgs args)
         {
             Display.Role(args.currentRole);
-            Led.Set(args.currentRole);
+            _led.Set(args.currentRole);
         }
 
         private static void Ot_OnStatusChanged(OpenThread sender, OpenThreadStateChangeEventArgs args)
@@ -105,12 +110,12 @@ namespace Samples
             {
                 case ThreadDeviceState.Detached:
                     Display.Log("Status - Detached");
-                    Led.Set(ThreadDeviceRole.Disabled);
+                    _led.Set(ThreadDeviceRole.Disabled);
                     break;
 
                 case ThreadDeviceState.Attached:
                     Display.Log("Status - Attached");
-                    WaitNetAttached.Set();
+                    _waitNetAttached.Set();
                     break;
 
                 case ThreadDeviceState.GotIpv6:
