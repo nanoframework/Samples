@@ -159,6 +159,7 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 * [🌶️🌶️ - HTTP sample pack](samples/HTTP)
 * [🌶️🌶️ - HTTP WebRequest sample](samples/HTTP/HttpWebRequest)
 * [🌶️🌶️ - Networking sample pack](samples/Networking)
+* [🌶️🌶️ - OpenTHread Networking sample pack](samples/OpenThread)
 * [🌶️🌶️ - WebServer to test pour Servo Motors](samples/Webserver/ServoMotorTester)
 * [🌶️🌶️ - WebSocket Server Sample with RGB Led](samples/WebSockets/WebSockets.Server.RgbSample)
 * [🌶️🌶️ - WebSocket ServerClient Sample](samples/WebSockets/Websockets.ServerClient.Sample)

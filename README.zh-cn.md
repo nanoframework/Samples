@@ -157,6 +157,7 @@
 * [🌶️🌶️ - HTTP sample pack](samples/HTTP)
 * [🌶️🌶️ - HTTP WebRequest sample](samples/HTTP/HttpWebRequest)
 * [🌶️🌶️ - Networking sample pack](samples/Networking)
+* [🌶️🌶️ - OpenTHread Networking sample pack](samples/OpenThread)
 * [🌶️🌶️ - WebServer to test pour Servo Motors](samples/Webserver/ServoMotorTester)
 * [🌶️🌶️ - WebSocket ServerClient Sample](samples/WebSockets/Websockets.ServerClient.Sample/README.zh-cn.md)
 * [🌶️🌶️ - WebSocket Server示例与RGB Led](samples/WebSockets/WebSockets.Server.RgbSample/README.zh-cn.md)
