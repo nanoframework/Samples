@@ -34,8 +34,9 @@
     <Reference Include="CCSWE.nanoFramework.Math">
       <HintPath>..\packages\CCSWE.nanoFramework.Math.0.1.32\lib\CCSWE.nanoFramework.Math.dll</HintPath>
     </Reference>
-    <Reference Include="CCSWE.nanoFramework.NeoPixel">
-      <HintPath>..\packages\CCSWE.nanoFramework.NeoPixel.1.0.41\lib\CCSWE.nanoFramework.NeoPixel.dll</HintPath>
+    <Reference Include="CCSWE.nanoFramework.NeoPixel, Version=1.0.44.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\CCSWE.nanoFramework.NeoPixel.1.0.44\lib\CCSWE.nanoFramework.NeoPixel.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>..\packages\nanoFramework.CoreLibrary.1.15.5\lib\mscorlib.dll</HintPath>
@@ -46,8 +47,9 @@
     <Reference Include="nanoFramework.Hardware.Esp32">
       <HintPath>..\packages\nanoFramework.Hardware.Esp32.1.6.15\lib\nanoFramework.Hardware.Esp32.dll</HintPath>
     </Reference>
-    <Reference Include="nanoFramework.Hardware.Esp32.Rmt">
-      <HintPath>..\packages\nanoFramework.Hardware.Esp32.Rmt.2.0.10\lib\nanoFramework.Hardware.Esp32.Rmt.dll</HintPath>
+    <Reference Include="nanoFramework.Hardware.Esp32.Rmt, Version=2.0.13.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Hardware.Esp32.Rmt.2.0.13\lib\nanoFramework.Hardware.Esp32.Rmt.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Networking.Thread">
       <HintPath>..\packages\nanoFramework.Networking.Thread.1.0.10\lib\nanoFramework.Networking.Thread.dll</HintPath>
