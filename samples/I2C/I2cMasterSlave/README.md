@@ -1,10 +1,18 @@
-# 🌶️🌶️ - I2C sample sample pack
+# 🌶️🌶️ - I2C Master Slave sample
 
-## System.Device.I2c
+Shows how to use the [System.Device.I2c](http://docs.nanoframework.net/api/System.Device.I2c.html) [System.Device.I2c.Slave](http://docs.nanoframework.net/api/System.Device.I2c.Slave.html) APIs to connect two I2C devices.
 
-- [🌶️🌶️ - IES-SHIELD-GPS module](./System.Device.I2c/GPS)
-- [🌶️🌶️ - I2C Scanner sample](./NanoI2cScanner/)
-- [🌶️🌶️ - I2C Master - Slave sample](./I2cMasterSlave/)
+## Hardware requirements
+
+Two ESP32 devices board.
+The code sample is demonstrative of the use of the I2C and I2C slave APIs.
+
+## Related topics
+
+### Reference
+
+- [System.Device.I2c](http://docs.nanoframework.net/api/System.Device.I2c.html)
+- [System.Device.I2c.Slave](http://docs.nanoframework.net/api/System.Device.I2c.Slave.html)
 
 ## Build the sample
 
