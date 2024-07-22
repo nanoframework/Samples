@@ -73,6 +73,9 @@ namespace Blinky
             // RAK2305 
             //GpioPin led = s_GpioController.OpenPin(Gpio.IO18, PinMode.Output); // LED Green (Test LED) on device
 
+            //Aliexpress ESP32-WROOM32, GPIO2 - onboard not-power LED
+            GpioPin led = s_GpioController.OpenPin(2, PinMode.Output);
+            
             led.Write(PinValue.Low);
 
             while (true)
