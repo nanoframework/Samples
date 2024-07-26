@@ -7,6 +7,8 @@ Shows how to use the [System.Device.I2c](http://docs.nanoframework.net/api/Syste
 Two ESP32 devices board.
 The code sample is demonstrative of the use of the I2C and I2C slave APIs.
 
+The native driver sets the GPIOs for the I2C bus to use internal pull-ups. For most scenarios, this is sufficient. However, for long buses strong pull-ups maybe required.
+
 ## Related topics
 
 ### Reference
