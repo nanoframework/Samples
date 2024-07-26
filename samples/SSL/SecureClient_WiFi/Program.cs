@@ -22,11 +22,6 @@ namespace SecureClient
 {
     public class Program
     {
-#if HAS_WIFI
-        private static string MySsid = "ssid";
-        private static string MyPassword = "password";
-#endif
-
         public static void Main()
         {
             Debug.WriteLine("Waiting for network up and IP address...");
@@ -36,7 +31,13 @@ namespace SecureClient
             CancellationTokenSource cs = new(60000);
 
 #if HAS_WIFI
-            success = WifiNetworkHelper.ConnectDhcp(MySsid, MyPassword, requiresDateTime: true, token: cs.Token);
+
+            Debug.WriteLine("This expectes that there is already a previously configured WiFi connection.");
+            success = WifiNetworkHelper.Reconnect(requiresDateTime: true, token: cs.Token);
+
+            // If that's not the case, then uncomment the code snippet below to setup the WiFi connection
+            // Make sure to comment the line above
+            // success = WifiNetworkHelper.ConnectDhcp("<MY-SSIDS>", "<MY-WIFI-PASSWORD>", requiresDateTime: true, token: cs.Token);
 #else
             success = NetworkHelper.SetupAndConnectNetwork(requiresDateTime: true, token: cs.Token);
 #endif
