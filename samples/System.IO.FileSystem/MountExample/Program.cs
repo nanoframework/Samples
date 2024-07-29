@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Threading;
 using nanoFramework.System.IO.FileSystem;
+using nanoFramework.System.IO;
 
 namespace MountExample
 {
@@ -84,14 +85,14 @@ namespace MountExample
         // This only works for SD card adapter that include card detect pin tied to GPIO pin
         // If no Card Detect pin then events not required
 
-        private static void StorageEventManager_RemovableDeviceRemoved(object sender, RemovableDeviceEventArgs e)
+        private static void StorageEventManager_RemovableDeviceRemoved(object sender, RemovableDriveEventArgs e)
         {
-            Debug.WriteLine($"Card removed - Event:{e.Event} Path:{e.Path}");
+            Debug.WriteLine($"Card removed - Event:{e.Event} Path:{e.Drive}");
         }
 
-        private static void StorageEventManager_RemovableDeviceInserted(object sender, RemovableDeviceEventArgs e)
+        private static void StorageEventManager_RemovableDeviceInserted(object sender, RemovableDriveEventArgs e)
         {
-            Debug.WriteLine($"Card inserted - Event:{e.Event} Path:{e.Path}");
+            Debug.WriteLine($"Card inserted - Event:{e.Event} Path:{e.Drive}");
 
             // Card just inserted lets try to mount it
             MountMyCard();
