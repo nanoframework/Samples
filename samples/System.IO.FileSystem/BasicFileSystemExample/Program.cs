@@ -38,11 +38,10 @@ namespace BasicFileSystemExample
             Debug.WriteLine("+++++ System.IO.FileSystem examples +++++");
 
             Debug.WriteLine("+++++ Creating a sample file +++++");
-            File.Create(sampleFilePath);
+            var fs=File.Create(sampleFilePath);
 
             byte[] sampleBuffer = Encoding.UTF8.GetBytes(sampleText);
 
-            FileStream fs = new FileStream(sampleFilePath, FileMode.Open, FileAccess.ReadWrite);
             fs.Write(sampleBuffer, 0, sampleBuffer.Length);
 
             if(fs.CanSeek)
