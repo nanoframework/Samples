@@ -29,8 +29,8 @@
       <HintPath>packages\nanoFramework.CoreLibrary.1.15.5\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Device.OneWire, Version=1.4.14.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Device.OneWire.1.4.14\lib\nanoFramework.Device.OneWire.dll</HintPath>
+    <Reference Include="nanoFramework.Device.OneWire, Version=1.4.22.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Device.OneWire.1.4.22\lib\nanoFramework.Device.OneWire.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
