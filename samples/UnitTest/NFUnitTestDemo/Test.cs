@@ -16,7 +16,7 @@ namespace nanoFramework.TestFramework.Test
         public void TestRaisesException()
         {
             Debug.WriteLine("Test will raise exception");
-            Assert.Throws(typeof(Exception), ThrowMe);
+            Assert.ThrowsException(typeof(Exception), ThrowMe);
         }
 
         private void ThrowMe()
@@ -25,86 +25,116 @@ namespace nanoFramework.TestFramework.Test
         }
 
         [TestMethod]
-        public void TestCheckAllEqual()
+        public void TestCheckAllAreEqual()
         {
             Debug.WriteLine("Test will check that all the Equal are actually equal");
+
             // Arrange
-            byte bytea = 42; byte byteb = 42;
-            char chara = (char)42; char charb = (char)42;
-            sbyte sbytea = 42; sbyte sbyteb = 42;
-            int inta = 42; int intb = 42;
-            uint uinta = 42; uint uintb = 42;
-            long longa = 42; long longb = 42;
-            ulong ulonga = 42; ulong ulongb = 42;
-            bool boola = true; bool boolb = true;
-            short shorta = 42; short shortb = 42;
-            ushort ushorta = 42; ushort ushortb = 42;
-            float floata = 42; float floatb = 42;
+            byte bytea = 42;
+            byte byteb = 42;
+            char chara = (char)42;
+            char charb = (char)42;
+            sbyte sbytea = 42;
+            sbyte sbyteb = 42;
+            int inta = 42;
+            int intb = 42;
+            uint uinta = 42;
+            uint uintb = 42;
+            long longa = 42;
+            long longb = 42;
+            ulong ulonga = 42;
+            ulong ulongb = 42;
+            bool boola = true;
+            bool boolb = true;
+            short shorta = 42;
+            short shortb = 42;
+            ushort ushorta = 42;
+            ushort ushortb = 42;
+            float floata = 42;
+            float floatb = 42;
             int[] intArraya = new int[5] { 1, 2, 3, 4, 5 };
             int[] intArrayb = new int[5] { 1, 2, 3, 4, 5 };
-            object obja = new object(); object objb = obja;
-            string stra = "42"; string strb = "42";
+            object obja = new object();
+            object objb = obja;
+            string stra = "42";
+            string strb = "42";
             byte[] arrayempty = new byte[0];
+
             // Assert
-            Assert.True(boola);
-            Assert.Equal(bytea, byteb);
-            Assert.Equal(chara, charb);
-            Assert.Equal(sbytea, sbyteb);
-            Assert.Equal(inta, intb);
-            Assert.Equal(uinta, uintb);
-            Assert.Equal(longa, longb);
-            Assert.Equal(ulonga, ulongb);
-            Assert.Equal(boola, boolb);
-            Assert.Equal(shorta, shortb);
-            Assert.Equal(ushorta, ushortb);
-            Assert.Equal(floata, floatb);
-            Assert.Equal(intArraya, intArrayb);
-            Assert.Equal(stra, strb);
-            Assert.Same(obja, objb);
-            Assert.Empty(arrayempty);
+            Assert.IsTrue(boola);
+            Assert.AreEqual(bytea, byteb);
+            Assert.AreEqual(chara, charb);
+            Assert.AreEqual(sbytea, sbyteb);
+            Assert.AreEqual(inta, intb);
+            Assert.AreEqual(uinta, uintb);
+            Assert.AreEqual(longa, longb);
+            Assert.AreEqual(ulonga, ulongb);
+            Assert.AreEqual(boola, boolb);
+            Assert.AreEqual(shorta, shortb);
+            Assert.AreEqual(ushorta, ushortb);
+            Assert.AreEqual(floata, floatb);
+            Assert.AreEqual(intArraya, intArrayb);
+            Assert.AreEqual(stra, strb);
+            Assert.AreSame(obja, objb);
+            CollectionAssert.Empty(arrayempty);
         }
 
         [TestMethod]
-        public void TestCheckAllNotEqual()
+        public void TestCheckAllAreNotEqual()
         {
             Debug.WriteLine("Test will check that all the NotEqual are actually equal");
+
             // Arrange
-            byte bytea = 42; byte byteb = 43;
-            char chara = (char)42; char charb = (char)43;
-            sbyte sbytea = 42; sbyte sbyteb = 43;
-            int inta = 42; int intb = 43;
-            uint uinta = 42; uint uintb = 43;
-            long longa = 42; long longb = 43;
-            ulong ulonga = 42; ulong ulongb = 43;
-            bool boola = true; bool boolb = false;
-            short shorta = 42; short shortb = 43;
-            ushort ushorta = 42; ushort ushortb = 43;
-            float floata = 42; float floatb = 43;
+            byte bytea = 42;
+            byte byteb = 43;
+            char chara = (char)42;
+            char charb = (char)43;
+            sbyte sbytea = 42;
+            sbyte sbyteb = 43;
+            int inta = 42;
+            int intb = 43;
+            uint uinta = 42;
+            uint uintb = 43;
+            long longa = 42;
+            long longb = 43;
+            ulong ulonga = 42;
+            ulong ulongb = 43;
+            bool boola = true;
+            bool boolb = false;
+            short shorta = 42;
+            short shortb = 43;
+            ushort ushorta = 42;
+            ushort ushortb = 43;
+            float floata = 42;
+            float floatb = 43;
             int[] intArraya = new int[5] { 1, 2, 3, 4, 5 };
             int[] intArrayb = new int[5] { 1, 2, 3, 4, 6 };
             int[] intArraybis = new int[4] { 1, 2, 3, 4 };
             int[] intArrayter = null;
-            object obja = new object(); object objb = new object();
-            string stra = "42"; string strb = "43";
+            object obja = new object();
+            object objb = new object();
+            string stra = "42";
+            string strb = "43";
+
             // Assert
-            Assert.False(boolb);
-            Assert.NotEqual(bytea, byteb);
-            Assert.NotEqual(chara, charb);
-            Assert.NotEqual(sbytea, sbyteb);
-            Assert.NotEqual(inta, intb);
-            Assert.NotEqual(uinta, uintb);
-            Assert.NotEqual(longa, longb);
-            Assert.NotEqual(ulonga, ulongb);
-            Assert.NotEqual(boola, boolb);
-            Assert.NotEqual(shorta, shortb);
-            Assert.NotEqual(ushorta, ushortb);
-            Assert.NotEqual(floata, floatb);
-            Assert.NotEqual(intArraya, intArrayb);
-            Assert.NotEqual(intArraya, intArraybis);
-            Assert.NotEqual(intArraya, intArrayter);
-            Assert.NotEqual(stra, strb);
-            Assert.NotSame(obja, objb);
-            Assert.NotEmpty(intArraya);
+            Assert.IsFalse(boolb);
+            Assert.AreNotEqual(bytea, byteb);
+            Assert.AreNotEqual(chara, charb);
+            Assert.AreNotEqual(sbytea, sbyteb);
+            Assert.AreNotEqual(inta, intb);
+            Assert.AreNotEqual(uinta, uintb);
+            Assert.AreNotEqual(longa, longb);
+            Assert.AreNotEqual(ulonga, ulongb);
+            Assert.AreNotEqual(boola, boolb);
+            Assert.AreNotEqual(shorta, shortb);
+            Assert.AreNotEqual(ushorta, ushortb);
+            Assert.AreNotEqual(floata, floatb);
+            Assert.AreNotEqual(intArraya, intArrayb);
+            Assert.AreNotEqual(intArraya, intArraybis);
+            Assert.AreNotEqual(intArraya, intArrayter);
+            Assert.AreNotEqual(stra, strb);
+            Assert.AreNotSame(obja, objb);
+            CollectionAssert.NotEmpty(intArraya);
         }
 
         [TestMethod]
@@ -117,17 +147,19 @@ namespace nanoFramework.TestFramework.Test
             Type typea = typeof(int);
             Type typeb = typeof(int);
             Type typec = typeof(long);
+
             // Assert
-            Assert.Null(objnull);
-            Assert.NotNull(objnotnull);
-            Assert.IsType(typea, typeb);
-            Assert.IsNotType(typea, typec);
+            Assert.IsNull(objnull);
+            Assert.IsNotNull(objnotnull);
+            Assert.IsInstanceOfType(typea, typeb);
+            Assert.IsNotInstanceOfType(typea, typec);
         }
 
         [TestMethod]
         public void TestStringComparison()
         {
             Debug.WriteLine("Test string, Contains, EndsWith, StartWith");
+
             // Arrange
             string tocontains = "this text contains and end with contains";
             string startcontains = "contains start this text";
@@ -135,6 +167,7 @@ namespace nanoFramework.TestFramework.Test
             string doesnotcontains = "this is totally something else";
             string empty = string.Empty;
             string stringnull = null;
+
             // Assert
             Assert.Contains(contains, tocontains);
             Assert.DoesNotContains(contains, doesnotcontains);
