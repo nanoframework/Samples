@@ -35,8 +35,8 @@
       <HintPath>..\packages\CCSWE.nanoFramework.Math.0.1.39\lib\CCSWE.nanoFramework.Math.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CCSWE.nanoFramework.NeoPixel, Version=1.0.56.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\CCSWE.nanoFramework.NeoPixel.1.0.56\lib\CCSWE.nanoFramework.NeoPixel.dll</HintPath>
+    <Reference Include="CCSWE.nanoFramework.NeoPixel, Version=1.0.57.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\CCSWE.nanoFramework.NeoPixel.1.0.57\lib\CCSWE.nanoFramework.NeoPixel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib">
