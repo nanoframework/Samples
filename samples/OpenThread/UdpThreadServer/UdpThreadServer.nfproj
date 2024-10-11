@@ -31,12 +31,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="CCSWE.nanoFramework.Math, Version=0.1.44.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\CCSWE.nanoFramework.Math.0.1.44\lib\CCSWE.nanoFramework.Math.dll</HintPath>
+    <Reference Include="CCSWE.nanoFramework.Math, Version=0.1.45.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\CCSWE.nanoFramework.Math.0.1.45\lib\CCSWE.nanoFramework.Math.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CCSWE.nanoFramework.NeoPixel, Version=1.0.61.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\CCSWE.nanoFramework.NeoPixel.1.0.61\lib\CCSWE.nanoFramework.NeoPixel.dll</HintPath>
+    <Reference Include="CCSWE.nanoFramework.NeoPixel, Version=1.0.62.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\CCSWE.nanoFramework.NeoPixel.1.0.62\lib\CCSWE.nanoFramework.NeoPixel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib">
@@ -61,8 +61,9 @@
     <Reference Include="nanoFramework.Runtime.Events">
       <HintPath>..\packages\nanoFramework.Runtime.Events.1.11.18\lib\nanoFramework.Runtime.Events.dll</HintPath>
     </Reference>
-    <Reference Include="nanoFramework.Runtime.Native">
-      <HintPath>..\packages\nanoFramework.Runtime.Native.1.6.12\lib\nanoFramework.Runtime.Native.dll</HintPath>
+    <Reference Include="nanoFramework.Runtime.Native, Version=1.7.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Runtime.Native.1.7.1\lib\nanoFramework.Runtime.Native.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.System.Collections, Version=1.5.45.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.System.Collections.1.5.45\lib\nanoFramework.System.Collections.dll</HintPath>

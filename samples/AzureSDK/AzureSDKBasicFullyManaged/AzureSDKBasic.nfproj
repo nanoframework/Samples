@@ -38,7 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Iot.Device.AtModem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Iot.Device.AtModem.1.0.259\lib\Iot.Device.AtModem.dll</HintPath>
+      <HintPath>packages\nanoFramework.Iot.Device.AtModem.1.0.261\lib\Iot.Device.AtModem.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Iot.Device.Common.GnssDevice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -73,8 +73,8 @@
       <HintPath>packages\nanoFramework.Runtime.Events.1.11.18\lib\nanoFramework.Runtime.Events.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Runtime.Native, Version=1.6.12.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Runtime.Native.1.6.12\lib\nanoFramework.Runtime.Native.dll</HintPath>
+    <Reference Include="nanoFramework.Runtime.Native, Version=1.7.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Runtime.Native.1.7.1\lib\nanoFramework.Runtime.Native.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.System.Collections, Version=1.5.45.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
