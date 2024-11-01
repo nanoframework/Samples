@@ -31,12 +31,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="CCSWE.nanoFramework.Math, Version=0.1.47.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\CCSWE.nanoFramework.Math.0.1.47\lib\CCSWE.nanoFramework.Math.dll</HintPath>
+    <Reference Include="CCSWE.nanoFramework.Math, Version=0.1.48.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\CCSWE.nanoFramework.Math.0.1.48\lib\CCSWE.nanoFramework.Math.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CCSWE.nanoFramework.NeoPixel, Version=1.0.64.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\CCSWE.nanoFramework.NeoPixel.1.0.64\lib\CCSWE.nanoFramework.NeoPixel.dll</HintPath>
+    <Reference Include="CCSWE.nanoFramework.NeoPixel, Version=1.0.65.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\CCSWE.nanoFramework.NeoPixel.1.0.65\lib\CCSWE.nanoFramework.NeoPixel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib">
