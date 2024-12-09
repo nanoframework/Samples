@@ -19,7 +19,8 @@ namespace MountExample
         {
             Debug.WriteLine("Hello from nanoFramework - SD card Mount example");
 
-            // Configure pins for SDMMC1 and/or SDMMC2, this only needs to be done with devices that have configurable SDIO/MMC pins (ESP32_S3 and ESP32_P4). Configure pins to match used by board.
+            // Configure pins for SDMMC1 and/or SDMMC2, this only needs to be done with devices that have configurable SDIO/MMC pins (ESP32_S3 and ESP32_P4).
+            // Configure pins to match pins used by board.
             // A reference to nanoFramework.Hardware.Esp32 will also be required.
             //Configuration.SetPinFunction(16, DeviceFunction.SDMMC1_CLOCK);
             //Configuration.SetPinFunction(18, DeviceFunction.SDMMC1_COMMAND);
