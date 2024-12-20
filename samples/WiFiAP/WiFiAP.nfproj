@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Iot.Device.DhcpServer, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Iot.Device.DhcpServer.1.2.644\lib\Iot.Device.DhcpServer.dll</HintPath>
+      <HintPath>packages\nanoFramework.Iot.Device.DhcpServer.1.2.667\lib\Iot.Device.DhcpServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib, Version=1.15.6.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
