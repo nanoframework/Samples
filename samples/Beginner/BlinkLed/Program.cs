@@ -1,4 +1,7 @@
-﻿using System.Device.Gpio;
+﻿// Copyright (c) 2024 The nanoFramework project contributors
+// See LICENSE file in the project root for full license information.
+
+using System.Device.Gpio;
 using System.Diagnostics;
 using System.Threading;
 
