@@ -9,6 +9,10 @@ Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "2-Button", "Button\2-Button
 EndProject
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "3-ButtonNuget", "ButtonNuget\3-ButtonNuget.nfproj", "{5B17A480-3C0F-4D73-B941-E9F8C2A07925}"
 EndProject
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "5-Buzzer", "Buzzer\5-Buzzer.nfproj", "{9419FC61-403F-4E3D-BE93-B26D4A23B682}"
+EndProject
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "4-PwmLed", "PwmLed\4-PwmLed.nfproj", "{24D24536-E9B9-45B8-939A-0FB80EDBDD5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,18 @@ Global
 		{5B17A480-3C0F-4D73-B941-E9F8C2A07925}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B17A480-3C0F-4D73-B941-E9F8C2A07925}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5B17A480-3C0F-4D73-B941-E9F8C2A07925}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9419FC61-403F-4E3D-BE93-B26D4A23B682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9419FC61-403F-4E3D-BE93-B26D4A23B682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9419FC61-403F-4E3D-BE93-B26D4A23B682}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9419FC61-403F-4E3D-BE93-B26D4A23B682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9419FC61-403F-4E3D-BE93-B26D4A23B682}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9419FC61-403F-4E3D-BE93-B26D4A23B682}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{24D24536-E9B9-45B8-939A-0FB80EDBDD5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24D24536-E9B9-45B8-939A-0FB80EDBDD5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24D24536-E9B9-45B8-939A-0FB80EDBDD5D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{24D24536-E9B9-45B8-939A-0FB80EDBDD5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24D24536-E9B9-45B8-939A-0FB80EDBDD5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24D24536-E9B9-45B8-939A-0FB80EDBDD5D}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

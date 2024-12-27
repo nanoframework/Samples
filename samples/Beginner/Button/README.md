@@ -1,6 +1,6 @@
-# 🌶️ - PRess a button and light a LED
+# 🌶️ - Press a button and light a LED
 
-Shows how to use the [System.Device.Gpio](http://docs.nanoframework.net/api/System.Device.Gpio.html) API to set GPIO pins.
+Shows how to use the [System.Device.Gpio](https://docs.nanoframework.net/api/System.Device.Gpio.html) API to set GPIO pins.
 
 We will use the embedded LED present on the board for this case. You can also use an external LED with the 100-ohm resistor. You can follow the following [schema](../BlinkLed/README.md). For the button, we will use the pin 25 but you can use almost any you want:
 

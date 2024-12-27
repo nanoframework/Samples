@@ -4,10 +4,10 @@ Welcome to the beginner series for .NET nanoFramework! This series is designed t
 
 In this series, you will learn how to:
 
-- Use General Purpose Input/Output (GPIO) to interact with [buttons](./Button/), [LEDs](./BlinkLed/), and other digital devices.
+- Use General Purpose Input/Output (GPIO) to interact with [buttons](./Button/), [LEDs](./BlinkLed/), [advance button](./ButtonNuget/), and other digital devices.
 - Work with Digital-to-Analog Converters (DAC) to generate analog signals.
 - Utilize Analog-to-Digital Converters (ADC) to read analog sensors.
-- Implement Pulse Width Modulation (PWM) to control the brightness of LEDs and the speed of motors.
+- Implement Pulse Width Modulation (PWM) to [control the brightness of LEDs](./PwmLed/), [play music with a buzzer](./Buzzer/) and moving a servo motor.
 
 Each topic will include detailed explanations and step-by-step examples to help you understand and implement these features in your projects. By the end of this series, you will have a solid foundation in using .NET nanoFramework for your IoT applications.
 
@@ -20,7 +20,7 @@ To follow along with this series, you will need:
 - Visual Studio 2022 ([the free Community edition](https://visualstudio.microsoft.com/vs/community/) works perfectly)
 - .NET nanoFramework extension for Visual Studio
 
-You can follow the [getting started guide](http://docs.nanoframework.net/content/getting-started-guides/index.html) to install Visual Studio and the .NET nanoFramework extension.
+You can follow the [getting started guide](https://docs.nanoframework.net/content/getting-started-guides/index.html) to install Visual Studio and the .NET nanoFramework extension.
 
 ## Hardware requirements
 
@@ -53,6 +53,10 @@ For the samples, we will need:
 - An AM2320 I2C humidity and temperature sensor (note that with adjustments the code will work with other sensors as well)
 
 ![AM2320](./Docs/AM2320.jpg)
+
+- A servo motor of any kind
+
+![servo](./Docs/servo.jpg)
 
 ## Build the sample
 
