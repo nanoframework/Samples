@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "1-BlinkLed", "BlinkLed\1-BlinkLed.nfproj", "{558B53B9-75E0-4C13-AFF1-8614B3E0BAA6}"
+EndProject
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "2-Button", "Button\2-Button.nfproj", "{3FA7A8F9-31FB-45B6-8727-D02C17D15BBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{558B53B9-75E0-4C13-AFF1-8614B3E0BAA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{558B53B9-75E0-4C13-AFF1-8614B3E0BAA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{558B53B9-75E0-4C13-AFF1-8614B3E0BAA6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{558B53B9-75E0-4C13-AFF1-8614B3E0BAA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{558B53B9-75E0-4C13-AFF1-8614B3E0BAA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{558B53B9-75E0-4C13-AFF1-8614B3E0BAA6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3FA7A8F9-31FB-45B6-8727-D02C17D15BBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FA7A8F9-31FB-45B6-8727-D02C17D15BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FA7A8F9-31FB-45B6-8727-D02C17D15BBA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3FA7A8F9-31FB-45B6-8727-D02C17D15BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FA7A8F9-31FB-45B6-8727-D02C17D15BBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FA7A8F9-31FB-45B6-8727-D02C17D15BBA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
