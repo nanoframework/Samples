@@ -5,9 +5,9 @@ Welcome to the beginner series for .NET nanoFramework! This series is designed t
 In this series, you will learn how to:
 
 - Use General Purpose Input/Output (GPIO) to interact with [buttons](./Button/), [LEDs](./BlinkLed/), [advance button](./ButtonNuget/), and other digital devices.
-- Work with Digital-to-Analog Converters (DAC) to generate analog signals.
-- Utilize Analog-to-Digital Converters (ADC) to read analog sensors.
-- Implement Pulse Width Modulation (PWM) to [control the brightness of LEDs](./PwmLed/), [play music with a buzzer](./Buzzer/) and moving a servo motor.
+- Implement Pulse Width Modulation (PWM) to [control the brightness of LEDs](./PwmLed/), [play music with a buzzer](./Buzzer/) and [moving a servo motor](./ServoMotor/).
+- Utilize Analog-to-Digital Converters (ADC) to read [analog soil moisture sensors](./AnalogRainSensor/).
+- Use I2C to read air temperature and humidity sensor.
 
 Each topic will include detailed explanations and step-by-step examples to help you understand and implement these features in your projects. By the end of this series, you will have a solid foundation in using .NET nanoFramework for your IoT applications.
 
