@@ -7,7 +7,7 @@ In this series, you will learn how to:
 - Use General Purpose Input/Output (GPIO) to interact with [buttons](./Button/), [LEDs](./BlinkLed/), [advance button](./ButtonNuget/), and other digital devices.
 - Implement Pulse Width Modulation (PWM) to [control the brightness of LEDs](./PwmLed/), [play music with a buzzer](./Buzzer/) and [moving a servo motor](./ServoMotor/).
 - Utilize Analog-to-Digital Converters (ADC) to read [analog soil moisture sensors](./AnalogRainSensor/).
-- Use I2C to read air temperature and humidity sensor.
+- Use I2C [AM2320 to read air temperature and humidity sensor](./TempHumI2c/).
 
 Each topic will include detailed explanations and step-by-step examples to help you understand and implement these features in your projects. By the end of this series, you will have a solid foundation in using .NET nanoFramework for your IoT applications.
 
@@ -30,11 +30,11 @@ For this series, we will use a very common ESP32 board, the ESP32-DevKit. They c
 
 For the samples, we will need:
 
-- An LED, any color of your choice!
+- Optional to use an external led - an LED, any color of your choice!
 
 ![led](./Docs/led.jpg)
 
-- A 100-ohm resistor (anything between 70 to 120 ohms will also work), so it's a brown-black-brown resistor:
+- Optional to use an external led - a 100-ohm resistor (anything between 70 to 120 ohms will also work), so it's a brown-black-brown resistor:
 
 ![resistor](./Docs/resistor.jpg)
 
