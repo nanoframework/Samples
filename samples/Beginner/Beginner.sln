@@ -17,6 +17,8 @@ Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "6-ServoMotor", "ServoMotor\
 EndProject
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "7-AnalogRainSensor", "AnalogRainSensor\7-AnalogRainSensor.nfproj", "{337EE449-EA4F-4AE6-8634-5FAA582603D0}"
 EndProject
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "8-TempHumI2c", "TempHumI2c\8-TempHumI2c.nfproj", "{755022BA-BA69-4B18-B9AD-5333010C9FC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,12 @@ Global
 		{337EE449-EA4F-4AE6-8634-5FAA582603D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{337EE449-EA4F-4AE6-8634-5FAA582603D0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{337EE449-EA4F-4AE6-8634-5FAA582603D0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{755022BA-BA69-4B18-B9AD-5333010C9FC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{755022BA-BA69-4B18-B9AD-5333010C9FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{755022BA-BA69-4B18-B9AD-5333010C9FC1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{755022BA-BA69-4B18-B9AD-5333010C9FC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{755022BA-BA69-4B18-B9AD-5333010C9FC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{755022BA-BA69-4B18-B9AD-5333010C9FC1}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

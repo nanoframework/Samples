@@ -141,4 +141,4 @@ Raw Value: 1322, Voltage: 1.0653479853479853
 It's wet!
 ```
 
-If you want to debug, foillow the instructions [explained in the led sample](../BlinkLed//README.md#debugging).
+If you want to debug, follow the instructions [explained in the led sample](../BlinkLed//README.md#debugging).

@@ -22,4 +22,4 @@ This sample uses the Buzzer nuget and the detailed [explanations are available h
 
 And as a result, you will [hear like in this video](https://www.bing.com/videos/riverview/relatedvideo?q=nanoframework+buzzer&mid=225B785C50D46C4B31FC225B785C50D46C4B31FC&FORM=VIRE)!
 
-If you want to debug, foillow the instructions [explained in the led sample](../BlinkLed//README.md#debugging).
+If you want to debug, follow the instructions [explained in the led sample](../BlinkLed//README.md#debugging).

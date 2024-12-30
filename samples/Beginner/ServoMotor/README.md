@@ -64,4 +64,4 @@ And as a result, you will see:
 
 ![pwm led](../Docs/servo.gif)
 
-If you want to debug, foillow the instructions [explained in the led sample](../BlinkLed//README.md#debugging).
+If you want to debug, follow the instructions [explained in the led sample](../BlinkLed//README.md#debugging).

@@ -130,4 +130,4 @@ Double press
 
 You can adjust the settings, the timing and play to see the behavior of your button!
 
-If you want to debug, foillow the instructions [explained in the led sample](../BlinkLed//README.md#debugging).
+If you want to debug, follow the instructions [explained in the led sample](../BlinkLed//README.md#debugging).
