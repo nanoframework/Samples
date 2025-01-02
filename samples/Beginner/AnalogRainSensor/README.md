@@ -1,4 +1,4 @@
-# 🌶️ - Read a soil moisture sensor with Analogic to Digital Converter (ADC)
+# 🌶️ - Read a soil moisture sensor with Analog to Digital Converter (ADC)
 
 Shows how to use the [System.Device.Adc](https://docs.nanoframework.net/api/System.Device.Adc.html) API to set GPIO pins.
 

@@ -10,7 +10,7 @@ Debug.WriteLine("Hello from nanoFramework!");
 
 AdcController adc1 = new AdcController();
 
-// Get the reference minimul and maximum values
+// Get the reference minimum and maximum values
 int max1 = adc1.MaxValue;
 int min1 = adc1.MinValue;
 
