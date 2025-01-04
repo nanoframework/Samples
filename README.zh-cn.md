@@ -21,6 +21,14 @@
 ### Special beginner
 
 * [🌶️ - Blink your first led](samples/Blinky)
+* [🌶️ - Blink your first LED](samples/Beginner/BlinkLed)
+* [🌶️ - Press a button and light a LED](samples/Beginner/Button)
+* [🌶️ - PRess a button and light a LED with a Button nuget](samples/Beginner/ButtonNuget)
+* [🌶️ - PWM and changing the light of a LED](samples/Beginner/PwmLed)
+* [🌶️ - PWM to drive a servo motor](samples/Beginner/ServoMotor)
+* [🌶️ - Read a soil moisture sensor with Analog to Digital Converter (ADC)](samples/Beginner/AnalogRainSensor)
+* [🌶️ - Reading an AM2320 I2C Temerature and Humidity sensor](samples/Beginner/TempHumI2c)
+* [🌶️ - Special IoT beginner content with .NET nanoFramework](samples/Beginner)
 * [🌶️ - System.Device.Pwm](samples/PWM/System.Device.Pwm)
 
 ### Gpio, I2C, I2S, Spi, Pwm, Adc, Dac, 1-Wire, Serial
@@ -29,11 +37,18 @@
 * [🌶️ - Analogic/Digital converter](samples/ADC)
 * [🌶️ - Analogic/Digital converter](samples/GiantGecko.Adc)
 * [🌶️ - Blink your first led](samples/Blinky)
+* [🌶️ - Blink your first LED](samples/Beginner/BlinkLed)
 * [🌶️ - Digital Analog Converter sample](samples/DAC)
 * [🌶️ - ESP32 Pulse Counter sample](samples/Gpio/Esp32PulseCounter)
 * [🌶️ - GPIO and events sample](samples/Gpio/Gpio+Events)
 * [🌶️ - GPIO and events sample (.NET IoT style)](samples/Gpio/Gpio+EventsIoTStyle)
 * [🌶️ - GPIO sample pack](samples/Gpio)
+* [🌶️ - Press a button and light a LED](samples/Beginner/Button)
+* [🌶️ - PRess a button and light a LED with a Button nuget](samples/Beginner/ButtonNuget)
+* [🌶️ - PWM and changing the light of a LED](samples/Beginner/PwmLed)
+* [🌶️ - PWM to drive a servo motor](samples/Beginner/ServoMotor)
+* [🌶️ - Read a soil moisture sensor with Analog to Digital Converter (ADC)](samples/Beginner/AnalogRainSensor)
+* [🌶️ - Reading an AM2320 I2C Temerature and Humidity sensor](samples/Beginner/TempHumI2c)
 * [🌶️ - System.Device.Pwm](samples/PWM/System.Device.Pwm)
 * [🌶️ - System.Device.PWM sample](samples/PWM)
 * [🌶️ - System.Device.Spi sample](samples/SPI)
@@ -128,6 +143,7 @@
 
 ### IoT.Device
 
+* [🌶️ - PRess a button and light a LED with a Button nuget](samples/Beginner/ButtonNuget)
 * [🌶️🌶️🌶️ - Complete Azure MQTT sample using BMP280 sensor **with** Azure lib and deep sleep](samples/AzureSDK/AzureSDKSleepBMP280)
 * [🌶️🌶️🌶️ - Complete Azure MQTT sample using BMP280 sensor **without Azure lib** and with deep sleep](samples/AzureMQTTTwinsBMP280Sleep)
 * [🌶️🌶️🌶️ - Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate/Readme.md)
