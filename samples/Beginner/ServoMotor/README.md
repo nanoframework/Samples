@@ -1,4 +1,4 @@
-# 🌶️ - PWM to drive a servo motor
+# 🌶️ - ulse Width Modulation (PWM) to drive a servo motor
 
 Shows how to use the [System.Device.Pwm](https://docs.nanoframework.net/api/System.Device.Pwm.html) API to use Pulse Width Modulation pins.
 

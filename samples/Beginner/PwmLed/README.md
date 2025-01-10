@@ -1,4 +1,4 @@
-# 🌶️ - PWM and changing the light of a LED
+# 🌶️ - Pulse Width Modulation (PWM) and changing the light of a LED
 
 Shows how to use the [System.Device.Pwm](https://docs.nanoframework.net/api/System.Device.Pwm.html) API to use Pulse Width Modulation pins.
 

@@ -1,4 +1,4 @@
-# 🌶️ - PRess a button and light a LED with a Button nuget
+# 🌶️ - Press a button and light a LED with a Button nuget
 
 Shows how to use the [Ioit.Device.Button](https://github.com/nanoframework/nanoFramework.IoT.Device/tree/develop/devices/Button) nuget.
 
