@@ -22,8 +22,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Iot.Device.Am2320">
-      <HintPath>..\packages\nanoFramework.Iot.Device.Am2320.1.2.718\lib\Iot.Device.Am2320.dll</HintPath>
+    <Reference Include="Iot.Device.Am2320, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Iot.Device.Am2320.1.2.737\lib\Iot.Device.Am2320.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>..\packages\nanoFramework.CoreLibrary.1.15.5\lib\mscorlib.dll</HintPath>
