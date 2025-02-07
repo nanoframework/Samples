@@ -38,8 +38,6 @@ steps:
 # need this here in order to persist GitHub credentials 
 # only need the latest commit
 - checkout: self
-- checkout: templates
-  fetchDepth: 1
 
 - script: |
     git config --global user.email 'nanoframework@outlook.com'
@@ -47,142 +45,26 @@ steps:
     git config --global core.autocrlf true
   displayName: Setup git identity
 
-- task: UseDotNet@2
-  displayName: Install .NET SDK
+- task: Cache@2
+  displayName: Cache NuGet packages
+  condition: succeeded()
+  continueOnError: true
   inputs:
-    packageType: sdk
-    version: 6.x
-    performMultiLevelLookup: true
-
-- template: azure-pipelines-templates/install-nuget.yml@templates
+    key: 'nuget | **/packages.config'
+    path: $(UserProfile)/.nuget/packages
 
 - task: InstallNanoMSBuildComponents@1
   displayName: Install nanoFramework MSBuild components
   env:
     GITHUB_TOKEN: $(GitHubToken)
 
-# only build solutions that need to be build
-- powershell: |
-    # setup msbuild
-    $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
-    $msbuild = & $vswhere -latest -products * -requires Microsoft.Component.MSBuild -property installationPath
-
-    if ($msbuild) {
-      $msbuild = join-path $msbuild 'MSBuild\Current\Bin\amd64\MSBuild.exe'
-    }
-
-    # compute authorization header in format "AUTHORIZATION: basic 'encoded token'"
-    # 'encoded token' is the Base64 of the string "nfbot:personal-token"
-    $auth = "basic $([System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("nfbot:${env:MY_GITHUBTOKEN}"))))"
-
-    if($env:System_PullRequest_PullRequestId -ne $null)
-    {
-        "" | Write-Host -ForegroundColor Yellow
-        "**********************" | Write-Host -ForegroundColor Yellow
-        "* Building from a PR *" | Write-host -ForegroundColor Yellow
-        "**********************" | Write-Host -ForegroundColor Yellow
-        "" | Write-Host -ForegroundColor Yellow
-
-        # get files changed in PR, if this is a PR
-        # can get max of 100 files using this method (for more requires paging)
-        $commit = Invoke-RestMethod -Uri "https://api.github.com/repos/nanoframework/Samples/pulls/$env:System_PullRequest_PullRequestNumber/files?per_page=100" -Header @{"Authorization"="$auth"} -ContentType "application/json" -Method GET
-
-        # filter removed files              
-        $files = $commit.where{$_.status -ne 'removed'}
-    }
-    else
-    {
-        "" | Write-Host -ForegroundColor Yellow
-        "**************************" | Write-Host -ForegroundColor Yellow
-        "* Building from a commit *" | Write-host -ForegroundColor Yellow
-        "**************************" | Write-Host -ForegroundColor Yellow
-        "" | Write-Host -ForegroundColor Yellow
-
-        # get files changed in the commit, if this is NOT a PR
-        $commit = Invoke-RestMethod -Uri "https://api.github.com/repos/nanoframework/Samples/commits/$(Build.SourceVersion)" -Header @{"Authorization"="$auth"} -ContentType "application/json" -Method GET
-
-        # filter removed files              
-        $files = $commit.files.where{$_.status -ne 'removed'}
-    }
-
-    # get file names only
-    $files1 = $files | % {$_.filename} | Where-Object {$_ -match 'samples/*'} 
-
-    if($null -eq $files1)
-    {
-        Write-host "No 'samples' found to build"
-        exit
-    }
-
-    Write-host "Files changed:"
-    $files1 | % { Write-host $_ }
-    Write-host ""
-
-    # pattern to select samples folder name
-    $pattern = '(samples\/)(?<folder>[a-zA-Z0-9._]+)(?>\/)'
-
-    # filter out the collection
-    $results = [Regex]::Matches($files1, $pattern)
-
-    # get unique folder names
-    $sampleFolders = $results | Sort-Object | Select-Object | Foreach-Object {$_.Groups["folder"].Value} | Get-Unique 
-
-    Write-host "Found $($sampleFolders.count) sample(s) to build"
-
-    foreach ($folder in $sampleFolders)
-    {
-      try
-      {
-        "" | Write-Host -ForegroundColor Yellow
-        "***********************" | Write-Host -ForegroundColor Yellow
-        "Processing sample '$folder'..." | Write-Host -ForegroundColor Yellow
-        "***********************" | Write-Host -ForegroundColor Yellow
-        "" | Write-Host -ForegroundColor Yellow
-        
-        # try to find all solution files
-        $solutionFiles = Get-ChildItem -Path "samples\$folder\" -Include "*.sln" -Recurse
-
-        if($null -eq $solutionFiles)
-        {
-            "Couldn't find any solution file!"  | Write-Host -ForegroundColor Red
-            throw "Couldn't find any solution file inside '$folder'..."
-        }
-        else
-        {
-            foreach ($sln in $solutionFiles)
-            {
-                "" | Write-Host -ForegroundColor Yellow
-                "INFO: Building solution: '$sln'" | Write-Host -ForegroundColor Yellow
-                "" | Write-Host -ForegroundColor Yellow
-                        
-                # need to restore NuGets first
-                nuget restore $sln
-                if (-not $?) { throw "Error restoring '$sln'" }
-
-                # build solution
-                & "$msbuild" "$sln" /verbosity:normal /p:Configuration=Release
-                if (-not $?) { throw "Error building '$sln'" }
-            }
-        }
-      }
-      catch
-      {
-          "" | Write-Host -ForegroundColor Red
-          "*****************************************" | Write-Host -ForegroundColor Red
-          ">>>ERROR: build failed, check output <<<"  | Write-Host -ForegroundColor Red
-          "*****************************************" | Write-Host -ForegroundColor Red
-          "" | Write-Host -ForegroundColor Red
-
-          "" | Write-Host -ForegroundColor Red
-          "Eception was: $_" | Write-Host -ForegroundColor Red
-          "" | Write-Host -ForegroundColor Red
-
-          # set flag
-          $buildFailed = $true
-      }
-    }
+# only build solutions that were changed
+- task: PowerShell@2
   displayName: Build solutions
-  workingDirectory: 'Samples'
+  inputs:
+    targetType: 'filePath'
+    filePath: '$(System.DefaultWorkingDirectory)\.pipeline-assets\build-solutions.ps1'
+    failOnStderr: true
   env:
     MY_GITHUBTOKEN: $(GitHubToken)
 
