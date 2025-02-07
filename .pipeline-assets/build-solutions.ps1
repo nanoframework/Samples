@@ -59,7 +59,7 @@ else
     "" | Write-Host -ForegroundColor Yellow
 
     # get files changed in the commit, if this is NOT a PR
-    $commit = Invoke-RestMethod -Uri "https://api.github.com/repos/nanoframework/Samples/commits/$(Build.SourceVersion)" -Header @{"Authorization"="$auth"} -ContentType "application/json" -Method GET
+    $commit = Invoke-RestMethod -Uri "https://api.github.com/repos/nanoframework/Samples/commits/$env:Build_SourceVersion" -Header @{"Authorization"="$auth"} -ContentType "application/json" -Method GET
 
         # get files changed in the commit
         $pageCounter = 1
