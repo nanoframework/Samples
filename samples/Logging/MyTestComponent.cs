@@ -3,9 +3,9 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System;
 using Microsoft.Extensions.Logging;
 using nanoFramework.Logging;
-using System;
 
 namespace Logging
 {

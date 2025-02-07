@@ -1,10 +1,10 @@
 ﻿// Copyright (c) .NET Foundation and Contributors
 // See LICENSE file in the project root for full license information.
 
-using nanoFramework.Azure.Devices.Client;
-using nanoFramework.Azure.Devices.Shared;
 using System.Diagnostics;
 using System.Threading;
+using nanoFramework.Azure.Devices.Client;
+using nanoFramework.Azure.Devices.Shared;
 
 namespace CountMeasurement
 {

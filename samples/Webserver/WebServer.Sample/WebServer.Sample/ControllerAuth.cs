@@ -3,8 +3,6 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using System;
-using System.Text;
 using System.Net;
 
 namespace nanoFramework.WebServer.Sample

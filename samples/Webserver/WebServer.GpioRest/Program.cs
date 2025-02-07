@@ -1,11 +1,14 @@
+﻿//
+// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+//
+
 using System;
-using System.Threading;
 using System.Diagnostics;
+using System.Threading;
 using nanoFramework.Networking;
-using nanoFramework.WebServer;
 
 #if HAS_WIFI
-using System.Device.Wifi;
 #endif
 
 namespace nanoFramework.WebServer.GpioRest

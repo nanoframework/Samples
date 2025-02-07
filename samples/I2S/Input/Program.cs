@@ -5,7 +5,8 @@
 
 using System;
 using System.Device.I2s;
-using System.Diagnostics;using System.IO;
+using System.Diagnostics;
+using System.IO;
 using System.Threading;
 using MicrophoneIn;
 using nanoFramework.Hardware.Esp32;
@@ -22,7 +23,7 @@ uint cs = 5;
 Configuration.SetPinFunction(23, DeviceFunction.SPI1_MOSI);
 Configuration.SetPinFunction(18, DeviceFunction.SPI1_CLOCK);
 Configuration.SetPinFunction(19, DeviceFunction.SPI1_MISO);
-var sdCard = new SDCard(new SDCard.SDCardSpiParameters { spiBus = 1, chipSelectPin = cs });
+var sdCard = new SDCard(new SDCardSpiParameters { spiBus = 1, chipSelectPin = cs });
 sdCard.Mount();
 
 // configure I2s for recording:

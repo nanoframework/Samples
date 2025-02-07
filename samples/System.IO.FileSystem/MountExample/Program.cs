@@ -1,8 +1,13 @@
-﻿using System;
+﻿//
+// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+//
+
+using System;
 using System.Diagnostics;
 using System.Threading;
-using nanoFramework.System.IO.FileSystem;
 using nanoFramework.System.IO;
+using nanoFramework.System.IO.FileSystem;
 
 namespace MountExample
 {

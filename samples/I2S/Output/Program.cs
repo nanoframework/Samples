@@ -35,7 +35,7 @@ Configuration.SetPinFunction(23, DeviceFunction.SPI1_MOSI);
 Configuration.SetPinFunction(18, DeviceFunction.SPI1_CLOCK);
 Configuration.SetPinFunction(19, DeviceFunction.SPI1_MISO);
 
-var sdCard = new SDCard(new SDCard.SDCardSpiParameters { spiBus = 1, chipSelectPin = cs });
+var sdCard = new SDCard(new SDCardSpiParameters { spiBus = 1, chipSelectPin = cs });
 sdCard.Mount();
 
 // NOTE: If the audio has low quality and lots of static you may need to update
