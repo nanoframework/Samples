@@ -1,4 +1,8 @@
-﻿using System;
+﻿//
+// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+//
+
 using System.Diagnostics;
 using System.IO;
 using System.Text;
@@ -27,8 +31,8 @@ namespace BasicFileSystemExample
             // Wait until the Storage Devices are mounted (SD Card & USB). 
             // This usally takes some seconds after startup.
             // Not required for Internal drive or drives mounted from managed code. See mount sample.
-            Thread.Sleep(3000);     
-            
+            Thread.Sleep(3000);
+
             // D: is SD Card
             // E: is USB drive
             // I: is Internal flash drive
@@ -38,13 +42,13 @@ namespace BasicFileSystemExample
             Debug.WriteLine("+++++ System.IO.FileSystem examples +++++");
 
             Debug.WriteLine("+++++ Creating a sample file +++++");
-            var fs=File.Create(sampleFilePath);
+            var fs = File.Create(sampleFilePath);
 
             byte[] sampleBuffer = Encoding.UTF8.GetBytes(sampleText);
 
             fs.Write(sampleBuffer, 0, sampleBuffer.Length);
 
-            if(fs.CanSeek)
+            if (fs.CanSeek)
             {
                 Debug.WriteLine("+++++ Modify sample file +++++");
                 // Seek to beginning of the file and write something there

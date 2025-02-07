@@ -1,4 +1,8 @@
-﻿using System;
+﻿//
+// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+//
+
 using System.Diagnostics;
 using System.Drawing;
 using System.Net;
@@ -28,7 +32,7 @@ namespace NFWebSockets.Server.RgbExample
             if (!success)
             {
                 //Red Light indicates no Wifi connection
-                AtomLite.NeoPixel.Image.SetPixel(0, 0,Color.Red);
+                AtomLite.NeoPixel.Image.SetPixel(0, 0, Color.Red);
                 Thread.Sleep(Timeout.Infinite);
             }
 
@@ -90,7 +94,7 @@ namespace NFWebSockets.Server.RgbExample
             var wsServer = (WebSocketServer)sender;
             if (e.Frame.MessageType == WebSocketMessageType.Binary && e.Frame.MessageLength == 3)
             {
-                AtomLite.NeoPixel.Image.SetPixel(0,0, Color.FromArgb(e.Frame.Buffer[0], e.Frame.Buffer[1], e.Frame.Buffer[2]));
+                AtomLite.NeoPixel.Image.SetPixel(0, 0, Color.FromArgb(e.Frame.Buffer[0], e.Frame.Buffer[1], e.Frame.Buffer[2]));
                 wsServer.BroadCast(e.Frame.Buffer);
             }
         }

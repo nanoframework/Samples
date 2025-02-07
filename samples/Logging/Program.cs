@@ -1,17 +1,14 @@
-//
+﻿//
 // Copyright (c) .NET Foundation and Contributors
 // See LICENSE file in the project root for full license information.
 //
 
+using System;
 using Microsoft.Extensions.Logging;
 using nanoFramework.Logging;
 using nanoFramework.Logging.Debug;
 using nanoFramework.Logging.Serial;
 using nanoFramework.Logging.Stream;
-using System;
-using System.Diagnostics;
-using System.Threading;
-using System.IO.Ports;
 #if BUIID_FOR_ESP32
 using nanoFramework.Hardware.Esp32;
 #endif
@@ -23,7 +20,7 @@ namespace Logging
         private static DebugLogger _logger;
 
         public static void Main()
-        {            
+        {
             _logger = new DebugLogger("Example");
             _logger.MinLogLevel = LogLevel.Trace;
             _logger.LogInformation("Hello from nanoFramework!");

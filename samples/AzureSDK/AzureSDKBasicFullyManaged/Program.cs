@@ -3,20 +3,20 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using nanoFramework.Azure.Devices.Client;
-using nanoFramework.Azure.Devices.Shared;
 using System;
 using System.Collections;
-using System.Threading;
 using System.Diagnostics;
-using nanoFramework.Json;
-using nanoFramework.Hardware.Esp32;
-using AzureSDKBasic;
-using IoT.Device.AtModem.Modem;
 using System.IO.Ports;
-using IoT.Device.AtModem;
-using IoT.Device.AtModem.DTOs;
-using IoT.Device.AtModem.Events;
+using System.Threading;
+using AzureSDKBasic;
+using Iot.Device.AtModem;
+using Iot.Device.AtModem.DTOs;
+using Iot.Device.AtModem.Events;
+using Iot.Device.AtModem.Modem;
+using nanoFramework.Azure.Devices.Client;
+using nanoFramework.Azure.Devices.Shared;
+using nanoFramework.Hardware.Esp32;
+using nanoFramework.Json;
 using nanoFramework.Runtime.Native;
 
 const string DeviceID = "devicename";

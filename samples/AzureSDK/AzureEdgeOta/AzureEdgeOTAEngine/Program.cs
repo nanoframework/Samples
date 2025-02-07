@@ -1,13 +1,6 @@
 ﻿// Copyright (c) .NET Foundation and Contributors
 // See LICENSE file in the project root for full license information.
 
-using AzureEdgeOTAEngine;
-using nanoFramework.Azure.Devices.Client;
-using nanoFramework.Azure.Devices.Shared;
-using nanoFramework.Hardware.Esp32;
-using nanoFramework.Json;
-using nanoFramework.M2Mqtt.Messages;
-using nanoFramework.Networking;
 using System;
 using System.Buffers.Binary;
 using System.Collections;
@@ -18,6 +11,13 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
+using AzureEdgeOTAEngine;
+using nanoFramework.Azure.Devices.Client;
+using nanoFramework.Azure.Devices.Shared;
+using nanoFramework.Hardware.Esp32;
+using nanoFramework.Json;
+using nanoFramework.M2Mqtt.Messages;
+using nanoFramework.Networking;
 
 const string RootPath = "I:\\";
 const string Version = RootPath + "version";

@@ -1,14 +1,14 @@
 ﻿// Copyright (c) .NET Foundation and Contributors
 // See LICENSE file in the project root for full license information.
 
+using System.Data;
+using System.Security.Cryptography;
 using Azure;
 using Azure.Storage.Blobs;
 using AzureEdgeOTAEngine;
 using CommandLine;
 using FindPeFiles;
 using Newtonsoft.Json;
-using System.Data;
-using System.Security.Cryptography;
 
 Parser.Default.ParseArguments<CommandOptions>(args).WithParsed<CommandOptions>(o =>
 {
@@ -47,7 +47,7 @@ Parser.Default.ParseArguments<CommandOptions>(args).WithParsed<CommandOptions>(o
         fs.Read(buff, 0, buff.Length);
         var sah256Computed = sha256.ComputeHash(buff);
         var signature = BitConverter.ToString(sah256Computed);
-        Console.WriteLine($"    sha256: {signature }");
+        Console.WriteLine($"    sha256: {signature}");
         BlobClient blobClient = containerClient.GetBlobClient(fileName);
         blobClient.DeleteIfExists();
         var res = blobClient.Upload(file);

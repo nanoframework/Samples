@@ -9,22 +9,19 @@
 //////////////////////////////////////////
 
 using System;
-using System.Threading;
-using System.Diagnostics;
-using nanoFramework.Networking;
 using System.Device.Gpio;
-using System.Text;
+using System.Diagnostics;
 using System.Net;
-using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading;
+using nanoFramework.Networking;
 using WebServer.Sample;
-using System.Net.Security;
 
 #if HAS_STORAGE
 using System.IO;
 #endif
 
 #if HAS_WIFI
-using System.Device.Wifi;
 #endif
 
 namespace nanoFramework.WebServer.Sample
