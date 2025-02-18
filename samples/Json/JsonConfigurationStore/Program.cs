@@ -22,10 +22,10 @@ namespace JsonConfigurationStore
                 Setting3 = "Setting 3 value"
             };
 
-            Debug.WriteLine($"A configuration file does {(configurationStore.IsConfigFileExisting ? string.Empty : "not ")} esits.");
+            Debug.WriteLine($"A configuration file does {(configurationStore.IsConfigFileExisting ? string.Empty : "not ")} exists.");
             configurationStore.ClearConfig();
             Debug.WriteLine("The configuration file has been deleted.");
-            Debug.WriteLine($"A configuration file does {(configurationStore.IsConfigFileExisting ? string.Empty : "not ")} esits.");
+            Debug.WriteLine($"A configuration file does {(configurationStore.IsConfigFileExisting ? string.Empty : "not ")} exists.");
 
             Debug.WriteLine("Saving configuration file");
             var writeResult = configurationStore.WriteConfig(configuration);
