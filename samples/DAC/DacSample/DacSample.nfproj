@@ -28,16 +28,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="mscorlib, Version=1.16.11.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.CoreLibrary.1.16.11\lib\mscorlib.dll</HintPath>
+    <Reference Include="mscorlib, Version=1.17.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.CoreLibrary.1.17.1\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Device.Dac, Version=1.5.23.48089, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.Device.Dac.1.5.23\lib\System.Device.Dac.dll</HintPath>
+    <Reference Include="System.Device.Dac, Version=1.5.24.52969, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.Device.Dac.1.5.24\lib\System.Device.Dac.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Math, Version=1.5.90.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.Math.1.5.90\lib\System.Math.dll</HintPath>
+    <Reference Include="System.Math, Version=1.5.102.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.Math.1.5.102\lib\System.Math.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
