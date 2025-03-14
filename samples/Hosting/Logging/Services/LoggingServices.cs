@@ -3,8 +3,8 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using nanoFramework.Hosting;
-
+using System.Threading;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace nanoFramework.Logging
@@ -20,7 +20,7 @@ namespace nanoFramework.Logging
             ServiceLogger = loggerFactory.CreateLogger(nameof(LoggingService));
         }
 
-        public void Start()
+        public void StartAsync(CancellationToken cancellationToken)
         {
             Logger.Log(LogLevel.Information, new EventId(10, "Start"), "Logging started", null);
 
@@ -41,7 +41,7 @@ namespace nanoFramework.Logging
             ServiceLogger.LogCritical("Critical");
         }
 
-        public void Stop()
+        public void StopAsync(CancellationToken cancellationToken)
         {
             Logger.Log(LogLevel.Information, new EventId(11, "Stop"), "Logging stopped", null);
         }
