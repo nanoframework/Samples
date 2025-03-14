@@ -4,7 +4,7 @@
 //
 
 using Microsoft.Extensions.DependencyInjection;
-using nanoFramework.Hosting;
+using Microsoft.Extensions.Hosting;
 
 namespace Hosting
 {
