@@ -27,20 +27,20 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="mscorlib, Version=1.17.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.CoreLibrary.1.17.1\lib\mscorlib.dll</HintPath>
+    <Reference Include="mscorlib, Version=1.17.7.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.CoreLibrary.1.17.7\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Hardware.Stm32, Version=1.10.34.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Hardware.Stm32.1.10.34\lib\nanoFramework.Hardware.Stm32.dll</HintPath>
+    <Reference Include="nanoFramework.Hardware.Stm32, Version=1.10.35.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Hardware.Stm32.1.10.35\lib\nanoFramework.Hardware.Stm32.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Runtime.Events, Version=1.11.30.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Runtime.Events.1.11.30\lib\nanoFramework.Runtime.Events.dll</HintPath>
+    <Reference Include="nanoFramework.Runtime.Events, Version=1.11.31.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Runtime.Events.1.11.31\lib\nanoFramework.Runtime.Events.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Device.Gpio, Version=1.1.55.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.Device.Gpio.1.1.55\lib\System.Device.Gpio.dll</HintPath>
+    <Reference Include="System.Device.Gpio, Version=1.1.56.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.Device.Gpio.1.1.56\lib\System.Device.Gpio.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Windows.Devices.Gpio, Version=1.5.5.4, Culture=neutral, PublicKeyToken=c07d481e9758c731">

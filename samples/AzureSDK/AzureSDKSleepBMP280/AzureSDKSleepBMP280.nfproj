@@ -38,115 +38,115 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Iot.Device.Bmxx80, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Iot.Device.Bmxx80.1.2.822\lib\Iot.Device.Bmxx80.dll</HintPath>
+      <HintPath>packages\nanoFramework.Iot.Device.Bmxx80.1.2.852\lib\Iot.Device.Bmxx80.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Iot.Device.Common.WeatherHelper, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Iot.Device.Common.WeatherHelper.1.2.821\lib\Iot.Device.Common.WeatherHelper.dll</HintPath>
+      <HintPath>packages\nanoFramework.Iot.Device.Common.WeatherHelper.1.2.849\lib\Iot.Device.Common.WeatherHelper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="mscorlib, Version=1.17.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.CoreLibrary.1.17.1\lib\mscorlib.dll</HintPath>
+    <Reference Include="mscorlib, Version=1.17.7.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.CoreLibrary.1.17.7\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Azure.Devices.Client, Version=1.2.90.19234, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Azure.Devices.Client.1.2.90\lib\nanoFramework.Azure.Devices.Client.dll</HintPath>
+    <Reference Include="nanoFramework.Azure.Devices.Client, Version=1.2.94.25505, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Azure.Devices.Client.1.2.94\lib\nanoFramework.Azure.Devices.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Hardware.Esp32, Version=1.6.31.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Hardware.Esp32.1.6.31\lib\nanoFramework.Hardware.Esp32.dll</HintPath>
+    <Reference Include="nanoFramework.Hardware.Esp32, Version=1.6.33.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Hardware.Esp32.1.6.33\lib\nanoFramework.Hardware.Esp32.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Json, Version=2.2.185.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Json.2.2.185\lib\nanoFramework.Json.dll</HintPath>
+    <Reference Include="nanoFramework.Json, Version=2.2.189.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Json.2.2.189\lib\nanoFramework.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.M2Mqtt, Version=5.1.187.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.M2Mqtt.5.1.187\lib\nanoFramework.M2Mqtt.dll</HintPath>
+    <Reference Include="nanoFramework.M2Mqtt, Version=5.1.192.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.M2Mqtt.5.1.192\lib\nanoFramework.M2Mqtt.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.M2Mqtt.Core, Version=5.1.187.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.M2Mqtt.5.1.187\lib\nanoFramework.M2Mqtt.Core.dll</HintPath>
+    <Reference Include="nanoFramework.M2Mqtt.Core, Version=5.1.192.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.M2Mqtt.5.1.192\lib\nanoFramework.M2Mqtt.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.ResourceManager, Version=1.2.30.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.ResourceManager.1.2.30\lib\nanoFramework.ResourceManager.dll</HintPath>
+    <Reference Include="nanoFramework.ResourceManager, Version=1.2.31.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.ResourceManager.1.2.31\lib\nanoFramework.ResourceManager.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Runtime.Events, Version=1.11.30.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Runtime.Events.1.11.30\lib\nanoFramework.Runtime.Events.dll</HintPath>
+    <Reference Include="nanoFramework.Runtime.Events, Version=1.11.31.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Runtime.Events.1.11.31\lib\nanoFramework.Runtime.Events.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Runtime.Native, Version=1.7.9.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Runtime.Native.1.7.9\lib\nanoFramework.Runtime.Native.dll</HintPath>
+    <Reference Include="nanoFramework.Runtime.Native, Version=1.7.10.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Runtime.Native.1.7.10\lib\nanoFramework.Runtime.Native.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.System.Collections, Version=1.5.62.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Collections.1.5.62\lib\nanoFramework.System.Collections.dll</HintPath>
+    <Reference Include="nanoFramework.System.Collections, Version=1.5.63.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Collections.1.5.63\lib\nanoFramework.System.Collections.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.System.Text, Version=1.3.29.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Text.1.3.29\lib\nanoFramework.System.Text.dll</HintPath>
+    <Reference Include="nanoFramework.System.Text, Version=1.3.36.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Text.1.3.36\lib\nanoFramework.System.Text.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Buffers.Binary.BinaryPrimitives, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Buffers.Binary.BinaryPrimitives.1.2.807\lib\System.Buffers.Binary.BinaryPrimitives.dll</HintPath>
+      <HintPath>packages\nanoFramework.System.Buffers.Binary.BinaryPrimitives.1.2.848\lib\System.Buffers.Binary.BinaryPrimitives.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Device.I2c, Version=1.1.27.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Device.I2c.1.1.27\lib\System.Device.I2c.dll</HintPath>
+    <Reference Include="System.Device.I2c, Version=1.1.28.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Device.I2c.1.1.28\lib\System.Device.I2c.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Device.Model, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Device.Model.1.2.807\lib\System.Device.Model.dll</HintPath>
+      <HintPath>packages\nanoFramework.System.Device.Model.1.2.848\lib\System.Device.Model.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Device.Wifi, Version=1.5.124.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Device.Wifi.1.5.124\lib\System.Device.Wifi.dll</HintPath>
+    <Reference Include="System.Device.Wifi, Version=1.5.128.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Device.Wifi.1.5.128\lib\System.Device.Wifi.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.IO.Streams, Version=1.1.89.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.IO.Streams.1.1.89\lib\System.IO.Streams.dll</HintPath>
+    <Reference Include="System.IO.Streams, Version=1.1.91.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.IO.Streams.1.1.91\lib\System.IO.Streams.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Math, Version=1.5.102.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Math.1.5.102\lib\System.Math.dll</HintPath>
+    <Reference Include="System.Math, Version=1.5.112.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Math.1.5.112\lib\System.Math.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net, Version=1.11.34.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Net.1.11.34\lib\System.Net.dll</HintPath>
+    <Reference Include="System.Net, Version=1.11.37.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Net.1.11.37\lib\System.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net.Http, Version=1.5.184.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Net.Http.1.5.184\lib\System.Net.Http.dll</HintPath>
+    <Reference Include="System.Net.Http, Version=1.5.189.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Net.Http.1.5.189\lib\System.Net.Http.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Threading, Version=1.1.49.41415, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Threading.1.1.49\lib\System.Threading.dll</HintPath>
+    <Reference Include="System.Threading, Version=1.1.50.48563, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Threading.1.1.50\lib\System.Threading.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="UnitsNet.Duration, Version=5.70.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.Duration.5.70.0\lib\UnitsNet.Duration.dll</HintPath>
+    <Reference Include="UnitsNet.Duration, Version=5.73.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>packages\UnitsNet.nanoFramework.Duration.5.73.0\lib\UnitsNet.Duration.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="UnitsNet.ElectricResistance, Version=5.70.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.ElectricResistance.5.70.0\lib\UnitsNet.ElectricResistance.dll</HintPath>
+    <Reference Include="UnitsNet.ElectricResistance, Version=5.73.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>packages\UnitsNet.nanoFramework.ElectricResistance.5.73.0\lib\UnitsNet.ElectricResistance.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="UnitsNet.Length, Version=5.70.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.Length.5.70.0\lib\UnitsNet.Length.dll</HintPath>
+    <Reference Include="UnitsNet.Length, Version=5.73.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>packages\UnitsNet.nanoFramework.Length.5.73.0\lib\UnitsNet.Length.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="UnitsNet.Pressure, Version=5.70.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.Pressure.5.70.0\lib\UnitsNet.Pressure.dll</HintPath>
+    <Reference Include="UnitsNet.Pressure, Version=5.73.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>packages\UnitsNet.nanoFramework.Pressure.5.73.0\lib\UnitsNet.Pressure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="UnitsNet.RelativeHumidity, Version=5.70.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.RelativeHumidity.5.70.0\lib\UnitsNet.RelativeHumidity.dll</HintPath>
+    <Reference Include="UnitsNet.RelativeHumidity, Version=5.73.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>packages\UnitsNet.nanoFramework.RelativeHumidity.5.73.0\lib\UnitsNet.RelativeHumidity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="UnitsNet.Temperature, Version=5.70.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.Temperature.5.70.0\lib\UnitsNet.Temperature.dll</HintPath>
+    <Reference Include="UnitsNet.Temperature, Version=5.73.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>packages\UnitsNet.nanoFramework.Temperature.5.73.0\lib\UnitsNet.Temperature.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

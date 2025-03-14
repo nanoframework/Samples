@@ -25,12 +25,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="mscorlib, Version=1.17.1.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.CoreLibrary.1.17.1\lib\mscorlib.dll</HintPath>
+    <Reference Include="mscorlib, Version=1.17.7.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.CoreLibrary.1.17.7\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.TI.EasyLink, Version=1.4.26.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.TI.EasyLink.1.4.26\lib\nanoFramework.TI.EasyLink.dll</HintPath>
+    <Reference Include="nanoFramework.TI.EasyLink, Version=1.4.27.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.TI.EasyLink.1.4.27\lib\nanoFramework.TI.EasyLink.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
