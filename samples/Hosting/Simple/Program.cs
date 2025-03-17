@@ -8,7 +8,7 @@ using System.Threading;
 using System.Device.Gpio;
 using System.Diagnostics;
 using Microsoft.Extensions.DependencyInjection;
-using nanoFramework.Hosting;
+using Microsoft.Extensions.Hosting;
 
 namespace Hosting
 {
@@ -26,9 +26,9 @@ namespace Hosting
             IHost host = builder.Build();
 
             // blink for 5 seconds and then stop and dispose of host 
-            host.Start();
+            host.StartAsync();
             Thread.Sleep(5000);
-            host.Stop();
+            host.StopAsync();
             host.Dispose();
         }
     }
@@ -57,31 +57,31 @@ namespace Hosting
             _hardware = hardware;
         }
 
-        public override void Start()
+        public override void StartAsync(CancellationToken cancellationToken)
         {
             Debug.WriteLine("LED Hosted Service running.");
 
-            base.Start();
+            base.StartAsync(cancellationToken);
         }
 
-        protected override void ExecuteAsync()
+        protected override void ExecuteAsync(CancellationToken cancellationToken)
         {
             var ledPin = 16; 
 
             GpioPin led = _hardware.GpioController.OpenPin(ledPin, PinMode.Output);
 
-            while (!CancellationRequested)
+            while (!cancellationToken.IsCancellationRequested)
             {
                 led.Toggle();
                 Thread.Sleep(100);
             }
         }
 
-        public override void Stop()
+        public override void StopAsync(CancellationToken cancellationToken)
         {
             Debug.WriteLine("LED Hosted Service stopped.");
 
-            base.Stop();
+            base.StopAsync(cancellationToken);
         }
     }
 }

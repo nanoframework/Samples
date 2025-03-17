@@ -3,8 +3,7 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using nanoFramework.Hosting;
-
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace nanoFramework.Logging
@@ -15,8 +14,8 @@ namespace nanoFramework.Logging
         {
             IHost host = CreateHostBuilder().Build();
             
-            host.Start();
-            host.Stop();
+            host.StartAsync();
+            host.StopAsync();
         }
 
         public static IHostBuilder CreateHostBuilder() =>

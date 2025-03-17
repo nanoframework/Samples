@@ -5,8 +5,7 @@
 
 using System.Threading;
 using System.Device.Gpio;
-
-using nanoFramework.Hosting;
+using Microsoft.Extensions.Hosting;
 
 namespace Hosting
 {
@@ -19,13 +18,13 @@ namespace Hosting
             _hardware = hardware;
         }
 
-        protected override void ExecuteAsync()
+        protected override void ExecuteAsync(CancellationToken cancellationToken)
         {
             var ledPin = 16;
 
             GpioPin led = _hardware.GpioController.OpenPin(ledPin, PinMode.Output);
 
-            while (!CancellationRequested)
+            while (!cancellationToken.IsCancellationRequested)
             {
                 led.Toggle();
                 Thread.Sleep(1000);

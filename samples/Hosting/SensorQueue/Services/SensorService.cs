@@ -6,8 +6,7 @@
 using System;
 using System.Threading;
 using System.Diagnostics;
-
-using nanoFramework.Hosting;
+using Microsoft.Extensions.Hosting;
 
 namespace Hosting
 {
@@ -22,11 +21,11 @@ namespace Hosting
             _random = new Random();
         }
 
-        protected override void ExecuteAsync()
+        protected override void ExecuteAsync(CancellationToken stoppingToken)
         {
             Debug.WriteLine($"Service '{nameof(SensorService)}' is now running in the background.");
 
-            while (!CancellationRequested)
+            while (!stoppingToken.IsCancellationRequested)
             {
                 try
                 {

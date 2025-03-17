@@ -5,8 +5,8 @@
 
 using System;
 using System.Diagnostics;
-
-using nanoFramework.Hosting;
+using System.Threading;
+using Microsoft.Extensions.Hosting;
 
 namespace Hosting
 {
@@ -20,23 +20,23 @@ namespace Hosting
             _queue = queue;
         }
 
-        public override void Start()
+        public virtual void StartAsync(CancellationToken cancellationToken)
         {
             Debug.WriteLine($"Service '{nameof(MonitorService)}' is now running in the background.");
 
-            base.Start();
+            base.StartAsync(cancellationToken);
         }
 
-        protected override void ExecuteAsync()
+        protected override void ExecuteAsync(CancellationToken stoppingToken)
         {
             Debug.WriteLine($"Queue Depth: {_queue.QueueCount}");
         }
 
-        public override void Stop()
+        public virtual void StopAsync(CancellationToken cancellationToken)
         {
             Debug.WriteLine($"Service '{nameof(MonitorService)}' is stopping.");
             
-            base.Stop();
+            base.StopAsync(cancellationToken);
         }
     }
 }
