@@ -25,12 +25,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="mscorlib, Version=1.17.7.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.CoreLibrary.1.17.7\lib\mscorlib.dll</HintPath>
+    <Reference Include="mscorlib, Version=1.17.11.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.CoreLibrary.1.17.11\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.GiantGecko.Adc, Version=1.0.48.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.GiantGecko.Adc.1.0.48\lib\nanoFramework.GiantGecko.Adc.dll</HintPath>
+    <Reference Include="nanoFramework.GiantGecko.Adc, Version=1.0.49.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.GiantGecko.Adc.1.0.49\lib\nanoFramework.GiantGecko.Adc.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
