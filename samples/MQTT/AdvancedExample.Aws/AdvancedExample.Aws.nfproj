@@ -41,12 +41,12 @@
       <HintPath>packages\nanoFramework.CoreLibrary.1.17.11\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.M2Mqtt, Version=5.1.196.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.M2Mqtt.5.1.196\lib\nanoFramework.M2Mqtt.dll</HintPath>
+    <Reference Include="nanoFramework.M2Mqtt, Version=5.1.199.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.M2Mqtt.5.1.199\lib\nanoFramework.M2Mqtt.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.M2Mqtt.Core, Version=5.1.196.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.M2Mqtt.5.1.196\lib\nanoFramework.M2Mqtt.Core.dll</HintPath>
+    <Reference Include="nanoFramework.M2Mqtt.Core, Version=5.1.199.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.M2Mqtt.5.1.199\lib\nanoFramework.M2Mqtt.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Networking.Sntp, Version=1.6.42.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -73,12 +73,12 @@
       <HintPath>packages\nanoFramework.System.Text.1.3.42\lib\nanoFramework.System.Text.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.IO.Streams, Version=1.1.94.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.IO.Streams.1.1.94\lib\System.IO.Streams.dll</HintPath>
+    <Reference Include="System.IO.Streams, Version=1.1.96.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.IO.Streams.1.1.96\lib\System.IO.Streams.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net, Version=1.11.42.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Net.1.11.42\lib\System.Net.dll</HintPath>
+    <Reference Include="System.Net, Version=1.11.43.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Net.1.11.43\lib\System.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Threading, Version=1.1.52.34401, Culture=neutral, PublicKeyToken=c07d481e9758c731">

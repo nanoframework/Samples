@@ -34,12 +34,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="CCSWE.nanoFramework.Math, Version=1.1.74.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\CCSWE.nanoFramework.Math.1.1.74\lib\CCSWE.nanoFramework.Math.dll</HintPath>
+    <Reference Include="CCSWE.nanoFramework.Math, Version=1.1.77.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\CCSWE.nanoFramework.Math.1.1.77\lib\CCSWE.nanoFramework.Math.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CCSWE.nanoFramework.NeoPixel, Version=1.1.74.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\CCSWE.nanoFramework.NeoPixel.1.1.74\lib\CCSWE.nanoFramework.NeoPixel.dll</HintPath>
+    <Reference Include="CCSWE.nanoFramework.NeoPixel, Version=1.1.77.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\CCSWE.nanoFramework.NeoPixel.1.1.77\lib\CCSWE.nanoFramework.NeoPixel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib, Version=1.17.11.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -58,8 +58,8 @@
       <HintPath>..\packages\nanoFramework.Hardware.Esp32.Rmt.2.0.35\lib\nanoFramework.Hardware.Esp32.Rmt.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Networking.Thread, Version=1.0.42.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Networking.Thread.1.0.42\lib\nanoFramework.Networking.Thread.dll</HintPath>
+    <Reference Include="nanoFramework.Networking.Thread, Version=1.0.43.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Networking.Thread.1.0.43\lib\nanoFramework.Networking.Thread.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Runtime.Events, Version=1.11.32.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -82,16 +82,16 @@
       <HintPath>..\packages\nanoFramework.System.Device.Gpio.1.1.57\lib\System.Device.Gpio.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.IO.Streams, Version=1.1.94.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.IO.Streams.1.1.94\lib\System.IO.Streams.dll</HintPath>
+    <Reference Include="System.IO.Streams, Version=1.1.96.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.IO.Streams.1.1.96\lib\System.IO.Streams.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Math, Version=1.5.116.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>..\packages\nanoFramework.System.Math.1.5.116\lib\System.Math.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net, Version=1.11.42.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.Net.1.11.42\lib\System.Net.dll</HintPath>
+    <Reference Include="System.Net, Version=1.11.43.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.Net.1.11.43\lib\System.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Threading, Version=1.1.52.34401, Culture=neutral, PublicKeyToken=c07d481e9758c731">
