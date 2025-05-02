@@ -54,8 +54,8 @@
       <HintPath>packages\nanoFramework.System.Net.Http.1.5.195\lib\System.Net.Http.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Net.WebSockets, Version=1.1.149.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.System.Net.WebSockets.1.1.149\lib\System.Net.WebSockets.dll</HintPath>
+    <Reference Include="System.Net.WebSockets, Version=1.1.150.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Net.WebSockets.1.1.150\lib\System.Net.WebSockets.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Threading, Version=1.1.52.34401, Culture=neutral, PublicKeyToken=c07d481e9758c731">
