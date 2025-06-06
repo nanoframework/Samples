@@ -1,6 +1,6 @@
 # 🌶️ - Bluetooth Low Energy Serial profile sample
 
-Shows how to use the Serial Protocol Profile APIs included in the [NanoFramework.Device.Bluetooth](http://docs.nanoframework.net/api/NanoFramework.Device.Bluetooth.html).
+Shows how to use the Serial Protocol Profile APIs included in the [nanoFramework.Device.Bluetooth](http://docs.nanoframework.net/api/nanoFramework.Device.Bluetooth.html).
 
 The sample allows a Bluetooth Terminal program to connect and send/receive text messages. There are a number of applications on both Android and IOS
 that will work.
@@ -26,7 +26,7 @@ Currently there are 2 firmware images that support Bluetooth:-
 
 ### Reference
 
-- [NanoFramework.Device.Bluetooth](http://docs.nanoframework.net/api/NanoFramework.Device.Bluetooth.html)
+- [nanoFramework.Device.Bluetooth](http://docs.nanoframework.net/api/nanoFramework.Device.Bluetooth.html)
 
 ## Build the sample
 
