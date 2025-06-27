@@ -31,7 +31,7 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 * [🌶️ - Reading an AM2320 I2C Temerature and Humidity sensor](samples/Beginner/TempHumI2c)
 * [🌶️ - Special IoT beginner content with .NET nanoFramework](samples/Beginner)
 * [🌶️ - System.Device.Pwm](samples/PWM/System.Device.Pwm)
-* [🌶️ - ulse Width Modulation (PWM) to drive a servo motor](samples/Beginner/ServoMotor)
+* [🌶️ - Pulse Width Modulation (PWM) to drive a servo motor](samples/Beginner/ServoMotor)
 
 ### Gpio, I2C, I2S, Spi, Pwm, Adc, Dac, 1-Wire, Serial
 
