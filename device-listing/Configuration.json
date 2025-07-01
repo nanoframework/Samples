@@ -57,12 +57,12 @@
             "Description": "Json"
         },
         {
-            "Name": "mqtt",
-            "Description": "MQTT"
-        },
-        {
             "Name": "mcp",
             "Description": "Model Context Protocol (MCP)"
+        },
+        {
+            "Name": "mqtt",
+            "Description": "MQTT"
         },
         {
             "Name": "networking",
