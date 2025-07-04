@@ -8,7 +8,6 @@
             "Name": "device",
             "Description": "Gpio, I2C, I2S, Spi, Pwm, Adc, Dac, 1-Wire, Serial"
         },
-
         {
             "Name": "amqp",
             "Description": "AMQP"
@@ -56,6 +55,10 @@
         {
             "Name": "json",
             "Description": "Json"
+        },
+        {
+            "Name": "mcp",
+            "Description": "Model Context Protocol (MCP)"
         },
         {
             "Name": "mqtt",
