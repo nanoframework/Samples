@@ -47,7 +47,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.WebServer, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.WebServer.1.2.123\lib\nanoFramework.WebServer.dll</HintPath>
+      <HintPath>packages\nanoFramework.WebServer.1.2.125\lib\nanoFramework.WebServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Device.Pwm, Version=1.1.23.36628, Culture=neutral, PublicKeyToken=c07d481e9758c731">

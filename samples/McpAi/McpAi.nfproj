@@ -27,8 +27,9 @@
     <Reference Include="mscorlib">
       <HintPath>packages\nanoFramework.CoreLibrary.1.17.11\lib\mscorlib.dll</HintPath>
     </Reference>
-    <Reference Include="nanoFramework.Json">
-      <HintPath>packages\nanoFramework.Json.2.2.199\lib\nanoFramework.Json.dll</HintPath>
+    <Reference Include="nanoFramework.Json, Version=2.2.203.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Json.2.2.203\lib\nanoFramework.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Runtime.Events">
       <HintPath>packages\nanoFramework.Runtime.Events.1.11.32\lib\nanoFramework.Runtime.Events.dll</HintPath>
@@ -39,11 +40,13 @@
     <Reference Include="nanoFramework.System.Text">
       <HintPath>packages\nanoFramework.System.Text.1.3.42\lib\nanoFramework.System.Text.dll</HintPath>
     </Reference>
-    <Reference Include="nanoFramework.WebServer">
-      <HintPath>packages\nanoFramework.WebServer.Mcp.1.2.123\lib\nanoFramework.WebServer.dll</HintPath>
+    <Reference Include="nanoFramework.WebServer, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.WebServer.Mcp.1.2.125\lib\nanoFramework.WebServer.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.WebServer.Mcp">
-      <HintPath>packages\nanoFramework.WebServer.Mcp.1.2.123\lib\nanoFramework.WebServer.Mcp.dll</HintPath>
+    <Reference Include="nanoFramework.WebServer.Mcp, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.WebServer.Mcp.1.2.125\lib\nanoFramework.WebServer.Mcp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Device.Gpio">
       <HintPath>packages\nanoFramework.System.Device.Gpio.1.1.57\lib\System.Device.Gpio.dll</HintPath>
