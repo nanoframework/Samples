@@ -51,8 +51,9 @@
     <Reference Include="System.Device.Gpio">
       <HintPath>packages\nanoFramework.System.Device.Gpio.1.1.57\lib\System.Device.Gpio.dll</HintPath>
     </Reference>
-    <Reference Include="System.Device.Wifi">
-      <HintPath>packages\nanoFramework.System.Device.Wifi.1.5.133\lib\System.Device.Wifi.dll</HintPath>
+    <Reference Include="System.Device.Wifi, Version=1.5.134.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.System.Device.Wifi.1.5.134\lib\System.Device.Wifi.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.IO.Streams">
       <HintPath>packages\nanoFramework.System.IO.Streams.1.1.96\lib\System.IO.Streams.dll</HintPath>
