@@ -4,9 +4,9 @@ These samples demonstrate the low level text display and graphics display functi
 
 These are very useful for memory constrained devices with smaller screens.
 
-To initialize the screen, `DisplayControl.Initialize`, requires `SPIConfiguration` and `ScreenConfiguration` please check below,
+To initialize the screen, `DisplayControl.Initialize`, requires `SPIConfiguration` and `ScreenConfiguration` please check below.
 
-If `backLigtPin` and `reset` are not used, you can use `-1` as a value. `ScreenConfiguration` requires screen size of your actual screen as `screenWidth` and `screenHeight`.
+If `backLightPin` and `reset` are not used, you can use `-1` as a value. `ScreenConfiguration` requires screen size of your actual screen as `screenWidth` and `screenHeight`.
 
 ```csharp
 DisplayControl.Initialize(
