@@ -38,11 +38,11 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Iot.Device.AtModem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Iot.Device.AtModem.1.0.495\lib\Iot.Device.AtModem.dll</HintPath>
+      <HintPath>packages\nanoFramework.Iot.Device.AtModem.1.0.512\lib\Iot.Device.AtModem.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Iot.Device.Common.GnssDevice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Iot.Device.Common.GnssDevice.1.0.281\lib\Iot.Device.Common.GnssDevice.dll</HintPath>
+      <HintPath>packages\nanoFramework.Iot.Device.Common.GnssDevice.1.0.299\lib\Iot.Device.Common.GnssDevice.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib, Version=1.17.11.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">

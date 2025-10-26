@@ -26,7 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Iot.Device.Axp192, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Iot.Device.Axp192.1.2.889\lib\Iot.Device.Axp192.dll</HintPath>
+      <HintPath>packages\nanoFramework.Iot.Device.Axp192.1.2.907\lib\Iot.Device.Axp192.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib, Version=1.17.11.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">

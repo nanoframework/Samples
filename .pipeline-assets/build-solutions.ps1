@@ -11,9 +11,12 @@ if ($msbuild) {
     $msbuild = join-path $msbuild 'MSBuild\Current\Bin\amd64\MSBuild.exe'
 }
 
-# compute authorization header in format "AUTHORIZATION: basic 'encoded token'"
-# 'encoded token' is the Base64 of the string "nfbot:personal-token"
-$auth = "basic $([System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("nfbot:${env:MY_GITHUBTOKEN}"))))"
+# prepare GitHub API headers using token auth
+$headers = @{
+    Authorization = "token $env:MY_GITHUBTOKEN"
+    'User-Agent'  = 'azure-pipelines'
+    Accept        = 'application/vnd.github+json'
+}
 
 if($env:System_PullRequest_PullRequestId -ne $null)
 {
@@ -30,7 +33,10 @@ if($env:System_PullRequest_PullRequestId -ne $null)
   {
     "##[debug] INFO: iteration $pageCounter" | Write-Host
 
-    $batch = Invoke-RestMethod -Uri "https://api.github.com/repos/nanoframework/Samples/pulls/$env:System_PullRequest_PullRequestNumber/files?per_page=100&page=$pageCounter" -Header @{"Authorization"="$auth"} -ContentType "application/json" -Method GET
+    $batch = Invoke-RestMethod `
+                -Uri "https://api.github.com/repos/nanoframework/Samples/pulls/$env:System_PullRequest_PullRequestNumber/files?per_page=100&page=$pageCounter" `
+                -Headers $headers `
+                -Method GET
 
     if($null -eq $commit)
     {
@@ -63,7 +69,10 @@ else
     {
       "##[command] Get API file change page: $pageCounter" | Write-Host
 
-      $batch = Invoke-RestMethod -Uri "https://api.github.com/repos/nanoframework/Samples/commits/$env:Build_SourceVersion`?per_page=100&page=$pageCounter" -Header @{"Authorization"="$auth"} -ContentType "application/json" -Method GET
+      $batch = Invoke-RestMethod `
+                  -Uri "https://api.github.com/repos/nanoframework/Samples/commits/$env:Build_SourceVersion`?per_page=100&page=$pageCounter" `
+                  -Headers $headers `
+                  -Method GET
 
       if($null -eq $commit)
       {
