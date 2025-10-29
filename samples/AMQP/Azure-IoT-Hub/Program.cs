@@ -21,7 +21,7 @@ namespace AmqpSamples.AzureIoTHub
         /////////////////////////////////////////////////////////////////////
         // Azure IoT Hub settings
 
-        // To make your life easier use a SaS token generated from Azure Device Explorer like the one bellow
+        // To make your life easier use a SaS token generated from Azure Device Explorer like the one below
         // HostName=contoso.azure-devices.net;DeviceId=COFEEMACHINE001;SharedAccessSignature=SharedAccessSignature sr=contoso.azure-devices.net%2Fdevices%2FCOFEEMACHINE001&sig=tGeAGJeRgFUqIKEs%2BtYNLmLAGWGHiHT%2F2TIIsu8oQ%2F0%3D&se=1234656789
 
         const string _hubName = "contoso";
