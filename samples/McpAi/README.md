@@ -115,7 +115,7 @@ The sample exposes four tools to AI agents:
 
 ## .NET 10 MCP Client with Azure OpenAI
 
-The main WebServer repository also includes a [.NET 10 MCP client example](tests/McpClientTest/) that demonstrates how to connect to your nanoFramework MCP server from a full .NET application using Azure OpenAI and Semantic Kernel. This client example shows:
+The main WebServer repository also includes a [MCT Client Test](https://github.com/nanoframework/nanoFramework.WebServer/tree/main/tests/McpClientTest) that demonstrates how to connect to your nanoFramework MCP server from a full .NET application using Azure OpenAI and Semantic Kernel. This client example shows:
 
 - **Azure OpenAI integration** using Semantic Kernel
 - **MCP client connectivity** to nanoFramework devices
