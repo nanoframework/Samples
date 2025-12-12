@@ -35,8 +35,8 @@
       <Private>True</Private>
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="nanoFramework.Hardware.Esp32, Version=1.6.34.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Hardware.Esp32.1.6.34\lib\nanoFramework.Hardware.Esp32.dll</HintPath>
+    <Reference Include="nanoFramework.Hardware.Esp32, Version=1.6.37.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Hardware.Esp32.1.6.37\lib\nanoFramework.Hardware.Esp32.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Runtime.Events, Version=1.11.32.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
