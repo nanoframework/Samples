@@ -23,6 +23,9 @@ namespace ScanWifi
                 // Get the first WiFI Adapter
                 WifiAdapter wifi = WifiAdapter.FindAllAdapters()[0];
 
+                // Set the device Name
+                wifi.SetDeviceName("MyDeviceName");
+
                 // Set up the AvailableNetworksChanged event to pick up when scan has completed
                 wifi.AvailableNetworksChanged += Wifi_AvailableNetworksChanged;
 
