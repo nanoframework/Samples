@@ -94,8 +94,8 @@
       <HintPath>..\packages\nanoFramework.System.Device.I2c.1.1.29\lib\System.Device.I2c.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Device.Wifi, Version=1.5.138.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.Device.Wifi.1.5.138\lib\System.Device.Wifi.dll</HintPath>
+    <Reference Include="System.Device.Wifi, Version=1.5.139.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.Device.Wifi.1.5.139\lib\System.Device.Wifi.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.IO.FileSystem, Version=1.1.87.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
