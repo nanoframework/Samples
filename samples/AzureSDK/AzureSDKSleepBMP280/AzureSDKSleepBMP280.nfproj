@@ -149,30 +149,6 @@
       <HintPath>packages\nanoFramework.System.Threading.1.1.52\lib\System.Threading.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="UnitsNet.Duration, Version=5.75.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.Duration.5.75.0\lib\UnitsNet.Duration.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="UnitsNet.ElectricResistance, Version=5.75.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.ElectricResistance.5.75.0\lib\UnitsNet.ElectricResistance.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="UnitsNet.Length, Version=5.75.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.Length.5.75.0\lib\UnitsNet.Length.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="UnitsNet.Pressure, Version=5.75.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.Pressure.5.75.0\lib\UnitsNet.Pressure.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="UnitsNet.RelativeHumidity, Version=5.75.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.RelativeHumidity.5.75.0\lib\UnitsNet.RelativeHumidity.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="UnitsNet.Temperature, Version=5.75.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.Temperature.5.75.0\lib\UnitsNet.Temperature.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <ProjectExtensions>
