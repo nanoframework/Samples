@@ -38,11 +38,11 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Iot.Device.Bmxx80, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Iot.Device.Bmxx80.1.2.931\lib\Iot.Device.Bmxx80.dll</HintPath>
+      <HintPath>packages\nanoFramework.Iot.Device.Bmxx80.1.2.952\lib\Iot.Device.Bmxx80.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Iot.Device.Common.WeatherHelper, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Iot.Device.Common.WeatherHelper.1.2.891\lib\Iot.Device.Common.WeatherHelper.dll</HintPath>
+      <HintPath>packages\nanoFramework.Iot.Device.Common.WeatherHelper.1.2.950\lib\Iot.Device.Common.WeatherHelper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib, Version=1.17.11.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -89,6 +89,30 @@
       <HintPath>packages\nanoFramework.System.Text.1.3.42\lib\nanoFramework.System.Text.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="nanoFramework.UnitsNet.Duration, Version=5.76.15.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.UnitsNet.Duration.5.76.15\lib\netnano1.0\nanoFramework.UnitsNet.Duration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nanoFramework.UnitsNet.ElectricResistance, Version=5.76.15.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.UnitsNet.ElectricResistance.5.76.15\lib\netnano1.0\nanoFramework.UnitsNet.ElectricResistance.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nanoFramework.UnitsNet.Length, Version=5.76.15.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.UnitsNet.Length.5.76.15\lib\netnano1.0\nanoFramework.UnitsNet.Length.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nanoFramework.UnitsNet.Pressure, Version=5.76.15.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.UnitsNet.Pressure.5.76.15\lib\netnano1.0\nanoFramework.UnitsNet.Pressure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nanoFramework.UnitsNet.RelativeHumidity, Version=5.76.15.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.UnitsNet.RelativeHumidity.5.76.15\lib\netnano1.0\nanoFramework.UnitsNet.RelativeHumidity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nanoFramework.UnitsNet.Temperature, Version=5.76.15.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.UnitsNet.Temperature.5.76.15\lib\netnano1.0\nanoFramework.UnitsNet.Temperature.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Buffers.Binary.BinaryPrimitives, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.System.Buffers.Binary.BinaryPrimitives.1.2.862\lib\System.Buffers.Binary.BinaryPrimitives.dll</HintPath>
       <Private>True</Private>
@@ -123,30 +147,6 @@
     </Reference>
     <Reference Include="System.Threading, Version=1.1.52.34401, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.System.Threading.1.1.52\lib\System.Threading.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="UnitsNet.Duration, Version=5.75.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.Duration.5.75.0\lib\UnitsNet.Duration.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="UnitsNet.ElectricResistance, Version=5.75.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.ElectricResistance.5.75.0\lib\UnitsNet.ElectricResistance.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="UnitsNet.Length, Version=5.75.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.Length.5.75.0\lib\UnitsNet.Length.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="UnitsNet.Pressure, Version=5.75.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.Pressure.5.75.0\lib\UnitsNet.Pressure.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="UnitsNet.RelativeHumidity, Version=5.75.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.RelativeHumidity.5.75.0\lib\UnitsNet.RelativeHumidity.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="UnitsNet.Temperature, Version=5.75.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\UnitsNet.nanoFramework.Temperature.5.75.0\lib\UnitsNet.Temperature.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
