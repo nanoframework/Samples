@@ -19,7 +19,7 @@ jobs:
     uses: nanoframework/nf-tools/.github/workflows/update-dependencies.yml@main
     secrets: inherit
     with:
-      solutionsToCheck: '*.sln'
+      solutionsToCheck: '*.sln, *.nfproj'
       exclusionList: "device-listing,Amqp.Samples"
       workingDirectory: '${{ github.workspace }}/samples'
       nugetConfig: Nuget.config
