@@ -11,4 +11,10 @@
     <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- The interop stub library, referenced as a project (the legacy .nfproj used a
+         bin\ HintPath; SDK-style uses a ProjectReference). -->
+    <ProjectReference Include="..\awesome-library\NF.AwesomeLib.csproj" />
+  </ItemGroup>
+
 </Project>
