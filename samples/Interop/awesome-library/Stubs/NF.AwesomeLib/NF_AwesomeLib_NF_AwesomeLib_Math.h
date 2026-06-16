@@ -10,8 +10,8 @@
 //
 //-----------------------------------------------------------------------------
 
-#ifndef _NF_AWESOMELIB_NF_AWESOMELIB_NF_AWESOMELIB_MATH_H_
-#define _NF_AWESOMELIB_NF_AWESOMELIB_NF_AWESOMELIB_MATH_H_
+#ifndef NF_AWESOMELIB_NF_AWESOMELIB_NF_AWESOMELIB_MATH_H
+#define NF_AWESOMELIB_NF_AWESOMELIB_NF_AWESOMELIB_MATH_H
 
 namespace NF_AwesomeLib
 {
@@ -28,4 +28,4 @@ namespace NF_AwesomeLib
     }
 }
 
-#endif //_NF_AWESOMELIB_NF_AWESOMELIB_NF_AWESOMELIB_MATH_H_
+#endif // NF_AWESOMELIB_NF_AWESOMELIB_NF_AWESOMELIB_MATH_H

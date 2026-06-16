@@ -1,11 +1,10 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "GiantGecko.ReadDeviceIDs", "GiantGecko.ReadDeviceIDs\GiantGecko.ReadDeviceIDs.nfproj", "{8F29F025-77C7-48F5-A66D-9F46E26470F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiantGecko.ReadDeviceIDs", "GiantGecko.ReadDeviceIDs\GiantGecko.ReadDeviceIDs.csproj", "{8F29F025-77C7-48F5-A66D-9F46E26470F6}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "GiantGecko.PowerMode", "GiantGecko.PowerMode\GiantGecko.PowerMode.nfproj", "{5EEE640B-5049-4BB9-A223-96B96B04F514}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiantGecko.PowerMode", "GiantGecko.PowerMode\GiantGecko.PowerMode.csproj", "{5EEE640B-5049-4BB9-A223-96B96B04F514}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{22B536D0-9F84-46DA-856B-694BB107CD88}"
 	ProjectSection(SolutionItems) = preProject

@@ -1,0 +1,32 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Primitives</RootNamespace>
+    <AssemblyName>Primitives</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.Graphics" Version="1.2.45" />
+    <PackageReference Include="nanoFramework.Hardware.Esp32" Version="1.6.37" />
+    <PackageReference Include="nanoFramework.ResourceManager" Version="1.2.32" />
+    <PackageReference Include="nanoFramework.Runtime.Events" Version="1.11.32" />
+    <PackageReference Include="nanoFramework.Runtime.Native" Version="1.7.11" />
+    <PackageReference Include="nanoFramework.System.Collections" Version="1.5.67" />
+    <PackageReference Include="nanoFramework.System.Math" Version="1.5.116" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resource.resx">
+      <Generator>nFResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Untitled.cs" />
+  </ItemGroup>
+
+</Project>

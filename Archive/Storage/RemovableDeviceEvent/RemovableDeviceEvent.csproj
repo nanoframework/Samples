@@ -1,0 +1,19 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>RemovableDeviceEvent</RootNamespace>
+    <AssemblyName>RemovableDeviceEvent</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.Runtime.Events" Version="1.11.32" />
+    <PackageReference Include="nanoFramework.System.Runtime" Version="1.0.28" />
+    <PackageReference Include="nanoFramework.System.Text" Version="1.3.42" />
+    <PackageReference Include="nanoFramework.Windows.Storage" Version="1.5.62" />
+    <PackageReference Include="nanoFramework.Windows.Storage.Streams" Version="1.14.44" />
+  </ItemGroup>
+
+</Project>

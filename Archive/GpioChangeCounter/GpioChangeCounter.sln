@@ -1,9 +1,8 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "GpioChangeCounter", "GpioChangeCounter\GpioChangeCounter.nfproj", "{4FD0EEFE-B90A-43E7-9FDD-17FA413F2A44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GpioChangeCounter", "GpioChangeCounter\GpioChangeCounter.csproj", "{4FD0EEFE-B90A-43E7-9FDD-17FA413F2A44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,25 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ServoMotorTester</RootNamespace>
+    <AssemblyName>ServoMotorTester</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.Hardware.Esp32" Version="1.6.37" />
+    <PackageReference Include="nanoFramework.Runtime.Events" Version="1.11.32" />
+    <PackageReference Include="nanoFramework.System.Collections" Version="1.5.67" />
+    <PackageReference Include="nanoFramework.System.Device.Pwm" Version="1.1.23" />
+    <PackageReference Include="nanoFramework.System.Device.Wifi" Version="1.5.144" />
+    <PackageReference Include="nanoFramework.System.IO.Streams" Version="1.1.96" />
+    <PackageReference Include="nanoFramework.System.Net" Version="1.11.52" />
+    <PackageReference Include="nanoFramework.System.Net.Http.Server" Version="1.5.207" />
+    <PackageReference Include="nanoFramework.System.Text" Version="1.3.42" />
+    <PackageReference Include="nanoFramework.System.Threading" Version="1.1.52" />
+    <PackageReference Include="nanoFramework.WebServer" Version="1.2.147" />
+  </ItemGroup>
+
+</Project>

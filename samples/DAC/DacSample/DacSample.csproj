@@ -1,0 +1,16 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DacSample</RootNamespace>
+    <AssemblyName>DacSample</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.System.Device.Dac" Version="1.5.26" />
+    <PackageReference Include="nanoFramework.System.Math" Version="1.5.116" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,16 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TI.Utilities</RootNamespace>
+    <AssemblyName>TI.Utilities</AssemblyName>
+    <Name>TI.Utilities</Name>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.Hardware.TI" Version="1.1.27" />
+  </ItemGroup>
+
+</Project>

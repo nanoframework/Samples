@@ -1,0 +1,20 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>UsingGenericDriver</RootNamespace>
+    <AssemblyName>UsingGenericDriver</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.14.2" />
+    <PackageReference Include="nanoFramework.Graphics.St7735" Version="1.1.37" />
+    <PackageReference Include="nanoFramework.Hardware.Esp32" Version="1.6.8" />
+    <PackageReference Include="nanoFramework.ResourceManager" Version="1.2.13" />
+    <PackageReference Include="nanoFramework.Runtime.Events" Version="1.11.6" />
+    <PackageReference Include="nanoFramework.Runtime.Native" Version="1.6.6" />
+    <PackageReference Include="nanoFramework.System.Collections" Version="1.5.18" />
+  </ItemGroup>
+
+</Project>

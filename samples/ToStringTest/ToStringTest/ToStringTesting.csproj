@@ -1,0 +1,16 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ToStringTest</RootNamespace>
+    <AssemblyName>ToStringTest</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+  </ItemGroup>
+
+  <Import Project="..\ToStringTestingShared\ToStringTestingShared.projitems" Label="Shared" />
+
+</Project>

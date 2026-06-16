@@ -1,0 +1,27 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>NanoTetris</RootNamespace>
+    <AssemblyName>NanoTetris</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.Graphics" Version="1.2.45" />
+    <PackageReference Include="nanoFramework.ResourceManager" Version="1.2.32" />
+    <PackageReference Include="nanoFramework.Runtime.Events" Version="1.11.32" />
+    <PackageReference Include="nanoFramework.Runtime.Native" Version="1.7.11" />
+    <PackageReference Include="nanoFramework.System.Collections" Version="1.5.67" />
+    <PackageReference Include="nanoFramework.System.Device.Gpio" Version="1.1.57" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="nfResource.resx">
+      <Generator>nFResXFileCodeGenerator</Generator>
+      <LastGenOutput>nfResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

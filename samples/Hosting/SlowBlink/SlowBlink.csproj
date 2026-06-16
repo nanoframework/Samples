@@ -1,0 +1,21 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DependencyInjection</RootNamespace>
+    <AssemblyName>DependencyInjection</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.DependencyInjection" Version="1.1.32" />
+    <PackageReference Include="nanoFramework.Hosting" Version="2.0.11" />
+    <PackageReference Include="nanoFramework.Logging" Version="1.1.161" />
+    <PackageReference Include="nanoFramework.Runtime.Events" Version="1.11.32" />
+    <PackageReference Include="nanoFramework.System.Collections" Version="1.5.67" />
+    <PackageReference Include="nanoFramework.System.Device.Gpio" Version="1.1.57" />
+    <PackageReference Include="nanoFramework.System.Threading" Version="1.1.52" />
+  </ItemGroup>
+
+</Project>

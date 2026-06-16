@@ -1,0 +1,16 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>nfGPSTest</RootNamespace>
+    <AssemblyName>nfGPSTest</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.System.Text" Version="1.3.42" />
+    <PackageReference Include="nanoFramework.Windows.Devices.I2c" Version="1.4.3" />
+  </ItemGroup>
+
+</Project>

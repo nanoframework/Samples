@@ -1,0 +1,36 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>HttpAzurePOST</RootNamespace>
+    <AssemblyName>HttpAzurePOST</AssemblyName>
+    <DefineConstants>$(DefineConstants);HAS_WIFI;</DefineConstants>
+    <Name>HttpAzurePOST</Name>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.Json" Version="2.2.210" />
+    <PackageReference Include="nanoFramework.ResourceManager" Version="1.2.32" />
+    <PackageReference Include="nanoFramework.Runtime.Events" Version="1.11.32" />
+    <PackageReference Include="nanoFramework.System.Collections" Version="1.5.67" />
+    <PackageReference Include="nanoFramework.System.Device.Gpio" Version="1.1.57" />
+    <PackageReference Include="nanoFramework.System.Device.Wifi" Version="1.5.144" />
+    <PackageReference Include="nanoFramework.System.IO.Streams" Version="1.1.96" />
+    <PackageReference Include="nanoFramework.System.Net" Version="1.11.52" />
+    <PackageReference Include="nanoFramework.System.Net.Http.Client" Version="1.5.207" />
+    <PackageReference Include="nanoFramework.System.Text" Version="1.3.42" />
+    <PackageReference Include="nanoFramework.System.Threading" Version="1.1.52" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\HttpAzurePOST\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="..\HttpAzurePOST\Temp.cs">
+      <Link>Temp.cs</Link>
+    </Compile>
+  </ItemGroup>
+
+</Project>
