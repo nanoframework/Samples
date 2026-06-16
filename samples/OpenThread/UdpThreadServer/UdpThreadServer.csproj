@@ -1,0 +1,42 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>UdpThreadServer</RootNamespace>
+    <AssemblyName>UdpThreadServer</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CCSWE.nanoFramework.Graphics" Version="1.1.135" />
+    <PackageReference Include="CCSWE.nanoFramework.Math" Version="1.1.135" />
+    <PackageReference Include="CCSWE.nanoFramework.NeoPixel" Version="1.1.135" />
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.Graphics.Core" Version="1.2.45" />
+    <PackageReference Include="nanoFramework.Hardware.Esp32" Version="1.6.37" />
+    <PackageReference Include="nanoFramework.Hardware.Esp32.Rmt" Version="2.0.35" />
+    <PackageReference Include="nanoFramework.Networking.Thread" Version="1.0.51" />
+    <PackageReference Include="nanoFramework.Runtime.Events" Version="1.11.32" />
+    <PackageReference Include="nanoFramework.Runtime.Native" Version="1.7.11" />
+    <PackageReference Include="nanoFramework.System.Collections" Version="1.5.67" />
+    <PackageReference Include="nanoFramework.System.Device.Gpio" Version="1.1.57" />
+    <PackageReference Include="nanoFramework.System.IO.Streams" Version="1.1.96" />
+    <PackageReference Include="nanoFramework.System.Math" Version="1.5.116" />
+    <PackageReference Include="nanoFramework.System.Net" Version="1.11.52" />
+    <PackageReference Include="nanoFramework.System.Text" Version="1.3.42" />
+    <PackageReference Include="nanoFramework.System.Threading" Version="1.1.52" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Display.cs">
+      <Link>Display.cs</Link>
+    </Compile>
+    <Compile Include="..\Led.cs">
+      <Link>Led.cs</Link>
+    </Compile>
+    <Compile Include="..\SocketUtils.cs">
+      <Link>SocketUtils.cs</Link>
+    </Compile>
+  </ItemGroup>
+
+</Project>

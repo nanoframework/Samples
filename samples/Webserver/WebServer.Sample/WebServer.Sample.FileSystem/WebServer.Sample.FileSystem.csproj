@@ -1,0 +1,46 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>WebServer.Sample</RootNamespace>
+    <AssemblyName>WebServer.Sample</AssemblyName>
+    <DefineConstants>$(DefineConstants);HAS_WIFI;HAS_STORAGE;</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.ResourceManager" Version="1.2.32" />
+    <PackageReference Include="nanoFramework.Runtime.Events" Version="1.11.32" />
+    <PackageReference Include="nanoFramework.System.Collections" Version="1.5.67" />
+    <PackageReference Include="nanoFramework.System.Device.Gpio" Version="1.1.57" />
+    <PackageReference Include="nanoFramework.System.Device.Wifi" Version="1.5.144" />
+    <PackageReference Include="nanoFramework.System.IO.FileSystem" Version="1.1.87" />
+    <PackageReference Include="nanoFramework.System.IO.Streams" Version="1.1.96" />
+    <PackageReference Include="nanoFramework.System.Net" Version="1.11.52" />
+    <PackageReference Include="nanoFramework.System.Net.Http.Server" Version="1.5.207" />
+    <PackageReference Include="nanoFramework.System.Text" Version="1.3.42" />
+    <PackageReference Include="nanoFramework.System.Threading" Version="1.1.52" />
+    <PackageReference Include="nanoFramework.WebServer.FileSystem" Version="1.2.147" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\WebServer.Sample\ControllerAuth.cs">
+      <Link>ControllerAuth.cs</Link>
+    </Compile>
+    <Compile Include="..\WebServer.Sample\ControllerPerson.cs">
+      <Link>ControllerPerson.cs</Link>
+    </Compile>
+    <Compile Include="..\WebServer.Sample\ControllerTest.cs">
+      <Link>ControllerTest.cs</Link>
+    </Compile>
+    <Compile Include="..\WebServer.Sample\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <EmbeddedResource Update="Resources.resx">
+      <Generator>nFResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

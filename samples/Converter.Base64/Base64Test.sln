@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopBase64Testing", "Des
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Base64TestingShared", "Base64TestingShared\Base64TestingShared.shproj", "{65E7B59A-0F6A-4EFD-880B-EA585CD3D397}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Base64Test", "Base64Test\Base64Test.nfproj", "{97FAF418-8158-4996-9DFF-63463769FFDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Base64Test", "Base64Test\Base64Test.csproj", "{97FAF418-8158-4996-9DFF-63463769FFDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

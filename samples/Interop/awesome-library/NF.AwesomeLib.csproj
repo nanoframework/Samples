@@ -1,0 +1,16 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NF.AwesomeLib</RootNamespace>
+    <AssemblyName>NF.AwesomeLib</AssemblyName>
+    <NFMDP_GENERATE_STUBS>true</NFMDP_GENERATE_STUBS>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+  </ItemGroup>
+
+</Project>

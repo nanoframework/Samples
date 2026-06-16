@@ -1,0 +1,17 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Base64Test</RootNamespace>
+    <AssemblyName>Base64Test</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.System.Text" Version="1.3.42" />
+  </ItemGroup>
+
+  <Import Project="..\Base64TestingShared\Base64TestingShared.projitems" Label="Shared" />
+
+</Project>

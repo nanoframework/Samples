@@ -1,0 +1,19 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Test.Interop</RootNamespace>
+    <AssemblyName>Test.Interop</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- The interop stub library, referenced as a project (the legacy .nfproj used a bin\ HintPath). -->
+    <ProjectReference Include="../awesome-library/NF.AwesomeLib.csproj" />
+  </ItemGroup>
+
+</Project>

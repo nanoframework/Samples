@@ -1,0 +1,40 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>AzureSDKBasic</RootNamespace>
+    <AssemblyName>AzureSDKBasic</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.Azure.Devices.Client.FullyManaged" Version="1.2.115" />
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.Hardware.Esp32" Version="1.6.37" />
+    <PackageReference Include="nanoFramework.Iot.Device.AtModem" Version="1.0.584" />
+    <PackageReference Include="nanoFramework.Iot.Device.Common.GnssDevice" Version="1.0.344" />
+    <PackageReference Include="nanoFramework.Json" Version="2.2.210" />
+    <PackageReference Include="nanoFramework.M2Mqtt.Core" Version="5.1.215" />
+    <PackageReference Include="nanoFramework.ResourceManager" Version="1.2.32" />
+    <PackageReference Include="nanoFramework.Runtime.Events" Version="1.11.32" />
+    <PackageReference Include="nanoFramework.Runtime.Native" Version="1.7.11" />
+    <PackageReference Include="nanoFramework.System.Collections" Version="1.5.67" />
+    <PackageReference Include="nanoFramework.System.IO.Ports" Version="1.1.132" />
+    <PackageReference Include="nanoFramework.System.IO.Streams" Version="1.1.96" />
+    <PackageReference Include="nanoFramework.System.Math" Version="1.5.116" />
+    <PackageReference Include="nanoFramework.System.Text" Version="1.3.42" />
+    <PackageReference Include="nanoFramework.System.Threading" Version="1.1.52" />
+    <PackageReference Include="nanoFramework.UnitsNet.Angle" Version="5.76.15" />
+    <PackageReference Include="nanoFramework.UnitsNet.ElectricPotential" Version="5.76.15" />
+    <PackageReference Include="nanoFramework.UnitsNet.Ratio" Version="5.76.15" />
+    <PackageReference Include="nanoFramework.UnitsNet.Speed" Version="5.76.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resource.resx">
+      <Generator>nFResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

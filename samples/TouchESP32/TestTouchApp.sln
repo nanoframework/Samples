@@ -1,9 +1,8 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "TestTouchApp", "TestTouchApp.nfproj", "{21722546-A665-4FD1-8CB1-7539A4D7F037}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTouchApp", "TestTouchApp.csproj", "{21722546-A665-4FD1-8CB1-7539A4D7F037}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

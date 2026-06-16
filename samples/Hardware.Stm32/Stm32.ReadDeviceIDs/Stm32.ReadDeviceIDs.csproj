@@ -1,0 +1,15 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Stm32.ReadDeviceIDs</RootNamespace>
+    <AssemblyName>Stm32.ReadDeviceIDs</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.Hardware.Stm32" Version="1.10.37" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,14 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>_03___Retrieving_data_from_threads</RootNamespace>
+    <AssemblyName>_03___Retrieving_data_from_threads</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.10.5" />
+  </ItemGroup>
+
+</Project>
