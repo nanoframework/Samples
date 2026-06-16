@@ -1,0 +1,15 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>BlinkLed</RootNamespace>
+    <AssemblyName>BlinkLed</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="2.0.0-preview.52" />
+    <PackageReference Include="nanoFramework.Runtime.Events" Version="2.0.1" />
+    <PackageReference Include="nanoFramework.System.Device.Gpio" Version="2.0.0-preview.18" />
+  </ItemGroup>
+
+</Project>

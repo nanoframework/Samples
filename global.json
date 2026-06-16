@@ -1,0 +1,5 @@
+{
+  "msbuild-sdks": {
+    "nanoFramework.NET.Sdk": "1.0.0"
+  }
+}
