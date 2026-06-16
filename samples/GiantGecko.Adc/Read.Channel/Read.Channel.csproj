@@ -1,0 +1,15 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>GiantGecko.AdcSamples</RootNamespace>
+    <AssemblyName>Read.Channel</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.GiantGecko.Adc" Version="1.0.49" />
+  </ItemGroup>
+
+</Project>

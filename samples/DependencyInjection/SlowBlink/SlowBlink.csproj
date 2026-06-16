@@ -1,0 +1,19 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>nanoFramework.SlowBlink</RootNamespace>
+    <AssemblyName>nanoFramework.SlowBlink</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.DependencyInjection" Version="1.1.32" />
+    <PackageReference Include="nanoFramework.Logging" Version="1.1.161" />
+    <PackageReference Include="nanoFramework.Runtime.Events" Version="1.11.32" />
+    <PackageReference Include="nanoFramework.System.Device.Gpio" Version="1.1.57" />
+  </ItemGroup>
+
+</Project>

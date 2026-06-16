@@ -1,0 +1,21 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SerialCommunication</RootNamespace>
+    <AssemblyName>SerialCommunication</AssemblyName>
+    <DefineConstants>$(DefineConstants);</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.CoreLibrary.NoReflection" Version="1.17.12" />
+    <PackageReference Include="nanoFramework.Hardware.Esp32" Version="1.6.37" />
+    <PackageReference Include="nanoFramework.Runtime.Events" Version="1.11.32" />
+    <PackageReference Include="nanoFramework.System.Text" Version="1.3.42" />
+    <PackageReference Include="nanoFramework.Windows.Devices.SerialCommunication" Version="1.3.7" />
+    <PackageReference Include="nanoFramework.Windows.Storage.Streams" Version="1.14.44" />
+  </ItemGroup>
+
+</Project>

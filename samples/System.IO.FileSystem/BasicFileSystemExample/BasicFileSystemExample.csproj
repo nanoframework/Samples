@@ -1,0 +1,19 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>BasicFileSystemExample</RootNamespace>
+    <AssemblyName>BasicFileSystemExample</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.Runtime.Events" Version="1.11.32" />
+    <PackageReference Include="nanoFramework.System.IO.FileSystem" Version="1.1.87" />
+    <PackageReference Include="nanoFramework.System.IO.Streams" Version="1.1.96" />
+    <PackageReference Include="nanoFramework.System.Text" Version="1.3.42" />
+  </ItemGroup>
+
+</Project>

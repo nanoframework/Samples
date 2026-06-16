@@ -1,0 +1,7 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>

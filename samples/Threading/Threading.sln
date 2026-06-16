@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1145
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "01-Basic Threading", "01-Basic Threading\01-Basic Threading.nfproj", "{3860F240-90FD-4CEA-BD97-8E42220689EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01-Basic Threading", "01-Basic Threading\01-Basic Threading.csproj", "{3860F240-90FD-4CEA-BD97-8E42220689EA}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "02-Passing Parameters", "02-Passing Parameters\02-Passing Parameters.nfproj", "{9A145088-E5CD-4B10-91D4-41C149ED5BFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02-Passing Parameters", "02-Passing Parameters\02-Passing Parameters.csproj", "{9A145088-E5CD-4B10-91D4-41C149ED5BFF}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "03-Retrieving data from threads", "03-Retrieving data from threads\03-Retrieving data from threads.nfproj", "{5A38547F-55BA-4EEE-8D91-3FECE875FE5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03-Retrieving data from threads", "03-Retrieving data from threads\03-Retrieving data from threads.csproj", "{5A38547F-55BA-4EEE-8D91-3FECE875FE5F}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "04-Controlling threads", "04-Controlling threads\04-Controlling threads.nfproj", "{7175ABF6-D604-4E95-9388-424FD4F7E1DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04-Controlling threads", "04-Controlling threads\04-Controlling threads.csproj", "{7175ABF6-D604-4E95-9388-424FD4F7E1DE}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "05-ManualResetEvent", "05-ManualResetEvent\05-ManualResetEvent.nfproj", "{B3F04A58-67A5-40BF-A16C-0EDBEC4CE3C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05-ManualResetEvent", "05-ManualResetEvent\05-ManualResetEvent.csproj", "{B3F04A58-67A5-40BF-A16C-0EDBEC4CE3C4}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "06-AutoResetEvent", "06-AutoResetEvent\06-AutoResetEvent.nfproj", "{E7BC01C6-1CD8-41B0-82E1-3218328CEB86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06-AutoResetEvent", "06-AutoResetEvent\06-AutoResetEvent.csproj", "{E7BC01C6-1CD8-41B0-82E1-3218328CEB86}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "07-Sharing resources", "07-Sharing resources\07-Sharing resources.nfproj", "{7C031844-450A-449A-B5D4-A6590361D3A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07-Sharing resources", "07-Sharing resources\07-Sharing resources.csproj", "{7C031844-450A-449A-B5D4-A6590361D3A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

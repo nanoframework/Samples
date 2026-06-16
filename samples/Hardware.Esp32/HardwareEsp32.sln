@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "HardwareEsp32", "HardwareEsp32.nfproj", "{1A43408E-F96F-4AE8-89FE-60BBB942FB17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HardwareEsp32", "HardwareEsp32.csproj", "{1A43408E-F96F-4AE8-89FE-60BBB942FB17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,16 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>PwmSample</RootNamespace>
+    <AssemblyName>PwmSample</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.Runtime.Events" Version="1.11.32" />
+    <PackageReference Include="nanoFramework.System.Device.Pwm" Version="1.1.23" />
+  </ItemGroup>
+
+</Project>

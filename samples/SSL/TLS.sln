@@ -2,15 +2,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "ParseCertificate", "ParseCertificate\ParseCertificate.nfproj", "{638EFFB7-ED4A-402C-B70A-0406796B8BA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParseCertificate", "ParseCertificate\ParseCertificate.csproj", "{638EFFB7-ED4A-402C-B70A-0406796B8BA9}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "SecureClient_Wifi", "SecureClient_Wifi\SecureClient_Wifi.nfproj", "{AE046A9A-FACA-4A43-B0A5-B8B808C4F606}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecureClient_Wifi", "SecureClient_Wifi\SecureClient_Wifi.csproj", "{AE046A9A-FACA-4A43-B0A5-B8B808C4F606}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "SecureServer_Wifi", "SecureServer_Wifi\SecureServer_Wifi.nfproj", "{B795119D-A3F0-43FA-99AA-AE582DE61AC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecureServer_Wifi", "SecureServer_Wifi\SecureServer_Wifi.csproj", "{B795119D-A3F0-43FA-99AA-AE582DE61AC2}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "SecureClient", "SecureClient\SecureClient.nfproj", "{28B7CB4B-5BE1-4E56-850E-851CD026A8A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecureClient", "SecureClient\SecureClient.csproj", "{28B7CB4B-5BE1-4E56-850E-851CD026A8A1}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "SecureServer", "SecureServer\SecureServer.nfproj", "{4FFF49B0-79C5-458D-8C85-E50369AA71E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecureServer", "SecureServer\SecureServer.csproj", "{4FFF49B0-79C5-458D-8C85-E50369AA71E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

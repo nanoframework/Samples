@@ -1,0 +1,22 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TempHumI2c</RootNamespace>
+    <AssemblyName>TempHumI2c</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.Hardware.Esp32" Version="1.6.37" />
+    <PackageReference Include="nanoFramework.Iot.Device.Am2320" Version="1.2.952" />
+    <PackageReference Include="nanoFramework.Runtime.Events" Version="1.11.32" />
+    <PackageReference Include="nanoFramework.System.Buffers.Binary.BinaryPrimitives" Version="1.2.862" />
+    <PackageReference Include="nanoFramework.System.Device.I2c" Version="1.1.29" />
+    <PackageReference Include="nanoFramework.System.Device.Model" Version="1.2.862" />
+    <PackageReference Include="nanoFramework.UnitsNet.RelativeHumidity" Version="5.76.15" />
+    <PackageReference Include="nanoFramework.UnitsNet.Temperature" Version="5.76.15" />
+  </ItemGroup>
+
+</Project>

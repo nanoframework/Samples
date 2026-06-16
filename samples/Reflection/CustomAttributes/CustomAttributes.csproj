@@ -1,0 +1,19 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Reflection.CustomAttributes</RootNamespace>
+    <AssemblyName>Reflection.CustomAttributes</AssemblyName>
+    <NFMDP_XML_FILES>true</NFMDP_XML_FILES>
+    <NFMDP_DAT_FILES>true</NFMDP_DAT_FILES>
+    <NFMDP_DUMP_FILES>true</NFMDP_DUMP_FILES>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+  </ItemGroup>
+
+  <Import Project="..\CustomAttributes.Shared\CustomAttributes.Shared.projitems" Label="Shared" />
+
+</Project>

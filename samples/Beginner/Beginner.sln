@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35506.116
@@ -7,17 +7,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1-BlinkLed", "BlinkLed\1-Bl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2-Button", "Button\2-Button.csproj", "{3FA7A8F9-31FB-45B6-8727-D02C17D15BBA}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "3-ButtonNuget", "ButtonNuget\3-ButtonNuget.nfproj", "{5B17A480-3C0F-4D73-B941-E9F8C2A07925}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3-ButtonNuget", "ButtonNuget\3-ButtonNuget.csproj", "{5B17A480-3C0F-4D73-B941-E9F8C2A07925}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "5-Buzzer", "Buzzer\5-Buzzer.nfproj", "{9419FC61-403F-4E3D-BE93-B26D4A23B682}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5-Buzzer", "Buzzer\5-Buzzer.csproj", "{9419FC61-403F-4E3D-BE93-B26D4A23B682}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "4-PwmLed", "PwmLed\4-PwmLed.nfproj", "{24D24536-E9B9-45B8-939A-0FB80EDBDD5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4-PwmLed", "PwmLed\4-PwmLed.csproj", "{24D24536-E9B9-45B8-939A-0FB80EDBDD5D}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "6-ServoMotor", "ServoMotor\6-ServoMotor.nfproj", "{9D9F9AF9-8199-457B-89C9-4B4932EB2035}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "6-ServoMotor", "ServoMotor\6-ServoMotor.csproj", "{9D9F9AF9-8199-457B-89C9-4B4932EB2035}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "7-AnalogRainSensor", "AnalogRainSensor\7-AnalogRainSensor.nfproj", "{337EE449-EA4F-4AE6-8634-5FAA582603D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "7-AnalogRainSensor", "AnalogRainSensor\7-AnalogRainSensor.csproj", "{337EE449-EA4F-4AE6-8634-5FAA582603D0}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "8-TempHumI2c", "TempHumI2c\8-TempHumI2c.nfproj", "{755022BA-BA69-4B18-B9AD-5333010C9FC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "8-TempHumI2c", "TempHumI2c\8-TempHumI2c.csproj", "{755022BA-BA69-4B18-B9AD-5333010C9FC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,15 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>_07_Sharing_resources</RootNamespace>
+    <AssemblyName>_07_Sharing_resources</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.10.5" />
+    <PackageReference Include="nanoFramework.System.Math" Version="1.4.1" />
+  </ItemGroup>
+
+</Project>

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "ToStringTesting", "ToStringTest\ToStringTesting.nfproj", "{1E64375B-BB70-4D4B-AD1F-44F54D772F5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToStringTesting", "ToStringTest\ToStringTesting.csproj", "{1E64375B-BB70-4D4B-AD1F-44F54D772F5A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopToStringTesting", "DesktopToStringTesting\DesktopToStringTesting.csproj", "{7B9C00B5-7E84-4998-9648-F29366743E60}"
 EndProject

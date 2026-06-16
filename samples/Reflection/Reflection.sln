@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{561A
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CustomAttributes.Shared", "CustomAttributes.Shared\CustomAttributes.Shared.shproj", "{BD1DA1CA-02CD-490F-B15E-85C7F89581FF}"
 EndProject
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "CustomAttributes", "CustomAttributes\CustomAttributes.nfproj", "{3DE7F97C-6FC9-4312-8D84-0D616AB1605B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomAttributes", "CustomAttributes\CustomAttributes.csproj", "{3DE7F97C-6FC9-4312-8D84-0D616AB1605B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomAttributes.Desktop", "CustomAttributes.Desktop\CustomAttributes.Desktop.csproj", "{EA795157-247F-4D2E-8E06-DC7F7C69C02E}"
 EndProject

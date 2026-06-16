@@ -1,0 +1,18 @@
+<Project Sdk="nanoFramework.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netnano1.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TI.PowerMode</RootNamespace>
+    <AssemblyName>TI.PowerMode</AssemblyName>
+    <Name>TI.PowerMode</Name>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nanoFramework.CoreLibrary" Version="1.17.11" />
+    <PackageReference Include="nanoFramework.Hardware.TI" Version="1.1.27" />
+    <PackageReference Include="nanoFramework.Runtime.Events" Version="1.11.32" />
+    <PackageReference Include="nanoFramework.System.Device.Gpio" Version="1.1.57" />
+  </ItemGroup>
+
+</Project>
