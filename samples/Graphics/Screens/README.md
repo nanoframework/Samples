@@ -89,3 +89,28 @@ Configuration.SetPinFunction(19, DeviceFunction.SPI1_MISO);
 Configuration.SetPinFunction(23, DeviceFunction.SPI1_MOSI);
 Configuration.SetPinFunction(18, DeviceFunction.SPI1_CLOCK);
 ```
+
+## ESP32-S3-BOX-Lite Screen
+
+[ESP32-S3-BOX-Lite Screen](esp32-s3-box-lite) demonstrates driving the 320x240
+`ST7789` LCD of the Espressif ESP32-S3-BOX-Lite with a managed (generic) graphic
+driver. It also documents the board sensors (spoiler: no IMU nor touch, only the
+microphones). The features demonstrated are:
+
+- Building a managed `ST7789` graphic driver.
+- Filling the screen and drawing colored regions.
+
+Configuration:
+
+```csharp
+// pins for SPI Configuration
+int backLightPin = 45;
+int chipSelect = 5;
+int dataCommand = 4;
+int reset = 48;
+
+// set MISO, MOSI and CLOCK pins (MISO is unused by the panel)
+Configuration.SetPinFunction(39, DeviceFunction.SPI1_MISO);
+Configuration.SetPinFunction(6, DeviceFunction.SPI1_MOSI);
+Configuration.SetPinFunction(7, DeviceFunction.SPI1_CLOCK);
+```
