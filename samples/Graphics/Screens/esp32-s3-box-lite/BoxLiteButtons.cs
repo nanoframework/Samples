@@ -55,8 +55,10 @@ namespace Esp32S3BoxLite
         private int _candidateCount;
 
         // Written by Dispose() on the caller thread and read by PollLoop on the
-        // poll thread, so it must be volatile to guarantee prompt visibility.
-        private volatile bool _running;
+        // poll thread. nanoFramework does not support the 'volatile' keyword, but
+        // the poll loop calls Thread.Sleep every iteration, which yields and lets
+        // the thread observe the updated value promptly.
+        private bool _running;
         private bool _disposed;
 
         /// <summary>
