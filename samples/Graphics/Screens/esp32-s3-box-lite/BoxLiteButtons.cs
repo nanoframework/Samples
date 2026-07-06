@@ -54,7 +54,9 @@ namespace Esp32S3BoxLite
         private int _candidateIndex = -1;
         private int _candidateCount;
 
-        private bool _running;
+        // Written by Dispose() on the caller thread and read by PollLoop on the
+        // poll thread, so it must be volatile to guarantee prompt visibility.
+        private volatile bool _running;
         private bool _disposed;
 
         /// <summary>

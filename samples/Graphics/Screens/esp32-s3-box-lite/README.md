@@ -44,7 +44,7 @@ its `OrientationLandscape` to the value above — otherwise the image is sheared
 The only onboard "sensors" are the **dual digital microphones**, fed through the
 `ES7243E` audio ADC and paired with an `ES8156` DAC. Audio codecs are controlled
 over I2C (`SCL = GPIO18`, `SDA = GPIO8`).This is not implement (yet) on
-[nanoFramework.IoT.Device](https://github.com/nanoFramework/nanoFramewrok.IoT.Device),
+[nanoFramework.IoT.Device](https://github.com/nanoFramework/nanoFramework.IoT.Device),
 so it won't be used in this sample.
 
 The board also exposes three

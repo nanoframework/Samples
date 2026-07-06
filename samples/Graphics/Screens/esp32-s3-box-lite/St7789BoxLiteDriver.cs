@@ -69,11 +69,13 @@ namespace Esp32S3BoxLite
                 },
                 PowerModeNormal = new byte[]
                 {
-                    (byte)GraphicDriverCommandType.Command, 3, (byte)St7789Reg.Sleep_In, 0x00, 0x00,
+                    // SLPOUT (0x11) wakes the panel. Single-byte command, no parameters.
+                    (byte)GraphicDriverCommandType.Command, 1, (byte)St7789Reg.Sleep_Out,
                 },
                 PowerModeSleep = new byte[]
                 {
-                    (byte)GraphicDriverCommandType.Command, 3, (byte)St7789Reg.Sleep_In, 0x00, 0x01,
+                    // SLPIN (0x10) puts the panel to sleep. Single-byte command, no parameters.
+                    (byte)GraphicDriverCommandType.Command, 1, (byte)St7789Reg.Sleep_In,
                 },
                 DefaultOrientation = DisplayOrientation.Landscape,
                 Brightness = (byte)St7789Reg.Write_Display_Brightness,
