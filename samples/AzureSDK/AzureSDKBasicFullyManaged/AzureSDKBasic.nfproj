@@ -38,19 +38,19 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Iot.Device.AtModem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Iot.Device.AtModem.1.0.606\lib\Iot.Device.AtModem.dll</HintPath>
+      <HintPath>packages\nanoFramework.Iot.Device.AtModem.1.0.623\lib\Iot.Device.AtModem.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Iot.Device.Common.GnssDevice, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Iot.Device.Common.GnssDevice.1.0.394\lib\Iot.Device.Common.GnssDevice.dll</HintPath>
+      <HintPath>packages\nanoFramework.Iot.Device.Common.GnssDevice.1.0.408\lib\Iot.Device.Common.GnssDevice.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib, Version=1.17.11.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
       <HintPath>packages\nanoFramework.CoreLibrary.1.17.11\lib\mscorlib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.Azure.Devices.Client, Version=1.2.118.28202, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.Azure.Devices.Client.FullyManaged.1.2.118\lib\nanoFramework.Azure.Devices.Client.dll</HintPath>
+    <Reference Include="nanoFramework.Azure.Devices.Client, Version=1.2.120.44146, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.Azure.Devices.Client.FullyManaged.1.2.120\lib\nanoFramework.Azure.Devices.Client.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.Hardware.Esp32, Version=1.6.40.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -61,8 +61,8 @@
       <HintPath>packages\nanoFramework.Json.2.2.213\lib\nanoFramework.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nanoFramework.M2Mqtt.Core, Version=5.1.218.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>packages\nanoFramework.M2Mqtt.Core.5.1.218\lib\nanoFramework.M2Mqtt.Core.dll</HintPath>
+    <Reference Include="nanoFramework.M2Mqtt.Core, Version=5.1.220.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>packages\nanoFramework.M2Mqtt.Core.5.1.220\lib\nanoFramework.M2Mqtt.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.ResourceManager, Version=1.2.32.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
