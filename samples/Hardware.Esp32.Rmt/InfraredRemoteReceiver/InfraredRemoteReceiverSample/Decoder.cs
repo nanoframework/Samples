@@ -37,17 +37,18 @@ namespace InfraredRemote
         /// <summary>
         /// Decodes Rmt signal into SignalData.
         /// </summary>
-        /// <param name="receivedSignal">Array representing decoded signal.</param>
+        /// <param name="receivedSignal">RmtSymbols representing decoded signal.</param>
         /// <returns>SignalData object.</returns>
-        public virtual SignalData Decode(RmtCommand[] receivedSignal)
+        public virtual SignalData Decode(RmtSymbols receivedSignal)
         {
             var firstPulse = receivedSignal[0];
-            var lastPulse = receivedSignal[receivedSignal.Length - 1];
+            var lastPulse = receivedSignal[receivedSignal.Count - 1];
+
             bool isHeaderMark = Match(firstPulse.Duration0, HeaderMark);
             bool isSpaceMark = Match(firstPulse.Duration1, HeaderSpace);
             bool isEndOfTransmission = Match(lastPulse.Duration0, PulseLengthInMicroseconds) && !lastPulse.Level0 && lastPulse.Duration1 == 0 &&
                                        lastPulse.Level1;
-            bool isRepeat = receivedSignal.Length == 2 && Match(firstPulse.Duration0, HeaderMark) && !firstPulse.Level0 && Match(firstPulse.Duration1, RepeatSpace) && firstPulse.Level1;
+            bool isRepeat = receivedSignal.Count == 2 && Match(firstPulse.Duration0, HeaderMark) && !firstPulse.Level0 && Match(firstPulse.Duration1, RepeatSpace) && firstPulse.Level1;
 
             if (isRepeat)
             {
@@ -55,11 +56,15 @@ namespace InfraredRemote
             }
 
             SignalData signalData = null;
-            if (isHeaderMark && isSpaceMark && (receivedSignal.Length == SignalLength) && isEndOfTransmission)
+            if (isHeaderMark && isSpaceMark && (receivedSignal.Count == SignalLength) && isEndOfTransmission)
             {
+                // Extract the raw payload from the received signal symbols.
+                // The payload is represented as a binary string where '1' and '0' correspond to the signal's high and low states, respectively.
                 var message = ExtractRawPayload(receivedSignal);
+
                 var address = ExtractAddress(message);
                 var command = ExtractCommand(message);
+
                 int addressNumber = 0;
                 int commandNumber = 0;
                 if (UseLessSignificantBitFirst)
@@ -90,13 +95,13 @@ namespace InfraredRemote
             return message.Substring(0, AddressBits);
         }
 
-        private string ExtractRawPayload(RmtCommand[] response)
+        private string ExtractRawPayload(RmtSymbols response)
         {
             StringBuilder sb = new StringBuilder();
-            for (int i = 1; i < response.Length - 1; i++)
+            for (int i = 1; i < response.Count - 1; i++)
             {
-                var rmtCommand = response[i];
-                if (Match(rmtCommand.Duration1, OneSpace))
+                var rmtSymbol = response[i];
+                if (Match(rmtSymbol.Duration1, OneSpace))
                 {
                     sb.Append("1");
                 }
@@ -116,7 +121,6 @@ namespace InfraredRemote
             return (tick >= ticksLow &&
                     tick <= ticksHigh);
         }
-
         private string Reverse(string valueToBeReversed)
         {
             StringBuilder sb = new StringBuilder();
@@ -127,7 +131,6 @@ namespace InfraredRemote
 
             return sb.ToString();
         }
-
         private int ToInt32(string binaryValue)
         {
             int dec_value = 0;
