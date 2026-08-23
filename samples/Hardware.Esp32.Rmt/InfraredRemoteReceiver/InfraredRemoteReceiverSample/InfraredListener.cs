@@ -28,16 +28,17 @@ namespace InfraredRemote
         {
             var settings = new ReceiverChannelSettings(pinNumber)
             {
-                // filter out 100Us / noise
-                EnableFilter = true,
-                FilterThreshold = 100,
-                // 1us clock ( 80Mhz / 80 ) = 1Mhz
-                ClockDivider = 80,
-                // 40ms based on 1us clock
-                IdleThreshold = 40000,
+                // 1us clock (1Mhz)
+                ResolutionHz = 1000000,
+ 
+                // filter out 3Us / noise
+                FilterThreshold = 3000,
+                
+                // 30ms based on 1ns 
+                IdleThreshold = 30000000,
+                
                 // 60 millisecond timeout
                 ReceiveTimeout = TimeSpan.FromMilliseconds(_receiveTimeoutMs),
-
             };
             _rxChannel = new ReceiverChannel(settings);       
         }
@@ -47,7 +48,7 @@ namespace InfraredRemote
         /// </summary>
         /// <param name="sender">Sender of event.</param>
         /// <param name="signal">Signal representation.</param>
-        public delegate void SignalEventHandler(object sender, RmtCommand[] signal);
+        public delegate void SignalEventHandler(object sender, RmtSymbols signal);
 
         /// <summary>
         /// Event raised when new signal arrives.
@@ -74,10 +75,10 @@ namespace InfraredRemote
 
         private void Run()
         {
-            _rxChannel.Start(true);
+            _rxChannel.Start();
             while (true)
             {
-                var response = _rxChannel.GetAllItems();
+                var response = _rxChannel.TryGetReceivedSymbols();
                 if (response != null)
                 {
                     SignalEvent?.Invoke(this, response);

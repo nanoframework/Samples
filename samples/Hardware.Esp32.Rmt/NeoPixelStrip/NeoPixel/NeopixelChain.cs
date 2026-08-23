@@ -1,73 +1,63 @@
-﻿using nanoFramework.Hardware.Esp32.Rmt;
+﻿//
+// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+
+using nanoFramework.Hardware.Esp32.Rmt;
 
 namespace NeoPixel
 {
-	public class NeopixelChain
-	{
-		// 80MHz / 4 => min pulse 0.00us
-		protected const byte ClockDivider = 4;
-		// one pulse duration in us
-		protected const float MinPulse = 1000000.0f / (80000000 / ClockDivider);
+    public class NeopixelChain
+    {
+        protected byte[] ColorBytes;
+        private readonly int _gpioPin;
+        private int _repeat;
+        private LedTransmitChannel _ledChannel;
 
-		// default datasheet values
-		protected readonly RmtCommand OnePulse =
-			new RmtCommand((ushort)(0.7 / MinPulse), true, (ushort)(0.6 / MinPulse), false);
+        /// <summary>
+        /// Create NeopixelChain object
+        /// </summary>
+        /// <param name="gpioPin">GPIO pin of led string</param>
+        /// <param name="size">Number of pixels in led string</param>
+		/// <param name="repeat">
+		/// Repeat data on send on to duplicate patterns. When repeating the size should be size of pattern.
+		/// Defaults to 1 repeat.
+		/// </param>
+        public NeopixelChain(int gpioPin, LedType ledType, uint size, int repeat = 1)
+        {
+            _gpioPin = gpioPin;
 
-		protected readonly RmtCommand ZeroPulse =
-			new RmtCommand((ushort)(0.35 / MinPulse), true, (ushort)(0.8 / MinPulse), false);
+            // 3 bytes per pixel
+            // All bytes will start as 0(black) at creation
+            ColorBytes = new byte[size * 3];
 
-		protected readonly RmtCommand ResCommand =
-			new RmtCommand((ushort)(25 / MinPulse), false, (ushort)(26 / MinPulse), false);
+            _repeat = repeat;
 
-		protected Color[] Pixels;
-		private readonly int _gpioPin;
+            _ledChannel = new LedTransmitChannel(gpioPin, ledType);
+        }
 
-		public NeopixelChain(int gpioPin, uint size)
-		{
-			_gpioPin = gpioPin;
+        public void Update()
+        {
+            _ledChannel.SendLedData(ColorBytes, _repeat, true);
+        }
 
-			Pixels = new Color[size];
-			for (uint i = 0; i < size; ++i)
-			{
-				Pixels[i] = new Color();
-			}
-		}
-
-		public void Update()
-		{
-			var transmitterChannelSettings = new TransmitChannelSettings(pinNumber: _gpioPin)
-			{
-				EnableCarrierWave = false,
-				ClockDivider = ClockDivider,
-				IdleLevel = false,
-			};
-
-			using (var commandList = new TransmitterChannel(transmitterChannelSettings))
-			{
-				for (uint pixel = 0; pixel < Pixels.Length; ++pixel)
-				{
-					SerializeColor(Pixels[pixel].G, commandList);
-					SerializeColor(Pixels[pixel].R, commandList);
-					SerializeColor(Pixels[pixel].B, commandList);
-				}
-				commandList.AddCommand(ResCommand); // RET
-				commandList.Send(true);
-			}
-		}
-
-		private void SerializeColor(byte b, TransmitterChannel commandList)
-		{
-			for (var i = 0; i < 8; ++i)
-			{
-				commandList.AddCommand(((b & (1u << 7)) != 0) ? OnePulse : ZeroPulse);
-				b <<= 1;
-			}
-		}
-
-		public Color this[uint i]
-		{
-			get => Pixels[i];
-			set => Pixels[i] = value;
-		}
-	}
+        /// <summary>
+        /// Get or Set color bytes in chain
+        /// </summary>
+        /// <param name="index">Index to pixels in chain</param>
+        public Color this[uint index]
+        {
+            get
+            {
+                uint i = index * 3;
+                return new Color() { G = ColorBytes[i], R = ColorBytes[i + 1], B = ColorBytes[i + 2] };
+            }
+            set
+            {
+                uint i = index * 3;
+                ColorBytes[i] = value.G;
+                ColorBytes[i + 1] = value.R;
+                ColorBytes[i + 2] = value.B;
+            }
+        }
+    }
 }

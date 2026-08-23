@@ -8,7 +8,7 @@ The sample is [located here](./NeoPixel/).
 
 ## Connections
 
-- GIN -  Any available GPIO pin (D5 in the sample)
+- GIN -  Any available GPIO pin (18 in the sample)
 - GND -  Ground signal  
 - +5V - External Power Supply 5V min 2A  
 
@@ -24,7 +24,7 @@ The sample is [located here](./NeoPixel/).
 - Led Strip NeoPixel WS2812
 - External power supply 5V
 - Resistor 400 Ohm
-- Capacitor 1000 µF across + and - terminals external power suply
+- Capacitor 1000 µF across + and - terminals external power supply
 
 ## Related topics
 
