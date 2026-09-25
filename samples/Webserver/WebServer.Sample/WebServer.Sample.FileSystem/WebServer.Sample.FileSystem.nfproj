@@ -70,7 +70,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="nanoFramework.WebServer, Version=1.2.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.WebServer.FileSystem.1.2.159\lib\nanoFramework.WebServer.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.WebServer.FileSystem.1.2.160\lib\nanoFramework.WebServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Device.Gpio, Version=1.1.64.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
@@ -81,8 +81,8 @@
       <HintPath>..\packages\nanoFramework.System.Device.Wifi.1.5.152\lib\System.Device.Wifi.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.IO.FileSystem, Version=1.1.94.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.System.IO.FileSystem.1.1.94\lib\System.IO.FileSystem.dll</HintPath>
+    <Reference Include="System.IO.FileSystem, Version=1.1.96.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.System.IO.FileSystem.1.1.96\lib\System.IO.FileSystem.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.IO.Streams, Version=1.1.96.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
