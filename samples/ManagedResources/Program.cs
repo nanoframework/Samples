@@ -25,7 +25,14 @@ namespace ManagedResources
 
             Debug.WriteLine(Resources.GetString(Resources.StringResources.String2));
 
+            // text linked file
+            Debug.WriteLine(Resources.GetString(Resources.StringResources.textFile));
+
+            // binary resources, regardless of the type that the resource editor declared for each linked file
             Debug.WriteLine($"PNG image has {Resources.GetBytes(Resources.BinaryResources.nano_Framework_logo_32_border_trans).Length} bytes");
+            Debug.WriteLine($"PNG image (legacy declaration) has {Resources.GetBytes(Resources.BinaryResources.legacyPng).Length} bytes");
+            Debug.WriteLine($"ICO image has {Resources.GetBytes(Resources.BinaryResources.favicon).Length} bytes");
+            Debug.WriteLine($"WAV audio has {Resources.GetBytes(Resources.BinaryResources.beep).Length} bytes");
 
             Thread.Sleep(Timeout.Infinite);
         }

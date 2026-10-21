@@ -34,15 +34,19 @@ namespace ManagedResources
             return ((byte[])(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id)));
         }
         [System.SerializableAttribute()]
+        internal enum BinaryResources : short
+        {
+            favicon = -22914,
+            legacyPng = 16340,
+            nano_Framework_logo_32_border_trans = 23065,
+            beep = 24604,
+        }
+        [System.SerializableAttribute()]
         internal enum StringResources : short
         {
             String2 = 1225,
             String1 = 1228,
-        }
-        [System.SerializableAttribute()]
-        internal enum BinaryResources : short
-        {
-            nano_Framework_logo_32_border_trans = 23065,
+            textFile = 18462,
         }
     }
 }
