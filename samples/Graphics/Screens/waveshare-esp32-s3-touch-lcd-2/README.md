@@ -1,4 +1,4 @@
-# Waveshare ESP32-S3-Touch-LCD-2 screen test
+# 🌶️🌶️ - Waveshare ESP32-S3-Touch-LCD-2 screen test
 
 This sample drives the **Waveshare ESP32-S3-Touch-LCD-2** board's 2-inch
 **240 x 320 ST7789** LCD in portrait mode using a **managed graphic driver**.
@@ -22,17 +22,17 @@ with no graphics support cannot run this sample; one with a fixed native LCD
 driver will not use the managed initialization sequence.
 
 Connect with a USB data cable. Close any serial terminal/debug session before
-flashing and replace `COM7` with the board's port:
+flashing and replace `COMx` with the board's port:
 
 ```powershell
 # nanoFramework.Tools.NanoFirmwareFlasher 2.x
-nanoff --target ESP32_S3_OCTAL --serialport COM7 --update
+nanoff --target ESP32_S3_OCTAL --serialport COMx --update
 ```
 
 For NanoFirmwareFlasher 3.x, the equivalent command is:
 
 ```powershell
-nanoff flash target ESP32_S3_OCTAL serialport COM7
+nanoff flash target ESP32_S3_OCTAL serialport COMx
 ```
 
 If necessary, hold **BOOT**, press and release **RESET**, then release BOOT to
@@ -46,7 +46,7 @@ you need to preserve it.
 The pinout comes from Waveshare's downloadable Arduino and ESP-IDF demos:
 
 | LCD signal | GPIO |
-|------------|------|
+| ---------- | ---- |
 | MOSI | 38 |
 | Clock | 39 |
 | CS | 45 |
