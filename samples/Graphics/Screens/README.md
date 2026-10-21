@@ -114,3 +114,18 @@ Configuration.SetPinFunction(39, DeviceFunction.SPI1_MISO);
 Configuration.SetPinFunction(6, DeviceFunction.SPI1_MOSI);
 Configuration.SetPinFunction(7, DeviceFunction.SPI1_CLOCK);
 ```
+
+## Waveshare ESP32-S3-Touch-LCD-2 Screen
+
+[Waveshare ESP32-S3-Touch-LCD-2 screen test](waveshare-esp32-s3-touch-lcd-2)
+drives the board's 240x320 `ST7789` LCD in portrait mode using a managed graphic
+driver. It displays full-screen colors, a text page with pangrams and both
+alphabets, color bars, a gray ramp, edge/corner markers, and an animated square
+to test partial updates.
+
+Use **`ESP32_S3_OCTAL`**, not QUAD: this board's ESP32-S3R8 has 8 MB octal PSRAM.
+The firmware must include the Generic SPI graphic driver. The sample README
+includes flashing, deployment, and visual verification instructions.
+
+LCD pins: MOSI 38, clock 39, CS 45, DC 42, backlight 1; reset is not connected
+to an ESP32 GPIO (`-1`). The shared SPI MISO line is GPIO40.
