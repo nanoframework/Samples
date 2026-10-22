@@ -88,30 +88,27 @@ else
     } until ($batch.files.Count -eq 0)
 
     # filter removed files              
-    $files = $commit.where{$_.status -ne 'removed' -and $_.filename -match '(devices)'}
+    $files = $commit.where{$_.status -ne 'removed'}
 }
 
 # get file names only
-$files1 = $files | % {$_.filename} | Where-Object {$_ -match 'samples/*'} 
+$pattern = '^samples/(?<folder>[^/]+)/'
+$files1 = @($files | ForEach-Object {$_.filename} | Where-Object {$_ -match $pattern})
 
-if($null -eq $files1)
+if($files1.Count -eq 0)
 {
   Write-host "No 'samples' found to build"
-  exit
+  exit 0
 }
 
 Write-host "##[group] Files changed:"
 $files1 | ForEach-Object { Write-host $_ }
 Write-host "##[endgroup]"
 
-# pattern to select samples folder name
-$pattern = '(samples\/)(?<folder>[a-zA-Z0-9._]+)(?>\/)'
-
-# filter out the collection
-$results = [Regex]::Matches($files1, $pattern)
-
 # get unique folder names
-$sampleFolders = $results | Sort-Object | Select-Object | Foreach-Object {$_.Groups["folder"].Value} | Get-Unique 
+$sampleFolders = @($files1 | ForEach-Object {
+  [Regex]::Match($_, $pattern).Groups["folder"].Value
+} | Sort-Object -Unique)
 
 Write-host "Found $($sampleFolders.count) sample(s) to build"
 
