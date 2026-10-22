@@ -35,9 +35,9 @@ variables:
 
 steps:
 
-# need this here in order to persist GitHub credentials 
-# only need the latest commit
+# Keep history available for rebasing generated README updates.
 - checkout: self
+  fetchDepth: 0
 
 - script: |
     git config --global user.email "nanoframework@outlook.com"
@@ -101,22 +101,37 @@ steps:
   continueOnError: true
   inputs:
     targetType: 'inline'
-    workingDirectory: 'Samples'
+    workingDirectory: '$(Build.SourcesDirectory)'
     script: |
-      git add README.md
-      git add README.zh-cn.md
-      git commit -m "Update READMEs" -m"***NO_CI***"
+      git add -- README.md README.zh-cn.md
+      if ($LASTEXITCODE -ne 0) { throw "Failed to stage READMEs." }
 
-      Write-Host "Rebasing..."
-      
-      git rebase origin/main
+      git diff --cached --quiet -- README.md README.zh-cn.md
+      if ($LASTEXITCODE -eq 0)
+      {
+        Write-Host "No README changes to publish."
+        exit 0
+      }
+      if ($LASTEXITCODE -ne 1) { throw "Failed to check staged README changes." }
 
-      Write-Host "Pushing READMEs to $(Build.SourceBranchName)"
+      git commit -m "Update READMEs" -m "***NO_CI***"
+      if ($LASTEXITCODE -ne 0) { throw "Failed to commit READMEs." }
 
       # compute authorization header in format "AUTHORIZATION: basic 'encoded token'"
       # 'encoded token' is the Base64 of the string "nfbot:personal-token"
       $auth = "basic $([System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("nfbot:$(GitHubToken)")))"
       git -c http.extraheader="AUTHORIZATION: $auth" push origin "HEAD:$(Build.SourceBranchName)"
+      if ($LASTEXITCODE -ne 0) { throw "Failed to fetch the README target branch." }
+
+      Write-Host "Rebasing..."
+      git rebase FETCH_HEAD
+      if ($LASTEXITCODE -ne 0) { throw "Failed to rebase README updates." }
+
+      Write-Host "Pushing READMEs to $env:BUILD_SOURCEBRANCH"
+      git -c http.extraheader="AUTHORIZATION: $auth" push origin "HEAD:$env:BUILD_SOURCEBRANCH"
+      if ($LASTEXITCODE -ne 0) { throw "Failed to push README updates." }
+  env:
+    GITHUB_TOKEN: $(GitHubToken)
 
 # report error
 - template: azure-pipelines-templates/discord-webhook-task.yml@templates  
