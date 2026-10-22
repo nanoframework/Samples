@@ -40,10 +40,19 @@ steps:
 - checkout: self
 
 - script: |
-    git config --global user.email 'nanoframework@outlook.com'
-    git config --global user.name 'nfbot'
+    git config --global user.email "nanoframework@outlook.com"
+    git config --global user.name "nfbot"
     git config --global core.autocrlf true
   displayName: Setup git identity
+
+- task: PowerShell@2
+  displayName: Initialize NuGet cache directory
+  continueOnError: true
+  inputs:
+    targetType: 'inline'
+    script: |
+      # No-build runs may not create the directory needed by the post-job cache save.
+      New-Item -ItemType Directory -Force -Path "$(UserProfile)\.nuget\packages" | Out-Null
 
 - task: Cache@2
   displayName: Cache NuGet packages
@@ -51,7 +60,7 @@ steps:
   continueOnError: true
   inputs:
     key: 'nuget | **/packages.config'
-    path: $(UserProfile)/.nuget/packages
+    path: $(UserProfile)\.nuget\packages
 
 - task: InstallNanoMSBuildComponents@1
   displayName: Install nanoFramework MSBuild components
