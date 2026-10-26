@@ -10,6 +10,7 @@ using System.Net;
 using System.Net.Security;
 using System.Net.Sockets;
 using System.Resources;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
@@ -183,17 +184,126 @@ namespace SecureClient
                         Debug.WriteLine($"Read {bytesCounter} bytes");
                     }
                 }
-                catch (SocketException ex)
-                {
-                    Debug.WriteLine($"** Socket exception occurred: {ex.Message} error code {ex.ErrorCode}!**");
-                }
                 catch (Exception ex)
                 {
-                    Debug.WriteLine($"** Exception occurred: {ex.Message}!**");
+                    OutputConnectionError(ex);
                 }
             }
 
             Thread.Sleep(Timeout.Infinite);
+        }
+
+        /// <summary>
+        /// Outputs the details of an exception thrown while connecting the socket or authenticating with the server.
+        /// </summary>
+        /// <param name="ex">The exception to output.</param>
+        private static void OutputConnectionError(Exception ex)
+        {
+            if (ex is SocketException socketException)
+            {
+                // the socket failed to connect or the connection was dropped
+                Debug.WriteLine($"** Socket exception: error code {socketException.ErrorCode} **");
+            }
+            else if (ex is CryptographicException cryptographicException)
+            {
+                int errorCode = cryptographicException.ErrorCode;
+
+                if (errorCode < 0)
+                {
+                    // TLS handshake failed, the error code is the raw mbedTLS error code
+                    Debug.WriteLine($"** TLS handshake failed: mbedTLS error -0x{-errorCode:X4} **");
+                }
+                else
+                {
+                    // the meaning of the error code depends on the native call that failed (check the stack trace above)
+                    Debug.WriteLine($"** TLS error code {errorCode} (0x{errorCode:X}) **");
+                    Debug.WriteLine($"   from SecureClientInit (SSL context setup): {GetSslErrorDescription(errorCode)}");
+                    Debug.WriteLine($"   from SecureConnect (server certificate verification): {GetCertificateVerifyFlags(errorCode)}");
+                }
+            }
+            else if (ex is OutOfMemoryException)
+            {
+                Debug.WriteLine("** Out of memory while setting up the SSL context. The device may be low on heap. **");
+            }
+            else if (ex is InvalidOperationException)
+            {
+                Debug.WriteLine("** Invalid operation: no free SSL context, invalid SSL context or setting the server hostname (SNI) failed. **");
+            }
+            else
+            {
+                Debug.WriteLine($"** {ex.GetType().FullName}: {ex.Message} **");
+            }
+        }
+
+        /// <summary>
+        /// Gets a description of an <see cref="SslError"/> reported when setting up the SSL context.
+        /// </summary>
+        private static string GetSslErrorDescription(int errorCode)
+        {
+            switch ((SslError)errorCode)
+            {
+                case SslError.DrbgSeedFailed:
+                    return "DrbgSeedFailed, the entropy source (hardware RNG) could not be initialised";
+
+                case SslError.ConfigDefaultsFailed:
+                    return "ConfigDefaultsFailed, setting the TLS configuration defaults failed";
+
+                case SslError.UnsupportedProtocolVersion:
+                    return "UnsupportedProtocolVersion, the requested TLS version is not supported on this device";
+
+                case SslError.PrivateKeyParseFailed:
+                    return "PrivateKeyParseFailed, the private key could not be parsed";
+
+                case SslError.CertificateParseFailed:
+                    return "CertificateParseFailed, a certificate could not be parsed";
+
+                case SslError.OwnCertConfigFailed:
+                    return "OwnCertConfigFailed, configuring the client certificate and private key failed";
+
+                case SslError.SetupFailed:
+                    return "SetupFailed, the SSL context setup failed";
+
+                default:
+                    return "unknown";
+            }
+        }
+
+        /// <summary>
+        /// Gets the reasons for a server certificate verification failure from the <c>MBEDTLS_X509_BADCERT_*</c> flags.
+        /// </summary>
+        private static string GetCertificateVerifyFlags(int flags)
+        {
+            StringBuilder reasons = new StringBuilder();
+
+            AppendFlag(reasons, flags, 0x0001, "expired");
+            AppendFlag(reasons, flags, 0x0002, "revoked");
+            AppendFlag(reasons, flags, 0x0004, "host name doesn't match the certificate CN");
+            AppendFlag(reasons, flags, 0x0008, "not signed by a trusted CA");
+            AppendFlag(reasons, flags, 0x0040, "certificate missing");
+            AppendFlag(reasons, flags, 0x0080, "verification skipped");
+            AppendFlag(reasons, flags, 0x0100, "other");
+            AppendFlag(reasons, flags, 0x0200, "not valid yet (check the device date and time)");
+            AppendFlag(reasons, flags, 0x0800, "key usage mismatch");
+            AppendFlag(reasons, flags, 0x1000, "extended key usage mismatch");
+            AppendFlag(reasons, flags, 0x2000, "certificate type mismatch");
+            AppendFlag(reasons, flags, 0x4000, "signed with an unsupported hash");
+            AppendFlag(reasons, flags, 0x8000, "signed with an unsupported public key algorithm");
+            AppendFlag(reasons, flags, 0x10000, "signed with an unsupported key (curve or key size)");
+
+            return reasons.Length > 0 ? reasons.ToString() : "unknown";
+        }
+
+        private static void AppendFlag(StringBuilder reasons, int flags, int flag, string reason)
+        {
+            if ((flags & flag) != 0)
+            {
+                if (reasons.Length > 0)
+                {
+                    reasons.Append(", ");
+                }
+
+                reasons.Append(reason);
+            }
         }
 
         // Identrust DST Root CA X3
