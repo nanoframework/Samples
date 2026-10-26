@@ -88,6 +88,9 @@ namespace SecureClient
             Debug.WriteLine("Opening socket...");
             using (Socket mySocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
             {
+                // keep track of the operation being performed, to report it in case of failure
+                string operation = OperationConnecting;
+
                 try
                 {
                     Debug.WriteLine("Connecting...");
@@ -96,6 +99,8 @@ namespace SecureClient
                     mySocket.Connect(ep);
 
                     Debug.WriteLine("Authenticating with server...");
+
+                    operation = OperationAuthenticating;
 
                     // setup SSL stream
                     using (SslStream sslStream = new SslStream(mySocket))
@@ -145,11 +150,15 @@ namespace SecureClient
 
                         Debug.WriteLine("SSL handshake OK!");
 
+                        operation = "sending the request";
+
                         // write an HTTP GET request to receive data
                         byte[] buffer = Encoding.UTF8.GetBytes("GET / HTTP/1.0\r\n\r\n");
                         sslStream.Write(buffer, 0, buffer.Length);
 
                         Debug.WriteLine($"Wrote {buffer.Length} bytes");
+
+                        operation = "reading the response";
 
                         int bytesCounter = 0;
 
@@ -186,23 +195,28 @@ namespace SecureClient
                 }
                 catch (Exception ex)
                 {
-                    OutputConnectionError(ex);
+                    OutputConnectionError(ex, operation);
                 }
             }
 
             Thread.Sleep(Timeout.Infinite);
         }
 
+        private const string OperationConnecting = "connecting";
+        private const string OperationAuthenticating = "authenticating with the server";
+
         /// <summary>
-        /// Outputs the details of an exception thrown while connecting the socket or authenticating with the server.
+        /// Outputs the details of an exception thrown while communicating with the server.
         /// </summary>
         /// <param name="ex">The exception to output.</param>
-        private static void OutputConnectionError(Exception ex)
+        /// <param name="operation">The operation that was being performed when the exception was thrown.</param>
+        private static void OutputConnectionError(Exception ex, string operation)
         {
+            Debug.WriteLine($"** {ex.GetType().FullName} while {operation}: {ex.Message} **");
+
             if (ex is SocketException socketException)
             {
-                // the socket failed to connect or the connection was dropped
-                Debug.WriteLine($"** Socket exception: error code {socketException.ErrorCode} **");
+                Debug.WriteLine($"   socket error code {socketException.ErrorCode}");
             }
             else if (ex is CryptographicException cryptographicException)
             {
@@ -210,28 +224,31 @@ namespace SecureClient
 
                 if (errorCode < 0)
                 {
-                    // TLS handshake failed, the error code is the raw mbedTLS error code
-                    Debug.WriteLine($"** TLS handshake failed: mbedTLS error -0x{-errorCode:X4} **");
+                    // the error code is the raw mbedTLS error code
+                    Debug.WriteLine($"   mbedTLS error -0x{-errorCode:X4}");
+                }
+                else if (operation == OperationAuthenticating)
+                {
+                    // when authenticating, the meaning of the error code depends on the native call that failed,
+                    // which isn't known here: SecureClientInit (SSL context setup) or SecureConnect (TLS handshake)
+                    // check the stack trace below to find out which one applies
+                    Debug.WriteLine($"   error code {errorCode} (0x{errorCode:X}), possible causes:");
+                    Debug.WriteLine($"   - if thrown by SecureClientInit: {GetSslErrorDescription(errorCode)}");
+                    Debug.WriteLine($"   - if thrown by SecureConnect: {GetCertificateVerifyFlags(errorCode)}");
                 }
                 else
                 {
-                    // the meaning of the error code depends on the native call that failed (check the stack trace above)
-                    Debug.WriteLine($"** TLS error code {errorCode} (0x{errorCode:X}) **");
-                    Debug.WriteLine($"   from SecureClientInit (SSL context setup): {GetSslErrorDescription(errorCode)}");
-                    Debug.WriteLine($"   from SecureConnect (server certificate verification): {GetCertificateVerifyFlags(errorCode)}");
+                    Debug.WriteLine($"   error code {errorCode} (0x{errorCode:X})");
                 }
             }
             else if (ex is OutOfMemoryException)
             {
-                Debug.WriteLine("** Out of memory while setting up the SSL context. The device may be low on heap. **");
+                Debug.WriteLine("   the device may be low on heap");
             }
-            else if (ex is InvalidOperationException)
+
+            if (ex.StackTrace != null)
             {
-                Debug.WriteLine("** Invalid operation: no free SSL context, invalid SSL context or setting the server hostname (SNI) failed. **");
-            }
-            else
-            {
-                Debug.WriteLine($"** {ex.GetType().FullName}: {ex.Message} **");
+                Debug.WriteLine(ex.StackTrace);
             }
         }
 
