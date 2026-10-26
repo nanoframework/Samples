@@ -37,7 +37,7 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 * [🌶️ - Reading an AM2320 I2C Temerature and Humidity sensor](samples/Beginner/TempHumI2c)
 * [🌶️ - Special IoT beginner content with .NET nanoFramework](samples/Beginner)
 * [🌶️ - System.Device.Pwm](samples/PWM/System.Device.Pwm)
-* [🌶️ - Pulse Width Modulation (PWM) to drive a servo motor](samples/Beginner/ServoMotor)
+* [🌶️ - ulse Width Modulation (PWM) to drive a servo motor](samples/Beginner/ServoMotor)
 
 ### Gpio, I2C, I2S, Spi, Pwm, Adc, Dac, 1-Wire, Serial
 
@@ -61,11 +61,13 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 * [🌶️ - System.Device.Spi sample](samples/SPI)
 * [🌶️ - ulse Width Modulation (PWM) to drive a servo motor](samples/Beginner/ServoMotor)
 * [🌶️ to 🌶️🌶️ - System.IO.Ports serial Communication sample](samples/SerialCommunication)
+* [🌶️🌶️ - ESP32-S3-BOX-Lite screen sample and ADC buttons](samples/Graphics/Screens/esp32-s3-box-lite)
 * [🌶️🌶️ - I2C sample sample pack](samples/I2C)
 * [🌶️🌶️ - I2C Scanner sample](samples/I2C/NanoI2cScanner)
 * [🌶️🌶️ - I2S Microphone sample](samples/I2S/Input)
 * [🌶️🌶️ - I2S sample pack](samples/I2S)
 * [🌶️🌶️ - I2S Speaker sample](samples/I2S/Output)
+* [🌶️🌶️ - Waveshare ESP32-S3-Touch-LCD-2 screen test](samples/Graphics/Screens/waveshare-esp32-s3-touch-lcd-2)
 * [🌶️🌶️ - WebServer to test pour Servo Motors](samples/Webserver/ServoMotorTester)
 * [🌶️🌶️🌶️ - Using Azure SDK with BMP280 on M5Stack with .NET nanoFramework](samples/AzureSDK/AzureSDKSensorCertificate/Readme.md)
 
@@ -121,10 +123,10 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 * [🌶️🌶️ - Hardware ESP32 RMT sample pack](samples/Hardware.Esp32.Rmt)
 * [🌶️🌶️ - Infrared remote receiver based on VS1838 with RMT](samples/Hardware.Esp32.Rmt/InfraredRemoteReceiver)
 * [🌶️🌶️ - NeoPixel Strip WS2812 with RMT](samples/Hardware.Esp32.Rmt/NeoPixelStrip)
-* [🌶️🌶️ - NeoPixel Strip WS2812 with RMT low memory](samples/Hardware.Esp32.Rmt/NeoPixelStripLowMemory)
 * [🌶️🌶️ - Simple sample **with** Azure lib and retry pattern for connection](samples/AzureSDK/AzureSDKBasic)
 * [🌶️🌶️ - Ultrasonic HC-SR04 sensor with RMT](samples/Hardware.Esp32.Rmt/Ultrasonic)
 * [🌶️🌶️ - Using a Modem like SIM7080, simple sample **with** Azure lib and retry pattern for connection](samples/AzureSDK/AzureSDKBasicFullyManaged)
+* [🌶️🌶️ - Waveshare ESP32-S3-Touch-LCD-2 screen test](samples/Graphics/Screens/waveshare-esp32-s3-touch-lcd-2)
 * [🌶️🌶️🌶️ -  Create an IBeacon](samples/Bluetooth/BluetoothBeacon)
 * [🌶️🌶️🌶️ - Complete Azure MQTT sample using BMP280 sensor **with** Azure lib and deep sleep](samples/AzureSDK/AzureSDKSleepBMP280)
 * [🌶️🌶️🌶️ - Complete Azure MQTT sample using BMP280 sensor **without Azure lib** and with deep sleep](samples/AzureMQTTTwinsBMP280Sleep)
@@ -141,9 +143,11 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 
 ### Graphics for screens
 
+* [🌶️🌶️ - ESP32-S3-BOX-Lite screen sample and ADC buttons](samples/Graphics/Screens/esp32-s3-box-lite)
 * [🌶️🌶️ - Graphics Primitives](samples/Graphics/Primitives)
 * [🌶️🌶️ - Screen samples](samples/Graphics/Screens)
 * [🌶️🌶️ - Using an existing generic graphic driver](samples/Graphics/UsingGenericDriver)
+* [🌶️🌶️ - Waveshare ESP32-S3-Touch-LCD-2 screen test](samples/Graphics/Screens/waveshare-esp32-s3-touch-lcd-2)
 * [🌶️🌶️ -Simple WPF](samples/Graphics/SimpleWpf)
 * [🌶️🌶️ to 🌶️🌶️🌶️ -Graphics samples](samples/Graphics)
 * [🌶️🌶️🌶️ - Creating your own generic graphic driver](samples/Graphics/GenericDriver)
@@ -165,6 +169,10 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 
 * [🌶️🌶️ - nanoFramework Json sample](samples/Json)
 
+### Model Context Protocol (MCP)
+
+* [🌶️🌶️ - Model Context Protocol (MCP) sample](samples/McpAi)
+
 ### MQTT
 
 * [🌶️🌶️ to 🌶️🌶️🌶️ - MQTT sample pack](samples/MQTT)
@@ -180,6 +188,7 @@ Our samples uses 🌶️ to show how easy or complicated those samples are. The 
 * [🌶️🌶️ - HTTP Listener sample](samples/HTTP/HttpListener)
 * [🌶️🌶️ - HTTP sample pack](samples/HTTP)
 * [🌶️🌶️ - HTTP WebRequest sample](samples/HTTP/HttpWebRequest)
+* [🌶️🌶️ - Model Context Protocol (MCP) sample](samples/McpAi)
 * [🌶️🌶️ - Networking sample pack](samples/Networking)
 * [🌶️🌶️ - OpenTHread Networking sample pack](samples/OpenThread)
 * [🌶️🌶️ - WebServer to test pour Servo Motors](samples/Webserver/ServoMotorTester)
